@@ -1,0 +1,358 @@
+import streamlit as st
+from PIL import Image, ImageDraw, ImageFont
+import os
+
+TEMPLATE_DIR = "templates"
+ESCUDO_DIR = "escudos"
+FONTE = "fontes/FontePlacar.ttf"
+
+TEMPLATE_LABELS = {
+    "ucl.png": "Champions League",
+    "uel.png": "Europa League",
+    "uecl.png": "Conference League",
+    "premierleague.png": "Premier League",
+    "championship.png": "Championship",
+    "eflcup.png": "EFL Cup",
+    "facup.png": "FA Cup",
+}
+
+TEMPLATE_ORDER = [
+    "ucl.png",
+    "uel.png",
+    "uecl.png",
+    "premierleague.png",
+    "facup.png",
+    "eflcup.png",
+    "championship.png"
+]
+
+INGLES_EUROPEUS = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Aston Villa", "Nottingham Forest", "Tottenham", "Crystal Palace"]
+
+def carregar_escudos(template_path):
+    path_lower = template_path.lower()
+    is_europeia = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
+
+    # Escudos dos clubes ingleses
+    ingleses = [f[:-4] for f in os.listdir("escudos") if f.endswith(".png")]
+
+    if not is_europeia:
+        return sorted(ingleses)
+
+    # Europeus
+    europeus = [f[:-4] for f in os.listdir("escudos-eur") if f.endswith(".png")]
+
+    # Filtrar apenas os ingleses em competição europeia (ordem preservada)
+    ingleses_participantes = [nome for nome in INGLES_EUROPEUS if nome in ingleses]
+
+    return ingleses_participantes + sorted(europeus)
+
+def obter_fontes_por_template(template_path):
+    nome = os.path.splitext(os.path.basename(template_path))[0].lower()
+
+    if "premier" in nome:
+        return ("fontes/premierleague.ttf", "fontes/premierleague-bold.ttf")
+    elif "championship" in nome or "efl" in nome or "eflcup" in nome:
+        return ("fontes/efl.ttf", "fontes/efl-bold.ttf")
+    elif "facup" in nome:
+        return ("fontes/facup.ttf", "fontes/facup-bold.ttf")
+    elif "ucl" in nome:
+        return ("fontes/ucl.ttf", "fontes/ucl-bold.ttf")
+    elif "uel" in nome:
+        return ("fontes/uel.ttf", "fontes/uel-bold.ttf")
+    else:
+        return ("fontes/FontePlacar.ttf", "fontes/FontePlacar.ttf")  # fallback
+
+
+def redimensionar_escudo(filepath, target_size=(100, 100)):
+    escudo = Image.open(filepath).convert("RGBA")
+    escudo.thumbnail(target_size, Image.LANCZOS)  # mantém proporção
+
+    # Criar imagem de fundo transparente do tamanho fixo
+    canvas = Image.new("RGBA", target_size, (0, 0, 0, 0))
+    pos_x = (target_size[0] - escudo.width) // 2
+    pos_y = (target_size[1] - escudo.height) // 2
+    canvas.paste(escudo, (pos_x, pos_y), escudo)
+
+    return canvas
+
+
+def obter_config_template(template_path):
+    nome = os.path.splitext(os.path.basename(template_path))[0].lower()
+    
+    if "premier" in nome:
+        h = 913
+        return {
+            "fonte_normal": "fontes/premierleague.otf",
+            "fonte_bold": "fontes/premierleague-bold.otf",
+            "escudo_tamanho": (60, 60),
+            "pos_home": (121, h),
+            "pos_away": (-181, h), # valor negativo será tratado como relativo ao width,
+            "cor_texto": "#3b0643",
+            "cor_texto_placar": "#3b0643",
+            "pos_nome_home": (334, h+20),  # Posição absoluta
+            "pos_nome_away": (742, h+20),
+            "pos_placar": 922,
+        }
+    elif "championship" in nome or "efl" in nome:
+        h = 920
+        return {
+            "fonte_normal": "fontes/efl.ttf",
+            "fonte_bold": "fontes/efl-bold.ttf",
+            "escudo_tamanho": (50, 50),
+            "pos_home": (130, h),
+            "pos_away": (-180, h),
+            "cor_texto": "#3241a1",
+            "cor_texto_placar": "white",
+            "pos_nome_home": (336, h),  # Posição absoluta
+            "pos_nome_away": (739, h),
+            "pos_placar": 923,
+        }
+    elif "facup" in nome:
+        h = 912
+        return {
+            "fonte_normal": "fontes/facup.otf",
+            "fonte_bold": "fontes/facup-bold.otf",
+            "escudo_tamanho": (60, 60),
+            "pos_home": (121, h),
+            "pos_away": (-181, h),
+            "cor_texto": "#870118",
+            "cor_texto_placar": "white",
+            "pos_nome_home": (336, h+20),  # Posição absoluta
+            "pos_nome_away": (742, h+20),
+            "pos_placar": 920,
+        }
+    elif "ucl" in nome:
+        h = 880
+        return {
+            "fonte_normal": "fontes/ucl.ttf",
+            "fonte_bold": "fontes/ucl-bold.ttf",
+            "escudo_tamanho": (120, 120),
+            "pos_home": (70, h),
+            "pos_away": (-180, h),
+            "cor_texto": "white",
+            "cor_texto_placar": "white",
+            "pos_nome_home": (312, h+45),  # Posição absoluta
+            "pos_nome_away": (718, h+45),
+            "pos_placar": 915,
+        }
+    elif "uel" in nome or "uecl" in nome:
+        h = 912
+        return {
+            "fonte_normal": "fontes/uel.ttf",
+            "fonte_bold": "fontes/uel-bold.ttf",
+            "escudo_tamanho": (60, 60),
+            "pos_home": (120, h),
+            "pos_away": (-180, h),
+            "cor_texto": "white",
+            "cor_texto_placar": "black",
+            "pos_nome_home": (335, h+12),  # Posição absoluta
+            "pos_nome_away": (743, h+12),  # Posição absoluta
+            "pos_placar": 915,
+        }
+    else:
+        return {
+            "fonte_normal": "fontes/facup.ttf",
+            "fonte_bold": "fontes/facup-bold.ttf",
+            "escudo_tamanho": (100, 100),
+            "pos_home": (50, h),
+            "pos_away": (-150, h),
+            "cor_texto": "white",
+            "cor_texto_placar": "white",
+            "pos_nome_home": (360, 870),  # Posição absoluta
+            "pos_nome_away": (-360, 870),
+            "pos_placar": 915,
+        }
+
+
+def obter_escudo_path(nome_time):
+    if os.path.exists(os.path.join("escudos", f"{nome_time}.png")):
+        return os.path.join("escudos", f"{nome_time}.png")
+    elif os.path.exists(os.path.join("escudos-eur", f"{nome_time}.png")):
+        return os.path.join("escudos-eur", f"{nome_time}.png")
+    else:
+        return None
+    
+
+def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marcadores_casa, marcadores_fora, background=None):
+    base = Image.open(template_path).convert("RGBA")
+
+    # Inserir imagem de fundo proporcional e centralizado
+    if background:
+        bg_raw = Image.open(background).convert("RGBA")
+        ratio = base.height / bg_raw.height
+        new_width = int(bg_raw.width * ratio)
+        bg_resized = bg_raw.resize((new_width, base.height), Image.LANCZOS)
+
+        if new_width > base.width:
+            left = (new_width - base.width) // 2
+            bg_cropped = bg_resized.crop((left, 0, left + base.width, base.height))
+        else:
+            bg_cropped = Image.new("RGBA", base.size, (0, 0, 0, 0))
+            paste_x = (base.width - new_width) // 2
+            bg_cropped.paste(bg_resized, (paste_x, 0))
+
+        base = Image.alpha_composite(bg_cropped, base)
+
+    # Configurações do template
+    config = obter_config_template(template_path)
+    path_lower = template_path.lower()
+
+    if any(comp in path_lower for comp in ["uel", "uecl"]):
+        fonte_normal = ImageFont.truetype(config["fonte_bold"], 28)
+    else:
+        fonte_normal = ImageFont.truetype(config["fonte_normal"], 32)
+    fonte_bold = ImageFont.truetype(config["fonte_bold"], 48)
+    fonte_pequena = ImageFont.truetype(config["fonte_normal"], 25)
+    cor_texto = config["cor_texto"]
+    cor_texto_placar = config["cor_texto_placar"]
+
+    draw = ImageDraw.Draw(base)
+
+    # Redimensionar escudos com proporção preservada
+    escudo_home = redimensionar_escudo(obter_escudo_path(escudo_casa), config["escudo_tamanho"])
+    escudo_away = redimensionar_escudo(obter_escudo_path(escudo_fora), config["escudo_tamanho"])
+
+    # Posição dos escudos
+    pos_home = config["pos_home"]
+    pos_away_raw = config["pos_away"]
+    pos_away = (
+        base.width + pos_away_raw[0] if pos_away_raw[0] < 0 else pos_away_raw[0],
+        pos_away_raw[1]
+    )
+
+    base.paste(escudo_home, pos_home, escudo_home)
+    base.paste(escudo_away, pos_away, escudo_away)
+
+    # 🏷️ Nomes dos times
+    for nome, pos_key in [(escudo_casa, "pos_nome_home"), (escudo_fora, "pos_nome_away")]:
+        pos = config.get(pos_key)
+        if not pos:
+            continue
+        
+        x, y = pos
+        nome_maiusculo = nome.upper()
+
+        # Decide a fonte
+        fonte_usada = fonte_normal if any(comp in path_lower for comp in ["ucl", "uel", "uecl"]) else fonte_pequena
+
+        # Mede e centraliza
+        w_text = fonte_usada.getbbox(nome_maiusculo)[2] - fonte_usada.getbbox(nome_maiusculo)[0]
+        x_centered = x - w_text // 2
+
+        # Desenha
+        draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill='white')
+
+
+    # Placar principal centralizado
+    placar = placar_texto.split('(')[0].strip()
+    if "premier" in path_lower:
+        placar = placar.replace('-', ' - ')  # Usar traço longo para Premier League
+    w_placar = fonte_bold.getbbox(placar)[2] - fonte_bold.getbbox(placar)[0]
+    draw.text(((base.width - w_placar) // 2, config["pos_placar"]), placar, font=fonte_bold, fill=cor_texto_placar)
+
+    # Agregado ou pênaltis (centralizado)
+    if '(' in placar_texto and ')' in placar_texto:
+        conteudo = placar_texto.split('(')[1].replace(')', '').strip().lower()
+
+        if "agr" in conteudo:
+            label = "Agregado: "
+            valor = conteudo.replace("agr.", "").replace("agr", "").strip()
+        elif "pên" in conteudo:
+            label = "Pênaltis: "
+            valor = conteudo.replace("pên.", "").replace("pên", "").strip()
+        else:
+            label = ""
+            valor = conteudo  # fallback
+
+        agregado_texto = label + valor
+        
+        path_lower = template_path.lower()
+        usa_fonte_pequena = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
+
+        fonte_agregado = fonte_pequena if usa_fonte_pequena else fonte_normal
+        y_agregado = 975 if usa_fonte_pequena else 985
+
+        w_agr = fonte_agregado.getbbox(agregado_texto)[2] - fonte_agregado.getbbox(agregado_texto)[0]
+        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_agregado, fill="white")
+
+    # 🟩 Marcadores
+    espaco_linha = 34  # Aumente/diminua conforme necessário
+    y_base = 990
+
+    # Casa (alinhamento à esquerda)
+    europeu = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
+    efl = any(comp in path_lower for comp in ["efl", "champ"])
+    for i, linha in enumerate(marcadores_casa.split('\n')):
+        if europeu:
+            linha = linha.upper()
+            draw.text((140, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        elif efl:
+            y_base = 980
+            draw.text((200, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        else:
+            draw.text((200, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+
+    # Visitante (alinhado à direita)
+    for i, linha in enumerate(marcadores_fora.split('\n')):
+        if europeu:
+            linha = linha.upper()
+            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
+            draw.text((base.width - 140 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        elif efl:
+            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
+            y_base = 980
+            draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        else:
+            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
+            draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+
+    return base
+
+
+
+st.title("🔢 Gerador de Placar BBI")
+
+templates = [f for f in os.listdir(TEMPLATE_DIR) if f.endswith(".png")]
+templates = [f for f in TEMPLATE_ORDER if f in TEMPLATE_LABELS]
+
+template_escolhido_label = st.selectbox(
+    "Escolha o Template",
+    [TEMPLATE_LABELS[t] for t in templates]
+)
+
+# Converter de volta para o nome do arquivo
+template_escolhido = [k for k, v in TEMPLATE_LABELS.items() if v == template_escolhido_label][0]
+times = carregar_escudos(template_escolhido)
+mandante = st.selectbox("Time Mandante", times)
+visitante = st.selectbox("Time Visitante", times)
+placar = st.text_input("Placar (ex: 1-0 ou 2-1 (3-2 agr.))")
+marcadores_mandante = st.text_area("Marcadores do Mandante", placeholder="Jogador A 45'\nJogador B 67'")
+marcadores_visitante = st.text_area("Marcadores do Visitante", placeholder="Jogador X 88'")
+background = st.file_uploader("Upload da imagem de fundo (opcional)", type=["png", "jpg", "jpeg", "webp"])
+
+if st.button("Gerar Placar"):
+    template_path = os.path.join(TEMPLATE_DIR, template_escolhido)
+    bg_path = None
+    if background:
+        # Abre a imagem com Pillow a partir do upload
+        img = Image.open(background).convert("RGBA")
+
+        # Salva sempre como PNG para o uso interno no app
+        bg_path = "temp_bg.png"
+        img.save(bg_path, format="PNG")
+    
+    # Gera o placar final (em RGBA)
+    img = desenhar_placar(
+        template_path, mandante, visitante, placar,
+        marcadores_mandante, marcadores_visitante,
+        background=bg_path
+    )
+
+    st.image(img)
+
+    # Converte para RGB (JPEG não aceita transparência)
+    img_rgb = img.convert("RGB")
+    img_rgb.save("placar_final.jpg", format="JPEG", quality=100)
+
+    with open("placar_final.jpg", "rb") as f:
+        st.download_button("📥 Baixar Imagem", f, file_name="placar.jpg")
