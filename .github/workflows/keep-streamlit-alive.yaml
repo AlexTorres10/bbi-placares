@@ -1,0 +1,44 @@
+# .github/workflows/keep-streamlit-alive.yml
+name: Keep Streamlit Apps Alive
+
+# Executa a cada 5 horas
+on:
+  schedule:
+    - cron: '0 */5 * * *'  # A cada 5 horas (00:00, 05:00, 10:00, 15:00, 20:00)
+  # Permite executar manualmente também
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        app:
+          - name: "IDPB Acampamento 2025"
+            url: "https://cadastro-idpb-acamp-2025.streamlit.app/"
+          - name: "Cote Fácil Saúde"
+            url: "https://cotefacilsaude.streamlit.app/"
+          - name: "BBI Placares"
+            url: "https://bbi-placares.streamlit.app/"
+    
+    steps:
+    - name: Ping ${{ matrix.app.name }}
+      run: |
+        echo "🔄 Fazendo ping em: ${{ matrix.app.name }}"
+        echo "URL: ${{ matrix.app.url }}"
+        
+        response=$(curl -s -o /dev/null -w "%{http_code}" ${{ matrix.app.url }})
+        time=$(curl -s -o /dev/null -w "%{time_total}" ${{ matrix.app.url }})
+        
+        echo "Status: $response | Tempo: ${time}s"
+        
+        if [ $response -eq 200 ]; then
+          echo "✅ ${{ matrix.app.name }} funcionando normalmente"
+        elif [ $response -eq 000 ]; then
+          echo "🔄 ${{ matrix.app.name }} pode estar iniciando (timeout ou sem resposta)"
+        else
+          echo "⚠️ ${{ matrix.app.name }} retornou status: $response"
+        fi
+        
+        echo "---"
