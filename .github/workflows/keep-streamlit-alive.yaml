@@ -4,7 +4,7 @@ name: Keep Streamlit Apps Alive
 # Executa a cada 5 horas
 on:
   schedule:
-    - cron: '0 */5 * * *'  # A cada 5 horas (00:00, 05:00, 10:00, 15:00, 20:00)
+    - cron: '0 */2 * * *'  # A cada 2 horas
   # Permite executar manualmente também
   workflow_dispatch:
 
