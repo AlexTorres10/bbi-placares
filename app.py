@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 import os
+import re
 
 TEMPLATE_DIR = "templates"
 ESCUDO_DIR = "escudos"
@@ -245,8 +246,13 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 
     # Placar principal centralizado
     placar = placar_texto.split('(')[0].strip()
+
+    # Remove espaços ao redor de hífens
+    placar = re.sub(r'\s*-\s*', '-', placar)
+
+    # Agora, se for Premier League, aplicar estilo com espaços
     if "premier" in path_lower:
-        placar = placar.replace('-', ' - ')  # Usar traço longo para Premier League
+        placar = placar.replace('-', ' - ')  # estiliza com espaços
     w_placar = fonte_bold.getbbox(placar)[2] - fonte_bold.getbbox(placar)[0]
     draw.text(((base.width - w_placar) // 2, config["pos_placar"]), placar, font=fonte_bold, fill=cor_texto_placar)
 
