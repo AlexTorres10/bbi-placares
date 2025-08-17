@@ -5,7 +5,6 @@ import re
 
 TEMPLATE_DIR = "templates"
 ESCUDO_DIR = "escudos"
-FONTE = "fontes/FontePlacar.ttf"
 
 TEMPLATE_LABELS = {
     "ucl.png": "Champions League",
@@ -316,8 +315,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 
 
 
-st.title("🔢 Gerador de Placar BBI")
-
+st.title("🔢 Gerador de Placares BBI")
+st.set_page_config(page_title="Gerador de Placares BBI", layout="centered")
 templates = [f for f in os.listdir(TEMPLATE_DIR) if f.endswith(".png")]
 templates = [f for f in TEMPLATE_ORDER if f in TEMPLATE_LABELS]
 
