@@ -3,31 +3,30 @@ name: Keep Streamlit Apps Alive
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # a cada 30 minutos
-  workflow_dispatch:       # permite disparar manualmente
+    - cron: '0 */3 * * *'   # a cada 3 horas (00:00, 03:00, 06:00, etc.)
+  workflow_dispatch:        # permite disparar manualmente
 
 jobs:
-  poke:
+  wake-apps:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout do código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Configurar Python 3.x
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'
+        python-version: '3.11'
 
     - name: Instalar dependências
       run: |
         python -m pip install --upgrade pip
-        pip install selenium webdriver-manager
+        pip install playwright
 
-    - name: Instalar Google Chrome
+    - name: Instalar browsers do Playwright
       run: |
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
+        playwright install chromium
 
     - name: Executar script Python
       run: python acorda_apps.py

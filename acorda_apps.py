@@ -1,16 +1,10 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait, Select
-from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
+from playwright.sync_api import sync_playwright
 import time
 
-def bbi_placares(driver, url):
+def bbi_placares(page, url):
     print(f"Acessando primeiro app: {url}")
-    driver.get(url)
-    wait = WebDriverWait(driver, 10)
-
+    page.goto(url)
+    
     # XPaths dos comboboxes
     xpaths = [
         '//*[@id="root"]/div[1]/div[1]/div/div[2]/div/section/div[1]/div/div[2]/div/div/div/div[1]',
@@ -20,20 +14,21 @@ def bbi_placares(driver, url):
 
     for xpath in xpaths:
         try:
-            # Espera o combobox estar clicável e clica para abrir opções
-            combobox = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
-            combobox.click()
+            # Espera o combobox estar visível e clica para abrir opções
+            page.wait_for_selector(xpath, timeout=10000)
+            page.click(xpath)
             time.sleep(1)  # espera as opções aparecerem
 
             # As opções costumam estar em divs dentro de um menu aberto.
             # Vamos tentar pegar a primeira opção visível e clicar nela.
-            # Ajuste a lógica se seu app usar outro padrão.
-
             options_xpath = '//div[@role="listbox"]//div[@role="option"]'
-            options = wait.until(EC.presence_of_all_elements_located((By.XPATH, options_xpath)))
-
-            if options:
-                options[0].click()
+            
+            # Espera as opções aparecerem
+            page.wait_for_selector(options_xpath, timeout=10000)
+            options = page.locator(options_xpath)
+            
+            if options.count() > 0:
+                options.first.click()
                 print(f"Selecionada primeira opção do combobox {xpath}")
             else:
                 print(f"Nenhuma opção encontrada para combobox {xpath}")
@@ -42,38 +37,36 @@ def bbi_placares(driver, url):
         except Exception as e:
             print(f"Erro ao interagir com combobox {xpath}: {e}")
 
-def acamp2025(driver, url):
+def acamp2025(page, url):
     print(f"Acessando segundo app: {url}")
-    driver.get(url)
-    wait = WebDriverWait(driver, 10)
-
+    page.goto(url)
+    
     try:
-        input_nome = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="text_input_1"]')))
-        input_nome.clear()
-        input_nome.send_keys("Nome Exemplo")
+        # Espera e interage com o campo nome
+        page.wait_for_selector('//*[@id="text_input_1"]', timeout=10000)
+        page.fill('//*[@id="text_input_1"]', "Nome Exemplo")
         print("Escreveu no campo nome.")
 
-        input_telefone = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="text_input_3"]')))
-        input_telefone.clear()
-        input_telefone.send_keys("11999999999")
+        # Espera e interage com o campo telefone
+        page.wait_for_selector('//*[@id="text_input_3"]', timeout=10000)
+        page.fill('//*[@id="text_input_3"]', "11999999999")
         print("Escreveu no campo telefone.")
     except Exception as e:
         print(f"Erro ao interagir no segundo app: {e}")
 
-def cotefacil(driver, url):
+def cotefacil(page, url):
     print(f"Acessando terceiro app: {url}")
-    driver.get(url)
-    wait = WebDriverWait(driver, 10)
-
+    page.goto(url)
+    
     try:
-        input_login = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="text_input_1"]')))
-        input_login.clear()
-        input_login.send_keys("usuario_exemplo")
+        # Espera e interage com o campo login
+        page.wait_for_selector('//*[@id="text_input_1"]', timeout=10000)
+        page.fill('//*[@id="text_input_1"]', "usuario_exemplo")
         print("Escreveu no campo login.")
 
-        input_senha = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="text_input_2"]')))
-        input_senha.clear()
-        input_senha.send_keys("senha_exemplo")
+        # Espera e interage com o campo senha
+        page.wait_for_selector('//*[@id="text_input_2"]', timeout=10000)
+        page.fill('//*[@id="text_input_2"]', "senha_exemplo")
         print("Escreveu no campo senha.")
     except Exception as e:
         print(f"Erro ao interagir no terceiro app: {e}")
@@ -84,18 +77,26 @@ app1_url = "https://bbi-placares.streamlit.app/"
 app2_url = "https://cadastro-idpb-acamp-2025.streamlit.app/"
 app3_url = "https://cotefacilsaude.streamlit.app/"
 
-options = Options()
-options.headless = True  # roda sem abrir janela
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-
-try:
-    bbi_placares(driver, app1_url)
-    time.sleep(3)
-    acamp2025(driver, app2_url)
-    time.sleep(3)
-    cotefacil(driver, app3_url)
-finally:
-    driver.quit()
+# Executa o Playwright
+with sync_playwright() as p:
+    # Configurações do browser (equivalente às opções do Chrome)
+    browser = p.chromium.launch(
+        headless=True,  # roda sem abrir janela
+        args=[
+            '--no-sandbox',
+            '--disable-dev-shm-usage'
+        ]
+    )
+    
+    # Cria um novo contexto do browser
+    context = browser.new_context()
+    page = context.new_page()
+    
+    try:
+        bbi_placares(page, app1_url)
+        time.sleep(3)
+        acamp2025(page, app2_url)
+        time.sleep(3)
+        cotefacil(page, app3_url)
+    finally:
+        browser.close()
