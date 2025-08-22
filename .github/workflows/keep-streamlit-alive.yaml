@@ -1,44 +1,33 @@
 # .github/workflows/keep-streamlit-alive.yml
 name: Keep Streamlit Apps Alive
 
-# Executa a cada 5 horas
 on:
   schedule:
-    - cron: '0 */2 * * *'  # A cada 2 horas
-  # Permite executar manualmente também
-  workflow_dispatch:
+    - cron: '*/30 * * * *'  # a cada 30 minutos
+  workflow_dispatch:       # permite disparar manualmente
 
 jobs:
-  keep-alive:
+  poke:
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        app:
-          - name: "IDPB Acampamento 2025"
-            url: "https://cadastro-idpb-acamp-2025.streamlit.app/"
-          - name: "Cote Fácil Saúde"
-            url: "https://cotefacilsaude.streamlit.app/"
-          - name: "BBI Placares"
-            url: "https://bbi-placares.streamlit.app/"
-    
+
     steps:
-    - name: Ping ${{ matrix.app.name }}
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    - name: Configurar Python 3.x
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Instalar dependências
       run: |
-        echo "🔄 Fazendo ping em: ${{ matrix.app.name }}"
-        echo "URL: ${{ matrix.app.url }}"
-        
-        response=$(curl -s -o /dev/null -w "%{http_code}" ${{ matrix.app.url }})
-        time=$(curl -s -o /dev/null -w "%{time_total}" ${{ matrix.app.url }})
-        
-        echo "Status: $response | Tempo: ${time}s"
-        
-        if [ $response -eq 200 ]; then
-          echo "✅ ${{ matrix.app.name }} funcionando normalmente"
-        elif [ $response -eq 000 ]; then
-          echo "🔄 ${{ matrix.app.name }} pode estar iniciando (timeout ou sem resposta)"
-        else
-          echo "⚠️ ${{ matrix.app.name }} retornou status: $response"
-        fi
-        
-        echo "---"
+        python -m pip install --upgrade pip
+        pip install selenium webdriver-manager
+
+    - name: Instalar Google Chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+
+    - name: Executar script Python
+      run: python acorda_apps.py
