@@ -131,8 +131,8 @@ def obter_config_template(template_path):
             "pos_away": (-180, h),
             "cor_texto": "white",
             "cor_texto_placar": "white",
-            "pos_nome_home": (312, h+45),  # Posição absoluta
-            "pos_nome_away": (718, h+45),
+            "pos_nome_home": (317, h+45),  # Posição absoluta
+            "pos_nome_away": (758, h+45),
             "pos_placar": 915,
         }
     elif "uel" in nome or "uecl" in nome:
@@ -289,6 +289,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     efl = any(comp in path_lower for comp in ["efl", "champ"])
     for i, linha in enumerate(marcadores_casa.split('\n')):
         if europeu:
+            y_base = 1000
             linha = linha.upper()
             draw.text((140, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
         elif efl:
