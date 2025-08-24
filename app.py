@@ -361,4 +361,6 @@ if st.button("Gerar Placar"):
     img_rgb.save("placar_final.jpg", format="JPEG", quality=100)
 
     with open("placar_final.jpg", "rb") as f:
-        st.download_button("📥 Baixar Imagem", f, file_name="placar.jpg")
+        # Monta o nome do arquivo: "Mandante 1-0 Visitante.jpg"
+        nome_arquivo = f"{mandante} {placar} {visitante}.jpg".replace("/", "-")
+        st.download_button("📥 Baixar Imagem", f, file_name=nome_arquivo)
