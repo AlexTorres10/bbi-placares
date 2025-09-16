@@ -317,7 +317,11 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 
 
 st.title("🔢 Gerador de Placares BBI")
-st.set_page_config(page_title="Gerador de Placares BBI", layout="centered")
+st.set_page_config(
+    page_title="Gerador de Placares BBI",
+    page_icon="bbi.png",  # Emoji como ícone
+    layout="centered"
+)
 templates = [f for f in os.listdir(TEMPLATE_DIR) if f.endswith(".png")]
 templates = [f for f in TEMPLATE_ORDER if f in TEMPLATE_LABELS]
 
