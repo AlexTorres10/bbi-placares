@@ -4,7 +4,6 @@ import os
 import re
 
 TEMPLATE_DIR = "templates"
-ESCUDO_DIR = "escudos"
 
 TEMPLATE_LABELS = {
     "ucl.png": "Champions League",
@@ -14,6 +13,7 @@ TEMPLATE_LABELS = {
     "championship.png": "Championship",
     "eflcup.png": "EFL Cup",
     "facup.png": "FA Cup",
+    "inglaterra.png": "Seleção Inglesa",
 }
 
 TEMPLATE_ORDER = [
@@ -23,28 +23,65 @@ TEMPLATE_ORDER = [
     "premierleague.png",
     "facup.png",
     "eflcup.png",
-    "championship.png"
+    "championship.png",
+    "inglaterra.png"
 ]
 
 INGLES_EUROPEUS = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Aston Villa", "Nottingham Forest", "Tottenham", "Crystal Palace"]
 
 def carregar_escudos(template_path):
-    path_lower = template_path.lower()
-    is_europeia = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
-
-    # Escudos dos clubes ingleses
-    ingleses = [f[:-4] for f in os.listdir("escudos") if f.endswith(".png")]
-
-    if not is_europeia:
-        return sorted(ingleses)
-
-    # Europeus
-    europeus = [f[:-4] for f in os.listdir("escudos-eur") if f.endswith(".png")]
-
-    # Filtrar apenas os ingleses em competição europeia (ordem preservada)
-    ingleses_participantes = [nome for nome in INGLES_EUROPEUS if nome in ingleses]
-
-    return ingleses_participantes + sorted(europeus)
+    template_name = os.path.basename(template_path).lower()
+    
+    # Seleção Inglesa - apenas pasta "selecoes"
+    if "inglaterra" in template_name:
+        if os.path.exists("selecoes"):
+            return sorted([f[:-4] for f in os.listdir("selecoes") if f.endswith(".png")])
+        return []
+    
+    # Competições europeias
+    is_europeia = any(comp in template_name for comp in ["ucl", "uel", "uecl"])
+    if is_europeia:
+        # Ingleses europeus da pasta escudos-pl
+        ingleses_pl = []
+        if os.path.exists("escudos-pl"):
+            todos_pl = [f[:-4] for f in os.listdir("escudos-pl") if f.endswith(".png")]
+            # Filtrar apenas os ingleses participantes (mantendo ordem de INGLES_EUROPEUS)
+            ingleses_pl = [nome for nome in INGLES_EUROPEUS if nome in todos_pl]
+        
+        # Europeus não ingleses
+        europeus = []
+        if os.path.exists("escudos-eur"):
+            europeus = sorted([f[:-4] for f in os.listdir("escudos-eur") if f.endswith(".png")])
+        
+        return ingleses_pl + europeus
+    
+    # Premier League - apenas escudos-pl
+    if "premier" in template_name:
+        if os.path.exists("escudos-pl"):
+            return sorted([f[:-4] for f in os.listdir("escudos-pl") if f.endswith(".png")])
+        return []
+    
+    # Championship - apenas escudos-ch
+    if "championship" in template_name:
+        if os.path.exists("escudos-ch"):
+            return sorted([f[:-4] for f in os.listdir("escudos-ch") if f.endswith(".png")])
+        return []
+    
+    # FA Cup e EFL Cup - escudos-pl + escudos-ch (PL primeiro)
+    if any(comp in template_name for comp in ["facup", "eflcup"]):
+        times_pl = []
+        times_ch = []
+        
+        if os.path.exists("escudos-pl"):
+            times_pl = sorted([f[:-4] for f in os.listdir("escudos-pl") if f.endswith(".png")])
+        
+        if os.path.exists("escudos-ch"):
+            times_ch = sorted([f[:-4] for f in os.listdir("escudos-ch") if f.endswith(".png")])
+        
+        return times_pl + times_ch
+    
+    # Fallback - retorna vazio se não encontrar correspondência
+    return []
 
 def obter_fontes_por_template(template_path):
     nome = os.path.splitext(os.path.basename(template_path))[0].lower()
@@ -59,6 +96,8 @@ def obter_fontes_por_template(template_path):
         return ("fontes/ucl.ttf", "fontes/ucl-bold.ttf")
     elif "uel" in nome:
         return ("fontes/uel.ttf", "fontes/uel-bold.ttf")
+    elif "inglaterra" in nome:
+        return ("fontes/FontePlacar.ttf", "fontes/FontePlacar.ttf")  # fonte para seleção
     else:
         return ("fontes/FontePlacar.ttf", "fontes/FontePlacar.ttf")  # fallback
 
@@ -149,6 +188,20 @@ def obter_config_template(template_path):
             "pos_nome_away": (743, h+12),  # Posição absoluta
             "pos_placar": 915,
         }
+    elif "inglaterra" in nome:
+        h = 915
+        return {
+            "fonte_normal": "fontes/ing.ttf",
+            "fonte_bold": "fontes/ing.ttf",
+            "escudo_tamanho": (60, 60),
+            "pos_home": (120, h),
+            "pos_away": (-180, h),
+            "cor_texto": "#0c113c",
+            "cor_texto_placar": "white",
+            "pos_nome_home": (330, h+17),  # Posição absoluta
+            "pos_nome_away": (760, h+17),
+            "pos_placar": 920,
+        }
     else:
         return {
             "fonte_normal": "fontes/facup.ttf",
@@ -165,12 +218,15 @@ def obter_config_template(template_path):
 
 
 def obter_escudo_path(nome_time):
-    if os.path.exists(os.path.join("escudos", f"{nome_time}.png")):
-        return os.path.join("escudos", f"{nome_time}.png")
-    elif os.path.exists(os.path.join("escudos-eur", f"{nome_time}.png")):
-        return os.path.join("escudos-eur", f"{nome_time}.png")
-    else:
-        return None
+    # Buscar nas diferentes pastas na ordem de prioridade
+    pastas = ["escudos-pl", "escudos-ch", "escudos-eur", "selecoes"]
+    
+    for pasta in pastas:
+        caminho = os.path.join(pasta, f"{nome_time}.png")
+        if os.path.exists(caminho):
+            return caminho
+    
+    return None
     
 
 def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marcadores_casa, marcadores_fora, background=None):
@@ -222,6 +278,9 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 
     base.paste(escudo_home, pos_home, escudo_home)
     base.paste(escudo_away, pos_away, escudo_away)
+    europeu = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
+    efl = any(comp in path_lower for comp in ["efl", "champ"])
+    ing = any(comp in path_lower for comp in ["inglaterra"])
 
     # 🏷️ Nomes dos times
     for nome, pos_key in [(escudo_casa, "pos_nome_home"), (escudo_fora, "pos_nome_away")]:
@@ -240,7 +299,10 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         x_centered = x - w_text // 2
 
         # Desenha
-        draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill='white')
+        if ing:
+            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=cor_texto)
+        else:
+            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill='white')
 
 
     # Placar principal centralizado
@@ -285,8 +347,6 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     y_base = 990
 
     # Casa (alinhamento à esquerda)
-    europeu = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
-    efl = any(comp in path_lower for comp in ["efl", "champ"])
     for i, linha in enumerate(marcadores_casa.split('\n')):
         if europeu:
             y_base = 1000
@@ -295,6 +355,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         elif efl:
             y_base = 980
             draw.text((200, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        elif ing:
+            draw.text((200, y_base + i * espaco_linha), linha.upper(), font=fonte_pequena, fill=cor_texto)
         else:
             draw.text((200, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
 
@@ -308,6 +370,11 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
             w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
             y_base = 980
             draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        elif ing:
+            linha = linha.upper()
+            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
+            draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+
         else:
             w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
             draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
