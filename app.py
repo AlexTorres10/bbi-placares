@@ -27,7 +27,9 @@ TEMPLATE_ORDER = [
     "inglaterra.png"
 ]
 
-INGLES_EUROPEUS = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Aston Villa", "Nottingham Forest", "Tottenham", "Crystal Palace"]
+INGLES_UCL = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Tottenham"]
+INGLES_UEL = ["Aston Villa", "Nottingham Forest"]
+INGLES_UECL = ["Crystal Palace"]
 
 def carregar_escudos(template_path):
     template_name = os.path.basename(template_path).lower()
@@ -38,22 +40,53 @@ def carregar_escudos(template_path):
             return sorted([f[:-4] for f in os.listdir("selecoes") if f.endswith(".png")])
         return []
     
-    # Competições europeias
-    is_europeia = any(comp in template_name for comp in ["ucl", "uel", "uecl"])
-    if is_europeia:
-        # Ingleses europeus da pasta escudos-pl
-        ingleses_pl = []
+    # Champions League
+    if "ucl" in template_name:
+        # Ingleses UCL da pasta escudos-pl
+        ingleses_ucl = []
         if os.path.exists("escudos-pl"):
             todos_pl = [f[:-4] for f in os.listdir("escudos-pl") if f.endswith(".png")]
-            # Filtrar apenas os ingleses participantes (mantendo ordem de INGLES_EUROPEUS)
-            ingleses_pl = [nome for nome in INGLES_EUROPEUS if nome in todos_pl]
+            # Filtrar apenas os ingleses UCL (mantendo ordem de INGLES_UCL)
+            ingleses_ucl = [nome for nome in INGLES_UCL if nome in todos_pl]
         
-        # Europeus não ingleses
-        europeus = []
-        if os.path.exists("escudos-eur"):
-            europeus = sorted([f[:-4] for f in os.listdir("escudos-eur") if f.endswith(".png")])
+        # Europeus UCL
+        europeus_ucl = []
+        if os.path.exists("escudos-ucl"):
+            europeus_ucl = sorted([f[:-4] for f in os.listdir("escudos-ucl") if f.endswith(".png")])
         
-        return ingleses_pl + europeus
+        return ingleses_ucl + europeus_ucl
+    
+    # Europa League
+    if "uel" in template_name:
+        # Ingleses UEL da pasta escudos-pl
+        ingleses_uel = []
+        if os.path.exists("escudos-pl"):
+            todos_pl = [f[:-4] for f in os.listdir("escudos-pl") if f.endswith(".png")]
+            # Filtrar apenas os ingleses UEL (mantendo ordem de INGLES_UEL)
+            ingleses_uel = [nome for nome in INGLES_UEL if nome in todos_pl]
+        
+        # Europeus UEL
+        europeus_uel = []
+        if os.path.exists("escudos-uel"):
+            europeus_uel = sorted([f[:-4] for f in os.listdir("escudos-uel") if f.endswith(".png")])
+        
+        return ingleses_uel + europeus_uel
+    
+    # Conference League
+    if "uecl" in template_name:
+        # Ingleses UECL da pasta escudos-pl
+        ingleses_uecl = []
+        if os.path.exists("escudos-pl"):
+            todos_pl = [f[:-4] for f in os.listdir("escudos-pl") if f.endswith(".png")]
+            # Filtrar apenas os ingleses UECL (mantendo ordem de INGLES_UECL)
+            ingleses_uecl = [nome for nome in INGLES_UECL if nome in todos_pl]
+        
+        # Europeus UECL
+        europeus_uecl = []
+        if os.path.exists("escudos-uecl"):
+            europeus_uecl = sorted([f[:-4] for f in os.listdir("escudos-uecl") if f.endswith(".png")])
+        
+        return ingleses_uecl + europeus_uecl
     
     # Premier League - apenas escudos-pl
     if "premier" in template_name:
@@ -219,7 +252,7 @@ def obter_config_template(template_path):
 
 def obter_escudo_path(nome_time):
     # Buscar nas diferentes pastas na ordem de prioridade
-    pastas = ["escudos-pl", "escudos-ch", "escudos-eur", "selecoes"]
+    pastas = ["escudos-pl", "escudos-ch", "escudos-ucl", "escudos-uel", "escudos-uecl", "selecoes"]
     
     for pasta in pastas:
         caminho = os.path.join(pasta, f"{nome_time}.png")
@@ -289,6 +322,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
             continue
         
         x, y = pos
+        if europeu and nome == "Nottingham Forest":
+            nome = "Nott'm Forest"
         nome_maiusculo = nome.upper()
 
         # Decide a fonte
