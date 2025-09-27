@@ -6,21 +6,21 @@ import re
 TEMPLATE_DIR = "templates"
 
 TEMPLATE_LABELS = {
+    "premierleague.png": "Premier League",
     "ucl.png": "Champions League",
     "uel.png": "Europa League",
     "uecl.png": "Conference League",
-    "premierleague.png": "Premier League",
-    "championship.png": "Championship",
-    "eflcup.png": "EFL Cup",
     "facup.png": "FA Cup",
+    "eflcup.png": "EFL Cup",
+    "championship.png": "Championship",
     "inglaterra.png": "Seleção Inglesa",
 }
 
 TEMPLATE_ORDER = [
+    "premierleague.png",
     "ucl.png",
     "uel.png",
     "uecl.png",
-    "premierleague.png",
     "facup.png",
     "eflcup.png",
     "championship.png",
@@ -116,6 +116,7 @@ def carregar_escudos(template_path):
     # Fallback - retorna vazio se não encontrar correspondência
     return []
 
+
 def obter_fontes_por_template(template_path):
     nome = os.path.splitext(os.path.basename(template_path))[0].lower()
 
@@ -161,8 +162,8 @@ def obter_config_template(template_path):
             "pos_away": (-181, h), # valor negativo será tratado como relativo ao width,
             "cor_texto": "#3b0643",
             "cor_texto_placar": "#3b0643",
-            "pos_nome_home": (334, h+20),  # Posição absoluta
-            "pos_nome_away": (742, h+20),
+            "pos_nome_home": (334, h+18),  # Posição absoluta
+            "pos_nome_away": (742, h+18),
             "pos_placar": 922,
         }
     elif "championship" in nome or "efl" in nome:
@@ -217,8 +218,8 @@ def obter_config_template(template_path):
             "pos_away": (-180, h),
             "cor_texto": "white",
             "cor_texto_placar": "black",
-            "pos_nome_home": (335, h+12),  # Posição absoluta
-            "pos_nome_away": (743, h+12),  # Posição absoluta
+            "pos_nome_home": (335, h+15),  # Posição absoluta
+            "pos_nome_away": (743, h+15),  # Posição absoluta
             "pos_placar": 915,
         }
     elif "inglaterra" in nome:
