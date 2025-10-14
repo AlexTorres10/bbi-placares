@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 import os
 import re
+import pillow_avif
 
 TEMPLATE_DIR = "templates"
 
@@ -269,19 +270,26 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     # Inserir imagem de fundo proporcional e centralizado
     if background:
         bg_raw = Image.open(background).convert("RGBA")
-        ratio = base.height / bg_raw.height
-        new_width = int(bg_raw.width * ratio)
-        bg_resized = bg_raw.resize((new_width, base.height), Image.LANCZOS)
+        # Calcula o fator de escala para garantir que bg seja >= base em ambas dimensões
+        scale_w = base.width / bg_raw.width
+        scale_h = base.height / bg_raw.height
+        scale = max(scale_w, scale_h)
+        new_width = int(bg_raw.width * scale)
+        new_height = int(bg_raw.height * scale)
+        bg_resized = bg_raw.resize((new_width, new_height), Image.LANCZOS)
 
-        if new_width > base.width:
-            left = (new_width - base.width) // 2
-            bg_cropped = bg_resized.crop((left, 0, left + base.width, base.height))
-        else:
-            bg_cropped = Image.new("RGBA", base.size, (0, 0, 0, 0))
-            paste_x = (base.width - new_width) // 2
-            bg_cropped.paste(bg_resized, (paste_x, 0))
+        # Recorta centralizado para o tamanho exato do base
+        left = (new_width - base.width) // 2
+        top = (new_height - base.height) // 2
+        bg_cropped = bg_resized.crop((left, top, left + base.width, top + base.height))
 
-        base = Image.alpha_composite(bg_cropped, base)
+        # Centraliza o base sobre o fundo
+        final_img = Image.new("RGBA", bg_cropped.size, (0, 0, 0, 0))
+        base_x = (bg_cropped.width - base.width) // 2
+        base_y = (bg_cropped.height - base.height) // 2
+        final_img.paste(bg_cropped, (0, 0))
+        final_img.paste(base, (base_x, base_y), base)
+        base = final_img
 
     # Configurações do template
     config = obter_config_template(template_path)
@@ -441,7 +449,7 @@ visitante = st.selectbox("Time Visitante", times)
 placar = st.text_input("Placar (ex: 1-0 ou 2-1 (3-2 agr.))")
 marcadores_mandante = st.text_area("Marcadores do Mandante", placeholder="Jogador A 45'\nJogador B 67'")
 marcadores_visitante = st.text_area("Marcadores do Visitante", placeholder="Jogador X 88'")
-background = st.file_uploader("Upload da imagem de fundo (opcional)", type=["png", "jpg", "jpeg", "webp"])
+background = st.file_uploader("Upload da imagem de fundo (opcional)", type=["png", "jpg", "jpeg", "webp", "avif"])
 
 if st.button("Gerar Placar"):
     template_path = os.path.join(TEMPLATE_DIR, template_escolhido)
