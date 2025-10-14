@@ -37,22 +37,6 @@ def bbi_placares(page, url):
         except Exception as e:
             print(f"Erro ao interagir com combobox {xpath}: {e}")
 
-def acamp2025(page, url):
-    print(f"Acessando segundo app: {url}")
-    page.goto(url)
-    
-    try:
-        # Espera e interage com o campo nome
-        page.wait_for_selector('//*[@id="text_input_1"]', timeout=10000)
-        page.fill('//*[@id="text_input_1"]', "Nome Exemplo")
-        print("Escreveu no campo nome.")
-
-        # Espera e interage com o campo telefone
-        page.wait_for_selector('//*[@id="text_input_3"]', timeout=10000)
-        page.fill('//*[@id="text_input_3"]', "11999999999")
-        print("Escreveu no campo telefone.")
-    except Exception as e:
-        print(f"Erro ao interagir no segundo app: {e}")
 
 def cotefacil(page, url):
     print(f"Acessando terceiro app: {url}")
@@ -94,8 +78,6 @@ with sync_playwright() as p:
     
     try:
         bbi_placares(page, app1_url)
-        time.sleep(3)
-        acamp2025(page, app2_url)
         time.sleep(3)
         cotefacil(page, app3_url)
     finally:
