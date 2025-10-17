@@ -105,14 +105,16 @@ def carregar_escudos(template_path):
     if any(comp in template_name for comp in ["facup", "eflcup"]):
         times_pl = []
         times_ch = []
-        
-        if os.path.exists("escudos-pl"):
-            times_pl = sorted([f[:-4] for f in os.listdir("escudos-pl") if f.endswith(".png")])
-        
-        if os.path.exists("escudos-ch"):
-            times_ch = sorted([f[:-4] for f in os.listdir("escudos-ch") if f.endswith(".png")])
-        
-        return times_pl + times_ch
+
+        leagues = ['escudos-pl', 'escudos-ch', 'escudos-l1', 'escudos-l2']
+
+        times_total = []
+        for div in leagues:
+            if os.path.exists(div):
+                times = sorted([f[:-4] for f in os.listdir(div) if f.endswith(".png")])
+                times_total.extend(times)
+
+        return times_total
     
     # Fallback - retorna vazio se não encontrar correspondência
     return []
@@ -132,7 +134,7 @@ def obter_fontes_por_template(template_path):
     elif "uel" in nome:
         return ("fontes/uel.ttf", "fontes/uel-bold.ttf")
     elif "inglaterra" in nome:
-        return ("fontes/FontePlacar.ttf", "fontes/FontePlacar.ttf")  # fonte para seleção
+        return ("fontes/ing.ttf", "fontes/ing.ttf")  # fonte para seleção
     else:
         return ("fontes/FontePlacar.ttf", "fontes/FontePlacar.ttf")  # fallback
 
@@ -254,7 +256,8 @@ def obter_config_template(template_path):
 
 def obter_escudo_path(nome_time):
     # Buscar nas diferentes pastas na ordem de prioridade
-    pastas = ["escudos-pl", "escudos-ch", "escudos-ucl", "escudos-uel", "escudos-uecl", "selecoes"]
+    pastas = ["escudos-pl", "escudos-ch", "escudos-ucl", "escudos-uel", "escudos-uecl", 
+              "selecoes", "escudos-l1", "escudos-l2"]
     
     for pasta in pastas:
         caminho = os.path.join(pasta, f"{nome_time}.png")
