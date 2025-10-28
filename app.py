@@ -349,7 +349,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         if ing:
             draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=cor_texto)
         else:
-            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill='white')
+            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=cor_texto_placar)
 
 
     # Placar principal centralizado
