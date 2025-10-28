@@ -349,7 +349,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         if ing:
             draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=cor_texto)
         else:
-            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=cor_texto_placar)
+            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill='white')
 
 
     # Placar principal centralizado
@@ -387,7 +387,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         y_agregado = 975 if usa_fonte_pequena else 985
 
         w_agr = fonte_agregado.getbbox(agregado_texto)[2] - fonte_agregado.getbbox(agregado_texto)[0]
-        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_agregado, fill="white")
+        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_agregado, fill=cor_texto)
 
     # 🟩 Marcadores
     espaco_linha = 34  # Aumente/diminua conforme necessário
