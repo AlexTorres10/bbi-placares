@@ -381,13 +381,12 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         agregado_texto = label + valor
         
         path_lower = template_path.lower()
-        usa_fonte_pequena = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
+        mais_pra_cima = any(comp in path_lower for comp in ["uel", "uecl", "efl", "championship"])
 
-        fonte_agregado = fonte_pequena if usa_fonte_pequena else fonte_normal
-        y_agregado = 975 if usa_fonte_pequena else 985
+        y_agregado = 975 if mais_pra_cima else 985
 
-        w_agr = fonte_agregado.getbbox(agregado_texto)[2] - fonte_agregado.getbbox(agregado_texto)[0]
-        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_agregado, fill=cor_texto)
+        w_agr = fonte_pequena.getbbox(agregado_texto)[2] - fonte_pequena.getbbox(agregado_texto)[0]
+        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_pequena, fill=cor_texto)
 
     # 🟩 Marcadores
     espaco_linha = 34  # Aumente/diminua conforme necessário
