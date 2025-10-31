@@ -184,17 +184,18 @@ def obter_config_template(template_path):
             "pos_placar": 923,
         }
     elif "facup" in nome:
-        h = 912
+        h = 914
         return {
             "fonte_normal": "fontes/facup.otf",
             "fonte_bold": "fontes/facup-bold.otf",
             "escudo_tamanho": (60, 60),
             "pos_home": (121, h),
             "pos_away": (-181, h),
-            "cor_texto": "#870118",
+            "cor_texto_times": "#383b38",
+            "cor_texto": "white",
             "cor_texto_placar": "white",
-            "pos_nome_home": (336, h+20),  # Posição absoluta
-            "pos_nome_away": (742, h+20),
+            "pos_nome_home": (336, h+18),  # Posição absoluta
+            "pos_nome_away": (742, h+18),
             "pos_placar": 920,
         }
     elif "ucl" in nome:
@@ -348,6 +349,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         # Desenha
         if ing:
             draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=cor_texto)
+        elif "facup" in path_lower:
+            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=config["cor_texto_times"])
         else:
             draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill='white')
 
@@ -374,6 +377,9 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         elif "pên" in conteudo:
             label = "Pênaltis: "
             valor = conteudo.replace("pên.", "").replace("pên", "").strip()
+        elif "pen" in conteudo:
+            label = "Pênaltis: "
+            valor = conteudo.replace("pen.", "").replace("pen", "").strip()
         else:
             label = ""
             valor = conteudo  # fallback
