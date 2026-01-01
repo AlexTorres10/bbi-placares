@@ -268,13 +268,11 @@ def obter_escudo_path(nome_time):
     return None
     
 
-def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marcadores_casa, marcadores_fora, background=None):
+def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marcadores_casa, marcadores_fora, background=None, alinhamento="Centro"):
     base = Image.open(template_path).convert("RGBA")
 
-    # Inserir imagem de fundo proporcional e centralizado
     if background:
         bg_raw = Image.open(background).convert("RGBA")
-        # Calcula o fator de escala para garantir que bg seja >= base em ambas dimensões
         scale_w = base.width / bg_raw.width
         scale_h = base.height / bg_raw.height
         scale = max(scale_w, scale_h)
@@ -282,12 +280,17 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         new_height = int(bg_raw.height * scale)
         bg_resized = bg_raw.resize((new_width, new_height), Image.LANCZOS)
 
-        # Recorta centralizado para o tamanho exato do base
-        left = (new_width - base.width) // 2
+        # Ajusta o recorte baseado no alinhamento
+        if alinhamento == "Esquerda":
+            left = 0
+        elif alinhamento == "Direita":
+            left = new_width - base.width
+        else:  # Centro
+            left = (new_width - base.width) // 2
+        
         top = (new_height - base.height) // 2
         bg_cropped = bg_resized.crop((left, top, left + base.width, top + base.height))
 
-        # Centraliza o base sobre o fundo
         final_img = Image.new("RGBA", bg_cropped.size, (0, 0, 0, 0))
         base_x = (bg_cropped.width - base.width) // 2
         base_y = (bg_cropped.height - base.height) // 2
@@ -458,6 +461,11 @@ placar = st.text_input("Placar (ex: 1-0 ou 2-1 (3-2 agr.))")
 marcadores_mandante = st.text_area("Marcadores do Mandante", placeholder="Jogador A 45'\nJogador B 67'")
 marcadores_visitante = st.text_area("Marcadores do Visitante", placeholder="Jogador X 88'")
 background = st.file_uploader("Upload da imagem de fundo (opcional)", type=["png", "jpg", "jpeg", "webp", "avif"])
+alinhamento = st.radio(
+        "Alinhamento da imagem de fundo:",
+        ["Centro", "Esquerda", "Direita"],
+        horizontal=True
+    )
 
 if st.button("Gerar Placar"):
     template_path = os.path.join(TEMPLATE_DIR, template_escolhido)
@@ -470,11 +478,14 @@ if st.button("Gerar Placar"):
         bg_path = "temp_bg.png"
         img.save(bg_path, format="PNG")
     
+    
+
     # Gera o placar final (em RGBA)
     img = desenhar_placar(
         template_path, mandante, visitante, placar,
         marcadores_mandante, marcadores_visitante,
-        background=bg_path
+        background=bg_path,
+        alinhamento=alinhamento if alinhamento else "Centro"
     )
 
     st.image(img)
