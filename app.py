@@ -1209,7 +1209,7 @@ elif modo == "📰 Gerar Notícia":
     # Input da manchete
     manchete = st.text_area(
         "Digite a manchete",
-        placeholder="Ex: ANGE POSTECOGLOU DEMITIDO",
+        placeholder="Ex: JOGADOR X CONTRATADO",
         height=100,
         help="O texto será automaticamente dividido em linhas balanceadas se for muito longo"
     )
