@@ -15,6 +15,13 @@ from utils.image_generator import ImageGenerator
 from utils.github_handler import GitHubHandler
 from utils.news_generator import NewsGenerator
 
+st.set_page_config(
+    page_title="Gerador de Conteúdo BBI",
+    page_icon="bbi.png",  # ← Seu favicon
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
 # ============================================================================
 # CONFIGURAÇÕES GLOBAIS
 # ============================================================================
