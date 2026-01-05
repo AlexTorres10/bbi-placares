@@ -512,11 +512,28 @@ def render_table_mode():
         )
         
         if tipo_rodada == "Rodada":
+            try:
+                # Carregar tabela para pegar número de jogos
+                tabela_content, _, _ = carregar_tabela_github(liga_key)
+                
+                if tabela_content:
+                    processor = TableProcessor()
+                    processor.load_from_text(tabela_content)
+                    
+                    # Pegar time com mais jogos
+                    max_jogos = max(team.games for team in processor.teams)
+                    rodada_sugerida = max_jogos + 1
+                else:
+                    rodada_sugerida = 1
+            except:
+                rodada_sugerida = 1
+            
             numero_rodada = st.number_input(
                 "Nº Rodada",
                 min_value=1,
                 max_value=50,
-                value=1
+                value=rodada_sugerida,  # ← Valor calculado automaticamente
+                help=f"Rodada sugerida baseada na tabela atual: {rodada_sugerida}"
             )
         else:
             numero_rodada = None
@@ -685,7 +702,7 @@ def render_table_mode():
                         st.download_button(
                             "📥 Baixar Imagem da Rodada", 
                             f, 
-                            file_name=f"M{rodada_num}-R.png",
+                            file_name=f"M{st.session_state.get('numero_rodada', 'atrasados')}-R.png",
                             use_container_width=True
                         )
             
@@ -701,7 +718,7 @@ def render_table_mode():
                         st.download_button(
                             "📥 Baixar Tabela", 
                             f, 
-                            file_name=f"M{rodada_num}-T.png",
+                            file_name=f"M{st.session_state.get('numero_rodada', 'atrasados')}-T.png",
                             use_container_width=True
                         )
             
