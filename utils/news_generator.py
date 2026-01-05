@@ -155,7 +155,7 @@ class NewsGenerator:
             font_size = 80
             bg_color = (0, 0, 0)  # Preto
             text_color = (255, 255, 255)  # Branco
-            text_area_y = 1150  # MAIS PRA BAIXO
+            text_area_y = 1050  # MAIS PRA BAIXO
             max_width = 900
             
             # ADICIONAR LOGO NO CANTO SUPERIOR DIREITO
