@@ -1,0 +1,24 @@
+Bromley 24 14 6 4 42 27 15 48 
+Swindon Town 24 14 4 6 39 26 13 46 
+Walsall 24 13 4 7 32 23 9 43 
+Salford City 24 13 4 7 35 31 4 43 
+Cambridge United 24 11 8 5 28 19 9 41 
+Milton Keynes Dons 24 11 7 6 44 26 18 40 
+Notts County 24 11 6 7 36 26 10 39 
+Chesterfield 24 10 9 5 40 33 7 39 
+Colchester United 24 9 9 6 38 28 10 36 
+Crewe Alexandra 24 10 5 9 38 32 6 35 
+Barnet 24 9 8 7 32 26 6 35 
+Grimsby Town 24 9 7 8 35 30 5 34 
+Fleetwood Town 24 9 7 8 32 30 2 34 
+Accrington 24 9 6 9 27 26 1 33 
+Oldham Athletic 24 7 11 6 24 19 5 32 
+Gillingham 24 7 11 6 31 28 3 32 
+Tranmere Rovers 24 8 8 8 39 37 2 32 
+Cheltenham Town 24 8 3 13 22 41 -19 27 
+Barrow 24 6 6 12 26 35 -9 24 
+Bristol Rovers 24 6 3 15 21 44 -23 21 
+Crawley Town 24 4 7 13 28 42 -14 19 
+Shrewsbury Town 24 4 7 13 21 41 -20 19 
+Newport County 24 4 5 15 24 43 -19 17 
+Harrogate Town 24 4 5 15 18 39 -21 17 

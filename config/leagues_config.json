@@ -1,0 +1,290 @@
+{
+  "premierleague": {
+    "name": "Premier League",
+    "prefix": "premierleague",
+    "max_results_display": 10,
+    "max_teams": 20,
+    "badges_folder": "escudos-pl",
+    
+    "results_template": {
+      "template_file": "premierleague-template.png",
+      "rect_file": "premierleague-rect.png",
+      "round_text_position": {"x": 490, "y": 150},
+      "rect_start_position": {"x": 70, "y": 200},
+      "rect_gap": 88,
+      "badge_home_offset": {"x": 3, "y": 3},
+      "badge_away_offset": {"x": 862, "y": 3},
+      "badge_size": {"width": 60, "height": 60},
+      "team_name_home_offset": {"x": 270, "y": 18},
+      "team_name_away_offset": {"x": 696, "y": 18},
+      "score_offset": {"x": 490, "y": 12},
+      "font_team_size": 36,
+      "font_score_size": 48,
+      "font_round_size": 48,
+      "color_text": "#FFFFFF",
+      "color_score": "#FFFFFF"
+    },
+    
+    "table_template": {
+      "template_file": "premierleague-template.png",
+      "table_start": {"x": 100, "y": 155},
+      "position_offset": {"x": -25, "y": 10},
+      "row_height": 54,
+      "rect_width": 1080,
+      "badge_offset": {"x": 2, "y": 2},
+      "badge_size": {"width": 40, "height": 40},
+      "team_name_offset": {"x": 55, "y": 10},
+      "stats_columns": {
+        "J": 593,
+        "V": 649,
+        "E": 706,
+        "D": 763,
+        "SG": 820,
+        "PTS": 878
+      },
+      "font_size": 32,
+      "font_bold_size": 32,
+      "font_note_size": 18,
+      "color_text": "#FFFFFF"
+    },
+    
+    "promotion_zones": {
+      "neutral": {
+        "positions": [],
+        "rect": "premierleague-rect.png"
+      },
+      "champion": {"positions": [1], "rect": "premierleague-rect-c.png", "rect_confirmed": "premierleague-rect-c-conf.png"},
+      "ucl": {"positions": [1, 2, 3, 4, 5], "rect": "premierleague-rect-ucl.png", "rect_confirmed": "premierleague-rect-ucl-conf.png"},
+      "uel": {"positions": [6, 7], "rect": "premierleague-rect-uel.png", "rect_confirmed": "premierleague-rect-uel-conf.png"},
+      "uecl": {"positions": [8], "rect": "premierleague-rect-uecl.png", "rect_confirmed": "premierleague-rect-uecl-conf.png"},
+      "relegation": {"positions": [18, 19, 20], "rect": "premierleague-rect-r.png", "rect_confirmed": "premierleague-rect-r-conf.png"}
+    },
+    
+    "table_modes": [
+      {"name": "G6 Europeu (5 UCL + 1 UEL)", "ucl": 5, "uel": 1, "uecl": 0},
+      {"name": "G7 Europeu (5 UCL + 2 UEL)", "ucl": 5, "uel": 2, "uecl": 0},
+      {"name": "G7 Europeu (5 UCL + 1 UEL + 1 UECL)", "ucl": 5, "uel": 1, "uecl": 1},
+      {"name": "G8 Europeu (5 UCL + 2 UEL + 1 UECL)", "ucl": 5, "uel": 2, "uecl": 1}
+    ]
+  },
+  
+  "championship": {
+    "name": "Championship",
+    "prefix": "championship",
+    "max_results_display": 12,
+    "max_teams": 24,
+    "badges_folder": "escudos-ch",
+    
+    "results_template": {
+      "template_file": "championship-template.png",
+      "rect_file": "championship-rect.png",
+      "round_text_position": {"x": 538, "y": 140},
+      "rect_start_position": {"x": 104, "y": 205},
+      "rect_gap": 80,
+      "badge_home_offset": {"x": 10, "y": 7},
+      "badge_away_offset": {"x": 816, "y": 7},
+      "badge_size": {"width": 50, "height": 50},
+      "team_name_home_offset": {"x": 222, "y": 9},
+      "team_name_away_offset": {"x": 638, "y": 9},
+      "score_offset": {"x": 430, "y": 18},
+      "font_team_size": 28,
+      "font_score_size": 36,
+      "font_round_size": 32,
+      "color_text": "#FFFFFF",
+      "color_score": "#FFFFFF"
+    },
+    
+    "table_template": {
+      "table_start": {"x": 225, "y": 176},
+      "row_height": 42,
+      "position_offset": {"x": -20, "y": 9},
+      "badge_offset": {"x": 3, "y": 3},
+      "badge_size": {"width": 32, "height": 32},
+      "team_name_offset": {"x": 45, "y": -2},
+      "stats_columns": {
+        "J": 642, "V": 690, "E": 739, "D": 788,
+        "SG": 834, "PTS": 882
+      },
+      "font_size": 24,
+      "font_bold_size": 24,
+      "font_note_size": 18,
+      "color_text": "#FFFFFF"
+    },
+    
+    "promotion_zones": {
+      "neutral": {
+        "positions": [],
+        "rect": "championship-rect.png"
+      },
+      "champion": {"positions": [1], "rect": "championship-rect-c.png", "rect_confirmed": "championship-rect-c-conf.png"},
+      "promoted": {"positions": [1, 2], "rect": "championship-rect-p.png", "rect_confirmed": "championship-rect-p-conf.png"},
+      "playoffs": {"positions": [3, 4, 5, 6], "rect": "championship-rect-po.png", "rect_confirmed": "championship-rect-po-conf.png"},
+      "relegation": {"positions": [22, 23, 24], "rect": "championship-rect-r.png", "rect_confirmed": "championship-rect-r-conf.png"}
+    }
+  },
+  
+  "leagueone": {
+    "name": "League One",
+    "prefix": "leagueone",
+    "max_results_display": 12,
+    "max_teams": 24,
+    "badges_folder": "escudos-l1",
+    
+    "results_template": {
+      "template_file": "leagueone-template.png",
+      "rect_file": "leagueone-rect.png",
+      "round_text_position": {"x": 538, "y": 140},
+      "rect_start_position": {"x": 104, "y": 205},
+      "rect_gap": 80,
+      "badge_home_offset": {"x": 10, "y": 7},
+      "badge_away_offset": {"x": 816, "y": 7},
+      "badge_size": {"width": 50, "height": 50},
+      "team_name_home_offset": {"x": 222, "y": 9},
+      "team_name_away_offset": {"x": 638, "y": 9},
+      "score_offset": {"x": 430, "y": 18},
+      "font_team_size": 28,
+      "font_score_size": 36,
+      "font_round_size": 32,
+      "color_text": "#FFFFFF",
+      "color_score": "#FFFFFF"
+    },
+    
+    "table_template": {
+      "table_start": {"x": 225, "y": 176},
+      "row_height": 42,
+      "position_offset": {"x": -20, "y": 9},
+      "badge_offset": {"x": 3, "y": 3},
+      "badge_size": {"width": 32, "height": 32},
+      "team_name_offset": {"x": 45, "y": -2},
+      "stats_columns": {
+        "J": 642, "V": 690, "E": 739, "D": 788,
+        "SG": 834, "PTS": 882
+      },
+      "font_size": 24,
+      "font_bold_size": 24,
+      "font_note_size": 18,
+      "color_text": "#FFFFFF"
+    },
+    
+    "promotion_zones": {
+      "neutral": {
+        "positions": [],
+        "rect": "leagueone-rect.png"
+      },
+      "champion": {"positions": [1], "rect": "leagueone-rect-c.png", "rect_confirmed": "leagueone-rect-c-conf.png"},
+      "promoted": {"positions": [1, 2], "rect": "leagueone-rect-p.png", "rect_confirmed": "leagueone-rect-p-conf.png"},
+      "playoffs": {"positions": [3, 4, 5, 6], "rect": "leagueone-rect-po.png", "rect_confirmed": "leagueone-rect-po-conf.png"},
+      "relegation": {"positions": [21, 22, 23, 24], "rect": "leagueone-rect-r.png", "rect_confirmed": "leagueone-rect-r-conf.png"}
+    }
+  },
+  
+  "leaguetwo": {
+    "name": "League Two",
+    "prefix": "leaguetwo",
+    "max_results_display": 12,
+    "max_teams": 24,
+    "badges_folder": "escudos-l2",
+    
+    "results_template": {
+      "template_file": "leaguetwo-template.png",
+      "rect_file": "leaguetwo-rect.png",
+      "round_text_position": {"x": 538, "y": 140},
+      "rect_start_position": {"x": 104, "y": 205},
+      "rect_gap": 80,
+      "badge_home_offset": {"x": 10, "y": 7},
+      "badge_away_offset": {"x": 816, "y": 7},
+      "badge_size": {"width": 50, "height": 50},
+      "team_name_home_offset": {"x": 222, "y": 9},
+      "team_name_away_offset": {"x": 638, "y": 9},
+      "score_offset": {"x": 430, "y": 18},
+      "font_team_size": 28,
+      "font_score_size": 36,
+      "font_round_size": 32,
+      "color_text": "#FFFFFF",
+      "color_score": "#FFFFFF"
+    },
+    
+    "table_template": {
+      "table_start": {"x": 225, "y": 176},
+      "row_height": 42,
+      "position_offset": {"x": -20, "y": 9},
+      "badge_offset": {"x": 3, "y": 3},
+      "badge_size": {"width": 32, "height": 32},
+      "team_name_offset": {"x": 45, "y": -2},
+      "stats_columns": {
+        "J": 642, "V": 690, "E": 739, "D": 788,
+        "SG": 834, "PTS": 882
+      },
+      "font_size": 24,
+      "font_bold_size": 24,
+      "font_note_size": 18,
+      "color_text": "#FFFFFF"
+    },
+    
+    "promotion_zones": {
+      "neutral": {
+        "positions": [],
+        "rect": "leaguetwo-rect.png"
+      },
+      "champion": {"positions": [1], "rect": "leaguetwo-rect-c.png", "rect_confirmed": "leaguetwo-rect-c-conf.png"},
+      "promoted": {"positions": [1, 2, 3], "rect": "leaguetwo-rect-p.png", "rect_confirmed": "leaguetwo-rect-p-conf.png"},
+      "playoffs": {"positions": [4, 5, 6, 7], "rect": "leaguetwo-rect-po.png", "rect_confirmed": "leaguetwo-rect-po-conf.png"},
+      "relegation": {"positions": [23, 24], "rect": "leaguetwo-rect-r.png", "rect_confirmed": "leaguetwo-rect-r-conf.png"}
+    }
+  },
+  
+  "nationalleague": {
+    "name": "National League",
+    "prefix": "nationalleague",
+    "max_results_display": 12,
+    "max_teams": 24,
+    "badges_folder": "escudos-nl",
+    
+    "results_template": {
+      "template_file": "nationalleague-template.png",
+      "rect_file": "nationalleague-rect.png",
+      "round_text_position": {"x": 538, "y": 60},
+      "rect_start_position": {"x": 0, "y": 150},
+      "rect_gap": 60,
+      "position_offset": {"x": 30, "y": 18},
+      "badge_home_offset": {"x": 85, "y": 10},
+      "badge_away_offset": {"x": 955, "y": 10},
+      "badge_size": {"width": 45, "height": 45},
+      "team_name_home_offset": {"x": 150, "y": 20},
+      "team_name_away_offset": {"x": 925, "y": 20},
+      "score_offset": {"x": 538, "y": 18},
+      "font_team_size": 18,
+      "font_score_size": 26,
+      "font_round_size": 22,
+      "color_text": "#FFFFFF",
+      "color_score": "#FFFFFF"
+    },
+    
+    "table_template": {
+      "table_start": {"x": 50, "y": 150},
+      "row_height": 38,
+      "badge_offset": {"x": 60, "y": 4},
+      "badge_size": {"width": 30, "height": 30},
+      "team_name_offset": {"x": 105, "y": 9},
+      "stats_columns": {
+        "J": 520, "V": 590, "E": 660, "D": 730,
+        "SG": 800, "PTS": 870
+      },
+      "font_size": 16,
+      "font_bold_size": 18,
+      "font_note_size": 20,
+      "color_text": "#FFFFFF"
+    },
+    
+    "promotion_zones": {
+      "neutral": {
+        "positions": [],
+        "rect": "nationalleague-rect.png"
+      },
+      "champion": {"positions": [1], "rect": "nationalleague-rect-c.png", "rect_confirmed": "nationalleague-rect-c-conf.png"},
+      "playoffs_semi": {"positions": [2, 3], "rect": "nationalleague-rect-p.png", "rect_confirmed": "nationalleague-rect-p-conf.png"},
+      "playoffs_quarter": {"positions": [4, 5, 6, 7], "rect": "nationalleague-rect-po.png", "rect_confirmed": "nationalleague-rect-po-conf.png"},
+      "relegation": {"positions": [21, 22, 23, 24], "rect": "nationalleague-rect-r.png", "rect_confirmed": "nationalleague-rect-r-conf.png"}
+    }
+  }
+}
