@@ -18,3 +18,5 @@ venv/
 .DS_Store
 Thumbs.db
 .streamlit/secrets.toml
+noticia.png
+temp_bg_noticia.png

@@ -13,6 +13,7 @@ from utils.results_parser import ResultsParser
 from utils.table_processor import TableProcessor
 from utils.image_generator import ImageGenerator
 from utils.github_handler import GitHubHandler
+from utils.news_generator import NewsGenerator
 
 # ============================================================================
 # CONFIGURAÇÕES GLOBAIS
@@ -1123,7 +1124,7 @@ st.title("⚽ Gerador de Conteúdo BBI")
 # Seleção do modo
 modo = st.radio(
     "Escolha o modo:",
-    ["🔢 Gerar Placar", "📊 Gerar Tabela com Resultados"],
+    ["📰 Gerar Notícia", "🔢 Gerar Placar", "📊 Gerar Tabela com Resultados"],
     horizontal=True
 )
 
@@ -1188,6 +1189,88 @@ if modo == "🔢 Gerar Placar":
         with open("placar_final.jpg", "rb") as f:
             nome_arquivo = f"{mandante} {placar} {visitante}.jpg".replace("/", "-")
             st.download_button("📥 Baixar Imagem", f, file_name=nome_arquivo)
+elif modo == "📰 Gerar Notícia":
+    # MODO NOTÍCIA
+    st.header("📰 Gerador de Notícias")
+    
+    # Seleção da liga
+    liga_noticia = st.selectbox(
+        "Escolha a Liga",
+        ["Premier League", "Championship"]
+    )
+    
+    # Mapear para chave
+    liga_key_map = {
+        "Premier League": "premierleague",
+        "Championship": "championship"
+    }
+    liga_key = liga_key_map[liga_noticia]
+    
+    # Input da manchete
+    manchete = st.text_area(
+        "Digite a manchete",
+        placeholder="Ex: ANGE POSTECOGLOU DEMITIDO",
+        height=100,
+        help="O texto será automaticamente dividido em linhas balanceadas se for muito longo"
+    )
+    
+    # Upload de imagem de fundo (NOVO)
+    background = st.file_uploader(
+        "Upload da imagem de fundo (opcional)", 
+        type=["png", "jpg", "jpeg", "webp", "avif"]
+    )
+    
+    # Alinhamento do background (NOVO)
+    alinhamento = st.radio(
+        "Alinhamento da imagem de fundo:", 
+        ["Centro", "Esquerda", "Direita"], 
+        horizontal=True
+    )
+    
+    if st.button("🖼️ Gerar Notícia", type="primary"):
+        if not manchete.strip():
+            st.error("❌ Digite uma manchete!")
+        else:
+            try:
+                # Salvar background temporário se foi enviado
+                bg_path = None
+                if background:
+                    img = Image.open(background).convert("RGBA")
+                    bg_path = "temp_bg_noticia.png"
+                    img.save(bg_path, format="PNG")
+                
+                generator = NewsGenerator()
+                
+                img = generator.generate_news_image(
+                    league=liga_key,
+                    headline=manchete,
+                    background=bg_path,
+                    alinhamento=alinhamento
+                )
+                
+                st.image(img, caption="Notícia Gerada")
+                
+                # Salvar como PNG
+                img.save("noticia.png", format="PNG")
+                
+                with open("noticia.png", "rb") as f:
+                    # Nome do arquivo baseado na manchete (primeiras palavras)
+                    palavras = manchete.split()[:3]
+                    nome_arquivo = "-".join(palavras).replace(" ", "-") + ".png"
+                    
+                    st.download_button(
+                        "📥 Baixar Notícia",
+                        f,
+                        file_name=nome_arquivo,
+                        use_container_width=True
+                    )
+                
+                # Limpar arquivo temporário
+                if bg_path and os.path.exists(bg_path):
+                    os.remove(bg_path)
+            
+            except Exception as e:
+                st.error(f"❌ Erro ao gerar notícia: {str(e)}")
 
 else:
     # MODO TABELA COM RESULTADOS
