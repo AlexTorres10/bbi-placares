@@ -46,9 +46,33 @@ INGLES_UCL = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle U
 INGLES_UEL = ["Aston Villa", "Nottingham Forest"]
 INGLES_UECL = ["Crystal Palace"]
 
-# ============================================================================
-# FUNÇÕES DO MODO PLACAR (código original mantido)
-# ============================================================================
+@st.cache_data(ttl=300)  # Cache por 5 minutos
+def carregar_tabela_github(liga: str):
+    """
+    Carrega tabela do GitHub com cache e fallback local
+    
+    Returns:
+        (content: str, sha: str, source: str)
+    """
+    # Tentar carregar do GitHub primeiro
+    try:
+        if 'GITHUB_TOKEN' in st.secrets and 'GITHUB_REPO' in st.secrets:
+            github = GitHubHandler(
+                token=st.secrets['GITHUB_TOKEN'],
+                repo=st.secrets['GITHUB_REPO']
+            )
+            content, sha = github.get_file(f"data/tabelas/{liga}.txt")
+            if content:
+                return content, sha, 'github'
+    except Exception as e:
+        print(f"Erro ao carregar do GitHub: {e}")
+    
+    # Fallback: arquivo local
+    try:
+        with open(f"data/tabelas/{liga}.txt", 'r', encoding='utf-8') as f:
+            return f.read(), None, 'local'
+    except Exception as e:
+        return None, None, 'error'
 
 def carregar_escudos(template_path):
     template_name = os.path.basename(template_path).lower()
@@ -682,11 +706,11 @@ def render_table_mode():
                 if 'tabela_processada' not in st.session_state:
                     st.error("❌ Gere a tabela primeiro!")
                 else:
-                    try:
-                        # Verificar se tem secrets configurados
-                        if 'GITHUB_TOKEN' not in st.secrets or 'GITHUB_REPO' not in st.secrets:
-                            st.error("❌ Configure GITHUB_TOKEN e GITHUB_REPO em .streamlit/secrets.toml")
-                        else:
+                    # Verificar se GitHub está configurado
+                    if 'GITHUB_TOKEN' not in st.secrets or 'GITHUB_REPO' not in st.secrets:
+                        st.error("❌ Configure GITHUB_TOKEN e GITHUB_REPO em .streamlit/secrets.toml")
+                    else:
+                        try:
                             github = GitHubHandler(
                                 token=st.secrets['GITHUB_TOKEN'],
                                 repo=st.secrets['GITHUB_REPO']
@@ -694,29 +718,40 @@ def render_table_mode():
                             
                             file_path = f"data/tabelas/{st.session_state['liga_selecionada']}.txt"
                             
-                            # Buscar SHA atual
+                            # Buscar SHA atual do arquivo
                             _, sha = github.get_file(file_path)
                             
                             if sha:
-                                # Atualizar arquivo
-                                success = github.update_file(
-                                    file_path=file_path,
-                                    content=st.session_state['tabela_processada'],
-                                    commit_message=f"Atualização automática - Rodada {st.session_state.get('numero_rodada', 'atrasados')}",
-                                    sha=sha
-                                )
+                                # Mensagem de commit
+                                rodada_info = st.session_state.get('numero_rodada', 'atrasados')
+                                num_resultados = len(st.session_state['resultados_parseados'])
+                                liga_nome = st.session_state['liga_selecionada'].upper()
+                                commit_msg = f"[{liga_nome}] Rodada {rodada_info} - {num_resultados} jogo(s)"
+                                
+                                # Atualizar no GitHub
+                                with st.spinner("Enviando para o GitHub..."):
+                                    success = github.update_file(
+                                        file_path=file_path,
+                                        content=st.session_state['tabela_processada'],
+                                        commit_message=commit_msg,
+                                        sha=sha
+                                    )
                                 
                                 if success:
-                                    st.success("✅ Tabela atualizada no GitHub com sucesso!")
+                                    st.success("✅ Tabela atualizada no GitHub!")
                                     st.balloons()
+                                    
+                                    # Limpar cache
+                                    carregar_tabela_github.clear()
                                 else:
-                                    st.error("❌ Erro ao atualizar no GitHub")
+                                    st.error("❌ Erro ao atualizar. Verifique as permissões do token.")
                             else:
-                                st.error("❌ Arquivo não encontrado no repositório")
-                    
-                    except Exception as e:
-                        st.error(f"❌ Erro: {str(e)}")
+                                st.error("❌ Arquivo não encontrado no GitHub.")
+                        
+                        except Exception as e:
+                            st.error(f"❌ Erro: {str(e)}")
 
+        
 def collect_confirmations(liga_key: str) -> Dict:
     """
     Coleta todas as confirmações dos checkboxes
