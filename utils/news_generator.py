@@ -80,6 +80,27 @@ class NewsGenerator:
         # Se não conseguiu balancear, usar textwrap tradicional
         return textwrap.wrap(text, width=30)
     
+    def _apply_bottom_gradient(self, image: Image.Image, intensity: float = 0.8) -> Image.Image:
+        """
+        Aplica um gradiente preto transparente da metade para o fim da imagem
+        """
+        width, height = image.size
+        # Criar uma camada separada para o gradiente
+        gradient = Image.new('RGBA', (width, height), (0, 0, 0, 0))
+        draw = ImageDraw.Draw(gradient)
+
+        # Começa o gradiente em 50% da imagem até o final
+        start_y = height // 2
+        for y in range(start_y, height):
+            # Calcula a opacidade (alpha) aumentando conforme desce
+            # 0 no meio, 'intensity' no fundo
+            alpha = int(255 * intensity * ((y - start_y) / (height - start_y)))
+            draw.line([(0, y), (width, y)], fill=(0, 0, 0, alpha))
+        
+        # Sobrepor o gradiente na imagem original
+        return Image.alpha_composite(image, gradient)
+    
+
     def generate_news_image(self, league: str, headline: str, 
                            background: str = None, alinhamento: str = "Centro") -> Image.Image:
         """
@@ -141,6 +162,9 @@ class NewsGenerator:
                 crop_x + bg_width, 
                 crop_y + bg_height
             ))
+
+            if league == 'championship':
+                bg_cropped = self._apply_bottom_gradient(bg_cropped, intensity=0.9)
             
             # Criar imagem final com background cobrindo tudo
             final_img = Image.new("RGBA", base.size)

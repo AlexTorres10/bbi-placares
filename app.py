@@ -297,6 +297,16 @@ def obter_escudo_path(team_name, template_path=None):
     
     return None
 
+def apply_bottom_gradient(image: Image.Image, intensity: float = 0.9) -> Image.Image:
+        """Cria o efeito de sombra na parte inferior para destacar o texto"""
+        width, height = image.size
+        gradient = Image.new('RGBA', (width, height), (0, 0, 0, 0))
+        draw = ImageDraw.Draw(gradient)
+        start_y = int(height * 0.4) # Começa o gradiente um pouco acima do meio
+        for y in range(start_y, height):
+            alpha = int(255 * intensity * ((y - start_y) / (height - start_y)))
+            draw.line([(0, y), (width, y)], fill=(0, 0, 0, alpha))
+        return Image.alpha_composite(image, gradient)
 
 def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marcadores_casa, marcadores_fora, background=None, alinhamento="Centro"):
     base = Image.open(template_path).convert("RGBA")
@@ -320,6 +330,9 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         
         top = (new_height - base.height) // 2
         bg_cropped = bg_resized.crop((left, top, left + base.width, top + base.height))
+
+        if 'championship' in template_path.lower() or 'efl' in template_path.lower():
+                bg_cropped = apply_bottom_gradient(bg_cropped, intensity=0.9)
 
         final_img = Image.new("RGBA", bg_cropped.size, (0, 0, 0, 0))
         base_x = (bg_cropped.width - base.width) // 2
