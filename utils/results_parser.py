@@ -18,20 +18,11 @@ class ResultsParser:
         
         Formato esperado: 
         - "ABV 2-1 XYZ" (resultado normal)
-        - "ABV D-D XYZ" (jogo futuro - não aconteceu ainda)
+        - "ABV D-D XYZ" (jogo futuro)
         - "ABV ADI. XYZ" (jogo adiado)
         - "ABV ABD. XYZ" (jogo abandonado)
         
-        Retorna:
-            {
-                'home_abbr': 'ABV',
-                'away_abbr': 'XYZ',
-                'home_team': 'Nome Completo',
-                'away_team': 'Nome Completo',
-                'home_score': 2,
-                'away_score': 1,
-                'status': 'normal' | 'postponed' | 'abandoned' | 'future'
-            }
+        Se a sigla não existir no dicionário, usa a própria sigla como nome
         """
         # Remove espaços extras
         result_str = result_str.strip()
@@ -43,19 +34,20 @@ class ResultsParser:
         if match:
             home_abbr, home_score, away_score, away_abbr = match.groups()
             
-            if home_abbr not in self.abbreviations or away_abbr not in self.abbreviations:
-                return None
+            # FALLBACK: Se não encontrar no dicionário, usa a sigla
+            home_team = self.abbreviations.get(home_abbr, home_abbr)
+            away_team = self.abbreviations.get(away_abbr, away_abbr)
             
             return {
                 'home_abbr': home_abbr,
                 'away_abbr': away_abbr,
-                'home_team': self.abbreviations[home_abbr],
-                'away_team': self.abbreviations[away_abbr],
+                'home_team': home_team,
+                'away_team': away_team,
                 'home_score': int(home_score),
                 'away_score': int(away_score),
                 'status': 'normal'
             }
-    
+        
         # Padrão 2: Jogo futuro "POR D-D SOU"
         pattern_future = r'^([A-Z]{3})\s+D\s*-\s*D\s+([A-Z]{3})$'
         match = re.match(pattern_future, result_str, re.IGNORECASE)
@@ -63,17 +55,37 @@ class ResultsParser:
         if match:
             home_abbr, away_abbr = match.groups()
             
-            if home_abbr not in self.abbreviations or away_abbr not in self.abbreviations:
-                return None
+            home_team = self.abbreviations.get(home_abbr, home_abbr)
+            away_team = self.abbreviations.get(away_abbr, away_abbr)
             
             return {
                 'home_abbr': home_abbr,
                 'away_abbr': away_abbr,
-                'home_team': self.abbreviations[home_abbr],
-                'away_team': self.abbreviations[away_abbr],
+                'home_team': home_team,
+                'away_team': away_team,
                 'home_score': None,
                 'away_score': None,
                 'status': 'future'
+            }
+        
+        # PADRÃO 2B: Jogo futuro com "vs." - "TOT vs. AVL"
+        pattern_vs = r'^([A-Z]{3})\s+vs\.?\s+([A-Z]{3})$'
+        match = re.match(pattern_vs, result_str, re.IGNORECASE)
+
+        if match:
+            home_abbr, away_abbr = match.groups()
+            
+            home_team = self.abbreviations.get(home_abbr, home_abbr)
+            away_team = self.abbreviations.get(away_abbr, away_abbr)
+            
+            return {
+                'home_abbr': home_abbr,
+                'away_abbr': away_abbr,
+                'home_team': home_team,
+                'away_team': away_team,
+                'home_score': None,
+                'away_score': None,
+                'status': 'vs'  # ← Novo status
             }
         
         # Padrão 3: Jogo adiado "POR ADI. SOU"
@@ -83,14 +95,14 @@ class ResultsParser:
         if match:
             home_abbr, away_abbr = match.groups()
             
-            if home_abbr not in self.abbreviations or away_abbr not in self.abbreviations:
-                return None
+            home_team = self.abbreviations.get(home_abbr, home_abbr)
+            away_team = self.abbreviations.get(away_abbr, away_abbr)
             
             return {
                 'home_abbr': home_abbr,
                 'away_abbr': away_abbr,
-                'home_team': self.abbreviations[home_abbr],
-                'away_team': self.abbreviations[away_abbr],
+                'home_team': home_team,
+                'away_team': away_team,
                 'home_score': None,
                 'away_score': None,
                 'status': 'postponed'
@@ -103,21 +115,21 @@ class ResultsParser:
         if match:
             home_abbr, away_abbr = match.groups()
             
-            if home_abbr not in self.abbreviations or away_abbr not in self.abbreviations:
-                return None
+            home_team = self.abbreviations.get(home_abbr, home_abbr)
+            away_team = self.abbreviations.get(away_abbr, away_abbr)
             
             return {
                 'home_abbr': home_abbr,
                 'away_abbr': away_abbr,
-                'home_team': self.abbreviations[home_abbr],
-                'away_team': self.abbreviations[away_abbr],
+                'home_team': home_team,
+                'away_team': away_team,
                 'home_score': None,
                 'away_score': None,
                 'status': 'abandoned'
             }
         
         return None
-    
+
 
     def parse_multiple_results(self, results_text: str) -> List[Dict]:
         """

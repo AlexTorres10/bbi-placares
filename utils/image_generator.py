@@ -268,6 +268,9 @@ class ImageGenerator:
             elif status == 'future':
                 # Jogo futuro - não mostrar nada
                 score_text = ""
+            elif status == 'vs':
+                # Jogo futuro com vs.
+                score_text = "vs."
             elif status == 'postponed':
                 # Jogo adiado
                 score_text = "ADI."

@@ -12,7 +12,10 @@
   },
   "nationalleague": {
   },
-  "facup": {},
+  "facup": {
+    "Queens Park Rangers": "QPR",
+    "Sheffield Wednesday": "Sheffield Wed."
+  },
   "eflcup": {},
   "ucl": {},
   "uel": {},

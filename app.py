@@ -5,6 +5,7 @@ import re
 import json
 import sys
 from typing import Dict, List, Optional
+from utils.cup_generator import CupGenerator
 
 # Adicionar utils ao path
 sys.path.append(os.path.dirname(__file__))
@@ -563,6 +564,8 @@ def render_table_mode():
                     st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}**")
                 elif status == 'future':
                     st.write(f"**{r['home_team']}** vs **{r['away_team']}** - ⏰ *Jogo futuro*")
+                elif status == 'vs':
+                    st.write(f"**{r['home_team']}** vs. **{r['away_team']}** - 🆚 *Jogo a realizar*")  # ← ADICIONAR
                 elif status == 'postponed':
                     st.write(f"**{r['home_team']}** vs **{r['away_team']}** - 🔄 *Adiado*")
                 elif status == 'abandoned':
@@ -1148,7 +1151,7 @@ st.title("⚽ Gerador de Conteúdo BBI")
 # Seleção do modo
 modo = st.radio(
     "Escolha o modo:",
-    ["📰 Gerar Notícia", "🔢 Gerar Placar", "📊 Gerar Tabela com Resultados"],
+    ["📰 Gerar Notícia", "🔢 Gerar Placar", "📊 Gerar Tabela com Resultados", "🏆 Gerar Copa"],
     horizontal=True
 )
 
@@ -1295,6 +1298,98 @@ elif modo == "📰 Gerar Notícia":
             
             except Exception as e:
                 st.error(f"❌ Erro ao gerar notícia: {str(e)}")
+elif modo == "🏆 Gerar Copa":
+    # MODO COPA
+    st.header("🏆 Gerador de Copas")
+    
+    # Seleção da copa
+    copa_selecionada = st.selectbox(
+        "Escolha a Copa",
+        ["FA Cup", "EFL Cup"]
+    )
+    
+    copa_key = "facup" if copa_selecionada == "FA Cup" else "eflcup"
+    
+    # Título da fase
+    titulo_fase = st.text_input(
+        "Título da Fase",
+        placeholder="Ex: 3ª FASE - RESULTADOS",
+        help="Texto que aparecerá no topo da imagem"
+    )
+    
+    # Input dos resultados
+    resultados_texto = st.text_area(
+        "Cole os resultados (um por linha)",
+        placeholder="POR 1-0 SOU\nCOV 2-1 WAT\nHUL D-D MID",
+        height=200,
+        help="Formato: ABV 1-0 XYZ. Use D-D para jogos futuros, ADI. para adiados, ABD. para abandonados"
+    )
+    
+    if st.button("🖼️ Gerar Imagens da Copa", type="primary"):
+        if not titulo_fase.strip():
+            st.error("❌ Digite um título para a fase!")
+        elif not resultados_texto.strip():
+            st.error("❌ Insira pelo menos um resultado!")
+        else:
+            try:
+                # Parse dos resultados
+                from utils.results_parser import ResultsParser
+                parser = ResultsParser()
+                resultados = parser.parse_multiple_results(resultados_texto)
+                
+                if not resultados:
+                    st.error("❌ Nenhum resultado válido encontrado! Verifique o formato.")
+                else:
+                    st.success(f"✅ {len(resultados)} resultado(s) processado(s)!")
+                    
+                    # Gerar imagens
+                    generator = CupGenerator()
+                    images = generator.generate_cup_images(
+                        cup=copa_key,
+                        results=resultados,
+                        title=titulo_fase
+                    )
+                    
+                    st.success(f"✅ {len(images)} imagem(ns) gerada(s)!")
+                    
+                    # Mostrar e oferecer download de cada imagem
+                    for idx, img in enumerate(images, start=1):
+                        st.image(img, caption=f"Imagem {idx} de {len(images)}")
+                        
+                        # Salvar como PNG
+                        filename = f"copa_{idx}.png"
+                        img.save(filename, format="PNG")
+                        
+                        with open(filename, "rb") as f:
+                            st.download_button(
+                                f"📥 Baixar Imagem {idx}",
+                                f,
+                                file_name=f"{copa_selecionada.replace(' ', '-')}-{idx}.png",
+                                use_container_width=True,
+                                key=f"download_copa_{idx}"
+                            )
+
+            except FileNotFoundError as e:
+                # Erro de arquivo não encontrado (escudo faltando)
+                error_msg = str(e)
+                if "escudos" in error_msg:
+                    # Extrair nome do time do erro
+                    import re
+                    match = re.search(r"escudos-\w+[/\\](\w+)\.png", error_msg)
+                    if match:
+                        team_name = match.group(1)
+                        st.error(f"❌ Escudo não encontrado: **{team_name}**")
+                        st.info("💡 Adicione o arquivo `{team_name}.png` em uma das pastas de escudos (escudos-pl, escudos-ch, escudos-l1, escudos-l2, escudos-nl, escudos-nonleague)")
+                    else:
+                        st.error(f"❌ Arquivo não encontrado: {error_msg}")
+                else:
+                    st.error(f"❌ Arquivo não encontrado: {error_msg}")
+
+            except Exception as e:
+                st.error(f"❌ Erro ao gerar imagens: {str(e)}")
+                import traceback
+                with st.expander("Ver detalhes do erro"):
+                    st.code(traceback.format_exc())
 
 else:
     # MODO TABELA COM RESULTADOS
