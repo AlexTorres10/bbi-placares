@@ -184,13 +184,20 @@ class ImageGenerator:
             round_text = f"RODADA {round_number}" if round_number else ""
         
         if round_text:
-            # Centralizar texto da rodada
+            # Medir largura do texto
             bbox = draw.textbbox((0, 0), round_text, font=font_round)
             text_width = bbox[2] - bbox[0]
-            x_centered = (base.width - text_width) // 2
+            
+            # CONDIÇÃO: National League usa X do JSON, outras centralizam
+            if league == 'nationalleague':
+                # National League: usar X do JSON (alinhado à esquerda)
+                x_pos = rt['round_text_position']['x']
+            else:
+                # Outras ligas: centralizar
+                x_pos = (base.width - text_width) // 2
             
             draw.text(
-                (x_centered, rt['round_text_position']['y']),
+                (x_pos, rt['round_text_position']['y']),
                 round_text,
                 font=font_round,
                 fill=rt['color_text']
@@ -303,7 +310,7 @@ class ImageGenerator:
                 'championship': 'fontes/efl.otf',
                 'leagueone': 'fontes/efl.otf',
                 'leaguetwo': 'fontes/efl.otf',
-                'nationalleague': 'fontes/nationalleague.ttf'
+                'nationalleague': 'fontes/nationalleague.otf'
             }
         else:
             font_map = {
@@ -311,7 +318,7 @@ class ImageGenerator:
                 'championship': 'fontes/efl-bold.otf',
                 'leagueone': 'fontes/efl-bold.otf',
                 'leaguetwo': 'fontes/efl-bold.otf',
-                'nationalleague': 'fontes/nationalleague.ttf'
+                'nationalleague': 'fontes/nationalleague.otf'
             }
         return font_map.get(league, 'fontes/FontePlacar.ttf')
     
@@ -360,7 +367,10 @@ class ImageGenerator:
         if league == 'premierleague' and table_mode:
             zones = self._adjust_european_zones_for_mode(zones, table_mode)
 
-        header_y = tt['table_start']['y'] - 30  # 30 pixels acima da primeira linha
+        if league == 'nationalleague':
+            header_y = tt['table_start']['y'] - 35  # Nacional precisa de mais espaço
+        else:
+            header_y = tt['table_start']['y'] - 30
         header_labels = {
             'J': 'J',
             'V': 'V', 
