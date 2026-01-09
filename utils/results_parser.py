@@ -16,25 +16,68 @@ class ResultsParser:
         """
         Parse de um único resultado
         
-        Formato esperado: 
-        - "ABV 2-1 XYZ" (resultado normal)
-        - "ABV D-D XYZ" (jogo futuro)
-        - "ABV ADI. XYZ" (jogo adiado)
-        - "ABV ABD. XYZ" (jogo abandonado)
-        
-        Se a sigla não existir no dicionário, usa a própria sigla como nome
+        Formatos aceitos:
+        - "POR 2-1 SOU" (resultado normal)
+        - "POR D-D SOU" (jogo futuro)
+        - "POR vs. SOU" (jogo futuro com vs.)
+        - "POR ADI. SOU" (adiado)
+        - "POR ABD. SOU" (abandonado)
+        - "PNE 0-1(pro) WIG" (prorrogação)
+        - "WRE 3-3(4-5) NFO" (pênaltis)
         """
-        # Remove espaços extras
         result_str = result_str.strip()
         
-        # Padrão 1: Resultado normal "POR 1-0 SOU"
+        # Padrão 1: Resultado com pênaltis "WRE 3-3(4-5) NFO"
+        pattern_penalties = r'^([A-Z]{3})\s+(\d+)\s*-\s*(\d+)\s*\((\d+)\s*-\s*(\d+)\)\s+([A-Z]{3})$'
+        match = re.match(pattern_penalties, result_str)
+        
+        if match:
+            home_abbr, home_score, away_score, pen_home, pen_away, away_abbr = match.groups()
+            
+            home_team = self.abbreviations.get(home_abbr, home_abbr)
+            away_team = self.abbreviations.get(away_abbr, away_abbr)
+            
+            return {
+                'home_abbr': home_abbr,
+                'away_abbr': away_abbr,
+                'home_team': home_team,
+                'away_team': away_team,
+                'home_score': int(home_score),
+                'away_score': int(away_score),
+                'pen_home': int(pen_home),
+                'pen_away': int(pen_away),
+                'status': 'penalties',
+                'extra_info': f"Pênaltis: {pen_home}-{pen_away}"
+            }
+        
+        # Padrão 2: Resultado com prorrogação "PNE 0-1(pro) WIG"
+        pattern_extra_time = r'^([A-Z]{3})\s+(\d+)\s*-\s*(\d+)\s*\(pro\.?\)\s+([A-Z]{3})$'
+        match = re.match(pattern_extra_time, result_str, re.IGNORECASE)
+        
+        if match:
+            home_abbr, home_score, away_score, away_abbr = match.groups()
+            
+            home_team = self.abbreviations.get(home_abbr, home_abbr)
+            away_team = self.abbreviations.get(away_abbr, away_abbr)
+            
+            return {
+                'home_abbr': home_abbr,
+                'away_abbr': away_abbr,
+                'home_team': home_team,
+                'away_team': away_team,
+                'home_score': int(home_score),
+                'away_score': int(away_score),
+                'status': 'extra_time',
+                'extra_info': 'Finalizado após prorrogação'
+            }
+        
+        # Padrão 3: Resultado normal "POR 1-0 SOU"
         pattern_normal = r'^([A-Z]{3})\s+(\d+)\s*-\s*(\d+)\s+([A-Z]{3})$'
         match = re.match(pattern_normal, result_str)
         
         if match:
             home_abbr, home_score, away_score, away_abbr = match.groups()
             
-            # FALLBACK: Se não encontrar no dicionário, usa a sigla
             home_team = self.abbreviations.get(home_abbr, home_abbr)
             away_team = self.abbreviations.get(away_abbr, away_abbr)
             
@@ -48,7 +91,7 @@ class ResultsParser:
                 'status': 'normal'
             }
         
-        # Padrão 2: Jogo futuro "POR D-D SOU"
+        # Padrão 4: Jogo futuro "POR D-D SOU"
         pattern_future = r'^([A-Z]{3})\s+D\s*-\s*D\s+([A-Z]{3})$'
         match = re.match(pattern_future, result_str, re.IGNORECASE)
         
@@ -68,10 +111,10 @@ class ResultsParser:
                 'status': 'future'
             }
         
-        # PADRÃO 2B: Jogo futuro com "vs." - "TOT vs. AVL"
+        # Padrão 5: Jogo futuro com "vs."
         pattern_vs = r'^([A-Z]{3})\s+vs\.?\s+([A-Z]{3})$'
         match = re.match(pattern_vs, result_str, re.IGNORECASE)
-
+        
         if match:
             home_abbr, away_abbr = match.groups()
             
@@ -85,10 +128,10 @@ class ResultsParser:
                 'away_team': away_team,
                 'home_score': None,
                 'away_score': None,
-                'status': 'vs'  # ← Novo status
+                'status': 'vs'
             }
         
-        # Padrão 3: Jogo adiado "POR ADI. SOU"
+        # Padrão 6: Adiado
         pattern_postponed = r'^([A-Z]{3})\s+ADI\.?\s+([A-Z]{3})$'
         match = re.match(pattern_postponed, result_str, re.IGNORECASE)
         
@@ -108,7 +151,7 @@ class ResultsParser:
                 'status': 'postponed'
             }
         
-        # Padrão 4: Jogo abandonado "POR ABD. SOU"
+        # Padrão 7: Abandonado
         pattern_abandoned = r'^([A-Z]{3})\s+ABD\.?\s+([A-Z]{3})$'
         match = re.match(pattern_abandoned, result_str, re.IGNORECASE)
         
@@ -129,7 +172,6 @@ class ResultsParser:
             }
         
         return None
-
 
     def parse_multiple_results(self, results_text: str) -> List[Dict]:
         """

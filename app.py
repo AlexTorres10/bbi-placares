@@ -575,15 +575,18 @@ def render_table_mode():
                 
                 if status == 'normal':
                     st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}**")
+                elif status == 'penalties':
+                    st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}** (Pênaltis: {r['pen_home']}-{r['pen_away']}) 🥅")
+                elif status == 'extra_time':
+                    st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}** (Prorrogação) ⏱️")
                 elif status == 'future':
                     st.write(f"**{r['home_team']}** vs **{r['away_team']}** - ⏰ *Jogo futuro*")
                 elif status == 'vs':
-                    st.write(f"**{r['home_team']}** vs. **{r['away_team']}** - 🆚 *Jogo a realizar*")  # ← ADICIONAR
+                    st.write(f"**{r['home_team']}** vs. **{r['away_team']}** - 🆚 *Jogo a realizar*")
                 elif status == 'postponed':
                     st.write(f"**{r['home_team']}** vs **{r['away_team']}** - 🔄 *Adiado*")
                 elif status == 'abandoned':
                     st.write(f"**{r['home_team']}** vs **{r['away_team']}** - ⚠️ *Abandonado*")
-        
         # Salvar na sessão
         st.session_state['resultados_parseados'] = resultados
         st.session_state['tipo_rodada'] = tipo_rodada

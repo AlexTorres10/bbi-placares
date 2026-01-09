@@ -187,14 +187,14 @@ class CupGenerator:
             title_x = (base.width - title_width) // 2
             
             # Posição do título (ajustar conforme template)
-            title_y = 240 if cup == 'facup' else 160
+            title_y = 200 if cup == 'facup' else 160
             
             draw.text((title_x, title_y), title_upper, font=font_title, fill="#FFFFFF")
             
             # Configurações de posição (ajustar conforme seus templates)
             if cup == 'facup':
-                rect_start_y = 350
-                rect_gap = 125
+                rect_start_y = 260
+                rect_gap = 155
                 rect_x = 30
                 badge_size = (100, 100)
                 badge_home_x = 3
@@ -271,8 +271,9 @@ class CupGenerator:
                 
                 # Desenhar placar
                 status = result.get('status', 'normal')
-                
-                if status == 'normal':
+
+                # Sempre mostrar placar para jogos normais, pênaltis e prorrogação
+                if status in ['normal', 'penalties', 'extra_time']:
                     if cup == 'facup':
                         score_text = f"{result['home_score']}-{result['away_score']}"
                     else:
@@ -287,25 +288,37 @@ class CupGenerator:
                     score_text = "ABD."
                 else:
                     score_text = ""
-                
+
                 if score_text:
                     bbox_score = draw.textbbox((0, 0), score_text, font=font_score)
                     score_width = bbox_score[2] - bbox_score[0]
                     
-                    if cup == 'facup':
-                        draw.text(
-                            (rect_x + score_x - score_width // 2, y_pos + score_y),
-                            score_text,
-                            font=font_score,
-                            fill="#FFFFFF"
-                        )
-                    else:
-                        draw.text(
-                            (rect_x + score_x - score_width // 2, y_pos + score_y),
-                            score_text,
-                            font=font_score,
-                            fill="#FFFFFF"
-                        )
+                    draw.text(
+                        (rect_x + score_x - score_width // 2, y_pos + score_y),
+                        score_text,
+                        font=font_score,
+                        fill="#FFFFFF"
+                    )
+
+                # DESENHAR INFORMAÇÃO EXTRA (Pênaltis ou Prorrogação)
+                extra_info = result.get('extra_info')
+                if extra_info:
+                    # Fonte menor para info extra
+                    font_extra_size = font_size_score - 22  # 14 pontos menor que o placar
+                    font_extra = ImageFont.truetype(self._get_font_for_cup(cup, bold=False), font_extra_size)
+                    
+                    bbox_extra = draw.textbbox((0, 0), extra_info, font=font_extra)
+                    extra_width = bbox_extra[2] - bbox_extra[0]
+                    
+                    # Posicionar abaixo do placar
+                    extra_y = y_pos + score_y + 80  # 40px abaixo do placar
+                    
+                    draw.text(
+                        (rect_x + score_x - extra_width // 2, extra_y),
+                        extra_info,
+                        font=font_extra,
+                        fill="#FFFFFF"
+                    )
             
             images.append(base)
         
