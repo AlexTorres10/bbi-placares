@@ -137,8 +137,16 @@ def carregar_escudos(template_path):
             return sorted([f[:-4] for f in os.listdir("escudos-ch") if f.endswith(".png")])
         return []
     
-    if any(comp in template_name for comp in ["facup", "eflcup"]):
+    if any(comp in template_name for comp in ["eflcup"]):
         leagues = ['escudos-pl', 'escudos-ch', 'escudos-l1', 'escudos-l2']
+        times_total = []
+        for div in leagues:
+            if os.path.exists(div):
+                times = sorted([f[:-4] for f in os.listdir(div) if f.endswith(".png")])
+                times_total.extend(times)
+
+    if any(comp in template_name for comp in ["facup"]):
+        leagues = ['escudos-pl', 'escudos-ch', 'escudos-l1', 'escudos-l2', 'escudos-nl', 'escudos-nonleague']
         times_total = []
         for div in leagues:
             if os.path.exists(div):
@@ -288,7 +296,7 @@ def obter_config_template(template_path):
 def obter_escudo_path(team_name, template_path=None):
     """Busca o escudo em múltiplas pastas"""
     pastas = ["escudos-pl", "escudos-ch", "escudos-l1", "escudos-l2", 
-              "escudos-ucl", "escudos-uel", "escudos-uecl", "selecoes"]
+              "escudos-ucl", "escudos-uel", "escudos-uecl", "selecoes", "escudos-nl", "escudos-nonleague"]
     
     for pasta in pastas:
         caminho = os.path.join(pasta, f"{team_name}.png")
