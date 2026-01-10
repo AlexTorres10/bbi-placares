@@ -358,7 +358,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     else:
         fonte_normal = ImageFont.truetype(config["fonte_normal"], 32)
     fonte_bold = ImageFont.truetype(config["fonte_bold"], 48)
-    fonte_pequena = ImageFont.truetype(config["fonte_normal"], 18)
+    fonte_pequena = ImageFont.truetype(config["fonte_normal"], 26)
+    fonte_mais_pequena = ImageFont.truetype(config["fonte_normal"], 18)
     cor_texto = config["cor_texto"]
     cor_texto_placar = config["cor_texto_placar"]
 
@@ -445,8 +446,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 
         y_agregado = 975 if mais_pra_cima else 985
 
-        w_agr = fonte_pequena.getbbox(agregado_texto)[2] - fonte_pequena.getbbox(agregado_texto)[0]
-        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_pequena, fill=cor_texto)
+        w_agr = fonte_mais_pequena.getbbox(agregado_texto)[2] - fonte_mais_pequena.getbbox(agregado_texto)[0]
+        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_mais_pequena, fill=cor_texto)
 
     # 🟩 Marcadores
     espaco_linha = 34  # Aumente/diminua conforme necessário
