@@ -358,7 +358,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     else:
         fonte_normal = ImageFont.truetype(config["fonte_normal"], 32)
     fonte_bold = ImageFont.truetype(config["fonte_bold"], 48)
-    fonte_pequena = ImageFont.truetype(config["fonte_normal"], 25)
+    fonte_pequena = ImageFont.truetype(config["fonte_normal"], 18)
     cor_texto = config["cor_texto"]
     cor_texto_placar = config["cor_texto_placar"]
 
