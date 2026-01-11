@@ -727,10 +727,23 @@ def render_table_mode():
                     
                     with open("rodada.png", "rb") as f:
                         rodada_num = st.session_state.get('numero_rodada', 'atrasados')
+                        
+                        # MAPEAR PREFIXOS
+                        prefixos = {
+                            'premierleague': 'PL',
+                            'championship': 'CH',
+                            'leagueone': 'L1',
+                            'leaguetwo': 'L2',
+                            'nationalleague': 'NL'
+                        }
+                        
+                        liga_key = st.session_state['liga_selecionada']
+                        prefixo = prefixos.get(liga_key, 'XX')
+                        
                         st.download_button(
                             "📥 Baixar Imagem da Rodada", 
                             f, 
-                            file_name=f"M{st.session_state.get('numero_rodada', 'atrasados')}-R.png",
+                            file_name=f"{prefixo}-M{rodada_num}-R.png",  # ← AGORA COM PREFIXO
                             use_container_width=True
                         )
             
@@ -738,15 +751,28 @@ def render_table_mode():
                 if 'imagem_tabela_gerada' in st.session_state:
                     st.image(st.session_state['imagem_tabela_gerada'], caption="Imagem da Tabela")
                     
-                    # Salvar e oferecer download
-                    img_rgb = st.session_state['imagem_tabela_gerada'].convert("RGB")
-                    img_rgb.save("tabela.png", format="PNG")
+                    # Salvar como PNG
+                    st.session_state['imagem_tabela_gerada'].save("tabela.png", format="PNG")
                     
                     with open("tabela.png", "rb") as f:
+                        rodada_num = st.session_state.get('numero_rodada', 'atrasados')
+                        
+                        # MAPEAR PREFIXOS
+                        prefixos = {
+                            'premierleague': 'PL',
+                            'championship': 'CH',
+                            'leagueone': 'L1',
+                            'leaguetwo': 'L2',
+                            'nationalleague': 'NL'
+                        }
+                        
+                        liga_key = st.session_state['liga_selecionada']
+                        prefixo = prefixos.get(liga_key, 'XX')
+                        
                         st.download_button(
                             "📥 Baixar Tabela", 
                             f, 
-                            file_name=f"M{st.session_state.get('numero_rodada', 'atrasados')}-T.png",
+                            file_name=f"{prefixo}-M{rodada_num}-T.png",  # ← AGORA COM PREFIXO
                             use_container_width=True
                         )
             
