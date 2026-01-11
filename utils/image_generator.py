@@ -40,22 +40,50 @@ class ImageGenerator:
         return canvas
     
     def _get_badge_path(self, team_name: str, badges_folder: str) -> str:
-        """Retorna o caminho do escudo de um time"""
+        """
+        Retorna o caminho do escudo de um time
+        SEMPRE usa o nome COMPLETO (original) para buscar o escudo
+        """
+        # Lista de pastas de escudos para tentar
+        possible_folders = [
+            badges_folder,  # Pasta específica da liga
+            "escudos-pl",
+            "escudos-ch", 
+            "escudos-l1",
+            "escudos-l2",
+            "escudos-nl",
+            "escudos-nonleague"
+        ]
+        
+        for folder in possible_folders:
+            badge_path = os.path.join(folder, f"{team_name}.png")
+            if os.path.exists(badge_path):
+                return badge_path
+        
+        # Fallback: retornar caminho esperado (vai gerar erro claro)
         return os.path.join(badges_folder, f"{team_name}.png")
     
-    def _get_display_name(self, team_name: str, league: str) -> str:
+    def _get_display_name(self, team_name: str, league: str, context: str = 'results') -> str:
         """
-        Retorna o nome de exibição do time (encurtado se necessário para a liga)
+        Retorna o nome de exibição do time
         
         Args:
             team_name: Nome completo do time
-            league: Liga/competição atual
+            league: Liga atual
+            context: 'results' (encurtar) ou 'table' (manter completo)
         
         Returns:
-            Nome encurtado se existir para essa liga, senão retorna o nome completo
+            Nome para exibir
         """
-        if league in self.display_names:
-            return self.display_names[league].get(team_name, team_name)
+        # TABELAS: sempre nome completo
+        if context == 'table':
+            return team_name
+        
+        # RESULTADOS: aplicar encurtamento se existir
+        if context == 'results':
+            if league in self.display_names:
+                return self.display_names[league].get(team_name, team_name)
+        
         return team_name
     
     def _adjust_european_zones_for_mode(self, zones: dict, table_mode_name: str) -> dict:
@@ -215,14 +243,15 @@ class ImageGenerator:
             
             # Carregar e colar escudos
             home_badge = self._resize_badge(
-                self._get_badge_path(result['home_team'], badges_folder),
+                self._get_badge_path(result['home_team'], badges_folder),  # ← Nome original
                 (rt['badge_size']['width'], rt['badge_size']['height'])
             )
+
             away_badge = self._resize_badge(
-                self._get_badge_path(result['away_team'], badges_folder),
+                self._get_badge_path(result['away_team'], badges_folder),  # ← Nome original
                 (rt['badge_size']['width'], rt['badge_size']['height'])
             )
-            
+                        
             base.paste(
                 home_badge,
                 (x_pos + rt['badge_home_offset']['x'], 
@@ -237,8 +266,8 @@ class ImageGenerator:
             )
             
             # Desenhar nomes dos times
-            home_name = self._get_display_name(result['home_team'], league).upper()
-            away_name = self._get_display_name(result['away_team'], league).upper()
+            home_name = self._get_display_name(result['home_team'], league, 'results').upper()
+            away_name = self._get_display_name(result['away_team'], league, 'results').upper()
 
             # NOME DO TIME MANDANTE - CENTRALIZADO
             bbox_home = draw.textbbox((0, 0), home_name, font=font_team)
@@ -437,7 +466,8 @@ class ImageGenerator:
             )
             
             # Nome do time
-            team_name = team['name'].upper()
+            team_name = team['name']  # ← MANTER COMPLETO, sem aplicar display_name
+
 
             # Verificar se time tem penalidade
             if 'penalty_note' in team and team['penalty_note']:
@@ -445,10 +475,11 @@ class ImageGenerator:
 
             draw.text(
                 (tt['table_start']['x'] + tt['team_name_offset']['x'], y_pos + tt['team_name_offset']['y']),
-                team_name,
+                team_name.upper(),  # ← Nome completo
                 font=font_normal,
                 fill=tt['color_text']
             )
+
             
             # Estatísticas
             stats = [

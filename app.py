@@ -15,6 +15,7 @@ from utils.table_processor import TableProcessor
 from utils.image_generator import ImageGenerator
 from utils.github_handler import GitHubHandler
 from utils.news_generator import NewsGenerator
+from utils.table_validator import TableValidator
 
 st.set_page_config(
     page_title="Gerador de Conteúdo BBI",
@@ -392,6 +393,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         x, y = pos
         if europeu and nome == "Nottingham Forest":
             nome = "Nott'm Forest"
+        if "facup" in path_lower and nome == "Queens Park Rangers":
+            nome = "QPR"
         nome_maiusculo = nome.upper()
 
         # Decide a fonte
@@ -435,6 +438,9 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         elif "pen" in conteudo:
             label = "Pênaltis: "
             valor = conteudo.replace("pen.", "").replace("pen", "").strip()
+        elif "pro" in conteudo:
+            label = "Prorrogação"
+            valor = ""
         else:
             label = ""
             valor = conteudo  # fallback
@@ -700,10 +706,57 @@ def render_table_mode():
                         table_mode=st.session_state.get('table_mode')
                     )
                     
+                    # ================================================================
+                    # VALIDAÇÃO DA TABELA (ANTES DE SALVAR)
+                    # ================================================================
+                    validator = TableValidator()
+
+                    has_divergences = False 
+                    
+                    # 1. Verificar times repetidos
+                    num_teams = len(processor.teams)  # Usar o número de times da tabela
+                    is_valid, warnings = validator.validate_results(
+                        st.session_state['resultados_parseados'],
+                        num_teams
+                    )
+                    
+                    if warnings:
+                        for warning in warnings:
+                            st.warning(warning)
+                    
+                    # 2. Comparar com tabela oficial
+                    with st.spinner("🔍 Validando tabela com fonte oficial..."):
+                        official_table = validator.fetch_official_table(st.session_state['liga_selecionada'])
+
+                    if official_table is not None and not official_table.empty:
+                        divergencias = validator.compare_tables(table_data, official_table)
+                        
+                        if divergencias.empty:
+                            st.success("✅ Tabela validada! Nenhuma divergência encontrada.")
+                            has_divergences = False
+                        else:
+                            st.error("❌ Divergências encontradas com a fonte oficial:")
+                            has_divergences = True
+                            
+                            # Mostrar divergências em formato tabela
+                            colunas_exibir = ['Time', 'J_calculado', 'J_oficial', 'Pts_calculado', 'Pts_oficial', 
+                                            'SG_calculado', 'SG_oficial']
+                            
+                            # Só mostrar colunas que existem
+                            colunas_exibir = [col for col in colunas_exibir if col in divergencias.columns]
+                            
+                            st.dataframe(divergencias[colunas_exibir], use_container_width=True)
+                    else:
+                        st.info("ℹ️ Não foi possível buscar a tabela oficial para validação (verifique sua conexão).")
+                        has_divergences = False
+                    
+                    # ================================================================
                     # Salvar na sessão
                     st.session_state['imagem_tabela_gerada'] = img
                     st.session_state['tabela_processada'] = processor.to_text()
-                    st.success("✅ Imagem da tabela gerada com sucesso!")
+                    
+                    if not has_divergences or official_table is None:
+                        st.success("✅ Imagem da tabela gerada com sucesso!")
                     
                 except Exception as e:
                     st.error(f"❌ Erro ao gerar tabela: {str(e)}")
