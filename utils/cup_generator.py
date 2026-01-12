@@ -26,8 +26,13 @@ class CupGenerator:
         return Image.open(path).convert("RGBA")
     
     def _resize_badge(self, badge_path: str, target_size: Tuple[int, int]) -> Image.Image:
-        """Redimensiona um escudo mantendo proporções e centralizando"""
+        """
+        Redimensiona um escudo mantendo proporções e centralizando
+        O escudo NUNCA ultrapassa o target_size
+        """
         badge = self._load_image(badge_path)
+        
+        # Usar thumbnail para manter proporções SEM ultrapassar o target
         badge.thumbnail(target_size, Image.LANCZOS)
         
         # Centralizar em canvas transparente
@@ -37,7 +42,8 @@ class CupGenerator:
         canvas.paste(badge, (pos_x, pos_y), badge)
         
         return canvas
-    
+   
+
     def _get_badge_path(self, team_name: str, cup: str) -> str:
         """
         Retorna o caminho do escudo de um time
@@ -124,6 +130,100 @@ class CupGenerator:
                 layers.append(list(range(max_slots)))
         
         return layers
+    
+    def _create_double_badge(self, team1: str, team2: str, target_size: Tuple[int, int], cup: str) -> Image.Image:
+        """
+        Cria escudo duplo para times indefinidos (/)
+        
+        Os escudos ficam nos cantos: superior esquerdo e inferior direito
+        Cada escudo tem metade do tamanho do target (50x50 se target é 100x100)
+        
+        Args:
+            team1: Primeiro time (ex: Liverpool)
+            team2: Segundo time (ex: Barnsley)
+            target_size: Tamanho total (ex: 100x100)
+            cup: Copa atual
+        
+        Returns:
+            Imagem com 2 escudos nos cantos
+        """
+        # Cada escudo terá metade do tamanho
+        half_size = (target_size[0] // 2, target_size[1] // 2)
+        
+        # Carregar e redimensionar escudos
+        badge1_path = self._get_badge_path(team1, cup)
+        badge2_path = self._get_badge_path(team2, cup)
+        
+        badge1 = self._resize_badge(badge1_path, half_size)
+        badge2 = self._resize_badge(badge2_path, half_size)
+        
+        # Criar canvas transparente do tamanho completo
+        double_badge = Image.new('RGBA', target_size, (0, 0, 0, 0))
+        
+        # Colar badge1 no canto SUPERIOR ESQUERDO (0, 0)
+        double_badge.paste(badge1, (0, 0), badge1)
+        
+        # Colar badge2 no canto INFERIOR DIREITO
+        pos_x = target_size[0] - half_size[0]  # Alinhado à direita
+        pos_y = target_size[1] - half_size[1]  # Alinhado embaixo
+        double_badge.paste(badge2, (pos_x, pos_y), badge2)
+        
+        return double_badge
+    
+    def _get_display_name_smart(self, team_name: str, cup: str, max_width: int, font) -> str:
+        """
+        Retorna nome de exibição, encurtando automaticamente se necessário
+        
+        Args:
+            team_name: Nome do time (pode conter /)
+            cup: Copa atual
+            max_width: Largura máxima em pixels
+            font: Fonte usada para medir
+        
+        Returns:
+            Nome ajustado
+        """
+        from PIL import ImageDraw
+        
+        # Verificar se está no display_names (manual)
+        display_name = self._get_display_name(team_name, cup)
+        
+        # Medir largura
+        draw = ImageDraw.Draw(Image.new('RGBA', (1, 1)))
+        bbox = draw.textbbox((0, 0), display_name, font=font)
+        width = bbox[2] - bbox[0]
+        
+        # Se cabe, retorna
+        if width <= max_width:
+            return display_name
+        
+        # Se tem /, encurtar cada time
+        if '/' in display_name:
+            teams = display_name.split('/')
+            
+            # Encurtar cada time individualmente
+            shortened = []
+            for team in teams:
+                # Tentar abreviações comuns
+                team = team.replace('United', 'Utd')
+                team = team.replace('City', '')
+                team = team.replace('Town', '')
+                team = team.replace('Sheffield', 'Sheff')
+                team = team.strip()
+                
+                # Se ainda grande, pegar primeiras 7 letras
+                if len(team) > 8:
+                    team = team[:7] + '.'
+                
+                shortened.append(team)
+            
+            return '/'.join(shortened)
+        
+        # Sem /, truncar normal
+        if len(display_name) > 12:
+            return display_name[:10] + '...'
+        
+        return display_name
     
     def generate_cup_images(self, cup: str, results: List[Dict], 
                            title: str) -> List[Image.Image]:
@@ -221,34 +321,70 @@ class CupGenerator:
             
             # Desenhar cada jogo nos slots usados
             for slot_idx, slot in enumerate(slots_usados):
-                if match_index >= len(results):
-                    break
-                
                 result = results[match_index]
                 match_index += 1
                 
-                # Calcular posição Y do rect
+                # Calcular posição Y
                 y_pos = rect_start_y + (slot * rect_gap)
                 
                 # Colar rect
                 base.paste(rect_base, (rect_x, y_pos), rect_base)
                 
-                # Carregar e colar escudos
-                home_badge = self._resize_badge(
-                    self._get_badge_path(result['home_team'], cup),
-                    badge_size
-                )
-                away_badge = self._resize_badge(
-                    self._get_badge_path(result['away_team'], cup),
-                    badge_size
-                )
+                # ========================================
+                # CARREGAR ESCUDOS (com suporte a TBD)
+                # ========================================
                 
+                if result.get('is_home_tbd'):
+                    # Time indefinido: criar escudo duplo
+                    teams = result['home_team'].split('/')
+                    home_badge = self._create_double_badge(
+                        teams[0].strip(), 
+                        teams[1].strip(), 
+                        badge_size,
+                        cup
+                    )
+                else:
+                    # Time definido: escudo normal
+                    home_badge = self._resize_badge(
+                        self._get_badge_path(result['home_team'], cup),
+                        badge_size
+                    )
+
+                if result.get('is_away_tbd'):
+                    teams = result['away_team'].split('/')
+                    away_badge = self._create_double_badge(
+                        teams[0].strip(), 
+                        teams[1].strip(), 
+                        badge_size,
+                        cup
+                    )
+                else:
+                    away_badge = self._resize_badge(
+                        self._get_badge_path(result['away_team'], cup),
+                        badge_size
+                    )
+
+                # Colar escudos
                 base.paste(home_badge, (rect_x + badge_home_x, y_pos + badge_y), home_badge)
                 base.paste(away_badge, (rect_x + badge_away_x, y_pos + badge_y), away_badge)
                 
-                # Desenhar nomes dos times (centralizados)
-                home_name = self._get_display_name(result['home_team'], cup).upper()
-                away_name = self._get_display_name(result['away_team'], cup).upper()
+                # ========================================
+                # DESENHAR NOMES (com encurtamento smart)
+                # ========================================
+                
+                home_name = self._get_display_name_smart(
+                    result['home_team'], 
+                    cup, 
+                    max_width=400,  # Ajustar conforme necessário
+                    font=font_team
+                ).upper()
+                
+                away_name = self._get_display_name_smart(
+                    result['away_team'], 
+                    cup, 
+                    max_width=400,
+                    font=font_team
+                ).upper()
                 
                 bbox_home = draw.textbbox((0, 0), home_name, font=font_team)
                 home_width = bbox_home[2] - bbox_home[0]

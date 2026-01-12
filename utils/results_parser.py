@@ -111,15 +111,16 @@ class ResultsParser:
                 'status': 'future'
             }
         
-        # Padrão 5: Jogo futuro com "vs."
-        pattern_vs = r'^([A-Z]{3})\s+vs\.?\s+([A-Z]{3})$'
+        # Padrão 5: Jogo futuro com "vs." (SUPORTA TIMES INDEFINIDOS)
+        pattern_vs = r'^([A-Z/]{3,})\s+vs\.?\s+([A-Z/]{3,})$'
         match = re.match(pattern_vs, result_str, re.IGNORECASE)
-        
+
         if match:
             home_abbr, away_abbr = match.groups()
             
-            home_team = self.abbreviations.get(home_abbr, home_abbr)
-            away_team = self.abbreviations.get(away_abbr, away_abbr)
+            # Converter siglas (suporta "/" para times indefinidos)
+            home_team = self._convert_abbr(home_abbr)
+            away_team = self._convert_abbr(away_abbr)
             
             return {
                 'home_abbr': home_abbr,
@@ -128,7 +129,9 @@ class ResultsParser:
                 'away_team': away_team,
                 'home_score': None,
                 'away_score': None,
-                'status': 'vs'
+                'status': 'vs',
+                'is_home_tbd': '/' in home_abbr,
+                'is_away_tbd': '/' in away_abbr
             }
         
         # Padrão 6: Adiado
@@ -172,6 +175,7 @@ class ResultsParser:
             }
         
         return None
+
 
     def parse_multiple_results(self, results_text: str) -> List[Dict]:
         """
@@ -235,3 +239,24 @@ class ResultsParser:
             if name == team_name:
                 return abbr
         return None
+    
+    def _convert_abbr(self, abbr: str) -> str:
+        """
+        Converte sigla(s) para nome(s) completo(s)
+        
+        Suporta siglas compostas: LIV/BAR → Liverpool/Barnsley
+        
+        Args:
+            abbr: Sigla ou siglas separadas por /
+        
+        Returns:
+            Nome completo ou nomes separados por /
+        """
+        # Se tem /, separar e converter cada um
+        if '/' in abbr:
+            teams = abbr.split('/')
+            converted = [self.abbreviations.get(team.strip(), team.strip()) for team in teams]
+            return '/'.join(converted)
+        
+        # Sigla simples
+        return self.abbreviations.get(abbr, abbr)

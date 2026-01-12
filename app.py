@@ -1417,7 +1417,7 @@ elif modo == "🏆 Gerar Copa":
     # Título da fase
     titulo_fase = st.text_input(
         "Título da Fase",
-        placeholder="Ex: 3ª FASE - RESULTADOS",
+        placeholder="Ex: 3ª RODADA - RESULTADOS",
         help="Texto que aparecerá no topo da imagem"
     )
     
@@ -1454,47 +1454,80 @@ elif modo == "🏆 Gerar Copa":
                         title=titulo_fase
                     )
                     
-                    st.success(f"✅ {len(images)} imagem(ns) gerada(s)!")
+                    # SALVAR NA SESSÃO (para não perder após download)
+                    st.session_state['imagens_copa_geradas'] = images
+                    st.session_state['copa_selecionada'] = copa_selecionada
                     
-                    # Mostrar e oferecer download de cada imagem
-                    for idx, img in enumerate(images, start=1):
-                        st.image(img, caption=f"Imagem {idx} de {len(images)}")
-                        
-                        # Salvar como PNG
-                        filename = f"copa_{idx}.png"
-                        img.save(filename, format="PNG")
-                        
-                        with open(filename, "rb") as f:
-                            st.download_button(
-                                f"📥 Baixar Imagem {idx}",
-                                f,
-                                file_name=f"{copa_selecionada.replace(' ', '-')}-{idx}.png",
-                                use_container_width=True,
-                                key=f"download_copa_{idx}"
-                            )
-
-            except FileNotFoundError as e:
-                # Erro de arquivo não encontrado (escudo faltando)
-                error_msg = str(e)
-                if "escudos" in error_msg:
-                    # Extrair nome do time do erro
-                    import re
-                    match = re.search(r"escudos-\w+[/\\](\w+)\.png", error_msg)
-                    if match:
-                        team_name = match.group(1)
-                        st.error(f"❌ Escudo não encontrado: **{team_name}**")
-                        st.info("💡 Adicione o arquivo `{team_name}.png` em uma das pastas de escudos (escudos-pl, escudos-ch, escudos-l1, escudos-l2, escudos-nl, escudos-nonleague)")
-                    else:
-                        st.error(f"❌ Arquivo não encontrado: {error_msg}")
-                else:
-                    st.error(f"❌ Arquivo não encontrado: {error_msg}")
-
+                    st.success(f"✅ {len(images)} imagem(ns) gerada(s)!")
+            
             except Exception as e:
                 st.error(f"❌ Erro ao gerar imagens: {str(e)}")
                 import traceback
                 with st.expander("Ver detalhes do erro"):
                     st.code(traceback.format_exc())
 
+    # ========================================================
+    # MOSTRAR E BAIXAR IMAGENS (FORA DO BOTÃO)
+    # ========================================================
+    if 'imagens_copa_geradas' in st.session_state:
+        st.divider()
+        st.subheader("📸 Imagens Geradas")
+        
+        images = st.session_state['imagens_copa_geradas']
+        copa_nome = st.session_state.get('copa_selecionada', 'Copa')
+        
+        # BOTÃO PARA BAIXAR TODAS DE UMA VEZ
+        if len(images) > 1:
+            import io
+            import zipfile
+            
+            # Criar ZIP em memória
+            zip_buffer = io.BytesIO()
+            with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+                for idx, img in enumerate(images, start=1):
+                    # Salvar imagem em buffer
+                    img_buffer = io.BytesIO()
+                    img.save(img_buffer, format="PNG")
+                    img_buffer.seek(0)
+                    
+                    # Adicionar ao ZIP
+                    filename = f"{copa_nome.replace(' ', '-')}-{idx}.png"
+                    zip_file.writestr(filename, img_buffer.getvalue())
+            
+            zip_buffer.seek(0)
+            
+            st.download_button(
+                "📦 Baixar Todas as Imagens (ZIP)",
+                zip_buffer,
+                file_name=f"{copa_nome.replace(' ', '-')}-todas.zip",
+                mime="application/zip",
+                use_container_width=True,
+                type="primary"
+            )
+            
+            st.divider()
+        
+        # Mostrar cada imagem individualmente
+        for idx, img in enumerate(images, start=1):
+            st.image(img, caption=f"Imagem {idx} de {len(images)}")
+            
+            # Salvar temporariamente
+            filename = f"copa_{idx}.png"
+            img.save(filename, format="PNG")
+            
+            # Botão de download individual
+            with open(filename, "rb") as f:
+                st.download_button(
+                    f"📥 Baixar Imagem {idx}",
+                    f,
+                    file_name=f"{copa_nome.replace(' ', '-')}-{idx}.png",
+                    mime="image/png",
+                    use_container_width=True,
+                    key=f"download_copa_{idx}"  # ← Key única evita conflitos
+                )
+            
+            if idx < len(images):
+                st.divider()
 else:
     # MODO TABELA COM RESULTADOS
     render_table_mode()
