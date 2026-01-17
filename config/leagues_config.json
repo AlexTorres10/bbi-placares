@@ -244,7 +244,7 @@
       "template_file": "nationalleague-template.png",
       "rect_file": "nationalleague-rect.png",
       "round_text_position": {"x": 550, "y": 80},
-      "rect_start_position": {"x": 105, "y": 150},
+      "rect_start_position": {"x": 105, "y": 180},
       "rect_gap": 80,
       "position_offset": {"x": 30, "y": 18},
       "badge_home_offset": {"x": 8, "y": 6},
