@@ -15,7 +15,7 @@
       "badge_home_offset": {"x": 3, "y": 3},
       "badge_away_offset": {"x": 862, "y": 3},
       "badge_size": {"width": 60, "height": 60},
-      "team_name_home_offset": {"x": 270, "y": 18},
+      "team_name_home_offset": {"x": 254, "y": 18},
       "team_name_away_offset": {"x": 696, "y": 18},
       "score_offset": {"x": 490, "y": 12},
       "font_team_size": 36,
