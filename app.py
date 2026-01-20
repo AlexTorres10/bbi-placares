@@ -394,6 +394,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         x, y = pos
         if europeu and nome == "Nottingham Forest":
             nome = "Nott'm Forest"
+        if europeu and nome == "Borussia Dortmund":
+            nome = "Bor. Dortmund"
         if "facup" in path_lower and nome == "Queens Park Rangers":
             nome = "QPR"
         nome_maiusculo = nome.upper()
