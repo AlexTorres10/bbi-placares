@@ -37,8 +37,10 @@ TEMPLATE_LABELS = {
     "uecl.png": "Conference League",
     "facup.png": "FA Cup",
     "eflcup.png": "EFL Cup",
-    "championship.png": "Championship",
     "inglaterra.png": "Seleção Inglesa",
+    "championship.png": "Championship",
+    "leagueone.png": "League One",
+    "leaguetwo.png": "League Two",
 }
 
 TEMPLATE_ORDER = [
@@ -48,8 +50,10 @@ TEMPLATE_ORDER = [
     "uecl.png",
     "facup.png",
     "eflcup.png",
+    "inglaterra.png",
     "championship.png",
-    "inglaterra.png"
+    "leagueone.png",
+    "leaguetwo.png"
 ]
 
 INGLES_UCL = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Tottenham"]
@@ -138,6 +142,16 @@ def carregar_escudos(template_path):
             return sorted([f[:-4] for f in os.listdir("escudos-ch") if f.endswith(".png")])
         return []
     
+    if "leagueone" in template_name:
+        if os.path.exists("escudos-l1"):
+            return sorted([f[:-4] for f in os.listdir("escudos-l1") if f.endswith(".png")])
+        return []
+    
+    if "leaguetwo" in template_name:
+        if os.path.exists("escudos-l2"):
+            return sorted([f[:-4] for f in os.listdir("escudos-l2") if f.endswith(".png")])
+        return []
+    
     if "eflcup" in template_name:
         leagues = ['escudos-pl', 'escudos-ch', 'escudos-l1', 'escudos-l2']
         times_total = []
@@ -164,7 +178,7 @@ def obter_fontes_por_template(template_path):
 
     if "premier" in nome:
         return ("fontes/premierleague.ttf", "fontes/premierleague-bold.ttf")
-    elif "championship" in nome or "efl" in nome or "eflcup" in nome:
+    elif "championship" in nome or "efl" in nome or "league" in nome:
         return ("fontes/efl.otf", "fontes/efl-bold.otf")
     elif "facup" in nome:
         return ("fontes/facup.ttf", "fontes/facup-bold.ttf")
@@ -208,7 +222,7 @@ def obter_config_template(template_path):
             "pos_nome_away": (742, h+18),
             "pos_placar": 922,
         }
-    elif "championship" in nome or "efl" in nome:
+    elif "championship" in nome or "efl" in nome or "league" in nome:
         h = 920
         return {
             "fonte_normal": "fontes/efl.otf",
@@ -341,7 +355,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         top = (new_height - base.height) // 2
         bg_cropped = bg_resized.crop((left, top, left + base.width, top + base.height))
 
-        if 'championship' in template_path.lower() or 'efl' in template_path.lower():
+        if 'championship' in template_path.lower() or 'efl' in template_path.lower() or "league" in template_path.lower():
                 bg_cropped = apply_bottom_gradient(bg_cropped, intensity=0.9)
 
         final_img = Image.new("RGBA", bg_cropped.size, (0, 0, 0, 0))
