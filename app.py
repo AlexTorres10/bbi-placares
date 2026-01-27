@@ -654,7 +654,7 @@ def render_table_mode():
         col1, col2 = st.columns(2)
         
         with col1:
-            if st.button("📸 Gerar Imagem da Rodada", type="primary", use_container_width=True):
+            if st.button("📸 Gerar Imagem da Rodada", type="primary", width='stretch'):
                 generator = ImageGenerator()
                 try:
                     generator = ImageGenerator()
@@ -674,7 +674,7 @@ def render_table_mode():
                     st.error(f"❌ Erro ao gerar imagem: {str(e)}")
         
         with col2:
-            if st.button("📊 Gerar Imagem da Tabela", type="primary", use_container_width=True):
+            if st.button("📊 Gerar Imagem da Tabela", type="primary", width='stretch'):
                 try:
                     # Processar tabela com resultados
                     processor = TableProcessor()
@@ -762,7 +762,7 @@ def render_table_mode():
                             # Só mostrar colunas que existem
                             colunas_exibir = [col for col in colunas_exibir if col in divergencias.columns]
                             
-                            st.dataframe(divergencias[colunas_exibir], use_container_width=True)
+                            st.dataframe(divergencias[colunas_exibir], width='stretch')
                     else:
                         st.info("ℹ️ Não foi possível buscar a tabela oficial para validação (verifique sua conexão).")
                         has_divergences = False
@@ -814,7 +814,7 @@ def render_table_mode():
                             "📥 Baixar Imagem da Rodada", 
                             f, 
                             file_name=f"{prefixo}-M{rodada_num}-R.png",  # ← AGORA COM PREFIXO
-                            use_container_width=True
+                            width='stretch'
                         )
             
             with col2:
@@ -843,7 +843,7 @@ def render_table_mode():
                             "📥 Baixar Tabela", 
                             f, 
                             file_name=f"{prefixo}-M{rodada_num}-T.png",  # ← AGORA COM PREFIXO
-                            use_container_width=True
+                            width='stretch'
                         )
             
             # ================================================================
@@ -851,7 +851,7 @@ def render_table_mode():
             # ================================================================
             st.divider()
             
-            if st.button("🚀 Atualizar Tabela no GitHub", type="secondary", use_container_width=True):
+            if st.button("🚀 Atualizar Tabela no GitHub", type="secondary", width='stretch'):
                 if 'tabela_processada' not in st.session_state:
                     st.error("❌ Gere a tabela primeiro!")
                 else:
@@ -1410,7 +1410,7 @@ elif modo == "📰 Gerar Notícia":
                         "📥 Baixar Notícia",
                         f,
                         file_name=nome_arquivo,
-                        use_container_width=True
+                        width='stretch'
                     )
                 
                 # Limpar arquivo temporário
@@ -1518,7 +1518,7 @@ elif modo == "🏆 Gerar Copa":
                 zip_buffer,
                 file_name=f"{copa_nome.replace(' ', '-')}-todas.zip",
                 mime="application/zip",
-                use_container_width=True,
+                width='stretch',
                 type="primary"
             )
             
@@ -1539,7 +1539,7 @@ elif modo == "🏆 Gerar Copa":
                     f,
                     file_name=f"{copa_nome.replace(' ', '-')}-{idx}.png",
                     mime="image/png",
-                    use_container_width=True,
+                    width='stretch',
                     key=f"download_copa_{idx}"  # ← Key única evita conflitos
                 )
             
