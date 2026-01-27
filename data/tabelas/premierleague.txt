@@ -1,20 +1,20 @@
-Arsenal 22 15 5 2 40 14 26 50
-Manchester City 22 13 4 5 45 21 24 43
-Aston Villa 22 13 4 5 33 25 8 43
-Liverpool 22 10 6 6 33 29 4 36
-Manchester United 22 9 8 5 38 32 6 35
-Chelsea 22 9 7 6 36 24 12 34
-Brentford 22 10 3 9 35 30 5 33
-Newcastle United 22 9 6 7 32 27 5 33
-Sunderland 22 8 9 5 23 23 0 33
-Everton 22 9 5 8 24 25 -1 32
-Fulham 22 9 4 9 30 31 -1 31
-Brighton 22 7 9 6 32 29 3 30
-Crystal Palace 22 7 7 8 23 25 -2 28
-Tottenham 22 7 6 9 31 29 2 27
-Bournemouth 22 6 9 7 35 41 -6 27
-Leeds United 22 6 7 9 30 37 -7 25
-Nottingham Forest 22 6 4 12 21 34 -13 22
-West Ham 22 4 5 13 24 44 -20 17
-Burnley 22 3 5 14 23 42 -19 14
-Wolverhampton 22 1 5 16 15 41 -26 8
+Arsenal 23 15 5 3 42 17 25 50
+Manchester City 23 14 4 5 47 21 26 46
+Aston Villa 23 14 4 5 35 25 10 46
+Manchester United 23 10 8 5 41 34 7 38
+Chelsea 23 10 7 6 39 25 14 37
+Liverpool 23 10 6 7 35 32 3 36
+Fulham 23 10 4 9 32 32 0 34
+Brentford 23 10 3 10 35 32 3 33
+Newcastle United 23 9 6 8 32 29 3 33
+Everton 23 9 6 8 25 26 -1 33
+Sunderland 23 8 9 6 24 26 -2 33
+Brighton 23 7 9 7 33 31 2 30
+Bournemouth 23 7 9 7 38 43 -5 30
+Tottenham 23 7 7 9 33 31 2 28
+Crystal Palace 23 7 7 9 24 28 -4 28
+Leeds United 23 6 8 9 31 38 -7 26
+Nottingham Forest 23 7 4 12 23 34 -11 25
+West Ham 23 5 5 13 27 45 -18 20
+Burnley 23 3 6 14 25 44 -19 15
+Wolverhampton 23 1 5 17 15 43 -28 8
