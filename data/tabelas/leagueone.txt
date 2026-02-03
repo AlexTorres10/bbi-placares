@@ -11,14 +11,14 @@ Reading 28 10 10 8 39 35 4 40
 Mansfield Town 27 10 8 9 36 30 6 38
 Peterborough 29 12 2 15 37 39 -2 38
 Exeter City 28 11 4 13 33 30 3 37
+Barnsley 26 10 7 9 42 43 -1 37
 Plymouth Argyle 29 11 4 14 36 42 -6 37
-Barnsley 25 10 6 9 40 41 -1 36
+AFC Wimbledon 28 10 5 13 29 36 -7 35
+Doncaster Rovers 29 9 6 14 33 46 -13 33
 Blackpool 29 9 5 15 35 42 -7 32
-AFC Wimbledon 27 9 5 13 28 36 -8 32
 Leyton Orient 29 9 5 15 40 49 -9 32
 Wigan Athletic 28 7 10 11 29 34 -5 31
 Rotherham United 28 8 7 13 31 40 -9 31
-Burton Albion 28 8 7 13 30 41 -11 31
-Doncaster Rovers 28 8 6 14 31 45 -14 30
-Northampton Town 28 8 5 15 24 36 -12 29
-Port Vale 26 5 6 15 20 37 -17 21
+Burton Albion 29 8 7 14 31 43 -12 31
+Northampton Town 29 8 6 15 26 38 -12 30
+Port Vale 27 5 6 16 20 38 -18 21
