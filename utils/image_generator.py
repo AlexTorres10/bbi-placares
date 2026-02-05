@@ -544,30 +544,56 @@ class ImageGenerator:
         config = self.leagues_config[league]
         zones = config['promotion_zones']
         
-        # Para Premier League, verificar confirmações
-        if league == "premierleague" and confirmations and position in confirmations:
+        # Verificar confirmações se disponíveis
+        if confirmations and position in confirmations:
             pos_conf = confirmations[position]
+            rect_file = None
             
-            # Verificar na ordem: champion > ucl > uel > uecl > relegation
-            if pos_conf.get('champion'):
-                rect_file = zones['champion']['rect_confirmed']
-            elif pos_conf.get('ucl'):
-                rect_file = zones['ucl']['rect_confirmed']
-            elif pos_conf.get('uel'):
-                rect_file = zones['uel']['rect_confirmed']
-            elif pos_conf.get('uecl'):
-                rect_file = zones['uecl']['rect_confirmed']
-            elif pos_conf.get('relegated'):
-                rect_file = zones['relegation']['rect_confirmed']
-            else:
-                # Não confirmado, usar rect padrão baseado na posição
-                return self._get_default_rect_for_position(league, position, zones)
+            # PREMIER LEAGUE
+            if league == "premierleague":
+                # Verificar na ordem: champion > ucl > uel > uecl > relegation
+                if pos_conf.get('champion'):
+                    rect_file = zones['champion']['rect_confirmed']
+                elif pos_conf.get('ucl'):
+                    rect_file = zones['ucl']['rect_confirmed']
+                elif pos_conf.get('uel'):
+                    rect_file = zones['uel']['rect_confirmed']
+                elif pos_conf.get('uecl'):
+                    rect_file = zones['uecl']['rect_confirmed']
+                elif pos_conf.get('relegated'):
+                    rect_file = zones['relegation']['rect_confirmed']
             
-            rect_path = os.path.join("tabela", rect_file)
-            if os.path.exists(rect_path):
-                return self._load_image(rect_path)
+            # CHAMPIONSHIP, LEAGUE ONE, LEAGUE TWO
+            elif league in ["championship", "leagueone", "leaguetwo"]:
+                # Verificar na ordem: champion > promoted > playoffs > relegation
+                if pos_conf.get('champion'):
+                    rect_file = zones['champion']['rect_confirmed']
+                elif pos_conf.get('promoted'):
+                    rect_file = zones['promoted']['rect_confirmed']
+                elif pos_conf.get('playoffs'):
+                    rect_file = zones['playoffs']['rect_confirmed']
+                elif pos_conf.get('relegated'):
+                    rect_file = zones['relegation']['rect_confirmed']
+            
+            # NATIONAL LEAGUE
+            elif league == "nationalleague":
+                # Verificar na ordem: champion > playoffs_semi > playoffs_quarter > relegation
+                if pos_conf.get('champion'):
+                    rect_file = zones['champion']['rect_confirmed']
+                elif pos_conf.get('playoffs_semi'):  # Semi-finals (2º e 3º)
+                    rect_file = zones['playoffs_semi']['rect_confirmed']
+                elif pos_conf.get('playoffs_quarter'):  # Quarter-finals (4º-7º)
+                    rect_file = zones['playoffs_quarter']['rect_confirmed']
+                elif pos_conf.get('relegated'):
+                    rect_file = zones['relegation']['rect_confirmed']
+            
+            # Se encontrou um rect confirmado, carregar e retornar
+            if rect_file:
+                rect_path = os.path.join("tabela", rect_file)
+                if os.path.exists(rect_path):
+                    return self._load_image(rect_path)
         
-        # Lógica padrão para outras ligas ou sem confirmação
+        # Lógica padrão: sem confirmação ou confirmação não encontrada
         return self._get_default_rect_for_position(league, position, zones)
 
     def _get_default_rect_for_position(self, league: str, position: int, zones: dict):

@@ -950,8 +950,8 @@ def collect_confirmations(liga_key: str) -> Dict:
         for pos in range(1, 25):
             confirmations[pos] = {
                 'champion': st.session_state.get(f'nl_{pos}_champion', False),
-                'playoffs': st.session_state.get(f'nl_{pos}_playoffs', False),
-                'playoffsqua': st.session_state.get(f'nl_{pos}_playoffsqua', False),
+                'playoffs_semi': st.session_state.get(f'nl_{pos}_playoffs_semi', False),
+                'playoffs_quarter': st.session_state.get(f'nl_{pos}_playoffs_quarter', False),
                 'relegated': st.session_state.get(f'nl_{pos}_relegated', False)
             }
     
@@ -1073,27 +1073,6 @@ def render_standard_league_table_options(liga_key):
         render_confirmation_checkboxes_nationalleague()
 
 
-def render_confirmation_checkboxes_pl():
-    """Checkboxes de confirmação para Premier League"""
-    st.write("**1º Colocado:**")
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.checkbox("Campeão", key="pl_1_champion")
-    with col2:
-        st.checkbox("UCL", key="pl_1_ucl")
-    with col3:
-        st.checkbox("UEL", key="pl_1_uel")
-    with col4:
-        st.checkbox("UECL", key="pl_1_uecl")
-    
-    # Repetir para posições 2-8
-    # ... (implementar para todas as posições)
-    
-    st.write("**Zona de rebaixamento:**")
-    for pos in [18, 19, 20]:
-        st.checkbox(f"{pos}º Rebaixado", key=f"pl_{pos}_relegated")
-
-
 def render_confirmation_checkboxes_championship():
     """Checkboxes para Championship"""
     st.write("**Zona de Promoção e Play-offs:**")
@@ -1110,21 +1089,27 @@ def render_confirmation_checkboxes_championship():
         st.checkbox("Play-offs", key="ch_1_playoffs")
     
     # 2º colocado
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.write("**2º**")
     with col2:
         st.checkbox("Promovido", key="ch_2_promoted")
     with col3:
         st.checkbox("Play-offs", key="ch_2_playoffs")
+    with col4:
+        st.write("")
     
     # 3º ao 6º - Play-offs
     for pos in range(3, 7):
-        col1, col2 = st.columns([1, 2])
+        col1, col2, col3, col4 = st.columns(4)
         with col1:
             st.write(f"**{pos}º**")
         with col2:
             st.checkbox("Play-offs", key=f"ch_{pos}_playoffs")
+        with col3:
+            st.write("")
+        with col4:
+            st.write("")
     
     st.divider()
     
@@ -1147,21 +1132,27 @@ def render_confirmation_checkboxes_leagueone():
         st.checkbox("Play-offs", key="l1_1_playoffs")
     
     # 2º colocado
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.write("**2º**")
     with col2:
         st.checkbox("Promovido", key="l1_2_promoted")
     with col3:
         st.checkbox("Play-offs", key="l1_2_playoffs")
+    with col4:
+        st.write("")
 
     # 3º ao 6º - Play-offs
     for pos in range(3, 7):
-        col1, col2 = st.columns([1, 2])
+        col1, col2, col3, col4 = st.columns(4)
         with col1:
             st.write(f"**{pos}º**")
         with col2:
             st.checkbox("Play-offs", key=f"l1_{pos}_playoffs")
+        with col3:
+            st.write("")
+        with col4:
+            st.write("")
     
     st.divider()
     
@@ -1227,28 +1218,39 @@ def render_confirmation_checkboxes_leaguetwo():
 def render_confirmation_checkboxes_nationalleague():
     """Checkboxes para National League"""
     # 1º colocado
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.write("**1º**")
     with col2:
         st.checkbox("Campeão", key="nl_1_champion")
-
+    with col3:
+        st.checkbox("Play-offs Semi", key="nl_1_playoffs_semi")
+    with col4:
+        st.checkbox("Play-offs Quartas", key="nl_1_playoffs_quarter")
     # 2º colocado
     for pos in range(2, 4):
-        col1, col2 = st.columns(2)
+        col1, col2, col3, col4 = st.columns(4)
         with col1:
-            st.write("**2º**")
+            st.write(f"**{pos}º**")
         with col2:
-            st.checkbox("Promovido", key=f"nl_{pos}_playoff")
+            st.checkbox("Play-offs Semi", key=f"nl_{pos}_playoffs_semi")
+        with col3:
+            st.checkbox("Play-offs Quartas", key=f"nl_{pos}_playoffs_quarter")
+        with col4:
+            st.write("")
     
     
     # 3º ao 6º - Play-offs
     for pos in range(4, 8):
-        col1, col2 = st.columns([1, 2])
+        col1, col2, col3, col4 = st.columns(4)
         with col1:
             st.write(f"**{pos}º**")
         with col2:
-            st.checkbox("Play-offs", key=f"nl_{pos}_playoffqua")
+            st.checkbox("Play-offs Quartas", key=f"nl_{pos}_playoffs_quarter")
+        with col3:
+            st.write("")
+        with col4:
+            st.write("")
     
     st.divider()
     

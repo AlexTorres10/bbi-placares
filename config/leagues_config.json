@@ -266,7 +266,7 @@
       "position_offset": {"x": -20, "y": 0},
       "badge_offset": {"x": 4, "y": 4},
       "badge_size": {"width": 30, "height": 30},
-      "team_name_offset": {"x": 45, "y": 0},
+      "team_name_offset": {"x": 45, "y": -2},
       "stats_columns": {
         "J": 615, "V": 664, "E": 713, "D": 761,
         "SG": 810, "PTS": 858
