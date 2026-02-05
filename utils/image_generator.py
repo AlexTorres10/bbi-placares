@@ -459,9 +459,13 @@ class ImageGenerator:
                 self._get_badge_path(team['name'], badges_folder),
                 (tt['badge_size']['width'], tt['badge_size']['height'])
             )
+
+            # Calcular posição Y centralizada no row_height
+            badge_y = y_pos + (tt['row_height'] - tt['badge_size']['height']) // 2 + tt['badge_offset']['y']
+
             base.paste(
                 badge,
-                (tt['table_start']['x'] + tt['badge_offset']['x'], y_pos + tt['badge_offset']['y']),
+                (tt['table_start']['x'] + tt['badge_offset']['x'], badge_y),
                 badge
             )
             
@@ -527,7 +531,7 @@ class ImageGenerator:
 
                 for idx, note in enumerate(penalty_notes):
                     draw.text(
-                        (tt['table_start']['x'] - 30, notes_y + (idx * 25)),  # ← -30 em vez de +20 (mais à esquerda)
+                        (tt['table_start']['x'] - 50, notes_y + (idx * 25)),  # ← -30 em vez de +20 (mais à esquerda)
                         note,
                         font=font_note,
                         fill=tt['color_text']

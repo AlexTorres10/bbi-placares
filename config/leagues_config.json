@@ -98,7 +98,7 @@
       "table_start": {"x": 225, "y": 176},
       "row_height": 42,
       "position_offset": {"x": -20, "y": 9},
-      "badge_offset": {"x": 3, "y": 3},
+      "badge_offset": {"x": 3, "y": -1},
       "badge_size": {"width": 32, "height": 32},
       "team_name_offset": {"x": 45, "y": -2},
       "stats_columns": {
@@ -107,7 +107,7 @@
       },
       "font_size": 24,
       "font_bold_size": 24,
-      "font_note_size": 18,
+      "font_note_size": 16,
       "color_text": "#FFFFFF"
     },
     
@@ -153,7 +153,7 @@
       "table_start": {"x": 225, "y": 176},
       "row_height": 42,
       "position_offset": {"x": -20, "y": 9},
-      "badge_offset": {"x": 3, "y": 3},
+      "badge_offset": {"x": 3, "y": -1},
       "badge_size": {"width": 32, "height": 32},
       "team_name_offset": {"x": 45, "y": -2},
       "stats_columns": {
@@ -208,7 +208,7 @@
       "table_start": {"x": 225, "y": 176},
       "row_height": 42,
       "position_offset": {"x": -20, "y": 9},
-      "badge_offset": {"x": 3, "y": 3},
+      "badge_offset": {"x": 3, "y": -1},
       "badge_size": {"width": 32, "height": 32},
       "team_name_offset": {"x": 45, "y": -2},
       "stats_columns": {

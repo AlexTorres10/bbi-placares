@@ -709,8 +709,10 @@ def render_table_mode():
                         
                         # ADICIONAR NOTA DE PENALIDADE SE EXISTIR
                         # Verificar se o time tem pontos negativos ou penalidade conhecida
-                        if team.name == "Sheffield Wednesday" and team.points < 0:
-                            team_dict['penalty_note'] = "Sheffield Wednesday perdeu 18 pontos por administração judicial e atraso de salários"
+                        if team.name == "Sheffield Wednesday":
+                            team_dict['penalty_note'] = "Sheffield Wednesday perdeu 18 pontos por adm. judicial e atraso de salários."
+                        if team.name == "Leicester City":
+                            team_dict['penalty_note'] = "Leicester City perdeu 6 pontos por violação das regras de lucratividade e sustentabilidade."
                         
                         table_data.append(team_dict)
                     
