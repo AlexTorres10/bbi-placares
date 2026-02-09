@@ -264,7 +264,7 @@
       "table_start": {"x": 200, "y": 150},
       "row_height": 45,
       "position_offset": {"x": -20, "y": 0},
-      "badge_offset": {"x": 4, "y": 4},
+      "badge_offset": {"x": 3, "y": -3},
       "badge_size": {"width": 30, "height": 30},
       "team_name_offset": {"x": 45, "y": -2},
       "stats_columns": {
