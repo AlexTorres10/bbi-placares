@@ -77,8 +77,44 @@ class NewsGenerator:
         if best_split:
             return best_split
         
-        # Se não conseguiu balancear, usar textwrap tradicional
-        return textwrap.wrap(text, width=30)
+        # Se não conseguiu balancear em 2 linhas, tentar 3 linhas
+        for i in range(1, len(words) - 1):
+            for j in range(i + 1, len(words)):
+                line1 = ' '.join(words[:i])
+                line2 = ' '.join(words[i:j])
+                line3 = ' '.join(words[j:])
+                
+                bbox1 = draw.textbbox((0, 0), line1, font=font)
+                bbox2 = draw.textbbox((0, 0), line2, font=font)
+                bbox3 = draw.textbbox((0, 0), line3, font=font)
+                
+                width1 = bbox1[2] - bbox1[0]
+                width2 = bbox2[2] - bbox2[0]
+                width3 = bbox3[2] - bbox3[0]
+                
+                if width1 <= max_width and width2 <= max_width and width3 <= max_width:
+                    return [line1, line2, line3]
+        
+        # Último recurso: quebrar palavra por palavra até caber
+        lines = []
+        current_line = []
+        
+        for word in words:
+            test_line = ' '.join(current_line + [word])
+            bbox = draw.textbbox((0, 0), test_line, font=font)
+            test_width = bbox[2] - bbox[0]
+            
+            if test_width <= max_width:
+                current_line.append(word)
+            else:
+                if current_line:
+                    lines.append(' '.join(current_line))
+                current_line = [word]
+        
+        if current_line:
+            lines.append(' '.join(current_line))
+        
+        return lines
     
     def _apply_bottom_gradient(self, image: Image.Image, intensity: float = 0.8) -> Image.Image:
         """
@@ -180,7 +216,8 @@ class NewsGenerator:
             bg_color = (0, 0, 0)  # Preto
             text_color = (255, 255, 255)  # Branco
             text_area_y = 1050  # MAIS PRA BAIXO
-            max_width = 900
+            # USAR LARGURA DO TEMPLATE com margem de segurança
+            max_width = base.width - 200  # 100px de margem de cada lado
             
             # ADICIONAR LOGO NO CANTO SUPERIOR DIREITO
             logo_path = os.path.join(self.templates_dir, "logo.png")
@@ -203,7 +240,8 @@ class NewsGenerator:
             bg_color = (255, 20, 20)  # Vermelho
             text_color = (255, 255, 255)  # Branco
             text_area_y = 1050
-            max_width = 850
+            # USAR LARGURA DO TEMPLATE com margem de segurança
+            max_width = base.width - 200  # 100px de margem de cada lado
         
         # Carregar fonte
         font_path = self._get_font_for_league(league, bold=True)
