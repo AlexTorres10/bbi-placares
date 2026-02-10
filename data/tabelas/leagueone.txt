@@ -5,11 +5,11 @@ Stockport County 30 15 8 7 42 35 7 53
 Huddersfield Town 31 14 7 10 53 42 11 49
 Bradford City 29 14 7 8 37 33 4 49
 Luton Town 30 13 6 11 40 35 5 45
+Peterborough 31 14 2 15 45 41 4 44
 Wycombe Wanderers 30 11 10 9 40 31 9 43
+Reading 30 11 10 9 43 39 4 43
 Stevenage 29 11 9 9 31 30 1 42
-Peterborough 30 13 2 15 43 40 3 41
-Reading 29 10 10 9 41 38 3 40
-Mansfield Town 28 10 9 9 36 30 6 39
+Mansfield Town 29 10 9 10 37 32 5 39
 Exeter City 29 11 5 13 33 30 3 38
 AFC Wimbledon 29 11 5 13 32 38 -6 38
 Barnsley 27 10 7 10 44 46 -2 37
@@ -19,6 +19,6 @@ Leyton Orient 30 9 6 15 40 49 -9 33
 Northampton Town 30 9 6 15 29 39 -10 33
 Doncaster Rovers 30 9 6 15 33 50 -17 33
 Burton Albion 30 8 8 14 33 45 -12 32
-Wigan Athletic 29 7 10 12 30 40 -10 31
+Wigan Athletic 30 7 10 13 31 42 -11 31
 Rotherham United 29 8 7 14 31 43 -12 31
 Port Vale 28 5 7 16 22 40 -18 22
