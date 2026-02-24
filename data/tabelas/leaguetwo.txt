@@ -5,17 +5,17 @@ Notts County 33 18 7 8 52 32 20 61
 Swindon Town 34 19 4 11 56 40 16 61
 Crewe Alexandra 34 15 8 11 50 40 10 53
 Chesterfield 33 13 14 6 52 43 9 53
-Salford City 31 16 4 11 44 41 3 52
+Salford City 32 16 4 12 45 43 2 52
+Barnet 34 13 11 10 43 37 6 50
 Walsall 32 14 8 10 40 35 5 50
 Colchester United 32 13 10 9 48 34 14 49
 Grimsby Town 32 13 10 9 45 37 8 49
-Barnet 33 12 11 10 42 37 5 47
-Accrington 32 13 7 12 36 33 3 46
+Accrington 33 13 7 13 36 34 2 46
 Fleetwood Town 32 12 8 12 43 42 1 44
 Oldham Athletic 31 10 12 9 34 30 4 42
 Gillingham 32 10 11 11 40 41 -1 41
+Shrewsbury Town 34 10 8 16 33 52 -19 38
 Tranmere Rovers 33 9 8 16 45 57 -12 35
-Shrewsbury Town 33 9 8 16 31 51 -20 35
 Cheltenham Town 32 10 5 17 33 54 -21 35
 Bristol Rovers 33 9 3 21 32 56 -24 30
 Crawley Town 34 6 10 18 33 54 -21 28
