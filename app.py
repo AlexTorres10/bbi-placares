@@ -988,7 +988,7 @@ def render_premier_league_table_options():
         "G8 Europeu (5 UCL + 2 UEL + 1 UECL)"
     ]
     
-    selected_mode = st.selectbox("Modo da tabela", table_modes)
+    selected_mode = st.selectbox("Modo da tabela", table_modes, index=2)
     
     st.divider()
     
@@ -1117,7 +1117,10 @@ def render_confirmation_checkboxes_championship():
     
     st.write("**Zona de Rebaixamento:**")
     for pos in [22, 23, 24]:
-        st.checkbox(f"{pos}º colocado - Rebaixado", key=f"ch_{pos}_relegated")
+        if pos == 24:
+            st.checkbox(f"{pos}º colocado - Rebaixado", key=f"ch_{pos}_relegated", value=True)
+        else:
+            st.checkbox(f"{pos}º colocado - Rebaixado", key=f"ch_{pos}_relegated")
 
 
 def render_confirmation_checkboxes_leagueone():
