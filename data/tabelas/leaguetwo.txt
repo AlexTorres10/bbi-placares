@@ -1,24 +1,24 @@
-Bromley 33 18 11 4 56 34 22 65
-Cambridge United 33 18 9 6 48 26 22 63
-Milton Keynes Dons 33 17 10 6 62 33 29 61
-Notts County 33 18 7 8 52 32 20 61
-Swindon Town 34 19 4 11 56 40 16 61
-Crewe Alexandra 34 15 8 11 50 40 10 53
-Chesterfield 33 13 14 6 52 43 9 53
-Salford City 32 16 4 12 45 43 2 52
-Barnet 34 13 11 10 43 37 6 50
-Walsall 32 14 8 10 40 35 5 50
-Colchester United 32 13 10 9 48 34 14 49
-Grimsby Town 32 13 10 9 45 37 8 49
-Accrington 33 13 7 13 36 34 2 46
-Fleetwood Town 32 12 8 12 43 42 1 44
-Oldham Athletic 31 10 12 9 34 30 4 42
-Gillingham 32 10 11 11 40 41 -1 41
-Shrewsbury Town 34 10 8 16 33 52 -19 38
-Tranmere Rovers 33 9 8 16 45 57 -12 35
-Cheltenham Town 32 10 5 17 33 54 -21 35
-Bristol Rovers 33 9 3 21 32 56 -24 30
-Crawley Town 34 6 10 18 33 54 -21 28
-Barrow 32 7 6 19 33 50 -17 27
-Harrogate Town 34 6 8 20 24 51 -27 26
-Newport County 33 6 6 21 32 60 -28 24
+Bromley 35 19 12 4 58 35 23 69
+Cambridge United 34 18 10 6 49 27 22 64
+Milton Keynes Dons 34 17 11 6 63 34 29 62
+Swindon Town 35 19 5 11 57 41 16 62
+Notts County 34 18 7 9 52 33 19 61
+Chesterfield 35 14 14 7 55 44 11 56
+Crewe Alexandra 35 16 8 11 52 41 11 56
+Grimsby Town 34 15 10 9 49 38 11 55
+Salford City 34 17 4 13 47 46 1 55
+Barnet 35 14 11 10 44 37 7 53
+Walsall 34 15 8 11 42 37 5 53
+Colchester United 34 13 10 11 48 38 10 49
+Fleetwood Town 34 13 9 12 44 42 2 48
+Oldham Athletic 33 11 13 9 36 30 6 46
+Accrington 34 13 7 14 37 36 1 46
+Gillingham 33 11 11 11 41 41 0 44
+Shrewsbury Town 35 10 8 17 34 54 -20 38
+Cheltenham Town 33 10 6 17 34 55 -21 36
+Tranmere Rovers 35 9 8 18 47 62 -15 35
+Bristol Rovers 34 9 4 21 33 57 -24 31
+Crawley Town 35 6 10 19 33 56 -23 28
+Newport County 35 7 7 21 35 61 -26 28
+Barrow 33 7 6 20 33 51 -18 27
+Harrogate Town 35 6 9 20 25 52 -27 27
