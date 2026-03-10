@@ -1,24 +1,24 @@
 Bromley 36 19 13 4 59 36 23 70
-Milton Keynes Dons 35 18 11 6 67 35 32 65
+Milton Keynes Dons 36 19 11 6 72 36 36 68
 Cambridge United 35 18 11 6 50 28 22 65
 Notts County 35 19 7 9 54 34 20 64
 Swindon Town 36 19 6 11 59 43 16 63
-Salford City 35 18 4 13 49 46 3 58
+Salford City 36 19 4 13 50 46 4 61
 Grimsby Town 35 15 11 9 50 39 11 56
 Chesterfield 36 14 14 8 57 47 10 56
 Crewe Alexandra 36 16 8 12 53 43 10 56
 Barnet 36 14 11 11 44 39 5 53
-Walsall 35 15 8 12 43 39 4 53
+Walsall 36 15 8 13 43 40 3 53
 Colchester United 35 14 10 11 50 39 11 52
+Fleetwood Town 36 13 11 12 47 45 2 50
 Oldham Athletic 34 12 13 9 39 31 8 49
-Fleetwood Town 35 13 10 12 45 43 2 49
 Accrington 35 13 8 14 38 37 1 47
-Gillingham 34 11 12 11 42 42 0 45
+Gillingham 35 11 12 12 43 47 -4 45
 Shrewsbury Town 36 11 8 17 37 56 -19 41
-Cheltenham Town 34 10 7 17 36 57 -21 37
+Cheltenham Town 35 10 8 17 38 59 -21 38
+Bristol Rovers 36 11 4 21 37 58 -21 37
 Tranmere Rovers 36 9 8 19 48 65 -17 35
-Bristol Rovers 35 10 4 21 35 58 -23 34
 Crawley Town 36 6 11 19 35 58 -23 29
-Barrow 34 7 7 20 35 53 -18 28
+Barrow 35 7 7 21 35 55 -20 28
 Newport County 36 7 7 22 36 63 -27 28
 Harrogate Town 36 6 9 21 26 56 -30 27
