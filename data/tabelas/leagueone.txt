@@ -11,7 +11,7 @@ Plymouth Argyle 35 15 4 16 51 51 0 49
 Luton Town 35 13 8 14 45 44 1 47
 Barnsley 33 13 8 12 55 55 0 47
 Peterborough 35 14 4 17 50 49 1 46
-AFC Wimbledon 33 12 7 14 41 48 -7 43
+AFC Wimbledon 34 13 7 14 42 48 -6 46
 Exeter City 35 11 9 15 40 42 -2 42
 Mansfield Town 33 10 11 12 39 37 2 41
 Burton Albion 36 10 10 16 39 51 -12 40
@@ -20,5 +20,5 @@ Wigan Athletic 34 9 11 14 36 47 -11 38
 Blackpool 35 10 8 17 41 55 -14 38
 Leyton Orient 34 10 6 18 45 58 -13 36
 Rotherham United 35 9 8 18 33 48 -15 35
-Northampton Town 35 9 8 18 31 47 -16 35
+Northampton Town 36 9 8 19 31 48 -17 35
 Port Vale 32 6 9 17 26 44 -18 27
