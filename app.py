@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
+import io
 import os
 import re
 import json
@@ -1433,6 +1434,72 @@ def render_confirmation_checkboxes_nationalleague():
 
 
 # ============================================================================
+# UTILITÁRIOS — ESTATÍSTICAS
+# ============================================================================
+
+def process_badge_for_dark_mode(img_bytes: bytes) -> bytes:
+    """Inverts monochromatic dark badges so they remain visible in dark mode."""
+    import statistics
+    img = Image.open(io.BytesIO(img_bytes)).convert("RGBA")
+    pixels = list(img.getdata())
+    opaque = [(px[0], px[1], px[2]) for px in pixels if px[3] > 10]
+    if not opaque:
+        return img_bytes
+    all_channels = [v for p in opaque for v in p]
+    avg_brightness = sum(all_channels) / len(all_channels)
+    std_dev = statistics.stdev(all_channels)
+    if std_dev >= 30 or avg_brightness >= 80:
+        return img_bytes
+    r, g, b, a = img.split()
+    r = r.point(lambda x: 255 - x)
+    g = g.point(lambda x: 255 - x)
+    b = b.point(lambda x: 255 - x)
+    result = Image.merge("RGBA", (r, g, b, a))
+    out = io.BytesIO()
+    result.save(out, format="PNG")
+    return out.getvalue()
+
+
+def _get_recent_form(selected_team: str, liga_str: str, n: int = 5) -> list:
+    """Returns list of 'V'/'E'/'D' for the last n matches of selected_team in liga_str."""
+    csv_path = os.path.join("data", "historico.csv")
+    if not os.path.exists(csv_path):
+        return []
+    games = []
+    with open(csv_path, newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row.get('liga') != liga_str:
+                continue
+            if row.get('casa') == selected_team or row.get('fora') == selected_team:
+                games.append(row)
+    from datetime import datetime
+    def _parse_date(row):
+        try:
+            return datetime.strptime(row['data'], '%Y-%m-%d')
+        except Exception:
+            return datetime.min
+    games.sort(key=_parse_date, reverse=True)
+    games = games[:n]
+    results = []
+    for g in games:
+        placar_clean = re.sub(r'\s*\(.*?\)', '', g.get('placar', '')).strip()
+        parts = placar_clean.split('-')
+        if len(parts) != 2:
+            continue
+        try:
+            home_score = int(parts[0].strip())
+            away_score = int(parts[1].strip())
+        except ValueError:
+            continue
+        if g.get('casa') == selected_team:
+            results.append('V' if home_score > away_score else ('E' if home_score == away_score else 'D'))
+        else:
+            results.append('V' if away_score > home_score else ('E' if away_score == home_score else 'D'))
+    return results
+
+
+# ============================================================================
 # MODO ESTATÍSTICAS
 # ============================================================================
 
@@ -1450,6 +1517,14 @@ def render_stats_mode():
     liga_label = st.selectbox("Liga", list(LIGAS_STATS.keys()))
     liga_key, liga_str = LIGAS_STATS[liga_label]
 
+    _BADGE_FOLDERS = {
+        "premierleague":  "escudos-pl",
+        "championship":   "escudos-ch",
+        "leagueone":      "escudos-l1",
+        "leaguetwo":      "escudos-l2",
+        "nationalleague": "escudos-nl",
+    }
+
     if st.button("🔄 Atualizar Estatísticas", type="primary"):
         with st.spinner("Calculando estatísticas..."):
             try:
@@ -1457,6 +1532,24 @@ def render_stats_mode():
                 if 'stats_cache' not in st.session_state:
                     st.session_state['stats_cache'] = {}
                 st.session_state['stats_cache'][liga_key] = data
+
+                # Pre-process and cache badge base64 strings eagerly
+                badge_folder = _BADGE_FOLDERS.get(liga_key, "escudos-pl")
+                badge_cache = []
+                for team in data['teams']:
+                    badge_path = f"{badge_folder}/{team}.png"
+                    if os.path.exists(badge_path):
+                        with open(badge_path, "rb") as _f:
+                            _raw = _f.read()
+                        _processed = process_badge_for_dark_mode(_raw)
+                        _b64 = base64.b64encode(_processed).decode()
+                        badge_cache.append(f"data:image/png;base64,{_b64}")
+                    else:
+                        badge_cache.append("")
+                if 'badges_cache' not in st.session_state:
+                    st.session_state['badges_cache'] = {}
+                st.session_state['badges_cache'][liga_key] = badge_cache
+
                 st.success("✅ Estatísticas atualizadas!")
             except Exception as e:
                 st.error(f"❌ Erro ao calcular estatísticas: {e}")
@@ -1493,21 +1586,12 @@ def render_stats_mode():
 
     # ── Insights gerais ────────────────────────────────────────────────────
     if data['insights']:
-        _BADGE_FOLDERS = {
-            "premierleague":  "escudos-pl",
-            "championship":   "escudos-ch",
-            "leagueone":      "escudos-l1",
-            "leaguetwo":      "escudos-l2",
-            "nationalleague": "escudos-nl",
-        }
-        badge_folder = _BADGE_FOLDERS.get(liga_key, "escudos-pl")
-
-        # Map each team to the subset of insights that mention it
+        # Map each team to the subset of insights that mention it (all teams shown)
         team_insight_map = {
             team: [ins for ins in data['insights'] if team in ins]
             for team in data['teams']
         }
-        filterable_teams = [t for t in data['teams'] if team_insight_map[t]]
+        all_teams = data['teams']
 
         filter_key = f'stats_team_filter_{liga_key}'
         if filter_key not in st.session_state:
@@ -1518,26 +1602,18 @@ def render_stats_mode():
 
         # Badge filter — 4 crests per row inside the right column
         with badges_col:
-            images_b64 = []
-            for team in filterable_teams:
-                badge_path = f"{badge_folder}/{team}.png"
-                if os.path.exists(badge_path):
-                    with open(badge_path, "rb") as _f:
-                        _b64 = base64.b64encode(_f.read()).decode()
-                    images_b64.append(f"data:image/png;base64,{_b64}")
-                else:
-                    images_b64.append("")
+            images_b64 = st.session_state.get('badges_cache', {}).get(liga_key, [])
 
             clicked = clickable_images(
                 images_b64,
-                titles=filterable_teams,
+                titles=all_teams,
                 div_style={"display": "grid", "grid-template-columns": "repeat(4, 1fr)", "gap": "6px"},
                 img_style={"width": "100%", "height": "60px", "object-fit": "contain", "cursor": "pointer", "border-radius": "6px"},
                 key=f"clickable_{liga_key}",
             )
 
             if clicked > -1:
-                team_clicado = filterable_teams[clicked]
+                team_clicado = all_teams[clicked]
                 st.session_state[filter_key] = None if selected_team == team_clicado else team_clicado
                 selected_team = st.session_state[filter_key]
 
@@ -1545,28 +1621,33 @@ def render_stats_mode():
         with insights_col:
             heading = f"📊 Insights de {selected_team}" if selected_team else "📊 Insights da Liga"
             st.subheader(heading)
-            shown = team_insight_map.get(selected_team, data['insights']) if selected_team else data['insights']
-            for insight in shown:
-                st.write(f"• {insight}")
 
-        st.divider()
+            if selected_team:
+                # Forma recente
+                form = _get_recent_form(selected_team, liga_str)
+                if form:
+                    _COLOR_MAP = {'V': '#22c55e', 'E': '#6b7280', 'D': '#ef4444'}
+                    badges_html = " ".join(
+                        f'<span style="background:{_COLOR_MAP[r]};color:white;font-weight:bold;'
+                        f'font-size:16px;padding:4px 10px;border-radius:4px;">{r}</span>'
+                        for r in reversed(form)
+                    )
+                    st.markdown(
+                        f"<small>Forma (últimos 5 jogos):</small><br>{badges_html}",
+                        unsafe_allow_html=True
+                    )
+                    st.write("")
 
-    # ── Estatísticas por time ──────────────────────────────────────────────
-    st.subheader("🔍 Estatísticas por Time")
-    time_sel = st.selectbox("Escolha o time", data['teams'])
+                team_insights = team_insight_map.get(selected_team, [])
+                if team_insights:
+                    for insight in team_insights:
+                        st.write(f"• {insight}")
+                else:
+                    st.write("• Sem insights relevantes")
+            else:
+                for insight in data['insights']:
+                    st.write(f"• {insight}")
 
-    if time_sel:
-        rankings = data['team_rankings'].get(time_sel, [])
-        insights = data['team_insights'].get(time_sel, [])
-
-        if rankings:
-            for item in rankings:
-                st.markdown(f"**• {item}**")
-        if insights:
-            for item in insights:
-                st.write(f"• {item}")
-        if not rankings and not insights:
-            st.info("Nenhuma estatística relevante para este time no momento.")
 
 
 # ============================================================================
