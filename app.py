@@ -4,11 +4,16 @@ import os
 import re
 import json
 import sys
+import base64
 from typing import Dict, List, Optional
 from utils.cup_generator import CupGenerator
+from streamlit_clickable_images import clickable_images
 
 # Adicionar utils ao path
 sys.path.append(os.path.dirname(__file__))
+
+from datetime import date
+import csv
 
 from utils.results_parser import ResultsParser
 from utils.table_processor import TableProcessor
@@ -16,6 +21,7 @@ from utils.image_generator import ImageGenerator
 from utils.github_handler import GitHubHandler
 from utils.news_generator import NewsGenerator
 from utils.table_validator import TableValidator
+from utils.stats_engine import compute_league_stats
 
 st.set_page_config(
     page_title="Gerador de Conteúdo BBI",
@@ -59,6 +65,14 @@ TEMPLATE_ORDER = [
 INGLES_UCL = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Tottenham"]
 INGLES_UEL = ["Aston Villa", "Nottingham Forest"]
 INGLES_UECL = ["Crystal Palace"]
+
+LIGA_DISPLAY_NAMES = {
+    "premierleague": "Premier League",
+    "championship":  "Championship",
+    "leagueone":     "League One",
+    "leaguetwo":     "League Two",
+    "nationalleague":"National League",
+}
 
 @st.cache_data(ttl=300)  # Cache por 5 minutos
 def carregar_tabela_github(liga: str):
@@ -513,6 +527,78 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 
 
 # ============================================================================
+# UTILITÁRIO: HISTÓRICO LOCAL
+# ============================================================================
+
+def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
+    """
+    Adiciona resultados finalizados a data/historico.csv.
+    - Ignora partidas com mesmo placar já registrado.
+    - Detecta conflito quando (casa, fora, liga) existe com placar diferente.
+    Retorna {'added': int, 'conflicts': list}.
+    """
+    data_str = (data_rodada.strftime('%Y-%m-%d')
+                if hasattr(data_rodada, 'strftime') else str(data_rodada))
+
+    # Ler pares já registrados: (casa, fora, liga) → placar
+    existing = {}
+    historico_path = "data/historico.csv"
+    if os.path.exists(historico_path):
+        with open(historico_path, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                existing[(row['casa'], row['fora'], row['liga'])] = row['placar']
+
+    new_rows = []
+    conflicts = []
+    for r in resultados:
+        if r.get('status') not in ('normal', 'penalties', 'extra_time'):
+            continue
+        new_score = f"{r['home_score']}-{r['away_score']}"
+        key = (r['home_team'], r['away_team'], liga_str)
+        if key in existing:
+            if existing[key] != new_score:
+                conflicts.append({
+                    'home_team': r['home_team'],
+                    'away_team': r['away_team'],
+                    'liga': liga_str,
+                    'old_score': existing[key],
+                    'new_score': new_score,
+                    'date_str': data_str,
+                })
+            # same score → skip silently
+            continue
+        new_rows.append([r['home_team'], new_score, r['away_team'], data_str, liga_str])
+        existing[key] = new_score  # evita duplicatas dentro do mesmo lote
+
+    if new_rows:
+        with open(historico_path, 'a', newline='', encoding='utf-8') as f:
+            csv.writer(f).writerows(new_rows)
+    return {'added': len(new_rows), 'conflicts': conflicts}
+
+
+def _update_historico_row(home_team: str, away_team: str, liga_str: str,
+                          new_score: str, new_date_str: str):
+    """Sobrescreve o placar (e data) de uma linha existente em historico.csv."""
+    path = "data/historico.csv"
+    rows = []
+    fieldnames = None
+    with open(path, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames
+        for row in reader:
+            if (row['casa'] == home_team and row['fora'] == away_team
+                    and row['liga'] == liga_str):
+                row['placar'] = new_score
+                row['data'] = new_date_str
+            rows.append(row)
+    with open(path, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+# ============================================================================
 # FUNÇÕES DO MODO TABELA
 # ============================================================================
 
@@ -583,7 +669,13 @@ def render_table_mode():
             )
         else:
             numero_rodada = None
-    
+
+        data_rodada = st.date_input(
+            "Data da Rodada",
+            value=date.today(),
+            help="Data usada para registrar os resultados no histórico de estatísticas"
+        )
+
     # Botão de processar
     if st.button("🔄 Processar Resultados", type="primary"):
         if not resultados_texto.strip():
@@ -624,6 +716,7 @@ def render_table_mode():
         st.session_state['tipo_rodada'] = tipo_rodada
         st.session_state['numero_rodada'] = numero_rodada
         st.session_state['liga_selecionada'] = liga_key
+        st.session_state['data_rodada'] = data_rodada
         
         # Limpar imagens anteriores
         if 'imagem_rodada_gerada' in st.session_state:
@@ -890,8 +983,46 @@ def render_table_mode():
                                 
                                 if success:
                                     st.success("✅ Tabela atualizada no GitHub!")
+
+                                    # Salvar resultados no histórico local
+                                    hist_result = _append_to_historico(
+                                        st.session_state['resultados_parseados'],
+                                        st.session_state.get('data_rodada', date.today()),
+                                        LIGA_DISPLAY_NAMES.get(st.session_state['liga_selecionada'], '')
+                                    )
+                                    n_hist = hist_result['added']
+                                    if n_hist > 0:
+                                        st.success(f"✅ {n_hist} resultado(s) adicionados ao histórico.")
+                                    if hist_result['conflicts']:
+                                        st.session_state['historico_conflitos'] = hist_result['conflicts']
+                                        st.session_state['historico_conflitos_liga'] = st.session_state['liga_selecionada']
+                                        st.warning(f"⚠️ {len(hist_result['conflicts'])} resultado(s) com placar diferente do registrado. Verifique abaixo.")
+
+                                    # Commitar historico.csv no GitHub
+                                    if n_hist > 0:
+                                        try:
+                                            with open("data/historico.csv", 'r', encoding='utf-8') as f:
+                                                historico_content = f.read()
+                                            _, hist_sha = github.get_file("data/historico.csv")
+                                            if hist_sha:
+                                                github.update_file(
+                                                    file_path="data/historico.csv",
+                                                    content=historico_content,
+                                                    commit_message=commit_msg,
+                                                    sha=hist_sha
+                                                )
+                                            else:
+                                                github.create_file(
+                                                    file_path="data/historico.csv",
+                                                    content=historico_content,
+                                                    commit_message=commit_msg
+                                                )
+                                            st.success("✅ Histórico sincronizado no GitHub.")
+                                        except Exception as hist_err:
+                                            st.warning(f"⚠️ Não foi possível sincronizar histórico: {hist_err}")
+
                                     st.balloons()
-                                    
+
                                     # Limpar cache
                                     carregar_tabela_github.clear()
                                 else:
@@ -902,7 +1033,44 @@ def render_table_mode():
                         except Exception as e:
                             st.error(f"❌ Erro: {str(e)}")
 
-        
+    # Conflict resolution — persists across reruns via session_state
+    if st.session_state.get('historico_conflitos'):
+        st.divider()
+        st.subheader("⚠️ Resultados com placar diferente do registrado")
+        remaining = []
+        for conflict in st.session_state['historico_conflitos']:
+            col1, col2, col3 = st.columns([4, 1, 1])
+            col1.write(
+                f"**{conflict['home_team']} vs {conflict['away_team']}** "
+                f"({conflict['liga']})  \n"
+                f"Registrado: `{conflict['old_score']}` → Novo: `{conflict['new_score']}`"
+            )
+            key_base = f"conf_{conflict['home_team']}_{conflict['away_team']}"
+            if col2.button("✅ Atualizar", key=f"{key_base}_sim"):
+                _update_historico_row(
+                    conflict['home_team'], conflict['away_team'],
+                    conflict['liga'], conflict['new_score'], conflict['date_str']
+                )
+                try:
+                    github = GitHubHandler(st.secrets['GITHUB_TOKEN'], st.secrets['GITHUB_REPO'])
+                    with open("data/historico.csv", 'r', encoding='utf-8') as f:
+                        hist_content = f.read()
+                    _, hist_sha = github.get_file("data/historico.csv")
+                    github.update_file(
+                        "data/historico.csv", hist_content,
+                        f"[CORRECAO] {conflict['home_team']} {conflict['new_score']} {conflict['away_team']}",
+                        hist_sha
+                    )
+                    st.success(f"✅ Placar atualizado para {conflict['new_score']}.")
+                except Exception as e:
+                    st.warning(f"CSV atualizado localmente, mas não foi possível sincronizar: {e}")
+            elif col3.button("❌ Ignorar", key=f"{key_base}_nao"):
+                pass  # drop from remaining
+            else:
+                remaining.append(conflict)
+        st.session_state['historico_conflitos'] = remaining
+
+
 def collect_confirmations(liga_key: str) -> Dict:
     """
     Coleta todas as confirmações dos checkboxes
@@ -1265,6 +1433,143 @@ def render_confirmation_checkboxes_nationalleague():
 
 
 # ============================================================================
+# MODO ESTATÍSTICAS
+# ============================================================================
+
+def render_stats_mode():
+    st.header("📈 Estatísticas")
+
+    LIGAS_STATS = {
+        "Premier League":  ("premierleague",  "Premier League"),
+        "Championship":    ("championship",   "Championship"),
+        "League One":      ("leagueone",      "League One"),
+        "League Two":      ("leaguetwo",      "League Two"),
+        "National League": ("nationalleague", "National League"),
+    }
+
+    liga_label = st.selectbox("Liga", list(LIGAS_STATS.keys()))
+    liga_key, liga_str = LIGAS_STATS[liga_label]
+
+    if st.button("🔄 Atualizar Estatísticas", type="primary"):
+        with st.spinner("Calculando estatísticas..."):
+            try:
+                data = compute_league_stats(liga_str)
+                if 'stats_cache' not in st.session_state:
+                    st.session_state['stats_cache'] = {}
+                st.session_state['stats_cache'][liga_key] = data
+                st.success("✅ Estatísticas atualizadas!")
+            except Exception as e:
+                st.error(f"❌ Erro ao calcular estatísticas: {e}")
+                import traceback
+                with st.expander("Detalhes do erro"):
+                    st.code(traceback.format_exc())
+
+    cache = st.session_state.get('stats_cache', {})
+    if liga_key not in cache:
+        st.info("Clique em '🔄 Atualizar Estatísticas' para gerar os dados.")
+        return
+
+    data = cache[liga_key]
+
+    if not data.get('teams'):
+        st.warning("Nenhum dado histórico encontrado para esta liga em data/historico.csv.")
+        return
+
+    # ── Destaques ─────────────────────────────────────────────────────────
+    st.subheader("🏆 Destaques da Liga")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown(f"🏠 **Melhor mandante:** {data['best_home']}")
+        st.markdown(f"🏠 **Pior mandante:** {data['worst_home']}")
+        st.markdown(f"⚽ **Melhor ataque:** {data['best_attack_team']} ({data['best_attack_gols']} gols)")
+        st.markdown(f"😟 **Pior ataque:** {data['worst_attack_team']} ({data['worst_attack_gols']} gols)")
+    with col2:
+        st.markdown(f"✈️ **Melhor visitante:** {data['best_away']}")
+        st.markdown(f"✈️ **Pior visitante:** {data['worst_away']}")
+        st.markdown(f"🛡️ **Melhor defesa:** {data['best_defense_team']} ({data['best_defense_gols']} sofridos)")
+        st.markdown(f"😬 **Pior defesa:** {data['worst_defense_team']} ({data['worst_defense_gols']} sofridos)")
+
+    st.divider()
+
+    # ── Insights gerais ────────────────────────────────────────────────────
+    if data['insights']:
+        _BADGE_FOLDERS = {
+            "premierleague":  "escudos-pl",
+            "championship":   "escudos-ch",
+            "leagueone":      "escudos-l1",
+            "leaguetwo":      "escudos-l2",
+            "nationalleague": "escudos-nl",
+        }
+        badge_folder = _BADGE_FOLDERS.get(liga_key, "escudos-pl")
+
+        # Map each team to the subset of insights that mention it
+        team_insight_map = {
+            team: [ins for ins in data['insights'] if team in ins]
+            for team in data['teams']
+        }
+        filterable_teams = [t for t in data['teams'] if team_insight_map[t]]
+
+        filter_key = f'stats_team_filter_{liga_key}'
+        if filter_key not in st.session_state:
+            st.session_state[filter_key] = None
+        selected_team = st.session_state[filter_key]
+
+        insights_col, badges_col = st.columns([3, 1])
+
+        # Badge filter — 4 crests per row inside the right column
+        with badges_col:
+            images_b64 = []
+            for team in filterable_teams:
+                badge_path = f"{badge_folder}/{team}.png"
+                if os.path.exists(badge_path):
+                    with open(badge_path, "rb") as _f:
+                        _b64 = base64.b64encode(_f.read()).decode()
+                    images_b64.append(f"data:image/png;base64,{_b64}")
+                else:
+                    images_b64.append("")
+
+            clicked = clickable_images(
+                images_b64,
+                titles=filterable_teams,
+                div_style={"display": "grid", "grid-template-columns": "repeat(4, 1fr)", "gap": "6px"},
+                img_style={"width": "100%", "height": "60px", "object-fit": "contain", "cursor": "pointer", "border-radius": "6px"},
+                key=f"clickable_{liga_key}",
+            )
+
+            if clicked > -1:
+                team_clicado = filterable_teams[clicked]
+                st.session_state[filter_key] = None if selected_team == team_clicado else team_clicado
+                selected_team = st.session_state[filter_key]
+
+        # Insights list on the left
+        with insights_col:
+            heading = f"📊 Insights de {selected_team}" if selected_team else "📊 Insights da Liga"
+            st.subheader(heading)
+            shown = team_insight_map.get(selected_team, data['insights']) if selected_team else data['insights']
+            for insight in shown:
+                st.write(f"• {insight}")
+
+        st.divider()
+
+    # ── Estatísticas por time ──────────────────────────────────────────────
+    st.subheader("🔍 Estatísticas por Time")
+    time_sel = st.selectbox("Escolha o time", data['teams'])
+
+    if time_sel:
+        rankings = data['team_rankings'].get(time_sel, [])
+        insights = data['team_insights'].get(time_sel, [])
+
+        if rankings:
+            for item in rankings:
+                st.markdown(f"**• {item}**")
+        if insights:
+            for item in insights:
+                st.write(f"• {item}")
+        if not rankings and not insights:
+            st.info("Nenhuma estatística relevante para este time no momento.")
+
+
+# ============================================================================
 # INTERFACE PRINCIPAL
 # ============================================================================
 
@@ -1279,7 +1584,7 @@ st.title("⚽ Gerador de Conteúdo BBI")
 # Seleção do modo
 modo = st.radio(
     "Escolha o modo:",
-    ["📰 Gerar Notícia", "🔢 Gerar Placar", "📊 Gerar Tabela com Resultados", "🏆 Gerar Copa"],
+    ["📰 Gerar Notícia", "🔢 Gerar Placar", "📊 Gerar Tabela com Resultados", "🏆 Gerar Copa", "📈 Estatísticas"],
     horizontal=True
 )
 
@@ -1552,6 +1857,8 @@ elif modo == "🏆 Gerar Copa":
             
             if idx < len(images):
                 st.divider()
+elif modo == "📈 Estatísticas":
+    render_stats_mode()
 else:
     # MODO TABELA COM RESULTADOS
     render_table_mode()
