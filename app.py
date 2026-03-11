@@ -13,8 +13,9 @@ from streamlit_clickable_images import clickable_images
 # Adicionar utils ao path
 sys.path.append(os.path.dirname(__file__))
 
-from datetime import date
+from datetime import date, timedelta
 import csv
+import plotly.graph_objects as go
 
 from utils.results_parser import ResultsParser
 from utils.table_processor import TableProcessor
@@ -23,6 +24,13 @@ from utils.github_handler import GitHubHandler
 from utils.news_generator import NewsGenerator
 from utils.table_validator import TableValidator
 from utils.stats_engine import compute_league_stats
+from utils.position_history import (
+    detect_matchdays,
+    compute_table_at_matchday,
+    append_matchday_positions,
+    compute_position_delta,
+    POSICOES_CSV,
+)
 
 st.set_page_config(
     page_title="Gerador de Conteúdo BBI",
@@ -600,6 +608,14 @@ def _update_historico_row(home_team: str, away_team: str, liga_str: str,
 
 
 # ============================================================================
+# FUNÇÕES DE SNAPSHOT / POSIÇÕES
+# ============================================================================
+
+# Position history logic lives in utils/position_history.py.
+# POSICOES_CSV and compute_position_delta are imported from there.
+
+
+# ============================================================================
 # FUNÇÕES DO MODO TABELA
 # ============================================================================
 
@@ -946,8 +962,73 @@ def render_table_mode():
             # BOTÃO DE ATUALIZAR GITHUB (SÓ APARECE SE IMAGENS FORAM GERADAS)
             # ================================================================
             st.divider()
-            
-            if st.button("🚀 Atualizar Tabela no GitHub", type="secondary", width='stretch'):
+
+            _btn_col1, _btn_col2 = st.columns(2)
+
+            with _btn_col2:
+                if st.button("📸 Fechar Rodada", type="secondary", width='stretch'):
+                    _liga_key_fr = st.session_state.get('liga_selecionada')
+                    if not _liga_key_fr:
+                        st.error("❌ Selecione uma liga primeiro.")
+                    else:
+                        try:
+                            from datetime import date as _date_cls
+                            _liga_str_fr = LIGA_DISPLAY_NAMES.get(_liga_key_fr, _liga_key_fr)
+                            _today = _date_cls.today()
+
+                            # Detect matchdays from historico.csv
+                            _md_map = detect_matchdays(_liga_str_fr)
+                            if not _md_map:
+                                st.warning("Nenhum dado histórico encontrado para fechar rodada.")
+                            else:
+                                # Find the most recent matchday whose dates have all passed
+                                _current_md = None
+                                _data_fim_fr = None
+                                for _md_num in sorted(_md_map.keys(), reverse=True):
+                                    _last_date = max(
+                                        _date_cls.fromisoformat(d)
+                                        for d in _md_map[_md_num]
+                                    )
+                                    if _last_date <= _today:
+                                        _current_md = _md_num
+                                        _data_fim_fr = _last_date.strftime("%Y-%m-%d")
+                                        break
+
+                                if _current_md is None:
+                                    st.warning("Nenhum matchday passado encontrado para registrar.")
+                                else:
+                                    # Check if already recorded
+                                    _already = False
+                                    if os.path.exists(POSICOES_CSV):
+                                        import pandas as _pd_fr
+                                        _df_fr = _pd_fr.read_csv(POSICOES_CSV, dtype=str)
+                                        _already = (
+                                            ((_df_fr['liga'] == _liga_str_fr) &
+                                             (_df_fr['matchday'] == str(_current_md)))
+                                        ).any()
+
+                                    if _already:
+                                        st.warning("Rodada já registrada. Nenhuma alteração feita.")
+                                    else:
+                                        _positions_fr = compute_table_at_matchday(
+                                            _liga_str_fr, _current_md, _md_map
+                                        )
+                                        _added = append_matchday_positions(
+                                            _liga_str_fr, _current_md,
+                                            _positions_fr, _data_fim_fr
+                                        )
+                                        st.success(
+                                            f"Rodada {_current_md} fechada para {_liga_str_fr}. "
+                                            f"Data fim: {_data_fim_fr}. "
+                                            f"{_added} times registrados."
+                                        )
+                        except Exception as _e:
+                            st.error(f"❌ Erro ao fechar rodada: {_e}")
+
+            with _btn_col1:
+                _github_btn = st.button("🚀 Atualizar Tabela no GitHub", type="secondary", width='stretch')
+
+            if _github_btn:
                 if 'tabela_processada' not in st.session_state:
                     st.error("❌ Gere a tabela primeiro!")
                 else:
@@ -1503,6 +1584,133 @@ def _get_recent_form(selected_team: str, liga_str: str, n: int = 5) -> list:
 # MODO ESTATÍSTICAS
 # ============================================================================
 
+# Primary shirt/brand color per team.
+# Fallback for any team not listed: "white".
+TEAM_COLORS: dict[str, str] = {
+    # ── Premier League ──────────────────────────────────────────────────
+    "Arsenal":              "red",          # CSS named color
+    "Aston Villa":          "#670E36",      # hex – claret (CSS maroon too dark/cool)
+    "Bournemouth":          "#da291c",      # hex – cherry red
+    "Brentford":            "#e30613",      # hex – no close CSS named color
+    "Brighton":             "#0057B8",      # hex – Brighton blue
+    "Burnley":              "#6C1D45",      # hex – claret
+    "Chelsea":              "#034694",      # hex – royal blue (CSS blue/navy off)
+    "Crystal Palace":       "red",          # CSS named color
+    "Everton":              "#003399",      # hex – royal blue
+    "Fulham":               "white",        # CSS named color
+    "Leeds United":         "white",        # CSS named color
+    "Liverpool":            "red",          # CSS named color
+    "Manchester City":      "#6cabdd",      # hex – sky blue (CSS skyblue too light)
+    "Manchester United":    "red",          # CSS named color
+    "Newcastle United":     "black",        # CSS named color
+    "Nottingham Forest":    "red",          # CSS named color
+    "Sunderland":           "red",          # CSS named color
+    "Tottenham":            "white",        # CSS named color
+    "West Ham":             "#7a263a",      # hex – claret
+    "Wolverhampton":        "#fdb913",      # hex – old gold (CSS gold too yellow)
+    # ── Championship ────────────────────────────────────────────────────
+    "Birmingham City":      "blue",         # CSS named color
+    "Blackburn Rovers":     "#009EE3",      # hex – Blackburn blue
+    "Bristol City":         "red",          # CSS named color
+    "Charlton Athletic":    "red",          # CSS named color
+    "Coventry City":        "#59cbe8",      # hex – sky blue
+    "Derby County":         "white",        # CSS named color
+    "Hull City":            "#f5a12d",      # hex – amber (CSS orange close but off)
+    "Ipswich Town":         "#0070bf",      # hex – Ipswich blue
+    "Leicester City":       "#003090",      # hex – Leicester blue
+    "Middlesbrough":        "red",          # CSS named color
+    "Millwall":             "navy",         # CSS named color
+    "Norwich City":         "yellow",       # CSS named color
+    "Oxford United":        "yellow",       # CSS named color
+    "Portsmouth":           "navy",         # CSS named color
+    "Preston North End":    "white",        # CSS named color
+    "Queens Park Rangers":  "#1D5BA4",      # hex – QPR blue
+    "Sheffield United":     "red",          # CSS named color
+    "Sheffield Wednesday":  "#003893",      # hex – Wednesday blue
+    "Southampton":          "red",          # CSS named color
+    "Stoke City":           "red",          # CSS named color
+    "Swansea City":         "white",        # CSS named color
+    "Watford":              "yellow",       # CSS named color
+    "West Bromwich":        "navy",         # CSS named color
+    "Wrexham":              "red",          # CSS named color
+    # ── League One ──────────────────────────────────────────────────────
+    "AFC Wimbledon":        "#1766A6",      # hex – Wimbledon blue
+    "Barnsley":             "red",          # CSS named color
+    "Blackpool":            "orange",       # CSS named color – tangerine
+    "Bolton Wanderers":     "white",        # CSS named color
+    "Bradford City":        "#801638",      # hex – claret
+    "Burton Albion":        "yellow",       # CSS named color
+    "Cardiff City":         "#0070b5",      # hex – Cardiff blue
+    "Doncaster Rovers":     "red",          # CSS named color
+    "Exeter City":          "red",          # CSS named color
+    "Huddersfield Town":    "#0E63AD",      # hex – Huddersfield blue
+    "Leyton Orient":        "red",          # CSS named color
+    "Lincoln City":         "red",          # CSS named color
+    "Luton Town":           "orange",       # CSS named color
+    "Mansfield Town":       "gold",         # CSS named color – amber
+    "Northampton Town":     "maroon",       # CSS named color
+    "Peterborough":         "navy",         # CSS named color
+    "Plymouth Argyle":      "green",        # CSS named color
+    "Port Vale":            "white",        # CSS named color
+    "Reading":              "#004494",      # hex – Reading blue
+    "Rotherham United":     "red",          # CSS named color
+    "Stevenage":            "red",          # CSS named color
+    "Stockport County":     "#0052a5",      # hex – Stockport blue
+    "Wigan Athletic":       "#1D3784",      # hex – Wigan blue
+    "Wycombe Wanderers":    "navy",         # CSS named color
+    # ── League Two ──────────────────────────────────────────────────────
+    "Accrington":           "red",          # CSS named color
+    "Barnet":               "#F5A623",      # hex – amber (CSS gold too yellow)
+    "Barrow":               "#003090",      # hex – Barrow blue
+    "Bristol Rovers":       "#005197",      # hex – Bristol Rovers blue
+    "Bromley":              "white",        # CSS named color
+    "Cambridge United":     "#f5a800",      # hex – amber
+    "Cheltenham Town":      "red",          # CSS named color
+    "Chesterfield":         "#1E3A71",      # hex – Chesterfield blue
+    "Colchester United":    "navy",         # CSS named color
+    "Crawley Town":         "red",          # CSS named color
+    "Crewe Alexandra":      "red",          # CSS named color
+    "Fleetwood Town":       "red",          # CSS named color
+    "Gillingham":           "navy",         # CSS named color
+    "Grimsby Town":         "black",        # CSS named color
+    "Harrogate Town":       "yellow",       # CSS named color
+    "Milton Keynes Dons":   "white",        # CSS named color
+    "Newport County":       "#f5a800",      # hex – amber
+    "Notts County":         "black",        # CSS named color
+    "Oldham Athletic":      "blue",         # CSS named color
+    "Salford City":         "red",          # CSS named color
+    "Shrewsbury Town":      "blue",         # CSS named color
+    "Swindon Town":         "red",          # CSS named color
+    "Tranmere Rovers":      "white",        # CSS named color
+    "Walsall":              "red",          # CSS named color
+    # ── National League ─────────────────────────────────────────────────
+    "Aldershot Town":       "red",          # CSS named color
+    "Altrincham":           "red",          # CSS named color
+    "Boston United":        "gold",         # CSS named color
+    "Boreham Wood":         "white",        # CSS named color
+    "Brackley Town":        "red",          # CSS named color
+    "Braintree Town":       "orange",       # CSS named color
+    "Carlisle United":      "blue",         # CSS named color
+    "Eastleigh":            "navy",         # CSS named color
+    "FC Halifax Town":      "navy",         # CSS named color
+    "Forest Green Rovers":  "green",        # CSS named color
+    "Gateshead":            "white",        # CSS named color
+    "Hartlepool United":    "#1D3784",      # hex – Victoria blue
+    "Morecambe":            "red",          # CSS named color
+    "Rochdale":             "blue",         # CSS named color
+    "Scunthorpe United":    "#591F2D",      # hex – claret
+    "Solihull Moors":       "yellow",       # CSS named color
+    "Southend United":      "navy",         # CSS named color
+    "Sutton United":        "#F5A800",      # hex – amber/old gold
+    "Tamworth":             "red",          # CSS named color
+    "Truro City":           "red",        # CSS named color
+    "Wealdstone":           "red",          # CSS named color
+    "Woking":               "red",          # CSS named color
+    "Yeovil Town":          "green",        # CSS named color
+    "York City":            "red",          # CSS named color
+}
+
+
 def render_stats_mode():
     st.header("📈 Estatísticas")
 
@@ -1585,6 +1793,7 @@ def render_stats_mode():
     st.divider()
 
     # ── Insights gerais ────────────────────────────────────────────────────
+    selected_team = None
     if data['insights']:
         # Map each team to the subset of insights that mention it (all teams shown)
         team_insight_map = {
@@ -1638,6 +1847,28 @@ def render_stats_mode():
                     )
                     st.write("")
 
+                # Delta de posição (entre as duas últimas rodadas registradas)
+                _d = compute_position_delta(selected_team, liga_str)
+                if _d is not None:
+                    if _d > 0:
+                        st.markdown(
+                            f'<span style="color:#22c55e;font-weight:bold;font-size:16px;">▲{_d}</span>'
+                            f'<span style="color:#22c55e;font-size:14px;"> posições desde a rodada anterior</span>',
+                            unsafe_allow_html=True
+                        )
+                    elif _d < 0:
+                        st.markdown(
+                            f'<span style="color:#ef4444;font-weight:bold;font-size:16px;">▼{abs(_d)}</span>'
+                            f'<span style="color:#ef4444;font-size:14px;"> posições desde a rodada anterior</span>',
+                            unsafe_allow_html=True
+                        )
+                    else:
+                        st.markdown(
+                            '<span style="color:#6b7280;font-size:14px;">─ Mesma posição</span>',
+                            unsafe_allow_html=True
+                        )
+                    st.write("")
+
                 team_insights = team_insight_map.get(selected_team, [])
                 if team_insights:
                     for insight in team_insights:
@@ -1648,6 +1879,55 @@ def render_stats_mode():
                 for insight in data['insights']:
                     st.write(f"• {insight}")
 
+    # Gráfico de trajetória (fora das colunas, abaixo dos insights)
+    if selected_team:
+        if not os.path.exists(POSICOES_CSV):
+            st.info("Feche ao menos duas rodadas para gerar o gráfico de trajetória.")
+        else:
+            import pandas as pd
+            _df = pd.read_csv(POSICOES_CSV, dtype=str)
+            _df_team = _df[
+                (_df['time'] == selected_team) & (_df['liga'] == liga_str)
+            ].copy()
+            _df_team['matchday'] = _df_team['matchday'].astype(int)
+            _df_team['posicao'] = _df_team['posicao'].astype(int)
+            _df_team['data_fim_matchday'] = pd.to_datetime(_df_team['data_fim_matchday'])
+            _df_team = _df_team.sort_values('matchday')
+
+            if len(_df_team) < 2:
+                st.info(
+                    "Feche ao menos duas rodadas para gerar o gráfico de trajetória."
+                )
+            else:
+                _num_times = len(data.get('teams', []))
+                _max_pos = _num_times if _num_times > 0 else 24
+                fig = go.Figure()
+                _team_color = TEAM_COLORS.get(selected_team, "white")
+                fig.add_trace(go.Scatter(
+                    x=_df_team['data_fim_matchday'],
+                    y=_df_team['posicao'],
+                    mode='lines+markers',
+                    line=dict(color=_team_color, width=2),
+                    marker=dict(color=_team_color, size=7),
+                    name=selected_team,
+                ))
+                fig.update_layout(
+                    title=f"Trajetória de {selected_team}",
+                    xaxis_title="Data",
+                    yaxis_title="Posição",
+                    xaxis=dict(tickformat="%d/%m"),
+                    yaxis=dict(
+                        autorange='reversed',
+                        range=[_max_pos + 0.5, 0.5],
+                        dtick=1,
+                    ),
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    plot_bgcolor="rgba(0,0,0,0)",
+                    font=dict(color="white"),
+                    height=350,
+                    margin=dict(l=40, r=20, t=50, b=40),
+                )
+                st.plotly_chart(fig, width='stretch')
 
 
 # ============================================================================
