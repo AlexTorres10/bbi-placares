@@ -1879,6 +1879,33 @@ def render_stats_mode():
                 for insight in data['insights']:
                     st.write(f"• {insight}")
 
+                # ── Variação de Posições ───────────────────────────────────
+                st.write("")
+                st.markdown("**Variação de Posições**")
+                _deltas = []
+                for _team in data['teams']:
+                    _d = compute_position_delta(_team, liga_str)
+                    if _d is not None:
+                        _deltas.append((_team, _d))
+                _deltas.sort(key=lambda x: x[1], reverse=True)
+                for _team, _d in _deltas:
+                    if _d > 0:
+                        _badge = (
+                            f'<span style="color:#22c55e;font-weight:bold;">▲{_d}</span>'
+                        )
+                    elif _d < 0:
+                        _badge = (
+                            f'<span style="color:#ef4444;font-weight:bold;">▼{abs(_d)}</span>'
+                        )
+                    else:
+                        _badge = (
+                            '<span style="color:#6b7280;">─ Mesma posição</span>'
+                        )
+                    st.markdown(
+                        f'{_team} {_badge}',
+                        unsafe_allow_html=True
+                    )
+
     # Gráfico de trajetória (fora das colunas, abaixo dos insights)
     if selected_team:
         if not os.path.exists(POSICOES_CSV):
