@@ -539,6 +539,21 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 # UTILITÁRIO: HISTÓRICO LOCAL
 # ============================================================================
 
+def is_already_in_historico(home_team: str, away_team: str, liga_str: str) -> bool:
+    """Returns True if (home_team, away_team, liga_str) exists in data/historico.csv."""
+    path = "data/historico.csv"
+    if not os.path.exists(path):
+        return False
+    with open(path, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if (row.get('casa') == home_team and
+                    row.get('fora') == away_team and
+                    row.get('liga') == liga_str):
+                return True
+    return False
+
+
 def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
     """
     Adiciona resultados finalizados a data/historico.csv.
@@ -565,6 +580,7 @@ def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
             continue
         new_score = f"{r['home_score']}-{r['away_score']}"
         key = (r['home_team'], r['away_team'], liga_str)
+        row_date = r.get('data', data_str)
         if key in existing:
             if existing[key] != new_score:
                 conflicts.append({
@@ -573,11 +589,11 @@ def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
                     'liga': liga_str,
                     'old_score': existing[key],
                     'new_score': new_score,
-                    'date_str': data_str,
+                    'date_str': row_date,
                 })
             # same score → skip silently
             continue
-        new_rows.append([r['home_team'], new_score, r['away_team'], data_str, liga_str])
+        new_rows.append([r['home_team'], new_score, r['away_team'], row_date, liga_str])
         existing[key] = new_score  # evita duplicatas dentro do mesmo lote
 
     if new_rows:
@@ -699,10 +715,27 @@ def render_table_mode():
             st.error("❌ Por favor, insira pelo menos um resultado!")
             return
         
-        # Parse dos resultados
+        # Parse dos resultados com suporte a prefixo de data (-N dias)
         parser = ResultsParser()
-        resultados = parser.parse_multiple_results(resultados_texto)
-        
+        _prefix_re = re.compile(r'^(-\d+)\s+')
+        resultados = []
+        for _line in resultados_texto.strip().split('\n'):
+            _line = _line.strip()
+            if not _line:
+                continue
+            _m = _prefix_re.match(_line)
+            if _m:
+                _days_offset = int(_m.group(1))
+                _resolved_date = data_rodada + timedelta(days=_days_offset)
+                _clean_line = _line[_m.end():]
+            else:
+                _resolved_date = data_rodada
+                _clean_line = _line
+            _result = parser.parse_single_result(_clean_line)
+            if _result:
+                _result['data'] = _resolved_date.strftime('%Y-%m-%d')
+                resultados.append(_result)
+
         if not resultados:
             st.error("❌ Nenhum resultado válido encontrado! Verifique o formato.")
             return
@@ -713,21 +746,26 @@ def render_table_mode():
         with st.expander("Ver resultados parseados"):
             for r in resultados:
                 status = r.get('status', 'normal')
-                
+                _date_label = ""
+                if 'data' in r:
+                    from datetime import date as _date_cls
+                    _d = _date_cls.fromisoformat(r['data'])
+                    _date_label = f" — {_d.strftime('%d/%m')}"
+
                 if status == 'normal':
-                    st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}**")
+                    st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}**{_date_label}")
                 elif status == 'penalties':
-                    st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}** (Pênaltis: {r['pen_home']}-{r['pen_away']}) 🥅")
+                    st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}** (Pênaltis: {r['pen_home']}-{r['pen_away']}) 🥅{_date_label}")
                 elif status == 'extra_time':
-                    st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}** (Prorrogação) ⏱️")
+                    st.write(f"**{r['home_team']}** {r['home_score']}-{r['away_score']} **{r['away_team']}** (Prorrogação) ⏱️{_date_label}")
                 elif status == 'future':
-                    st.write(f"**{r['home_team']}** vs **{r['away_team']}** - ⏰ *Jogo futuro*")
+                    st.write(f"**{r['home_team']}** vs **{r['away_team']}** - ⏰ *Jogo futuro*{_date_label}")
                 elif status == 'vs':
-                    st.write(f"**{r['home_team']}** vs. **{r['away_team']}** - 🆚 *Jogo a realizar*")
+                    st.write(f"**{r['home_team']}** vs. **{r['away_team']}** - 🆚 *Jogo a realizar*{_date_label}")
                 elif status == 'postponed':
-                    st.write(f"**{r['home_team']}** vs **{r['away_team']}** - 🔄 *Adiado*")
+                    st.write(f"**{r['home_team']}** vs **{r['away_team']}** - 🔄 *Adiado*{_date_label}")
                 elif status == 'abandoned':
-                    st.write(f"**{r['home_team']}** vs **{r['away_team']}** - ⚠️ *Abandonado*")
+                    st.write(f"**{r['home_team']}** vs **{r['away_team']}** - ⚠️ *Abandonado*{_date_label}")
         # Salvar na sessão
         st.session_state['resultados_parseados'] = resultados
         st.session_state['tipo_rodada'] = tipo_rodada
@@ -794,8 +832,22 @@ def render_table_mode():
                     with open(tabela_path, 'r', encoding='utf-8') as f:
                         processor.load_from_text(f.read())
                     
-                    # Aplicar resultados
-                    processor.update_with_multiple_results(st.session_state['resultados_parseados'])
+                    # Aplicar resultados — excluir partidas já registradas no histórico
+                    _liga_str_tab = LIGA_DISPLAY_NAMES.get(st.session_state['liga_selecionada'], '')
+                    _todos_tab = st.session_state['resultados_parseados']
+                    _novos_tab = []
+                    _duplicados_tab = []
+                    for _r_tab in _todos_tab:
+                        if is_already_in_historico(_r_tab['home_team'], _r_tab['away_team'], _liga_str_tab):
+                            _duplicados_tab.append(_r_tab)
+                        else:
+                            _novos_tab.append(_r_tab)
+                    if _duplicados_tab:
+                        _dup_names = ", ".join(
+                            f"{_r['home_team']} vs {_r['away_team']}" for _r in _duplicados_tab
+                        )
+                        st.info(f"ℹ️ {len(_duplicados_tab)} resultado(s) já registrado(s) no histórico ignorado(s) no cálculo da tabela: {_dup_names}")
+                    processor.update_with_multiple_results(_novos_tab)
                     processor.sort_table()
                     
                     # Coletar confirmações
@@ -997,31 +1049,19 @@ def render_table_mode():
                                 if _current_md is None:
                                     st.warning("Nenhum matchday passado encontrado para registrar.")
                                 else:
-                                    # Check if already recorded
-                                    _already = False
-                                    if os.path.exists(POSICOES_CSV):
-                                        import pandas as _pd_fr
-                                        _df_fr = _pd_fr.read_csv(POSICOES_CSV, dtype=str)
-                                        _already = (
-                                            ((_df_fr['liga'] == _liga_str_fr) &
-                                             (_df_fr['matchday'] == str(_current_md)))
-                                        ).any()
-
-                                    if _already:
-                                        st.warning("Rodada já registrada. Nenhuma alteração feita.")
-                                    else:
-                                        _positions_fr = compute_table_at_matchday(
-                                            _liga_str_fr, _current_md, _md_map
-                                        )
-                                        _added = append_matchday_positions(
-                                            _liga_str_fr, _current_md,
-                                            _positions_fr, _data_fim_fr
-                                        )
-                                        st.success(
-                                            f"Rodada {_current_md} fechada para {_liga_str_fr}. "
-                                            f"Data fim: {_data_fim_fr}. "
-                                            f"{_added} times registrados."
-                                        )
+                                    _positions_fr = compute_table_at_matchday(
+                                        _liga_str_fr, _current_md, _md_map
+                                    )
+                                    _added = append_matchday_positions(
+                                        _liga_str_fr, _current_md,
+                                        _positions_fr, _data_fim_fr,
+                                        force_update=True,
+                                    )
+                                    st.success(
+                                        f"Rodada {_current_md} fechada para {_liga_str_fr}. "
+                                        f"Data fim: {_data_fim_fr}. "
+                                        f"{_added} times registrados."
+                                    )
                         except Exception as _e:
                             st.error(f"❌ Erro ao fechar rodada: {_e}")
 
@@ -2016,12 +2056,12 @@ if modo == "🔢 Gerar Placar":
     if st.button("Gerar Placar", type="primary"):
         template_path = os.path.join(TEMPLATE_DIR, template_escolhido)
         bg_path = None
-        
+
         if background:
             img = Image.open(background).convert("RGBA")
             bg_path = "temp_bg.png"
             img.save(bg_path, format="PNG")
-        
+
         img = desenhar_placar(
             template_path, mandante, visitante, placar,
             marcadores_mandante, marcadores_visitante,
@@ -2029,14 +2069,52 @@ if modo == "🔢 Gerar Placar":
             alinhamento=alinhamento if alinhamento else "Centro"
         )
 
-        st.image(img)
-
         img_rgb = img.convert("RGB")
         img_rgb.save("placar_final.jpg", format="JPEG", quality=100)
 
+        st.session_state['placar_gerado'] = {
+            'template': template_escolhido,
+            'mandante': mandante,
+            'visitante': visitante,
+            'placar_str': placar,
+        }
+
+    _PLACAR_LIGA_MAP = {
+        "premierleague.png": "Premier League",
+        "championship.png":  "Championship",
+        "leagueone.png":     "League One",
+        "leaguetwo.png":     "League Two",
+        "nationalleague.png":"National League",
+    }
+
+    if 'placar_gerado' in st.session_state and os.path.exists("placar_final.jpg"):
+        _pg = st.session_state['placar_gerado']
+        st.image("placar_final.jpg")
         with open("placar_final.jpg", "rb") as f:
-            nome_arquivo = f"{mandante} {placar} {visitante}.jpg".replace("/", "-")
-            st.download_button("📥 Baixar Imagem", f, file_name=nome_arquivo)
+            _nome_arquivo = f"{_pg['mandante']} {_pg['placar_str']} {_pg['visitante']}.jpg".replace("/", "-")
+            st.download_button("📥 Baixar Imagem", f, file_name=_nome_arquivo)
+        _liga_str_pg = _PLACAR_LIGA_MAP.get(_pg['template'])
+        if _liga_str_pg:
+            if st.button("💾 Salvar no Histórico"):
+                _score_m = re.match(r'(\d+)-(\d+)', _pg['placar_str'].strip())
+                if not _score_m:
+                    st.error("❌ Não foi possível extrair o placar. Use o formato X-Y.")
+                else:
+                    _result_pg = {
+                        'home_team': _pg['mandante'],
+                        'away_team': _pg['visitante'],
+                        'home_score': int(_score_m.group(1)),
+                        'away_score': int(_score_m.group(2)),
+                        'status': 'normal',
+                    }
+                    _hist_pg = _append_to_historico([_result_pg], date.today(), _liga_str_pg)
+                    if _hist_pg['added'] > 0:
+                        st.success("✅ Resultado salvo no histórico.")
+                    elif _hist_pg['conflicts']:
+                        st.error(f"⚠️ Conflito: placar diferente já registrado para {_pg['mandante']} vs {_pg['visitante']}.")
+                    else:
+                        st.warning("⚠️ Resultado já existe no histórico.")
+
 elif modo == "📰 Gerar Notícia":
     # MODO NOTÍCIA
     st.header("📰 Gerador de Notícias")

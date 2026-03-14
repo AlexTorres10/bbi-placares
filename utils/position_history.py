@@ -243,6 +243,7 @@ def append_matchday_positions(
     matchday: int,
     positions: dict[str, int],
     data_fim: str,
+    force_update: bool = False,
 ) -> int:
     """
     Appends position records to data/posicoes.csv.
@@ -253,8 +254,12 @@ def append_matchday_positions(
       Thursday  → Tuesday (−2 days)
       Other days → unchanged
 
-    If records for (liga_str, matchday) already exist, does nothing and
-    returns 0 — past data is immutable.
+    If records for (liga_str, matchday) already exist:
+      - force_update=False (default): does nothing and returns 0 — past
+        data is immutable (used by build_position_history.py).
+      - force_update=True: deletes the existing rows for (liga_str,
+        matchday) before writing the new ones — used by "Fechar Rodada"
+        so that a matchday can be updated after a late game is added.
 
     Returns the number of rows added.
     """
@@ -273,7 +278,23 @@ def append_matchday_positions(
                     break
 
     if already_exists:
-        return 0
+        if not force_update:
+            return 0
+        # Remove existing rows for (liga_str, matchday) before rewriting
+        surviving_rows = []
+        with open(POSICOES_CSV, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            fieldnames = reader.fieldnames
+            for row in reader:
+                if not (
+                    row.get("liga") == liga_str
+                    and str(row.get("matchday")) == str(matchday)
+                ):
+                    surviving_rows.append(row)
+        with open(POSICOES_CSV, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames or POSICOES_FIELDNAMES)
+            writer.writeheader()
+            writer.writerows(surviving_rows)
 
     anchored = _anchor_date(data_fim)
 
