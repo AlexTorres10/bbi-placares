@@ -1060,9 +1060,8 @@ def render_table_mode():
                                         _liga_str_uni, _current_md, _md_map
                                     )
                                     _added_pos = append_matchday_positions(
-                                        _liga_str_uni, _current_md,
+                                        _liga_str_uni,
                                         _positions_uni, _data_fim_uni,
-                                        force_update=True,
                                     )
                                     _summary.append(
                                         f"Rodada {_current_md} fechada ({_added_pos} times, data fim: {_data_fim_uni})"

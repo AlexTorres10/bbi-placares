@@ -82,7 +82,7 @@ def main() -> None:
                 print(f"  Rodada {md:3d} | sem dados, ignorado")
                 continue
 
-            added = append_matchday_positions(liga, md, positions, data_fim)
+            added = append_matchday_positions(liga, positions, data_fim)
             print(
                 f"  Rodada {md:3d} | data_fim: {data_fim} | "
                 f"{added} times registrados"

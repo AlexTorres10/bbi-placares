@@ -240,10 +240,8 @@ def compute_table_at_matchday(
 
 def append_matchday_positions(
     liga_str: str,
-    matchday: int,
     positions: dict[str, int],
     data_fim: str,
-    force_update: bool = False,
 ) -> int:
     """
     Appends position records to data/posicoes.csv.
@@ -254,33 +252,64 @@ def append_matchday_positions(
       Thursday  → Tuesday (−2 days)
       Other days → unchanged
 
-    If records for (liga_str, matchday) already exist:
-      - force_update=False (default): does nothing and returns 0 — past
-        data is immutable (used by build_position_history.py).
-      - force_update=True: deletes the existing rows for (liga_str,
-        matchday) before writing the new ones — used by "Fechar Rodada"
-        so that a matchday can be updated after a late game is added.
+    The replace-vs-insert decision and the stored matchday number are both
+    derived automatically from day-of-week blocks:
+      Block A: Friday (4), Saturday (5), Sunday (6), Monday (0)
+      Block B: Tuesday (1), Wednesday (2), Thursday (3)
+
+    - No previous matchday for the liga in posicoes.csv
+        → INSERT, stored matchday = 1.
+    - data_fim_matchday of the last registered matchday is in the same block
+      as today → REPLACE: existing rows for (liga_str, last_md) are removed
+      and rewritten with stored matchday = last_md.
+    - Last registered matchday is in a different block
+        → INSERT, stored matchday = last_md + 1.
 
     Returns the number of rows added.
     """
+    from datetime import date as _date_cls
     _ensure_new_schema()
 
-    already_exists = False
+    today_block = _block(_date_cls.today().weekday())
+
+    # Find the last recorded matchday number and its data_fim_matchday
+    last_md: Optional[int] = None
+    last_data_fim: Optional[str] = None
     if os.path.exists(POSICOES_CSV):
         with open(POSICOES_CSV, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                if (
-                    row.get("liga") == liga_str
-                    and str(row.get("matchday")) == str(matchday)
-                ):
-                    already_exists = True
-                    break
+                if row.get("liga") != liga_str:
+                    continue
+                try:
+                    md_val = int(row["matchday"])
+                except (ValueError, KeyError):
+                    continue
+                if last_md is None or md_val > last_md:
+                    last_md = md_val
+                    last_data_fim = row.get("data_fim_matchday", "")
 
-    if already_exists:
-        if not force_update:
-            return 0
-        # Remove existing rows for (liga_str, matchday) before rewriting
+    # Decide: REPLACE or INSERT, and compute the matchday number to store
+    if last_md is None:
+        # No prior data for this liga → first entry
+        stored_matchday = 1
+        do_replace = False
+    else:
+        try:
+            last_block = _block(_date_cls.fromisoformat(last_data_fim).weekday())
+        except (ValueError, TypeError):
+            last_block = None
+        if last_block == today_block:
+            # Same block → still within the same open matchday
+            stored_matchday = last_md
+            do_replace = True
+        else:
+            # Different block → new matchday
+            stored_matchday = last_md + 1
+            do_replace = False
+
+    if do_replace:
+        # Remove existing rows for (liga_str, stored_matchday) before rewriting
         surviving_rows = []
         with open(POSICOES_CSV, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
@@ -288,7 +317,7 @@ def append_matchday_positions(
             for row in reader:
                 if not (
                     row.get("liga") == liga_str
-                    and str(row.get("matchday")) == str(matchday)
+                    and str(row.get("matchday")) == str(stored_matchday)
                 ):
                     surviving_rows.append(row)
         with open(POSICOES_CSV, "w", newline="", encoding="utf-8") as f:
@@ -302,7 +331,7 @@ def append_matchday_positions(
         {
             "time": team,
             "liga": liga_str,
-            "matchday": matchday,
+            "matchday": stored_matchday,
             "posicao": pos,
             "data_fim_matchday": anchored,
         }
