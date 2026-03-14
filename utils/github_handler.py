@@ -134,6 +134,69 @@ class GitHubHandler:
         except requests.exceptions.RequestException:
             return False
     
+    def update_files(self, files: list, message: str, branch: str = "main") -> bool:
+        """
+        Commita múltiplos arquivos em um único commit via Git Trees API.
+
+        Args:
+            files: lista de dicts com {"path": str, "content": str}
+            message: mensagem do commit
+            branch: branch alvo (padrão: "main")
+
+        Retorna:
+            True se sucesso, False se erro
+        """
+        api_base = f"https://api.github.com/repos/{self.repo}"
+        try:
+            # 1. SHA do commit HEAD
+            ref_resp = requests.get(
+                f"{api_base}/git/ref/heads/{branch}", headers=self.headers
+            )
+            ref_resp.raise_for_status()
+            head_sha = ref_resp.json()["object"]["sha"]
+
+            # 2. SHA da árvore atual
+            commit_resp = requests.get(
+                f"{api_base}/git/commits/{head_sha}", headers=self.headers
+            )
+            commit_resp.raise_for_status()
+            base_tree_sha = commit_resp.json()["tree"]["sha"]
+
+            # 3. Criar nova árvore
+            tree_entries = [
+                {"path": f["path"], "mode": "100644", "type": "blob", "content": f["content"]}
+                for f in files
+            ]
+            tree_resp = requests.post(
+                f"{api_base}/git/trees",
+                headers=self.headers,
+                json={"base_tree": base_tree_sha, "tree": tree_entries},
+            )
+            tree_resp.raise_for_status()
+            new_tree_sha = tree_resp.json()["sha"]
+
+            # 4. Criar novo commit
+            new_commit_resp = requests.post(
+                f"{api_base}/git/commits",
+                headers=self.headers,
+                json={"message": message, "tree": new_tree_sha, "parents": [head_sha]},
+            )
+            new_commit_resp.raise_for_status()
+            new_commit_sha = new_commit_resp.json()["sha"]
+
+            # 5. Atualizar referência do branch
+            patch_resp = requests.patch(
+                f"{api_base}/git/refs/heads/{branch}",
+                headers=self.headers,
+                json={"sha": new_commit_sha},
+            )
+            patch_resp.raise_for_status()
+            return True
+
+        except requests.exceptions.RequestException as e:
+            print(f"Erro ao criar commit multi-arquivo: {e}")
+            return False
+
     @staticmethod
     def get_raw_url(repo: str, file_path: str, branch: str = "main") -> str:
         """

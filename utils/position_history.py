@@ -70,21 +70,30 @@ def _ensure_new_schema() -> None:
 
 def _anchor_date(data_fim: str) -> str:
     """
-    Adjusts data_fim to the 'anchor' display date for the matchday:
-      Monday (0)   → subtract 2 days → Saturday
-      Wednesday (2) → subtract 1 day  → Tuesday
-      Thursday (3) → subtract 2 days → Tuesday
-      Other days   → unchanged
+    Adjusts data_fim to the 'anchor' display date for the matchday block:
+
+      Friday (4)    → +1 day  → Saturday  (anticipation of Bloco A)
+      Saturday (5)  → unchanged
+      Sunday (6)    → -1 day  → Saturday  (same Bloco A)
+      Monday (0)    → -2 days → Saturday  (same Bloco A)
+      Tuesday (1)   → unchanged
+      Wednesday (2) → -1 day  → Tuesday   (same Bloco B)
+      Thursday (3)  → -2 days → Tuesday   (same Bloco B)
     """
     from datetime import date as date_cls
     d = date_cls.fromisoformat(data_fim)
     wd = d.weekday()
-    if wd == 0:
-        d -= timedelta(days=2)
-    elif wd == 2:
+    if wd == 4:        # Friday → next Saturday
+        d += timedelta(days=1)
+    elif wd == 6:      # Sunday → previous Saturday
         d -= timedelta(days=1)
-    elif wd == 3:
+    elif wd == 0:      # Monday → Saturday two days prior
         d -= timedelta(days=2)
+    elif wd == 2:      # Wednesday → previous Tuesday
+        d -= timedelta(days=1)
+    elif wd == 3:      # Thursday → Tuesday two days prior
+        d -= timedelta(days=2)
+    # Saturday (5) and Tuesday (1) → unchanged
     return d.strftime("%Y-%m-%d")
 
 
@@ -246,31 +255,26 @@ def append_matchday_positions(
     """
     Appends position records to data/posicoes.csv.
 
-    Applies anchor-day adjustment to data_fim before storing:
-      Monday  → Saturday (−2 days)
-      Wednesday → Tuesday (−1 day)
-      Thursday  → Tuesday (−2 days)
-      Other days → unchanged
+    Applies anchor-day adjustment to data_fim before storing (see
+    _anchor_date for the full mapping).
 
-    The replace-vs-insert decision and the stored matchday number are both
-    derived automatically from day-of-week blocks:
-      Block A: Friday (4), Saturday (5), Sunday (6), Monday (0)
-      Block B: Tuesday (1), Wednesday (2), Thursday (3)
+    The replace-vs-insert decision compares the computed anchor date for
+    data_fim against the last stored anchor date (data_fim_matchday):
 
     - No previous matchday for the liga in posicoes.csv
         → INSERT, stored matchday = 1.
-    - data_fim_matchday of the last registered matchday is in the same block
-      as today → REPLACE: existing rows for (liga_str, last_md) are removed
-      and rewritten with stored matchday = last_md.
-    - Last registered matchday is in a different block
+    - last stored data_fim_matchday == anchor(data_fim)
+        → REPLACE: existing rows for (liga_str, last_md) are removed and
+          rewritten.  stored matchday = last_md.
+    - last stored data_fim_matchday != anchor(data_fim)
         → INSERT, stored matchday = last_md + 1.
 
     Returns the number of rows added.
     """
-    from datetime import date as _date_cls
     _ensure_new_schema()
 
-    today_block = _block(_date_cls.today().weekday())
+    # Compute anchor first — needed for both the decision and the stored date
+    anchored = _anchor_date(data_fim)
 
     # Find the last recorded matchday number and its data_fim_matchday
     last_md: Optional[int] = None
@@ -295,16 +299,12 @@ def append_matchday_positions(
         stored_matchday = 1
         do_replace = False
     else:
-        try:
-            last_block = _block(_date_cls.fromisoformat(last_data_fim).weekday())
-        except (ValueError, TypeError):
-            last_block = None
-        if last_block == today_block:
-            # Same block → still within the same open matchday
+        if last_data_fim == anchored:
+            # Same anchor date → still within the same open matchday → REPLACE
             stored_matchday = last_md
             do_replace = True
         else:
-            # Different block → new matchday
+            # Different anchor date → new matchday → INSERT
             stored_matchday = last_md + 1
             do_replace = False
 
@@ -324,8 +324,6 @@ def append_matchday_positions(
             writer = csv.DictWriter(f, fieldnames=fieldnames or POSICOES_FIELDNAMES)
             writer.writeheader()
             writer.writerows(surviving_rows)
-
-    anchored = _anchor_date(data_fim)
 
     new_rows = [
         {

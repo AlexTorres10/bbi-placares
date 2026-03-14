@@ -1081,73 +1081,36 @@ def render_table_mode():
                             st.session_state['historico_conflitos_liga'] = _liga_key_uni
                             st.warning(f"⚠️ {len(hist_result['conflicts'])} resultado(s) com placar diferente do registrado. Verifique abaixo.")
 
-                        # ── PASSO 3: Push para GitHub ────────────────────────────────
+                        # ── PASSO 3: Push para GitHub (commit único) ─────────────────
                         try:
                             github = GitHubHandler(
                                 token=st.secrets['GITHUB_TOKEN'],
                                 repo=st.secrets['GITHUB_REPO']
                             )
 
-                            # 3a. tabelas/{liga}.txt
-                            _tabela_path = f"data/tabelas/{_liga_key_uni}.txt"
-                            _, _tabela_sha = github.get_file(_tabela_path)
-                            if _tabela_sha:
-                                _ok_tabela = github.update_file(
-                                    file_path=_tabela_path,
-                                    content=st.session_state['tabela_processada'],
-                                    commit_message=commit_msg,
-                                    sha=_tabela_sha
-                                )
-                                if _ok_tabela:
-                                    _summary.append("Tabela enviada ao GitHub")
-                                else:
-                                    _errors.append("Falha ao atualizar tabela no GitHub.")
+                            _gh_msg = (
+                                f"Rodada {_current_md} — {_liga_str_uni} ({_data_fim_uni})"
+                                if _current_md else commit_msg
+                            )
+
+                            with open("data/historico.csv", 'r', encoding='utf-8') as _fh:
+                                _hist_content = _fh.read()
+                            with open("data/posicoes.csv", 'r', encoding='utf-8') as _fp:
+                                _pos_content = _fp.read()
+
+                            _ok_multi = github.update_files(
+                                files=[
+                                    {"path": f"data/tabelas/{_liga_key_uni}.txt",
+                                     "content": st.session_state['tabela_processada']},
+                                    {"path": "data/historico.csv", "content": _hist_content},
+                                    {"path": "data/posicoes.csv", "content": _pos_content},
+                                ],
+                                message=_gh_msg,
+                            )
+                            if _ok_multi:
+                                _summary.append(f"Tabela, historico.csv e posicoes.csv enviados ({n_hist} novo(s))")
                             else:
-                                _errors.append(f"Arquivo {_tabela_path} não encontrado no GitHub.")
-
-                            # 3b. historico.csv
-                            try:
-                                with open("data/historico.csv", 'r', encoding='utf-8') as _fh:
-                                    _hist_content = _fh.read()
-                                _, _hist_sha = github.get_file("data/historico.csv")
-                                if _hist_sha:
-                                    github.update_file(
-                                        file_path="data/historico.csv",
-                                        content=_hist_content,
-                                        commit_message=commit_msg,
-                                        sha=_hist_sha
-                                    )
-                                else:
-                                    github.create_file(
-                                        file_path="data/historico.csv",
-                                        content=_hist_content,
-                                        commit_message=commit_msg
-                                    )
-                                _summary.append(f"historico.csv enviado ({n_hist} novo(s))")
-                            except Exception as _e_hist:
-                                _errors.append(f"Erro ao sincronizar historico.csv: {_e_hist}")
-
-                            # 3c. posicoes.csv
-                            try:
-                                with open("data/posicoes.csv", 'r', encoding='utf-8') as _fp:
-                                    _pos_content = _fp.read()
-                                _, _pos_sha = github.get_file("data/posicoes.csv")
-                                if _pos_sha:
-                                    github.update_file(
-                                        file_path="data/posicoes.csv",
-                                        content=_pos_content,
-                                        commit_message=commit_msg,
-                                        sha=_pos_sha
-                                    )
-                                else:
-                                    github.create_file(
-                                        file_path="data/posicoes.csv",
-                                        content=_pos_content,
-                                        commit_message=commit_msg
-                                    )
-                                _summary.append("posicoes.csv enviado ao GitHub")
-                            except Exception as _e_pcs:
-                                _errors.append(f"Erro ao sincronizar posicoes.csv: {_e_pcs}")
+                                _errors.append("Falha ao enviar arquivos para o GitHub.")
 
                             carregar_tabela_github.clear()
 
@@ -2100,7 +2063,7 @@ if modo == "🔢 Gerar Placar":
             st.download_button("📥 Baixar Imagem", f, file_name=_nome_arquivo)
         _liga_str_pg = _PLACAR_LIGA_MAP.get(_pg['template'])
         if _liga_str_pg:
-            if st.button("💾 Salvar no Histórico"):
+            if st.button("💾 Salvar e Atualizar"):
                 _score_m = re.match(r'(\d+)-(\d+)', _pg['placar_str'].strip())
                 if not _score_m:
                     st.error("❌ Não foi possível extrair o placar. Use o formato X-Y.")
@@ -2112,13 +2075,114 @@ if modo == "🔢 Gerar Placar":
                         'away_score': int(_score_m.group(2)),
                         'status': 'normal',
                     }
+                    _abort_pg = False
+                    _steps_pg = []
+
+                    # Passo 1: Salvar no histórico
                     _hist_pg = _append_to_historico([_result_pg], date.today(), _liga_str_pg)
-                    if _hist_pg['added'] > 0:
-                        st.success("✅ Resultado salvo no histórico.")
-                    elif _hist_pg['conflicts']:
-                        st.error(f"⚠️ Conflito: placar diferente já registrado para {_pg['mandante']} vs {_pg['visitante']}.")
-                    else:
+                    if _hist_pg['added'] == 0 and not _hist_pg['conflicts']:
                         st.warning("⚠️ Resultado já existe no histórico.")
+                        _abort_pg = True
+                    elif _hist_pg['conflicts']:
+                        st.error(f"❌ Conflito: placar diferente já registrado para {_pg['mandante']} vs {_pg['visitante']}.")
+                        _abort_pg = True
+                    else:
+                        _steps_pg.append("resultado salvo no histórico")
+
+                    # Passo 2: Atualizar tabela local
+                    _liga_key_pg = {v: k for k, v in LIGA_DISPLAY_NAMES.items()}.get(_liga_str_pg)
+                    _tabela_str_pg = None
+                    if not _abort_pg:
+                        try:
+                            _tabela_path_pg = f"data/tabelas/{_liga_key_pg}.txt"
+                            _proc_pg = TableProcessor()
+                            with open(_tabela_path_pg, 'r', encoding='utf-8') as _f_pg:
+                                _proc_pg.load_from_text(_f_pg.read())
+                            _proc_pg.update_with_multiple_results([_result_pg])
+                            _proc_pg.sort_table()
+                            _tabela_str_pg = _proc_pg.to_text()
+                            with open(_tabela_path_pg, 'w', encoding='utf-8') as _f_pg:
+                                _f_pg.write(_tabela_str_pg)
+                            _steps_pg.append("tabela atualizada")
+                        except Exception as _e_tab_pg:
+                            st.error(f"❌ Erro ao atualizar tabela: {_e_tab_pg}")
+                            _abort_pg = True
+
+                    # Passo 3: Fechar rodada (posicoes.csv)
+                    _current_md_pg = None
+                    _data_fim_pg = None
+                    if not _abort_pg:
+                        try:
+                            from datetime import date as _date_cls_pg
+                            _today_pg = _date_cls_pg.today()
+                            _md_map_pg = detect_matchdays(_liga_str_pg)
+                            if not _md_map_pg:
+                                st.error("❌ Nenhum dado histórico encontrado para fechar rodada.")
+                                _abort_pg = True
+                            else:
+                                for _md_num_pg in sorted(_md_map_pg.keys(), reverse=True):
+                                    _last_date_pg = max(
+                                        _date_cls_pg.fromisoformat(d)
+                                        for d in _md_map_pg[_md_num_pg]
+                                    )
+                                    if _last_date_pg <= _today_pg:
+                                        _current_md_pg = _md_num_pg
+                                        _data_fim_pg = _last_date_pg.strftime("%Y-%m-%d")
+                                        break
+                                if _current_md_pg is None:
+                                    st.error("❌ Nenhum matchday passado encontrado para registrar.")
+                                    _abort_pg = True
+                                else:
+                                    _positions_pg = compute_table_at_matchday(
+                                        _liga_str_pg, _current_md_pg, _md_map_pg
+                                    )
+                                    append_matchday_positions(
+                                        _liga_str_pg, _positions_pg, _data_fim_pg,
+                                    )
+                                    _steps_pg.append(f"rodada {_current_md_pg} fechada")
+                        except Exception as _e_pos_pg:
+                            st.error(f"❌ Erro ao fechar rodada: {_e_pos_pg}")
+                            _abort_pg = True
+
+                    # Passo 4: Push para GitHub (commit único)
+                    if not _abort_pg:
+                        try:
+                            if 'GITHUB_TOKEN' not in st.secrets or 'GITHUB_REPO' not in st.secrets:
+                                st.error("❌ Configure GITHUB_TOKEN e GITHUB_REPO em .streamlit/secrets.toml")
+                                _abort_pg = True
+                            else:
+                                _github_pg = GitHubHandler(
+                                    token=st.secrets['GITHUB_TOKEN'],
+                                    repo=st.secrets['GITHUB_REPO']
+                                )
+                                _data_pg_str = date.today().strftime("%Y-%m-%d")
+                                _commit_pg = f"Placar — {_pg['mandante']} {_pg['placar_str']} {_pg['visitante']} ({_data_pg_str})"
+                                with open("data/historico.csv", 'r', encoding='utf-8') as _fh_pg:
+                                    _hist_content_pg = _fh_pg.read()
+                                with open("data/posicoes.csv", 'r', encoding='utf-8') as _fp_pg:
+                                    _pos_content_pg = _fp_pg.read()
+                                _ok_pg = _github_pg.update_files(
+                                    files=[
+                                        {"path": f"data/tabelas/{_liga_key_pg}.txt",
+                                         "content": _tabela_str_pg},
+                                        {"path": "data/historico.csv", "content": _hist_content_pg},
+                                        {"path": "data/posicoes.csv", "content": _pos_content_pg},
+                                    ],
+                                    message=_commit_pg,
+                                )
+                                if _ok_pg:
+                                    _steps_pg.append("enviado ao GitHub")
+                                    carregar_tabela_github.clear()
+                                else:
+                                    st.error("❌ Falha ao enviar arquivos para o GitHub.")
+                                    _abort_pg = True
+                        except Exception as _e_gh_pg:
+                            st.error(f"❌ Erro ao enviar para GitHub: {_e_gh_pg}")
+                            _abort_pg = True
+
+                    # Passo 5: Feedback
+                    if not _abort_pg:
+                        st.success("✅ " + " · ".join(_steps_pg))
 
 elif modo == "📰 Gerar Notícia":
     # MODO NOTÍCIA
