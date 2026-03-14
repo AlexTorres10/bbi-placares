@@ -1011,31 +1011,39 @@ def render_table_mode():
                         )
             
             # ================================================================
-            # BOTÃO DE ATUALIZAR GITHUB (SÓ APARECE SE IMAGENS FORAM GERADAS)
+            # BOTÃO ÚNICO: FECHAR RODADA + ATUALIZAR GITHUB
             # ================================================================
             st.divider()
 
-            _btn_col1, _btn_col2 = st.columns(2)
+            if st.button("☁️ Atualizar Tabelas e Histórico no GitHub", type="primary", width='stretch'):
+                if 'tabela_processada' not in st.session_state:
+                    st.error("❌ Gere a tabela primeiro!")
+                elif 'GITHUB_TOKEN' not in st.secrets or 'GITHUB_REPO' not in st.secrets:
+                    st.error("❌ Configure GITHUB_TOKEN e GITHUB_REPO em .streamlit/secrets.toml")
+                else:
+                    _liga_key_uni = st.session_state.get('liga_selecionada')
+                    _liga_str_uni = LIGA_DISPLAY_NAMES.get(_liga_key_uni, _liga_key_uni)
+                    rodada_info = st.session_state.get('numero_rodada', 'atrasados')
+                    num_resultados = len(st.session_state['resultados_parseados'])
+                    liga_nome = _liga_key_uni.upper()
+                    commit_msg = f"[{liga_nome}] Rodada {rodada_info} - {num_resultados} jogo(s)"
 
-            with _btn_col2:
-                if st.button("📸 Fechar Rodada", type="secondary", width='stretch'):
-                    _liga_key_fr = st.session_state.get('liga_selecionada')
-                    if not _liga_key_fr:
-                        st.error("❌ Selecione uma liga primeiro.")
-                    else:
+                    _summary = []
+                    _errors = []
+
+                    with st.spinner("Processando..."):
+
+                        # ── PASSO 1: Fechar rodada (posicoes.csv local) ──────────────
+                        _current_md = None
+                        _data_fim_uni = None
+                        _added_pos = 0
                         try:
                             from datetime import date as _date_cls
-                            _liga_str_fr = LIGA_DISPLAY_NAMES.get(_liga_key_fr, _liga_key_fr)
                             _today = _date_cls.today()
-
-                            # Detect matchdays from historico.csv
-                            _md_map = detect_matchdays(_liga_str_fr)
+                            _md_map = detect_matchdays(_liga_str_uni)
                             if not _md_map:
-                                st.warning("Nenhum dado histórico encontrado para fechar rodada.")
+                                _errors.append("Nenhum dado histórico encontrado para fechar rodada.")
                             else:
-                                # Find the most recent matchday whose dates have all passed
-                                _current_md = None
-                                _data_fim_fr = None
                                 for _md_num in sorted(_md_map.keys(), reverse=True):
                                     _last_date = max(
                                         _date_cls.fromisoformat(d)
@@ -1043,117 +1051,115 @@ def render_table_mode():
                                     )
                                     if _last_date <= _today:
                                         _current_md = _md_num
-                                        _data_fim_fr = _last_date.strftime("%Y-%m-%d")
+                                        _data_fim_uni = _last_date.strftime("%Y-%m-%d")
                                         break
-
                                 if _current_md is None:
-                                    st.warning("Nenhum matchday passado encontrado para registrar.")
+                                    _errors.append("Nenhum matchday passado encontrado para registrar.")
                                 else:
-                                    _positions_fr = compute_table_at_matchday(
-                                        _liga_str_fr, _current_md, _md_map
+                                    _positions_uni = compute_table_at_matchday(
+                                        _liga_str_uni, _current_md, _md_map
                                     )
-                                    _added = append_matchday_positions(
-                                        _liga_str_fr, _current_md,
-                                        _positions_fr, _data_fim_fr,
+                                    _added_pos = append_matchday_positions(
+                                        _liga_str_uni, _current_md,
+                                        _positions_uni, _data_fim_uni,
                                         force_update=True,
                                     )
-                                    st.success(
-                                        f"Rodada {_current_md} fechada para {_liga_str_fr}. "
-                                        f"Data fim: {_data_fim_fr}. "
-                                        f"{_added} times registrados."
+                                    _summary.append(
+                                        f"Rodada {_current_md} fechada ({_added_pos} times, data fim: {_data_fim_uni})"
                                     )
-                        except Exception as _e:
-                            st.error(f"❌ Erro ao fechar rodada: {_e}")
+                        except Exception as _e_pos:
+                            _errors.append(f"Erro ao fechar rodada: {_e_pos}")
 
-            with _btn_col1:
-                _github_btn = st.button("🚀 Atualizar Tabela no GitHub", type="secondary", width='stretch')
+                        # ── PASSO 2: Salvar histórico local ──────────────────────────
+                        hist_result = _append_to_historico(
+                            st.session_state['resultados_parseados'],
+                            st.session_state.get('data_rodada', date.today()),
+                            _liga_str_uni
+                        )
+                        n_hist = hist_result['added']
+                        if hist_result['conflicts']:
+                            st.session_state['historico_conflitos'] = hist_result['conflicts']
+                            st.session_state['historico_conflitos_liga'] = _liga_key_uni
+                            st.warning(f"⚠️ {len(hist_result['conflicts'])} resultado(s) com placar diferente do registrado. Verifique abaixo.")
 
-            if _github_btn:
-                if 'tabela_processada' not in st.session_state:
-                    st.error("❌ Gere a tabela primeiro!")
-                else:
-                    # Verificar se GitHub está configurado
-                    if 'GITHUB_TOKEN' not in st.secrets or 'GITHUB_REPO' not in st.secrets:
-                        st.error("❌ Configure GITHUB_TOKEN e GITHUB_REPO em .streamlit/secrets.toml")
-                    else:
+                        # ── PASSO 3: Push para GitHub ────────────────────────────────
                         try:
                             github = GitHubHandler(
                                 token=st.secrets['GITHUB_TOKEN'],
                                 repo=st.secrets['GITHUB_REPO']
                             )
-                            
-                            file_path = f"data/tabelas/{st.session_state['liga_selecionada']}.txt"
-                            
-                            # Buscar SHA atual do arquivo
-                            _, sha = github.get_file(file_path)
-                            
-                            if sha:
-                                # Mensagem de commit
-                                rodada_info = st.session_state.get('numero_rodada', 'atrasados')
-                                num_resultados = len(st.session_state['resultados_parseados'])
-                                liga_nome = st.session_state['liga_selecionada'].upper()
-                                commit_msg = f"[{liga_nome}] Rodada {rodada_info} - {num_resultados} jogo(s)"
-                                
-                                # Atualizar no GitHub
-                                with st.spinner("Enviando para o GitHub..."):
-                                    success = github.update_file(
-                                        file_path=file_path,
-                                        content=st.session_state['tabela_processada'],
-                                        commit_message=commit_msg,
-                                        sha=sha
-                                    )
-                                
-                                if success:
-                                    st.success("✅ Tabela atualizada no GitHub!")
 
-                                    # Salvar resultados no histórico local
-                                    hist_result = _append_to_historico(
-                                        st.session_state['resultados_parseados'],
-                                        st.session_state.get('data_rodada', date.today()),
-                                        LIGA_DISPLAY_NAMES.get(st.session_state['liga_selecionada'], '')
-                                    )
-                                    n_hist = hist_result['added']
-                                    if n_hist > 0:
-                                        st.success(f"✅ {n_hist} resultado(s) adicionados ao histórico.")
-                                    if hist_result['conflicts']:
-                                        st.session_state['historico_conflitos'] = hist_result['conflicts']
-                                        st.session_state['historico_conflitos_liga'] = st.session_state['liga_selecionada']
-                                        st.warning(f"⚠️ {len(hist_result['conflicts'])} resultado(s) com placar diferente do registrado. Verifique abaixo.")
-
-                                    # Commitar historico.csv no GitHub
-                                    if n_hist > 0:
-                                        try:
-                                            with open("data/historico.csv", 'r', encoding='utf-8') as f:
-                                                historico_content = f.read()
-                                            _, hist_sha = github.get_file("data/historico.csv")
-                                            if hist_sha:
-                                                github.update_file(
-                                                    file_path="data/historico.csv",
-                                                    content=historico_content,
-                                                    commit_message=commit_msg,
-                                                    sha=hist_sha
-                                                )
-                                            else:
-                                                github.create_file(
-                                                    file_path="data/historico.csv",
-                                                    content=historico_content,
-                                                    commit_message=commit_msg
-                                                )
-                                            st.success("✅ Histórico sincronizado no GitHub.")
-                                        except Exception as hist_err:
-                                            st.warning(f"⚠️ Não foi possível sincronizar histórico: {hist_err}")
-
-                                    st.balloons()
-
-                                    # Limpar cache
-                                    carregar_tabela_github.clear()
+                            # 3a. tabelas/{liga}.txt
+                            _tabela_path = f"data/tabelas/{_liga_key_uni}.txt"
+                            _, _tabela_sha = github.get_file(_tabela_path)
+                            if _tabela_sha:
+                                _ok_tabela = github.update_file(
+                                    file_path=_tabela_path,
+                                    content=st.session_state['tabela_processada'],
+                                    commit_message=commit_msg,
+                                    sha=_tabela_sha
+                                )
+                                if _ok_tabela:
+                                    _summary.append("Tabela enviada ao GitHub")
                                 else:
-                                    st.error("❌ Erro ao atualizar. Verifique as permissões do token.")
+                                    _errors.append("Falha ao atualizar tabela no GitHub.")
                             else:
-                                st.error("❌ Arquivo não encontrado no GitHub.")
-                        
-                        except Exception as e:
-                            st.error(f"❌ Erro: {str(e)}")
+                                _errors.append(f"Arquivo {_tabela_path} não encontrado no GitHub.")
+
+                            # 3b. historico.csv
+                            try:
+                                with open("data/historico.csv", 'r', encoding='utf-8') as _fh:
+                                    _hist_content = _fh.read()
+                                _, _hist_sha = github.get_file("data/historico.csv")
+                                if _hist_sha:
+                                    github.update_file(
+                                        file_path="data/historico.csv",
+                                        content=_hist_content,
+                                        commit_message=commit_msg,
+                                        sha=_hist_sha
+                                    )
+                                else:
+                                    github.create_file(
+                                        file_path="data/historico.csv",
+                                        content=_hist_content,
+                                        commit_message=commit_msg
+                                    )
+                                _summary.append(f"historico.csv enviado ({n_hist} novo(s))")
+                            except Exception as _e_hist:
+                                _errors.append(f"Erro ao sincronizar historico.csv: {_e_hist}")
+
+                            # 3c. posicoes.csv
+                            try:
+                                with open("data/posicoes.csv", 'r', encoding='utf-8') as _fp:
+                                    _pos_content = _fp.read()
+                                _, _pos_sha = github.get_file("data/posicoes.csv")
+                                if _pos_sha:
+                                    github.update_file(
+                                        file_path="data/posicoes.csv",
+                                        content=_pos_content,
+                                        commit_message=commit_msg,
+                                        sha=_pos_sha
+                                    )
+                                else:
+                                    github.create_file(
+                                        file_path="data/posicoes.csv",
+                                        content=_pos_content,
+                                        commit_message=commit_msg
+                                    )
+                                _summary.append("posicoes.csv enviado ao GitHub")
+                            except Exception as _e_pcs:
+                                _errors.append(f"Erro ao sincronizar posicoes.csv: {_e_pcs}")
+
+                            carregar_tabela_github.clear()
+
+                        except Exception as _e_gh:
+                            _errors.append(f"Erro de conexão com GitHub: {_e_gh}")
+
+                    for _err in _errors:
+                        st.error(f"❌ {_err}")
+                    if _summary:
+                        st.success("✅ " + " · ".join(_summary))
+                        st.balloons()
 
     # Conflict resolution — persists across reruns via session_state
     if st.session_state.get('historico_conflitos'):
