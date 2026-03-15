@@ -1102,6 +1102,12 @@ def render_table_mode():
                                 if _current_md else commit_msg
                             )
 
+                            tabela_path_uni = f"data/tabelas/{_liga_key_uni}.txt"
+                            with open(tabela_path_uni, 'w', encoding='utf-8') as _ft:
+                                _ft.write(st.session_state['tabela_processada'])
+
+                            with open(tabela_path_uni, 'r', encoding='utf-8') as _ft:
+                                _tab_content = _ft.read()
                             with open("data/historico.csv", 'r', encoding='utf-8') as _fh:
                                 _hist_content = _fh.read()
                             with open("data/posicoes.csv", 'r', encoding='utf-8') as _fp:
@@ -1109,8 +1115,8 @@ def render_table_mode():
 
                             _ok_multi = github.update_files(
                                 files=[
-                                    {"path": f"data/tabelas/{_liga_key_uni}.txt",
-                                     "content": st.session_state['tabela_processada']},
+                                    {"path": tabela_path_uni,
+                                     "content": _tab_content},
                                     {"path": "data/historico.csv", "content": _hist_content},
                                     {"path": "data/posicoes.csv", "content": _pos_content},
                                 ],
