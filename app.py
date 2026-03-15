@@ -778,6 +778,8 @@ def render_table_mode():
             del st.session_state['imagem_rodada_gerada']
         if 'imagem_tabela_gerada' in st.session_state:
             del st.session_state['imagem_tabela_gerada']
+        if 'table_data_atual' in st.session_state:
+            del st.session_state['table_data_atual']
     
     # ========================================================================
     # SE RESULTADOS FORAM PROCESSADOS, MOSTRAR OPÇÕES
@@ -935,6 +937,7 @@ def render_table_mode():
                     # Salvar na sessão
                     st.session_state['imagem_tabela_gerada'] = img
                     st.session_state['tabela_processada'] = processor.to_text()
+                    st.session_state['table_data_atual'] = table_data
                     
                     if not has_divergences or official_table is None:
                         st.success("✅ Imagem da tabela gerada com sucesso!")
@@ -1055,13 +1058,17 @@ def render_table_mode():
                                         break
                                 if _current_md is None:
                                     _errors.append("Nenhum matchday passado encontrado para registrar.")
+                                elif 'table_data_atual' not in st.session_state:
+                                    _errors.append("Gere a imagem da tabela antes de atualizar.")
                                 else:
-                                    _positions_uni = compute_table_at_matchday(
-                                        _liga_str_uni, _current_md, _md_map
-                                    )
+                                    _positions_uni = {
+                                        team['name']: team['position']
+                                        for team in st.session_state['table_data_atual']
+                                    }
                                     _added_pos = append_matchday_positions(
                                         _liga_str_uni,
-                                        _positions_uni, _data_fim_uni,
+                                        _positions_uni,
+                                        _data_fim_uni,
                                     )
                                     _summary.append(
                                         f"Rodada {_current_md} fechada ({_added_pos} times, data fim: {_data_fim_uni})"
