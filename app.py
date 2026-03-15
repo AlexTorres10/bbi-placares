@@ -1036,7 +1036,21 @@ def render_table_mode():
 
                     with st.spinner("Processando..."):
 
-                        # ── PASSO 1: Fechar rodada (posicoes.csv local) ──────────────
+                        # ── PASSO 1: Salvar histórico local ──────────────────────────
+                        # Must run BEFORE fechar rodada so that detect_matchdays
+                        # sees the new results when computing the current matchday.
+                        hist_result = _append_to_historico(
+                            st.session_state['resultados_parseados'],
+                            st.session_state.get('data_rodada', date.today()),
+                            _liga_str_uni
+                        )
+                        n_hist = hist_result['added']
+                        if hist_result['conflicts']:
+                            st.session_state['historico_conflitos'] = hist_result['conflicts']
+                            st.session_state['historico_conflitos_liga'] = _liga_key_uni
+                            st.warning(f"⚠️ {len(hist_result['conflicts'])} resultado(s) com placar diferente do registrado. Verifique abaixo.")
+
+                        # ── PASSO 2: Fechar rodada (posicoes.csv local) ──────────────
                         _current_md = None
                         _data_fim_uni = None
                         _added_pos = 0
@@ -1075,18 +1089,6 @@ def render_table_mode():
                                     )
                         except Exception as _e_pos:
                             _errors.append(f"Erro ao fechar rodada: {_e_pos}")
-
-                        # ── PASSO 2: Salvar histórico local ──────────────────────────
-                        hist_result = _append_to_historico(
-                            st.session_state['resultados_parseados'],
-                            st.session_state.get('data_rodada', date.today()),
-                            _liga_str_uni
-                        )
-                        n_hist = hist_result['added']
-                        if hist_result['conflicts']:
-                            st.session_state['historico_conflitos'] = hist_result['conflicts']
-                            st.session_state['historico_conflitos_liga'] = _liga_key_uni
-                            st.warning(f"⚠️ {len(hist_result['conflicts'])} resultado(s) com placar diferente do registrado. Verifique abaixo.")
 
                         # ── PASSO 3: Push para GitHub (commit único) ─────────────────
                         try:
