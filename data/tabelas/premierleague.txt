@@ -4,7 +4,7 @@ Manchester United 30 15 9 6 54 41 13 54
 Aston Villa 30 15 6 9 40 37 3 51
 Liverpool 30 14 7 9 49 40 9 49
 Chelsea 30 13 9 8 53 35 18 48
-Brentford 29 13 5 11 44 40 4 44
+Brentford 30 13 6 11 46 42 4 45
 Everton 30 12 7 11 34 35 -1 43
 Newcastle United 30 12 6 12 43 43 0 42
 Bournemouth 30 9 14 7 44 46 -2 41
@@ -17,4 +17,4 @@ Tottenham 30 7 9 14 40 47 -7 30
 Nottingham Forest 30 7 8 15 28 43 -15 29
 West Ham 30 7 8 15 36 55 -19 29
 Burnley 30 4 8 18 32 58 -26 20
-Wolverhampton 30 3 7 20 22 52 -30 16
+Wolverhampton 31 3 8 20 24 54 -30 17
