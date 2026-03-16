@@ -5,7 +5,7 @@ Millwall 38 20 8 10 52 43 9 68
 Hull City 38 19 6 13 59 56 3 63
 Wrexham 37 16 12 9 57 47 10 60
 Southampton 37 15 12 10 60 48 12 57
-Derby County 37 15 9 13 54 48 6 54
+Derby County 38 16 9 13 55 48 7 57
 Birmingham City 38 14 11 13 48 48 0 53
 Watford 37 13 13 11 47 45 2 52
 Swansea City 38 15 7 16 44 46 -2 52
@@ -17,7 +17,7 @@ Queens Park Rangers 38 14 8 16 49 60 -11 50
 Preston North End 38 12 13 13 42 48 -6 49
 Charlton Athletic 38 12 12 14 36 45 -9 48
 Blackburn Rovers 38 11 9 18 36 49 -13 42
-Portsmouth 36 10 10 16 36 47 -11 40
+Portsmouth 37 10 10 17 36 48 -12 40
 West Bromwich 38 10 10 18 39 54 -15 40
 Oxford United 38 9 12 17 36 49 -13 39
 Leicester City 38 11 11 16 51 60 -9 38
