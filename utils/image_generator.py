@@ -92,41 +92,41 @@ class ImageGenerator:
         
         Args:
             zones: Zonas originais da configuração
-            table_mode_name: Nome do modo selecionado (ex: "G6 Europeu (5 UCL + 1 UEL)")
-        
+            table_mode_name: Nome do modo selecionado (ex: "G5 Europeu (4 UCL + 1 UEL)")
+
         Returns:
             Zonas ajustadas com posições corretas
         """
         if not table_mode_name:
             return zones
-        
+
         # Criar cópia para não modificar o original
         adjusted_zones = zones.copy()
-        
+
         # Mapear modos para configurações
-        if "G6" in table_mode_name:
-            # G6: 5 UCL + 1 UEL
-            adjusted_zones['ucl']['positions'] = [1, 2, 3, 4, 5]
-            adjusted_zones['uel']['positions'] = [6]
+        if "G5" in table_mode_name:
+            # G5: 4 UCL + 1 UEL
+            adjusted_zones['ucl']['positions'] = [1, 2, 3, 4]
+            adjusted_zones['uel']['positions'] = [5]
             adjusted_zones['uecl']['positions'] = []
-        
-        elif "G7" in table_mode_name and "1 UEL + 1 UECL" in table_mode_name:
-            # G7: 5 UCL + 1 UEL + 1 UECL
-            adjusted_zones['ucl']['positions'] = [1, 2, 3, 4, 5]
-            adjusted_zones['uel']['positions'] = [6]
+
+        elif "G6" in table_mode_name and "1 UEL + 1 UECL" in table_mode_name:
+            # G6: 4 UCL + 1 UEL + 1 UECL
+            adjusted_zones['ucl']['positions'] = [1, 2, 3, 4]
+            adjusted_zones['uel']['positions'] = [5]
+            adjusted_zones['uecl']['positions'] = [6]
+
+        elif "G6" in table_mode_name and "2 UEL" in table_mode_name:
+            # G6: 4 UCL + 2 UEL
+            adjusted_zones['ucl']['positions'] = [1, 2, 3, 4]
+            adjusted_zones['uel']['positions'] = [5, 6]
+            adjusted_zones['uecl']['positions'] = []
+
+        elif "G7" in table_mode_name:
+            # G7: 4 UCL + 2 UEL + 1 UECL
+            adjusted_zones['ucl']['positions'] = [1, 2, 3, 4]
+            adjusted_zones['uel']['positions'] = [5, 6]
             adjusted_zones['uecl']['positions'] = [7]
-        
-        elif "G7" in table_mode_name and "2 UEL" in table_mode_name:
-            # G7: 5 UCL + 2 UEL
-            adjusted_zones['ucl']['positions'] = [1, 2, 3, 4, 5]
-            adjusted_zones['uel']['positions'] = [6, 7]
-            adjusted_zones['uecl']['positions'] = []
-        
-        elif "G8" in table_mode_name:
-            # G8: 5 UCL + 2 UEL + 1 UECL
-            adjusted_zones['ucl']['positions'] = [1, 2, 3, 4, 5]
-            adjusted_zones['uel']['positions'] = [6, 7]
-            adjusted_zones['uecl']['positions'] = [8]
         
         return adjusted_zones
     

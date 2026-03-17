@@ -780,7 +780,22 @@ def render_table_mode():
             del st.session_state['imagem_tabela_gerada']
         if 'table_data_atual' in st.session_state:
             del st.session_state['table_data_atual']
-    
+
+        # Step 2 — pre-compute table so mathematical situations are available
+        # immediately after "Processar Resultados" without needing "Gerar Tabela"
+        try:
+            _td = compute_updated_table(liga_key, resultados)
+            st.session_state['table_data_atual'] = _td
+        except Exception:
+            pass  # silently skip if table file is unavailable
+
+        # Step 3 — pre-fill confirmation checkboxes with confirmed statuses
+        if 'table_data_atual' in st.session_state:
+            try:
+                compute_mathematical_prefill(liga_key, st.session_state['table_data_atual'])
+            except Exception:
+                pass
+
     # ========================================================================
     # SE RESULTADOS FORAM PROCESSADOS, MOSTRAR OPÇÕES
     # ========================================================================
@@ -826,60 +841,14 @@ def render_table_mode():
         with col2:
             if st.button("📊 Gerar Imagem da Tabela", type="primary", width='stretch'):
                 try:
-                    # Processar tabela com resultados
-                    processor = TableProcessor()
-                    
-                    # Carregar tabela original
-                    tabela_path = f"data/tabelas/{st.session_state['liga_selecionada']}.txt"
-                    with open(tabela_path, 'r', encoding='utf-8') as f:
-                        processor.load_from_text(f.read())
-                    
-                    # Aplicar resultados — excluir partidas já registradas no histórico
-                    _liga_str_tab = LIGA_DISPLAY_NAMES.get(st.session_state['liga_selecionada'], '')
-                    _todos_tab = st.session_state['resultados_parseados']
-                    _novos_tab = []
-                    _duplicados_tab = []
-                    for _r_tab in _todos_tab:
-                        if is_already_in_historico(_r_tab['home_team'], _r_tab['away_team'], _liga_str_tab):
-                            _duplicados_tab.append(_r_tab)
-                        else:
-                            _novos_tab.append(_r_tab)
-                    if _duplicados_tab:
-                        _dup_names = ", ".join(
-                            f"{_r['home_team']} vs {_r['away_team']}" for _r in _duplicados_tab
-                        )
-                        st.info(f"ℹ️ {len(_duplicados_tab)} resultado(s) já registrado(s) no histórico ignorado(s) no cálculo da tabela: {_dup_names}")
-                    processor.update_with_multiple_results(_novos_tab)
-                    processor.sort_table()
-                    
+                    table_data = compute_updated_table(
+                        st.session_state['liga_selecionada'],
+                        st.session_state['resultados_parseados']
+                    )
+
                     # Coletar confirmações
                     confirmations = collect_confirmations(st.session_state['liga_selecionada'])
-                    
-                    # Converter para formato de imagem
-                    table_data = []
-                    for team in processor.teams:
-                        team_dict = {
-                            'name': team.name,
-                            'position': team.position,
-                            'games': team.games,
-                            'wins': team.wins,
-                            'draws': team.draws,
-                            'losses': team.losses,
-                            'goals_for': team.goals_for,
-                            'goals_against': team.goals_against,
-                            'goal_difference': team.goal_difference,
-                            'points': team.points
-                        }
-                        
-                        # ADICIONAR NOTA DE PENALIDADE SE EXISTIR
-                        # Verificar se o time tem pontos negativos ou penalidade conhecida
-                        if team.name == "Sheffield Wednesday":
-                            team_dict['penalty_note'] = "Sheffield Wednesday perdeu 18 pontos por adm. judicial e atraso de salários."
-                        if team.name == "Leicester City":
-                            team_dict['penalty_note'] = "Leicester City perdeu 6 pontos por violação das regras de lucratividade e sustentabilidade."
-                        
-                        table_data.append(team_dict)
-                    
+
                     # Gerar imagem
                     generator = ImageGenerator()
                     img = generator.generate_table_image(
@@ -936,7 +905,7 @@ def render_table_mode():
                     # ================================================================
                     # Salvar na sessão
                     st.session_state['imagem_tabela_gerada'] = img
-                    st.session_state['tabela_processada'] = processor.to_text()
+                    # tabela_processada already set by compute_updated_table
                     st.session_state['table_data_atual'] = table_data
                     
                     if not has_divergences or official_table is None:
@@ -1176,10 +1145,204 @@ def render_table_mode():
         st.session_state['historico_conflitos'] = remaining
 
 
+def compute_updated_table(liga_key: str, resultados: list) -> list:
+    """
+    Loads the standings for liga_key, filters out results already in historico,
+    applies the remaining results, sorts the table, and returns a list of team dicts.
+    As a side effect also stores st.session_state['tabela_processada'].
+    """
+    processor = TableProcessor()
+    tabela_path = f"data/tabelas/{liga_key}.txt"
+    with open(tabela_path, 'r', encoding='utf-8') as f:
+        processor.load_from_text(f.read())
+
+    _liga_str = LIGA_DISPLAY_NAMES.get(liga_key, '')
+    _novos = [r for r in resultados
+              if not is_already_in_historico(r['home_team'], r['away_team'], _liga_str)]
+    processor.update_with_multiple_results(_novos)
+    processor.sort_table()
+
+    st.session_state['tabela_processada'] = processor.to_text()
+
+    table_data = []
+    for team in processor.teams:
+        team_dict = {
+            'name': team.name,
+            'position': team.position,
+            'games': team.games,
+            'wins': team.wins,
+            'draws': team.draws,
+            'losses': team.losses,
+            'goals_for': team.goals_for,
+            'goals_against': team.goals_against,
+            'goal_difference': team.goal_difference,
+            'points': team.points,
+        }
+        if team.name == "Sheffield Wednesday":
+            team_dict['penalty_note'] = "Sheffield Wednesday perdeu 18 pontos por adm. judicial e atraso de salários."
+        if team.name == "Leicester City":
+            team_dict['penalty_note'] = "Leicester City perdeu 6 pontos por violação das regras de lucratividade e sustentabilidade."
+        table_data.append(team_dict)
+
+    return table_data
+
+
+def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
+    """
+    Inspects table_data and writes True to session-state checkbox keys whose
+    classification status is mathematically confirmed (can no longer change).
+    Only sets keys that are not already True. Does not call st.rerun().
+    """
+    TOTAL_ROUNDS = {
+        'premierleague': 38,
+        'championship': 46,
+        'leagueone': 46,
+        'leaguetwo': 46,
+        'nationalleague': 46,
+    }
+    total = TOTAL_ROUNDS.get(liga_key, 46)
+
+    by_pos = {t['position']: t for t in table_data}
+
+    def pts(pos):
+        t = by_pos.get(pos)
+        return t['points'] if t else 0
+
+    def max_pts(pos):
+        t = by_pos.get(pos)
+        if t is None:
+            return 0
+        rem = max(0, total - t['games'])
+        return t['points'] + rem * 3
+
+    def set_key(key):
+        if not st.session_state.get(key, False):
+            st.session_state[key] = True
+
+    if liga_key == 'premierleague':
+        table_mode = st.session_state.get('table_mode', 'G6 Europeu (4 UCL + 1 UEL + 1 UECL)')
+        if 'G5' in table_mode:
+            ucl, uel, uecl = 4, 1, 0
+        elif 'G6' in table_mode and '2 UEL' in table_mode:
+            ucl, uel, uecl = 4, 2, 0
+        elif 'G6' in table_mode and '1 UEL + 1 UECL' in table_mode:
+            ucl, uel, uecl = 4, 1, 1
+        elif 'G7' in table_mode:
+            ucl, uel, uecl = 4, 2, 1
+        else:
+            ucl, uel, uecl = 4, 1, 1
+
+        # Champion
+        if pts(1) > max_pts(2):
+            set_key('pl_1_champion')
+
+        # UCL (positions 1..ucl confirmed when pos(ucl+1) can no longer catch them)
+        for pos in range(1, ucl + 1):
+            if pts(pos) > max_pts(ucl + 1):
+                set_key(f'pl_{pos}_ucl')
+
+        # UEL
+        for pos in range(ucl + 1, ucl + uel + 1):
+            if pts(pos) > max_pts(ucl + uel + 1):
+                set_key(f'pl_{pos}_uel')
+
+        # UECL
+        if uecl > 0:
+            for pos in range(ucl + uel + 1, ucl + uel + uecl + 1):
+                if pts(pos) > max_pts(ucl + uel + uecl + 1):
+                    set_key(f'pl_{pos}_uecl')
+
+        # Relegated
+        for pos in [18, 19, 20]:
+            if max_pts(pos) < pts(17):
+                set_key(f'pl_{pos}_relegated')
+
+    elif liga_key == 'championship':
+        # Champion
+        if pts(1) > max_pts(2):
+            set_key('ch_1_champion')
+
+        # Auto-promoted (top 2): confirmed when pos 2 can no longer be caught by pos 3
+        if pts(2) > max_pts(3):
+            set_key('ch_1_promoted')
+            set_key('ch_2_promoted')
+
+        # Playoffs (pos 1-6): confirmed when pos N > pos 7 max_pts
+        for pos in [1, 2, 3, 4, 5, 6]:
+            if pts(pos) > max_pts(7):
+                set_key(f'ch_{pos}_playoffs')
+
+        # Relegated
+        for pos in [22, 23, 24]:
+            if max_pts(pos) < pts(21):
+                set_key(f'ch_{pos}_relegated')
+
+    elif liga_key == 'leagueone':
+        # Champion
+        if pts(1) > max_pts(2):
+            set_key('l1_1_champion')
+
+        # Auto-promoted (top 2)
+        if pts(2) > max_pts(3):
+            set_key('l1_1_promoted')
+            set_key('l1_2_promoted')
+
+        # Playoffs (pos 1-6)
+        for pos in [1, 2, 3, 4, 5, 6]:
+            if pts(pos) > max_pts(7):
+                set_key(f'l1_{pos}_playoffs')
+
+        # Relegated
+        for pos in [21, 22, 23, 24]:
+            if max_pts(pos) < pts(20):
+                set_key(f'l1_{pos}_relegated')
+
+    elif liga_key == 'leaguetwo':
+        # Champion
+        if pts(1) > max_pts(2):
+            set_key('l2_1_champion')
+
+        # Auto-promoted (top 3): confirmed when pos 3 > pos 4 max_pts
+        if pts(3) > max_pts(4):
+            set_key('l2_1_promoted')
+            set_key('l2_2_promoted')
+            set_key('l2_3_promoted')
+
+        # Playoffs (pos 1-7)
+        for pos in [1, 2, 3, 4, 5, 6, 7]:
+            if pts(pos) > max_pts(8):
+                set_key(f'l2_{pos}_playoffs')
+
+        # Relegated
+        for pos in [23, 24]:
+            if max_pts(pos) < pts(22):
+                set_key(f'l2_{pos}_relegated')
+
+    elif liga_key == 'nationalleague':
+        # Champion
+        if pts(1) > max_pts(2):
+            set_key('nl_1_champion')
+
+        # Playoffs semi (pos 1-3): confirmed when pos N > pos 4 max_pts
+        for pos in [1, 2, 3]:
+            if pts(pos) > max_pts(4):
+                set_key(f'nl_{pos}_playoffs_semi')
+
+        # Playoffs quarter (pos 1-7): confirmed when pos N > pos 8 max_pts
+        for pos in range(1, 8):
+            if pts(pos) > max_pts(8):
+                set_key(f'nl_{pos}_playoffs_quarter')
+
+        # Relegated
+        for pos in [21, 22, 23, 24]:
+            if max_pts(pos) < pts(20):
+                set_key(f'nl_{pos}_relegated')
+
+
 def collect_confirmations(liga_key: str) -> Dict:
     """
     Coleta todas as confirmações dos checkboxes
-    
+
     Returns:
         Dict com {position: {'champion': bool, 'ucl': bool, ...}}
     """
@@ -1255,10 +1418,10 @@ def render_premier_league_table_options():
     st.write("### ⚙️ Configuração das vagas europeias")
     
     table_modes = [
-        "G6 Europeu (5 UCL + 1 UEL)",
-        "G7 Europeu (5 UCL + 2 UEL)",
-        "G7 Europeu (5 UCL + 1 UEL + 1 UECL)",
-        "G8 Europeu (5 UCL + 2 UEL + 1 UECL)"
+        "G5 Europeu (4 UCL + 1 UEL)",
+        "G6 Europeu (4 UCL + 2 UEL)",
+        "G6 Europeu (4 UCL + 1 UEL + 1 UECL)",
+        "G7 Europeu (4 UCL + 2 UEL + 1 UECL)"
     ]
     
     selected_mode = st.selectbox("Modo da tabela", table_modes, index=2)
@@ -1305,7 +1468,7 @@ def render_premier_league_table_options():
                 st.write("")
         
         with cols[2]:
-            if pos <= 5:
+            if pos <= 4:
                 st.checkbox("UCL", key=f"pl_{pos}_ucl")
             else:
                 st.write("")
