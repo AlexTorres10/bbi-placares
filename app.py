@@ -1054,7 +1054,7 @@ def render_table_mode():
                                         _data_fim_uni,
                                     )
                                     _summary.append(
-                                        f"Rodada {_current_md} fechada ({_added_pos} times, data fim: {_data_fim_uni})"
+                                        f"Rodada fechada ({_added_pos} times, data fim: {_data_fim_uni})"
                                     )
                         except Exception as _e_pos:
                             _errors.append(f"Erro ao fechar rodada: {_e_pos}")
@@ -1067,7 +1067,7 @@ def render_table_mode():
                             )
 
                             _gh_msg = (
-                                f"Rodada {_current_md} — {_liga_str_uni} ({_data_fim_uni})"
+                                f"{_liga_str_uni} — ({_data_fim_uni})"
                                 if _current_md else commit_msg
                             )
 
