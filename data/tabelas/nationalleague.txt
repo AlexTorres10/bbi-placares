@@ -1,24 +1,24 @@
-Rochdale 37 29 4 4 72 26 46 91
+Rochdale 38 29 4 5 74 29 45 91
 York City 38 27 8 3 100 36 64 89
 Carlisle United 38 23 6 9 69 46 23 75
 Boreham Wood 38 21 8 9 77 52 25 71
-Scunthorpe United 37 19 10 8 66 52 14 67
+Scunthorpe United 38 20 10 8 68 53 15 70
 Forest Green Rovers 38 18 11 9 62 45 17 65
+Southend United 36 17 10 9 61 35 26 61
 FC Halifax Town 38 17 8 13 59 55 4 59
-Southend United 35 16 10 9 58 33 25 58
 Hartlepool United 37 14 12 11 43 40 3 54
-Wealdstone 36 13 9 14 52 58 -6 48
+Woking 36 13 10 13 53 44 9 49
+Wealdstone 37 13 9 15 52 59 -7 48
 Tamworth 38 13 9 16 50 63 -13 48
 Boston United 38 12 11 15 50 55 -5 47
-Woking 35 12 10 13 52 44 8 46
-Solihull Moors 36 11 10 15 60 61 -1 43
+Solihull Moors 37 11 11 15 61 62 -1 44
 Sutton United 38 10 13 15 53 63 -10 43
 Altrincham 37 13 4 20 44 56 -12 43
 Aldershot Town 37 12 6 19 61 70 -9 42
 Eastleigh 38 11 9 18 48 67 -19 42
-Yeovil Town 36 12 5 19 38 52 -14 41
-Brackley Town 37 9 9 19 35 58 -23 36
+Yeovil Town 37 12 5 20 38 53 -15 41
+Brackley Town 38 9 10 19 36 59 -23 37
+Gateshead 38 10 7 21 45 79 -34 37
 Morecambe 38 8 10 20 55 78 -23 34
 Braintree Town 38 8 10 20 29 57 -28 34
-Gateshead 37 9 7 21 44 79 -35 34
-Truro City 37 6 7 24 34 65 -31 25
+Truro City 38 6 7 25 35 67 -32 25
