@@ -247,6 +247,19 @@ def compute_table_at_matchday(
     return {team: pos for pos, team in enumerate(sorted_teams, start=1)}
 
 
+def _has_games_on_date(liga_str: str, date_str: str) -> bool:
+    """Returns True if historico.csv has at least one row with liga==liga_str and data==date_str."""
+    csv_path = os.path.join("data", "historico.csv")
+    if not os.path.exists(csv_path):
+        return False
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row.get("liga") == liga_str and row.get("data") == date_str:
+                return True
+    return False
+
+
 def append_matchday_positions(
     liga_str: str,
     positions: dict[str, int],
@@ -256,7 +269,9 @@ def append_matchday_positions(
     Appends position records to data/posicoes.csv.
 
     Applies anchor-day adjustment to data_fim before storing (see
-    _anchor_date for the full mapping).
+    _anchor_date for the full mapping), but only if the candidate anchor
+    date has games registered in historico.csv for liga_str.  If the
+    candidate anchor date has no games, data_fim is used as-is.
 
     The replace-vs-insert decision compares the computed anchor date for
     data_fim against the last stored anchor date (data_fim_matchday):
@@ -273,8 +288,12 @@ def append_matchday_positions(
     """
     _ensure_new_schema()
 
-    # Compute anchor first — needed for both the decision and the stored date
-    anchored = _anchor_date(data_fim)
+    # Compute candidate anchor; only apply displacement if the candidate
+    # date actually has games in historico.csv for this liga.
+    candidate = _anchor_date(data_fim)
+    if candidate != data_fim and not _has_games_on_date(liga_str, candidate):
+        candidate = data_fim
+    anchored = candidate
 
     # Find the last recorded matchday number and its data_fim_matchday
     last_md: Optional[int] = None
