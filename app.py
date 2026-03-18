@@ -866,7 +866,7 @@ def render_table_mode():
                     has_divergences = False 
                     
                     # 1. Verificar times repetidos
-                    num_teams = len(processor.teams)  # Usar o número de times da tabela
+                    num_teams = len(table_data)  # Usar o número de times da tabela
                     is_valid, warnings = validator.validate_results(
                         st.session_state['resultados_parseados'],
                         num_teams
@@ -932,8 +932,9 @@ def render_table_mode():
                     img_rgb.save("rodada.png", format="PNG")
                     
                     with open("rodada.png", "rb") as f:
-                        rodada_num = st.session_state.get('numero_rodada', 'atrasados')
-                        
+                        rodada_num = st.session_state.get('numero_rodada')
+                        tipo_rodada_atual = st.session_state.get('tipo_rodada', 'Rodada')
+
                         # MAPEAR PREFIXOS
                         prefixos = {
                             'premierleague': 'PL',
@@ -942,14 +943,15 @@ def render_table_mode():
                             'leaguetwo': 'L2',
                             'nationalleague': 'NL'
                         }
-                        
+
                         liga_key = st.session_state['liga_selecionada']
                         prefixo = prefixos.get(liga_key, 'XX')
-                        
+                        rodada_seg = "AD" if tipo_rodada_atual == "Jogos Atrasados" else f"M{rodada_num}"
+
                         st.download_button(
-                            "📥 Baixar Imagem da Rodada", 
-                            f, 
-                            file_name=f"{prefixo}-M{rodada_num}-R.png",  # ← AGORA COM PREFIXO
+                            "📥 Baixar Imagem da Rodada",
+                            f,
+                            file_name=f"{prefixo}-{rodada_seg}-R.png",
                             width='stretch'
                         )
             
@@ -961,8 +963,9 @@ def render_table_mode():
                     st.session_state['imagem_tabela_gerada'].save("tabela.png", format="PNG")
                     
                     with open("tabela.png", "rb") as f:
-                        rodada_num = st.session_state.get('numero_rodada', 'atrasados')
-                        
+                        rodada_num = st.session_state.get('numero_rodada')
+                        tipo_rodada_atual = st.session_state.get('tipo_rodada', 'Rodada')
+
                         # MAPEAR PREFIXOS
                         prefixos = {
                             'premierleague': 'PL',
@@ -971,14 +974,15 @@ def render_table_mode():
                             'leaguetwo': 'L2',
                             'nationalleague': 'NL'
                         }
-                        
+
                         liga_key = st.session_state['liga_selecionada']
                         prefixo = prefixos.get(liga_key, 'XX')
-                        
+                        rodada_seg = "AD" if tipo_rodada_atual == "Jogos Atrasados" else f"M{rodada_num}"
+
                         st.download_button(
-                            "📥 Baixar Tabela", 
-                            f, 
-                            file_name=f"{prefixo}-M{rodada_num}-T.png",  # ← AGORA COM PREFIXO
+                            "📥 Baixar Tabela",
+                            f,
+                            file_name=f"{prefixo}-{rodada_seg}-T.png",
                             width='stretch'
                         )
             
