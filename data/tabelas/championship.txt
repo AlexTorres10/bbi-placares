@@ -1,24 +1,24 @@
-Coventry City 38 23 8 7 78 40 38 77
-Middlesbrough 38 20 10 8 59 37 22 70
-Ipswich Town 37 19 11 7 66 38 28 68
-Millwall 38 20 8 10 52 43 9 68
-Hull City 38 19 6 13 59 56 3 63
-Southampton 38 16 12 10 61 48 13 60
-Wrexham 38 16 12 10 58 50 8 60
-Derby County 38 16 9 13 55 48 7 57
-Watford 38 14 13 11 50 46 4 55
-Birmingham City 38 14 11 13 48 48 0 53
-Swansea City 38 15 7 16 44 46 -2 52
-Norwich City 38 15 6 17 51 46 5 51
-Stoke City 38 14 9 15 45 40 5 51
-Bristol City 38 14 9 15 49 49 0 51
-Sheffield United 38 15 5 18 53 52 1 50
-Queens Park Rangers 38 14 8 16 49 60 -11 50
-Preston North End 38 12 13 13 42 48 -6 49
-Charlton Athletic 38 12 12 14 36 45 -9 48
-Blackburn Rovers 38 11 9 18 36 49 -13 42
-Portsmouth 37 10 10 17 36 48 -12 40
-West Bromwich 38 10 10 18 39 54 -15 40
-Oxford United 38 9 12 17 36 49 -13 39
-Leicester City 38 11 11 16 51 60 -9 38
-Sheffield Wednesday 38 1 9 28 23 76 -53 -6
+Coventry City 39 24 8 7 81 40 41 80
+Middlesbrough 39 20 11 8 59 37 22 71
+Ipswich Town 38 19 12 7 67 39 28 69
+Millwall 39 20 9 10 53 44 9 69
+Hull City 39 20 6 13 62 57 5 66
+Southampton 39 17 12 10 63 48 15 63
+Wrexham 39 17 12 10 60 51 9 63
+Derby County 39 17 9 13 56 48 8 60
+Watford 39 14 14 11 50 46 4 56
+Norwich City 39 16 6 17 52 46 6 54
+Birmingham City 39 14 11 14 48 49 -1 53
+Queens Park Rangers 39 15 8 16 55 61 -6 53
+Preston North End 39 13 13 13 45 49 -4 52
+Swansea City 39 15 7 17 44 49 -5 52
+Stoke City 39 14 9 16 46 43 3 51
+Bristol City 39 14 9 16 49 50 -1 51
+Sheffield United 39 15 5 19 54 54 0 50
+Charlton Athletic 39 12 12 15 36 46 -10 48
+Blackburn Rovers 39 11 10 18 36 49 -13 43
+West Bromwich 39 11 10 18 40 54 -14 43
+Portsmouth 38 10 10 18 37 54 -17 40
+Leicester City 39 11 12 16 51 60 -9 39
+Oxford United 39 9 12 18 36 51 -15 39
+Sheffield Wednesday 39 1 9 29 24 79 -55 -6
