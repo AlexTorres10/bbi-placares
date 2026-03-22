@@ -1557,10 +1557,7 @@ def render_confirmation_checkboxes_championship():
     
     st.write("**Zona de Rebaixamento:**")
     for pos in [22, 23, 24]:
-        if pos == 24:
-            st.checkbox(f"{pos}º colocado - Rebaixado", key=f"ch_{pos}_relegated", value=True)
-        else:
-            st.checkbox(f"{pos}º colocado - Rebaixado", key=f"ch_{pos}_relegated")
+        st.checkbox(f"{pos}º colocado - Rebaixado", key=f"ch_{pos}_relegated")
 
 
 def render_confirmation_checkboxes_leagueone():
