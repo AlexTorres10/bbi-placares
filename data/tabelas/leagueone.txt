@@ -12,13 +12,13 @@ Luton Town 39 15 10 14 52 49 3 55
 Peterborough 38 15 5 18 57 52 5 50
 Barnsley 37 13 11 13 59 60 -1 50
 AFC Wimbledon 38 14 8 16 49 55 -6 50
+Doncaster Rovers 39 14 8 17 42 59 -17 50
 Mansfield Town 37 12 13 12 47 41 6 49
 Leyton Orient 38 14 6 18 55 62 -7 48
-Doncaster Rovers 38 13 8 17 41 59 -18 47
 Burton Albion 39 12 10 17 44 54 -10 46
 Wigan Athletic 38 11 12 15 41 51 -10 45
 Exeter City 39 11 9 19 42 52 -10 42
 Blackpool 39 11 9 19 46 63 -17 42
 Rotherham United 38 9 9 20 35 58 -23 36
 Northampton Town 39 9 8 22 33 56 -23 35
-Port Vale 36 7 10 19 29 49 -20 31
+Port Vale 37 7 10 20 29 50 -21 31
