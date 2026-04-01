@@ -36,15 +36,15 @@ class GitHubHandler:
         url = f"{self.base_url}/{file_path}"
         
         try:
-            response = requests.get(url, headers=self.headers)
+            response = requests.get(url, headers=self.headers, timeout=10)
             response.raise_for_status()
-            
+
             data = response.json()
             content = base64.b64decode(data['content']).decode('utf-8')
             sha = data['sha']
-            
+
             return content, sha
-        
+
         except requests.exceptions.RequestException as e:
             print(f"Erro ao buscar arquivo: {e}")
             return None, None
@@ -75,10 +75,10 @@ class GitHubHandler:
         }
         
         try:
-            response = requests.put(url, headers=self.headers, json=data)
+            response = requests.put(url, headers=self.headers, json=data, timeout=10)
             response.raise_for_status()
             return True
-        
+
         except requests.exceptions.RequestException as e:
             print(f"Erro ao atualizar arquivo: {e}")
             return False
@@ -107,10 +107,10 @@ class GitHubHandler:
         }
         
         try:
-            response = requests.put(url, headers=self.headers, json=data)
+            response = requests.put(url, headers=self.headers, json=data, timeout=10)
             response.raise_for_status()
             return True
-        
+
         except requests.exceptions.RequestException as e:
             print(f"Erro ao criar arquivo: {e}")
             return False
@@ -128,9 +128,9 @@ class GitHubHandler:
         url = f"{self.base_url}/{file_path}"
         
         try:
-            response = requests.get(url, headers=self.headers)
+            response = requests.get(url, headers=self.headers, timeout=10)
             return response.status_code == 200
-        
+
         except requests.exceptions.RequestException:
             return False
     
@@ -150,14 +150,14 @@ class GitHubHandler:
         try:
             # 1. SHA do commit HEAD
             ref_resp = requests.get(
-                f"{api_base}/git/ref/heads/{branch}", headers=self.headers
+                f"{api_base}/git/ref/heads/{branch}", headers=self.headers, timeout=10
             )
             ref_resp.raise_for_status()
             head_sha = ref_resp.json()["object"]["sha"]
 
             # 2. SHA da árvore atual
             commit_resp = requests.get(
-                f"{api_base}/git/commits/{head_sha}", headers=self.headers
+                f"{api_base}/git/commits/{head_sha}", headers=self.headers, timeout=10
             )
             commit_resp.raise_for_status()
             base_tree_sha = commit_resp.json()["tree"]["sha"]
@@ -171,6 +171,7 @@ class GitHubHandler:
                 f"{api_base}/git/trees",
                 headers=self.headers,
                 json={"base_tree": base_tree_sha, "tree": tree_entries},
+                timeout=10,
             )
             tree_resp.raise_for_status()
             new_tree_sha = tree_resp.json()["sha"]
@@ -180,6 +181,7 @@ class GitHubHandler:
                 f"{api_base}/git/commits",
                 headers=self.headers,
                 json={"message": message, "tree": new_tree_sha, "parents": [head_sha]},
+                timeout=10,
             )
             new_commit_resp.raise_for_status()
             new_commit_sha = new_commit_resp.json()["sha"]
@@ -189,6 +191,7 @@ class GitHubHandler:
                 f"{api_base}/git/refs/heads/{branch}",
                 headers=self.headers,
                 json={"sha": new_commit_sha},
+                timeout=10,
             )
             patch_resp.raise_for_status()
             return True

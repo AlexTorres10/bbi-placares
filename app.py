@@ -2,6 +2,9 @@ import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 import io
 import os
+
+# Limit PIL image pixels to prevent decompression bomb DoS (~100 MP)
+Image.MAX_IMAGE_PIXELS = 100_000_000
 import re
 import json
 import sys
@@ -2205,16 +2208,24 @@ if modo == "🔢 Gerar Placar":
         bg_path = None
 
         if background:
-            img = Image.open(background).convert("RGBA")
+            img = Image.open(background)
+            if img.size[0] * img.size[1] > Image.MAX_IMAGE_PIXELS:
+                st.error("Imagem muito grande. Use uma imagem com menos de 100 MP.")
+                st.stop()
+            img = img.convert("RGBA")
             bg_path = "temp_bg.png"
             img.save(bg_path, format="PNG")
 
-        img = desenhar_placar(
-            template_path, mandante, visitante, placar,
-            marcadores_mandante, marcadores_visitante,
-            background=bg_path,
-            alinhamento=alinhamento if alinhamento else "Centro"
-        )
+        try:
+            img = desenhar_placar(
+                template_path, mandante, visitante, placar,
+                marcadores_mandante, marcadores_visitante,
+                background=bg_path,
+                alinhamento=alinhamento if alinhamento else "Centro"
+            )
+        finally:
+            if bg_path and os.path.exists(bg_path):
+                os.remove(bg_path)
 
         img_rgb = img.convert("RGB")
         img_rgb.save("placar_final.jpg", format="JPEG", quality=100)
@@ -2409,12 +2420,15 @@ elif modo == "📰 Gerar Notícia":
                 # Salvar background temporário se foi enviado
                 bg_path = None
                 if background:
-                    img = Image.open(background).convert("RGBA")
+                    _bg_img = Image.open(background)
+                    if _bg_img.size[0] * _bg_img.size[1] > Image.MAX_IMAGE_PIXELS:
+                        st.error("Imagem muito grande. Use uma imagem com menos de 100 MP.")
+                        st.stop()
+                    _bg_img.convert("RGBA").save("temp_bg_noticia.png", format="PNG")
                     bg_path = "temp_bg_noticia.png"
-                    img.save(bg_path, format="PNG")
-                
+
                 generator = NewsGenerator()
-                
+
                 img = generator.generate_news_image(
                     league=liga_key,
                     headline=manchete,
