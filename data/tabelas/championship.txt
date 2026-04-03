@@ -1,11 +1,11 @@
-Coventry City 39 24 8 7 81 40 41 80
+Coventry City 40 25 8 7 84 42 42 83
 Millwall 40 21 9 10 55 45 10 72
 Middlesbrough 40 20 11 9 60 39 21 71
 Ipswich Town 38 19 12 7 67 39 28 69
 Hull City 40 20 7 13 63 58 5 67
 Wrexham 40 17 13 10 62 53 9 64
 Southampton 39 17 12 10 63 48 15 63
-Derby County 39 17 9 13 56 48 8 60
+Derby County 40 17 9 14 58 51 7 60
 Watford 40 14 14 12 51 48 3 56
 Queens Park Rangers 40 16 8 16 57 62 -5 56
 Norwich City 40 16 7 17 53 47 6 55
