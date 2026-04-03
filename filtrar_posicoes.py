@@ -7,7 +7,7 @@ in historico.csv during the correct block for that matchday.
 Block A — matchday ends on Fri/Sat/Sun/Mon → window: preceding Friday → data_fim_matchday
 Block B — matchday ends on Tue/Wed/Thu     → window: preceding Tuesday → data_fim_matchday
 
-Output: data/posicoes_filtradas.csv  (same columns + bloco + data_jogo)
+Output: data/posicoes.csv  (overwrites with filtered rows, same columns)
 """
 
 import pandas as pd
@@ -17,7 +17,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent
 POSICOES_PATH  = BASE_DIR / "data" / "posicoes.csv"
 HISTORICO_PATH = BASE_DIR / "data" / "historico.csv"
-OUTPUT_PATH    = BASE_DIR / "data" / "posicoes_filtradas.csv"
+OUTPUT_PATH    = BASE_DIR / "data" / "posicoes.csv"
 
 # Block A: Fri=4, Sat=5, Sun=6, Mon=0
 BLOCK_A = {4, 5, 6, 0}
@@ -54,8 +54,7 @@ def main():
         matches = historico[mask]
 
         if not matches.empty:
-            data_jogo = matches["data"].min().strftime("%Y-%m-%d")
-            kept_rows.append({**row.to_dict(), "bloco": bloco, "data_jogo": data_jogo})
+            kept_rows.append(row.to_dict())
 
     result = pd.DataFrame(kept_rows)
     result["data_fim_matchday"] = result["data_fim_matchday"].dt.strftime("%Y-%m-%d")
