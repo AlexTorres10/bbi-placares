@@ -1,24 +1,24 @@
-Rochdale 41 31 5 5 81 34 47 98
-York City 41 29 8 4 106 39 67 95
-Carlisle United 41 26 6 9 78 49 29 84
-Boreham Wood 41 23 9 9 82 53 29 78
-Scunthorpe United 41 22 11 8 75 58 17 77
-Forest Green Rovers 41 20 11 10 68 48 20 71
-Southend United 39 18 11 10 64 38 26 65
-FC Halifax Town 41 18 8 15 63 58 5 62
-Hartlepool United 40 16 12 12 47 49 -2 60
-Woking 40 14 12 14 58 49 9 54
-Tamworth 41 15 9 17 54 66 -12 54
-Wealdstone 40 14 9 17 59 63 -4 51
-Solihull Moors 40 12 12 16 63 66 -3 48
-Boston United 40 12 12 16 54 63 -9 48
-Altrincham 41 14 6 21 48 60 -12 48
-Yeovil Town 41 14 5 22 45 59 -14 47
-Sutton United 41 11 13 17 56 68 -12 46
-Aldershot Town 40 13 6 21 66 75 -9 45
-Gateshead 41 12 7 22 50 84 -34 43
-Eastleigh 41 11 9 21 50 74 -24 42
-Brackley Town 41 9 11 21 37 65 -28 38
-Braintree Town 41 8 11 22 33 63 -30 35
-Morecambe 41 8 10 23 59 86 -27 34
-Truro City 41 7 9 25 39 68 -29 30
+York City 42 30 8 4 107 39 68 98
+Rochdale 42 31 5 6 83 38 45 98
+Carlisle United 42 26 7 9 78 49 29 85
+Boreham Wood 42 24 9 9 87 54 33 81
+Scunthorpe United 42 22 12 8 75 58 17 78
+Forest Green Rovers 42 21 11 10 72 48 24 74
+Southend United 40 19 11 10 67 40 27 68
+FC Halifax Town 42 19 8 15 64 58 6 65
+Hartlepool United 41 16 13 12 47 49 -2 61
+Tamworth 42 16 9 17 55 66 -11 57
+Woking 41 14 13 14 61 52 9 55
+Wealdstone 41 14 9 18 60 68 -8 51
+Yeovil Town 42 15 5 22 46 59 -13 50
+Solihull Moors 41 12 12 17 63 67 -4 48
+Boston United 41 12 12 17 54 64 -10 48
+Altrincham 42 14 6 22 48 61 -13 48
+Sutton United 42 11 14 17 58 70 -12 47
+Aldershot Town 41 13 7 21 68 77 -9 46
+Gateshead 42 12 8 22 50 84 -34 44
+Eastleigh 42 11 10 21 53 77 -24 43
+Brackley Town 42 9 11 22 37 69 -32 38
+Morecambe 42 9 10 23 63 88 -25 37
+Braintree Town 42 8 11 23 35 66 -31 35
+Truro City 42 7 9 26 39 69 -30 30
