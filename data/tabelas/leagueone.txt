@@ -19,6 +19,6 @@ Wigan Athletic 41 12 13 16 44 55 -11 49
 Burton Albion 42 12 12 18 45 56 -11 48
 Blackpool 42 13 9 20 48 64 -16 48
 Exeter City 42 12 10 20 45 53 -8 46
-Rotherham United 39 9 10 20 35 58 -23 37
+Rotherham United 40 9 10 21 35 59 -24 37
 Northampton Town 41 9 8 24 34 60 -26 35
-Port Vale 38 7 10 21 29 54 -25 31
+Port Vale 39 8 10 21 30 54 -24 34
