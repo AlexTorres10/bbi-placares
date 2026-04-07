@@ -1227,17 +1227,17 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
             st.session_state[key] = True
 
     if liga_key == 'premierleague':
-        table_mode = st.session_state.get('table_mode', 'G6 Europeu (4 UCL + 1 UEL + 1 UECL)')
-        if 'G5' in table_mode:
-            ucl, uel, uecl = 4, 1, 0
-        elif 'G6' in table_mode and '2 UEL' in table_mode:
-            ucl, uel, uecl = 4, 2, 0
-        elif 'G6' in table_mode and '1 UEL + 1 UECL' in table_mode:
-            ucl, uel, uecl = 4, 1, 1
-        elif 'G7' in table_mode:
-            ucl, uel, uecl = 4, 2, 1
+        table_mode = st.session_state.get('table_mode', 'G7 Europeu (5 UCL + 1 UEL + 1 UECL)')
+        if 'G6' in table_mode:
+            ucl, uel, uecl = 5, 1, 0
+        elif 'G7' in table_mode and '2 UEL' in table_mode:
+            ucl, uel, uecl = 5, 2, 0
+        elif 'G7' in table_mode and '1 UEL + 1 UECL' in table_mode:
+            ucl, uel, uecl = 5, 1, 1
+        elif 'G8' in table_mode:
+            ucl, uel, uecl = 5, 2, 1
         else:
-            ucl, uel, uecl = 4, 1, 1
+            ucl, uel, uecl = 5, 1, 1
 
         # Champion
         if pts(1) > max_pts(2):
@@ -1425,10 +1425,10 @@ def render_premier_league_table_options():
     st.write("### ⚙️ Configuração das vagas europeias")
     
     table_modes = [
-        "G5 Europeu (4 UCL + 1 UEL)",
-        "G6 Europeu (4 UCL + 2 UEL)",
-        "G6 Europeu (4 UCL + 1 UEL + 1 UECL)",
-        "G7 Europeu (4 UCL + 2 UEL + 1 UECL)"
+        "G6 Europeu (5 UCL + 1 UEL)",
+        "G7 Europeu (5 UCL + 2 UEL)",
+        "G7 Europeu (5 UCL + 1 UEL + 1 UECL)",
+        "G8 Europeu (5 UCL + 2 UEL + 1 UECL)"
     ]
     
     selected_mode = st.selectbox("Modo da tabela", table_modes, index=2)

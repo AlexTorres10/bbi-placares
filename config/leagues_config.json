@@ -54,17 +54,17 @@
         "rect": "premierleague-rect.png"
       },
       "champion": {"positions": [1], "rect": "premierleague-rect-c.png", "rect_confirmed": "premierleague-rect-c-conf.png"},
-      "ucl": {"positions": [1, 2, 3, 4], "rect": "premierleague-rect-ucl.png", "rect_confirmed": "premierleague-rect-ucl-conf.png"},
+      "ucl": {"positions": [1, 2, 3, 4, 5], "rect": "premierleague-rect-ucl.png", "rect_confirmed": "premierleague-rect-ucl-conf.png"},
       "uel": {"positions": [6, 7], "rect": "premierleague-rect-uel.png", "rect_confirmed": "premierleague-rect-uel-conf.png"},
       "uecl": {"positions": [8], "rect": "premierleague-rect-uecl.png", "rect_confirmed": "premierleague-rect-uecl-conf.png"},
       "relegation": {"positions": [18, 19, 20], "rect": "premierleague-rect-r.png", "rect_confirmed": "premierleague-rect-r-conf.png"}
     },
     
     "table_modes": [
-      {"name": "G5 Europeu (4 UCL + 1 UEL)", "ucl": 4, "uel": 1, "uecl": 0},
-      {"name": "G6 Europeu (4 UCL + 2 UEL)", "ucl": 4, "uel": 2, "uecl": 0},
-      {"name": "G6 Europeu (4 UCL + 1 UEL + 1 UECL)", "ucl": 4, "uel": 1, "uecl": 1},
-      {"name": "G7 Europeu (4 UCL + 2 UEL + 1 UECL)", "ucl": 4, "uel": 2, "uecl": 1}
+      {"name": "G6 Europeu (5 UCL + 1 UEL)", "ucl": 5, "uel": 1, "uecl": 0},
+      {"name": "G7 Europeu (5 UCL + 2 UEL)", "ucl": 5, "uel": 2, "uecl": 0},
+      {"name": "G7 Europeu (5 UCL + 1 UEL + 1 UECL)", "ucl": 5, "uel": 1, "uecl": 1},
+      {"name": "G8 Europeu (5 UCL + 2 UEL + 1 UECL)", "ucl": 5, "uel": 2, "uecl": 1}
     ]
   },
   

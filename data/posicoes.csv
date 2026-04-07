@@ -3642,7 +3642,6 @@ Wealdstone,National League,53,12,2026-03-31
 Altrincham,National League,53,15,2026-03-31
 Yeovil Town,National League,53,16,2026-03-31
 Lincoln City,League One,58,1,2026-04-03
-Cardiff City,League One,58,2,2026-04-03
 Bolton Wanderers,League One,58,3,2026-04-03
 Bradford City,League One,58,4,2026-04-03
 Stockport County,League One,58,5,2026-04-03
@@ -3664,7 +3663,6 @@ Wigan Athletic,League One,58,20,2026-04-03
 Exeter City,League One,58,21,2026-04-03
 Rotherham United,League One,58,22,2026-04-03
 Northampton Town,League One,58,23,2026-04-03
-Port Vale,League One,58,24,2026-04-03
 Bromley,League Two,50,1,2026-04-03
 Milton Keynes Dons,League Two,50,2,2026-04-03
 Cambridge United,League Two,50,3,2026-04-03
@@ -3716,10 +3714,8 @@ Truro City,National League,54,24,2026-04-03
 Coventry City,Championship,44,1,2026-04-03
 Millwall,Championship,44,2,2026-04-03
 Middlesbrough,Championship,44,3,2026-04-03
-Ipswich Town,Championship,44,4,2026-04-03
 Hull City,Championship,44,5,2026-04-03
 Wrexham,Championship,44,6,2026-04-03
-Southampton,Championship,44,7,2026-04-03
 Derby County,Championship,44,8,2026-04-03
 Watford,Championship,44,9,2026-04-03
 Queens Park Rangers,Championship,44,10,2026-04-03
@@ -3760,7 +3756,6 @@ Blackpool,League One,59,20,2026-04-06
 Exeter City,League One,59,21,2026-04-06
 Rotherham United,League One,59,22,2026-04-06
 Northampton Town,League One,59,23,2026-04-06
-Port Vale,League One,59,24,2026-04-06
 Bromley,League Two,51,1,2026-04-06
 Milton Keynes Dons,League Two,51,2,2026-04-06
 Notts County,League Two,51,3,2026-04-06
@@ -3791,7 +3786,6 @@ Middlesbrough,Championship,45,3,2026-04-06
 Millwall,Championship,45,4,2026-04-06
 Hull City,Championship,45,5,2026-04-06
 Wrexham,Championship,45,6,2026-04-06
-Southampton,Championship,45,7,2026-04-06
 Derby County,Championship,45,8,2026-04-06
 Norwich City,Championship,45,9,2026-04-06
 Watford,Championship,45,10,2026-04-06
@@ -3833,75 +3827,9 @@ Brackley Town,National League,55,21,2026-04-06
 Morecambe,National League,55,22,2026-04-06
 Braintree Town,National League,55,23,2026-04-06
 Truro City,National League,55,24,2026-04-06
-Coventry City,Championship,46,1,2026-04-07
-Ipswich Town,Championship,46,2,2026-04-07
-Middlesbrough,Championship,46,3,2026-04-07
-Millwall,Championship,46,4,2026-04-07
-Hull City,Championship,46,5,2026-04-07
 Southampton,Championship,46,6,2026-04-07
 Wrexham,Championship,46,7,2026-04-07
-Derby County,Championship,46,8,2026-04-07
-Norwich City,Championship,46,9,2026-04-07
-Watford,Championship,46,10,2026-04-07
-Bristol City,Championship,46,11,2026-04-07
-Queens Park Rangers,Championship,46,12,2026-04-07
-Stoke City,Championship,46,13,2026-04-07
-Preston North End,Championship,46,14,2026-04-07
-Swansea City,Championship,46,15,2026-04-07
-Birmingham City,Championship,46,16,2026-04-07
-Sheffield United,Championship,46,17,2026-04-07
-Charlton Athletic,Championship,46,18,2026-04-07
-Blackburn Rovers,Championship,46,19,2026-04-07
-West Bromwich,Championship,46,20,2026-04-07
-Portsmouth,Championship,46,21,2026-04-07
-Leicester City,Championship,46,22,2026-04-07
-Oxford United,Championship,46,23,2026-04-07
-Sheffield Wednesday,Championship,46,24,2026-04-07
-Lincoln City,League One,60,1,2026-04-07
-Cardiff City,League One,60,2,2026-04-07
-Bradford City,League One,60,3,2026-04-07
-Bolton Wanderers,League One,60,4,2026-04-07
-Stockport County,League One,60,5,2026-04-07
-Stevenage,League One,60,6,2026-04-07
-Plymouth Argyle,League One,60,7,2026-04-07
-Reading,League One,60,8,2026-04-07
-Huddersfield Town,League One,60,9,2026-04-07
-Luton Town,League One,60,10,2026-04-07
-Wycombe Wanderers,League One,60,11,2026-04-07
-Mansfield Town,League One,60,12,2026-04-07
-Peterborough,League One,60,13,2026-04-07
-Barnsley,League One,60,14,2026-04-07
-Leyton Orient,League One,60,15,2026-04-07
-AFC Wimbledon,League One,60,16,2026-04-07
-Doncaster Rovers,League One,60,17,2026-04-07
-Wigan Athletic,League One,60,18,2026-04-07
-Burton Albion,League One,60,19,2026-04-07
-Blackpool,League One,60,20,2026-04-07
-Exeter City,League One,60,21,2026-04-07
 Rotherham United,League One,60,22,2026-04-07
-Northampton Town,League One,60,23,2026-04-07
 Port Vale,League One,60,24,2026-04-07
 Bromley,League Two,52,1,2026-04-07
-Milton Keynes Dons,League Two,52,2,2026-04-07
-Notts County,League Two,52,3,2026-04-07
-Cambridge United,League Two,52,4,2026-04-07
-Swindon Town,League Two,52,5,2026-04-07
-Salford City,League Two,52,6,2026-04-07
-Chesterfield,League Two,52,7,2026-04-07
-Crewe Alexandra,League Two,52,8,2026-04-07
-Oldham Athletic,League Two,52,9,2026-04-07
-Grimsby Town,League Two,52,10,2026-04-07
-Barnet,League Two,52,11,2026-04-07
-Walsall,League Two,52,12,2026-04-07
-Colchester United,League Two,52,13,2026-04-07
-Fleetwood Town,League Two,52,14,2026-04-07
-Bristol Rovers,League Two,52,15,2026-04-07
-Accrington,League Two,52,16,2026-04-07
-Gillingham,League Two,52,17,2026-04-07
 Shrewsbury Town,League Two,52,18,2026-04-07
-Cheltenham Town,League Two,52,19,2026-04-07
-Crawley Town,League Two,52,20,2026-04-07
-Tranmere Rovers,League Two,52,21,2026-04-07
-Newport County,League Two,52,22,2026-04-07
-Barrow,League Two,52,23,2026-04-07
-Harrogate Town,League Two,52,24,2026-04-07
