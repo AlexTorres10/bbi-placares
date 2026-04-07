@@ -1,4 +1,4 @@
-Bromley 41 22 14 5 65 40 25 80
+Bromley 42 23 14 5 67 41 26 83
 Milton Keynes Dons 42 21 13 8 77 42 35 76
 Notts County 42 23 7 12 71 45 26 76
 Cambridge United 41 20 14 7 58 31 27 74
@@ -15,7 +15,7 @@ Fleetwood Town 42 14 13 15 51 53 -2 55
 Bristol Rovers 42 16 4 22 46 62 -16 52
 Accrington 41 14 9 18 40 46 -6 51
 Gillingham 41 12 13 16 48 60 -12 49
-Shrewsbury Town 41 12 8 21 38 64 -26 44
+Shrewsbury Town 42 12 8 22 39 66 -27 44
 Cheltenham Town 40 11 10 19 44 67 -23 43
 Crawley Town 42 8 13 21 40 62 -22 37
 Tranmere Rovers 41 9 9 23 48 71 -23 36
