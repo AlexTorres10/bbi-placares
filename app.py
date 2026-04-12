@@ -1269,7 +1269,9 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
         if pts(1) > max_pts(2):
             set_key('ch_1_champion')
 
-        # Auto-promoted (top 2): confirmed when pos 2 can no longer be caught by pos 3
+        # Auto-promoted (top 2)
+        if pts(1) > max_pts(3):
+            set_key('ch_1_promoted')
         if pts(2) > max_pts(3):
             set_key('ch_1_promoted')
             set_key('ch_2_promoted')
@@ -1290,6 +1292,8 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
             set_key('l1_1_champion')
 
         # Auto-promoted (top 2)
+        if pts(1) > max_pts(3):
+            set_key('l1_1_promoted')
         if pts(2) > max_pts(3):
             set_key('l1_1_promoted')
             set_key('l1_2_promoted')
@@ -1309,7 +1313,12 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
         if pts(1) > max_pts(2):
             set_key('l2_1_champion')
 
-        # Auto-promoted (top 3): confirmed when pos 3 > pos 4 max_pts
+        # Auto-promoted (top 3)
+        if pts(1) > max_pts(4):
+            set_key('l2_1_promoted')
+        if pts(2) > max_pts(4):
+            set_key('l2_1_promoted')
+            set_key('l2_2_promoted')
         if pts(3) > max_pts(4):
             set_key('l2_1_promoted')
             set_key('l2_2_promoted')
