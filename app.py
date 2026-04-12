@@ -1417,15 +1417,17 @@ def render_premier_league_table_options():
     
     # Carregar times da tabela
     processor = TableProcessor()
-    
+    team_to_pos = {}
+
     # Tentar carregar tabela real ou usar padrão
     try:
         with open('data/tabelas/premierleague.txt', 'r', encoding='utf-8') as f:
             processor.load_from_text(f.read())
         times_pl = [team.name for team in processor.teams]
+        team_to_pos = {team.name: i + 1 for i, team in enumerate(processor.teams)}
     except:
-        times_pl = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", 
-                    "Aston Villa", "Manchester United", "Tottenham", 
+        times_pl = ["Arsenal", "Manchester City", "Liverpool", "Chelsea",
+                    "Aston Villa", "Manchester United", "Tottenham",
                     "Newcastle United", "Brighton", "Brentford",
                     "Fulham", "Crystal Palace", "Everton", "West Ham",
                     "Bournemouth", "Nottingham Forest", "Wolves",
@@ -1464,40 +1466,54 @@ def render_premier_league_table_options():
             help="Times que garantiram vaga na Conference League por copa"
         )
     
+    # Translate multiselect team names → position-based session state keys
+    # so that cup-winner confirmations are reflected in the image
+    for team_name in confirmed_uel:
+        pos = team_to_pos.get(team_name)
+        if pos:
+            st.session_state[f'pl_{pos}_uel'] = True
+
+    for team_name in confirmed_uecl:
+        pos = team_to_pos.get(team_name)
+        if pos:
+            st.session_state[f'pl_{pos}_uecl'] = True
+
     st.divider()
-    
+
     st.write("### ✅ Confirmações de Classificação")
-    
+
     # Campeão e posições europeias (1-8)
     st.write("**Zona Europeia:**")
-    
+
     for pos in range(1, 9):
         cols = st.columns([1, 2, 2, 2, 2])
-        
+
         with cols[0]:
             st.write(f"**{pos}º**")
-        
+
         with cols[1]:
             if pos == 1:
                 st.checkbox("Campeão", key=f"pl_{pos}_champion")
             else:
                 st.write("")
-        
+
         with cols[2]:
-            if pos <= 4:
+            if pos <= 5:
                 st.checkbox("UCL", key=f"pl_{pos}_ucl")
             else:
                 st.write("")
-        
+
         with cols[3]:
-            if pos <= 7:
+            if 6 <= pos <= 7:
                 st.checkbox("UEL", key=f"pl_{pos}_uel")
             else:
                 st.write("")
-            
-        
+
         with cols[4]:
-            st.checkbox("UECL", key=f"pl_{pos}_uecl")
+            if 7 <= pos <= 8:
+                st.checkbox("UECL", key=f"pl_{pos}_uecl")
+            else:
+                st.write("")
     
     st.divider()
     
