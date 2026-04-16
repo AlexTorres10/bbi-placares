@@ -4,19 +4,19 @@ Carlisle United 44 27 8 9 83 51 32 89
 Boreham Wood 44 25 9 10 91 58 33 84
 Scunthorpe United 44 23 12 9 76 60 16 81
 Forest Green Rovers 44 22 12 10 76 50 26 78
-Southend United 42 20 12 10 70 40 30 72
+Southend United 43 21 12 10 72 40 32 75
 FC Halifax Town 44 19 10 15 66 60 6 67
 Hartlepool United 43 16 14 13 47 52 -5 62
-Woking 43 15 14 14 66 53 13 59
+Woking 44 15 15 14 66 53 13 60
 Tamworth 44 16 10 18 57 69 -12 58
-Wealdstone 43 15 9 19 64 70 -6 54
-Solihull Moors 43 13 13 17 67 68 -1 52
-Boston United 43 13 13 17 56 65 -9 52
+Wealdstone 44 15 10 19 65 71 -6 55
+Solihull Moors 44 13 14 17 67 68 -1 53
+Boston United 44 13 14 17 57 66 -9 53
 Altrincham 44 15 6 23 50 63 -13 51
 Yeovil Town 44 15 6 23 47 61 -14 51
 Gateshead 44 14 8 22 53 84 -31 50
 Sutton United 44 11 14 19 58 76 -18 47
-Aldershot Town 43 13 7 23 68 81 -13 46
+Aldershot Town 44 13 7 24 68 83 -15 46
 Eastleigh 44 12 10 22 55 79 -24 46
 Brackley Town 44 9 12 23 38 71 -33 39
 Morecambe 44 9 11 24 66 95 -29 38
