@@ -2091,7 +2091,28 @@ def render_stats_mode():
                 else:
                     st.write("• Sem insights relevantes")
             else:
+                # Determine each team's last game venue so we can suppress
+                # insights about the venue they did NOT just play at.
+                import pandas as _pd
+                try:
+                    _df_h = _pd.read_csv('data/historico.csv', parse_dates=['data'])
+                    _df_h = _df_h[_df_h['liga'] == liga_str].sort_values('data')
+                    _last_venue = {}
+                    for _team in data['teams']:
+                        _tg = _df_h[(_df_h['casa'] == _team) | (_df_h['fora'] == _team)]
+                        if not _tg.empty:
+                            _last_venue[_team] = 'home' if _tg.iloc[-1]['casa'] == _team else 'away'
+                except Exception:
+                    _last_venue = {}
+
                 for insight in data['insights']:
+                    _insight_team = next((t for t in data['teams'] if t in insight), None)
+                    if _insight_team and _insight_team in _last_venue:
+                        _venue = _last_venue[_insight_team]
+                        if _venue == 'home' and 'fora de casa' in insight:
+                            continue
+                        if _venue == 'away' and 'em casa' in insight:
+                            continue
                     st.write(f"• {insight}")
 
                 # ── Variação de Posições ───────────────────────────────────
