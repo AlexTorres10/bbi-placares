@@ -1276,9 +1276,10 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
             set_key('ch_1_promoted')
             set_key('ch_2_promoted')
 
-        # Playoffs (pos 1-6): confirmed when pos N > pos 7 max_pts
-        for pos in [1, 2, 3, 4, 5, 6]:
-            if pts(pos) > max_pts(7):
+        # Playoffs (pos 3-6 only — 1 and 2 are auto-promoted)
+        # Only confirm when locked in AND can no longer reach a promotion spot
+        for pos in [3, 4, 5, 6]:
+            if pts(pos) > max_pts(7) and max_pts(pos) < pts(2):
                 set_key(f'ch_{pos}_playoffs')
 
         # Relegated
@@ -1298,9 +1299,10 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
             set_key('l1_1_promoted')
             set_key('l1_2_promoted')
 
-        # Playoffs (pos 1-6)
-        for pos in [1, 2, 3, 4, 5, 6]:
-            if pts(pos) > max_pts(7):
+        # Playoffs (pos 3-6 only — 1 and 2 are auto-promoted)
+        # Only confirm when locked in AND can no longer reach a promotion spot
+        for pos in [3, 4, 5, 6]:
+            if pts(pos) > max_pts(7) and max_pts(pos) < pts(2):
                 set_key(f'l1_{pos}_playoffs')
 
         # Relegated
@@ -1324,9 +1326,10 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
             set_key('l2_2_promoted')
             set_key('l2_3_promoted')
 
-        # Playoffs (pos 1-7)
-        for pos in [1, 2, 3, 4, 5, 6, 7]:
-            if pts(pos) > max_pts(8):
+        # Playoffs (pos 4-7 only — 1, 2 and 3 are auto-promoted)
+        # Only confirm when locked in AND can no longer reach a promotion spot
+        for pos in [4, 5, 6, 7]:
+            if pts(pos) > max_pts(8) and max_pts(pos) < pts(3):
                 set_key(f'l2_{pos}_playoffs')
 
         # Relegated
@@ -1339,14 +1342,16 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
         if pts(1) > max_pts(2):
             set_key('nl_1_champion')
 
-        # Playoffs semi (pos 1-3): confirmed when pos N > pos 4 max_pts
-        for pos in [1, 2, 3]:
-            if pts(pos) > max_pts(4):
+        # Playoffs semi (pos 2-3 only — pos 1 is champion/auto-promoted)
+        # Only confirm when locked into semi AND can no longer be champion
+        for pos in [2, 3]:
+            if pts(pos) > max_pts(4) and max_pts(pos) < pts(1):
                 set_key(f'nl_{pos}_playoffs_semi')
 
-        # Playoffs quarter (pos 1-7): confirmed when pos N > pos 8 max_pts
-        for pos in range(1, 8):
-            if pts(pos) > max_pts(8):
+        # Playoffs quarter (pos 4-7 only — 1-3 are champion/semi spots)
+        # Only confirm when locked into QF AND can no longer reach a semi spot
+        for pos in range(4, 8):
+            if pts(pos) > max_pts(8) and max_pts(pos) < pts(3):
                 set_key(f'nl_{pos}_playoffs_quarter')
 
         # Relegated
@@ -1556,8 +1561,8 @@ def render_confirmation_checkboxes_championship():
     with col3:
         st.checkbox("Promovido", key="ch_1_promoted")
     with col4:
-        st.checkbox("Play-offs", key="ch_1_playoffs")
-    
+        st.write("")
+
     # 2º colocado
     col1, col2, col3, col4 = st.columns(4)
     with col1:
@@ -1565,7 +1570,7 @@ def render_confirmation_checkboxes_championship():
     with col2:
         st.checkbox("Promovido", key="ch_2_promoted")
     with col3:
-        st.checkbox("Play-offs", key="ch_2_playoffs")
+        st.write("")
     with col4:
         st.write("")
     
@@ -1599,8 +1604,8 @@ def render_confirmation_checkboxes_leagueone():
     with col3:
         st.checkbox("Promovido", key="l1_1_promoted")
     with col4:
-        st.checkbox("Play-offs", key="l1_1_playoffs")
-    
+        st.write("")
+
     # 2º colocado
     col1, col2, col3, col4 = st.columns(4)
     with col1:
@@ -1608,7 +1613,7 @@ def render_confirmation_checkboxes_leagueone():
     with col2:
         st.checkbox("Promovido", key="l1_2_promoted")
     with col3:
-        st.checkbox("Play-offs", key="l1_2_playoffs")
+        st.write("")
     with col4:
         st.write("")
 
@@ -1642,7 +1647,7 @@ def render_confirmation_checkboxes_leaguetwo():
     with col3:
         st.checkbox("Promovido", key="l2_1_promoted")
     with col4:
-        st.checkbox("Play-offs", key="l2_1_playoffs")
+        st.write("")
 
     # 2º colocado
     col1, col2, col3, col4 = st.columns(4)
@@ -1651,7 +1656,7 @@ def render_confirmation_checkboxes_leaguetwo():
     with col2:
         st.checkbox("Promovido", key="l2_2_promoted")
     with col3:
-        st.checkbox("Play-offs", key="l2_2_playoffs")
+        st.write("")
     with col4:
         st.write("")
 
@@ -1662,7 +1667,7 @@ def render_confirmation_checkboxes_leaguetwo():
     with col2:
         st.checkbox("Promovido", key="l2_3_promoted")
     with col3:
-        st.checkbox("Play-offs", key="l2_3_playoffs")
+        st.write("")
     with col4:
         st.write("")
     
@@ -1694,10 +1699,11 @@ def render_confirmation_checkboxes_nationalleague():
     with col2:
         st.checkbox("Campeão", key="nl_1_champion")
     with col3:
-        st.checkbox("Play-offs Semi", key="nl_1_playoffs_semi")
+        st.write("")
     with col4:
-        st.checkbox("Play-offs Quartas", key="nl_1_playoffs_quarter")
-    # 2º colocado
+        st.write("")
+
+    # 2º e 3º — apenas Play-offs Semi
     for pos in range(2, 4):
         col1, col2, col3, col4 = st.columns(4)
         with col1:
@@ -1705,7 +1711,7 @@ def render_confirmation_checkboxes_nationalleague():
         with col2:
             st.checkbox("Play-offs Semi", key=f"nl_{pos}_playoffs_semi")
         with col3:
-            st.checkbox("Play-offs Quartas", key=f"nl_{pos}_playoffs_quarter")
+            st.write("")
         with col4:
             st.write("")
     
