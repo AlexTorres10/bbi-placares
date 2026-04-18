@@ -371,12 +371,15 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         bg_resized = bg_raw.resize((new_width, new_height), Image.LANCZOS)
 
         # Ajusta o recorte baseado no alinhamento
-        if alinhamento == "Esquerda":
+        max_left = new_width - base.width
+        if isinstance(alinhamento, (int, float)):
+            left = int(max_left * alinhamento / 100)
+        elif alinhamento == "Esquerda":
             left = 0
         elif alinhamento == "Direita":
-            left = new_width - base.width
+            left = max_left
         else:  # Centro
-            left = (new_width - base.width) // 2
+            left = max_left // 2
         
         top = (new_height - base.height) // 2
         bg_cropped = bg_resized.crop((left, top, left + base.width, top + base.height))
@@ -2253,7 +2256,12 @@ if modo == "🔢 Gerar Placar":
         marcadores_visitante = st.text_area("Marcadores do Visitante", placeholder="Jogador X 88'")
     
     background = st.file_uploader("Upload da imagem de fundo (opcional)", type=["png", "jpg", "jpeg", "webp", "avif"])
-    alinhamento = st.radio("Alinhamento da imagem de fundo:", ["Centro", "Esquerda", "Direita"], horizontal=True)
+    alinhamento = st.select_slider(
+        "Posição horizontal da imagem de fundo:",
+        options=list(range(0, 101, 5)),
+        value=50,
+        format_func=lambda v: f"Esquerda ({v}%)" if v == 0 else (f"Centro ({v}%)" if v == 50 else (f"Direita ({v}%)" if v == 100 else f"{v}%")),
+    )
 
     if st.button("Gerar Placar", type="primary"):
         template_path = os.path.join(TEMPLATE_DIR, template_escolhido)
@@ -2273,14 +2281,14 @@ if modo == "🔢 Gerar Placar":
                 template_path, mandante, visitante, placar,
                 marcadores_mandante, marcadores_visitante,
                 background=bg_path,
-                alinhamento=alinhamento if alinhamento else "Centro"
+                alinhamento=alinhamento
             )
         finally:
             if bg_path and os.path.exists(bg_path):
                 os.remove(bg_path)
 
         img_rgb = img.convert("RGB")
-        img_rgb.save("placar_final.jpg", format="JPEG", quality=100)
+        img_rgb.save("placar_final.jpeg", format="JPEG", quality=100)
 
         st.session_state['placar_gerado'] = {
             'template': template_escolhido,
@@ -2297,11 +2305,11 @@ if modo == "🔢 Gerar Placar":
         "nationalleague.png":"National League",
     }
 
-    if 'placar_gerado' in st.session_state and os.path.exists("placar_final.jpg"):
+    if 'placar_gerado' in st.session_state and os.path.exists("placar_final.jpeg"):
         _pg = st.session_state['placar_gerado']
-        st.image("placar_final.jpg")
-        with open("placar_final.jpg", "rb") as f:
-            _nome_arquivo = f"{_pg['mandante']} {_pg['placar_str']} {_pg['visitante']}.jpg".replace("/", "-")
+        st.image("placar_final.jpeg")
+        with open("placar_final.jpeg", "rb") as f:
+            _nome_arquivo = f"{_pg['mandante']} {_pg['placar_str']} {_pg['visitante']}.jpeg".replace("/", "-")
             st.download_button("📥 Baixar Imagem", f, file_name=_nome_arquivo)
         _liga_str_pg = _PLACAR_LIGA_MAP.get(_pg['template'])
         if _liga_str_pg:
