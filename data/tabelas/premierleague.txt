@@ -1,20 +1,20 @@
-Arsenal 32 21 7 4 62 24 38 70
-Manchester City 31 19 7 5 63 28 35 64
-Manchester United 32 15 10 7 57 45 12 55
-Aston Villa 32 16 7 9 43 38 5 55
-Liverpool 32 15 7 10 52 42 10 52
-Chelsea 32 13 9 10 53 41 12 48
-Brentford 32 13 8 11 48 44 4 47
-Everton 32 13 8 11 39 37 2 47
-Brighton 32 12 10 10 43 37 6 46
-Sunderland 32 12 10 10 33 36 -3 46
-Bournemouth 32 10 15 7 48 49 -1 45
-Fulham 32 13 5 14 43 46 -3 44
+Arsenal 33 21 7 5 63 26 37 70
+Manchester City 32 20 7 5 65 29 36 67
+Manchester United 33 16 10 7 58 45 13 58
+Aston Villa 33 17 7 9 47 41 6 58
+Liverpool 33 16 7 10 54 43 11 55
+Chelsea 33 13 9 11 53 42 11 48
+Brentford 33 13 9 11 48 44 4 48
+Bournemouth 33 11 15 7 50 50 0 48
+Brighton 33 12 11 10 45 39 6 47
+Everton 33 13 8 12 40 39 1 47
+Sunderland 33 12 10 11 36 40 -4 46
+Fulham 33 13 6 14 43 46 -3 45
 Crystal Palace 31 11 9 11 35 36 -1 42
-Newcastle United 32 12 6 14 45 47 -2 42
-Leeds United 32 8 12 12 39 49 -10 36
-Nottingham Forest 32 8 9 15 32 44 -12 33
+Newcastle United 33 12 6 15 46 49 -3 42
+Leeds United 33 9 12 12 42 49 -7 39
+Nottingham Forest 33 9 9 15 36 45 -9 36
 West Ham 32 8 8 16 40 57 -17 32
-Tottenham 32 7 9 16 40 51 -11 30
-Burnley 32 4 8 20 33 63 -30 20
-Wolverhampton 32 3 8 21 24 58 -34 17
+Tottenham 33 7 10 16 42 53 -11 31
+Burnley 33 4 8 21 34 67 -33 20
+Wolverhampton 33 3 8 22 24 61 -37 17
