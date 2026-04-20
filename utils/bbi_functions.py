@@ -223,7 +223,10 @@ def detectar_fase_estendida_por_mando(df: pd.DataFrame, nome_time: str, mando: s
         if n_derrotas_bom >= limite_min_jogos and res_derrotas_bom.get('loss', 0) <= limite_max_derrotas:
             derrotas = res_derrotas_bom.get('loss', 0)
             if derrotas == 0:
-                insights.append(f"{nome_time} está invicto{sufixo} há {n_derrotas_bom} jogos.")
+                if n_derrotas_bom == total_jogos and mando != 'geral':
+                    insights.append(f"{nome_time} não perdeu{sufixo} na temporada inteira.")
+                else:
+                    insights.append(f"{nome_time} está invicto{sufixo} há {n_derrotas_bom} jogos.")
             else:
                 insights.append(f"{nome_time} sofreu apenas {derrotas} derrotas nos últimos {n_derrotas_bom} jogos{sufixo}.")
 
@@ -538,9 +541,9 @@ def allinsights(df: pd.DataFrame, nome: str, time_ou_liga: str = 'time') -> List
         # só mostrar se não for redundante com sequência de vitórias puras
         if invicto_geral >= 5 and invicto_geral != win_streak_geral:
             insights.append(f"{nome} está invicto há {invicto_geral} jogos.")
-        if invicto_casa >= 5 and invicto_casa != win_streak_casa and not streak_casa_total:
+        if invicto_casa >= 5 and invicto_casa != win_streak_casa and not streak_casa_total and invicto_casa != df_casa.shape[0]:
             insights.append(f"{nome} está invicto há {invicto_casa} jogos em casa.")
-        if invicto_fora >= 5 and invicto_fora != win_streak_fora and not streak_fora_total:
+        if invicto_fora >= 5 and invicto_fora != win_streak_fora and not streak_fora_total and invicto_fora != df_fora.shape[0]:
             insights.append(f"{nome} está invicto há {invicto_fora} jogos fora de casa.")
 
         # pontuação últimos jogos
@@ -628,9 +631,9 @@ def allinsights(df: pd.DataFrame, nome: str, time_ou_liga: str = 'time') -> List
             # sequências invictas (liga)
             if invicto_geral >= 5 and invicto_geral != win_streak:
                 insights.append(f"{time} está invicto há {invicto_geral} jogos.")
-            if invicto_casa >= 5 and invicto_casa != win_casa:
+            if invicto_casa >= 5 and invicto_casa != win_casa and invicto_casa != df_casa.shape[0]:
                 insights.append(f"{time} está invicto há {invicto_casa} jogos em casa.")
-            if invicto_fora >= 5 and invicto_fora != win_fora:
+            if invicto_fora >= 5 and invicto_fora != win_fora and invicto_fora != df_fora.shape[0]:
                 insights.append(f"{time} está invicto há {invicto_fora} jogos fora de casa.")
 
             # --- LIMPANDO e ADICIONANDO os insights de forma (apenas após corretor) ---

@@ -796,6 +796,16 @@ def render_table_mode():
             pass  # silently skip if table file is unavailable
 
         # Step 3 — pre-fill confirmation checkboxes with confirmed statuses
+        # Reset the champion key first so stale True values from a previous batch don't persist
+        _champion_key = {
+            'premierleague': 'pl_1_champion',
+            'championship': 'ch_1_champion',
+            'leagueone': 'l1_1_champion',
+            'leaguetwo': 'l2_1_champion',
+            'nationalleague': 'nl_1_champion',
+        }.get(liga_key)
+        if _champion_key:
+            st.session_state[_champion_key] = False
         if 'table_data_atual' in st.session_state:
             try:
                 compute_mathematical_prefill(liga_key, st.session_state['table_data_atual'])
@@ -1225,6 +1235,10 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
         rem = max(0, total - t['games'])
         return t['points'] + rem * 3
 
+    def best_rival_max_pts(from_pos):
+        """Highest reachable points among all teams ranked from_pos and below."""
+        return max((max_pts(pos) for pos in range(from_pos, len(by_pos) + 1)), default=0)
+
     def set_key(key):
         if not st.session_state.get(key, False):
             st.session_state[key] = True
@@ -1243,7 +1257,7 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
             ucl, uel, uecl = 5, 1, 1
 
         # Champion
-        if pts(1) > max_pts(2):
+        if pts(1) > best_rival_max_pts(2):
             set_key('pl_1_champion')
 
         # UCL (positions 1..ucl confirmed when pos(ucl+1) can no longer catch them)
@@ -1269,7 +1283,7 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
 
     elif liga_key == 'championship':
         # Champion
-        if pts(1) > max_pts(2):
+        if pts(1) > best_rival_max_pts(2):
             set_key('ch_1_champion')
 
         # Auto-promoted (top 2)
@@ -1292,7 +1306,7 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
 
     elif liga_key == 'leagueone':
         # Champion
-        if pts(1) > max_pts(2):
+        if pts(1) > best_rival_max_pts(2):
             set_key('l1_1_champion')
 
         # Auto-promoted (top 2)
@@ -1315,7 +1329,7 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
 
     elif liga_key == 'leaguetwo':
         # Champion
-        if pts(1) > max_pts(2):
+        if pts(1) > best_rival_max_pts(2):
             set_key('l2_1_champion')
 
         # Auto-promoted (top 3)
@@ -1342,7 +1356,7 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
 
     elif liga_key == 'nationalleague':
         # Champion
-        if pts(1) > max_pts(2):
+        if pts(1) > best_rival_max_pts(2):
             set_key('nl_1_champion')
 
         # Playoffs semi (pos 2-3 only — pos 1 is champion/auto-promoted)
