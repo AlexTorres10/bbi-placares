@@ -75,8 +75,11 @@ class ImageGenerator:
         Returns:
             Nome para exibir
         """
-        # TABELAS: sempre nome completo
+        # TABELAS: aplicar overrides específicos de tabela se existirem
         if context == 'table':
+            table_key = f"{league}_table"
+            if table_key in self.display_names:
+                return self.display_names[table_key].get(team_name, team_name)
             return team_name
         
         # RESULTADOS: aplicar encurtamento se existir
@@ -470,7 +473,7 @@ class ImageGenerator:
             )
             
             # Nome do time
-            team_name = team['name']  # ← MANTER COMPLETO, sem aplicar display_name
+            team_name = self._get_display_name(team['name'], league, 'table')
 
 
             # Verificar se time tem penalidade
