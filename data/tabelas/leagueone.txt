@@ -1,24 +1,24 @@
-Lincoln City 42 28 9 5 79 36 43 93
-Cardiff City 42 24 10 8 77 43 34 82
-Bolton Wanderers 43 19 16 8 64 45 19 73
-Bradford City 42 21 8 13 52 46 6 71
-Stockport County 41 20 10 11 61 50 11 70
-Stevenage 42 19 10 13 44 43 1 67
-Luton Town 42 18 10 14 59 51 8 64
-Huddersfield Town 43 17 12 14 66 57 9 63
-Plymouth Argyle 42 19 6 17 66 58 8 63
-Reading 43 16 14 13 62 55 7 62
-Wycombe Wanderers 43 16 12 15 63 51 12 60
-Barnsley 41 14 13 14 63 65 -2 55
-Wigan Athletic 43 14 13 16 49 56 -7 55
-Mansfield Town 41 13 15 13 50 43 7 54
-Doncaster Rovers 42 15 8 19 43 64 -21 53
-Peterborough 42 15 6 21 61 61 0 51
-Leyton Orient 43 14 9 20 57 66 -9 51
-Burton Albion 43 13 12 18 46 56 -10 51
-Blackpool 43 14 9 20 51 65 -14 51
-AFC Wimbledon 43 14 8 21 49 65 -16 50
-Exeter City 43 12 11 20 47 55 -8 47
-Port Vale 41 9 11 21 33 55 -22 38
-Rotherham United 42 9 10 23 36 65 -29 37
-Northampton Town 42 9 8 25 35 62 -27 35
+Lincoln City 43 28 10 5 81 38 43 94
+Cardiff City 43 25 10 8 80 44 36 85
+Bolton Wanderers 44 19 17 8 67 48 19 74
+Bradford City 43 21 9 13 54 48 6 72
+Stockport County 42 20 11 11 64 53 11 71
+Stevenage 43 19 11 13 46 45 1 68
+Plymouth Argyle 43 20 6 17 69 59 10 66
+Luton Town 43 18 11 14 61 53 8 65
+Huddersfield Town 44 17 13 14 69 60 9 64
+Reading 44 16 14 14 63 58 5 62
+Wycombe Wanderers 44 16 12 16 63 52 11 60
+Barnsley 42 14 14 14 65 67 -2 56
+Wigan Athletic 44 14 14 16 49 56 -7 56
+Doncaster Rovers 43 16 8 19 46 65 -19 56
+Mansfield Town 42 13 16 13 52 45 7 55
+Blackpool 44 15 9 20 52 65 -13 54
+Peterborough 43 15 7 21 62 62 0 52
+Burton Albion 44 13 13 18 47 57 -10 52
+Leyton Orient 44 14 9 21 57 68 -11 51
+AFC Wimbledon 44 14 8 22 50 68 -18 50
+Exeter City 44 12 12 20 50 58 -8 48
+Rotherham United 43 10 10 23 38 65 -27 40
+Port Vale 42 9 12 21 33 55 -22 39
+Northampton Town 43 9 8 26 36 65 -29 35
