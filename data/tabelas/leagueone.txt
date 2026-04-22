@@ -1,5 +1,5 @@
 Lincoln City 44 29 10 5 83 38 45 97
-Cardiff City 43 25 10 8 80 44 36 85
+Cardiff City 44 26 10 8 81 44 37 88
 Bolton Wanderers 44 19 17 8 67 48 19 74
 Bradford City 44 21 10 13 55 49 6 73
 Stockport County 43 20 11 12 64 54 10 71
@@ -20,5 +20,5 @@ Leyton Orient 44 14 9 21 57 68 -11 51
 AFC Wimbledon 44 14 8 22 50 68 -18 50
 Exeter City 44 12 12 20 50 58 -8 48
 Rotherham United 44 10 10 24 38 67 -29 40
-Port Vale 42 9 12 21 33 55 -22 39
+Port Vale 43 9 12 22 33 56 -23 39
 Northampton Town 43 9 8 26 36 65 -29 35
