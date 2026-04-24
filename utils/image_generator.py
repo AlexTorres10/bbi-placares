@@ -529,7 +529,7 @@ class ImageGenerator:
 
             if penalty_notes:
                 # Posição da primeira nota
-                notes_y = tt['table_start']['y'] + (len(table_data) * tt['row_height']) + 20
+                notes_y = tt['table_start']['y'] + (len(table_data) * tt['row_height']) + 5
                 font_note = ImageFont.truetype(self._get_font_for_league(league, bold=False), tt.get('font_note_size', 20))
 
                 for idx, note in enumerate(penalty_notes):

@@ -15,7 +15,7 @@ Sheffield United 44 17 6 21 62 62 0 57
 Watford 44 14 15 15 52 56 -4 57
 Preston North End 44 14 15 15 51 57 -6 57
 Stoke City 44 15 10 19 50 51 -1 55
-West Bromwich 44 13 13 18 47 56 -9 52
+West Bromwich 44 13 13 18 47 56 -9 50
 Blackburn Rovers 45 13 13 19 42 55 -13 52
 Portsmouth 44 13 12 19 45 62 -17 51
 Charlton Athletic 44 12 14 18 41 54 -13 50

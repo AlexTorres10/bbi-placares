@@ -1202,6 +1202,8 @@ def compute_updated_table(liga_key: str, resultados: list) -> list:
             team_dict['penalty_note'] = "Sheffield Wednesday perdeu 18 pontos por adm. judicial e atraso de salários."
         if team.name == "Leicester City":
             team_dict['penalty_note'] = "Leicester City perdeu 6 pontos por violação das regras de lucratividade e sustentabilidade."
+        if team.name == "West Bromwich":
+            team_dict['penalty_note'] = "West Bromwich perdeu 2 pontos por violação das regras de lucratividade e sustentabilidade."
         table_data.append(team_dict)
 
     return table_data
