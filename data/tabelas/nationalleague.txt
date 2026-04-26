@@ -1,24 +1,24 @@
-York City 45 33 8 4 113 40 73 107
-Rochdale 45 33 6 6 87 40 47 105
-Carlisle United 45 28 8 9 84 51 33 92
-Boreham Wood 45 26 9 10 94 58 36 87
-Scunthorpe United 45 23 13 9 77 61 16 82
-Southend United 44 22 12 10 78 42 36 78
-Forest Green Rovers 45 22 12 11 77 52 25 78
-FC Halifax Town 45 19 10 16 68 66 2 67
-Hartlepool United 44 17 14 13 49 53 -4 65
-Woking 45 16 15 14 69 53 16 63
-Tamworth 45 16 11 18 58 70 -12 59
-Wealdstone 45 15 11 19 66 72 -6 56
-Boston United 45 14 14 17 60 66 -6 56
-Altrincham 45 16 6 23 52 64 -12 54
-Solihull Moors 45 13 14 18 67 71 -4 53
-Yeovil Town 45 15 6 24 47 64 -17 51
-Gateshead 45 14 8 23 53 87 -34 50
-Sutton United 45 11 14 20 59 78 -19 47
-Eastleigh 45 12 11 22 56 80 -24 47
-Aldershot Town 45 13 7 25 69 85 -16 46
-Brackley Town 45 10 12 23 40 72 -32 42
-Morecambe 45 9 11 25 66 98 -32 38
-Braintree Town 45 8 12 25 37 71 -34 36
-Truro City 45 7 10 28 40 72 -32 31
+York City 46 33 9 4 114 41 73 108
+Rochdale 46 33 7 6 88 41 47 106
+Carlisle United 46 29 8 9 87 51 36 95
+Boreham Wood 46 27 9 10 95 58 37 90
+Scunthorpe United 46 23 13 10 77 62 15 82
+Southend United 46 23 12 11 83 47 36 81
+Forest Green Rovers 46 23 12 11 82 52 30 81
+FC Halifax Town 46 20 10 16 69 66 3 70
+Hartlepool United 46 18 14 14 54 59 -5 68
+Woking 46 16 15 15 69 54 15 63
+Tamworth 46 17 11 18 63 71 -8 62
+Boston United 46 15 14 17 63 67 -4 59
+Altrincham 46 17 6 23 55 65 -10 57
+Solihull Moors 46 14 14 18 71 72 -1 56
+Wealdstone 46 15 11 20 67 74 -7 56
+Yeovil Town 46 15 6 25 48 68 -20 51
+Eastleigh 46 13 11 22 57 80 -23 50
+Gateshead 46 14 8 24 54 90 -36 50
+Sutton United 46 11 14 21 59 79 -20 47
+Aldershot Town 46 13 7 26 69 87 -18 46
+Brackley Town 46 10 12 24 40 75 -35 42
+Morecambe 46 9 11 26 66 103 -37 38
+Braintree Town 46 8 12 26 38 76 -38 36
+Truro City 46 8 10 28 42 72 -30 34
