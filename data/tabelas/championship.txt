@@ -1,8 +1,8 @@
 Coventry City 45 27 11 7 93 45 48 92
-Ipswich Town 44 22 14 8 75 45 30 80
+Ipswich Town 45 22 15 8 77 47 30 81
 Millwall 45 23 11 11 62 49 13 80
 Middlesbrough 45 22 13 10 70 45 25 79
-Southampton 44 21 13 10 77 53 24 76
+Southampton 45 21 14 10 79 55 24 77
 Wrexham 45 19 13 13 67 63 4 70
 Hull City 45 20 10 15 68 65 3 70
 Derby County 45 20 9 16 66 57 9 69
