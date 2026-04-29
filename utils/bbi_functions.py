@@ -293,9 +293,10 @@ def pontos_ultimos_jogos_por_mando(df: pd.DataFrame, nome_time: str,
     pontos = resultados.get('win', 0) * 3 + resultados.get('draw', 0)
     return {'time': nome_time, 'mando': mando, f'pts_ult{n}': pontos}, pontos
 
-def _filtrar_insights_redundantes(insights_forma: List[str], jogos_casa: int, jogos_fora: int, 
+def _filtrar_insights_redundantes(insights_forma: List[str], jogos_casa: int, jogos_fora: int,
                                  lose_streak_casa: int, lose_streak_fora: int,
-                                 win_streak_casa: int, win_streak_fora: int) -> List[str]:
+                                 win_streak_casa: int, win_streak_fora: int,
+                                 lose_streak_geral: int = 0, win_streak_geral: int = 0) -> List[str]:
     """
     Remove insights redundantes e melhora a apresentação quando a estatística 
     engloba todos os jogos de um mandante.
@@ -363,8 +364,9 @@ def _filtrar_insights_redundantes(insights_forma: List[str], jogos_casa: int, jo
                     insight = re.sub(r'últimos \d+ jogos fora de casa', 'todos os jogos fora de casa', insight)
 
         # Evitar duplicação com streaks já conhecidos
-        if _eh_redundante_com_streak(insight, lose_streak_casa, lose_streak_fora, 
-                                     win_streak_casa, win_streak_fora, jogos_casa, jogos_fora):
+        if _eh_redundante_com_streak(insight, lose_streak_casa, lose_streak_fora,
+                                     win_streak_casa, win_streak_fora, jogos_casa, jogos_fora,
+                                     lose_streak_geral, win_streak_geral):
             continue
 
         # Evitar redundâncias diretas entre frases similares
@@ -385,64 +387,80 @@ def _filtrar_insights_redundantes(insights_forma: List[str], jogos_casa: int, jo
 
 
 def _eh_redundante_com_streak(insight: str, lose_streak_casa: int, lose_streak_fora: int,
-                            win_streak_casa: int, win_streak_fora: int, 
-                            jogos_casa: int, jogos_fora: int) -> bool:
+                            win_streak_casa: int, win_streak_fora: int,
+                            jogos_casa: int, jogos_fora: int,
+                            lose_streak_geral: int = 0, win_streak_geral: int = 0) -> bool:
     """
     Verifica se um insight de forma é redundante com um streak já identificado.
     """
     import re
-    
-    # Extrair números do insight
+
     numeros = re.findall(r'\d+', insight)
     if not numeros:
         return False
-        
-    # Para insights de derrotas em casa
+
+    # ── Insights com mando específico ────────────────────────────────────────
+
+    # Derrotas em casa
     if "perdeu" in insight and "em casa" in insight:
         if len(numeros) >= 2:
             derrotas = int(numeros[0])
             jogos_janela = int(numeros[1])
-            # Se perdeu X dos X jogos em casa E tem streak de X derrotas em casa = redundante
-            if (derrotas == jogos_janela and lose_streak_casa >= derrotas):
+            if derrotas == jogos_janela and lose_streak_casa >= derrotas:
                 return True
-                
-    # Para insights de derrotas fora de casa  
+
+    # Derrotas fora de casa
     if "perdeu" in insight and "fora de casa" in insight:
         if len(numeros) >= 2:
             derrotas = int(numeros[0])
             jogos_janela = int(numeros[1])
-            if (derrotas == jogos_janela and lose_streak_fora >= derrotas):
+            if derrotas == jogos_janela and lose_streak_fora >= derrotas:
                 return True
-                
-    # Para insights de "não venceu nenhum" quando há streak de derrotas
+
+    # "não venceu nenhum" em casa / fora
     if "não venceu nenhum" in insight and "em casa" in insight:
         if len(numeros) >= 1:
             jogos_sem_vitoria = int(numeros[0])
-            # Se não venceu X jogos E tem streak de derrotas >= X-1, é redundante
             if lose_streak_casa >= jogos_sem_vitoria - 1:
                 return True
-                
+
     if "não venceu nenhum" in insight and "fora de casa" in insight:
         if len(numeros) >= 1:
             jogos_sem_vitoria = int(numeros[0])
             if lose_streak_fora >= jogos_sem_vitoria - 1:
                 return True
-                
-    # Para insights de vitórias
+
+    # Vitórias em casa / fora
     if "venceu" in insight and "em casa" in insight and "apenas" not in insight:
         if len(numeros) >= 2:
-            vitorias = int(numeros[0]) 
+            vitorias = int(numeros[0])
             jogos_janela = int(numeros[1])
-            if (vitorias == jogos_janela and win_streak_casa >= vitorias):
+            if vitorias == jogos_janela and win_streak_casa >= vitorias:
                 return True
-                
+
     if "venceu" in insight and "fora de casa" in insight and "apenas" not in insight:
         if len(numeros) >= 2:
             vitorias = int(numeros[0])
-            jogos_janela = int(numeros[1]) 
-            if (vitorias == jogos_janela and win_streak_fora >= vitorias):
+            jogos_janela = int(numeros[1])
+            if vitorias == jogos_janela and win_streak_fora >= vitorias:
                 return True
-    
+
+    # ── Insights gerais (sem sufixo de mando) ────────────────────────────────
+    # Suprimir "perdeu X dos últimos X jogos" quando a sequência consecutiva já cobre o período.
+    # Manter "perdeu X dos últimos Y jogos" quando Y > X (informação adicional).
+    if "em casa" not in insight and "fora de casa" not in insight:
+        if "perdeu" in insight and len(numeros) >= 2:
+            derrotas = int(numeros[0])
+            jogos_janela = int(numeros[1])
+            if derrotas == jogos_janela and lose_streak_geral >= derrotas:
+                return True
+
+        if "venceu" in insight and "apenas" not in insight and len(numeros) >= 2:
+            vitorias = int(numeros[0])
+            jogos_janela = int(numeros[1])
+            if vitorias == jogos_janela and win_streak_geral >= vitorias:
+                return True
+
     return False
 
 def _sao_redundantes(insight1: str, insight2: str) -> bool:
@@ -576,10 +594,14 @@ def allinsights(df: pd.DataFrame, nome: str, time_ou_liga: str = 'time') -> List
                 insights.append(f"{nome} somou apenas {pontos_fora} pontos nos últimos 3 jogos fora de casa.")
 
         # Filtrar insights de forma para evitar redundâncias
-        insights_filtrados = _filtrar_insights_redundantes(insights_forma_geral + insights_forma_casa + insights_forma_fora, 
-                                                           df_casa.shape[0], df_fora.shape[0], 
-                                                           lose_streak_casa, lose_streak_fora,
-                                                           win_streak_casa, win_streak_fora)
+        insights_filtrados = _filtrar_insights_redundantes(
+            insights_forma_geral + insights_forma_casa + insights_forma_fora,
+            df_casa.shape[0], df_fora.shape[0],
+            lose_streak_casa, lose_streak_fora,
+            win_streak_casa, win_streak_fora,
+            lose_streak_geral=lose_streak_geral,
+            win_streak_geral=win_streak_geral,
+        )
         insights.extend(insights_filtrados)
 
     elif time_ou_liga == 'liga':
@@ -648,7 +670,9 @@ def allinsights(df: pd.DataFrame, nome: str, time_ou_liga: str = 'time') -> List
                     insights_a_filtrar,
                     jogos_casa, jogos_fora,
                     lose_casa, lose_fora,
-                    win_casa, win_fora
+                    win_casa, win_fora,
+                    lose_streak_geral=lose_streak,
+                    win_streak_geral=win_streak,
                 )
                 # Adiciona só os insights já "corrigidos"
                 insights.extend(insights_filtrados_time)

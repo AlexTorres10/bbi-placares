@@ -1951,6 +1951,172 @@ TEAM_COLORS: dict[str, str] = {
 }
 
 
+def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict) -> str:
+    """Builds the 3-section text (results + table + insights) for the 'Copiar para Claude' button."""
+    import csv as _csv
+    import re as _re
+
+    # Zone label markers inserted before each boundary position (position → label).
+    _ZONE_LABELS: dict[str, dict[int, str]] = {
+        'premierleague': {
+            1: '[CAMPEÃO]', 2: '[UCL]', 6: '[UEL]', 8: '[UECL]',
+            9: '[MEIO DE TABELA]', 18: '[REBAIXAMENTO]',
+        },
+        'championship': {
+            1: '[PROMOÇÃO DIRETA]', 3: '[PLAY-OFFS]',
+            7: '[MEIO DE TABELA]', 22: '[REBAIXAMENTO]',
+        },
+        'leagueone': {
+            1: '[PROMOÇÃO DIRETA]', 3: '[PLAY-OFFS]',
+            7: '[MEIO DE TABELA]', 21: '[REBAIXAMENTO]',
+        },
+        'leaguetwo': {
+            1: '[PROMOÇÃO DIRETA]', 4: '[PLAY-OFFS]',
+            8: '[MEIO DE TABELA]', 23: '[REBAIXAMENTO]',
+        },
+        'nationalleague': {
+            1: '[CAMPEÃO]', 2: '[PLAY-OFFS]',
+            8: '[MEIO DE TABELA]', 21: '[REBAIXAMENTO]',
+        },
+    }
+
+    # Teams with active point deductions → show asterisk in table.
+    _PENALTY_TEAMS: dict[str, set[str]] = {
+        'championship': {'Sheffield Wednesday', 'Leicester City', 'West Bromwich'},
+    }
+
+    # ── 1. Read standings file (needed for round number + table section) ──────
+    zone_map = _ZONE_LABELS.get(liga_key, {})
+    penalty_teams = _PENALTY_TEAMS.get(liga_key, set())
+    position_map: dict[str, int] = {}
+    _proc_teams: list = []
+    max_jogos = 0
+    num_teams = 0
+
+    try:
+        _proc = TableProcessor()
+        with open(f"data/tabelas/{liga_key}.txt", 'r', encoding='utf-8') as _f:
+            _proc.load_from_text(_f.read())
+        _proc_teams = _proc.teams
+        num_teams = len(_proc_teams)
+        max_jogos = max(t.games for t in _proc_teams) if _proc_teams else 0
+        for _t in _proc_teams:
+            position_map[_t.name] = _t.position
+    except Exception:
+        pass
+
+    # ── 2. Read the last matchday block from historico.csv ──────────────────
+    matchday_map = detect_matchdays(liga_str)
+    block_games: list[dict] = []
+    teams_played: set[str] = set()
+
+    if matchday_map:
+        last_dates = set(matchday_map[max(matchday_map.keys())])
+        try:
+            with open('data/historico.csv', newline='', encoding='utf-8') as _f:
+                for row in _csv.DictReader(_f):
+                    if row.get('liga') == liga_str and row.get('data') in last_dates:
+                        block_games.append({
+                            'casa': row.get('casa', ''),
+                            'placar': row.get('placar', ''),
+                            'fora': row.get('fora', ''),
+                        })
+                        if row.get('casa'):
+                            teams_played.add(row['casa'])
+                        if row.get('fora'):
+                            teams_played.add(row['fora'])
+        except Exception:
+            pass
+
+    teams_played &= set(data.get('teams', []))
+
+    # Round number = max games played + 1 (same logic as the "Nº Rodada" suggestion in the UI).
+    # If the block has ≤ half the games of a full round, it's delayed games, not a new round.
+    max_games_per_round = num_teams // 2
+    is_adiados = (
+        bool(block_games)
+        and max_games_per_round > 0
+        and len(block_games) <= max_games_per_round // 2
+    )
+
+    if is_adiados:
+        rodada_str = " JOGOS ATRASADOS"
+    elif max_jogos:
+        rodada_str = f" RODADA {max_jogos + 1}"
+    else:
+        rodada_str = ""
+
+    # ── 3. Results section ──────────────────────────────────────────────────
+    res_lines = [f"RESULTADOS — {liga_label}{rodada_str}", ""]
+    for g in block_games:
+        base_score = _re.sub(r'\(.*?\)', '', g['placar']).strip()
+        res_lines.append(f"{g['casa']} {base_score} {g['fora']}")
+
+    # ── 4. Table section ────────────────────────────────────────────────────
+    tab_lines = [f"TABELA — {liga_label} APÓS{rodada_str}", ""]
+
+    if _proc_teams:
+        for team in _proc_teams:
+            pos = team.position
+            if pos in zone_map:
+                tab_lines.append(zone_map[pos])
+            asterisk = '*' if team.name in penalty_teams else ''
+            sg = f"+{team.goal_difference}" if team.goal_difference > 0 else str(team.goal_difference)
+            tab_lines.append(
+                f"{pos}. {team.name}{asterisk} — "
+                f"{team.games}j {team.wins}v {team.draws}e {team.losses}d "
+                f"SG{sg} {team.points}pts"
+            )
+    else:
+        tab_lines.append("(Tabela não disponível.)")
+
+    # ── 4. Insights section ─────────────────────────────────────────────────
+    ins_lines = [f"INSIGHTS — {liga_label}{rodada_str}", ""]
+
+    if not teams_played:
+        ins_lines.append("(Nenhum jogo encontrado no histórico para esta liga.)")
+    else:
+        played_sorted = sorted(
+            [t for t in teams_played if t in data.get('team_insights', {})],
+            key=lambda t: position_map.get(t, 999),
+        )
+        for team in played_sorted:
+            pos = position_map.get(team, '?')
+            team_ins = data.get('team_insights', {}).get(team, [])
+            rankings = data.get('team_rankings', {}).get(team, [])
+
+            general_ins = [i for i in team_ins if 'em casa' not in i and 'fora de casa' not in i]
+            mando_ins = [i for i in team_ins if 'em casa' in i or 'fora de casa' in i]
+
+            delta = compute_position_delta(team, liga_str)
+            if delta is None:
+                delta_str = "—"
+            elif delta > 0:
+                delta_str = f"▲{delta}"
+            elif delta < 0:
+                delta_str = f"▼{abs(delta)}"
+            else:
+                delta_str = "— (Mesma posição)"
+
+            ins_lines.append(f"{team} [{pos}º]")
+            if general_ins:
+                ins_lines.append(f"- {general_ins[0]}")
+            if mando_ins:
+                ins_lines.append(f"- {mando_ins[0]}")
+            elif rankings:
+                ins_lines.append(f"- {rankings[0]}")
+            if not general_ins and not mando_ins and not rankings:
+                ins_lines.append("- Sem insights relevantes")
+            ins_lines.append(f"- Variação: {delta_str}")
+            ins_lines.append("")
+
+    # ── Combine sections with a blank line between them ─────────────────────
+    return "\n\n".join(
+        "\n".join(section).strip()
+        for section in [res_lines, tab_lines, ins_lines]
+    )
+
+
 def render_stats_mode():
     st.header("📈 Estatísticas")
 
@@ -2031,6 +2197,15 @@ def render_stats_mode():
         st.markdown(f"😬 **Pior defesa:** {data['worst_defense_team']} ({data['worst_defense_gols']} sofridos)")
 
     st.divider()
+
+    # ── Copiar para Claude ────────────────────────────────────────────────
+    _copy_key = f'claude_copy_text_{liga_key}'
+    if st.button("📋 Copiar para Claude", key=f"btn_copiar_claude_{liga_key}"):
+        st.session_state[_copy_key] = _build_claude_text(liga_label, liga_key, liga_str, data)
+
+    if _copy_key in st.session_state:
+        st.code(st.session_state[_copy_key], language=None)
+        st.divider()
 
     # ── Insights gerais ────────────────────────────────────────────────────
     selected_team = None

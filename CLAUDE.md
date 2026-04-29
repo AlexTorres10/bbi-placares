@@ -14,6 +14,16 @@ streamlit run app.py
 
 Dependencies are in `requirements.txt`. Install with `pip install -r requirements.txt`.
 
+## Maintenance Scripts
+
+```bash
+# Rebuild data/posicoes.csv from scratch using historico.csv
+python scripts/build_position_history.py
+
+# Filter posicoes.csv to only rows where the team actually played that matchday
+python filtrar_posicoes.py
+```
+
 ## Architecture Overview
 
 This is a **Streamlit web app** that generates social media images for English football leagues (Premier League, Championship, League One, League Two, National League) and cup competitions (FA Cup, EFL Cup, UCL, UEL, UECL).
@@ -39,17 +49,23 @@ This is a **Streamlit web app** that generates social media images for English f
 | `utils/news_generator.py` | Generates news/headline images with optional background photo |
 | `utils/github_handler.py` | GitHub API wrapper (read/update files via base64) |
 | `utils/table_validator.py` | Scrapes Sky Sports to compare calculated table vs official |
+| `utils/position_history.py` | Matchday detection, table simulation per matchday, read/write of `data/posicoes.csv` |
+| `utils/stats_engine.py` | Reads `data/historico.csv` and computes league/team insights via `bbi_functions.py` |
+| `utils/bbi_functions.py` | Stats engine ported from the Django `bbistats` project — generates streaks, form, and phase insights |
+| `scripts/build_position_history.py` | Retroactively populates `data/posicoes.csv` from `historico.csv`; deletes and rewrites from scratch |
+| `filtrar_posicoes.py` | Post-processing filter: removes position rows for teams that didn't play in the correct block window |
 | `config/leagues_config.json` | **Central config**: pixel positions, font sizes, badge sizes, promotion zones per league |
 | `config/team_abbreviations.json` | 3-letter abbreviation → full team name mapping |
 | `config/team_display_names.json` | Shortened display names (per league) for result images |
 | `data/tabelas/<league>.txt` | Current standings: one team per line, format: `Team Name J V E D GP GC SG P` |
-| `data/historico.csv` | Per-match historical records: `casa,placar,fora,data,liga`. Source of truth for the stats engine. Committed to GitHub on every "Atualizar no GitHub" action. |
-| `utils/stats_engine.py` | Reads `data/historico.csv` and computes league/team insights via `bbi_functions.py` |
-| `utils/bbi_functions.py` | Stats engine ported from the Django `bbistats` project — generates streaks, form, and phase insights |
+| `data/historico.csv` | Per-match historical records: `casa,placar,fora,data,liga`. Source of truth for the stats engine and position history. Committed to GitHub on every "Atualizar no GitHub" action. |
+| `data/posicoes.csv` | Per-team league position at each matchday: `time,liga,matchday,posicao,data_fim_matchday` |
 
 ### Asset Directories
 
-- `escudos-pl/`, `escudos-ch/`, `escudos-l1/`, `escudos-l2/`, `escudos-nl/`, `escudos-nonleague/` — badge PNGs named exactly as the team's full name (e.g. `Arsenal.png`)
+- `escudos-pl/`, `escudos-ch/`, `escudos-l1/`, `escudos-l2/`, `escudos-nl/`, `escudos-nonleague/` — badge PNGs for domestic leagues
+- `escudos-ucl/`, `escudos-uel/`, `escudos-uecl/` — badge PNGs for European club competitors (non-English clubs only; English clubs are pulled from `escudos-pl/`)
+- `selecoes/` — badge PNGs for national teams (used by the "Seleção Inglesa" template)
 - `resultados/` — template PNGs for match result images (e.g. `premierleague-template.png`, `premierleague-rect.png`)
 - `tabela/` — template PNGs for standings images, including colored zone rects (e.g. `premierleague-rect-ucl.png`, `premierleague-rect-ucl-conf.png`)
 - `noticias/` — template PNGs for news images
@@ -71,6 +87,18 @@ The app falls back to local `data/tabelas/` files if GitHub credentials are miss
 Each line: `Team Name J V E D GP GC SG P`
 Example: `Arsenal 28 18 7 3 56 21 35 61`
 (J=played, V=wins, E=draws, D=losses, GP=goals for, GC=goals against, SG=goal diff, P=points)
+
+### Position History System
+
+`data/posicoes.csv` tracks every team's league position at each matchday. It is built from `historico.csv` and is never committed to GitHub — it lives only locally and is rebuilt on demand.
+
+**Matchday grouping** in `position_history.py` uses two calendar blocks:
+- **Block A** (Fri/Sat/Sun/Mon): typical weekend round
+- **Block B** (Tue/Wed/Thu): midweek round
+
+A new matchday begins when the gap between consecutive game dates exceeds 4 days, or when the block changes. The `data_fim_matchday` stored in `posicoes.csv` is normalized to an "anchor date" (Saturday for Block A, Tuesday for Block B).
+
+**Point deductions** are applied inside `position_history.py` via `_POINT_DEDUCTIONS` — a dict keyed by league string, containing `(team, threshold_date, pts)` tuples. Multiple entries for the same team are cumulative.
 
 ### Adding a New League
 
