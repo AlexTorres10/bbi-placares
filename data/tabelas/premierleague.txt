@@ -1,20 +1,20 @@
-Arsenal 34 22 7 5 64 26 38 73
+Arsenal 35 23 7 5 67 26 41 76
 Manchester City 33 21 7 5 66 29 37 70
 Manchester United 34 17 10 7 60 46 14 61
 Liverpool 34 17 7 10 57 44 13 58
 Aston Villa 34 17 7 10 47 42 5 58
+Brentford 35 14 9 12 52 46 6 51
 Brighton 35 13 11 11 49 42 7 50
 Bournemouth 34 11 16 7 52 52 0 49
 Chelsea 34 13 9 12 53 45 8 48
-Brentford 34 13 9 12 49 46 3 48
-Fulham 34 14 6 14 44 46 -2 48
+Fulham 35 14 6 15 44 49 -5 48
 Everton 34 13 8 13 41 41 0 47
 Sunderland 35 12 11 12 37 46 -9 47
 Newcastle United 35 13 6 16 49 51 -2 45
 Crystal Palace 33 11 10 12 36 39 -3 43
 Leeds United 35 10 13 12 47 52 -5 43
 Nottingham Forest 34 10 9 15 41 45 -4 39
-West Ham 34 9 9 16 42 58 -16 36
+West Ham 35 9 9 17 42 61 -19 36
 Tottenham 34 8 10 16 43 53 -10 34
 Burnley 35 4 8 23 35 71 -36 20
 Wolverhampton 35 3 9 23 25 63 -38 18
