@@ -9,7 +9,7 @@ Chelsea 34 13 9 12 53 45 8 48
 Brentford 34 13 9 12 49 46 3 48
 Fulham 34 14 6 14 44 46 -2 48
 Everton 34 13 8 13 41 41 0 47
-Sunderland 34 12 10 12 36 45 -9 46
+Sunderland 35 12 11 12 37 46 -9 47
 Newcastle United 35 13 6 16 49 51 -2 45
 Crystal Palace 33 11 10 12 36 39 -3 43
 Leeds United 35 10 13 12 47 52 -5 43
@@ -17,4 +17,4 @@ Nottingham Forest 34 10 9 15 41 45 -4 39
 West Ham 34 9 9 16 42 58 -16 36
 Tottenham 34 8 10 16 43 53 -10 34
 Burnley 35 4 8 23 35 71 -36 20
-Wolverhampton 34 3 8 23 24 62 -38 17
+Wolverhampton 35 3 9 23 25 63 -38 18
