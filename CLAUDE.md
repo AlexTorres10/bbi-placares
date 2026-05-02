@@ -28,6 +28,20 @@ python filtrar_posicoes.py
 
 This is a **Streamlit web app** that generates social media images for English football leagues (Premier League, Championship, League One, League Two, National League) and cup competitions (FA Cup, EFL Cup, UCL, UEL, UECL).
 
+### UI Modes
+
+The app is driven by a top-level `st.radio` at line ~2409 in `app.py` with five modes:
+
+| Mode | Entry point | What it does |
+|---|---|---|
+| 🔢 Gerar Placar | inline in `app.py` | Composites a result image using `desenhar_placar()` |
+| 📊 Gerar Tabela com Resultados | `render_table_mode()` | Parses results, updates standings, generates table image, optionally commits to GitHub |
+| 📰 Gerar Notícia | inline in `app.py` | Generates a headline image via `NewsGenerator` |
+| 🏆 Gerar Copa | inline in `app.py` | Generates cup-round result images via `CupGenerator` |
+| 📈 Estatísticas | `render_stats_mode()` | Shows team/league insights, position chart, and a "Copiar para Claude" text block |
+
+`desenhar_placar()` (line ~361 in `app.py`) is the main PIL composition function — it places team badges, score text, and scorer names onto a template PNG and is ~190 lines long.
+
 ### Data Flow
 
 1. **User inputs** match results as text (e.g. `ARS 2-1 CHE`) in the Streamlit UI (`app.py`)
@@ -36,6 +50,8 @@ This is a **Streamlit web app** that generates social media images for English f
 4. **`ImageGenerator`** / **`CupGenerator`** / **`NewsGenerator`** render PIL images by compositing PNG templates with team badges, fonts, and dynamic text
 5. Generated images are displayed in Streamlit and available for download
 6. Updated standings are optionally saved back to GitHub via `GitHubHandler` (GitHub API), which commits both `data/tabelas/<league>.txt` and `data/historico.csv`
+
+**Stats flow**: `render_stats_mode()` → `compute_league_stats(liga_str)` in `stats_engine.py` → `allinsights()` in `bbi_functions.py`. `allinsights()` is the single entry point that returns a deduplicated list of natural-language insight strings for a team or league. The "Copiar para Claude" button calls `_build_claude_text()` (line ~1954 in `app.py`), which assembles a 3-section block (results + table with zone labels + insights) formatted for pasting into a Claude conversation.
 
 ### Key Files
 
@@ -64,7 +80,7 @@ This is a **Streamlit web app** that generates social media images for English f
 ### Asset Directories
 
 - `escudos-pl/`, `escudos-ch/`, `escudos-l1/`, `escudos-l2/`, `escudos-nl/`, `escudos-nonleague/` — badge PNGs for domestic leagues
-- `escudos-ucl/`, `escudos-uel/`, `escudos-uecl/` — badge PNGs for European club competitors (non-English clubs only; English clubs are pulled from `escudos-pl/`)
+- `escudos-ucl/`, `escudos-uel/`, `escudos-uecl/` — badge PNGs for European club competitors. **English clubs** in these competitions resolve their badge from `escudos-pl/` instead (handled in `obter_escudo_path()`, line ~338 in `app.py`, via the `INGLES_UCL` / `INGLES_UEL` / `INGLES_UECL` lists)
 - `selecoes/` — badge PNGs for national teams (used by the "Seleção Inglesa" template)
 - `resultados/` — template PNGs for match result images (e.g. `premierleague-template.png`, `premierleague-rect.png`)
 - `tabela/` — template PNGs for standings images, including colored zone rects (e.g. `premierleague-rect-ucl.png`, `premierleague-rect-ucl-conf.png`)

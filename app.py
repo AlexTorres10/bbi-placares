@@ -27,6 +27,13 @@ from utils.github_handler import GitHubHandler
 from utils.news_generator import NewsGenerator
 from utils.table_validator import TableValidator
 from utils.stats_engine import compute_league_stats
+from utils.insights_cache import (
+    load_cached_stats,
+    get_cache_meta,
+    is_stale,
+    save_stats,
+    rebuild_for_liga,
+)
 from utils.position_history import (
     detect_matchdays,
     compute_table_at_matchday,
@@ -1113,6 +1120,11 @@ def render_table_mode():
                             )
                             if _ok_multi:
                                 _summary.append(f"Tabela, historico.csv e posicoes.csv enviados ({n_hist} novo(s))")
+                                try:
+                                    rebuild_for_liga(_liga_str_uni)
+                                    _summary.append("estatísticas atualizadas")
+                                except Exception:
+                                    pass
                             else:
                                 _errors.append("Falha ao enviar arquivos para o GitHub.")
 
@@ -2139,12 +2151,41 @@ def render_stats_mode():
         "nationalleague": "escudos-nl",
     }
 
+    # ── Auto-load from file cache on page load / league switch ──────────────
+    if 'stats_cache' not in st.session_state:
+        st.session_state['stats_cache'] = {}
+    if 'badges_cache' not in st.session_state:
+        st.session_state['badges_cache'] = {}
+
+    if liga_key not in st.session_state['stats_cache']:
+        _file_data = load_cached_stats(liga_str)
+        if _file_data is not None:
+            st.session_state['stats_cache'][liga_key] = _file_data
+            _badge_folder = _BADGE_FOLDERS.get(liga_key, "escudos-pl")
+            _badge_cache = []
+            for _team in _file_data['teams']:
+                _badge_path = f"{_badge_folder}/{_team}.png"
+                if os.path.exists(_badge_path):
+                    with open(_badge_path, "rb") as _f:
+                        _raw = _f.read()
+                    _b64 = base64.b64encode(process_badge_for_dark_mode(_raw)).decode()
+                    _badge_cache.append(f"data:image/png;base64,{_b64}")
+                else:
+                    _badge_cache.append("")
+            st.session_state['badges_cache'][liga_key] = _badge_cache
+
+    # ── Staleness indicator ───────────────────────────────────────────────────
+    if is_stale(liga_str):
+        st.warning("⚠️ Novos jogos no histórico. Clique em **Atualizar Estatísticas** para atualizar os dados.")
+    else:
+        _meta = get_cache_meta(liga_str)
+        if _meta and _meta.get('updated_at'):
+            st.caption(f"Atualizado em: {_meta['updated_at'].replace('T', ' ')}")
+
     if st.button("🔄 Atualizar Estatísticas", type="primary"):
         with st.spinner("Calculando estatísticas..."):
             try:
-                data = compute_league_stats(liga_str)
-                if 'stats_cache' not in st.session_state:
-                    st.session_state['stats_cache'] = {}
+                data = rebuild_for_liga(liga_str)
                 st.session_state['stats_cache'][liga_key] = data
 
                 # Pre-process and cache badge base64 strings eagerly
@@ -2160,8 +2201,6 @@ def render_stats_mode():
                         badge_cache.append(f"data:image/png;base64,{_b64}")
                     else:
                         badge_cache.append("")
-                if 'badges_cache' not in st.session_state:
-                    st.session_state['badges_cache'] = {}
                 st.session_state['badges_cache'][liga_key] = badge_cache
 
                 st.success("✅ Estatísticas atualizadas!")
@@ -2614,6 +2653,11 @@ if modo == "🔢 Gerar Placar":
                                 if _ok_pg:
                                     _steps_pg.append("enviado ao GitHub")
                                     carregar_tabela_github.clear()
+                                    try:
+                                        rebuild_for_liga(_liga_str_pg)
+                                        _steps_pg.append("estatísticas atualizadas")
+                                    except Exception:
+                                        pass
                                 else:
                                     st.error("❌ Falha ao enviar arquivos para o GitHub.")
                                     _abort_pg = True

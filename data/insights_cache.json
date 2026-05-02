@@ -1,0 +1,1851 @@
+{
+  "Premier League": {
+    "last_game_date": "2026-05-01",
+    "updated_at": "2026-05-01T23:24:37",
+    "data": {
+      "insights": [
+        "Arsenal venceu 5 dos últimos 7 jogos. Boa fase!",
+        "Arsenal sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Arsenal sofreu apenas 1 derrotas nos últimos 9 jogos fora de casa.",
+        "Aston Villa está há 5 jogos sem vencer fora de casa.",
+        "Aston Villa venceu 11 dos últimos 15 jogos em casa. Boa fase!",
+        "Aston Villa sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Aston Villa venceu apenas 1 dos últimos 8 jogos fora de casa.",
+        "Bournemouth está há 5 jogos sem vencer em casa.",
+        "Bournemouth está invicto há 14 jogos.",
+        "Bournemouth está invicto há 7 jogos em casa.",
+        "Bournemouth está invicto há 8 jogos fora de casa.",
+        "Bournemouth sofreu apenas 1 derrotas nos últimos 16 jogos.",
+        "Bournemouth venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Bournemouth sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+        "Bournemouth sofreu apenas 1 derrotas nos últimos 10 jogos fora de casa.",
+        "Brentford está há 6 jogos sem vencer.",
+        "Brentford está há 6 jogos sem vencer em casa.",
+        "Brentford venceu apenas 1 dos últimos 9 jogos.",
+        "Brentford sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Brentford venceu apenas 1 dos últimos 8 jogos em casa.",
+        "Brentford sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Brentford sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Brighton está invicto há 5 jogos.",
+        "Brighton venceu 6 dos últimos 8 jogos. Boa fase!",
+        "Brighton sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Brighton sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Burnley está na 5ª derrota seguida!",
+        "Burnley está na 4ª derrota seguida fora de casa!",
+        "Burnley está há 9 jogos sem vencer.",
+        "Burnley está há 13 jogos sem vencer em casa.",
+        "Burnley está há 5 jogos sem vencer fora de casa.",
+        "Burnley perdeu 7 dos últimos 8 jogos.",
+        "Burnley venceu apenas 1 dos últimos 26 jogos.",
+        "Burnley venceu apenas 1 dos últimos 16 jogos em casa.",
+        "Burnley venceu apenas 1 dos últimos 13 jogos fora de casa.",
+        "Chelsea está na 5ª derrota seguida!",
+        "Chelsea está na 3ª derrota seguida em casa!",
+        "Chelsea está há 5 jogos sem vencer em casa.",
+        "Chelsea perdeu 6 dos últimos 7 jogos.",
+        "Chelsea venceu apenas 1 dos últimos 9 jogos.",
+        "Chelsea venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Crystal Palace sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Fulham venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+        "Fulham venceu apenas 1 dos últimos 8 jogos fora de casa.",
+        "Leeds United está invicto há 6 jogos.",
+        "Leeds United está invicto há 6 jogos fora de casa.",
+        "Leeds United sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Leeds United venceu apenas 1 dos últimos 14 jogos fora de casa.",
+        "Leeds United sofreu apenas 1 derrotas nos últimos 10 jogos fora de casa.",
+        "Liverpool está na 3ª vitória seguida!",
+        "Liverpool sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
+        "Manchester City está na 3ª vitória seguida!",
+        "Manchester City está invicto há 11 jogos.",
+        "Manchester City está invicto há 15 jogos em casa.",
+        "Manchester City está invicto há 6 jogos fora de casa.",
+        "Manchester City venceu 7 dos últimos 9 jogos. Boa fase!",
+        "Manchester City sofreu apenas 1 derrotas nos últimos 21 jogos.",
+        "Manchester City venceu 12 dos últimos 15 jogos em casa. Boa fase!",
+        "Manchester City sofreu apenas 1 derrotas nos todos os jogos em casa.",
+        "Manchester City sofreu apenas 1 derrotas nos últimos 11 jogos fora de casa.",
+        "Manchester United venceu 6 dos últimos 7 jogos em casa. Boa fase!",
+        "Manchester United sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
+        "Manchester United sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa.",
+        "Newcastle United está na 4ª derrota seguida!",
+        "Newcastle United perdeu 9 dos últimos 12 jogos.",
+        "Newcastle United perdeu 5 dos últimos 6 jogos em casa.",
+        "Newcastle United venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Nottingham Forest está invicto há 6 jogos.",
+        "Nottingham Forest sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Nottingham Forest venceu apenas 1 dos últimos 9 jogos em casa.",
+        "Nottingham Forest sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Sunderland venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Tottenham está há 9 jogos sem vencer em casa.",
+        "Tottenham perdeu 7 dos últimos 10 jogos.",
+        "Tottenham venceu apenas 1 dos últimos 16 jogos.",
+        "Tottenham venceu apenas 1 dos últimos 16 jogos em casa.",
+        "Tottenham venceu apenas 1 dos últimos 8 jogos fora de casa.",
+        "West Ham está invicto há 6 jogos em casa.",
+        "West Ham sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
+        "Wolverhampton está na 3ª derrota seguida!",
+        "Wolverhampton está há 17 jogos sem vencer fora de casa.",
+        "Wolverhampton perdeu 10 dos últimos 14 jogos fora de casa.",
+        "Wolverhampton não venceu nenhum dos últimos 17 jogos fora de casa."
+      ],
+      "team_insights": {
+        "Arsenal": [
+          "Arsenal venceu 5 dos últimos 7 jogos. Boa fase!",
+          "Arsenal sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Arsenal sofreu apenas 1 derrotas nos últimos 9 jogos fora de casa."
+        ],
+        "Aston Villa": [
+          "Aston Villa está há 5 jogos sem vencer fora de casa.",
+          "Aston Villa somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Aston Villa venceu 11 dos últimos 15 jogos em casa. Boa fase!",
+          "Aston Villa sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Aston Villa venceu apenas 1 dos últimos 8 jogos fora de casa."
+        ],
+        "Bournemouth": [
+          "Bournemouth está há 5 jogos sem vencer em casa.",
+          "Bournemouth está invicto há 14 jogos.",
+          "Bournemouth está invicto há 7 jogos em casa.",
+          "Bournemouth está invicto há 8 jogos fora de casa.",
+          "Bournemouth somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Bournemouth sofreu apenas 1 derrotas nos últimos 16 jogos.",
+          "Bournemouth venceu apenas 1 dos últimos 6 jogos em casa.",
+          "Bournemouth sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+          "Bournemouth sofreu apenas 1 derrotas nos últimos 10 jogos fora de casa."
+        ],
+        "Brentford": [
+          "Brentford está há 6 jogos sem vencer.",
+          "Brentford está há 6 jogos sem vencer em casa.",
+          "Brentford somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Brentford venceu apenas 1 dos últimos 9 jogos.",
+          "Brentford sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Brentford venceu apenas 1 dos últimos 8 jogos em casa.",
+          "Brentford sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Brentford sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Brighton": [
+          "Brighton está invicto há 5 jogos.",
+          "Brighton somou 13 pontos nos últimos 5 jogos. Excelente fase!",
+          "Brighton somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Brighton venceu 6 dos últimos 8 jogos. Boa fase!",
+          "Brighton sofreu apenas 1 derrotas nos últimos 8 jogos.",
+          "Brighton sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+        ],
+        "Burnley": [
+          "Burnley está na 5ª derrota seguida!",
+          "Burnley está na 4ª derrota seguida fora de casa!",
+          "Burnley está há 9 jogos sem vencer.",
+          "Burnley está há 13 jogos sem vencer em casa.",
+          "Burnley está há 5 jogos sem vencer fora de casa.",
+          "Burnley não pontuou nos últimos 5 jogos.",
+          "Burnley somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Burnley não pontuou nos últimos 3 jogos fora de casa.",
+          "Burnley perdeu 7 dos últimos 8 jogos.",
+          "Burnley venceu apenas 1 dos últimos 26 jogos.",
+          "Burnley venceu apenas 1 dos últimos 16 jogos em casa.",
+          "Burnley venceu apenas 1 dos últimos 13 jogos fora de casa."
+        ],
+        "Chelsea": [
+          "Chelsea está na 5ª derrota seguida!",
+          "Chelsea está na 3ª derrota seguida em casa!",
+          "Chelsea está há 5 jogos sem vencer em casa.",
+          "Chelsea não pontuou nos últimos 5 jogos.",
+          "Chelsea não pontuou nos últimos 3 jogos em casa.",
+          "Chelsea perdeu 6 dos últimos 7 jogos.",
+          "Chelsea venceu apenas 1 dos últimos 9 jogos.",
+          "Chelsea venceu apenas 1 dos últimos 6 jogos em casa."
+        ],
+        "Crystal Palace": [
+          "Crystal Palace sofreu apenas 1 derrotas nos últimos 5 jogos em casa."
+        ],
+        "Everton": [
+          "Everton somou apenas 1 pontos nos últimos 3 jogos fora de casa."
+        ],
+        "Fulham": [
+          "Fulham somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Fulham venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+          "Fulham venceu apenas 1 dos últimos 8 jogos fora de casa."
+        ],
+        "Leeds United": [
+          "Leeds United está invicto há 6 jogos.",
+          "Leeds United está invicto há 6 jogos fora de casa.",
+          "Leeds United somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Leeds United somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Leeds United sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Leeds United venceu apenas 1 dos últimos 14 jogos fora de casa.",
+          "Leeds United sofreu apenas 1 derrotas nos últimos 10 jogos fora de casa."
+        ],
+        "Liverpool": [
+          "Liverpool está na 3ª vitória seguida!",
+          "Liverpool somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Liverpool somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Liverpool sofreu apenas 1 derrotas nos últimos 11 jogos em casa."
+        ],
+        "Manchester City": [
+          "Manchester City está na 3ª vitória seguida!",
+          "Manchester City está invicto há 11 jogos.",
+          "Manchester City está invicto há 15 jogos em casa.",
+          "Manchester City está invicto há 6 jogos fora de casa.",
+          "Manchester City somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Manchester City somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Manchester City somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Manchester City venceu 7 dos últimos 9 jogos. Boa fase!",
+          "Manchester City sofreu apenas 1 derrotas nos últimos 21 jogos.",
+          "Manchester City venceu 12 dos últimos 15 jogos em casa. Boa fase!",
+          "Manchester City sofreu apenas 1 derrotas nos todos os jogos em casa.",
+          "Manchester City sofreu apenas 1 derrotas nos últimos 11 jogos fora de casa."
+        ],
+        "Manchester United": [
+          "Manchester United somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Manchester United venceu 6 dos últimos 7 jogos em casa. Boa fase!",
+          "Manchester United sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
+          "Manchester United sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa."
+        ],
+        "Newcastle United": [
+          "Newcastle United está na 4ª derrota seguida!",
+          "Newcastle United perdeu 9 dos últimos 12 jogos.",
+          "Newcastle United perdeu 5 dos últimos 6 jogos em casa.",
+          "Newcastle United venceu apenas 1 dos últimos 6 jogos em casa."
+        ],
+        "Nottingham Forest": [
+          "Nottingham Forest está invicto há 6 jogos.",
+          "Nottingham Forest somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Nottingham Forest somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Nottingham Forest sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Nottingham Forest venceu apenas 1 dos últimos 9 jogos em casa.",
+          "Nottingham Forest sofreu apenas 1 derrotas nos últimos 7 jogos em casa."
+        ],
+        "Sunderland": [
+          "Sunderland venceu apenas 1 dos últimos 5 jogos em casa."
+        ],
+        "Tottenham": [
+          "Tottenham está há 9 jogos sem vencer em casa.",
+          "Tottenham somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Tottenham perdeu 7 dos últimos 10 jogos.",
+          "Tottenham venceu apenas 1 dos últimos 16 jogos.",
+          "Tottenham venceu apenas 1 dos últimos 16 jogos em casa.",
+          "Tottenham venceu apenas 1 dos últimos 8 jogos fora de casa."
+        ],
+        "West Ham": [
+          "West Ham está invicto há 6 jogos em casa.",
+          "West Ham somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "West Ham sofreu apenas 1 derrotas nos últimos 8 jogos em casa."
+        ],
+        "Wolverhampton": [
+          "Wolverhampton está na 3ª derrota seguida!",
+          "Wolverhampton está há 17 jogos sem vencer fora de casa.",
+          "Wolverhampton somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Wolverhampton perdeu 10 dos últimos 14 jogos fora de casa.",
+          "Wolverhampton não venceu nenhum dos últimos 17 jogos fora de casa."
+        ]
+      },
+      "team_rankings": {
+        "Arsenal": [
+          "Arsenal é o melhor mandante!",
+          "Arsenal é o melhor visitante!"
+        ],
+        "Aston Villa": [],
+        "Bournemouth": [],
+        "Brentford": [],
+        "Brighton": [],
+        "Burnley": [
+          "Burnley é o pior mandante!",
+          "Burnley é o 2º pior visitante!"
+        ],
+        "Chelsea": [
+          "Chelsea é o 3º melhor visitante!"
+        ],
+        "Crystal Palace": [],
+        "Everton": [],
+        "Fulham": [],
+        "Leeds United": [
+          "Leeds United é o 3º pior visitante!"
+        ],
+        "Liverpool": [],
+        "Manchester City": [
+          "Manchester City é o 2º melhor mandante!",
+          "Manchester City é o 2º melhor visitante!"
+        ],
+        "Manchester United": [
+          "Manchester United é o 3º melhor mandante!"
+        ],
+        "Newcastle United": [],
+        "Nottingham Forest": [],
+        "Sunderland": [],
+        "Tottenham": [
+          "Tottenham é o 2º pior mandante!"
+        ],
+        "West Ham": [],
+        "Wolverhampton": [
+          "Wolverhampton é o 3º pior mandante!",
+          "Wolverhampton é o pior visitante!"
+        ]
+      },
+      "teams": [
+        "Arsenal",
+        "Aston Villa",
+        "Bournemouth",
+        "Brentford",
+        "Brighton",
+        "Burnley",
+        "Chelsea",
+        "Crystal Palace",
+        "Everton",
+        "Fulham",
+        "Leeds United",
+        "Liverpool",
+        "Manchester City",
+        "Manchester United",
+        "Newcastle United",
+        "Nottingham Forest",
+        "Sunderland",
+        "Tottenham",
+        "West Ham",
+        "Wolverhampton"
+      ],
+      "best_home": "Arsenal",
+      "worst_home": "Burnley",
+      "best_away": "Arsenal",
+      "worst_away": "Wolverhampton",
+      "best_attack_team": "Manchester City",
+      "best_attack_gols": 66,
+      "worst_attack_team": "Wolverhampton",
+      "worst_attack_gols": 24,
+      "best_defense_team": "Arsenal",
+      "best_defense_gols": 26,
+      "worst_defense_team": "Burnley",
+      "worst_defense_gols": 71
+    }
+  },
+  "Championship": {
+    "last_game_date": "2026-04-28",
+    "updated_at": "2026-05-01T23:25:33",
+    "data": {
+      "insights": [
+        "Birmingham City está na 3ª vitória seguida em casa!",
+        "Birmingham City está há 5 jogos sem vencer fora de casa.",
+        "Birmingham City sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Birmingham City venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Blackburn Rovers está há 5 jogos sem vencer em casa.",
+        "Blackburn Rovers sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Blackburn Rovers venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Blackburn Rovers sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Blackburn Rovers sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Bristol City venceu apenas 1 dos últimos 7 jogos em casa.",
+        "Bristol City venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Bristol City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Charlton Athletic está invicto há 7 jogos fora de casa.",
+        "Charlton Athletic venceu apenas 1 dos últimos 8 jogos.",
+        "Charlton Athletic venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Charlton Athletic venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Charlton Athletic sofreu apenas 1 derrotas nos últimos 9 jogos fora de casa.",
+        "Coventry City está invicto há 7 jogos.",
+        "Coventry City está invicto há 6 jogos fora de casa.",
+        "Coventry City venceu 10 dos últimos 14 jogos. Boa fase!",
+        "Coventry City sofreu apenas 1 derrotas nos últimos 15 jogos.",
+        "Coventry City venceu 16 dos últimos 20 jogos em casa. Boa fase!",
+        "Coventry City sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
+        "Coventry City sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
+        "Derby County está na 6ª vitória seguida em casa!",
+        "Derby County sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
+        "Derby County perdeu 6 dos últimos 8 jogos fora de casa.",
+        "Hull City está há 6 jogos sem vencer.",
+        "Hull City está há 5 jogos sem vencer fora de casa.",
+        "Hull City venceu apenas 1 dos últimos 8 jogos.",
+        "Hull City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Hull City venceu apenas 1 dos últimos 7 jogos fora de casa.",
+        "Ipswich Town está invicto há 16 jogos em casa.",
+        "Ipswich Town sofreu apenas 1 derrotas nos últimos 14 jogos.",
+        "Ipswich Town sofreu apenas 1 derrotas nos todos os jogos em casa.",
+        "Ipswich Town sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa.",
+        "Leicester City está há 8 jogos sem vencer.",
+        "Leicester City está há 5 jogos sem vencer em casa.",
+        "Leicester City está há 12 jogos sem vencer fora de casa.",
+        "Leicester City venceu apenas 1 dos últimos 19 jogos.",
+        "Leicester City venceu apenas 1 dos últimos 10 jogos em casa.",
+        "Leicester City venceu apenas 1 dos últimos 14 jogos fora de casa.",
+        "Leicester City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Middlesbrough está invicto há 5 jogos fora de casa.",
+        "Middlesbrough sofreu apenas 1 derrotas nos últimos 9 jogos fora de casa.",
+        "Millwall está invicto há 9 jogos fora de casa.",
+        "Millwall sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Millwall sofreu apenas 1 derrotas nos últimos 12 jogos fora de casa.",
+        "Norwich City está na 3ª vitória seguida fora de casa!",
+        "Norwich City sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Norwich City sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Norwich City venceu 5 dos últimos 6 jogos fora de casa. Boa fase!",
+        "Norwich City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Oxford United sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Oxford United venceu apenas 1 dos últimos 8 jogos fora de casa.",
+        "Portsmouth sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Preston North End venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Queens Park Rangers está na 3ª derrota seguida!",
+        "Queens Park Rangers está há 5 jogos sem vencer.",
+        "Queens Park Rangers venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Sheffield United venceu apenas 1 dos últimos 7 jogos em casa.",
+        "Sheffield Wednesday está há 39 jogos sem vencer.",
+        "Sheffield Wednesday está há 22 jogos sem vencer em casa.",
+        "Sheffield Wednesday está há 20 jogos sem vencer fora de casa.",
+        "Sheffield Wednesday perdeu 18 dos últimos 22 jogos.",
+        "Sheffield Wednesday venceu apenas 1 dos últimos 45 jogos.",
+        "Sheffield Wednesday perdeu 13 dos últimos 14 jogos fora de casa.",
+        "Sheffield Wednesday venceu apenas 1 dos todos os jogos fora de casa.",
+        "Southampton está na 3ª vitória seguida fora de casa!",
+        "Southampton está invicto há 18 jogos.",
+        "Southampton está invicto há 10 jogos em casa.",
+        "Southampton está invicto há 8 jogos fora de casa.",
+        "Southampton venceu 7 dos últimos 9 jogos. Boa fase!",
+        "Southampton sofreu apenas 1 derrotas nos últimos 19 jogos.",
+        "Southampton venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+        "Southampton sofreu apenas 1 derrotas nos últimos 17 jogos em casa.",
+        "Southampton venceu 6 dos últimos 7 jogos fora de casa. Boa fase!",
+        "Southampton sofreu apenas 1 derrotas nos últimos 10 jogos fora de casa.",
+        "Stoke City está na 3ª derrota seguida!",
+        "Stoke City está na 6ª derrota seguida fora de casa!",
+        "Stoke City está há 5 jogos sem vencer.",
+        "Stoke City está há 8 jogos sem vencer fora de casa.",
+        "Stoke City perdeu 5 dos últimos 7 jogos.",
+        "Stoke City venceu apenas 1 dos últimos 7 jogos.",
+        "Stoke City venceu apenas 1 dos últimos 9 jogos fora de casa.",
+        "Swansea City venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Swansea City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Watford está na 4ª derrota seguida!",
+        "Watford está na 5ª derrota seguida fora de casa!",
+        "Watford está há 7 jogos sem vencer.",
+        "Watford está há 6 jogos sem vencer fora de casa.",
+        "Watford perdeu 5 dos últimos 7 jogos.",
+        "Watford venceu apenas 1 dos últimos 10 jogos.",
+        "Watford venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Watford venceu apenas 1 dos últimos 11 jogos fora de casa.",
+        "West Bromwich está invicto há 10 jogos.",
+        "West Bromwich está invicto há 7 jogos em casa.",
+        "West Bromwich sofreu apenas 1 derrotas nos últimos 12 jogos.",
+        "West Bromwich sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
+        "West Bromwich sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+      ],
+      "team_insights": {
+        "Birmingham City": [
+          "Birmingham City está na 3ª vitória seguida em casa!",
+          "Birmingham City está há 5 jogos sem vencer fora de casa.",
+          "Birmingham City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Birmingham City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Birmingham City somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Birmingham City sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+          "Birmingham City venceu apenas 1 dos últimos 6 jogos fora de casa."
+        ],
+        "Blackburn Rovers": [
+          "Blackburn Rovers está há 5 jogos sem vencer em casa.",
+          "Blackburn Rovers sofreu apenas 1 derrotas nos últimos 8 jogos.",
+          "Blackburn Rovers venceu apenas 1 dos últimos 6 jogos em casa.",
+          "Blackburn Rovers sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Blackburn Rovers sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+        ],
+        "Bristol City": [
+          "Bristol City somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Bristol City venceu apenas 1 dos últimos 7 jogos em casa.",
+          "Bristol City venceu apenas 1 dos últimos 6 jogos fora de casa.",
+          "Bristol City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+        ],
+        "Charlton Athletic": [
+          "Charlton Athletic está invicto há 7 jogos fora de casa.",
+          "Charlton Athletic venceu apenas 1 dos últimos 8 jogos.",
+          "Charlton Athletic venceu apenas 1 dos últimos 5 jogos em casa.",
+          "Charlton Athletic venceu apenas 1 dos últimos 6 jogos fora de casa.",
+          "Charlton Athletic sofreu apenas 1 derrotas nos últimos 9 jogos fora de casa."
+        ],
+        "Coventry City": [
+          "Coventry City está invicto há 7 jogos.",
+          "Coventry City está invicto há 6 jogos fora de casa.",
+          "Coventry City somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Coventry City venceu 10 dos últimos 14 jogos. Boa fase!",
+          "Coventry City sofreu apenas 1 derrotas nos últimos 15 jogos.",
+          "Coventry City venceu 16 dos últimos 20 jogos em casa. Boa fase!",
+          "Coventry City sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
+          "Coventry City sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
+        ],
+        "Derby County": [
+          "Derby County está na 6ª vitória seguida em casa!",
+          "Derby County somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Derby County sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
+          "Derby County perdeu 6 dos últimos 8 jogos fora de casa."
+        ],
+        "Hull City": [
+          "Hull City está há 6 jogos sem vencer.",
+          "Hull City está há 5 jogos sem vencer fora de casa.",
+          "Hull City somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Hull City venceu apenas 1 dos últimos 8 jogos.",
+          "Hull City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Hull City venceu apenas 1 dos últimos 7 jogos fora de casa."
+        ],
+        "Ipswich Town": [
+          "Ipswich Town está invicto há 16 jogos em casa.",
+          "Ipswich Town sofreu apenas 1 derrotas nos últimos 14 jogos.",
+          "Ipswich Town sofreu apenas 1 derrotas nos todos os jogos em casa.",
+          "Ipswich Town sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa."
+        ],
+        "Leicester City": [
+          "Leicester City está há 8 jogos sem vencer.",
+          "Leicester City está há 5 jogos sem vencer em casa.",
+          "Leicester City está há 12 jogos sem vencer fora de casa.",
+          "Leicester City somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Leicester City somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Leicester City venceu apenas 1 dos últimos 19 jogos.",
+          "Leicester City venceu apenas 1 dos últimos 10 jogos em casa.",
+          "Leicester City venceu apenas 1 dos últimos 14 jogos fora de casa.",
+          "Leicester City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Middlesbrough": [
+          "Middlesbrough está invicto há 5 jogos fora de casa.",
+          "Middlesbrough sofreu apenas 1 derrotas nos últimos 9 jogos fora de casa."
+        ],
+        "Millwall": [
+          "Millwall está invicto há 9 jogos fora de casa.",
+          "Millwall sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Millwall sofreu apenas 1 derrotas nos últimos 12 jogos fora de casa."
+        ],
+        "Norwich City": [
+          "Norwich City está na 3ª vitória seguida fora de casa!",
+          "Norwich City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Norwich City somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Norwich City sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Norwich City sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Norwich City venceu 5 dos últimos 6 jogos fora de casa. Boa fase!",
+          "Norwich City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Oxford United": [
+          "Oxford United somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Oxford United sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Oxford United venceu apenas 1 dos últimos 8 jogos fora de casa."
+        ],
+        "Portsmouth": [
+          "Portsmouth somou 12 pontos nos últimos 5 jogos. Excelente fase!",
+          "Portsmouth somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Portsmouth sofreu apenas 1 derrotas nos últimos 7 jogos."
+        ],
+        "Preston North End": [
+          "Preston North End venceu apenas 1 dos últimos 6 jogos em casa."
+        ],
+        "Queens Park Rangers": [
+          "Queens Park Rangers está na 3ª derrota seguida!",
+          "Queens Park Rangers está há 5 jogos sem vencer.",
+          "Queens Park Rangers somou apenas 2 pontos nos últimos 5 jogos.",
+          "Queens Park Rangers somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Queens Park Rangers venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Sheffield United": [
+          "Sheffield United venceu apenas 1 dos últimos 7 jogos em casa."
+        ],
+        "Sheffield Wednesday": [
+          "Sheffield Wednesday está há 39 jogos sem vencer.",
+          "Sheffield Wednesday está há 22 jogos sem vencer em casa.",
+          "Sheffield Wednesday está há 20 jogos sem vencer fora de casa.",
+          "Sheffield Wednesday somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Sheffield Wednesday somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Sheffield Wednesday perdeu 18 dos últimos 22 jogos.",
+          "Sheffield Wednesday venceu apenas 1 dos últimos 45 jogos.",
+          "Sheffield Wednesday perdeu 13 dos últimos 14 jogos fora de casa.",
+          "Sheffield Wednesday venceu apenas 1 dos todos os jogos fora de casa."
+        ],
+        "Southampton": [
+          "Southampton está na 3ª vitória seguida fora de casa!",
+          "Southampton está invicto há 18 jogos.",
+          "Southampton está invicto há 10 jogos em casa.",
+          "Southampton está invicto há 8 jogos fora de casa.",
+          "Southampton somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Southampton somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Southampton venceu 7 dos últimos 9 jogos. Boa fase!",
+          "Southampton sofreu apenas 1 derrotas nos últimos 19 jogos.",
+          "Southampton venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+          "Southampton sofreu apenas 1 derrotas nos últimos 17 jogos em casa.",
+          "Southampton venceu 6 dos últimos 7 jogos fora de casa. Boa fase!",
+          "Southampton sofreu apenas 1 derrotas nos últimos 10 jogos fora de casa."
+        ],
+        "Stoke City": [
+          "Stoke City está na 3ª derrota seguida!",
+          "Stoke City está na 6ª derrota seguida fora de casa!",
+          "Stoke City está há 5 jogos sem vencer.",
+          "Stoke City está há 8 jogos sem vencer fora de casa.",
+          "Stoke City somou apenas 1 ponto nos últimos 5 jogos.",
+          "Stoke City somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Stoke City não pontuou nos últimos 3 jogos fora de casa.",
+          "Stoke City perdeu 5 dos últimos 7 jogos.",
+          "Stoke City venceu apenas 1 dos últimos 7 jogos.",
+          "Stoke City venceu apenas 1 dos últimos 9 jogos fora de casa."
+        ],
+        "Swansea City": [
+          "Swansea City somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Swansea City somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Swansea City venceu apenas 1 dos últimos 5 jogos em casa.",
+          "Swansea City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Watford": [
+          "Watford está na 4ª derrota seguida!",
+          "Watford está na 5ª derrota seguida fora de casa!",
+          "Watford está há 7 jogos sem vencer.",
+          "Watford está há 6 jogos sem vencer fora de casa.",
+          "Watford somou apenas 1 ponto nos últimos 5 jogos.",
+          "Watford somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Watford não pontuou nos últimos 3 jogos fora de casa.",
+          "Watford perdeu 5 dos últimos 7 jogos.",
+          "Watford venceu apenas 1 dos últimos 10 jogos.",
+          "Watford venceu apenas 1 dos últimos 5 jogos em casa.",
+          "Watford venceu apenas 1 dos últimos 11 jogos fora de casa."
+        ],
+        "West Bromwich": [
+          "West Bromwich está invicto há 10 jogos.",
+          "West Bromwich está invicto há 7 jogos em casa.",
+          "West Bromwich somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "West Bromwich sofreu apenas 1 derrotas nos últimos 12 jogos.",
+          "West Bromwich sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
+          "West Bromwich sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Wrexham": []
+      },
+      "team_rankings": {
+        "Birmingham City": [
+          "Birmingham City é o 3º melhor mandante!"
+        ],
+        "Blackburn Rovers": [
+          "Blackburn Rovers é o 2º pior mandante!"
+        ],
+        "Bristol City": [],
+        "Charlton Athletic": [],
+        "Coventry City": [
+          "Coventry City é o melhor mandante!",
+          "Coventry City é o 3º melhor visitante!"
+        ],
+        "Derby County": [],
+        "Hull City": [],
+        "Ipswich Town": [
+          "Ipswich Town é o 2º melhor mandante!"
+        ],
+        "Leicester City": [
+          "Leicester City é o 3º pior mandante!"
+        ],
+        "Middlesbrough": [
+          "Middlesbrough é o 2º melhor visitante!"
+        ],
+        "Millwall": [
+          "Millwall é o melhor visitante!"
+        ],
+        "Norwich City": [],
+        "Oxford United": [
+          "Oxford United é o 2º pior visitante!"
+        ],
+        "Portsmouth": [],
+        "Preston North End": [],
+        "Queens Park Rangers": [],
+        "Sheffield United": [],
+        "Sheffield Wednesday": [
+          "Sheffield Wednesday é o pior mandante!",
+          "Sheffield Wednesday é o pior visitante!"
+        ],
+        "Southampton": [],
+        "Stoke City": [],
+        "Swansea City": [],
+        "Watford": [],
+        "West Bromwich": [
+          "West Bromwich é o 3º pior visitante!"
+        ],
+        "Wrexham": []
+      },
+      "teams": [
+        "Birmingham City",
+        "Blackburn Rovers",
+        "Bristol City",
+        "Charlton Athletic",
+        "Coventry City",
+        "Derby County",
+        "Hull City",
+        "Ipswich Town",
+        "Leicester City",
+        "Middlesbrough",
+        "Millwall",
+        "Norwich City",
+        "Oxford United",
+        "Portsmouth",
+        "Preston North End",
+        "Queens Park Rangers",
+        "Sheffield United",
+        "Sheffield Wednesday",
+        "Southampton",
+        "Stoke City",
+        "Swansea City",
+        "Watford",
+        "West Bromwich",
+        "Wrexham"
+      ],
+      "best_home": "Coventry City",
+      "worst_home": "Sheffield Wednesday",
+      "best_away": "Millwall",
+      "worst_away": "Sheffield Wednesday",
+      "best_attack_team": "Coventry City",
+      "best_attack_gols": 93,
+      "worst_attack_team": "Sheffield Wednesday",
+      "worst_attack_gols": 27,
+      "best_defense_team": "Coventry City, Middlesbrough",
+      "best_defense_gols": 45,
+      "worst_defense_team": "Sheffield Wednesday",
+      "worst_defense_gols": 88
+    }
+  },
+  "League One": {
+    "last_game_date": "2026-04-28",
+    "updated_at": "2026-05-01T23:25:45",
+    "data": {
+      "insights": [
+        "AFC Wimbledon está na 3ª derrota seguida em casa!",
+        "AFC Wimbledon está há 5 jogos sem vencer em casa.",
+        "AFC Wimbledon perdeu 6 dos últimos 7 jogos.",
+        "AFC Wimbledon venceu apenas 1 dos últimos 10 jogos.",
+        "AFC Wimbledon venceu apenas 1 dos últimos 6 jogos em casa.",
+        "AFC Wimbledon venceu apenas 1 dos últimos 8 jogos fora de casa.",
+        "Barnsley está há 5 jogos sem vencer em casa.",
+        "Barnsley venceu apenas 1 dos últimos 7 jogos em casa.",
+        "Blackpool está na 3ª vitória seguida!",
+        "Blackpool está na 5ª vitória seguida em casa!",
+        "Blackpool está invicto há 7 jogos em casa.",
+        "Blackpool venceu 6 dos últimos 8 jogos. Boa fase!",
+        "Blackpool sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Blackpool sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
+        "Blackpool venceu apenas 1 dos últimos 11 jogos fora de casa.",
+        "Bolton Wanderers está invicto há 10 jogos em casa.",
+        "Bolton Wanderers sofreu apenas 1 derrotas nos todos os jogos em casa.",
+        "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Bradford City venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Bradford City sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+        "Bradford City perdeu 7 dos últimos 10 jogos fora de casa.",
+        "Burton Albion está invicto há 5 jogos.",
+        "Burton Albion sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Burton Albion sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Burton Albion venceu apenas 1 dos últimos 14 jogos fora de casa.",
+        "Burton Albion sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Cardiff City está na 3ª vitória seguida!",
+        "Cardiff City está na 3ª vitória seguida em casa!",
+        "Cardiff City está invicto há 7 jogos.",
+        "Cardiff City está invicto há 6 jogos fora de casa.",
+        "Cardiff City sofreu apenas 1 derrotas nos últimos 10 jogos.",
+        "Cardiff City venceu 14 dos últimos 18 jogos em casa. Boa fase!",
+        "Cardiff City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Cardiff City sofreu apenas 1 derrotas nos últimos 12 jogos fora de casa.",
+        "Exeter City está há 9 jogos sem vencer fora de casa.",
+        "Exeter City venceu apenas 1 dos últimos 19 jogos.",
+        "Exeter City venceu apenas 1 dos últimos 10 jogos em casa.",
+        "Exeter City venceu apenas 1 dos últimos 11 jogos fora de casa.",
+        "Huddersfield Town está há 5 jogos sem vencer em casa.",
+        "Huddersfield Town venceu apenas 1 dos últimos 9 jogos.",
+        "Huddersfield Town venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Huddersfield Town sofreu apenas 1 derrotas nos últimos 16 jogos em casa.",
+        "Huddersfield Town venceu apenas 1 dos últimos 7 jogos fora de casa.",
+        "Leyton Orient está há 7 jogos sem vencer.",
+        "Leyton Orient venceu apenas 1 dos últimos 8 jogos.",
+        "Leyton Orient venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Lincoln City está na 7ª vitória seguida em casa!",
+        "Lincoln City está invicto há 28 jogos.",
+        "Lincoln City está invicto há 17 jogos em casa.",
+        "Lincoln City está invicto há 13 jogos fora de casa.",
+        "Lincoln City venceu 12 dos últimos 14 jogos. Boa fase!",
+        "Lincoln City sofreu apenas 1 derrotas nos últimos 30 jogos.",
+        "Lincoln City sofreu apenas 1 derrotas nos todos os jogos em casa.",
+        "Lincoln City venceu 7 dos últimos 9 jogos fora de casa. Boa fase!",
+        "Lincoln City sofreu apenas 1 derrotas nos últimos 14 jogos fora de casa.",
+        "Luton Town está na 3ª vitória seguida em casa!",
+        "Luton Town está invicto há 10 jogos.",
+        "Luton Town está invicto há 5 jogos em casa.",
+        "Luton Town está invicto há 6 jogos fora de casa.",
+        "Luton Town venceu 7 dos últimos 9 jogos. Boa fase!",
+        "Luton Town sofreu apenas 1 derrotas nos últimos 13 jogos.",
+        "Luton Town sofreu apenas 1 derrotas nos últimos 17 jogos em casa.",
+        "Luton Town sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
+        "Mansfield Town está invicto há 5 jogos.",
+        "Mansfield Town está invicto há 6 jogos em casa.",
+        "Mansfield Town sofreu apenas 1 derrotas nos últimos 14 jogos.",
+        "Mansfield Town sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Mansfield Town sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa.",
+        "Northampton Town está na 10ª derrota seguida!",
+        "Northampton Town está na 4ª derrota seguida em casa!",
+        "Northampton Town está na 7ª derrota seguida fora de casa!",
+        "Northampton Town está há 15 jogos sem vencer.",
+        "Northampton Town está há 7 jogos sem vencer em casa.",
+        "Northampton Town está há 15 jogos sem vencer fora de casa.",
+        "Northampton Town venceu apenas 1 dos últimos 25 jogos.",
+        "Northampton Town perdeu 6 dos últimos 7 jogos em casa.",
+        "Northampton Town venceu apenas 1 dos últimos 11 jogos em casa.",
+        "Northampton Town venceu apenas 1 dos últimos 17 jogos fora de casa.",
+        "Peterborough está na 3ª derrota seguida fora de casa!",
+        "Peterborough está há 8 jogos sem vencer.",
+        "Peterborough está há 8 jogos sem vencer fora de casa.",
+        "Peterborough venceu apenas 1 dos últimos 14 jogos.",
+        "Peterborough venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Peterborough sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Peterborough venceu apenas 1 dos últimos 10 jogos fora de casa.",
+        "Plymouth Argyle está invicto há 5 jogos.",
+        "Plymouth Argyle está invicto há 5 jogos fora de casa.",
+        "Plymouth Argyle sofreu apenas 1 derrotas nos últimos 11 jogos.",
+        "Plymouth Argyle venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+        "Plymouth Argyle sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Plymouth Argyle sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa.",
+        "Port Vale está invicto há 5 jogos em casa.",
+        "Port Vale sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
+        "Port Vale perdeu 5 dos últimos 7 jogos fora de casa.",
+        "Reading está há 5 jogos sem vencer.",
+        "Reading venceu apenas 1 dos últimos 7 jogos.",
+        "Reading venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Rotherham United está há 6 jogos sem vencer em casa.",
+        "Rotherham United venceu apenas 1 dos últimos 12 jogos.",
+        "Rotherham United venceu apenas 1 dos últimos 9 jogos em casa.",
+        "Rotherham United perdeu 7 dos últimos 8 jogos fora de casa.",
+        "Rotherham United venceu apenas 1 dos últimos 8 jogos fora de casa.",
+        "Stevenage está invicto há 5 jogos em casa.",
+        "Stevenage sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Stevenage venceu 8 dos últimos 10 jogos em casa. Boa fase!",
+        "Stevenage sofreu apenas 1 derrotas nos últimos 14 jogos em casa.",
+        "Stevenage venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Stockport County venceu 9 dos últimos 12 jogos em casa. Boa fase!",
+        "Stockport County venceu apenas 1 dos últimos 8 jogos fora de casa.",
+        "Stockport County sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Wigan Athletic sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Wigan Athletic venceu apenas 1 dos últimos 10 jogos fora de casa.",
+        "Wigan Athletic sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Wycombe Wanderers está há 5 jogos sem vencer.",
+        "Wycombe Wanderers perdeu 5 dos últimos 7 jogos.",
+        "Wycombe Wanderers venceu apenas 1 dos últimos 7 jogos.",
+        "Wycombe Wanderers venceu apenas 1 dos últimos 6 jogos fora de casa."
+      ],
+      "team_insights": {
+        "AFC Wimbledon": [
+          "AFC Wimbledon está na 3ª derrota seguida em casa!",
+          "AFC Wimbledon está há 5 jogos sem vencer em casa.",
+          "AFC Wimbledon não pontuou nos últimos 3 jogos em casa.",
+          "AFC Wimbledon perdeu 6 dos últimos 7 jogos.",
+          "AFC Wimbledon venceu apenas 1 dos últimos 10 jogos.",
+          "AFC Wimbledon venceu apenas 1 dos últimos 6 jogos em casa.",
+          "AFC Wimbledon venceu apenas 1 dos últimos 8 jogos fora de casa."
+        ],
+        "Barnsley": [
+          "Barnsley está há 5 jogos sem vencer em casa.",
+          "Barnsley somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Barnsley venceu apenas 1 dos últimos 7 jogos em casa."
+        ],
+        "Blackpool": [
+          "Blackpool está na 3ª vitória seguida!",
+          "Blackpool está na 5ª vitória seguida em casa!",
+          "Blackpool está invicto há 7 jogos em casa.",
+          "Blackpool somou 12 pontos nos últimos 5 jogos. Excelente fase!",
+          "Blackpool somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Blackpool venceu 6 dos últimos 8 jogos. Boa fase!",
+          "Blackpool sofreu apenas 1 derrotas nos últimos 8 jogos.",
+          "Blackpool sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
+          "Blackpool venceu apenas 1 dos últimos 11 jogos fora de casa."
+        ],
+        "Bolton Wanderers": [
+          "Bolton Wanderers está invicto há 10 jogos em casa.",
+          "Bolton Wanderers sofreu apenas 1 derrotas nos todos os jogos em casa.",
+          "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Bradford City": [
+          "Bradford City somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Bradford City venceu apenas 1 dos últimos 5 jogos em casa.",
+          "Bradford City sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+          "Bradford City perdeu 7 dos últimos 10 jogos fora de casa."
+        ],
+        "Burton Albion": [
+          "Burton Albion está invicto há 5 jogos.",
+          "Burton Albion somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Burton Albion sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Burton Albion sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Burton Albion venceu apenas 1 dos últimos 14 jogos fora de casa.",
+          "Burton Albion sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+        ],
+        "Cardiff City": [
+          "Cardiff City está na 3ª vitória seguida!",
+          "Cardiff City está na 3ª vitória seguida em casa!",
+          "Cardiff City está invicto há 7 jogos.",
+          "Cardiff City está invicto há 6 jogos fora de casa.",
+          "Cardiff City somou 13 pontos nos últimos 5 jogos. Excelente fase!",
+          "Cardiff City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Cardiff City sofreu apenas 1 derrotas nos últimos 10 jogos.",
+          "Cardiff City venceu 14 dos últimos 18 jogos em casa. Boa fase!",
+          "Cardiff City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Cardiff City sofreu apenas 1 derrotas nos últimos 12 jogos fora de casa."
+        ],
+        "Doncaster Rovers": [],
+        "Exeter City": [
+          "Exeter City está há 9 jogos sem vencer fora de casa.",
+          "Exeter City somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Exeter City venceu apenas 1 dos últimos 19 jogos.",
+          "Exeter City venceu apenas 1 dos últimos 10 jogos em casa.",
+          "Exeter City venceu apenas 1 dos últimos 11 jogos fora de casa."
+        ],
+        "Huddersfield Town": [
+          "Huddersfield Town está há 5 jogos sem vencer em casa.",
+          "Huddersfield Town somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Huddersfield Town venceu apenas 1 dos últimos 9 jogos.",
+          "Huddersfield Town venceu apenas 1 dos últimos 6 jogos em casa.",
+          "Huddersfield Town sofreu apenas 1 derrotas nos últimos 16 jogos em casa.",
+          "Huddersfield Town venceu apenas 1 dos últimos 7 jogos fora de casa."
+        ],
+        "Leyton Orient": [
+          "Leyton Orient está há 7 jogos sem vencer.",
+          "Leyton Orient somou apenas 1 ponto nos últimos 5 jogos.",
+          "Leyton Orient somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Leyton Orient somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Leyton Orient venceu apenas 1 dos últimos 8 jogos.",
+          "Leyton Orient venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Lincoln City": [
+          "Lincoln City está na 7ª vitória seguida em casa!",
+          "Lincoln City está invicto há 28 jogos.",
+          "Lincoln City está invicto há 17 jogos em casa.",
+          "Lincoln City está invicto há 13 jogos fora de casa.",
+          "Lincoln City somou 13 pontos nos últimos 5 jogos. Excelente fase!",
+          "Lincoln City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Lincoln City somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Lincoln City venceu 12 dos últimos 14 jogos. Boa fase!",
+          "Lincoln City sofreu apenas 1 derrotas nos últimos 30 jogos.",
+          "Lincoln City sofreu apenas 1 derrotas nos todos os jogos em casa.",
+          "Lincoln City venceu 7 dos últimos 9 jogos fora de casa. Boa fase!",
+          "Lincoln City sofreu apenas 1 derrotas nos últimos 14 jogos fora de casa."
+        ],
+        "Luton Town": [
+          "Luton Town está na 3ª vitória seguida em casa!",
+          "Luton Town está invicto há 10 jogos.",
+          "Luton Town está invicto há 5 jogos em casa.",
+          "Luton Town está invicto há 6 jogos fora de casa.",
+          "Luton Town somou 13 pontos nos últimos 5 jogos. Excelente fase!",
+          "Luton Town somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Luton Town somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Luton Town venceu 7 dos últimos 9 jogos. Boa fase!",
+          "Luton Town sofreu apenas 1 derrotas nos últimos 13 jogos.",
+          "Luton Town sofreu apenas 1 derrotas nos últimos 17 jogos em casa.",
+          "Luton Town sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
+        ],
+        "Mansfield Town": [
+          "Mansfield Town está invicto há 5 jogos.",
+          "Mansfield Town está invicto há 6 jogos em casa.",
+          "Mansfield Town somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Mansfield Town sofreu apenas 1 derrotas nos últimos 14 jogos.",
+          "Mansfield Town sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Mansfield Town sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa."
+        ],
+        "Northampton Town": [
+          "Northampton Town está na 10ª derrota seguida!",
+          "Northampton Town está na 4ª derrota seguida em casa!",
+          "Northampton Town está na 7ª derrota seguida fora de casa!",
+          "Northampton Town está há 15 jogos sem vencer.",
+          "Northampton Town está há 7 jogos sem vencer em casa.",
+          "Northampton Town está há 15 jogos sem vencer fora de casa.",
+          "Northampton Town somou apenas 0 pontos nos últimos 5 jogos.",
+          "Northampton Town não pontuou nos últimos 3 jogos em casa.",
+          "Northampton Town não pontuou nos últimos 3 jogos fora de casa.",
+          "Northampton Town venceu apenas 1 dos últimos 25 jogos.",
+          "Northampton Town perdeu 6 dos últimos 7 jogos em casa.",
+          "Northampton Town venceu apenas 1 dos últimos 11 jogos em casa.",
+          "Northampton Town venceu apenas 1 dos últimos 17 jogos fora de casa."
+        ],
+        "Peterborough": [
+          "Peterborough está na 3ª derrota seguida fora de casa!",
+          "Peterborough está há 8 jogos sem vencer.",
+          "Peterborough está há 8 jogos sem vencer fora de casa.",
+          "Peterborough somou apenas 2 pontos nos últimos 5 jogos.",
+          "Peterborough somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Peterborough não pontuou nos últimos 3 jogos fora de casa.",
+          "Peterborough venceu apenas 1 dos últimos 14 jogos.",
+          "Peterborough venceu apenas 1 dos últimos 6 jogos em casa.",
+          "Peterborough sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Peterborough venceu apenas 1 dos últimos 10 jogos fora de casa."
+        ],
+        "Plymouth Argyle": [
+          "Plymouth Argyle está invicto há 5 jogos.",
+          "Plymouth Argyle está invicto há 5 jogos fora de casa.",
+          "Plymouth Argyle somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Plymouth Argyle somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Plymouth Argyle sofreu apenas 1 derrotas nos últimos 11 jogos.",
+          "Plymouth Argyle venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+          "Plymouth Argyle sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Plymouth Argyle sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa."
+        ],
+        "Port Vale": [
+          "Port Vale está invicto há 5 jogos em casa.",
+          "Port Vale sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
+          "Port Vale perdeu 5 dos últimos 7 jogos fora de casa."
+        ],
+        "Reading": [
+          "Reading está há 5 jogos sem vencer.",
+          "Reading somou apenas 2 pontos nos últimos 5 jogos.",
+          "Reading somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Reading venceu apenas 1 dos últimos 7 jogos.",
+          "Reading venceu apenas 1 dos últimos 6 jogos fora de casa."
+        ],
+        "Rotherham United": [
+          "Rotherham United está há 6 jogos sem vencer em casa.",
+          "Rotherham United somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Rotherham United venceu apenas 1 dos últimos 12 jogos.",
+          "Rotherham United venceu apenas 1 dos últimos 9 jogos em casa.",
+          "Rotherham United perdeu 7 dos últimos 8 jogos fora de casa.",
+          "Rotherham United venceu apenas 1 dos últimos 8 jogos fora de casa."
+        ],
+        "Stevenage": [
+          "Stevenage está invicto há 5 jogos em casa.",
+          "Stevenage somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Stevenage sofreu apenas 1 derrotas nos últimos 8 jogos.",
+          "Stevenage venceu 8 dos últimos 10 jogos em casa. Boa fase!",
+          "Stevenage sofreu apenas 1 derrotas nos últimos 14 jogos em casa.",
+          "Stevenage venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Stockport County": [
+          "Stockport County venceu 9 dos últimos 12 jogos em casa. Boa fase!",
+          "Stockport County venceu apenas 1 dos últimos 8 jogos fora de casa.",
+          "Stockport County sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+        ],
+        "Wigan Athletic": [
+          "Wigan Athletic somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Wigan Athletic sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+          "Wigan Athletic venceu apenas 1 dos últimos 10 jogos fora de casa.",
+          "Wigan Athletic sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+        ],
+        "Wycombe Wanderers": [
+          "Wycombe Wanderers está há 5 jogos sem vencer.",
+          "Wycombe Wanderers somou apenas 1 ponto nos últimos 5 jogos.",
+          "Wycombe Wanderers somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Wycombe Wanderers perdeu 5 dos últimos 7 jogos.",
+          "Wycombe Wanderers venceu apenas 1 dos últimos 7 jogos.",
+          "Wycombe Wanderers venceu apenas 1 dos últimos 6 jogos fora de casa."
+        ]
+      },
+      "team_rankings": {
+        "AFC Wimbledon": [],
+        "Barnsley": [],
+        "Blackpool": [
+          "Blackpool é o 3º pior visitante!"
+        ],
+        "Bolton Wanderers": [],
+        "Bradford City": [
+          "Bradford City é o 3º melhor mandante!"
+        ],
+        "Burton Albion": [],
+        "Cardiff City": [
+          "Cardiff City é o 2º melhor mandante!",
+          "Cardiff City é o 2º melhor visitante!"
+        ],
+        "Doncaster Rovers": [],
+        "Exeter City": [],
+        "Huddersfield Town": [],
+        "Leyton Orient": [],
+        "Lincoln City": [
+          "Lincoln City é o melhor mandante!",
+          "Lincoln City é o melhor visitante!"
+        ],
+        "Luton Town": [],
+        "Mansfield Town": [],
+        "Northampton Town": [
+          "Northampton Town é o 2º pior mandante!",
+          "Northampton Town é o pior visitante!"
+        ],
+        "Peterborough": [],
+        "Plymouth Argyle": [
+          "Plymouth Argyle é o 3º melhor visitante!"
+        ],
+        "Port Vale": [
+          "Port Vale é o pior mandante!"
+        ],
+        "Reading": [],
+        "Rotherham United": [
+          "Rotherham United é o 3º pior mandante!",
+          "Rotherham United é o 2º pior visitante!"
+        ],
+        "Stevenage": [],
+        "Stockport County": [],
+        "Wigan Athletic": [],
+        "Wycombe Wanderers": []
+      },
+      "teams": [
+        "AFC Wimbledon",
+        "Barnsley",
+        "Blackpool",
+        "Bolton Wanderers",
+        "Bradford City",
+        "Burton Albion",
+        "Cardiff City",
+        "Doncaster Rovers",
+        "Exeter City",
+        "Huddersfield Town",
+        "Leyton Orient",
+        "Lincoln City",
+        "Luton Town",
+        "Mansfield Town",
+        "Northampton Town",
+        "Peterborough",
+        "Plymouth Argyle",
+        "Port Vale",
+        "Reading",
+        "Rotherham United",
+        "Stevenage",
+        "Stockport County",
+        "Wigan Athletic",
+        "Wycombe Wanderers"
+      ],
+      "best_home": "Lincoln City",
+      "worst_home": "Port Vale",
+      "best_away": "Lincoln City",
+      "worst_away": "Northampton Town",
+      "best_attack_team": "Lincoln City",
+      "best_attack_gols": 87,
+      "worst_attack_team": "Port Vale",
+      "worst_attack_gols": 36,
+      "best_defense_team": "Lincoln City",
+      "best_defense_gols": 41,
+      "worst_defense_team": "Northampton Town",
+      "worst_defense_gols": 71
+    }
+  },
+  "League Two": {
+    "last_game_date": "2026-04-25",
+    "updated_at": "2026-05-01T23:26:00",
+    "data": {
+      "insights": [
+        "Accrington está há 5 jogos sem vencer.",
+        "Accrington está há 6 jogos sem vencer fora de casa.",
+        "Accrington venceu apenas 1 dos últimos 14 jogos.",
+        "Accrington venceu apenas 1 dos últimos 8 jogos em casa.",
+        "Accrington venceu apenas 1 dos últimos 8 jogos fora de casa.",
+        "Barnet está na 4ª vitória seguida!",
+        "Barnet está na 3ª vitória seguida fora de casa!",
+        "Barnet está invicto há 8 jogos.",
+        "Barnet venceu 6 dos últimos 7 jogos. Boa fase!",
+        "Barnet sofreu apenas 1 derrotas nos últimos 9 jogos.",
+        "Barnet sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Barnet sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Barrow está há 11 jogos sem vencer fora de casa.",
+        "Barrow perdeu 16 dos últimos 22 jogos.",
+        "Barrow perdeu 10 dos últimos 14 jogos em casa.",
+        "Barrow perdeu 9 dos últimos 11 jogos fora de casa.",
+        "Barrow venceu apenas 1 dos últimos 16 jogos fora de casa.",
+        "Bristol Rovers está na 8ª vitória seguida!",
+        "Bristol Rovers está na 7ª vitória seguida em casa!",
+        "Bristol Rovers está na 3ª vitória seguida fora de casa!",
+        "Bristol Rovers sofreu apenas 1 derrotas nos últimos 13 jogos.",
+        "Bristol Rovers sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+        "Bristol Rovers sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Bromley não perdeu em casa na temporada inteira.",
+        "Bromley venceu apenas 1 dos últimos 7 jogos fora de casa.",
+        "Cambridge United está há 5 jogos sem vencer fora de casa.",
+        "Cambridge United sofreu apenas 1 derrotas nos últimos 19 jogos em casa.",
+        "Cambridge United venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Cambridge United sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
+        "Cheltenham Town sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Chesterfield está invicto há 7 jogos.",
+        "Chesterfield venceu 5 dos últimos 7 jogos. Boa fase!",
+        "Chesterfield sofreu apenas 1 derrotas nos últimos 9 jogos.",
+        "Chesterfield sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Chesterfield sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa.",
+        "Crawley Town venceu apenas 1 dos últimos 8 jogos em casa.",
+        "Crawley Town sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Crawley Town venceu apenas 1 dos últimos 9 jogos fora de casa.",
+        "Crewe Alexandra está na 3ª derrota seguida!",
+        "Crewe Alexandra está na 3ª derrota seguida fora de casa!",
+        "Crewe Alexandra venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Fleetwood Town venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Fleetwood Town sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Fleetwood Town venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Gillingham está na 3ª derrota seguida!",
+        "Gillingham está há 6 jogos sem vencer fora de casa.",
+        "Gillingham perdeu 8 dos últimos 11 jogos.",
+        "Gillingham venceu apenas 1 dos últimos 12 jogos.",
+        "Gillingham venceu apenas 1 dos últimos 7 jogos em casa.",
+        "Gillingham perdeu 7 dos últimos 10 jogos fora de casa.",
+        "Gillingham venceu apenas 1 dos últimos 10 jogos fora de casa.",
+        "Grimsby Town está na 3ª vitória seguida!",
+        "Grimsby Town venceu 7 dos últimos 9 jogos. Boa fase!",
+        "Grimsby Town sofreu apenas 1 derrotas nos últimos 13 jogos em casa.",
+        "Harrogate Town perdeu 13 dos últimos 17 jogos em casa.",
+        "Harrogate Town venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Milton Keynes Dons está na 3ª vitória seguida!",
+        "Milton Keynes Dons está invicto há 5 jogos.",
+        "Milton Keynes Dons venceu 7 dos últimos 10 jogos em casa. Boa fase!",
+        "Milton Keynes Dons sofreu apenas 1 derrotas nos últimos 18 jogos em casa.",
+        "Milton Keynes Dons sofreu apenas 1 derrotas nos últimos 10 jogos fora de casa.",
+        "Newport County está na 3ª derrota seguida fora de casa!",
+        "Newport County perdeu 9 dos últimos 12 jogos fora de casa.",
+        "Newport County venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Notts County venceu 7 dos últimos 10 jogos em casa. Boa fase!",
+        "Oldham Athletic está na 4ª derrota seguida!",
+        "Oldham Athletic está na 3ª derrota seguida fora de casa!",
+        "Oldham Athletic está há 5 jogos sem vencer.",
+        "Oldham Athletic perdeu 5 dos últimos 7 jogos.",
+        "Oldham Athletic venceu apenas 1 dos últimos 7 jogos.",
+        "Oldham Athletic venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+        "Oldham Athletic sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
+        "Oldham Athletic venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Salford City está invicto há 7 jogos em casa.",
+        "Salford City venceu 8 dos últimos 11 jogos. Boa fase!",
+        "Salford City venceu 6 dos últimos 7 jogos em casa. Boa fase!",
+        "Salford City sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
+        "Shrewsbury Town venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Swindon Town venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Swindon Town sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Tranmere Rovers está na 6ª derrota seguida em casa!",
+        "Tranmere Rovers perdeu 17 dos últimos 21 jogos.",
+        "Tranmere Rovers venceu apenas 1 dos últimos 14 jogos.",
+        "Tranmere Rovers venceu apenas 1 dos últimos 11 jogos em casa.",
+        "Tranmere Rovers perdeu 8 dos últimos 11 jogos fora de casa.",
+        "Tranmere Rovers venceu apenas 1 dos últimos 11 jogos fora de casa.",
+        "Walsall venceu apenas 1 dos últimos 12 jogos em casa."
+      ],
+      "team_insights": {
+        "Accrington": [
+          "Accrington está há 5 jogos sem vencer.",
+          "Accrington está há 6 jogos sem vencer fora de casa.",
+          "Accrington somou apenas 2 pontos nos últimos 5 jogos.",
+          "Accrington somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Accrington venceu apenas 1 dos últimos 14 jogos.",
+          "Accrington venceu apenas 1 dos últimos 8 jogos em casa.",
+          "Accrington venceu apenas 1 dos últimos 8 jogos fora de casa."
+        ],
+        "Barnet": [
+          "Barnet está na 4ª vitória seguida!",
+          "Barnet está na 3ª vitória seguida fora de casa!",
+          "Barnet está invicto há 8 jogos.",
+          "Barnet somou 13 pontos nos últimos 5 jogos. Excelente fase!",
+          "Barnet somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Barnet somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Barnet venceu 6 dos últimos 7 jogos. Boa fase!",
+          "Barnet sofreu apenas 1 derrotas nos últimos 9 jogos.",
+          "Barnet sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+          "Barnet sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Barrow": [
+          "Barrow está há 11 jogos sem vencer fora de casa.",
+          "Barrow somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Barrow perdeu 16 dos últimos 22 jogos.",
+          "Barrow perdeu 10 dos últimos 14 jogos em casa.",
+          "Barrow perdeu 9 dos últimos 11 jogos fora de casa.",
+          "Barrow venceu apenas 1 dos últimos 16 jogos fora de casa."
+        ],
+        "Bristol Rovers": [
+          "Bristol Rovers está na 8ª vitória seguida!",
+          "Bristol Rovers está na 7ª vitória seguida em casa!",
+          "Bristol Rovers está na 3ª vitória seguida fora de casa!",
+          "Bristol Rovers somou 15 pontos nos últimos 5 jogos. Excelente fase!",
+          "Bristol Rovers somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Bristol Rovers somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Bristol Rovers sofreu apenas 1 derrotas nos últimos 13 jogos.",
+          "Bristol Rovers sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+          "Bristol Rovers sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Bromley": [
+          "Bromley somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Bromley somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Bromley não perdeu em casa na temporada inteira.",
+          "Bromley venceu apenas 1 dos últimos 7 jogos fora de casa."
+        ],
+        "Cambridge United": [
+          "Cambridge United está há 5 jogos sem vencer fora de casa.",
+          "Cambridge United somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Cambridge United sofreu apenas 1 derrotas nos últimos 19 jogos em casa.",
+          "Cambridge United venceu apenas 1 dos últimos 6 jogos fora de casa.",
+          "Cambridge United sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
+        ],
+        "Cheltenham Town": [
+          "Cheltenham Town sofreu apenas 1 derrotas nos últimos 7 jogos em casa."
+        ],
+        "Chesterfield": [
+          "Chesterfield está invicto há 7 jogos.",
+          "Chesterfield somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Chesterfield somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Chesterfield somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Chesterfield venceu 5 dos últimos 7 jogos. Boa fase!",
+          "Chesterfield sofreu apenas 1 derrotas nos últimos 9 jogos.",
+          "Chesterfield sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Chesterfield sofreu apenas 1 derrotas nos últimos 8 jogos fora de casa."
+        ],
+        "Colchester United": [],
+        "Crawley Town": [
+          "Crawley Town venceu apenas 1 dos últimos 8 jogos em casa.",
+          "Crawley Town sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+          "Crawley Town venceu apenas 1 dos últimos 9 jogos fora de casa."
+        ],
+        "Crewe Alexandra": [
+          "Crewe Alexandra está na 3ª derrota seguida!",
+          "Crewe Alexandra está na 3ª derrota seguida fora de casa!",
+          "Crewe Alexandra não pontuou nos últimos 3 jogos fora de casa.",
+          "Crewe Alexandra venceu apenas 1 dos últimos 6 jogos fora de casa."
+        ],
+        "Fleetwood Town": [
+          "Fleetwood Town venceu apenas 1 dos últimos 6 jogos em casa.",
+          "Fleetwood Town sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Fleetwood Town venceu apenas 1 dos últimos 6 jogos fora de casa."
+        ],
+        "Gillingham": [
+          "Gillingham está na 3ª derrota seguida!",
+          "Gillingham está há 6 jogos sem vencer fora de casa.",
+          "Gillingham somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Gillingham perdeu 8 dos últimos 11 jogos.",
+          "Gillingham venceu apenas 1 dos últimos 12 jogos.",
+          "Gillingham venceu apenas 1 dos últimos 7 jogos em casa.",
+          "Gillingham perdeu 7 dos últimos 10 jogos fora de casa.",
+          "Gillingham venceu apenas 1 dos últimos 10 jogos fora de casa."
+        ],
+        "Grimsby Town": [
+          "Grimsby Town está na 3ª vitória seguida!",
+          "Grimsby Town somou 12 pontos nos últimos 5 jogos. Excelente fase!",
+          "Grimsby Town venceu 7 dos últimos 9 jogos. Boa fase!",
+          "Grimsby Town sofreu apenas 1 derrotas nos últimos 13 jogos em casa."
+        ],
+        "Harrogate Town": [
+          "Harrogate Town perdeu 13 dos últimos 17 jogos em casa.",
+          "Harrogate Town venceu apenas 1 dos últimos 6 jogos em casa."
+        ],
+        "Milton Keynes Dons": [
+          "Milton Keynes Dons está na 3ª vitória seguida!",
+          "Milton Keynes Dons está invicto há 5 jogos.",
+          "Milton Keynes Dons somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Milton Keynes Dons somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Milton Keynes Dons venceu 7 dos últimos 10 jogos em casa. Boa fase!",
+          "Milton Keynes Dons sofreu apenas 1 derrotas nos últimos 18 jogos em casa.",
+          "Milton Keynes Dons sofreu apenas 1 derrotas nos últimos 10 jogos fora de casa."
+        ],
+        "Newport County": [
+          "Newport County está na 3ª derrota seguida fora de casa!",
+          "Newport County não pontuou nos últimos 3 jogos fora de casa.",
+          "Newport County perdeu 9 dos últimos 12 jogos fora de casa.",
+          "Newport County venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Notts County": [
+          "Notts County venceu 7 dos últimos 10 jogos em casa. Boa fase!"
+        ],
+        "Oldham Athletic": [
+          "Oldham Athletic está na 4ª derrota seguida!",
+          "Oldham Athletic está na 3ª derrota seguida fora de casa!",
+          "Oldham Athletic está há 5 jogos sem vencer.",
+          "Oldham Athletic somou apenas 1 ponto nos últimos 5 jogos.",
+          "Oldham Athletic não pontuou nos últimos 3 jogos fora de casa.",
+          "Oldham Athletic perdeu 5 dos últimos 7 jogos.",
+          "Oldham Athletic venceu apenas 1 dos últimos 7 jogos.",
+          "Oldham Athletic venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+          "Oldham Athletic sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
+          "Oldham Athletic venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Salford City": [
+          "Salford City está invicto há 7 jogos em casa.",
+          "Salford City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Salford City somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Salford City venceu 8 dos últimos 11 jogos. Boa fase!",
+          "Salford City venceu 6 dos últimos 7 jogos em casa. Boa fase!",
+          "Salford City sofreu apenas 1 derrotas nos últimos 8 jogos em casa."
+        ],
+        "Shrewsbury Town": [
+          "Shrewsbury Town somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Shrewsbury Town somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Shrewsbury Town venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Swindon Town": [
+          "Swindon Town somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Swindon Town venceu apenas 1 dos últimos 6 jogos em casa.",
+          "Swindon Town sofreu apenas 1 derrotas nos últimos 5 jogos em casa."
+        ],
+        "Tranmere Rovers": [
+          "Tranmere Rovers está na 6ª derrota seguida em casa!",
+          "Tranmere Rovers não pontuou nos últimos 3 jogos em casa.",
+          "Tranmere Rovers perdeu 17 dos últimos 21 jogos.",
+          "Tranmere Rovers venceu apenas 1 dos últimos 14 jogos.",
+          "Tranmere Rovers venceu apenas 1 dos últimos 11 jogos em casa.",
+          "Tranmere Rovers perdeu 8 dos últimos 11 jogos fora de casa.",
+          "Tranmere Rovers venceu apenas 1 dos últimos 11 jogos fora de casa."
+        ],
+        "Walsall": [
+          "Walsall somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Walsall venceu apenas 1 dos últimos 12 jogos em casa."
+        ]
+      },
+      "team_rankings": {
+        "Accrington": [],
+        "Barnet": [
+          "Barnet é o 3º melhor visitante!"
+        ],
+        "Barrow": [
+          "Barrow é o 3º pior mandante!",
+          "Barrow é o 3º pior visitante!"
+        ],
+        "Bristol Rovers": [],
+        "Bromley": [
+          "Bromley é o 2º melhor mandante!"
+        ],
+        "Cambridge United": [
+          "Cambridge United é o melhor mandante!"
+        ],
+        "Cheltenham Town": [],
+        "Chesterfield": [],
+        "Colchester United": [],
+        "Crawley Town": [
+          "Crawley Town é o pior visitante!"
+        ],
+        "Crewe Alexandra": [],
+        "Fleetwood Town": [],
+        "Gillingham": [],
+        "Grimsby Town": [],
+        "Harrogate Town": [
+          "Harrogate Town é o pior mandante!"
+        ],
+        "Milton Keynes Dons": [
+          "Milton Keynes Dons é o melhor visitante!"
+        ],
+        "Newport County": [],
+        "Notts County": [
+          "Notts County é o 2º melhor visitante!"
+        ],
+        "Oldham Athletic": [],
+        "Salford City": [
+          "Salford City é o 3º melhor mandante!"
+        ],
+        "Shrewsbury Town": [
+          "Shrewsbury Town é o 2º pior visitante!"
+        ],
+        "Swindon Town": [],
+        "Tranmere Rovers": [
+          "Tranmere Rovers é o 2º pior mandante!"
+        ],
+        "Walsall": []
+      },
+      "teams": [
+        "Accrington",
+        "Barnet",
+        "Barrow",
+        "Bristol Rovers",
+        "Bromley",
+        "Cambridge United",
+        "Cheltenham Town",
+        "Chesterfield",
+        "Colchester United",
+        "Crawley Town",
+        "Crewe Alexandra",
+        "Fleetwood Town",
+        "Gillingham",
+        "Grimsby Town",
+        "Harrogate Town",
+        "Milton Keynes Dons",
+        "Newport County",
+        "Notts County",
+        "Oldham Athletic",
+        "Salford City",
+        "Shrewsbury Town",
+        "Swindon Town",
+        "Tranmere Rovers",
+        "Walsall"
+      ],
+      "best_home": "Cambridge United",
+      "worst_home": "Harrogate Town",
+      "best_away": "Milton Keynes Dons",
+      "worst_away": "Crawley Town",
+      "best_attack_team": "Milton Keynes Dons",
+      "best_attack_gols": 85,
+      "worst_attack_team": "Harrogate Town",
+      "worst_attack_gols": 38,
+      "best_defense_team": "Cambridge United",
+      "best_defense_gols": 33,
+      "worst_defense_team": "Tranmere Rovers",
+      "worst_defense_gols": 78
+    }
+  },
+  "National League": {
+    "last_game_date": "2026-04-25",
+    "updated_at": "2026-05-01T23:26:19",
+    "data": {
+      "insights": [
+        "Aldershot Town está na 5ª derrota seguida!",
+        "Aldershot Town está na 3ª derrota seguida em casa!",
+        "Aldershot Town está há 6 jogos sem vencer.",
+        "Aldershot Town está há 8 jogos sem vencer em casa.",
+        "Aldershot Town perdeu 11 dos últimos 13 jogos.",
+        "Aldershot Town venceu apenas 1 dos últimos 13 jogos.",
+        "Aldershot Town perdeu 7 dos últimos 8 jogos em casa.",
+        "Aldershot Town venceu apenas 1 dos últimos 9 jogos em casa.",
+        "Aldershot Town venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Altrincham está na 3ª vitória seguida!",
+        "Altrincham venceu 6 dos últimos 7 jogos em casa. Boa fase!",
+        "Altrincham sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Altrincham venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Boreham Wood está na 3ª vitória seguida!",
+        "Boreham Wood está na 6ª vitória seguida em casa!",
+        "Boreham Wood está invicto há 8 jogos em casa.",
+        "Boreham Wood venceu 6 dos últimos 8 jogos. Boa fase!",
+        "Boreham Wood sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Boreham Wood sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
+        "Boston United está invicto há 5 jogos.",
+        "Boston United sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Boston United sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+        "Boston United venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Brackley Town está na 8ª derrota seguida fora de casa!",
+        "Brackley Town perdeu 12 dos últimos 16 jogos.",
+        "Brackley Town venceu apenas 1 dos últimos 16 jogos.",
+        "Brackley Town venceu apenas 1 dos últimos 10 jogos em casa.",
+        "Brackley Town sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Brackley Town venceu apenas 1 dos últimos 11 jogos fora de casa.",
+        "Braintree Town está na 3ª derrota seguida!",
+        "Braintree Town está na 3ª derrota seguida fora de casa!",
+        "Braintree Town está há 11 jogos sem vencer.",
+        "Braintree Town está há 7 jogos sem vencer em casa.",
+        "Braintree Town está há 6 jogos sem vencer fora de casa.",
+        "Braintree Town perdeu 6 dos últimos 8 jogos.",
+        "Braintree Town venceu apenas 1 dos últimos 16 jogos.",
+        "Braintree Town perdeu 5 dos últimos 6 jogos em casa.",
+        "Braintree Town venceu apenas 1 dos últimos 12 jogos em casa.",
+        "Braintree Town venceu apenas 1 dos últimos 11 jogos fora de casa.",
+        "Carlisle United está na 3ª vitória seguida!",
+        "Carlisle United está invicto há 8 jogos.",
+        "Carlisle United está invicto há 8 jogos em casa.",
+        "Carlisle United venceu 6 dos últimos 8 jogos. Boa fase!",
+        "Carlisle United sofreu apenas 1 derrotas nos últimos 12 jogos.",
+        "Carlisle United venceu 6 dos últimos 8 jogos em casa. Boa fase!",
+        "Carlisle United sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
+        "Carlisle United venceu 5 dos últimos 7 jogos fora de casa. Boa fase!",
+        "Carlisle United sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
+        "Eastleigh venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Eastleigh venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "FC Halifax Town está invicto há 5 jogos fora de casa.",
+        "FC Halifax Town venceu apenas 1 dos últimos 8 jogos em casa.",
+        "FC Halifax Town sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
+        "Forest Green Rovers está na 5ª vitória seguida em casa!",
+        "Forest Green Rovers sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Forest Green Rovers venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Gateshead sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Gateshead venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Hartlepool United sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Hartlepool United venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Morecambe está na 3ª derrota seguida!",
+        "Morecambe está há 6 jogos sem vencer em casa.",
+        "Morecambe perdeu 6 dos últimos 8 jogos.",
+        "Morecambe venceu apenas 1 dos últimos 9 jogos.",
+        "Morecambe venceu apenas 1 dos últimos 13 jogos em casa.",
+        "Rochdale venceu 33 dos últimos 46 jogos. Boa fase!",
+        "Rochdale sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Rochdale venceu 18 dos todos os jogos em casa. Boa fase!",
+        "Rochdale sofreu apenas 1 derrotas nos últimos 13 jogos em casa.",
+        "Rochdale sofreu apenas 1 derrotas nos últimos 14 jogos fora de casa.",
+        "Scunthorpe United sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Scunthorpe United sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Solihull Moors perdeu 7 dos últimos 9 jogos em casa.",
+        "Solihull Moors venceu apenas 1 dos últimos 9 jogos fora de casa.",
+        "Solihull Moors sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Southend United está invicto há 9 jogos em casa.",
+        "Southend United venceu 6 dos últimos 8 jogos. Boa fase!",
+        "Southend United sofreu apenas 1 derrotas nos últimos 9 jogos.",
+        "Southend United venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+        "Southend United sofreu apenas 1 derrotas nos últimos 14 jogos em casa.",
+        "Sutton United está na 4ª derrota seguida!",
+        "Sutton United está na 5ª derrota seguida em casa!",
+        "Sutton United está há 6 jogos sem vencer.",
+        "Sutton United perdeu 6 dos últimos 8 jogos.",
+        "Sutton United venceu apenas 1 dos últimos 9 jogos.",
+        "Sutton United venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Sutton United venceu apenas 1 dos últimos 5 jogos fora de casa.",
+        "Tamworth sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Tamworth venceu 6 dos últimos 7 jogos em casa. Boa fase!",
+        "Tamworth sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
+        "Tamworth venceu apenas 1 dos últimos 13 jogos fora de casa.",
+        "Truro City está há 11 jogos sem vencer em casa.",
+        "Truro City venceu apenas 1 dos últimos 7 jogos.",
+        "Truro City venceu apenas 1 dos últimos 12 jogos em casa.",
+        "Wealdstone está na 5ª derrota seguida fora de casa!",
+        "Wealdstone sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Wealdstone venceu apenas 1 dos últimos 15 jogos fora de casa.",
+        "Woking sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Woking venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Woking sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+        "Woking sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Yeovil Town está na 4ª derrota seguida fora de casa!",
+        "Yeovil Town perdeu 5 dos últimos 7 jogos.",
+        "Yeovil Town venceu apenas 1 dos últimos 7 jogos.",
+        "Yeovil Town perdeu 8 dos últimos 9 jogos fora de casa.",
+        "Yeovil Town venceu apenas 1 dos últimos 9 jogos fora de casa.",
+        "York City está na 9ª vitória seguida em casa!",
+        "York City está invicto há 6 jogos.",
+        "York City está invicto há 18 jogos em casa.",
+        "York City venceu 17 dos últimos 20 jogos. Boa fase!",
+        "York City sofreu apenas 1 derrotas nos últimos 10 jogos.",
+        "York City sofreu apenas 1 derrotas nos últimos 20 jogos em casa.",
+        "York City venceu 12 dos últimos 15 jogos fora de casa. Boa fase!",
+        "York City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+      ],
+      "team_insights": {
+        "Aldershot Town": [
+          "Aldershot Town está na 5ª derrota seguida!",
+          "Aldershot Town está na 3ª derrota seguida em casa!",
+          "Aldershot Town está há 6 jogos sem vencer.",
+          "Aldershot Town está há 8 jogos sem vencer em casa.",
+          "Aldershot Town não pontuou nos últimos 5 jogos.",
+          "Aldershot Town não pontuou nos últimos 3 jogos em casa.",
+          "Aldershot Town perdeu 11 dos últimos 13 jogos.",
+          "Aldershot Town venceu apenas 1 dos últimos 13 jogos.",
+          "Aldershot Town perdeu 7 dos últimos 8 jogos em casa.",
+          "Aldershot Town venceu apenas 1 dos últimos 9 jogos em casa.",
+          "Aldershot Town venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Altrincham": [
+          "Altrincham está na 3ª vitória seguida!",
+          "Altrincham venceu 6 dos últimos 7 jogos em casa. Boa fase!",
+          "Altrincham sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Altrincham venceu apenas 1 dos últimos 6 jogos fora de casa."
+        ],
+        "Boreham Wood": [
+          "Boreham Wood está na 3ª vitória seguida!",
+          "Boreham Wood está na 6ª vitória seguida em casa!",
+          "Boreham Wood está invicto há 8 jogos em casa.",
+          "Boreham Wood somou 12 pontos nos últimos 5 jogos. Excelente fase!",
+          "Boreham Wood somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Boreham Wood venceu 6 dos últimos 8 jogos. Boa fase!",
+          "Boreham Wood sofreu apenas 1 derrotas nos últimos 8 jogos.",
+          "Boreham Wood sofreu apenas 1 derrotas nos últimos 9 jogos em casa."
+        ],
+        "Boston United": [
+          "Boston United está invicto há 5 jogos.",
+          "Boston United somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Boston United sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Boston United sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+          "Boston United venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Brackley Town": [
+          "Brackley Town está na 8ª derrota seguida fora de casa!",
+          "Brackley Town não pontuou nos últimos 3 jogos fora de casa.",
+          "Brackley Town perdeu 12 dos últimos 16 jogos.",
+          "Brackley Town venceu apenas 1 dos últimos 16 jogos.",
+          "Brackley Town venceu apenas 1 dos últimos 10 jogos em casa.",
+          "Brackley Town sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Brackley Town venceu apenas 1 dos últimos 11 jogos fora de casa."
+        ],
+        "Braintree Town": [
+          "Braintree Town está na 3ª derrota seguida!",
+          "Braintree Town está na 3ª derrota seguida fora de casa!",
+          "Braintree Town está há 11 jogos sem vencer.",
+          "Braintree Town está há 7 jogos sem vencer em casa.",
+          "Braintree Town está há 6 jogos sem vencer fora de casa.",
+          "Braintree Town somou apenas 1 ponto nos últimos 5 jogos.",
+          "Braintree Town somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Braintree Town não pontuou nos últimos 3 jogos fora de casa.",
+          "Braintree Town perdeu 6 dos últimos 8 jogos.",
+          "Braintree Town venceu apenas 1 dos últimos 16 jogos.",
+          "Braintree Town perdeu 5 dos últimos 6 jogos em casa.",
+          "Braintree Town venceu apenas 1 dos últimos 12 jogos em casa.",
+          "Braintree Town venceu apenas 1 dos últimos 11 jogos fora de casa."
+        ],
+        "Carlisle United": [
+          "Carlisle United está na 3ª vitória seguida!",
+          "Carlisle United está invicto há 8 jogos.",
+          "Carlisle United está invicto há 8 jogos em casa.",
+          "Carlisle United somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Carlisle United somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Carlisle United somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Carlisle United venceu 6 dos últimos 8 jogos. Boa fase!",
+          "Carlisle United sofreu apenas 1 derrotas nos últimos 12 jogos.",
+          "Carlisle United venceu 6 dos últimos 8 jogos em casa. Boa fase!",
+          "Carlisle United sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
+          "Carlisle United venceu 5 dos últimos 7 jogos fora de casa. Boa fase!",
+          "Carlisle United sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
+        ],
+        "Eastleigh": [
+          "Eastleigh venceu apenas 1 dos últimos 5 jogos em casa.",
+          "Eastleigh venceu apenas 1 dos últimos 6 jogos fora de casa."
+        ],
+        "FC Halifax Town": [
+          "FC Halifax Town está invicto há 5 jogos fora de casa.",
+          "FC Halifax Town somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "FC Halifax Town somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "FC Halifax Town venceu apenas 1 dos últimos 8 jogos em casa.",
+          "FC Halifax Town sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
+        ],
+        "Forest Green Rovers": [
+          "Forest Green Rovers está na 5ª vitória seguida em casa!",
+          "Forest Green Rovers somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Forest Green Rovers somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Forest Green Rovers sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+          "Forest Green Rovers venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Gateshead": [
+          "Gateshead sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Gateshead venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Hartlepool United": [
+          "Hartlepool United somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Hartlepool United somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Hartlepool United sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Hartlepool United venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Morecambe": [
+          "Morecambe está na 3ª derrota seguida!",
+          "Morecambe está há 6 jogos sem vencer em casa.",
+          "Morecambe somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Morecambe perdeu 6 dos últimos 8 jogos.",
+          "Morecambe venceu apenas 1 dos últimos 9 jogos.",
+          "Morecambe venceu apenas 1 dos últimos 13 jogos em casa."
+        ],
+        "Rochdale": [
+          "Rochdale somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Rochdale venceu 33 dos últimos 46 jogos. Boa fase!",
+          "Rochdale sofreu apenas 1 derrotas nos últimos 8 jogos.",
+          "Rochdale venceu 18 dos todos os jogos em casa. Boa fase!",
+          "Rochdale sofreu apenas 1 derrotas nos últimos 13 jogos em casa.",
+          "Rochdale sofreu apenas 1 derrotas nos últimos 14 jogos fora de casa."
+        ],
+        "Scunthorpe United": [
+          "Scunthorpe United sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Scunthorpe United sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Solihull Moors": [
+          "Solihull Moors perdeu 7 dos últimos 9 jogos em casa.",
+          "Solihull Moors venceu apenas 1 dos últimos 9 jogos fora de casa.",
+          "Solihull Moors sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Southend United": [
+          "Southend United está invicto há 9 jogos em casa.",
+          "Southend United somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Southend United somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Southend United venceu 6 dos últimos 8 jogos. Boa fase!",
+          "Southend United sofreu apenas 1 derrotas nos últimos 9 jogos.",
+          "Southend United venceu 5 dos últimos 7 jogos em casa. Boa fase!",
+          "Southend United sofreu apenas 1 derrotas nos últimos 14 jogos em casa."
+        ],
+        "Sutton United": [
+          "Sutton United está na 4ª derrota seguida!",
+          "Sutton United está na 5ª derrota seguida em casa!",
+          "Sutton United está há 6 jogos sem vencer.",
+          "Sutton United somou apenas 1 ponto nos últimos 5 jogos.",
+          "Sutton United não pontuou nos últimos 3 jogos em casa.",
+          "Sutton United somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Sutton United perdeu 6 dos últimos 8 jogos.",
+          "Sutton United venceu apenas 1 dos últimos 9 jogos.",
+          "Sutton United venceu apenas 1 dos últimos 6 jogos em casa.",
+          "Sutton United venceu apenas 1 dos últimos 5 jogos fora de casa."
+        ],
+        "Tamworth": [
+          "Tamworth sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Tamworth venceu 6 dos últimos 7 jogos em casa. Boa fase!",
+          "Tamworth sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
+          "Tamworth venceu apenas 1 dos últimos 13 jogos fora de casa."
+        ],
+        "Truro City": [
+          "Truro City está há 11 jogos sem vencer em casa.",
+          "Truro City somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Truro City venceu apenas 1 dos últimos 7 jogos.",
+          "Truro City venceu apenas 1 dos últimos 12 jogos em casa."
+        ],
+        "Wealdstone": [
+          "Wealdstone está na 5ª derrota seguida fora de casa!",
+          "Wealdstone não pontuou nos últimos 3 jogos fora de casa.",
+          "Wealdstone sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Wealdstone venceu apenas 1 dos últimos 15 jogos fora de casa."
+        ],
+        "Woking": [
+          "Woking sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Woking venceu apenas 1 dos últimos 5 jogos em casa.",
+          "Woking sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
+          "Woking sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+        ],
+        "Yeovil Town": [
+          "Yeovil Town está na 4ª derrota seguida fora de casa!",
+          "Yeovil Town não pontuou nos últimos 3 jogos fora de casa.",
+          "Yeovil Town perdeu 5 dos últimos 7 jogos.",
+          "Yeovil Town venceu apenas 1 dos últimos 7 jogos.",
+          "Yeovil Town perdeu 8 dos últimos 9 jogos fora de casa.",
+          "Yeovil Town venceu apenas 1 dos últimos 9 jogos fora de casa."
+        ],
+        "York City": [
+          "York City está na 9ª vitória seguida em casa!",
+          "York City está invicto há 6 jogos.",
+          "York City está invicto há 18 jogos em casa.",
+          "York City somou 13 pontos nos últimos 5 jogos. Excelente fase!",
+          "York City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "York City somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "York City venceu 17 dos últimos 20 jogos. Boa fase!",
+          "York City sofreu apenas 1 derrotas nos últimos 10 jogos.",
+          "York City sofreu apenas 1 derrotas nos últimos 20 jogos em casa.",
+          "York City venceu 12 dos últimos 15 jogos fora de casa. Boa fase!",
+          "York City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+        ]
+      },
+      "team_rankings": {
+        "Aldershot Town": [
+          "Aldershot Town é o 2º pior mandante!"
+        ],
+        "Altrincham": [],
+        "Boreham Wood": [
+          "Boreham Wood é o 3º melhor mandante!"
+        ],
+        "Boston United": [],
+        "Brackley Town": [
+          "Brackley Town é o 2º pior visitante!"
+        ],
+        "Braintree Town": [
+          "Braintree Town é o 3º pior visitante!"
+        ],
+        "Carlisle United": [
+          "Carlisle United é o 3º melhor visitante!"
+        ],
+        "Eastleigh": [],
+        "FC Halifax Town": [],
+        "Forest Green Rovers": [],
+        "Gateshead": [],
+        "Hartlepool United": [],
+        "Morecambe": [
+          "Morecambe é o pior mandante!"
+        ],
+        "Rochdale": [
+          "Rochdale é o melhor mandante!",
+          "Rochdale é o 2º melhor visitante!"
+        ],
+        "Scunthorpe United": [],
+        "Solihull Moors": [],
+        "Southend United": [],
+        "Sutton United": [],
+        "Tamworth": [],
+        "Truro City": [
+          "Truro City é o 3º pior mandante!",
+          "Truro City é o pior visitante!"
+        ],
+        "Wealdstone": [],
+        "Woking": [],
+        "Yeovil Town": [],
+        "York City": [
+          "York City é o 2º melhor mandante!",
+          "York City é o melhor visitante!"
+        ]
+      },
+      "teams": [
+        "Aldershot Town",
+        "Altrincham",
+        "Boreham Wood",
+        "Boston United",
+        "Brackley Town",
+        "Braintree Town",
+        "Carlisle United",
+        "Eastleigh",
+        "FC Halifax Town",
+        "Forest Green Rovers",
+        "Gateshead",
+        "Hartlepool United",
+        "Morecambe",
+        "Rochdale",
+        "Scunthorpe United",
+        "Solihull Moors",
+        "Southend United",
+        "Sutton United",
+        "Tamworth",
+        "Truro City",
+        "Wealdstone",
+        "Woking",
+        "Yeovil Town",
+        "York City"
+      ],
+      "best_home": "Rochdale",
+      "worst_home": "Morecambe",
+      "best_away": "York City",
+      "worst_away": "Truro City",
+      "best_attack_team": "York City",
+      "best_attack_gols": 114,
+      "worst_attack_team": "Braintree Town",
+      "worst_attack_gols": 38,
+      "best_defense_team": "Rochdale, York City",
+      "best_defense_gols": 41,
+      "worst_defense_team": "Morecambe",
+      "worst_defense_gols": 103
+    }
+  }
+}
