@@ -2042,7 +2042,7 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
 
     teams_played &= set(data.get('teams', []))
 
-    # Round number = max games played + 1 (same logic as the "Nº Rodada" suggestion in the UI).
+    # Round number = max games played (same logic as the "Nº Rodada" suggestion in the UI).
     # If the block has ≤ half the games of a full round, it's delayed games, not a new round.
     max_games_per_round = num_teams // 2
     is_adiados = (
@@ -2054,7 +2054,7 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
     if is_adiados:
         rodada_str = " JOGOS ATRASADOS"
     elif max_jogos:
-        rodada_str = f" RODADA {max_jogos + 1}"
+        rodada_str = f" RODADA {max_jogos}"
     else:
         rodada_str = ""
 
@@ -2082,7 +2082,18 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
     else:
         tab_lines.append("(Tabela não disponível.)")
 
-    # ── 4. Insights section ─────────────────────────────────────────────────
+    # ── 4. Destaques section ────────────────────────────────────────────────
+    dest_lines = [f"DESTAQUES — {liga_label}", ""]
+    dest_lines.append(f"Melhor mandante: {data.get('best_home', '—')}")
+    dest_lines.append(f"Pior mandante: {data.get('worst_home', '—')}")
+    dest_lines.append(f"Melhor visitante: {data.get('best_away', '—')}")
+    dest_lines.append(f"Pior visitante: {data.get('worst_away', '—')}")
+    dest_lines.append(f"Melhor ataque: {data.get('best_attack_team', '—')} ({data.get('best_attack_gols', '—')} gols)")
+    dest_lines.append(f"Pior ataque: {data.get('worst_attack_team', '—')} ({data.get('worst_attack_gols', '—')} gols)")
+    dest_lines.append(f"Melhor defesa: {data.get('best_defense_team', '—')} ({data.get('best_defense_gols', '—')} sofridos)")
+    dest_lines.append(f"Pior defesa: {data.get('worst_defense_team', '—')} ({data.get('worst_defense_gols', '—')} sofridos)")
+
+    # ── 5. Insights section ─────────────────────────────────────────────────
     ins_lines = [f"INSIGHTS — {liga_label}{rodada_str}", ""]
 
     if not teams_played:
@@ -2125,7 +2136,7 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
     # ── Combine sections with a blank line between them ─────────────────────
     return "\n\n".join(
         "\n".join(section).strip()
-        for section in [res_lines, tab_lines, ins_lines]
+        for section in [res_lines, tab_lines, dest_lines, ins_lines]
     )
 
 
