@@ -142,7 +142,7 @@ def detect_matchdays(liga_str: str) -> dict[int, list[str]]:
         gap = (curr - prev).days
         curr_block = _block(curr.weekday())
 
-        if gap > 4 or curr_block != current_block:
+        if gap > 3 or curr_block != current_block:
             matchday_num += 1
             current_block = curr_block
             matchdays[matchday_num] = []

@@ -2032,6 +2032,7 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
                             'casa': row.get('casa', ''),
                             'placar': row.get('placar', ''),
                             'fora': row.get('fora', ''),
+                            'data': row.get('data', ''),
                         })
                         if row.get('casa'):
                             teams_played.add(row['casa'])
@@ -2059,10 +2060,20 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
         rodada_str = ""
 
     # ── 3. Results section ──────────────────────────────────────────────────
+    _PT_DAYS = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira',
+                'Sexta-feira', 'Sábado', 'Domingo']
     res_lines = [f"RESULTADOS — {liga_label}{rodada_str}", ""]
     for g in block_games:
         base_score = _re.sub(r'\(.*?\)', '', g['placar']).strip()
-        res_lines.append(f"{g['casa']} {base_score} {g['fora']}")
+        line = f"{g['casa']} {base_score} {g['fora']}"
+        if liga_key == 'premierleague' and g.get('data'):
+            try:
+                from datetime import date as _date
+                wd = _date.fromisoformat(g['data']).weekday()
+                line += f" - {_PT_DAYS[wd]}"
+            except ValueError:
+                pass
+        res_lines.append(line)
 
     # ── 4. Table section ────────────────────────────────────────────────────
     tab_lines = [f"TABELA — {liga_label} APÓS{rodada_str}", ""]
