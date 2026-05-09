@@ -1,12 +1,12 @@
 Arsenal 35 23 7 5 67 26 41 76
 Manchester City 34 21 8 5 69 32 37 71
 Manchester United 35 18 10 7 63 48 15 64
-Liverpool 35 17 7 11 59 47 12 58
+Liverpool 36 17 8 11 60 48 12 59
 Aston Villa 35 17 7 11 48 44 4 58
 Bournemouth 35 12 16 7 55 52 3 52
 Brentford 35 14 9 12 52 46 6 51
 Brighton 35 13 11 11 49 42 7 50
-Chelsea 35 13 9 13 54 48 6 48
+Chelsea 36 13 10 13 55 49 6 49
 Everton 35 13 9 13 44 44 0 48
 Fulham 35 14 6 15 44 49 -5 48
 Sunderland 35 12 11 12 37 46 -9 47
