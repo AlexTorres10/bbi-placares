@@ -612,6 +612,10 @@ def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
     if new_rows:
         with open(historico_path, 'a', newline='', encoding='utf-8') as f:
             csv.writer(f).writerows(new_rows)
+        try:
+            rebuild_for_liga(liga_str)
+        except Exception:
+            pass
     return {'added': len(new_rows), 'conflicts': conflicts}
 
 
@@ -634,6 +638,10 @@ def _update_historico_row(home_team: str, away_team: str, liga_str: str,
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
+    try:
+        rebuild_for_liga(liga_str)
+    except Exception:
+        pass
 
 
 # ============================================================================
@@ -2198,7 +2206,10 @@ def render_stats_mode():
 
     # ── Staleness indicator ───────────────────────────────────────────────────
     if is_stale(liga_str):
-        st.warning("⚠️ Novos jogos no histórico. Clique em **Atualizar Estatísticas** para atualizar os dados.")
+        _meta = get_cache_meta(liga_str)
+        _updated_at = _meta.get('updated_at', '').replace('T', ' ') if _meta else ''
+        _suffix = f" Última atualização: {_updated_at}." if _updated_at else ""
+        st.warning(f"⚠️ Novos jogos no histórico. Clique em **Atualizar Estatísticas** para atualizar os dados.{_suffix}")
     else:
         _meta = get_cache_meta(liga_str)
         if _meta and _meta.get('updated_at'):
@@ -2224,6 +2235,19 @@ def render_stats_mode():
                     else:
                         badge_cache.append("")
                 st.session_state['badges_cache'][liga_key] = badge_cache
+
+                # Push insights_cache.json to GitHub so it survives app restarts
+                try:
+                    if hasattr(st, 'secrets') and 'GITHUB_TOKEN' in st.secrets:
+                        _gh = GitHubHandler(st.secrets['GITHUB_TOKEN'], st.secrets['GITHUB_REPO'])
+                        with open("data/insights_cache.json", "r", encoding="utf-8") as _f:
+                            _cache_content = _f.read()
+                        _gh.update_files(
+                            [{"path": "data/insights_cache.json", "content": _cache_content}],
+                            f"Update insights cache — {liga_str}",
+                        )
+                except Exception:
+                    pass
 
                 st.success("✅ Estatísticas atualizadas!")
             except Exception as e:
