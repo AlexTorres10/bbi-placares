@@ -1840,6 +1840,74 @@ def _get_recent_form(selected_team: str, liga_str: str, n: int = 5) -> list:
     return results
 
 
+def _get_recent_games(team: str, liga_str: str) -> list:
+    """Returns all game dicts for team in liga_str, most recent first."""
+    csv_path = os.path.join("data", "historico.csv")
+    if not os.path.exists(csv_path):
+        return []
+    games = []
+    with open(csv_path, newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row.get('liga') != liga_str:
+                continue
+            if row.get('casa') == team or row.get('fora') == team:
+                games.append(dict(row))
+    from datetime import datetime
+    games.sort(key=lambda r: datetime.strptime(r['data'], '%Y-%m-%d') if r.get('data') else datetime.min, reverse=True)
+    return games
+
+
+@st.cache_data
+def _crest_b64(team_name: str) -> str:
+    path = obter_escudo_path(team_name)
+    if not path or not os.path.exists(path):
+        return ''
+    with open(path, 'rb') as f:
+        return base64.b64encode(f.read()).decode()
+
+
+def _game_rows_html(games: list, selected_team: str) -> str:
+    def img_tag(name: str) -> str:
+        b64 = _crest_b64(name)
+        if b64:
+            return (
+                f'<img src="data:image/png;base64,{b64}" '
+                f'style="width:32px;height:32px;object-fit:contain;flex-shrink:0">'
+            )
+        return '<span style="width:32px;display:inline-block;flex-shrink:0"></span>'
+
+    rows = []
+    for g in games:
+        casa = g['casa']
+        fora = g['fora']
+        placar_clean = re.sub(r'\s*\(.*?\)', '', g.get('placar', '')).strip()
+
+        result_color = '#9ca3af'
+        parts = placar_clean.split('-')
+        if len(parts) == 2:
+            try:
+                hs, aws = int(parts[0].strip()), int(parts[1].strip())
+                if casa == selected_team:
+                    result_color = '#22c55e' if hs > aws else ('#ef4444' if hs < aws else '#9ca3af')
+                else:
+                    result_color = '#22c55e' if aws > hs else ('#ef4444' if aws < hs else '#9ca3af')
+            except ValueError:
+                pass
+
+        rows.append(
+            f'<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #2d2d2d">'
+            f'{img_tag(casa)}'
+            f'<span style="flex:1;font-weight:600;font-size:13px;text-align:right">{casa}</span>'
+            f'<span style="font-weight:bold;font-size:15px;color:{result_color};'
+            f'min-width:44px;text-align:center">{placar_clean}</span>'
+            f'<span style="flex:1;font-weight:600;font-size:13px">{fora}</span>'
+            f'{img_tag(fora)}'
+            f'</div>'
+        )
+    return ''.join(rows)
+
+
 # ============================================================================
 # MODO ESTATÍSTICAS
 # ============================================================================
@@ -2332,6 +2400,17 @@ def render_stats_mode():
             st.subheader(heading)
 
             if selected_team:
+                # Últimos jogos
+                all_games = _get_recent_games(selected_team, liga_str)
+                if all_games:
+                    st.markdown("**Últimos 5 jogos**")
+                    st.markdown(_game_rows_html(all_games[:5], selected_team), unsafe_allow_html=True)
+                    st.write("")
+                    if len(all_games) > 5:
+                        with st.expander(f"Ver todos os jogos ({len(all_games)})"):
+                            st.markdown(_game_rows_html(all_games, selected_team), unsafe_allow_html=True)
+                    st.write("")
+
                 # Forma recente
                 form = _get_recent_form(selected_team, liga_str)
                 if form:
