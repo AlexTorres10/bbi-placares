@@ -5,7 +5,7 @@ Lê data/historico.csv e gera insights usando bbi_functions.
 import pandas as pd
 from typing import Dict, List, Tuple
 
-from utils.bbi_functions import allinsights, wdl, gf as _gf, gs as _gs, _parse_score
+from utils.bbi_functions import allinsights, wdl, gf as _gf, gs as _gs, _parse_score, _season_start
 
 HISTORICO_PATH = "data/historico.csv"
 
@@ -116,8 +116,8 @@ def compute_league_stats(liga_str: str) -> dict:
         best_defense_team / best_defense_gols : str / int
         worst_defense_team / worst_defense_gols : str / int
     """
-    df_liga = load_historico(liga_str)
-    if df_liga.empty:
+    df_full_liga = load_historico(liga_str)
+    if df_full_liga.empty:
         return {
             'insights': [], 'team_insights': {}, 'team_rankings': {}, 'teams': [],
             'best_home': '-', 'worst_home': '-', 'best_away': '-', 'worst_away': '-',
@@ -127,25 +127,33 @@ def compute_league_stats(liga_str: str) -> dict:
             'worst_defense_team': '-', 'worst_defense_gols': 0,
         }
 
+    # Filtrar temporada atual: Jul 1 do ano corrente da temporada
+    season_start = pd.Timestamp(_season_start())
+    df_liga = df_full_liga[df_full_liga['data'] >= season_start].copy()
+    if df_liga.empty:
+        df_liga = df_full_liga  # fallback se a temporada ainda não tiver dados
+
     teams = sorted(set(df_liga['casa'].unique()) | set(df_liga['fora'].unique()))
 
-    # DataFrame por time com colunas result/gf/gs
+    # DataFrames por time: temporada atual (insights normais) e histórico completo (cross-temporada)
     results_dict = {team: _build_team_df(df_liga, team) for team in teams}
+    results_dict_full = {team: _build_team_df(df_full_liga, team) for team in teams}
 
-    # Insights gerais da liga
-    league_insights = allinsights(results_dict, liga_str, 'liga')
+    # Insights gerais da liga (temporada atual + cross-temporada)
+    league_insights = allinsights(results_dict, liga_str, 'liga', df_full=results_dict_full)
 
     # Insights por time
-    team_insights = {team: allinsights(results_dict[team], team, 'time') for team in teams}
+    team_insights = {
+        team: allinsights(results_dict[team], team, 'time', df_full=results_dict_full[team])
+        for team in teams
+    }
 
-    # Tabelas mandante/visitante
+    # Tabelas mandante/visitante e rankings (temporada atual)
     home_table = _home_away_table(df_liga, 'home')
     away_table = _home_away_table(df_liga, 'away')
-
-    # Rankings por time
     team_rankings = {team: _ranking_insights(team, home_table, away_table) for team in teams}
 
-    # Ataque/defesa geral (com empates)
+    # Ataque/defesa geral (temporada atual)
     ovr = _overall_attack_defense(df_liga, teams)
     best_atk_gols  = int(ovr['GM'].max())
     worst_atk_gols = int(ovr['GM'].min())

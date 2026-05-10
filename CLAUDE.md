@@ -14,6 +14,8 @@ streamlit run app.py
 
 Dependencies are in `requirements.txt`. Install with `pip install -r requirements.txt`.
 
+There are **no tests and no linting configuration** in this project.
+
 ## Maintenance Scripts
 
 ```bash
@@ -53,6 +55,8 @@ The app is driven by a top-level `st.radio` at line ~2409 in `app.py` with five 
 
 **Stats flow**: `render_stats_mode()` → `compute_league_stats(liga_str)` in `stats_engine.py` → `allinsights()` in `bbi_functions.py`. `allinsights()` is the single entry point that returns a deduplicated list of natural-language insight strings for a team or league. The "Copiar para Claude" button calls `_build_claude_text()` (line ~1954 in `app.py`), which assembles a 3-section block (results + table with zone labels + insights) formatted for pasting into a Claude conversation.
 
+**Team name resolution** uses `fuzzywuzzy` for fuzzy matching when an abbreviation or name doesn't exactly match a known team — this handles typos and alternate spellings. Pixel layout for every league and cup is driven entirely by `config/leagues_config.json`; never hardcode coordinates in Python.
+
 ### Key Files
 
 | File | Purpose |
@@ -68,6 +72,7 @@ The app is driven by a top-level `st.radio` at line ~2409 in `app.py` with five 
 | `utils/position_history.py` | Matchday detection, table simulation per matchday, read/write of `data/posicoes.csv` |
 | `utils/stats_engine.py` | Reads `data/historico.csv` and computes league/team insights via `bbi_functions.py` |
 | `utils/bbi_functions.py` | Stats engine ported from the Django `bbistats` project — generates streaks, form, and phase insights |
+| `utils/insights_cache.py` | In-memory cache layer for computed insights; avoids recomputing stats on every Streamlit rerun |
 | `scripts/build_position_history.py` | Retroactively populates `data/posicoes.csv` from `historico.csv`; deletes and rewrites from scratch |
 | `filtrar_posicoes.py` | Post-processing filter: removes position rows for teams that didn't play in the correct block window |
 | `config/leagues_config.json` | **Central config**: pixel positions, font sizes, badge sizes, promotion zones per league |
