@@ -28,10 +28,10 @@ def block_window(date: pd.Timestamp) -> tuple[str, pd.Timestamp, pd.Timestamp]:
     wd = date.weekday()  # Mon=0 ... Sun=6
     if wd in BLOCK_A:
         days_since_fri = (wd - 4) % 7
-        return "A", date - timedelta(days=days_since_fri), date
+        return "A", date - timedelta(days=days_since_fri), date + timedelta(days=2)
     else:
         days_since_tue = (wd - 1) % 7
-        return "B", date - timedelta(days=days_since_tue), date
+        return "B", date - timedelta(days=days_since_tue), date + timedelta(days=2)
 
 
 def main():
