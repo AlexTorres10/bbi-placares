@@ -1,7 +1,7 @@
 {
   "Premier League": {
     "last_game_date": "2026-05-10",
-    "updated_at": "2026-05-10T22:19:58",
+    "updated_at": "2026-05-11T12:45:27",
     "data": {
       "insights": [
         "Arsenal está na 3ª vitória seguida!",
@@ -310,6 +310,572 @@
         "West Ham",
         "Wolverhampton"
       ],
+      "home_table_full": [
+        {
+          "Time": "Arsenal",
+          "J": 18,
+          "V": 14,
+          "E": 2,
+          "D": 2,
+          "Pts": 44
+        },
+        {
+          "Time": "Manchester City",
+          "J": 17,
+          "V": 13,
+          "E": 3,
+          "D": 1,
+          "Pts": 42
+        },
+        {
+          "Time": "Manchester United",
+          "J": 18,
+          "V": 12,
+          "E": 3,
+          "D": 3,
+          "Pts": 39
+        },
+        {
+          "Time": "Liverpool",
+          "J": 18,
+          "V": 10,
+          "E": 5,
+          "D": 3,
+          "Pts": 35
+        },
+        {
+          "Time": "Aston Villa",
+          "J": 18,
+          "V": 11,
+          "E": 2,
+          "D": 5,
+          "Pts": 35
+        },
+        {
+          "Time": "Brighton",
+          "J": 18,
+          "V": 9,
+          "E": 6,
+          "D": 3,
+          "Pts": 33
+        },
+        {
+          "Time": "Fulham",
+          "J": 18,
+          "V": 10,
+          "E": 2,
+          "D": 6,
+          "Pts": 32
+        },
+        {
+          "Time": "Brentford",
+          "J": 18,
+          "V": 8,
+          "E": 7,
+          "D": 3,
+          "Pts": 31
+        },
+        {
+          "Time": "Bournemouth",
+          "J": 18,
+          "V": 7,
+          "E": 9,
+          "D": 2,
+          "Pts": 30
+        },
+        {
+          "Time": "Sunderland",
+          "J": 18,
+          "V": 8,
+          "E": 6,
+          "D": 4,
+          "Pts": 30
+        },
+        {
+          "Time": "Newcastle United",
+          "J": 18,
+          "V": 9,
+          "E": 2,
+          "D": 7,
+          "Pts": 29
+        },
+        {
+          "Time": "Leeds United",
+          "J": 18,
+          "V": 8,
+          "E": 5,
+          "D": 5,
+          "Pts": 29
+        },
+        {
+          "Time": "Chelsea",
+          "J": 18,
+          "V": 6,
+          "E": 5,
+          "D": 7,
+          "Pts": 23
+        },
+        {
+          "Time": "Everton",
+          "J": 18,
+          "V": 6,
+          "E": 5,
+          "D": 7,
+          "Pts": 23
+        },
+        {
+          "Time": "Crystal Palace",
+          "J": 18,
+          "V": 4,
+          "E": 9,
+          "D": 5,
+          "Pts": 21
+        },
+        {
+          "Time": "Nottingham Forest",
+          "J": 18,
+          "V": 4,
+          "E": 7,
+          "D": 7,
+          "Pts": 19
+        },
+        {
+          "Time": "West Ham",
+          "J": 18,
+          "V": 5,
+          "E": 4,
+          "D": 9,
+          "Pts": 19
+        },
+        {
+          "Time": "Wolverhampton",
+          "J": 18,
+          "V": 3,
+          "E": 4,
+          "D": 11,
+          "Pts": 13
+        },
+        {
+          "Time": "Burnley",
+          "J": 18,
+          "V": 2,
+          "E": 6,
+          "D": 10,
+          "Pts": 12
+        },
+        {
+          "Time": "Tottenham",
+          "J": 17,
+          "V": 2,
+          "E": 5,
+          "D": 10,
+          "Pts": 11
+        }
+      ],
+      "away_table_full": [
+        {
+          "Time": "Arsenal",
+          "J": 18,
+          "V": 10,
+          "E": 5,
+          "D": 3,
+          "Pts": 35
+        },
+        {
+          "Time": "Manchester City",
+          "J": 18,
+          "V": 9,
+          "E": 5,
+          "D": 4,
+          "Pts": 32
+        },
+        {
+          "Time": "Chelsea",
+          "J": 18,
+          "V": 7,
+          "E": 5,
+          "D": 6,
+          "Pts": 26
+        },
+        {
+          "Time": "Everton",
+          "J": 18,
+          "V": 7,
+          "E": 5,
+          "D": 6,
+          "Pts": 26
+        },
+        {
+          "Time": "Manchester United",
+          "J": 18,
+          "V": 6,
+          "E": 8,
+          "D": 4,
+          "Pts": 26
+        },
+        {
+          "Time": "Tottenham",
+          "J": 18,
+          "V": 7,
+          "E": 5,
+          "D": 6,
+          "Pts": 26
+        },
+        {
+          "Time": "Bournemouth",
+          "J": 18,
+          "V": 6,
+          "E": 7,
+          "D": 5,
+          "Pts": 25
+        },
+        {
+          "Time": "Aston Villa",
+          "J": 18,
+          "V": 6,
+          "E": 6,
+          "D": 6,
+          "Pts": 24
+        },
+        {
+          "Time": "Liverpool",
+          "J": 18,
+          "V": 7,
+          "E": 3,
+          "D": 8,
+          "Pts": 24
+        },
+        {
+          "Time": "Nottingham Forest",
+          "J": 18,
+          "V": 7,
+          "E": 3,
+          "D": 8,
+          "Pts": 24
+        },
+        {
+          "Time": "Crystal Palace",
+          "J": 17,
+          "V": 7,
+          "E": 2,
+          "D": 8,
+          "Pts": 23
+        },
+        {
+          "Time": "Brentford",
+          "J": 18,
+          "V": 6,
+          "E": 2,
+          "D": 10,
+          "Pts": 20
+        },
+        {
+          "Time": "Brighton",
+          "J": 18,
+          "V": 5,
+          "E": 5,
+          "D": 8,
+          "Pts": 20
+        },
+        {
+          "Time": "Sunderland",
+          "J": 18,
+          "V": 4,
+          "E": 6,
+          "D": 8,
+          "Pts": 18
+        },
+        {
+          "Time": "West Ham",
+          "J": 18,
+          "V": 4,
+          "E": 5,
+          "D": 9,
+          "Pts": 17
+        },
+        {
+          "Time": "Newcastle United",
+          "J": 18,
+          "V": 4,
+          "E": 5,
+          "D": 9,
+          "Pts": 17
+        },
+        {
+          "Time": "Fulham",
+          "J": 18,
+          "V": 4,
+          "E": 4,
+          "D": 10,
+          "Pts": 16
+        },
+        {
+          "Time": "Leeds United",
+          "J": 17,
+          "V": 2,
+          "E": 8,
+          "D": 7,
+          "Pts": 14
+        },
+        {
+          "Time": "Burnley",
+          "J": 18,
+          "V": 2,
+          "E": 3,
+          "D": 13,
+          "Pts": 9
+        },
+        {
+          "Time": "Wolverhampton",
+          "J": 18,
+          "V": 0,
+          "E": 5,
+          "D": 13,
+          "Pts": 5
+        }
+      ],
+      "last_n_games_data": {
+        "Arsenal": [
+          "V",
+          "V",
+          "V",
+          "D",
+          "D",
+          "V",
+          "V",
+          "V",
+          "V",
+          "E"
+        ],
+        "Aston Villa": [
+          "E",
+          "D",
+          "D",
+          "V",
+          "E",
+          "V",
+          "D",
+          "D",
+          "D",
+          "E"
+        ],
+        "Bournemouth": [
+          "V",
+          "V",
+          "E",
+          "V",
+          "V",
+          "E",
+          "E",
+          "E",
+          "E",
+          "E"
+        ],
+        "Brentford": [
+          "D",
+          "V",
+          "D",
+          "E",
+          "E",
+          "E",
+          "E",
+          "E",
+          "V",
+          "D"
+        ],
+        "Brighton": [
+          "V",
+          "D",
+          "V",
+          "E",
+          "V",
+          "V",
+          "V",
+          "D",
+          "V",
+          "V"
+        ],
+        "Burnley": [
+          "E",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "E",
+          "D",
+          "D",
+          "E"
+        ],
+        "Chelsea": [
+          "E",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "V",
+          "D",
+          "E"
+        ],
+        "Crystal Palace": [
+          "E",
+          "D",
+          "D",
+          "E",
+          "V",
+          "E",
+          "V",
+          "D",
+          "V",
+          "D"
+        ],
+        "Everton": [
+          "E",
+          "E",
+          "D",
+          "D",
+          "E",
+          "V",
+          "D",
+          "V",
+          "V",
+          "D"
+        ],
+        "Fulham": [
+          "D",
+          "D",
+          "V",
+          "E",
+          "D",
+          "V",
+          "E",
+          "D",
+          "V",
+          "V"
+        ],
+        "Leeds United": [
+          "V",
+          "E",
+          "V",
+          "V",
+          "E",
+          "E",
+          "D",
+          "D",
+          "E",
+          "E"
+        ],
+        "Liverpool": [
+          "E",
+          "D",
+          "V",
+          "V",
+          "V",
+          "D",
+          "E",
+          "D",
+          "V",
+          "V"
+        ],
+        "Manchester City": [
+          "V",
+          "E",
+          "V",
+          "V",
+          "V",
+          "E",
+          "E",
+          "V",
+          "V",
+          "V"
+        ],
+        "Manchester United": [
+          "E",
+          "V",
+          "V",
+          "V",
+          "D",
+          "E",
+          "V",
+          "D",
+          "V",
+          "V"
+        ],
+        "Newcastle United": [
+          "E",
+          "V",
+          "D",
+          "D",
+          "D",
+          "D",
+          "V",
+          "V",
+          "D",
+          "D"
+        ],
+        "Nottingham Forest": [
+          "E",
+          "V",
+          "V",
+          "V",
+          "E",
+          "V",
+          "E",
+          "E",
+          "D",
+          "D"
+        ],
+        "Sunderland": [
+          "E",
+          "E",
+          "D",
+          "D",
+          "V",
+          "V",
+          "D",
+          "V",
+          "E",
+          "D"
+        ],
+        "Tottenham": [
+          "V",
+          "V",
+          "E",
+          "D",
+          "D",
+          "E",
+          "D",
+          "D",
+          "D",
+          "D"
+        ],
+        "West Ham": [
+          "D",
+          "D",
+          "V",
+          "E",
+          "V",
+          "D",
+          "E",
+          "V",
+          "D",
+          "E"
+        ],
+        "Wolverhampton": [
+          "D",
+          "E",
+          "D",
+          "D",
+          "D",
+          "E",
+          "V",
+          "V",
+          "D",
+          "E"
+        ]
+      },
       "best_home": "Arsenal",
       "worst_home": "Tottenham",
       "best_away": "Arsenal",
@@ -326,7 +892,7 @@
   },
   "Championship": {
     "last_game_date": "2026-05-02",
-    "updated_at": "2026-05-08T20:10:24",
+    "updated_at": "2026-05-11T12:45:29",
     "data": {
       "insights": [
         "Birmingham City está na 3ª vitória seguida em casa!",
@@ -681,6 +1247,684 @@
         "West Bromwich",
         "Wrexham"
       ],
+      "home_table_full": [
+        {
+          "Time": "Coventry City",
+          "J": 23,
+          "V": 17,
+          "E": 4,
+          "D": 2,
+          "Pts": 55
+        },
+        {
+          "Time": "Ipswich Town",
+          "J": 23,
+          "V": 14,
+          "E": 8,
+          "D": 1,
+          "Pts": 50
+        },
+        {
+          "Time": "Birmingham City",
+          "J": 23,
+          "V": 12,
+          "E": 8,
+          "D": 3,
+          "Pts": 44
+        },
+        {
+          "Time": "Southampton",
+          "J": 23,
+          "V": 12,
+          "E": 8,
+          "D": 3,
+          "Pts": 44
+        },
+        {
+          "Time": "Middlesbrough",
+          "J": 23,
+          "V": 12,
+          "E": 6,
+          "D": 5,
+          "Pts": 42
+        },
+        {
+          "Time": "Millwall",
+          "J": 23,
+          "V": 13,
+          "E": 3,
+          "D": 7,
+          "Pts": 42
+        },
+        {
+          "Time": "Swansea City",
+          "J": 23,
+          "V": 11,
+          "E": 6,
+          "D": 6,
+          "Pts": 39
+        },
+        {
+          "Time": "Hull City",
+          "J": 23,
+          "V": 11,
+          "E": 5,
+          "D": 7,
+          "Pts": 38
+        },
+        {
+          "Time": "Watford",
+          "J": 23,
+          "V": 10,
+          "E": 7,
+          "D": 6,
+          "Pts": 37
+        },
+        {
+          "Time": "Wrexham",
+          "J": 23,
+          "V": 10,
+          "E": 7,
+          "D": 6,
+          "Pts": 37
+        },
+        {
+          "Time": "Derby County",
+          "J": 23,
+          "V": 10,
+          "E": 6,
+          "D": 7,
+          "Pts": 36
+        },
+        {
+          "Time": "West Bromwich",
+          "J": 23,
+          "V": 8,
+          "E": 10,
+          "D": 5,
+          "Pts": 34
+        },
+        {
+          "Time": "Queens Park Rangers",
+          "J": 23,
+          "V": 10,
+          "E": 3,
+          "D": 10,
+          "Pts": 33
+        },
+        {
+          "Time": "Stoke City",
+          "J": 23,
+          "V": 9,
+          "E": 6,
+          "D": 8,
+          "Pts": 33
+        },
+        {
+          "Time": "Charlton Athletic",
+          "J": 23,
+          "V": 9,
+          "E": 4,
+          "D": 10,
+          "Pts": 31
+        },
+        {
+          "Time": "Sheffield United",
+          "J": 23,
+          "V": 9,
+          "E": 4,
+          "D": 10,
+          "Pts": 31
+        },
+        {
+          "Time": "Preston North End",
+          "J": 23,
+          "V": 8,
+          "E": 7,
+          "D": 8,
+          "Pts": 31
+        },
+        {
+          "Time": "Bristol City",
+          "J": 23,
+          "V": 9,
+          "E": 4,
+          "D": 10,
+          "Pts": 31
+        },
+        {
+          "Time": "Portsmouth",
+          "J": 23,
+          "V": 8,
+          "E": 6,
+          "D": 9,
+          "Pts": 30
+        },
+        {
+          "Time": "Norwich City",
+          "J": 23,
+          "V": 9,
+          "E": 3,
+          "D": 11,
+          "Pts": 30
+        },
+        {
+          "Time": "Oxford United",
+          "J": 23,
+          "V": 7,
+          "E": 8,
+          "D": 8,
+          "Pts": 29
+        },
+        {
+          "Time": "Leicester City",
+          "J": 23,
+          "V": 7,
+          "E": 7,
+          "D": 9,
+          "Pts": 28
+        },
+        {
+          "Time": "Blackburn Rovers",
+          "J": 23,
+          "V": 4,
+          "E": 9,
+          "D": 10,
+          "Pts": 21
+        },
+        {
+          "Time": "Sheffield Wednesday",
+          "J": 23,
+          "V": 1,
+          "E": 7,
+          "D": 15,
+          "Pts": 10
+        }
+      ],
+      "away_table_full": [
+        {
+          "Time": "Millwall",
+          "J": 23,
+          "V": 11,
+          "E": 8,
+          "D": 4,
+          "Pts": 41
+        },
+        {
+          "Time": "Coventry City",
+          "J": 23,
+          "V": 11,
+          "E": 7,
+          "D": 5,
+          "Pts": 40
+        },
+        {
+          "Time": "Middlesbrough",
+          "J": 23,
+          "V": 10,
+          "E": 8,
+          "D": 5,
+          "Pts": 38
+        },
+        {
+          "Time": "Southampton",
+          "J": 23,
+          "V": 10,
+          "E": 6,
+          "D": 7,
+          "Pts": 36
+        },
+        {
+          "Time": "Hull City",
+          "J": 23,
+          "V": 10,
+          "E": 5,
+          "D": 8,
+          "Pts": 35
+        },
+        {
+          "Time": "Norwich City",
+          "J": 23,
+          "V": 10,
+          "E": 5,
+          "D": 8,
+          "Pts": 35
+        },
+        {
+          "Time": "Ipswich Town",
+          "J": 23,
+          "V": 9,
+          "E": 7,
+          "D": 7,
+          "Pts": 34
+        },
+        {
+          "Time": "Wrexham",
+          "J": 23,
+          "V": 9,
+          "E": 7,
+          "D": 7,
+          "Pts": 34
+        },
+        {
+          "Time": "Derby County",
+          "J": 23,
+          "V": 10,
+          "E": 3,
+          "D": 10,
+          "Pts": 33
+        },
+        {
+          "Time": "Bristol City",
+          "J": 23,
+          "V": 8,
+          "E": 7,
+          "D": 8,
+          "Pts": 31
+        },
+        {
+          "Time": "Blackburn Rovers",
+          "J": 23,
+          "V": 9,
+          "E": 4,
+          "D": 10,
+          "Pts": 31
+        },
+        {
+          "Time": "Preston North End",
+          "J": 23,
+          "V": 7,
+          "E": 8,
+          "D": 8,
+          "Pts": 29
+        },
+        {
+          "Time": "Sheffield United",
+          "J": 23,
+          "V": 9,
+          "E": 2,
+          "D": 12,
+          "Pts": 29
+        },
+        {
+          "Time": "Portsmouth",
+          "J": 23,
+          "V": 6,
+          "E": 7,
+          "D": 10,
+          "Pts": 25
+        },
+        {
+          "Time": "Swansea City",
+          "J": 23,
+          "V": 7,
+          "E": 4,
+          "D": 12,
+          "Pts": 25
+        },
+        {
+          "Time": "Queens Park Rangers",
+          "J": 23,
+          "V": 6,
+          "E": 7,
+          "D": 10,
+          "Pts": 25
+        },
+        {
+          "Time": "Leicester City",
+          "J": 23,
+          "V": 5,
+          "E": 9,
+          "D": 9,
+          "Pts": 24
+        },
+        {
+          "Time": "Charlton Athletic",
+          "J": 23,
+          "V": 4,
+          "E": 10,
+          "D": 9,
+          "Pts": 22
+        },
+        {
+          "Time": "Stoke City",
+          "J": 23,
+          "V": 6,
+          "E": 4,
+          "D": 13,
+          "Pts": 22
+        },
+        {
+          "Time": "Watford",
+          "J": 23,
+          "V": 4,
+          "E": 8,
+          "D": 11,
+          "Pts": 20
+        },
+        {
+          "Time": "Birmingham City",
+          "J": 23,
+          "V": 5,
+          "E": 5,
+          "D": 13,
+          "Pts": 20
+        },
+        {
+          "Time": "West Bromwich",
+          "J": 23,
+          "V": 5,
+          "E": 4,
+          "D": 14,
+          "Pts": 19
+        },
+        {
+          "Time": "Oxford United",
+          "J": 23,
+          "V": 4,
+          "E": 6,
+          "D": 13,
+          "Pts": 18
+        },
+        {
+          "Time": "Sheffield Wednesday",
+          "J": 23,
+          "V": 1,
+          "E": 5,
+          "D": 17,
+          "Pts": 8
+        }
+      ],
+      "last_n_games_data": {
+        "Birmingham City": [
+          "E",
+          "V",
+          "V",
+          "E",
+          "V",
+          "D",
+          "D",
+          "D",
+          "E",
+          "V"
+        ],
+        "Blackburn Rovers": [
+          "D",
+          "V",
+          "E",
+          "D",
+          "E",
+          "E",
+          "V",
+          "E",
+          "V",
+          "D"
+        ],
+        "Bristol City": [
+          "V",
+          "D",
+          "E",
+          "D",
+          "E",
+          "V",
+          "V",
+          "D",
+          "E",
+          "D"
+        ],
+        "Charlton Athletic": [
+          "D",
+          "V",
+          "D",
+          "E",
+          "D",
+          "E",
+          "D",
+          "D",
+          "E",
+          "V"
+        ],
+        "Coventry City": [
+          "V",
+          "V",
+          "V",
+          "E",
+          "E",
+          "E",
+          "V",
+          "V",
+          "D",
+          "V"
+        ],
+        "Derby County": [
+          "D",
+          "V",
+          "D",
+          "V",
+          "D",
+          "V",
+          "D",
+          "V",
+          "V",
+          "D"
+        ],
+        "Hull City": [
+          "V",
+          "D",
+          "E",
+          "E",
+          "D",
+          "E",
+          "E",
+          "V",
+          "D",
+          "V"
+        ],
+        "Ipswich Town": [
+          "V",
+          "E",
+          "E",
+          "V",
+          "E",
+          "D",
+          "V",
+          "V",
+          "E",
+          "V"
+        ],
+        "Leicester City": [
+          "V",
+          "E",
+          "E",
+          "D",
+          "D",
+          "E",
+          "E",
+          "E",
+          "D",
+          "V"
+        ],
+        "Middlesbrough": [
+          "E",
+          "V",
+          "V",
+          "E",
+          "D",
+          "E",
+          "D",
+          "E",
+          "E",
+          "D"
+        ],
+        "Millwall": [
+          "V",
+          "E",
+          "V",
+          "V",
+          "E",
+          "D",
+          "V",
+          "E",
+          "D",
+          "V"
+        ],
+        "Norwich City": [
+          "D",
+          "E",
+          "V",
+          "V",
+          "D",
+          "V",
+          "E",
+          "V",
+          "D",
+          "V"
+        ],
+        "Oxford United": [
+          "D",
+          "V",
+          "D",
+          "D",
+          "V",
+          "E",
+          "E",
+          "D",
+          "E",
+          "V"
+        ],
+        "Portsmouth": [
+          "E",
+          "V",
+          "D",
+          "V",
+          "V",
+          "V",
+          "E",
+          "E",
+          "D",
+          "D"
+        ],
+        "Preston North End": [
+          "D",
+          "V",
+          "D",
+          "D",
+          "V",
+          "E",
+          "E",
+          "V",
+          "D",
+          "D"
+        ],
+        "Queens Park Rangers": [
+          "D",
+          "D",
+          "D",
+          "D",
+          "E",
+          "E",
+          "V",
+          "V",
+          "V",
+          "D"
+        ],
+        "Sheffield United": [
+          "V",
+          "D",
+          "D",
+          "V",
+          "V",
+          "D",
+          "E",
+          "D",
+          "E",
+          "D"
+        ],
+        "Sheffield Wednesday": [
+          "V",
+          "D",
+          "D",
+          "E",
+          "E",
+          "E",
+          "D",
+          "D",
+          "D",
+          "E"
+        ],
+        "Southampton": [
+          "V",
+          "E",
+          "E",
+          "V",
+          "V",
+          "V",
+          "V",
+          "V",
+          "V",
+          "V"
+        ],
+        "Stoke City": [
+          "D",
+          "D",
+          "D",
+          "D",
+          "E",
+          "D",
+          "V",
+          "D",
+          "V",
+          "E"
+        ],
+        "Swansea City": [
+          "V",
+          "E",
+          "V",
+          "D",
+          "V",
+          "E",
+          "E",
+          "D",
+          "D",
+          "V"
+        ],
+        "Watford": [
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "E",
+          "D",
+          "E",
+          "V",
+          "D"
+        ],
+        "West Bromwich": [
+          "D",
+          "E",
+          "V",
+          "V",
+          "E",
+          "E",
+          "E",
+          "V",
+          "V",
+          "E"
+        ],
+        "Wrexham": [
+          "E",
+          "D",
+          "V",
+          "V",
+          "D",
+          "D",
+          "E",
+          "V",
+          "D",
+          "V"
+        ]
+      },
       "best_home": "Coventry City",
       "worst_home": "Sheffield Wednesday",
       "best_away": "Millwall",
@@ -697,7 +1941,7 @@
   },
   "League One": {
     "last_game_date": "2026-05-02",
-    "updated_at": "2026-05-02T13:36:30",
+    "updated_at": "2026-05-11T12:45:31",
     "data": {
       "insights": [
         "AFC Wimbledon está na 4ª derrota seguida em casa!",
@@ -715,7 +1959,8 @@
         "Blackpool venceu 6 dos últimos 7 jogos. Boa fase!",
         "Blackpool sofreu apenas 1 derrotas nos últimos 9 jogos.",
         "Blackpool sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
-        "Bolton Wanderers perdeu em casa depois de 10 jogos sem derrota em casa.",
+        "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Bolton Wanderers sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
         "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos fora de casa.",
         "Bradford City sofreu apenas 1 derrotas nos últimos 7 jogos.",
         "Bradford City venceu apenas 1 dos últimos 5 jogos em casa.",
@@ -727,10 +1972,10 @@
         "Burton Albion venceu apenas 1 dos últimos 15 jogos fora de casa.",
         "Burton Albion sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
         "Cardiff City está na 3ª vitória seguida em casa!",
-        "Cardiff City perdeu depois de 7 jogos sem derrota.",
+        "Cardiff City sofreu apenas 1 derrotas nos últimos 8 jogos.",
         "Cardiff City venceu 14 dos últimos 18 jogos em casa. Boa fase!",
         "Cardiff City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-        "Cardiff City perdeu fora de casa depois de 6 jogos sem derrota fora de casa.",
+        "Cardiff City sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
         "Doncaster Rovers sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
         "Exeter City está há 9 jogos sem vencer fora de casa.",
         "Exeter City venceu apenas 1 dos últimos 20 jogos.",
@@ -791,7 +2036,7 @@
         "Plymouth Argyle venceu 5 dos últimos 7 jogos em casa. Boa fase!",
         "Plymouth Argyle sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
         "Plymouth Argyle sofreu apenas 1 derrotas nos últimos 9 jogos fora de casa.",
-        "Port Vale perdeu em casa depois de 5 jogos sem derrota em casa.",
+        "Port Vale sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
         "Port Vale perdeu 5 dos últimos 7 jogos fora de casa.",
         "Reading está na 3ª derrota seguida em casa!",
         "Reading está há 6 jogos sem vencer.",
@@ -843,7 +2088,8 @@
           "Blackpool sofreu apenas 1 derrotas nos últimos 8 jogos em casa."
         ],
         "Bolton Wanderers": [
-          "Bolton Wanderers perdeu em casa depois de 10 jogos sem derrota em casa.",
+          "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos em casa.",
+          "Bolton Wanderers sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
           "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos fora de casa."
         ],
         "Bradford City": [
@@ -865,10 +2111,10 @@
           "Cardiff City está na 3ª vitória seguida em casa!",
           "Cardiff City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
           "Cardiff City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Cardiff City perdeu depois de 7 jogos sem derrota.",
+          "Cardiff City sofreu apenas 1 derrotas nos últimos 8 jogos.",
           "Cardiff City venceu 14 dos últimos 18 jogos em casa. Boa fase!",
           "Cardiff City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-          "Cardiff City perdeu fora de casa depois de 6 jogos sem derrota fora de casa."
+          "Cardiff City sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
         ],
         "Doncaster Rovers": [
           "Doncaster Rovers somou 10 pontos nos últimos 5 jogos. Excelente fase!",
@@ -975,7 +2221,7 @@
         ],
         "Port Vale": [
           "Port Vale somou apenas 2 pontos nos últimos 3 jogos em casa.",
-          "Port Vale perdeu em casa depois de 5 jogos sem derrota em casa.",
+          "Port Vale sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
           "Port Vale perdeu 5 dos últimos 7 jogos fora de casa."
         ],
         "Reading": [
@@ -1092,6 +2338,684 @@
         "Wigan Athletic",
         "Wycombe Wanderers"
       ],
+      "home_table_full": [
+        {
+          "Time": "Lincoln City",
+          "J": 23,
+          "V": 18,
+          "E": 4,
+          "D": 1,
+          "Pts": 58
+        },
+        {
+          "Time": "Cardiff City",
+          "J": 23,
+          "V": 17,
+          "E": 2,
+          "D": 4,
+          "Pts": 53
+        },
+        {
+          "Time": "Bradford City",
+          "J": 23,
+          "V": 15,
+          "E": 5,
+          "D": 3,
+          "Pts": 50
+        },
+        {
+          "Time": "Stevenage",
+          "J": 23,
+          "V": 14,
+          "E": 7,
+          "D": 2,
+          "Pts": 49
+        },
+        {
+          "Time": "Bolton Wanderers",
+          "J": 23,
+          "V": 13,
+          "E": 8,
+          "D": 2,
+          "Pts": 47
+        },
+        {
+          "Time": "Luton Town",
+          "J": 23,
+          "V": 13,
+          "E": 6,
+          "D": 4,
+          "Pts": 45
+        },
+        {
+          "Time": "Stockport County",
+          "J": 23,
+          "V": 13,
+          "E": 4,
+          "D": 6,
+          "Pts": 43
+        },
+        {
+          "Time": "Huddersfield Town",
+          "J": 23,
+          "V": 11,
+          "E": 9,
+          "D": 3,
+          "Pts": 42
+        },
+        {
+          "Time": "Wycombe Wanderers",
+          "J": 23,
+          "V": 13,
+          "E": 3,
+          "D": 7,
+          "Pts": 42
+        },
+        {
+          "Time": "Blackpool",
+          "J": 23,
+          "V": 12,
+          "E": 5,
+          "D": 6,
+          "Pts": 41
+        },
+        {
+          "Time": "Reading",
+          "J": 23,
+          "V": 10,
+          "E": 7,
+          "D": 6,
+          "Pts": 37
+        },
+        {
+          "Time": "Wigan Athletic",
+          "J": 23,
+          "V": 11,
+          "E": 4,
+          "D": 8,
+          "Pts": 37
+        },
+        {
+          "Time": "Mansfield Town",
+          "J": 23,
+          "V": 9,
+          "E": 8,
+          "D": 6,
+          "Pts": 35
+        },
+        {
+          "Time": "Plymouth Argyle",
+          "J": 23,
+          "V": 10,
+          "E": 4,
+          "D": 9,
+          "Pts": 34
+        },
+        {
+          "Time": "Barnsley",
+          "J": 23,
+          "V": 9,
+          "E": 6,
+          "D": 8,
+          "Pts": 33
+        },
+        {
+          "Time": "Doncaster Rovers",
+          "J": 23,
+          "V": 9,
+          "E": 6,
+          "D": 8,
+          "Pts": 33
+        },
+        {
+          "Time": "Burton Albion",
+          "J": 23,
+          "V": 9,
+          "E": 5,
+          "D": 9,
+          "Pts": 32
+        },
+        {
+          "Time": "Exeter City",
+          "J": 23,
+          "V": 8,
+          "E": 7,
+          "D": 8,
+          "Pts": 31
+        },
+        {
+          "Time": "Leyton Orient",
+          "J": 23,
+          "V": 8,
+          "E": 7,
+          "D": 8,
+          "Pts": 31
+        },
+        {
+          "Time": "Peterborough",
+          "J": 23,
+          "V": 8,
+          "E": 6,
+          "D": 9,
+          "Pts": 30
+        },
+        {
+          "Time": "AFC Wimbledon",
+          "J": 23,
+          "V": 8,
+          "E": 4,
+          "D": 11,
+          "Pts": 28
+        },
+        {
+          "Time": "Rotherham United",
+          "J": 23,
+          "V": 6,
+          "E": 9,
+          "D": 8,
+          "Pts": 27
+        },
+        {
+          "Time": "Northampton Town",
+          "J": 23,
+          "V": 6,
+          "E": 4,
+          "D": 13,
+          "Pts": 22
+        },
+        {
+          "Time": "Port Vale",
+          "J": 23,
+          "V": 4,
+          "E": 9,
+          "D": 10,
+          "Pts": 21
+        }
+      ],
+      "away_table_full": [
+        {
+          "Time": "Lincoln City",
+          "J": 23,
+          "V": 13,
+          "E": 6,
+          "D": 4,
+          "Pts": 45
+        },
+        {
+          "Time": "Plymouth Argyle",
+          "J": 23,
+          "V": 12,
+          "E": 3,
+          "D": 8,
+          "Pts": 39
+        },
+        {
+          "Time": "Cardiff City",
+          "J": 23,
+          "V": 10,
+          "E": 8,
+          "D": 5,
+          "Pts": 38
+        },
+        {
+          "Time": "Stockport County",
+          "J": 23,
+          "V": 9,
+          "E": 7,
+          "D": 7,
+          "Pts": 34
+        },
+        {
+          "Time": "Mansfield Town",
+          "J": 23,
+          "V": 7,
+          "E": 9,
+          "D": 7,
+          "Pts": 30
+        },
+        {
+          "Time": "Luton Town",
+          "J": 23,
+          "V": 8,
+          "E": 5,
+          "D": 10,
+          "Pts": 29
+        },
+        {
+          "Time": "Bolton Wanderers",
+          "J": 23,
+          "V": 6,
+          "E": 10,
+          "D": 7,
+          "Pts": 28
+        },
+        {
+          "Time": "Bradford City",
+          "J": 23,
+          "V": 7,
+          "E": 6,
+          "D": 10,
+          "Pts": 27
+        },
+        {
+          "Time": "Doncaster Rovers",
+          "J": 23,
+          "V": 8,
+          "E": 3,
+          "D": 12,
+          "Pts": 27
+        },
+        {
+          "Time": "Stevenage",
+          "J": 23,
+          "V": 7,
+          "E": 5,
+          "D": 11,
+          "Pts": 26
+        },
+        {
+          "Time": "Reading",
+          "J": 23,
+          "V": 6,
+          "E": 8,
+          "D": 9,
+          "Pts": 26
+        },
+        {
+          "Time": "Barnsley",
+          "J": 23,
+          "V": 6,
+          "E": 8,
+          "D": 9,
+          "Pts": 26
+        },
+        {
+          "Time": "AFC Wimbledon",
+          "J": 23,
+          "V": 7,
+          "E": 4,
+          "D": 12,
+          "Pts": 25
+        },
+        {
+          "Time": "Huddersfield Town",
+          "J": 23,
+          "V": 7,
+          "E": 4,
+          "D": 12,
+          "Pts": 25
+        },
+        {
+          "Time": "Peterborough",
+          "J": 23,
+          "V": 7,
+          "E": 2,
+          "D": 14,
+          "Pts": 23
+        },
+        {
+          "Time": "Burton Albion",
+          "J": 23,
+          "V": 4,
+          "E": 10,
+          "D": 9,
+          "Pts": 22
+        },
+        {
+          "Time": "Port Vale",
+          "J": 23,
+          "V": 6,
+          "E": 3,
+          "D": 14,
+          "Pts": 21
+        },
+        {
+          "Time": "Wycombe Wanderers",
+          "J": 23,
+          "V": 4,
+          "E": 9,
+          "D": 10,
+          "Pts": 21
+        },
+        {
+          "Time": "Leyton Orient",
+          "J": 23,
+          "V": 6,
+          "E": 3,
+          "D": 14,
+          "Pts": 21
+        },
+        {
+          "Time": "Wigan Athletic",
+          "J": 23,
+          "V": 3,
+          "E": 10,
+          "D": 10,
+          "Pts": 19
+        },
+        {
+          "Time": "Blackpool",
+          "J": 23,
+          "V": 5,
+          "E": 4,
+          "D": 14,
+          "Pts": 19
+        },
+        {
+          "Time": "Exeter City",
+          "J": 23,
+          "V": 4,
+          "E": 6,
+          "D": 13,
+          "Pts": 18
+        },
+        {
+          "Time": "Rotherham United",
+          "J": 23,
+          "V": 4,
+          "E": 2,
+          "D": 17,
+          "Pts": 14
+        },
+        {
+          "Time": "Northampton Town",
+          "J": 23,
+          "V": 3,
+          "E": 4,
+          "D": 16,
+          "Pts": 13
+        }
+      ],
+      "last_n_games_data": {
+        "AFC Wimbledon": [
+          "D",
+          "V",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "E",
+          "D"
+        ],
+        "Barnsley": [
+          "D",
+          "V",
+          "D",
+          "D",
+          "E",
+          "E",
+          "V",
+          "D",
+          "E",
+          "D"
+        ],
+        "Blackpool": [
+          "V",
+          "V",
+          "V",
+          "V",
+          "D",
+          "V",
+          "V",
+          "E",
+          "V",
+          "D"
+        ],
+        "Bolton Wanderers": [
+          "D",
+          "E",
+          "E",
+          "V",
+          "D",
+          "E",
+          "V",
+          "D",
+          "E",
+          "E"
+        ],
+        "Bradford City": [
+          "V",
+          "E",
+          "E",
+          "E",
+          "D",
+          "V",
+          "V",
+          "D",
+          "E",
+          "D"
+        ],
+        "Burton Albion": [
+          "E",
+          "E",
+          "E",
+          "V",
+          "E",
+          "E",
+          "D",
+          "V",
+          "D",
+          "V"
+        ],
+        "Cardiff City": [
+          "D",
+          "V",
+          "V",
+          "V",
+          "E",
+          "V",
+          "E",
+          "E",
+          "D",
+          "V"
+        ],
+        "Doncaster Rovers": [
+          "V",
+          "E",
+          "D",
+          "V",
+          "V",
+          "D",
+          "D",
+          "V",
+          "V",
+          "E"
+        ],
+        "Exeter City": [
+          "D",
+          "E",
+          "E",
+          "E",
+          "V",
+          "D",
+          "E",
+          "D",
+          "D",
+          "D"
+        ],
+        "Huddersfield Town": [
+          "V",
+          "D",
+          "E",
+          "E",
+          "E",
+          "V",
+          "E",
+          "D",
+          "E",
+          "E"
+        ],
+        "Leyton Orient": [
+          "E",
+          "D",
+          "D",
+          "E",
+          "D",
+          "D",
+          "E",
+          "E",
+          "V",
+          "V"
+        ],
+        "Lincoln City": [
+          "V",
+          "V",
+          "V",
+          "E",
+          "V",
+          "V",
+          "V",
+          "V",
+          "E",
+          "V"
+        ],
+        "Luton Town": [
+          "V",
+          "V",
+          "V",
+          "E",
+          "V",
+          "V",
+          "V",
+          "E",
+          "V",
+          "V"
+        ],
+        "Mansfield Town": [
+          "V",
+          "E",
+          "V",
+          "V",
+          "E",
+          "E",
+          "D",
+          "E",
+          "V",
+          "V"
+        ],
+        "Northampton Town": [
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D"
+        ],
+        "Peterborough": [
+          "D",
+          "E",
+          "D",
+          "E",
+          "D",
+          "D",
+          "E",
+          "D",
+          "E",
+          "V"
+        ],
+        "Plymouth Argyle": [
+          "V",
+          "V",
+          "E",
+          "V",
+          "E",
+          "V",
+          "D",
+          "V",
+          "V",
+          "E"
+        ],
+        "Port Vale": [
+          "D",
+          "V",
+          "D",
+          "D",
+          "E",
+          "V",
+          "E",
+          "V",
+          "D",
+          "D"
+        ],
+        "Reading": [
+          "D",
+          "E",
+          "D",
+          "D",
+          "D",
+          "E",
+          "V",
+          "D",
+          "V",
+          "E"
+        ],
+        "Rotherham United": [
+          "D",
+          "E",
+          "D",
+          "V",
+          "D",
+          "D",
+          "D",
+          "E",
+          "D",
+          "D"
+        ],
+        "Stevenage": [
+          "V",
+          "E",
+          "V",
+          "E",
+          "D",
+          "V",
+          "V",
+          "E",
+          "V",
+          "D"
+        ],
+        "Stockport County": [
+          "V",
+          "D",
+          "V",
+          "D",
+          "E",
+          "V",
+          "E",
+          "V",
+          "V",
+          "E"
+        ],
+        "Wigan Athletic": [
+          "D",
+          "D",
+          "E",
+          "V",
+          "V",
+          "V",
+          "E",
+          "D",
+          "V",
+          "E"
+        ],
+        "Wycombe Wanderers": [
+          "V",
+          "D",
+          "D",
+          "E",
+          "D",
+          "D",
+          "V",
+          "D",
+          "V",
+          "D"
+        ]
+      },
       "best_home": "Lincoln City",
       "worst_home": "Port Vale",
       "best_away": "Lincoln City",
@@ -1108,7 +3032,7 @@
   },
   "League Two": {
     "last_game_date": "2026-05-02",
-    "updated_at": "2026-05-08T14:05:33",
+    "updated_at": "2026-05-11T12:45:33",
     "data": {
       "insights": [
         "Accrington está há 6 jogos sem vencer.",
@@ -1433,6 +3357,684 @@
         "Tranmere Rovers",
         "Walsall"
       ],
+      "home_table_full": [
+        {
+          "Time": "Bromley",
+          "J": 23,
+          "V": 14,
+          "E": 9,
+          "D": 0,
+          "Pts": 51
+        },
+        {
+          "Time": "Cambridge United",
+          "J": 23,
+          "V": 15,
+          "E": 6,
+          "D": 2,
+          "Pts": 51
+        },
+        {
+          "Time": "Salford City",
+          "J": 23,
+          "V": 14,
+          "E": 4,
+          "D": 5,
+          "Pts": 46
+        },
+        {
+          "Time": "Milton Keynes Dons",
+          "J": 23,
+          "V": 13,
+          "E": 6,
+          "D": 4,
+          "Pts": 45
+        },
+        {
+          "Time": "Notts County",
+          "J": 23,
+          "V": 13,
+          "E": 4,
+          "D": 6,
+          "Pts": 43
+        },
+        {
+          "Time": "Crewe Alexandra",
+          "J": 23,
+          "V": 12,
+          "E": 5,
+          "D": 6,
+          "Pts": 41
+        },
+        {
+          "Time": "Chesterfield",
+          "J": 23,
+          "V": 11,
+          "E": 8,
+          "D": 4,
+          "Pts": 41
+        },
+        {
+          "Time": "Grimsby Town",
+          "J": 23,
+          "V": 12,
+          "E": 5,
+          "D": 6,
+          "Pts": 41
+        },
+        {
+          "Time": "Swindon Town",
+          "J": 23,
+          "V": 11,
+          "E": 6,
+          "D": 6,
+          "Pts": 39
+        },
+        {
+          "Time": "Oldham Athletic",
+          "J": 23,
+          "V": 10,
+          "E": 8,
+          "D": 5,
+          "Pts": 38
+        },
+        {
+          "Time": "Bristol Rovers",
+          "J": 23,
+          "V": 12,
+          "E": 1,
+          "D": 10,
+          "Pts": 37
+        },
+        {
+          "Time": "Colchester United",
+          "J": 23,
+          "V": 10,
+          "E": 6,
+          "D": 7,
+          "Pts": 36
+        },
+        {
+          "Time": "Barnet",
+          "J": 23,
+          "V": 10,
+          "E": 6,
+          "D": 7,
+          "Pts": 36
+        },
+        {
+          "Time": "Fleetwood Town",
+          "J": 23,
+          "V": 8,
+          "E": 9,
+          "D": 6,
+          "Pts": 33
+        },
+        {
+          "Time": "Shrewsbury Town",
+          "J": 23,
+          "V": 9,
+          "E": 6,
+          "D": 8,
+          "Pts": 33
+        },
+        {
+          "Time": "Accrington",
+          "J": 23,
+          "V": 9,
+          "E": 5,
+          "D": 9,
+          "Pts": 32
+        },
+        {
+          "Time": "Cheltenham Town",
+          "J": 23,
+          "V": 9,
+          "E": 4,
+          "D": 10,
+          "Pts": 31
+        },
+        {
+          "Time": "Gillingham",
+          "J": 23,
+          "V": 8,
+          "E": 7,
+          "D": 8,
+          "Pts": 31
+        },
+        {
+          "Time": "Walsall",
+          "J": 23,
+          "V": 8,
+          "E": 5,
+          "D": 10,
+          "Pts": 29
+        },
+        {
+          "Time": "Crawley Town",
+          "J": 23,
+          "V": 5,
+          "E": 10,
+          "D": 8,
+          "Pts": 25
+        },
+        {
+          "Time": "Newport County",
+          "J": 23,
+          "V": 6,
+          "E": 4,
+          "D": 13,
+          "Pts": 22
+        },
+        {
+          "Time": "Barrow",
+          "J": 23,
+          "V": 5,
+          "E": 4,
+          "D": 14,
+          "Pts": 19
+        },
+        {
+          "Time": "Tranmere Rovers",
+          "J": 23,
+          "V": 4,
+          "E": 6,
+          "D": 13,
+          "Pts": 18
+        },
+        {
+          "Time": "Harrogate Town",
+          "J": 23,
+          "V": 4,
+          "E": 3,
+          "D": 16,
+          "Pts": 15
+        }
+      ],
+      "away_table_full": [
+        {
+          "Time": "Milton Keynes Dons",
+          "J": 23,
+          "V": 11,
+          "E": 8,
+          "D": 4,
+          "Pts": 41
+        },
+        {
+          "Time": "Barnet",
+          "J": 23,
+          "V": 11,
+          "E": 7,
+          "D": 5,
+          "Pts": 40
+        },
+        {
+          "Time": "Chesterfield",
+          "J": 23,
+          "V": 10,
+          "E": 8,
+          "D": 5,
+          "Pts": 38
+        },
+        {
+          "Time": "Notts County",
+          "J": 23,
+          "V": 11,
+          "E": 4,
+          "D": 8,
+          "Pts": 37
+        },
+        {
+          "Time": "Grimsby Town",
+          "J": 23,
+          "V": 10,
+          "E": 7,
+          "D": 6,
+          "Pts": 37
+        },
+        {
+          "Time": "Swindon Town",
+          "J": 23,
+          "V": 11,
+          "E": 3,
+          "D": 9,
+          "Pts": 36
+        },
+        {
+          "Time": "Bromley",
+          "J": 23,
+          "V": 10,
+          "E": 6,
+          "D": 7,
+          "Pts": 36
+        },
+        {
+          "Time": "Walsall",
+          "J": 23,
+          "V": 10,
+          "E": 6,
+          "D": 7,
+          "Pts": 36
+        },
+        {
+          "Time": "Salford City",
+          "J": 23,
+          "V": 11,
+          "E": 2,
+          "D": 10,
+          "Pts": 35
+        },
+        {
+          "Time": "Cambridge United",
+          "J": 23,
+          "V": 7,
+          "E": 10,
+          "D": 6,
+          "Pts": 31
+        },
+        {
+          "Time": "Oldham Athletic",
+          "J": 23,
+          "V": 8,
+          "E": 6,
+          "D": 9,
+          "Pts": 30
+        },
+        {
+          "Time": "Colchester United",
+          "J": 23,
+          "V": 8,
+          "E": 6,
+          "D": 9,
+          "Pts": 30
+        },
+        {
+          "Time": "Fleetwood Town",
+          "J": 23,
+          "V": 7,
+          "E": 7,
+          "D": 9,
+          "Pts": 28
+        },
+        {
+          "Time": "Crewe Alexandra",
+          "J": 23,
+          "V": 7,
+          "E": 5,
+          "D": 11,
+          "Pts": 26
+        },
+        {
+          "Time": "Bristol Rovers",
+          "J": 23,
+          "V": 7,
+          "E": 4,
+          "D": 12,
+          "Pts": 25
+        },
+        {
+          "Time": "Harrogate Town",
+          "J": 23,
+          "V": 6,
+          "E": 6,
+          "D": 11,
+          "Pts": 24
+        },
+        {
+          "Time": "Tranmere Rovers",
+          "J": 23,
+          "V": 6,
+          "E": 5,
+          "D": 12,
+          "Pts": 23
+        },
+        {
+          "Time": "Gillingham",
+          "J": 23,
+          "V": 5,
+          "E": 7,
+          "D": 11,
+          "Pts": 22
+        },
+        {
+          "Time": "Cheltenham Town",
+          "J": 23,
+          "V": 5,
+          "E": 6,
+          "D": 12,
+          "Pts": 21
+        },
+        {
+          "Time": "Accrington",
+          "J": 23,
+          "V": 5,
+          "E": 6,
+          "D": 12,
+          "Pts": 21
+        },
+        {
+          "Time": "Newport County",
+          "J": 23,
+          "V": 6,
+          "E": 3,
+          "D": 14,
+          "Pts": 21
+        },
+        {
+          "Time": "Barrow",
+          "J": 23,
+          "V": 4,
+          "E": 5,
+          "D": 14,
+          "Pts": 17
+        },
+        {
+          "Time": "Shrewsbury Town",
+          "J": 23,
+          "V": 4,
+          "E": 4,
+          "D": 15,
+          "Pts": 16
+        },
+        {
+          "Time": "Crawley Town",
+          "J": 23,
+          "V": 3,
+          "E": 6,
+          "D": 14,
+          "Pts": 15
+        }
+      ],
+      "last_n_games_data": {
+        "Accrington": [
+          "D",
+          "E",
+          "E",
+          "D",
+          "D",
+          "D",
+          "V",
+          "D",
+          "D",
+          "D"
+        ],
+        "Barnet": [
+          "V",
+          "V",
+          "V",
+          "V",
+          "V",
+          "E",
+          "V",
+          "V",
+          "E",
+          "D"
+        ],
+        "Barrow": [
+          "D",
+          "D",
+          "D",
+          "V",
+          "D",
+          "D",
+          "E",
+          "V",
+          "D",
+          "D"
+        ],
+        "Bristol Rovers": [
+          "E",
+          "V",
+          "V",
+          "V",
+          "V",
+          "V",
+          "V",
+          "V",
+          "V",
+          "D"
+        ],
+        "Bromley": [
+          "V",
+          "D",
+          "E",
+          "D",
+          "V",
+          "E",
+          "D",
+          "V",
+          "V",
+          "V"
+        ],
+        "Cambridge United": [
+          "E",
+          "V",
+          "D",
+          "E",
+          "V",
+          "E",
+          "E",
+          "D",
+          "V",
+          "E"
+        ],
+        "Cheltenham Town": [
+          "D",
+          "D",
+          "D",
+          "V",
+          "V",
+          "V",
+          "E",
+          "D",
+          "D",
+          "E"
+        ],
+        "Chesterfield": [
+          "V",
+          "V",
+          "E",
+          "V",
+          "E",
+          "V",
+          "V",
+          "V",
+          "D",
+          "V"
+        ],
+        "Colchester United": [
+          "V",
+          "D",
+          "D",
+          "V",
+          "V",
+          "V",
+          "D",
+          "E",
+          "D",
+          "D"
+        ],
+        "Crawley Town": [
+          "E",
+          "E",
+          "E",
+          "D",
+          "D",
+          "V",
+          "V",
+          "D",
+          "E",
+          "E"
+        ],
+        "Crewe Alexandra": [
+          "E",
+          "D",
+          "D",
+          "D",
+          "V",
+          "D",
+          "V",
+          "V",
+          "E",
+          "D"
+        ],
+        "Fleetwood Town": [
+          "E",
+          "E",
+          "E",
+          "V",
+          "D",
+          "D",
+          "E",
+          "V",
+          "D",
+          "E"
+        ],
+        "Gillingham": [
+          "V",
+          "D",
+          "D",
+          "D",
+          "E",
+          "V",
+          "E",
+          "D",
+          "D",
+          "D"
+        ],
+        "Grimsby Town": [
+          "E",
+          "V",
+          "V",
+          "V",
+          "D",
+          "V",
+          "V",
+          "D",
+          "V",
+          "V"
+        ],
+        "Harrogate Town": [
+          "D",
+          "V",
+          "V",
+          "D",
+          "D",
+          "V",
+          "D",
+          "D",
+          "V",
+          "D"
+        ],
+        "Milton Keynes Dons": [
+          "E",
+          "V",
+          "V",
+          "V",
+          "E",
+          "E",
+          "D",
+          "D",
+          "V",
+          "V"
+        ],
+        "Newport County": [
+          "V",
+          "V",
+          "D",
+          "V",
+          "D",
+          "D",
+          "V",
+          "D",
+          "D",
+          "V"
+        ],
+        "Notts County": [
+          "E",
+          "V",
+          "D",
+          "D",
+          "V",
+          "D",
+          "V",
+          "D",
+          "V",
+          "V"
+        ],
+        "Oldham Athletic": [
+          "V",
+          "D",
+          "D",
+          "D",
+          "D",
+          "E",
+          "V",
+          "D",
+          "V",
+          "V"
+        ],
+        "Salford City": [
+          "E",
+          "V",
+          "V",
+          "E",
+          "D",
+          "V",
+          "V",
+          "D",
+          "V",
+          "V"
+        ],
+        "Shrewsbury Town": [
+          "D",
+          "E",
+          "E",
+          "V",
+          "D",
+          "V",
+          "D",
+          "D",
+          "D",
+          "D"
+        ],
+        "Swindon Town": [
+          "D",
+          "D",
+          "E",
+          "D",
+          "V",
+          "E",
+          "E",
+          "V",
+          "V",
+          "D"
+        ],
+        "Tranmere Rovers": [
+          "E",
+          "D",
+          "V",
+          "D",
+          "E",
+          "D",
+          "D",
+          "D",
+          "D",
+          "E"
+        ],
+        "Walsall": [
+          "D",
+          "D",
+          "V",
+          "D",
+          "D",
+          "E",
+          "E",
+          "V",
+          "E",
+          "V"
+        ]
+      },
       "best_home": "Bromley",
       "worst_home": "Harrogate Town",
       "best_away": "Milton Keynes Dons",
@@ -1449,7 +4051,7 @@
   },
   "National League": {
     "last_game_date": "2026-04-25",
-    "updated_at": "2026-05-01T23:26:19",
+    "updated_at": "2026-05-11T12:45:35",
     "data": {
       "insights": [
         "Aldershot Town está na 5ª derrota seguida!",
@@ -1835,6 +4437,684 @@
         "Yeovil Town",
         "York City"
       ],
+      "home_table_full": [
+        {
+          "Time": "Rochdale",
+          "J": 23,
+          "V": 18,
+          "E": 2,
+          "D": 3,
+          "Pts": 56
+        },
+        {
+          "Time": "York City",
+          "J": 23,
+          "V": 17,
+          "E": 4,
+          "D": 2,
+          "Pts": 55
+        },
+        {
+          "Time": "Boreham Wood",
+          "J": 23,
+          "V": 17,
+          "E": 2,
+          "D": 4,
+          "Pts": 53
+        },
+        {
+          "Time": "Forest Green Rovers",
+          "J": 23,
+          "V": 15,
+          "E": 5,
+          "D": 3,
+          "Pts": 50
+        },
+        {
+          "Time": "Carlisle United",
+          "J": 23,
+          "V": 15,
+          "E": 5,
+          "D": 3,
+          "Pts": 50
+        },
+        {
+          "Time": "Southend United",
+          "J": 23,
+          "V": 13,
+          "E": 7,
+          "D": 3,
+          "Pts": 46
+        },
+        {
+          "Time": "Scunthorpe United",
+          "J": 23,
+          "V": 12,
+          "E": 6,
+          "D": 5,
+          "Pts": 42
+        },
+        {
+          "Time": "Altrincham",
+          "J": 23,
+          "V": 13,
+          "E": 1,
+          "D": 9,
+          "Pts": 40
+        },
+        {
+          "Time": "Wealdstone",
+          "J": 23,
+          "V": 11,
+          "E": 6,
+          "D": 6,
+          "Pts": 39
+        },
+        {
+          "Time": "Tamworth",
+          "J": 23,
+          "V": 11,
+          "E": 5,
+          "D": 7,
+          "Pts": 38
+        },
+        {
+          "Time": "Hartlepool United",
+          "J": 23,
+          "V": 10,
+          "E": 7,
+          "D": 6,
+          "Pts": 37
+        },
+        {
+          "Time": "FC Halifax Town",
+          "J": 23,
+          "V": 10,
+          "E": 7,
+          "D": 6,
+          "Pts": 37
+        },
+        {
+          "Time": "Yeovil Town",
+          "J": 23,
+          "V": 9,
+          "E": 5,
+          "D": 9,
+          "Pts": 32
+        },
+        {
+          "Time": "Woking",
+          "J": 23,
+          "V": 7,
+          "E": 10,
+          "D": 6,
+          "Pts": 31
+        },
+        {
+          "Time": "Brackley Town",
+          "J": 23,
+          "V": 7,
+          "E": 7,
+          "D": 9,
+          "Pts": 28
+        },
+        {
+          "Time": "Solihull Moors",
+          "J": 23,
+          "V": 8,
+          "E": 4,
+          "D": 11,
+          "Pts": 28
+        },
+        {
+          "Time": "Eastleigh",
+          "J": 23,
+          "V": 7,
+          "E": 6,
+          "D": 10,
+          "Pts": 27
+        },
+        {
+          "Time": "Boston United",
+          "J": 23,
+          "V": 7,
+          "E": 6,
+          "D": 10,
+          "Pts": 27
+        },
+        {
+          "Time": "Sutton United",
+          "J": 23,
+          "V": 6,
+          "E": 7,
+          "D": 10,
+          "Pts": 25
+        },
+        {
+          "Time": "Braintree Town",
+          "J": 23,
+          "V": 5,
+          "E": 7,
+          "D": 11,
+          "Pts": 22
+        },
+        {
+          "Time": "Gateshead",
+          "J": 23,
+          "V": 6,
+          "E": 4,
+          "D": 13,
+          "Pts": 22
+        },
+        {
+          "Time": "Truro City",
+          "J": 23,
+          "V": 5,
+          "E": 6,
+          "D": 12,
+          "Pts": 21
+        },
+        {
+          "Time": "Aldershot Town",
+          "J": 23,
+          "V": 6,
+          "E": 3,
+          "D": 14,
+          "Pts": 21
+        },
+        {
+          "Time": "Morecambe",
+          "J": 23,
+          "V": 4,
+          "E": 6,
+          "D": 13,
+          "Pts": 18
+        }
+      ],
+      "away_table_full": [
+        {
+          "Time": "York City",
+          "J": 23,
+          "V": 16,
+          "E": 5,
+          "D": 2,
+          "Pts": 53
+        },
+        {
+          "Time": "Rochdale",
+          "J": 23,
+          "V": 15,
+          "E": 5,
+          "D": 3,
+          "Pts": 50
+        },
+        {
+          "Time": "Carlisle United",
+          "J": 23,
+          "V": 14,
+          "E": 3,
+          "D": 6,
+          "Pts": 45
+        },
+        {
+          "Time": "Scunthorpe United",
+          "J": 23,
+          "V": 11,
+          "E": 7,
+          "D": 5,
+          "Pts": 40
+        },
+        {
+          "Time": "Boreham Wood",
+          "J": 23,
+          "V": 10,
+          "E": 7,
+          "D": 6,
+          "Pts": 37
+        },
+        {
+          "Time": "Southend United",
+          "J": 23,
+          "V": 10,
+          "E": 5,
+          "D": 8,
+          "Pts": 35
+        },
+        {
+          "Time": "FC Halifax Town",
+          "J": 23,
+          "V": 10,
+          "E": 3,
+          "D": 10,
+          "Pts": 33
+        },
+        {
+          "Time": "Woking",
+          "J": 23,
+          "V": 9,
+          "E": 5,
+          "D": 9,
+          "Pts": 32
+        },
+        {
+          "Time": "Boston United",
+          "J": 23,
+          "V": 8,
+          "E": 8,
+          "D": 7,
+          "Pts": 32
+        },
+        {
+          "Time": "Hartlepool United",
+          "J": 23,
+          "V": 8,
+          "E": 7,
+          "D": 8,
+          "Pts": 31
+        },
+        {
+          "Time": "Forest Green Rovers",
+          "J": 23,
+          "V": 8,
+          "E": 7,
+          "D": 8,
+          "Pts": 31
+        },
+        {
+          "Time": "Gateshead",
+          "J": 23,
+          "V": 8,
+          "E": 4,
+          "D": 11,
+          "Pts": 28
+        },
+        {
+          "Time": "Solihull Moors",
+          "J": 23,
+          "V": 6,
+          "E": 10,
+          "D": 7,
+          "Pts": 28
+        },
+        {
+          "Time": "Aldershot Town",
+          "J": 23,
+          "V": 7,
+          "E": 4,
+          "D": 12,
+          "Pts": 25
+        },
+        {
+          "Time": "Tamworth",
+          "J": 23,
+          "V": 6,
+          "E": 6,
+          "D": 11,
+          "Pts": 24
+        },
+        {
+          "Time": "Eastleigh",
+          "J": 23,
+          "V": 6,
+          "E": 5,
+          "D": 12,
+          "Pts": 23
+        },
+        {
+          "Time": "Sutton United",
+          "J": 23,
+          "V": 5,
+          "E": 7,
+          "D": 11,
+          "Pts": 22
+        },
+        {
+          "Time": "Morecambe",
+          "J": 23,
+          "V": 5,
+          "E": 5,
+          "D": 13,
+          "Pts": 20
+        },
+        {
+          "Time": "Yeovil Town",
+          "J": 23,
+          "V": 6,
+          "E": 1,
+          "D": 16,
+          "Pts": 19
+        },
+        {
+          "Time": "Altrincham",
+          "J": 23,
+          "V": 4,
+          "E": 5,
+          "D": 14,
+          "Pts": 17
+        },
+        {
+          "Time": "Wealdstone",
+          "J": 23,
+          "V": 4,
+          "E": 5,
+          "D": 14,
+          "Pts": 17
+        },
+        {
+          "Time": "Braintree Town",
+          "J": 23,
+          "V": 3,
+          "E": 5,
+          "D": 15,
+          "Pts": 14
+        },
+        {
+          "Time": "Brackley Town",
+          "J": 23,
+          "V": 3,
+          "E": 5,
+          "D": 15,
+          "Pts": 14
+        },
+        {
+          "Time": "Truro City",
+          "J": 23,
+          "V": 3,
+          "E": 4,
+          "D": 16,
+          "Pts": 13
+        }
+      ],
+      "last_n_games_data": {
+        "Aldershot Town": [
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "E",
+          "V",
+          "D",
+          "D",
+          "D"
+        ],
+        "Altrincham": [
+          "V",
+          "V",
+          "V",
+          "D",
+          "D",
+          "E",
+          "D",
+          "E",
+          "V",
+          "D"
+        ],
+        "Boreham Wood": [
+          "V",
+          "V",
+          "V",
+          "D",
+          "V",
+          "E",
+          "V",
+          "V",
+          "D",
+          "E"
+        ],
+        "Boston United": [
+          "V",
+          "V",
+          "E",
+          "V",
+          "E",
+          "D",
+          "E",
+          "D",
+          "V",
+          "D"
+        ],
+        "Brackley Town": [
+          "D",
+          "V",
+          "D",
+          "E",
+          "D",
+          "D",
+          "E",
+          "D",
+          "E",
+          "D"
+        ],
+        "Braintree Town": [
+          "D",
+          "D",
+          "D",
+          "E",
+          "D",
+          "D",
+          "E",
+          "D",
+          "E",
+          "D"
+        ],
+        "Carlisle United": [
+          "V",
+          "V",
+          "V",
+          "E",
+          "E",
+          "V",
+          "V",
+          "V",
+          "D",
+          "V"
+        ],
+        "Eastleigh": [
+          "V",
+          "E",
+          "D",
+          "V",
+          "E",
+          "D",
+          "D",
+          "D",
+          "D",
+          "V"
+        ],
+        "FC Halifax Town": [
+          "V",
+          "D",
+          "E",
+          "E",
+          "V",
+          "D",
+          "D",
+          "V",
+          "V",
+          "V"
+        ],
+        "Forest Green Rovers": [
+          "V",
+          "D",
+          "V",
+          "E",
+          "V",
+          "V",
+          "D",
+          "V",
+          "D",
+          "V"
+        ],
+        "Gateshead": [
+          "D",
+          "D",
+          "V",
+          "V",
+          "E",
+          "V",
+          "V",
+          "D",
+          "V",
+          "E"
+        ],
+        "Hartlepool United": [
+          "D",
+          "V",
+          "V",
+          "D",
+          "E",
+          "E",
+          "D",
+          "V",
+          "V",
+          "V"
+        ],
+        "Morecambe": [
+          "D",
+          "D",
+          "D",
+          "E",
+          "V",
+          "D",
+          "D",
+          "D",
+          "E",
+          "V"
+        ],
+        "Rochdale": [
+          "E",
+          "V",
+          "V",
+          "E",
+          "D",
+          "V",
+          "E",
+          "V",
+          "D",
+          "V"
+        ],
+        "Scunthorpe United": [
+          "D",
+          "E",
+          "V",
+          "D",
+          "E",
+          "V",
+          "E",
+          "V",
+          "V",
+          "V"
+        ],
+        "Solihull Moors": [
+          "V",
+          "D",
+          "E",
+          "E",
+          "V",
+          "D",
+          "V",
+          "E",
+          "D",
+          "E"
+        ],
+        "Southend United": [
+          "V",
+          "D",
+          "V",
+          "V",
+          "E",
+          "V",
+          "V",
+          "V",
+          "E",
+          "D"
+        ],
+        "Sutton United": [
+          "D",
+          "D",
+          "D",
+          "D",
+          "E",
+          "D",
+          "V",
+          "D",
+          "E",
+          "V"
+        ],
+        "Tamworth": [
+          "V",
+          "E",
+          "D",
+          "E",
+          "V",
+          "V",
+          "V",
+          "D",
+          "V",
+          "D"
+        ],
+        "Truro City": [
+          "V",
+          "D",
+          "D",
+          "E",
+          "D",
+          "E",
+          "E",
+          "V",
+          "D",
+          "D"
+        ],
+        "Wealdstone": [
+          "D",
+          "E",
+          "E",
+          "D",
+          "V",
+          "D",
+          "V",
+          "D",
+          "D",
+          "D"
+        ],
+        "Woking": [
+          "D",
+          "V",
+          "E",
+          "V",
+          "E",
+          "E",
+          "E",
+          "D",
+          "E",
+          "V"
+        ],
+        "Yeovil Town": [
+          "D",
+          "D",
+          "E",
+          "D",
+          "V",
+          "D",
+          "D",
+          "V",
+          "V",
+          "D"
+        ],
+        "York City": [
+          "E",
+          "V",
+          "V",
+          "V",
+          "V",
+          "V",
+          "D",
+          "V",
+          "V",
+          "V"
+        ]
+      },
       "best_home": "Rochdale",
       "worst_home": "Morecambe",
       "best_away": "York City",

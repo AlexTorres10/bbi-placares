@@ -1782,7 +1782,7 @@ def process_badge_for_dark_mode(img_bytes: bytes) -> bytes:
     """Inverts monochromatic dark badges so they remain visible in dark mode."""
     import statistics
     img = Image.open(io.BytesIO(img_bytes)).convert("RGBA")
-    pixels = list(img.getdata())
+    pixels = list(img.get_flattened_data())
     opaque = [(px[0], px[1], px[2]) for px in pixels if px[3] > 10]
     if not opaque:
         return img_bytes
@@ -2351,6 +2351,29 @@ def render_stats_mode():
 
     st.divider()
 
+    # ── Tabelas Mandante / Visitante ──────────────────────────────────────
+    _ht = data.get('home_table_full')
+    _at = data.get('away_table_full')
+    if _ht is not None and not _ht.empty and _at is not None and not _at.empty:
+        import pandas as _pd_tables
+        st.subheader("🏠 Mandante  ·  ✈️ Visitante")
+        _col_h, _col_a = st.columns(2)
+        with _col_h:
+            st.markdown("**Mandante**")
+            st.dataframe(
+                _ht[['Time', 'J', 'V', 'E', 'D', 'Pts']].reset_index(drop=True),
+                hide_index=True,
+                width='stretch',
+            )
+        with _col_a:
+            st.markdown("**Visitante**")
+            st.dataframe(
+                _at[['Time', 'J', 'V', 'E', 'D', 'Pts']].reset_index(drop=True),
+                hide_index=True,
+                width='stretch',
+            )
+        st.divider()
+
     # ── Copiar para Claude ────────────────────────────────────────────────
     _copy_key = f'claude_copy_text_{liga_key}'
     if st.button("📋 Copiar para Claude", key=f"btn_copiar_claude_{liga_key}"):
@@ -2555,6 +2578,26 @@ def render_stats_mode():
                     margin=dict(l=40, r=20, t=50, b=40),
                 )
                 st.plotly_chart(fig, width='stretch')
+
+    # ── Tabela dinâmica: últimos N jogos ──────────────────────────────────
+    _last_n_raw = data.get('last_n_games_data', {})
+    if _last_n_raw:
+        st.divider()
+        st.subheader("📅 Forma Recente — Últimos N jogos")
+        _n = st.slider("Número de jogos", min_value=5, max_value=10, value=5, key=f"slider_n_{liga_key}")
+        import pandas as _pd_lastn
+        _rows_n = []
+        for _t, _games in _last_n_raw.items():
+            _recent = _games[:_n]
+            _j = len(_recent)
+            _v = sum(1 for g in _recent if g == 'V')
+            _e = sum(1 for g in _recent if g == 'E')
+            _d = sum(1 for g in _recent if g == 'D')
+            _rows_n.append({'Time': _t, 'J': _j, 'V': _v, 'E': _e, 'D': _d, 'Pts': _v * 3 + _e})
+        _df_lastn = (_pd_lastn.DataFrame(_rows_n)
+                     .sort_values('Pts', ascending=False)
+                     .reset_index(drop=True))
+        st.dataframe(_df_lastn, hide_index=True, width='stretch')
 
 
 # ============================================================================

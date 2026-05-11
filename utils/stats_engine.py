@@ -36,23 +36,58 @@ def _home_away_table(df_liga: pd.DataFrame, mando: str) -> pd.DataFrame:
     if mando == 'home':
         for team in df_liga['casa'].unique():
             sub = df_liga[df_liga['casa'] == team]
-            pts = 0
+            v = e = d = 0
             for _, row in sub.iterrows():
                 gh, ga = _parse_score(row['placar'])
-                pts += 3 if gh > ga else (1 if gh == ga else 0)
-            records.append({'Time': team, 'J': len(sub), 'Pts': pts})
+                if gh > ga:
+                    v += 1
+                elif gh == ga:
+                    e += 1
+                else:
+                    d += 1
+            records.append({'Time': team, 'J': len(sub), 'V': v, 'E': e, 'D': d, 'Pts': v * 3 + e})
     else:
         for team in df_liga['fora'].unique():
             sub = df_liga[df_liga['fora'] == team]
-            pts = 0
+            v = e = d = 0
             for _, row in sub.iterrows():
                 gh, ga = _parse_score(row['placar'])
-                pts += 3 if ga > gh else (1 if ga == gh else 0)
-            records.append({'Time': team, 'J': len(sub), 'Pts': pts})
+                if ga > gh:
+                    v += 1
+                elif ga == gh:
+                    e += 1
+                else:
+                    d += 1
+            records.append({'Time': team, 'J': len(sub), 'V': v, 'E': e, 'D': d, 'Pts': v * 3 + e})
 
     return (pd.DataFrame(records)
             .sort_values('Pts', ascending=False)
             .reset_index(drop=True))
+
+
+def _last_n_games_data(df_liga: pd.DataFrame, teams: List[str]) -> Dict[str, List[str]]:
+    """
+    Retorna para cada time a lista dos últimos 10 resultados ('V'/'E'/'D'), do mais recente ao mais antigo.
+    Armazenado em cache como parte de compute_league_stats para uso pelo slider dinâmico na UI.
+    """
+    result: Dict[str, List[str]] = {}
+    for team in teams:
+        sub = df_liga[(df_liga['casa'] == team) | (df_liga['fora'] == team)].copy()
+        sub = sub.sort_values('data', ascending=False).head(10)
+        games = []
+        for _, row in sub.iterrows():
+            gh, ga = _parse_score(row['placar'])
+            is_home = row['casa'] == team
+            gf_val = gh if is_home else ga
+            gs_val = ga if is_home else gh
+            if gf_val > gs_val:
+                games.append('V')
+            elif gf_val == gs_val:
+                games.append('E')
+            else:
+                games.append('D')
+        result[team] = games
+    return result
 
 
 def _overall_attack_defense(df_liga: pd.DataFrame, teams: List[str]) -> pd.DataFrame:
@@ -125,6 +160,8 @@ def compute_league_stats(liga_str: str) -> dict:
             'worst_attack_team': '-', 'worst_attack_gols': 0,
             'best_defense_team': '-', 'best_defense_gols': 0,
             'worst_defense_team': '-', 'worst_defense_gols': 0,
+            'home_table_full': pd.DataFrame(), 'away_table_full': pd.DataFrame(),
+            'last_n_games_data': {},
         }
 
     # Filtrar temporada atual: Jul 1 do ano corrente da temporada
@@ -153,6 +190,9 @@ def compute_league_stats(liga_str: str) -> dict:
     away_table = _home_away_table(df_liga, 'away')
     team_rankings = {team: _ranking_insights(team, home_table, away_table) for team in teams}
 
+    # Dados para tabela dinâmica de últimos N jogos
+    last_n_games = _last_n_games_data(df_liga, teams)
+
     # Ataque/defesa geral (temporada atual)
     ovr = _overall_attack_defense(df_liga, teams)
     best_atk_gols  = int(ovr['GM'].max())
@@ -170,6 +210,9 @@ def compute_league_stats(liga_str: str) -> dict:
         'team_insights': team_insights,
         'team_rankings': team_rankings,
         'teams': teams,
+        'home_table_full': home_table,
+        'away_table_full': away_table,
+        'last_n_games_data': last_n_games,
         'best_home':  home_table.iloc[0]['Time']  if not home_table.empty  else '-',
         'worst_home': home_table.iloc[-1]['Time'] if not home_table.empty  else '-',
         'best_away':  away_table.iloc[0]['Time']  if not away_table.empty  else '-',

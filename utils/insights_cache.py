@@ -44,12 +44,6 @@ def historico_last_date(liga_str: str) -> Optional[str]:
         return None
 
 
-def load_cached_stats(liga_str: str) -> Optional[dict]:
-    """Returns the cached stats dict for a liga, or None if not cached."""
-    entry = _load_raw().get(liga_str)
-    return entry.get("data") if entry else None
-
-
 def get_cache_meta(liga_str: str) -> Optional[dict]:
     """Returns {'last_game_date': ..., 'updated_at': ...} or None if no entry."""
     entry = _load_raw().get(liga_str)
@@ -73,15 +67,49 @@ def is_stale(liga_str: str) -> bool:
     return bool(current and current > cached_date)
 
 
+_DATAFRAME_FIELDS = ("home_table_full", "away_table_full")
+
+
+def _serialize_data(data: dict) -> dict:
+    """Converts DataFrame fields to list-of-records for JSON serialisation."""
+    out = {}
+    for k, v in data.items():
+        if k in _DATAFRAME_FIELDS and hasattr(v, "to_dict"):
+            out[k] = v.to_dict(orient="records")
+        else:
+            out[k] = v
+    return out
+
+
+def _deserialize_data(data: dict) -> dict:
+    """Restores DataFrame fields from list-of-records after JSON deserialisation."""
+    out = {}
+    for k, v in data.items():
+        if k in _DATAFRAME_FIELDS and isinstance(v, list):
+            out[k] = pd.DataFrame(v)
+        else:
+            out[k] = v
+    return out
+
+
 def save_stats(liga_str: str, data: dict) -> None:
     """Persists the computed stats dict alongside the current last_game_date."""
     raw = _load_raw()
     raw[liga_str] = {
         "last_game_date": historico_last_date(liga_str),
         "updated_at": datetime.now().isoformat(timespec="seconds"),
-        "data": data,
+        "data": _serialize_data(data),
     }
     _save_raw(raw)
+
+
+def load_cached_stats(liga_str: str) -> Optional[dict]:
+    """Returns the cached stats dict for a liga, or None if not cached."""
+    entry = _load_raw().get(liga_str)
+    if not entry:
+        return None
+    raw_data = entry.get("data")
+    return _deserialize_data(raw_data) if raw_data else None
 
 
 def rebuild_for_liga(liga_str: str) -> dict:
