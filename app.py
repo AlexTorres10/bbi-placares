@@ -2352,10 +2352,14 @@ def render_stats_mode():
     st.divider()
 
     # ── Tabelas Mandante / Visitante ──────────────────────────────────────
+    import pandas as _pd_tables
     _ht = data.get('home_table_full')
     _at = data.get('away_table_full')
-    if _ht is not None and not _ht.empty and _at is not None and not _at.empty:
-        import pandas as _pd_tables
+    if isinstance(_ht, list):
+        _ht = _pd_tables.DataFrame(_ht)
+    if isinstance(_at, list):
+        _at = _pd_tables.DataFrame(_at)
+    if _ht is not None and isinstance(_ht, _pd_tables.DataFrame) and not _ht.empty and _at is not None and isinstance(_at, _pd_tables.DataFrame) and not _at.empty:
         st.subheader("🏠 Mandante  ·  ✈️ Visitante")
         _col_h, _col_a = st.columns(2)
         with _col_h:
