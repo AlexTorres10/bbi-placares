@@ -1895,6 +1895,13 @@ def _game_rows_html(games: list, selected_team: str) -> str:
             except ValueError:
                 pass
 
+        raw_date = g.get('data', '')
+        try:
+            from datetime import datetime as _dt
+            date_str = _dt.strptime(raw_date, '%Y-%m-%d').strftime('%d/%m/%Y')
+        except (ValueError, TypeError):
+            date_str = ''
+
         rows.append(
             f'<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #2d2d2d">'
             f'{img_tag(casa)}'
@@ -1903,6 +1910,7 @@ def _game_rows_html(games: list, selected_team: str) -> str:
             f'min-width:44px;text-align:center">{placar_clean}</span>'
             f'<span style="flex:1;font-weight:600;font-size:13px">{fora}</span>'
             f'{img_tag(fora)}'
+            f'<span style="font-size:11px;color:#6b7280;white-space:nowrap;min-width:72px;text-align:right">{date_str}</span>'
             f'</div>'
         )
     return ''.join(rows)
@@ -2361,20 +2369,29 @@ def render_stats_mode():
         _at = _pd_tables.DataFrame(_at)
     if _ht is not None and isinstance(_ht, _pd_tables.DataFrame) and not _ht.empty and _at is not None and isinstance(_at, _pd_tables.DataFrame) and not _at.empty:
         st.subheader("🏠 Mandante  ·  ✈️ Visitante")
+        _col_cfg = {
+            'J':   st.column_config.NumberColumn('J',   width='small'),
+            'V':   st.column_config.NumberColumn('V',   width='small'),
+            'E':   st.column_config.NumberColumn('E',   width='small'),
+            'D':   st.column_config.NumberColumn('D',   width='small'),
+            'Pts': st.column_config.NumberColumn('Pts', width='small'),
+        }
         _col_h, _col_a = st.columns(2)
         with _col_h:
             st.markdown("**Mandante**")
             st.dataframe(
                 _ht[['Time', 'J', 'V', 'E', 'D', 'Pts']].reset_index(drop=True),
                 hide_index=True,
-                width='stretch',
+                column_config=_col_cfg,
+                use_container_width=True,
             )
         with _col_a:
             st.markdown("**Visitante**")
             st.dataframe(
                 _at[['Time', 'J', 'V', 'E', 'D', 'Pts']].reset_index(drop=True),
                 hide_index=True,
-                width='stretch',
+                column_config=_col_cfg,
+                use_container_width=True,
             )
         st.divider()
 
@@ -2601,7 +2618,14 @@ def render_stats_mode():
         _df_lastn = (_pd_lastn.DataFrame(_rows_n)
                      .sort_values('Pts', ascending=False)
                      .reset_index(drop=True))
-        st.dataframe(_df_lastn, hide_index=True, width='stretch')
+        _col_cfg_n = {
+            'J':   st.column_config.NumberColumn('J',   width='small'),
+            'V':   st.column_config.NumberColumn('V',   width='small'),
+            'E':   st.column_config.NumberColumn('E',   width='small'),
+            'D':   st.column_config.NumberColumn('D',   width='small'),
+            'Pts': st.column_config.NumberColumn('Pts', width='small'),
+        }
+        st.dataframe(_df_lastn, hide_index=True, column_config=_col_cfg_n, use_container_width=True)
 
 
 # ============================================================================
