@@ -432,7 +432,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     base.paste(escudo_home, pos_home, escudo_home)
     base.paste(escudo_away, pos_away, escudo_away)
     europeu = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
-    efl = any(comp in path_lower for comp in ["efl", "champ"])
+    efl = any(comp in path_lower for comp in ["efl", "champ", "leagueone", "leaguetwo", "nationalleague"])
     ing = any(comp in path_lower for comp in ["inglaterra"])
 
     # 🏷️ Nomes dos times
@@ -501,7 +501,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         agregado_texto = label + valor
         
         path_lower = template_path.lower()
-        mais_pra_cima = any(comp in path_lower for comp in ["uel", "uecl", "efl", "championship"])
+        mais_pra_cima = any(comp in path_lower for comp in ["uel", "uecl", "efl", "championship", "leagueone", "leaguetwo", "nationalleague"])
 
         y_agregado = 975 if mais_pra_cima else 985
 
@@ -509,17 +509,27 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_mais_pequena, fill=cor_texto)
 
     # 🟩 Marcadores
-    espaco_linha = 34  # Aumente/diminua conforme necessário
-    y_base = 990
+    espaco_linha = 34
+
+    tem_agregado = (
+        '(' in placar_texto and ')' in placar_texto and
+        any(x in placar_texto.split('(')[1].replace(')', '').strip().lower() for x in ["agr", "pên", "pen", "pro"])
+    )
+    offset_agregado = 15 if tem_agregado else 0
+
+    if europeu:
+        y_base = 1000 + offset_agregado
+    elif efl:
+        y_base = 980 + offset_agregado
+    else:
+        y_base = 990 + offset_agregado
 
     # Casa (alinhamento à esquerda)
     for i, linha in enumerate(marcadores_casa.split('\n')):
         if europeu:
-            y_base = 1000
             linha = linha.upper()
             draw.text((140, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
         elif efl:
-            y_base = 980
             draw.text((200, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
         elif ing:
             draw.text((200, y_base + i * espaco_linha), linha.upper(), font=fonte_pequena, fill=cor_texto)
@@ -534,13 +544,11 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
             draw.text((base.width - 140 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
         elif efl:
             w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
-            y_base = 980
             draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
         elif ing:
             linha = linha.upper()
             w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
             draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
-
         else:
             w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
             draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
