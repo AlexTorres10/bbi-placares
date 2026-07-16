@@ -14,7 +14,7 @@ Portsmouth 0 0 0 0 0 0 0 0
 Preston North End 0 0 0 0 0 0 0 0
 Queens Park Rangers 0 0 0 0 0 0 0 0
 Sheffield United 0 0 0 0 0 0 0 0
-Southampton 0 0 0 0 0 0 0 0
+Southampton 0 0 0 0 0 0 0 -4
 Stoke City 0 0 0 0 0 0 0 0
 Swansea City 0 0 0 0 0 0 0 0
 Watford 0 0 0 0 0 0 0 0

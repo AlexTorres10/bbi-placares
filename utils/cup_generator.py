@@ -82,8 +82,8 @@ class CupGenerator:
                 'bold': 'fontes/facup-bold.otf'
             },
             'eflcup': {
-                'normal': 'fontes/efl.otf',
-                'bold': 'fontes/efl-bold.otf'
+                'normal': 'fontes/premierleague.otf',
+                'bold': 'fontes/premierleague-bold.otf'
             }
         }
         
@@ -250,9 +250,9 @@ class CupGenerator:
             template_file = "eflcup-template.png"
             rect_file = "eflcup-rect.png"
             max_matches = 12
-            font_size_team = 28
-            font_size_score = 36
-            font_size_title = 36
+            font_size_team = 22
+            font_size_score = 45
+            font_size_title = 48
         
         # Calcular distribuição
         num_jogos = len(results)
@@ -287,7 +287,7 @@ class CupGenerator:
             title_x = (base.width - title_width) // 2
             
             # Posição do título (ajustar conforme template)
-            title_y = 200 if cup == 'facup' else 160
+            title_y = 200 if cup == 'facup' else 192
             
             draw.text((title_x, title_y), title_upper, font=font_title, fill="#FFFFFF")
             
@@ -303,21 +303,38 @@ class CupGenerator:
                 team_name_home_x = 382
                 team_name_away_x = 1060
                 team_name_y = 36
+                team_name_align = 'center'
                 score_x = 724
                 score_y = 28
+                score_sep = "-"
+                color_team = "#383b38"
+                color_score = "#FFFFFF"
+                # Info extra (pênaltis/prorrogação): cabe dentro do rect alto da FA Cup
+                extra_font_size = font_size_score - 22
+                extra_y_offset = score_y + 80
             else:  # eflcup
-                rect_start_y = 220
-                rect_gap = 75
-                rect_x = 100
-                badge_size = (50, 50)
-                badge_home_x = 8
-                badge_away_x = 818
-                badge_y = 7
-                team_name_home_x = 225
-                team_name_away_x = 638
-                team_name_y = 10
-                score_x = 430
-                score_y = 18
+                # Mesmo design das ligas da EFL: o rect é idêntico (830x59), com
+                # as caixas brancas dos escudos nas pontas e a do placar no meio.
+                rect_start_y = 250
+                rect_gap = 77
+                rect_x = 125
+                badge_size = (55, 55)
+                badge_home_x = 4
+                badge_away_x = 772
+                badge_y = 2
+                team_name_home_x = 72
+                team_name_away_x = 762
+                team_name_y = 17
+                team_name_align = 'sides'
+                score_x = 413
+                score_y = 3
+                score_sep = "-"
+                color_team = "#FFFFFF"
+                color_score = "#00805a"
+                # O rect tem só 59px de altura: a info extra vai no vão até o
+                # rect seguinte, centralizada sob o placar.
+                extra_font_size = 16
+                extra_y_offset = None  # centraliza no vão entre os rects
             
             # Desenhar cada jogo nos slots usados
             for slot_idx, slot in enumerate(slots_usados):
@@ -388,32 +405,29 @@ class CupGenerator:
                 
                 bbox_home = draw.textbbox((0, 0), home_name, font=font_team)
                 home_width = bbox_home[2] - bbox_home[0]
-                home_x_centered = rect_x + team_name_home_x - (home_width // 2)
-                
+
                 bbox_away = draw.textbbox((0, 0), away_name, font=font_team)
                 away_width = bbox_away[2] - bbox_away[0]
-                away_x_centered = rect_x + team_name_away_x - (away_width // 2)
 
-                if cup == 'facup':
-                    draw.text((home_x_centered, y_pos + team_name_y), home_name, 
-                            font=font_team, fill="#383b38")
-                    draw.text((away_x_centered, y_pos + team_name_y), away_name, 
-                            font=font_team, fill="#383b38")
+                if team_name_align == 'sides':
+                    # Mandante ancorado à esquerda, visitante à direita
+                    home_x = rect_x + team_name_home_x
+                    away_x = rect_x + team_name_away_x - away_width
                 else:
-                    draw.text((home_x_centered, y_pos + team_name_y), home_name, 
-                            font=font_team, fill="#FFFFFF")
-                    draw.text((away_x_centered, y_pos + team_name_y), away_name, 
-                            font=font_team, fill="#FFFFFF")
+                    home_x = rect_x + team_name_home_x - (home_width // 2)
+                    away_x = rect_x + team_name_away_x - (away_width // 2)
+
+                draw.text((home_x, y_pos + team_name_y), home_name,
+                        font=font_team, fill=color_team)
+                draw.text((away_x, y_pos + team_name_y), away_name,
+                        font=font_team, fill=color_team)
                 
                 # Desenhar placar
                 status = result.get('status', 'normal')
 
                 # Sempre mostrar placar para jogos normais, pênaltis e prorrogação
                 if status in ['normal', 'penalties', 'extra_time']:
-                    if cup == 'facup':
-                        score_text = f"{result['home_score']}-{result['away_score']}"
-                    else:
-                        score_text = f"{result['home_score']} - {result['away_score']}"
+                    score_text = f"{result['home_score']}{score_sep}{result['away_score']}"
                 elif status == 'future':
                     score_text = ""
                 elif status == 'vs':
@@ -433,22 +447,34 @@ class CupGenerator:
                         (rect_x + score_x - score_width // 2, y_pos + score_y),
                         score_text,
                         font=font_score,
-                        fill="#FFFFFF"
+                        fill=color_score
                     )
 
                 # DESENHAR INFORMAÇÃO EXTRA (Pênaltis ou Prorrogação)
-                extra_info = result.get('extra_info')
+                if status == 'penalties':
+                    extra_info = (
+                        f"Pênaltis: {self._get_display_name(result['home_team'], cup)} "
+                        f"{result['pen_home']}-{result['pen_away']} "
+                        f"{self._get_display_name(result['away_team'], cup)}"
+                    )
+                else:
+                    extra_info = result.get('extra_info')
+
                 if extra_info:
-                    # Fonte menor para info extra
-                    font_extra_size = font_size_score - 22  # 14 pontos menor que o placar
-                    font_extra = ImageFont.truetype(self._get_font_for_cup(cup, bold=False), font_extra_size)
-                    
-                    bbox_extra = draw.textbbox((0, 0), extra_info, font=font_extra)
+                    font_extra = ImageFont.truetype(self._get_font_for_cup(cup, bold=False), extra_font_size)
+
+                    bbox_extra = font_extra.getbbox(extra_info)
                     extra_width = bbox_extra[2] - bbox_extra[0]
-                    
-                    # Posicionar abaixo do placar
-                    extra_y = y_pos + score_y + 80  # 40px abaixo do placar
-                    
+
+                    if extra_y_offset is not None:
+                        extra_y = y_pos + extra_y_offset
+                    else:
+                        # Centraliza a mancha do texto no vão entre este rect e o próximo
+                        rect_h = rect_base.height
+                        vao = rect_gap - rect_h
+                        ink_h = bbox_extra[3] - bbox_extra[1]
+                        extra_y = y_pos + rect_h + (vao - ink_h) // 2 - bbox_extra[1]
+
                     draw.text(
                         (rect_x + score_x - extra_width // 2, extra_y),
                         extra_info,

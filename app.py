@@ -1276,6 +1276,8 @@ def compute_updated_table(liga_key: str, resultados: list) -> list:
             team_dict['penalty_note'] = "Leicester City perdeu 6 pontos por violação das regras de lucratividade e sustentabilidade."
         if team.name == "West Bromwich":
             team_dict['penalty_note'] = "West Bromwich perdeu 2 pontos por violação das regras de lucratividade e sustentabilidade."
+        if liga_key == "championship" and team.name == "Southampton":
+            team_dict['penalty_note'] = "Southampton perdeu 4 pontos por Spygate."
         table_data.append(team_dict)
 
     return table_data
@@ -2130,7 +2132,8 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
 
     # Teams with active point deductions → show asterisk in table.
     _PENALTY_TEAMS: dict[str, set[str]] = {
-        'championship': {'Sheffield Wednesday', 'Leicester City', 'West Bromwich'},
+        'championship': {'Sheffield Wednesday', 'Leicester City', 'West Bromwich',
+                         'Southampton'},
     }
 
     # ── 1. Read standings file (needed for round number + table section) ──────

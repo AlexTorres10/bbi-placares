@@ -6,6 +6,9 @@ from typing import List, Dict, Optional, Tuple
 import json
 import os
 
+# Ligas que compartilham o design unificado da Premier League.
+DESIGN_UNIFICADO = {'premierleague', 'championship', 'leagueone', 'leaguetwo'}
+
 class ImageGenerator:
     def __init__(self, config_path: str = "config/leagues_config.json"):
         """Inicializa o gerador com as configurações das ligas"""
@@ -361,17 +364,17 @@ class ImageGenerator:
         if not bold:
             font_map = {
                 'premierleague': 'fontes/premierleague.otf',
-                'championship': 'fontes/efl.otf',
-                'leagueone': 'fontes/efl.otf',
-                'leaguetwo': 'fontes/efl.otf',
+                'championship': 'fontes/premierleague.otf',
+                'leagueone': 'fontes/premierleague.otf',
+                'leaguetwo': 'fontes/premierleague.otf',
                 'nationalleague': 'fontes/nationalleague.otf'
             }
         else:
             font_map = {
                 'premierleague': 'fontes/premierleague-bold.otf',
-                'championship': 'fontes/efl-bold.otf',
-                'leagueone': 'fontes/efl-bold.otf',
-                'leaguetwo': 'fontes/efl-bold.otf',
+                'championship': 'fontes/premierleague-bold.otf',
+                'leagueone': 'fontes/premierleague-bold.otf',
+                'leaguetwo': 'fontes/premierleague-bold.otf',
                 'nationalleague': 'fontes/nationalleague.otf'
             }
         return font_map.get(league, 'fontes/FontePlacar.ttf')
@@ -494,7 +497,7 @@ class ImageGenerator:
 
                 if rect_img:
                     rect_x = tt['table_start']['x']
-                    base.paste(rect_img, (rect_x, y_pos), rect_img)
+                    base.paste(rect_img, (round(rect_x), round(y_pos)), rect_img)
 
                 # DESENHAR NÚMERO DA POSIÇÃO (BOLD, BRANCO)
                 position_number = str(idx + 1)
@@ -520,11 +523,12 @@ class ImageGenerator:
             )
 
             # Calcular posição Y centralizada no row_height
-            badge_y = y_pos + (tt['row_height'] - tt['badge_size']['height']) // 2 + tt['badge_offset']['y']
+            # (row_height pode ser fracionário — paste exige inteiro)
+            badge_y = y_pos + (tt['row_height'] - tt['badge_size']['height']) / 2 + tt['badge_offset']['y']
 
             base.paste(
                 badge,
-                (tt['table_start']['x'] + tt['badge_offset']['x'], badge_y),
+                (round(tt['table_start']['x'] + tt['badge_offset']['x']), round(badge_y)),
                 badge
             )
             
@@ -536,21 +540,17 @@ class ImageGenerator:
             if 'penalty_note' in team and team['penalty_note']:
                 team_name += "*"  # Adiciona asterisco
 
-            if league != 'premierleague':
-                draw.text(
-                    (tt['table_start']['x'] + tt['team_name_offset']['x'], y_pos + tt['team_name_offset']['y']),
-                    team_name.upper(),  # ← Nome completo
-                    font=font_normal,
-                    fill=tt['color_text']
-                )
-            else:
-                # Premier League: usar fonte bold para nomes de times
-                draw.text(
-                    (tt['table_start']['x'] + tt['team_name_offset']['x'], y_pos + tt['team_name_offset']['y']),
-                    team_name,  # ← Nome completo
-                    font=font_normal,
-                    fill=tt['color_text']
-                )
+            # Ligas do design unificado (PL/EFL) escrevem o nome como está;
+            # as demais usam caixa alta.
+            if league not in DESIGN_UNIFICADO:
+                team_name = team_name.upper()
+
+            draw.text(
+                (tt['table_start']['x'] + tt['team_name_offset']['x'], y_pos + tt['team_name_offset']['y']),
+                team_name,  # ← Nome completo
+                font=font_normal,
+                fill=tt['color_text']
+            )
 
             
             # Estatísticas
@@ -575,13 +575,8 @@ class ImageGenerator:
                 bbox = draw.textbbox((0, 0), stat, font=current_font)
                 stat_width = bbox[2] - bbox[0]
                 
-                # AJUSTE VERTICAL PARA BOLD NAS LIGAS EFL
-                y_offset = 0
-                if key == 'PTS' and league in ['championship', 'leagueone', 'leaguetwo']:
-                    y_offset = 13
-                
                 draw.text(
-                    (x_pos - stat_width // 2, y_pos + tt['team_name_offset']['y'] + y_offset),
+                    (x_pos - stat_width // 2, y_pos + tt['team_name_offset']['y']),
                     stat,
                     font=current_font,
                     fill=tt['color_text']
