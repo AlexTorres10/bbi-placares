@@ -36,8 +36,8 @@
       "position_offset": {"x": -25, "y": 10},
       "row_height": 50,
       "rect_width": 1080,
-      "badge_offset": {"x": 220, "y": 2},
-      "badge_size": {"width": 40, "height": 40},
+      "badge_offset": {"x": 225, "y": 1},
+      "badge_size": {"width": 30, "height": 30},
       "team_name_offset": {"x": 265, "y": 5},
       "stats_columns": {
         "J": 727,
