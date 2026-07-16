@@ -81,7 +81,7 @@ TEMPLATE_ORDER = [
     "leaguetwo.png"
 ]
 
-INGLES_UCL = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Tottenham"]
+INGLES_UCL = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Tottenham Hotspur"]
 INGLES_UEL = ["Aston Villa", "Nottingham Forest"]
 INGLES_UECL = ["Crystal Palace"]
 
@@ -242,31 +242,38 @@ def obter_config_template(template_path):
     nome = os.path.splitext(os.path.basename(template_path))[0].lower()
     
     if "premier" in nome:
-        h = 913
+        h = 799
         return {
             "fonte_normal": "fontes/premierleague.otf",
             "fonte_bold": "fontes/premierleague-bold.otf",
-            "escudo_tamanho": (60, 60),
-            "pos_home": (121, h),
-            "pos_away": (-181, h), # valor negativo será tratado como relativo ao width,
+            "tamanho_escudo": (84, 84),
+            "pos_escudo_casa": (145, h),
+            "pos_escudo_fora": (-229, h), # valor negativo será tratado como relativo ao width,
             "cor_texto": "#3b0643",
-            "cor_texto_placar": "#3b0643",
-            "pos_nome_home": (334, h+18),  # Posição absoluta
-            "pos_nome_away": (742, h+18),
-            "pos_placar": 922,
+            "cor_texto_placar": "white",
+            "cor_texto_times": "white",
+            "alinhamento_nomes": "lados",  # mandante à esquerda, visitante à direita (como os marcadores)
+            "pos_nome_casa": (235, h+22),  # x = margem esquerda
+            "pos_nome_fora": (-235, h+24), # x negativo = margem da borda direita
+            "pos_placar": h+1,
+            "pos_marcadores_casa": (238, 887),  # mesmo x do nome do time
+            "pos_marcadores_fora": (-238, 887), # x negativo = margem da borda direita
+            "tamanho_nome": 36,
+            "tamanho_placar": 72,
+            "tamanho_marcadores": 30,
+            "espaco_linha": 45,
         }
     elif "championship" in nome or "efl" in nome or "league" in nome:
         h = 920
         return {
             "fonte_normal": "fontes/efl.otf",
             "fonte_bold": "fontes/efl-bold.otf",
-            "escudo_tamanho": (50, 50),
-            "pos_home": (130, h),
-            "pos_away": (-180, h),
+            "tamanho_escudo": (50, 50),
+            "pos_escudo_casa": (130, h),
+            "pos_escudo_fora": (-180, h),
             "cor_texto": "#3241a1",
             "cor_texto_placar": "white",
-            "pos_nome_home": (336, h),  # Posição absoluta
-            "pos_nome_away": (739, h),
+            # Sem nomes de times na nova arte da EFL (pos_nome_* omitidos)
             "pos_placar": 923,
         }
     elif "facup" in nome:
@@ -274,14 +281,14 @@ def obter_config_template(template_path):
         return {
             "fonte_normal": "fontes/facup.otf",
             "fonte_bold": "fontes/facup-bold.otf",
-            "escudo_tamanho": (60, 60),
-            "pos_home": (121, h),
-            "pos_away": (-181, h),
+            "tamanho_escudo": (60, 60),
+            "pos_escudo_casa": (121, h),
+            "pos_escudo_fora": (-181, h),
             "cor_texto_times": "#383b38",
             "cor_texto": "white",
             "cor_texto_placar": "white",
-            "pos_nome_home": (336, h+18),  # Posição absoluta
-            "pos_nome_away": (742, h+18),
+            "pos_nome_casa": (336, h+18),  # Posição absoluta
+            "pos_nome_fora": (742, h+18),
             "pos_placar": 920,
         }
     elif "ucl" in nome:
@@ -289,13 +296,13 @@ def obter_config_template(template_path):
         return {
             "fonte_normal": "fontes/ucl.ttf",
             "fonte_bold": "fontes/ucl-bold.ttf",
-            "escudo_tamanho": (120, 120),
-            "pos_home": (70, h),
-            "pos_away": (-180, h),
+            "tamanho_escudo": (120, 120),
+            "pos_escudo_casa": (70, h),
+            "pos_escudo_fora": (-180, h),
             "cor_texto": "white",
             "cor_texto_placar": "white",
-            "pos_nome_home": (317, h+45),  # Posição absoluta
-            "pos_nome_away": (758, h+45),
+            "pos_nome_casa": (317, h+45),  # Posição absoluta
+            "pos_nome_fora": (758, h+45),
             "pos_placar": 915,
         }
     elif "uel" in nome or "uecl" in nome:
@@ -303,13 +310,13 @@ def obter_config_template(template_path):
         return {
             "fonte_normal": "fontes/uel.ttf",
             "fonte_bold": "fontes/uel-bold.ttf",
-            "escudo_tamanho": (60, 60),
-            "pos_home": (120, h),
-            "pos_away": (-180, h),
+            "tamanho_escudo": (60, 60),
+            "pos_escudo_casa": (120, h),
+            "pos_escudo_fora": (-180, h),
             "cor_texto": "white",
             "cor_texto_placar": "black",
-            "pos_nome_home": (335, h+15),  # Posição absoluta
-            "pos_nome_away": (743, h+15),  # Posição absoluta
+            "pos_nome_casa": (335, h+15),  # Posição absoluta
+            "pos_nome_fora": (743, h+15),  # Posição absoluta
             "pos_placar": 915,
         }
     elif "inglaterra" in nome:
@@ -317,26 +324,26 @@ def obter_config_template(template_path):
         return {
             "fonte_normal": "fontes/ing.ttf",
             "fonte_bold": "fontes/ing.ttf",
-            "escudo_tamanho": (60, 60),
-            "pos_home": (120, h),
-            "pos_away": (-180, h),
+            "tamanho_escudo": (60, 60),
+            "pos_escudo_casa": (120, h),
+            "pos_escudo_fora": (-180, h),
             "cor_texto": "#0c113c",
             "cor_texto_placar": "white",
-            "pos_nome_home": (330, h+17),  # Posição absoluta
-            "pos_nome_away": (760, h+17),
+            "pos_nome_casa": (330, h+17),  # Posição absoluta
+            "pos_nome_fora": (760, h+17),
             "pos_placar": 920,
         }
     else:
         return {
             "fonte_normal": "fontes/facup.ttf",
             "fonte_bold": "fontes/facup-bold.ttf",
-            "escudo_tamanho": (100, 100),
-            "pos_home": (50, h),
-            "pos_away": (-150, h),
+            "tamanho_escudo": (100, 100),
+            "pos_escudo_casa": (50, h),
+            "pos_escudo_fora": (-150, h),
             "cor_texto": "white",
             "cor_texto_placar": "white",
-            "pos_nome_home": (360, 870),  # Posição absoluta
-            "pos_nome_away": (-360, 870),
+            "pos_nome_casa": (360, 870),  # Posição absoluta
+            "pos_nome_fora": (-360, 870),
             "pos_placar": 915,
         }
 
@@ -354,7 +361,16 @@ def obter_escudo_path(team_name, template_path=None):
     
     return None
 
-def apply_bottom_gradient(image: Image.Image, intensity: float = 0.9) -> Image.Image:
+_GRADIENT_COLORS = {
+    "premier":       (55, 0, 60),   # #37003c
+    "championship":  (0, 0, 0),     # a definir
+    "leagueone":     (0, 0, 0),     # a definir
+    "leaguetwo":     (0, 0, 0),     # a definir
+    "nationalleague": (0, 0, 0),    # a definir
+    "efl":           (0, 0, 0),     # a definir
+}
+
+def apply_bottom_gradient(image: Image.Image, intensity: float = 0.9, color: tuple = (0, 0, 0)) -> Image.Image:
         """Cria o efeito de sombra na parte inferior para destacar o texto"""
         width, height = image.size
         gradient = Image.new('RGBA', (width, height), (0, 0, 0, 0))
@@ -362,11 +378,17 @@ def apply_bottom_gradient(image: Image.Image, intensity: float = 0.9) -> Image.I
         start_y = int(height * 0.4) # Começa o gradiente um pouco acima do meio
         for y in range(start_y, height):
             alpha = int(255 * intensity * ((y - start_y) / (height - start_y)))
-            draw.line([(0, y), (width, y)], fill=(0, 0, 0, alpha))
+            draw.line([(0, y), (width, y)], fill=(*color, alpha))
         return Image.alpha_composite(image, gradient)
 
 def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marcadores_casa, marcadores_fora, background=None, alinhamento="Centro"):
     base = Image.open(template_path).convert("RGBA")
+
+    # O template da Premier League é fornecido em alta resolução (2160px);
+    # reduz para 1350px de altura para casar com as coordenadas de obter_config_template
+    if "premier" in template_path.lower() and base.height > 1350:
+        escala = 1350 / base.height
+        base = base.resize((round(base.width * escala), 1350), Image.LANCZOS)
 
     if background:
         bg_raw = Image.open(background).convert("RGBA")
@@ -391,8 +413,13 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         top = (new_height - base.height) // 2
         bg_cropped = bg_resized.crop((left, top, left + base.width, top + base.height))
 
-        if 'championship' in template_path.lower() or 'efl' in template_path.lower() or "league" in template_path.lower():
-                bg_cropped = apply_bottom_gradient(bg_cropped, intensity=0.9)
+        tpl = template_path.lower()
+        gradient_color = next(
+            (color for key, color in _GRADIENT_COLORS.items() if key in tpl),
+            None,
+        )
+        if gradient_color is not None:
+            bg_cropped = apply_bottom_gradient(bg_cropped, intensity=0.9, color=gradient_color)
 
         final_img = Image.new("RGBA", bg_cropped.size, (0, 0, 0, 0))
         base_x = (bg_cropped.width - base.width) // 2
@@ -409,34 +436,38 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         fonte_normal = ImageFont.truetype(config["fonte_bold"], 28)
     else:
         fonte_normal = ImageFont.truetype(config["fonte_normal"], 32)
-    fonte_bold = ImageFont.truetype(config["fonte_bold"], 48)
-    fonte_pequena = ImageFont.truetype(config["fonte_normal"], 26)
+    fonte_bold = ImageFont.truetype(config["fonte_bold"], config.get("tamanho_placar", 48))
+    fonte_pequena = ImageFont.truetype(config["fonte_normal"], config.get("tamanho_marcadores", 26))
     fonte_mais_pequena = ImageFont.truetype(config["fonte_normal"], 18)
+    fonte_nome = (
+        ImageFont.truetype(config["fonte_normal"], config["tamanho_nome"])
+        if "tamanho_nome" in config else None
+    )
     cor_texto = config["cor_texto"]
     cor_texto_placar = config["cor_texto_placar"]
 
     draw = ImageDraw.Draw(base)
 
     # Redimensionar escudos com proporção preservada
-    escudo_home = redimensionar_escudo(obter_escudo_path(escudo_casa), config["escudo_tamanho"])
-    escudo_away = redimensionar_escudo(obter_escudo_path(escudo_fora), config["escudo_tamanho"])
+    escudo_home = redimensionar_escudo(obter_escudo_path(escudo_casa), config["tamanho_escudo"])
+    escudo_away = redimensionar_escudo(obter_escudo_path(escudo_fora), config["tamanho_escudo"])
 
     # Posição dos escudos
-    pos_home = config["pos_home"]
-    pos_away_raw = config["pos_away"]
-    pos_away = (
-        base.width + pos_away_raw[0] if pos_away_raw[0] < 0 else pos_away_raw[0],
-        pos_away_raw[1]
+    pos_escudo_casa = config["pos_escudo_casa"]
+    pos_escudo_fora_raw = config["pos_escudo_fora"]
+    pos_escudo_fora = (
+        base.width + pos_escudo_fora_raw[0] if pos_escudo_fora_raw[0] < 0 else pos_escudo_fora_raw[0],
+        pos_escudo_fora_raw[1]
     )
 
-    base.paste(escudo_home, pos_home, escudo_home)
-    base.paste(escudo_away, pos_away, escudo_away)
+    base.paste(escudo_home, pos_escudo_casa, escudo_home)
+    base.paste(escudo_away, pos_escudo_fora, escudo_away)
     europeu = any(comp in path_lower for comp in ["ucl", "uel", "uecl"])
     efl = any(comp in path_lower for comp in ["efl", "champ", "leagueone", "leaguetwo", "nationalleague"])
     ing = any(comp in path_lower for comp in ["inglaterra"])
 
     # 🏷️ Nomes dos times
-    for nome, pos_key in [(escudo_casa, "pos_nome_home"), (escudo_fora, "pos_nome_away")]:
+    for nome, pos_key in [(escudo_casa, "pos_nome_casa"), (escudo_fora, "pos_nome_fora")]:
         pos = config.get(pos_key)
         if not pos:
             continue
@@ -448,22 +479,35 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
             nome = "Bor. Dortmund"
         if "facup" in path_lower and nome == "Queens Park Rangers":
             nome = "QPR"
+        # Solicitação oficial do clube: exibir "Tottenham Hotspur" ou "Spurs", nunca "Tottenham"
+        if "premier" in path_lower and nome == "Tottenham Hotspur":
+            nome = "Spurs"
+        if "premier" in path_lower and nome == "Manchester United":
+            nome = "Manchester Utd"
         nome_maiusculo = nome.upper()
 
-        # Decide a fonte
-        fonte_usada = fonte_normal if any(comp in path_lower for comp in ["ucl", "uel", "uecl"]) else fonte_pequena
+        # Decide a fonte (tamanho_nome no config tem prioridade)
+        if fonte_nome is not None:
+            fonte_usada = fonte_nome
+        elif any(comp in path_lower for comp in ["ucl", "uel", "uecl"]):
+            fonte_usada = fonte_normal
+        else:
+            fonte_usada = fonte_pequena
 
-        # Mede e centraliza
         w_text = fonte_usada.getbbox(nome_maiusculo)[2] - fonte_usada.getbbox(nome_maiusculo)[0]
-        x_centered = x - w_text // 2
+
+        if config.get("alinhamento_nomes") == "lados":
+            # Mandante alinhado à esquerda; visitante à direita (x negativo = margem direita)
+            x_final = base.width + x - w_text if x < 0 else x
+        else:
+            # Centralizado na posição x
+            x_final = x - w_text // 2
 
         # Desenha
         if ing:
-            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=cor_texto)
-        elif "facup" in path_lower:
-            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill=config["cor_texto_times"])
+            draw.text((x_final, y), nome_maiusculo, font=fonte_usada, fill=cor_texto)
         else:
-            draw.text((x_centered, y), nome_maiusculo, font=fonte_usada, fill='white')
+            draw.text((x_final, y), nome_maiusculo, font=fonte_usada, fill=config.get("cor_texto_times", "white"))
 
 
     # Placar principal centralizado
@@ -472,9 +516,6 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     # Remove espaços ao redor de hífens
     placar = re.sub(r'\s*-\s*', '-', placar)
 
-    # Agora, se for Premier League, aplicar estilo com espaços
-    if "premier" in path_lower:
-        placar = placar.replace('-', ' - ')  # estiliza com espaços
     w_placar = fonte_bold.getbbox(placar)[2] - fonte_bold.getbbox(placar)[0]
     draw.text(((base.width - w_placar) // 2, config["pos_placar"]), placar, font=fonte_bold, fill=cor_texto_placar)
 
@@ -509,7 +550,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_mais_pequena, fill=cor_texto)
 
     # 🟩 Marcadores
-    espaco_linha = 34
+    espaco_linha = config.get("espaco_linha", 34)
 
     tem_agregado = (
         '(' in placar_texto and ')' in placar_texto and
@@ -524,34 +565,30 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     else:
         y_base = 990 + offset_agregado
 
+    margem_padrao = 140 if europeu else 200
+    maiusculas = europeu or ing
+
+    # Posições do config têm prioridade sobre os padrões por competição
+    # (x negativo em pos_marcadores_fora = margem da borda direita)
+    pos_marc_casa = config.get("pos_marcadores_casa")
+    pos_marc_fora = config.get("pos_marcadores_fora")
+    x_casa = pos_marc_casa[0] if pos_marc_casa else margem_padrao
+    y_casa = pos_marc_casa[1] + offset_agregado if pos_marc_casa else y_base
+    margem_fora = -pos_marc_fora[0] if pos_marc_fora else margem_padrao
+    y_fora = pos_marc_fora[1] + offset_agregado if pos_marc_fora else y_base
+
     # Casa (alinhamento à esquerda)
     for i, linha in enumerate(marcadores_casa.split('\n')):
-        if europeu:
+        if maiusculas:
             linha = linha.upper()
-            draw.text((140, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
-        elif efl:
-            draw.text((200, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
-        elif ing:
-            draw.text((200, y_base + i * espaco_linha), linha.upper(), font=fonte_pequena, fill=cor_texto)
-        else:
-            draw.text((200, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        draw.text((x_casa, y_casa + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
 
     # Visitante (alinhado à direita)
     for i, linha in enumerate(marcadores_fora.split('\n')):
-        if europeu:
+        if maiusculas:
             linha = linha.upper()
-            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
-            draw.text((base.width - 140 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
-        elif efl:
-            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
-            draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
-        elif ing:
-            linha = linha.upper()
-            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
-            draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
-        else:
-            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
-            draw.text((base.width - 200 - w_linha, y_base + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
+        draw.text((base.width - margem_fora - w_linha, y_fora + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
 
     return base
 
@@ -818,22 +855,24 @@ def render_table_mode():
         except Exception:
             pass  # silently skip if table file is unavailable
 
-        # Step 3 — pre-fill confirmation checkboxes with confirmed statuses
-        # Reset the champion key first so stale True values from a previous batch don't persist
-        _champion_key = {
-            'premierleague': 'pl_1_champion',
-            'championship': 'ch_1_champion',
-            'leagueone': 'l1_1_champion',
-            'leaguetwo': 'l2_1_champion',
-            'nationalleague': 'nl_1_champion',
-        }.get(liga_key)
-        if _champion_key:
-            st.session_state[_champion_key] = False
-        if 'table_data_atual' in st.session_state:
-            try:
-                compute_mathematical_prefill(liga_key, st.session_state['table_data_atual'])
-            except Exception:
-                pass
+        # Step 3 — pre-fill confirmation checkboxes with confirmed statuses.
+        # A Premier League usa template com zonas fixas (baked_template), então
+        # não há confirmações de classificação a pré-preencher.
+        if liga_key != 'premierleague':
+            # Reset the champion key first so stale True values from a previous batch don't persist
+            _champion_key = {
+                'championship': 'ch_1_champion',
+                'leagueone': 'l1_1_champion',
+                'leaguetwo': 'l2_1_champion',
+                'nationalleague': 'nl_1_champion',
+            }.get(liga_key)
+            if _champion_key:
+                st.session_state[_champion_key] = False
+            if 'table_data_atual' in st.session_state:
+                try:
+                    compute_mathematical_prefill(liga_key, st.session_state['table_data_atual'])
+                except Exception:
+                    pass
 
     # ========================================================================
     # SE RESULTADOS FORAM PROCESSADOS, MOSTRAR OPÇÕES
@@ -844,7 +883,11 @@ def render_table_mode():
         
         # Configurações específicas por liga
         if st.session_state['liga_selecionada'] == "premierleague":
-            render_premier_league_table_options()
+            # A tabela da Premier League usa um template com cabeçalho, números
+            # de posição e zonas (UCL/UEL/UECL/rebaixamento) fixos no próprio PNG.
+            # Não há mais confirmação de classificação a definir aqui.
+            st.info("ℹ️ A tabela da Premier League usa zonas fixas do template — "
+                    "não é necessário confirmar classificações.")
         else:
             render_standard_league_table_options(st.session_state['liga_selecionada'])
         
@@ -894,7 +937,8 @@ def render_table_mode():
                         league=st.session_state['liga_selecionada'],
                         table_data=table_data,
                         confirmations=confirmations,
-                        table_mode=st.session_state.get('table_mode')
+                        table_mode=st.session_state.get('table_mode'),
+                        round_number=st.session_state.get('numero_rodada')
                     )
                     
                     # ================================================================
@@ -1479,7 +1523,7 @@ def render_premier_league_table_options():
         team_to_pos = {team.name: i + 1 for i, team in enumerate(processor.teams)}
     except:
         times_pl = ["Arsenal", "Manchester City", "Liverpool", "Chelsea",
-                    "Aston Villa", "Manchester United", "Tottenham",
+                    "Aston Villa", "Manchester United", "Tottenham Hotspur",
                     "Newcastle United", "Brighton", "Brentford",
                     "Fulham", "Crystal Palace", "Everton", "West Ham",
                     "Bournemouth", "Nottingham Forest", "Wolves",
@@ -1949,7 +1993,7 @@ TEAM_COLORS: dict[str, str] = {
     "Newcastle United":     "black",        # CSS named color
     "Nottingham Forest":    "red",          # CSS named color
     "Sunderland":           "red",          # CSS named color
-    "Tottenham":            "white",        # CSS named color
+    "Tottenham Hotspur":    "white",        # CSS named color
     "West Ham":             "#7a263a",      # hex – claret
     "Wolverhampton":        "#fdb913",      # hex – old gold (CSS gold too yellow)
     # ── Championship ────────────────────────────────────────────────────

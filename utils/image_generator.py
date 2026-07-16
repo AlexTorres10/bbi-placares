@@ -204,7 +204,10 @@ class ImageGenerator:
         font_path = self._get_font_for_league(league, bold=False)
         font_team = ImageFont.truetype(font_path, rt['font_team_size'])
         font_score = ImageFont.truetype(self._get_font_for_league(league, bold=True), rt['font_score_size'])
-        font_round = ImageFont.truetype(font_path, rt['font_round_size'])
+        # Fonte do texto de rodada: usa arquivo específico se definido na config
+        round_font_path = (os.path.join("fontes", rt['round_font_file'])
+                           if rt.get('round_font_file') else font_path)
+        font_round = ImageFont.truetype(round_font_path, rt['font_round_size'])
         
         draw = ImageDraw.Draw(base)
         
@@ -272,26 +275,44 @@ class ImageGenerator:
             home_name = self._get_display_name(result['home_team'], league, 'results').upper()
             away_name = self._get_display_name(result['away_team'], league, 'results').upper()
 
-            # NOME DO TIME MANDANTE - CENTRALIZADO
+            # Alinhamento configurável: 'left', 'right' ou 'center' (padrão).
+            # O offset X é a âncora: borda esquerda ('left'), direita ('right')
+            # ou centro ('center') do texto.
+            home_align = rt.get('team_name_home_align', 'center')
+            away_align = rt.get('team_name_away_align', 'center')
+
+            # NOME DO TIME MANDANTE
             bbox_home = draw.textbbox((0, 0), home_name, font=font_team)
             home_width = bbox_home[2] - bbox_home[0]
-            home_x_centered = x_pos + rt['team_name_home_offset']['x'] - (home_width // 2)
+            home_anchor_x = x_pos + rt['team_name_home_offset']['x']
+            if home_align == 'left':
+                home_x = home_anchor_x
+            elif home_align == 'right':
+                home_x = home_anchor_x - home_width
+            else:
+                home_x = home_anchor_x - (home_width // 2)
 
             draw.text(
-                (home_x_centered,
+                (home_x,
                 y_pos + rt['team_name_home_offset']['y']),
                 home_name,
                 font=font_team,
                 fill=rt['color_text']
             )
 
-            # NOME DO TIME VISITANTE - CENTRALIZADO
+            # NOME DO TIME VISITANTE
             bbox_away = draw.textbbox((0, 0), away_name, font=font_team)
             away_width = bbox_away[2] - bbox_away[0]
-            away_x_centered = x_pos + rt['team_name_away_offset']['x'] - (away_width // 2)
+            away_anchor_x = x_pos + rt['team_name_away_offset']['x']
+            if away_align == 'left':
+                away_x = away_anchor_x
+            elif away_align == 'right':
+                away_x = away_anchor_x - away_width
+            else:
+                away_x = away_anchor_x - (away_width // 2)
 
             draw.text(
-                (away_x_centered,
+                (away_x,
                 y_pos + rt['team_name_away_offset']['y']),
                 away_name,
                 font=font_team,
@@ -302,8 +323,9 @@ class ImageGenerator:
             status = result.get('status', 'normal')
 
             if status == 'normal':
-                # Placar normal
-                score_text = f"{result['home_score']} - {result['away_score']}"
+                # Placar normal — separador configurável por liga (padrão " - ")
+                score_sep = rt.get('score_separator', ' - ')
+                score_text = f"{result['home_score']}{score_sep}{result['away_score']}"
             elif status == 'future':
                 # Jogo futuro - não mostrar nada
                 score_text = ""
@@ -356,7 +378,8 @@ class ImageGenerator:
     
     def generate_table_image(self, league: str, table_data: List[Dict],
                             confirmations: Optional[Dict] = None,
-                            table_mode: Optional[Dict] = None) -> Image.Image:
+                            table_mode: Optional[Dict] = None,
+                            round_number: Optional[int] = None) -> Image.Image:
         """
         Gera imagem da tabela de classificação
         
@@ -387,11 +410,38 @@ class ImageGenerator:
                 raise FileNotFoundError(f"Template de tabela não encontrado: {template_path} ou {fallback_path}")
         
         draw = ImageDraw.Draw(base)
-        
-        # Carregar fontes
-        font_path = self._get_font_for_league(league, bold=False)
+
+        # Texto "Matchweek N" girado 90° no sentido anti-horário, em posição
+        # definida pela config (matchweek_text_position). Só desenha se a rodada
+        # for informada e a posição estiver configurada.
+        mw_pos = tt.get('matchweek_text_position')
+        if round_number and mw_pos:
+            mw_text = f"Matchweek {round_number}"
+            mw_font_path = (os.path.join("fontes", tt['matchweek_font_file'])
+                            if tt.get('matchweek_font_file')
+                            else self._get_font_for_league(league, bold=False))
+            mw_font = ImageFont.truetype(mw_font_path, tt.get('matchweek_font_size', 40))
+            mw_color = tt.get('matchweek_color', tt['color_text'])
+
+            bbox_mw = mw_font.getbbox(mw_text)
+            mw_w = bbox_mw[2] - bbox_mw[0]
+            mw_h = bbox_mw[3] - bbox_mw[1]
+            txt_img = Image.new("RGBA", (mw_w, mw_h), (0, 0, 0, 0))
+            ImageDraw.Draw(txt_img).text((-bbox_mw[0], -bbox_mw[1]), mw_text,
+                                         font=mw_font, fill=mw_color)
+            rotated = txt_img.rotate(90, expand=True)  # 90° anti-horário
+            base.paste(rotated, (mw_pos['x'], mw_pos['y']), rotated)
+
+        # Carregar fontes — se a config definir 'font_file', usa esse arquivo para
+        # todo o texto da tabela (normal e bold); senão, cai no mapa padrão da liga.
+        if tt.get('font_file'):
+            font_path = os.path.join("fontes", tt['font_file'])
+            font_bold_path = font_path
+        else:
+            font_path = self._get_font_for_league(league, bold=False)
+            font_bold_path = self._get_font_for_league(league, bold=True)
         font_normal = ImageFont.truetype(font_path, tt['font_size'])
-        font_bold = ImageFont.truetype(self._get_font_for_league(league, bold=True), tt['font_bold_size'])
+        font_bold = ImageFont.truetype(font_bold_path, tt['font_bold_size'])
 
         badges_folder = config['badges_folder']
         # AJUSTAR ZONAS EUROPEIAS PARA PREMIER LEAGUE
@@ -399,64 +449,70 @@ class ImageGenerator:
         if league == 'premierleague' and table_mode:
             zones = self._adjust_european_zones_for_mode(zones, table_mode)
 
-        if league == 'nationalleague':
-            header_y = tt['table_start']['y'] - 35  # Nacional precisa de mais espaço
-        else:
-            header_y = tt['table_start']['y'] - 30
-        header_labels = {
-            'J': 'J',
-            'V': 'V', 
-            'E': 'E',
-            'D': 'D',
-            'SG': 'SG',
-            'PTS': 'PTS'
-        }
-        
-        for key, label in header_labels.items():
-            if key in tt['stats_columns']:
-                x_pos = tt['stats_columns'][key]
-                
-                # Centralizar texto
-                bbox = draw.textbbox((0, 0), label, font=font_bold)
-                label_width = bbox[2] - bbox[0]
-                
-                draw.text(
-                    (x_pos - label_width // 2, header_y),
-                    label,
-                    font=font_bold,
-                    fill=tt['color_text']
-                )
-        
+        # Templates "zerados" já trazem cabeçalho, números de posição e faixas de
+        # zona embutidos no PNG; nesse caso só preenchemos escudos, nomes e stats.
+        baked_template = tt.get('baked_template', False)
+
+        if not baked_template:
+            if league == 'nationalleague':
+                header_y = tt['table_start']['y'] - 35  # Nacional precisa de mais espaço
+            else:
+                header_y = tt['table_start']['y'] - 30
+            header_labels = {
+                'J': 'J',
+                'V': 'V',
+                'E': 'E',
+                'D': 'D',
+                'SG': 'SG',
+                'PTS': 'PTS'
+            }
+
+            for key, label in header_labels.items():
+                if key in tt['stats_columns']:
+                    x_pos = tt['stats_columns'][key]
+
+                    # Centralizar texto
+                    bbox = draw.textbbox((0, 0), label, font=font_bold)
+                    label_width = bbox[2] - bbox[0]
+
+                    draw.text(
+                        (x_pos - label_width // 2, header_y),
+                        label,
+                        font=font_bold,
+                        fill=tt['color_text']
+                    )
+
         # Desenhar cada linha da tabela
         for idx, team in enumerate(table_data):
             y_pos = tt['table_start']['y'] + (idx * tt['row_height'])
             
-            # Determinar qual rect usar baseado na posição
-            rect_img = self._get_rect_for_position(
-                league, idx + 1, confirmations, zones
-            )
-            
-            if rect_img:
-                rect_x = tt['table_start']['x']
-                base.paste(rect_img, (rect_x, y_pos), rect_img)
-            
-            # DESENHAR NÚMERO DA POSIÇÃO (BOLD, BRANCO)
-            position_number = str(idx + 1)
-            position_x = tt['table_start']['x'] + tt.get('position_offset', {}).get('x', 30)
-            position_y = y_pos + tt.get('position_offset', {}).get('y', 18)
+            if not baked_template:
+                # Determinar qual rect usar baseado na posição
+                rect_img = self._get_rect_for_position(
+                    league, idx + 1, confirmations, zones
+                )
 
-            # Medir largura para centralizar
-            bbox_pos = font_bold.getbbox(position_number)
-            pos_width = bbox_pos[2] - bbox_pos[0]
+                if rect_img:
+                    rect_x = tt['table_start']['x']
+                    base.paste(rect_img, (rect_x, y_pos), rect_img)
 
-            # Desenhar texto branco, bold
-            draw.text(
-                (position_x - pos_width // 2, position_y),
-                position_number,
-                font=font_bold,
-                fill=tt['color_text']
-            )
-            
+                # DESENHAR NÚMERO DA POSIÇÃO (BOLD, BRANCO)
+                position_number = str(idx + 1)
+                position_x = tt['table_start']['x'] + tt.get('position_offset', {}).get('x', 30)
+                position_y = y_pos + tt.get('position_offset', {}).get('y', 18)
+
+                # Medir largura para centralizar
+                bbox_pos = font_bold.getbbox(position_number)
+                pos_width = bbox_pos[2] - bbox_pos[0]
+
+                # Desenhar texto branco, bold
+                draw.text(
+                    (position_x - pos_width // 2, position_y),
+                    position_number,
+                    font=font_bold,
+                    fill=tt['color_text']
+                )
+
             # Escudo
             badge = self._resize_badge(
                 self._get_badge_path(team['name'], badges_folder),
@@ -480,12 +536,21 @@ class ImageGenerator:
             if 'penalty_note' in team and team['penalty_note']:
                 team_name += "*"  # Adiciona asterisco
 
-            draw.text(
-                (tt['table_start']['x'] + tt['team_name_offset']['x'], y_pos + tt['team_name_offset']['y']),
-                team_name.upper(),  # ← Nome completo
-                font=font_normal,
-                fill=tt['color_text']
-            )
+            if league != 'premierleague':
+                draw.text(
+                    (tt['table_start']['x'] + tt['team_name_offset']['x'], y_pos + tt['team_name_offset']['y']),
+                    team_name.upper(),  # ← Nome completo
+                    font=font_normal,
+                    fill=tt['color_text']
+                )
+            else:
+                # Premier League: usar fonte bold para nomes de times
+                draw.text(
+                    (tt['table_start']['x'] + tt['team_name_offset']['x'], y_pos + tt['team_name_offset']['y']),
+                    team_name,  # ← Nome completo
+                    font=font_normal,
+                    fill=tt['color_text']
+                )
 
             
             # Estatísticas
@@ -530,7 +595,7 @@ class ImageGenerator:
             if penalty_notes:
                 # Posição da primeira nota
                 notes_y = tt['table_start']['y'] + (len(table_data) * tt['row_height']) + 5
-                font_note = ImageFont.truetype(self._get_font_for_league(league, bold=False), tt.get('font_note_size', 20))
+                font_note = ImageFont.truetype(font_path, tt.get('font_note_size', 20))
 
                 for idx, note in enumerate(penalty_notes):
                     draw.text(

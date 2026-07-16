@@ -1,6 +1,6 @@
 time,liga,matchday,posicao,data_fim_matchday
 Arsenal,Premier League,1,1,2025-08-23
-Tottenham,Premier League,1,2,2025-08-23
+Tottenham Hotspur,Premier League,1,2,2025-08-23
 Chelsea,Premier League,1,4,2025-08-23
 Manchester City,Premier League,1,6,2025-08-23
 Sunderland,Premier League,1,7,2025-08-23
@@ -14,7 +14,7 @@ West Ham,Premier League,1,20,2025-08-23
 Liverpool,Premier League,2,1,2025-08-31
 Chelsea,Premier League,2,2,2025-08-31
 Arsenal,Premier League,2,3,2025-08-31
-Tottenham,Premier League,2,4,2025-08-31
+Tottenham Hotspur,Premier League,2,4,2025-08-31
 Everton,Premier League,2,5,2025-08-31
 Sunderland,Premier League,2,6,2025-08-31
 Bournemouth,Premier League,2,7,2025-08-31
@@ -33,7 +33,7 @@ Aston Villa,Premier League,2,19,2025-08-31
 Wolverhampton,Premier League,2,20,2025-08-31
 Liverpool,Premier League,3,1,2025-09-14
 Arsenal,Premier League,3,2,2025-09-14
-Tottenham,Premier League,3,3,2025-09-14
+Tottenham Hotspur,Premier League,3,3,2025-09-14
 Bournemouth,Premier League,3,4,2025-09-14
 Chelsea,Premier League,3,5,2025-09-14
 Everton,Premier League,3,6,2025-09-14
@@ -53,7 +53,7 @@ Aston Villa,Premier League,3,19,2025-09-14
 Wolverhampton,Premier League,3,20,2025-09-14
 Liverpool,Premier League,4,1,2025-09-21
 Arsenal,Premier League,4,2,2025-09-21
-Tottenham,Premier League,4,3,2025-09-21
+Tottenham Hotspur,Premier League,4,3,2025-09-21
 Bournemouth,Premier League,4,4,2025-09-21
 Crystal Palace,Premier League,4,5,2025-09-21
 Chelsea,Premier League,4,6,2025-09-21
@@ -73,7 +73,7 @@ West Ham,Premier League,4,19,2025-09-21
 Wolverhampton,Premier League,4,20,2025-09-21
 Arsenal,Premier League,5,1,2025-10-05
 Liverpool,Premier League,5,2,2025-10-05
-Tottenham,Premier League,5,3,2025-10-05
+Tottenham Hotspur,Premier League,5,3,2025-10-05
 Bournemouth,Premier League,5,4,2025-10-05
 Manchester City,Premier League,5,5,2025-10-05
 Crystal Palace,Premier League,5,6,2025-10-05
@@ -93,7 +93,7 @@ West Ham,Premier League,5,19,2025-10-05
 Wolverhampton,Premier League,5,20,2025-10-05
 Arsenal,Premier League,6,1,2025-10-26
 Bournemouth,Premier League,6,2,2025-10-26
-Tottenham,Premier League,6,3,2025-10-26
+Tottenham Hotspur,Premier League,6,3,2025-10-26
 Sunderland,Premier League,6,4,2025-10-26
 Manchester City,Premier League,6,5,2025-10-26
 Manchester United,Premier League,6,6,2025-10-26
@@ -113,7 +113,7 @@ West Ham,Premier League,6,19,2025-10-26
 Wolverhampton,Premier League,6,20,2025-10-26
 Arsenal,Premier League,7,1,2025-11-01
 Liverpool,Premier League,7,3,2025-11-01
-Tottenham,Premier League,7,6,2025-11-01
+Tottenham Hotspur,Premier League,7,6,2025-11-01
 Chelsea,Premier League,7,7,2025-11-01
 Manchester United,Premier League,7,8,2025-11-01
 Crystal Palace,Premier League,7,9,2025-11-01
@@ -129,7 +129,7 @@ Arsenal,Premier League,8,1,2025-11-09
 Manchester City,Premier League,8,2,2025-11-09
 Chelsea,Premier League,8,3,2025-11-09
 Sunderland,Premier League,8,4,2025-11-09
-Tottenham,Premier League,8,5,2025-11-09
+Tottenham Hotspur,Premier League,8,5,2025-11-09
 Aston Villa,Premier League,8,6,2025-11-09
 Manchester United,Premier League,8,7,2025-11-09
 Liverpool,Premier League,8,8,2025-11-09
@@ -170,7 +170,7 @@ Liverpool,Premier League,10,8,2025-11-30
 Crystal Palace,Premier League,10,9,2025-11-30
 Brentford,Premier League,10,10,2025-11-30
 Bournemouth,Premier League,10,11,2025-11-30
-Tottenham,Premier League,10,12,2025-11-30
+Tottenham Hotspur,Premier League,10,12,2025-11-30
 Newcastle United,Premier League,10,13,2025-11-30
 Everton,Premier League,10,14,2025-11-30
 Fulham,Premier League,10,15,2025-11-30
@@ -181,7 +181,7 @@ Burnley,Premier League,10,19,2025-11-30
 Wolverhampton,Premier League,10,20,2025-11-30
 Manchester City,Premier League,11,2,2025-12-02
 Everton,Premier League,11,10,2025-12-02
-Tottenham,Premier League,11,11,2025-12-02
+Tottenham Hotspur,Premier League,11,11,2025-12-02
 Newcastle United,Premier League,11,12,2025-12-02
 Bournemouth,Premier League,11,14,2025-12-02
 Fulham,Premier League,11,15,2025-12-02
@@ -192,7 +192,7 @@ Chelsea,Premier League,12,5,2025-12-06
 Everton,Premier League,12,7,2025-12-06
 Sunderland,Premier League,12,9,2025-12-06
 Liverpool,Premier League,12,10,2025-12-06
-Tottenham,Premier League,12,11,2025-12-06
+Tottenham Hotspur,Premier League,12,11,2025-12-06
 Newcastle United,Premier League,12,12,2025-12-06
 Bournemouth,Premier League,12,13,2025-12-06
 Brentford,Premier League,12,14,2025-12-06
@@ -217,7 +217,7 @@ Sunderland,Premier League,14,7,2025-12-28
 Brentford,Premier League,14,8,2025-12-28
 Crystal Palace,Premier League,14,9,2025-12-28
 Fulham,Premier League,14,10,2025-12-28
-Tottenham,Premier League,14,11,2025-12-28
+Tottenham Hotspur,Premier League,14,11,2025-12-28
 Everton,Premier League,14,12,2025-12-28
 Brighton,Premier League,14,13,2025-12-28
 Newcastle United,Premier League,14,14,2025-12-28
@@ -251,7 +251,7 @@ Newcastle United,Premier League,16,9,2026-01-04
 Brighton,Premier League,16,10,2026-01-04
 Fulham,Premier League,16,11,2026-01-04
 Everton,Premier League,16,12,2026-01-04
-Tottenham,Premier League,16,13,2026-01-04
+Tottenham Hotspur,Premier League,16,13,2026-01-04
 Crystal Palace,Premier League,16,14,2026-01-04
 Bournemouth,Premier League,16,15,2026-01-04
 Leeds United,Premier League,16,16,2026-01-04
@@ -268,7 +268,7 @@ Brentford,Premier League,18,7,2026-01-17
 Sunderland,Premier League,18,9,2026-01-17
 Fulham,Premier League,18,11,2026-01-17
 Crystal Palace,Premier League,18,13,2026-01-17
-Tottenham,Premier League,18,14,2026-01-17
+Tottenham Hotspur,Premier League,18,14,2026-01-17
 Leeds United,Premier League,18,16,2026-01-17
 Nottingham Forest,Premier League,18,17,2026-01-17
 West Ham,Premier League,18,18,2026-01-17
@@ -279,7 +279,7 @@ Fulham,Premier League,19,7,2026-01-24
 Sunderland,Premier League,19,10,2026-01-24
 Brighton,Premier League,19,12,2026-01-24
 Bournemouth,Premier League,19,13,2026-01-24
-Tottenham,Premier League,19,14,2026-01-24
+Tottenham Hotspur,Premier League,19,14,2026-01-24
 West Ham,Premier League,19,18,2026-01-24
 Burnley,Premier League,19,19,2026-01-24
 Wolverhampton,Premier League,19,20,2026-01-24
@@ -299,7 +299,7 @@ Bournemouth,Premier League,21,11,2026-02-08
 Newcastle United,Premier League,21,12,2026-02-08
 Crystal Palace,Premier League,21,13,2026-02-08
 Brighton,Premier League,21,14,2026-02-08
-Tottenham,Premier League,21,15,2026-02-08
+Tottenham Hotspur,Premier League,21,15,2026-02-08
 Leeds United,Premier League,21,16,2026-02-08
 Nottingham Forest,Premier League,21,17,2026-02-08
 West Ham,Premier League,21,18,2026-02-08
@@ -311,7 +311,7 @@ Everton,Premier League,22,8,2026-02-10
 Bournemouth,Premier League,22,9,2026-02-10
 Newcastle United,Premier League,22,10,2026-02-10
 Leeds United,Premier League,22,15,2026-02-10
-Tottenham,Premier League,22,16,2026-02-10
+Tottenham Hotspur,Premier League,22,16,2026-02-10
 West Ham,Premier League,22,18,2026-02-10
 Arsenal,Premier League,24,1,2026-03-01
 Manchester City,Premier League,24,2,2026-03-01
@@ -328,7 +328,7 @@ Sunderland,Premier League,24,12,2026-03-01
 Newcastle United,Premier League,24,13,2026-03-01
 Crystal Palace,Premier League,24,14,2026-03-01
 Leeds United,Premier League,24,15,2026-03-01
-Tottenham,Premier League,24,16,2026-03-01
+Tottenham Hotspur,Premier League,24,16,2026-03-01
 Nottingham Forest,Premier League,24,17,2026-03-01
 West Ham,Premier League,24,18,2026-03-01
 Burnley,Premier League,24,19,2026-03-01
@@ -4075,7 +4075,7 @@ Newcastle United,Premier League,30,14,2026-04-20
 Leeds United,Premier League,30,15,2026-04-20
 Nottingham Forest,Premier League,30,16,2026-04-20
 West Ham,Premier League,30,17,2026-04-20
-Tottenham,Premier League,30,18,2026-04-20
+Tottenham Hotspur,Premier League,30,18,2026-04-20
 Burnley,Premier League,30,19,2026-04-20
 Wolverhampton,Premier League,30,20,2026-04-20
 Bromley,League Two,56,1,2026-04-22
@@ -4230,7 +4230,7 @@ Crystal Palace,Premier League,32,13,2026-04-25
 Newcastle United,Premier League,32,14,2026-04-25
 Nottingham Forest,Premier League,32,16,2026-04-25
 West Ham,Premier League,32,17,2026-04-25
-Tottenham,Premier League,32,18,2026-04-25
+Tottenham Hotspur,Premier League,32,18,2026-04-25
 Wolverhampton,Premier League,32,20,2026-04-25
 Ipswich Town,Championship,52,2,2026-04-28
 Southampton,Championship,52,5,2026-04-28
@@ -4253,7 +4253,7 @@ Crystal Palace,Premier League,33,13,2026-05-01
 Leeds United,Premier League,33,14,2026-05-01
 Newcastle United,Premier League,33,15,2026-05-01
 West Ham,Premier League,33,17,2026-05-01
-Tottenham,Premier League,33,18,2026-05-01
+Tottenham Hotspur,Premier League,33,18,2026-05-01
 Burnley,Premier League,33,19,2026-05-01
 Wolverhampton,Premier League,33,20,2026-05-01
 Coventry City,Championship,53,1,2026-05-02
@@ -4344,7 +4344,7 @@ Newcastle United,Premier League,34,13,2026-05-02
 Leeds United,Premier League,34,14,2026-05-02
 Crystal Palace,Premier League,34,15,2026-05-02
 Nottingham Forest,Premier League,34,16,2026-05-02
-Tottenham,Premier League,34,17,2026-05-02
+Tottenham Hotspur,Premier League,34,17,2026-05-02
 West Ham,Premier League,34,18,2026-05-02
 Burnley,Premier League,34,19,2026-05-02
 Wolverhampton,Premier League,34,20,2026-05-02
@@ -4364,7 +4364,7 @@ Newcastle United,Premier League,35,13,2026-05-09
 Leeds United,Premier League,35,14,2026-05-09
 Crystal Palace,Premier League,35,15,2026-05-09
 Nottingham Forest,Premier League,35,16,2026-05-09
-Tottenham,Premier League,35,17,2026-05-09
+Tottenham Hotspur,Premier League,35,17,2026-05-09
 West Ham,Premier League,35,18,2026-05-09
 Burnley,Premier League,35,19,2026-05-09
 Wolverhampton,Premier League,35,20,2026-05-09
@@ -4384,7 +4384,7 @@ Newcastle United,Premier League,36,13,2026-05-13
 Leeds United,Premier League,36,14,2026-05-13
 Crystal Palace,Premier League,36,15,2026-05-13
 Nottingham Forest,Premier League,36,16,2026-05-13
-Tottenham,Premier League,36,17,2026-05-13
+Tottenham Hotspur,Premier League,36,17,2026-05-13
 West Ham,Premier League,36,18,2026-05-13
 Burnley,Premier League,36,19,2026-05-13
 Wolverhampton,Premier League,36,20,2026-05-13
@@ -4404,7 +4404,7 @@ Fulham,Premier League,37,13,2026-05-17
 Leeds United,Premier League,37,14,2026-05-17
 Crystal Palace,Premier League,37,15,2026-05-17
 Nottingham Forest,Premier League,37,16,2026-05-17
-Tottenham,Premier League,37,17,2026-05-17
+Tottenham Hotspur,Premier League,37,17,2026-05-17
 West Ham,Premier League,37,18,2026-05-17
 Burnley,Premier League,37,19,2026-05-17
 Wolverhampton,Premier League,37,20,2026-05-17
@@ -4424,27 +4424,7 @@ Fulham,Premier League,38,13,2026-05-19
 Leeds United,Premier League,38,14,2026-05-19
 Crystal Palace,Premier League,38,15,2026-05-19
 Nottingham Forest,Premier League,38,16,2026-05-19
-Tottenham,Premier League,38,17,2026-05-19
+Tottenham Hotspur,Premier League,38,17,2026-05-19
 West Ham,Premier League,38,18,2026-05-19
 Burnley,Premier League,38,19,2026-05-19
 Wolverhampton,Premier League,38,20,2026-05-19
-Arsenal,Premier League,39,1,2026-05-24
-Manchester City,Premier League,39,2,2026-05-24
-Manchester United,Premier League,39,3,2026-05-24
-Aston Villa,Premier League,39,4,2026-05-24
-Liverpool,Premier League,39,5,2026-05-24
-Bournemouth,Premier League,39,6,2026-05-24
-Sunderland,Premier League,39,7,2026-05-24
-Brighton,Premier League,39,8,2026-05-24
-Brentford,Premier League,39,9,2026-05-24
-Chelsea,Premier League,39,10,2026-05-24
-Fulham,Premier League,39,11,2026-05-24
-Newcastle United,Premier League,39,12,2026-05-24
-Everton,Premier League,39,13,2026-05-24
-Leeds United,Premier League,39,14,2026-05-24
-Crystal Palace,Premier League,39,15,2026-05-24
-Nottingham Forest,Premier League,39,16,2026-05-24
-Tottenham,Premier League,39,17,2026-05-24
-West Ham,Premier League,39,18,2026-05-24
-Burnley,Premier League,39,19,2026-05-24
-Wolverhampton,Premier League,39,20,2026-05-24

@@ -1,24 +1,24 @@
-York City 46 33 9 4 114 41 73 108
-Rochdale 46 33 7 6 88 41 47 106
-Carlisle United 46 29 8 9 87 51 36 95
-Boreham Wood 46 27 9 10 95 58 37 90
-Scunthorpe United 46 23 13 10 77 62 15 82
-Southend United 46 23 12 11 83 47 36 81
-Forest Green Rovers 46 23 12 11 82 52 30 81
-FC Halifax Town 46 20 10 16 69 66 3 70
-Hartlepool United 46 18 14 14 54 59 -5 68
-Woking 46 16 15 15 69 54 15 63
-Tamworth 46 17 11 18 63 71 -8 62
-Boston United 46 15 14 17 63 67 -4 59
-Altrincham 46 17 6 23 55 65 -10 57
-Solihull Moors 46 14 14 18 71 72 -1 56
-Wealdstone 46 15 11 20 67 74 -7 56
-Yeovil Town 46 15 6 25 48 68 -20 51
-Eastleigh 46 13 11 22 57 80 -23 50
-Gateshead 46 14 8 24 54 90 -36 50
-Sutton United 46 11 14 21 59 79 -20 47
-Aldershot Town 46 13 7 26 69 87 -18 46
-Brackley Town 46 10 12 24 40 75 -35 42
-Morecambe 46 9 11 26 66 103 -37 38
-Braintree Town 46 8 12 26 38 76 -38 36
-Truro City 46 8 10 28 42 72 -30 34
+AFC Fylde 0 0 0 0 0 0 0 0
+Aldershot Town 0 0 0 0 0 0 0 0
+Altrincham 0 0 0 0 0 0 0 0
+Barrow 0 0 0 0 0 0 0 0
+Boreham Wood 0 0 0 0 0 0 0 0
+Boston United 0 0 0 0 0 0 0 0
+Carlisle United 0 0 0 0 0 0 0 0
+Eastleigh 0 0 0 0 0 0 0 0
+FC Halifax Town 0 0 0 0 0 0 0 0
+Forest Green Rovers 0 0 0 0 0 0 0 0
+Gateshead 0 0 0 0 0 0 0 0
+Harrogate Town 0 0 0 0 0 0 0 0
+Hartlepool United 0 0 0 0 0 0 0 0
+Hornchurch 0 0 0 0 0 0 0 0
+Kidderminster Harriers 0 0 0 0 0 0 0 0
+Scunthorpe United 0 0 0 0 0 0 0 0
+Solihull Moors 0 0 0 0 0 0 0 0
+Southend United 0 0 0 0 0 0 0 0
+Sutton United 0 0 0 0 0 0 0 0
+Tamworth 0 0 0 0 0 0 0 0
+Wealdstone 0 0 0 0 0 0 0 0
+Woking 0 0 0 0 0 0 0 0
+Worthing 0 0 0 0 0 0 0 0
+Yeovil Town 0 0 0 0 0 0 0 0

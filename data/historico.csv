@@ -73,7 +73,7 @@ Leicester City,2-1,Sheffield Wednesday,2025-08-10,Championship
 Liverpool,4-2,Bournemouth,2025-08-15,Premier League
 Brighton,1-1,Fulham,2025-08-16,Premier League
 Sunderland,3-0,West Ham,2025-08-16,Premier League
-Tottenham,3-0,Burnley,2025-08-16,Premier League
+Tottenham Hotspur,3-0,Burnley,2025-08-16,Premier League
 Derby County,3-5,Coventry City,2025-08-16,Championship
 Portsmouth,1-2,Norwich City,2025-08-16,Championship
 Wrexham,2-3,West Bromwich,2025-08-16,Championship
@@ -161,7 +161,7 @@ Southend United,0-0,York City,2025-08-20,National League
 Yeovil Town,2-1,Brackley Town,2025-08-20,National League
 Bolton Wanderers,1-1,Reading,2025-08-20,League One
 West Ham,1-5,Chelsea,2025-08-22,Premier League
-Manchester City,0-2,Tottenham,2025-08-23,Premier League
+Manchester City,0-2,Tottenham Hotspur,2025-08-23,Premier League
 Bournemouth,1-0,Wolverhampton,2025-08-23,Premier League
 Brentford,1-0,Aston Villa,2025-08-23,Premier League
 Burnley,2-0,Sunderland,2025-08-23,Premier League
@@ -278,7 +278,7 @@ Wealdstone,1-3,Rochdale,2025-08-30,National League
 Chelsea,2-0,Fulham,2025-08-30,Premier League
 Manchester United,3-2,Burnley,2025-08-30,Premier League
 Sunderland,2-1,Brentford,2025-08-30,Premier League
-Tottenham,0-1,Bournemouth,2025-08-30,Premier League
+Tottenham Hotspur,0-1,Bournemouth,2025-08-30,Premier League
 Wolverhampton,2-3,Everton,2025-08-30,Premier League
 Leeds United,0-0,Newcastle United,2025-08-30,Premier League
 Brackley Town,1-1,Scunthorpe United,2025-08-30,National League
@@ -382,7 +382,7 @@ Southend United,1-1,Boston United,2025-09-13,National League
 Sutton United,2-3,Tamworth,2025-09-13,National League
 Truro City,0-1,Rochdale,2025-09-13,National League
 Wealdstone,2-2,Gateshead,2025-09-13,National League
-West Ham,0-3,Tottenham,2025-09-13,Premier League
+West Ham,0-3,Tottenham Hotspur,2025-09-13,Premier League
 FC Halifax Town,2-2,Eastleigh,2025-09-13,National League
 Brentford,2-2,Chelsea,2025-09-13,Premier League
 Southampton,0-0,Portsmouth,2025-09-14,Championship
@@ -390,7 +390,7 @@ Burnley,0-1,Liverpool,2025-09-14,Premier League
 Manchester City,3-0,Manchester United,2025-09-14,Premier League
 Middlesbrough,2-1,West Bromwich,2025-09-19,Championship
 Liverpool,2-1,Everton,2025-09-20,Premier League
-Brighton,2-2,Tottenham,2025-09-20,Premier League
+Brighton,2-2,Tottenham Hotspur,2025-09-20,Premier League
 Burnley,1-1,Nottingham Forest,2025-09-20,Premier League
 West Ham,1-2,Crystal Palace,2025-09-20,Premier League
 Wolverhampton,1-3,Leeds United,2025-09-20,Premier League
@@ -510,7 +510,7 @@ Truro City,5-0,Morecambe,2025-09-27,National League
 Wealdstone,0-0,Eastleigh,2025-09-27,National League
 Yeovil Town,1-0,Altrincham,2025-09-27,National League
 Forest Green Rovers,1-1,York City,2025-09-27,National League
-Tottenham,1-1,Wolverhampton,2025-09-27,Premier League
+Tottenham Hotspur,1-1,Wolverhampton,2025-09-27,Premier League
 Aston Villa,3-1,Fulham,2025-09-28,Premier League
 Newcastle United,1-2,Arsenal,2025-09-28,Premier League
 Everton,1-1,West Ham,2025-09-29,Premier League
@@ -543,7 +543,7 @@ York City,1-3,Scunthorpe United,2025-10-01,National League
 Rotherham United,2-2,Bradford City,2025-10-02,League One
 Bournemouth,3-1,Fulham,2025-10-03,Premier League
 Wrexham,1-1,Birmingham City,2025-10-03,Championship
-Leeds United,1-2,Tottenham,2025-10-04,Premier League
+Leeds United,1-2,Tottenham Hotspur,2025-10-04,Premier League
 Arsenal,2-0,West Ham,2025-10-04,Premier League
 Manchester United,2-0,Sunderland,2025-10-04,Premier League
 Blackburn Rovers,1-1,Stoke City,2025-10-04,Championship
@@ -672,7 +672,7 @@ Fulham,0-1,Arsenal,2025-10-18,Premier League
 Carlisle United,4-2,Forest Green Rovers,2025-10-18,National League
 Sutton United,3-3,Hartlepool United,2025-10-18,National League
 Leicester City,1-1,Portsmouth,2025-10-18,Championship
-Tottenham,1-2,Aston Villa,2025-10-19,Premier League
+Tottenham Hotspur,1-2,Aston Villa,2025-10-19,Premier League
 Liverpool,1-2,Manchester United,2025-10-19,Premier League
 West Ham,0-2,Brentford,2025-10-20,Premier League
 Blackburn Rovers,1-3,Sheffield United,2025-10-21,Championship
@@ -747,7 +747,7 @@ Bournemouth,2-0,Nottingham Forest,2025-10-26,Premier League
 Arsenal,1-0,Crystal Palace,2025-10-26,Premier League
 Aston Villa,1-0,Manchester City,2025-10-26,Premier League
 Wolverhampton,2-3,Burnley,2025-10-26,Premier League
-Everton,0-3,Tottenham,2025-10-26,Premier League
+Everton,0-3,Tottenham Hotspur,2025-10-26,Premier League
 Port Vale,0-3,Stockport County,2025-10-27,League One
 Bradford City,0-0,Lincoln City,2025-10-28,League One
 Mansfield Town,2-0,Plymouth Argyle,2025-10-28,League One
@@ -769,7 +769,7 @@ Burnley,0-2,Arsenal,2025-11-01,Premier League
 Crystal Palace,2-0,Brentford,2025-11-01,Premier League
 Fulham,3-0,Wolverhampton,2025-11-01,Premier League
 Nottingham Forest,2-2,Manchester United,2025-11-01,Premier League
-Tottenham,0-1,Chelsea,2025-11-01,Premier League
+Tottenham Hotspur,0-1,Chelsea,2025-11-01,Premier League
 Liverpool,2-0,Aston Villa,2025-11-01,Premier League
 West Ham,3-1,Newcastle United,2025-11-02,Premier League
 Manchester City,3-1,Bournemouth,2025-11-02,Premier League
@@ -799,7 +799,7 @@ Woking,1-1,Southend United,2025-11-05,National League
 York City,4-0,Gateshead,2025-11-05,National League
 Reading,1-0,Stevenage,2025-11-06,League One
 Watford,1-1,Bristol City,2025-11-07,Championship
-Tottenham,2-2,Manchester United,2025-11-08,Premier League
+Tottenham Hotspur,2-2,Manchester United,2025-11-08,Premier League
 Everton,2-0,Fulham,2025-11-08,Premier League
 West Ham,3-2,Burnley,2025-11-08,Premier League
 Blackburn Rovers,1-2,Derby County,2025-11-08,Championship
@@ -942,7 +942,7 @@ Boston United,1-2,Carlisle United,2025-11-22,National League
 Morecambe,2-0,Brackley Town,2025-11-23,National League
 Leeds United,1-2,Aston Villa,2025-11-23,Premier League
 Sheffield Wednesday,0-3,Sheffield United,2025-11-23,Championship
-Arsenal,4-1,Tottenham,2025-11-23,Premier League
+Arsenal,4-1,Tottenham Hotspur,2025-11-23,Premier League
 Manchester United,0-1,Everton,2025-11-24,Premier League
 Hull City,0-2,Ipswich Town,2025-11-25,Championship
 Middlesbrough,2-4,Coventry City,2025-11-25,Championship
@@ -1008,7 +1008,7 @@ Brentford,3-1,Burnley,2025-11-29,Premier League
 Manchester City,3-2,Leeds United,2025-11-29,Premier League
 Sunderland,3-2,Bournemouth,2025-11-29,Premier League
 Everton,1-4,Newcastle United,2025-11-29,Premier League
-Tottenham,1-2,Fulham,2025-11-29,Premier League
+Tottenham Hotspur,1-2,Fulham,2025-11-29,Premier League
 Boreham Wood,2-1,FC Halifax Town,2025-11-29,National League
 Crystal Palace,1-2,Manchester United,2025-11-30,Premier League
 Aston Villa,1-0,Wolverhampton,2025-11-30,Premier League
@@ -1018,7 +1018,7 @@ Chelsea,1-1,Arsenal,2025-11-30,Premier League
 Birmingham City,2-1,Watford,2025-12-02,Championship
 Bournemouth,0-1,Everton,2025-12-02,Premier League
 Fulham,4-5,Manchester City,2025-12-02,Premier League
-Newcastle United,2-2,Tottenham,2025-12-02,Premier League
+Newcastle United,2-2,Tottenham Hotspur,2025-12-02,Premier League
 Blackburn Rovers,1-1,Ipswich Town,2025-12-03,Championship
 Wigan Athletic,1-0,Burton Albion,2025-12-03,League One
 Arsenal,2-0,Brentford,2025-12-03,Premier League
@@ -1034,7 +1034,7 @@ Bournemouth,0-0,Chelsea,2025-12-06,Premier League
 Everton,3-0,Nottingham Forest,2025-12-06,Premier League
 Manchester City,3-0,Sunderland,2025-12-06,Premier League
 Newcastle United,2-1,Burnley,2025-12-06,Premier League
-Tottenham,2-0,Brentford,2025-12-06,Premier League
+Tottenham Hotspur,2-0,Brentford,2025-12-06,Premier League
 Leeds United,3-3,Liverpool,2025-12-06,Premier League
 Derby County,1-3,Leicester City,2025-12-06,Championship
 Watford,3-2,Norwich City,2025-12-06,Championship
@@ -1131,7 +1131,7 @@ Liverpool,2-0,Brighton,2025-12-13,Premier League
 Burnley,2-3,Fulham,2025-12-13,Premier League
 Arsenal,2-1,Wolverhampton,2025-12-13,Premier League
 Crystal Palace,0-3,Manchester City,2025-12-14,Premier League
-Nottingham Forest,3-0,Tottenham,2025-12-14,Premier League
+Nottingham Forest,3-0,Tottenham Hotspur,2025-12-14,Premier League
 Sunderland,1-0,Newcastle United,2025-12-14,Premier League
 West Ham,2-3,Aston Villa,2025-12-14,Premier League
 Brentford,1-1,Leeds United,2025-12-14,Premier League
@@ -1150,7 +1150,7 @@ Bournemouth,1-1,Burnley,2025-12-20,Premier League
 Brighton,0-0,Sunderland,2025-12-20,Premier League
 Manchester City,3-0,West Ham,2025-12-20,Premier League
 Wolverhampton,0-2,Brentford,2025-12-20,Premier League
-Tottenham,1-2,Liverpool,2025-12-20,Premier League
+Tottenham Hotspur,1-2,Liverpool,2025-12-20,Premier League
 Blackburn Rovers,2-0,Millwall,2025-12-20,Championship
 Preston North End,1-1,Norwich City,2025-12-20,Championship
 Southampton,1-1,Coventry City,2025-12-20,Championship
@@ -1253,7 +1253,7 @@ Liverpool,2-1,Wolverhampton,2025-12-27,Premier League
 West Ham,0-1,Fulham,2025-12-27,Premier League
 Chelsea,1-2,Aston Villa,2025-12-27,Premier League
 Sunderland,1-1,Leeds United,2025-12-28,Premier League
-Crystal Palace,0-1,Tottenham,2025-12-28,Premier League
+Crystal Palace,0-1,Tottenham Hotspur,2025-12-28,Premier League
 Coventry City,0-2,Ipswich Town,2025-12-29,Championship
 Leicester City,2-1,Derby County,2025-12-29,Championship
 Middlesbrough,0-1,Hull City,2025-12-29,Championship
@@ -1310,7 +1310,7 @@ Woking,0-1,Braintree Town,2025-12-30,National League
 Yeovil Town,1-1,Eastleigh,2025-12-30,National League
 Crystal Palace,1-1,Fulham,2026-01-01,Premier League
 Liverpool,0-0,Leeds United,2026-01-01,Premier League
-Brentford,0-0,Tottenham,2026-01-01,Premier League
+Brentford,0-0,Tottenham Hotspur,2026-01-01,Premier League
 Sunderland,0-0,Manchester City,2026-01-01,Premier League
 Blackburn Rovers,0-2,Wrexham,2026-01-01,Championship
 Bristol City,5-0,Portsmouth,2026-01-01,Championship
@@ -1376,7 +1376,7 @@ Wycombe Wanderers,2-0,AFC Wimbledon,2026-01-04,League One
 Leeds United,1-1,Manchester United,2026-01-04,Premier League
 Everton,2-4,Brentford,2026-01-04,Premier League
 Newcastle United,2-0,Crystal Palace,2026-01-04,Premier League
-Tottenham,1-1,Sunderland,2026-01-04,Premier League
+Tottenham Hotspur,1-1,Sunderland,2026-01-04,Premier League
 Fulham,2-2,Liverpool,2026-01-04,Premier League
 Cheltenham Town,3-0,Crawley Town,2026-01-04,League Two
 Milton Keynes Dons,2-2,Chesterfield,2026-01-04,League Two
@@ -1384,7 +1384,7 @@ Manchester City,1-1,Chelsea,2026-01-04,Premier League
 Leicester City,2-1,West Bromwich,2026-01-05,Championship
 Arsenal,0-0,Liverpool,2026-01-07,Premier League
 West Ham,1-2,Nottingham Forest,2026-01-07,Premier League
-Bournemouth,3-2,Tottenham,2026-01-07,Premier League
+Bournemouth,3-2,Tottenham Hotspur,2026-01-07,Premier League
 Brentford,3-0,Sunderland,2026-01-07,Premier League
 Crystal Palace,0-0,Aston Villa,2026-01-07,Premier League
 Everton,1-1,Wolverhampton,2026-01-07,Premier League
@@ -1408,7 +1408,7 @@ Chelsea,2-0,Brentford,2026-01-17,Premier League
 Leeds United,1-0,Fulham,2026-01-17,Premier League
 Liverpool,1-1,Burnley,2026-01-17,Premier League
 Sunderland,2-1,Crystal Palace,2026-01-17,Premier League
-Tottenham,1-2,West Ham,2026-01-17,Premier League
+Tottenham Hotspur,1-2,West Ham,2026-01-17,Premier League
 Bradford City,1-2,Cardiff City,2026-01-17,League One
 Wigan Athletic,0-1,Bolton Wanderers,2026-01-17,League One
 AFC Wimbledon,0-1,Doncaster Rovers,2026-01-17,League One
@@ -1524,7 +1524,7 @@ Rochdale,2-0,Truro City,2026-01-24,National League
 Tamworth,0-1,Sutton United,2026-01-24,National League
 York City,5-0,Braintree Town,2026-01-24,National League
 West Ham,3-1,Sunderland,2026-01-24,Premier League
-Burnley,2-2,Tottenham,2026-01-24,Premier League
+Burnley,2-2,Tottenham Hotspur,2026-01-24,Premier League
 Fulham,2-1,Brighton,2026-01-24,Premier League
 Manchester City,2-0,Wolverhampton,2026-01-24,Premier League
 Bournemouth,3-2,Liverpool,2026-01-24,Premier League
@@ -1608,7 +1608,7 @@ Sutton United,1-1,Brackley Town,2026-01-31,National League
 Aston Villa,0-1,Brentford,2026-02-01,Premier League
 Manchester United,3-2,Fulham,2026-02-01,Premier League
 Nottingham Forest,1-1,Crystal Palace,2026-02-01,Premier League
-Tottenham,2-2,Manchester City,2026-02-01,Premier League
+Tottenham Hotspur,2-2,Manchester City,2026-02-01,Premier League
 Sunderland,3-0,Burnley,2026-02-02,Premier League
 Blackburn Rovers,1-0,Sheffield Wednesday,2026-02-03,Championship
 Hull City,0-0,Watford,2026-02-03,Championship
@@ -1626,7 +1626,7 @@ Rochdale,4-1,Boreham Wood,2026-02-03,National League
 Accrington,1-0,Salford City,2026-02-05,League Two
 Leeds United,3-1,Nottingham Forest,2026-02-06,Premier League
 Charlton Athletic,0-0,Queens Park Rangers,2026-02-06,Championship
-Manchester United,2-0,Tottenham,2026-02-07,Premier League
+Manchester United,2-0,Tottenham Hotspur,2026-02-07,Premier League
 Bournemouth,1-1,Aston Villa,2026-02-07,Premier League
 Arsenal,3-0,Sunderland,2026-02-07,Premier League
 Burnley,0-2,West Ham,2026-02-07,Premier League
@@ -1678,7 +1678,7 @@ Brighton,0-1,Crystal Palace,2026-02-08,Premier League
 Liverpool,1-2,Manchester City,2026-02-08,Premier League
 Swansea City,4-0,Sheffield Wednesday,2026-02-08,Championship
 Sheffield United,1-2,Middlesbrough,2026-02-09,Championship
-Tottenham,1-2,Newcastle United,2026-02-10,Premier League
+Tottenham Hotspur,1-2,Newcastle United,2026-02-10,Premier League
 Chelsea,2-2,Leeds United,2026-02-10,Premier League
 Everton,1-2,Bournemouth,2026-02-10,Premier League
 West Ham,1-1,Manchester United,2026-02-10,Premier League
@@ -1828,7 +1828,7 @@ Manchester City,2-1,Newcastle United,2026-02-21,Premier League
 Crystal Palace,1-0,Wolverhampton,2026-02-22,Premier League
 Nottingham Forest,0-1,Liverpool,2026-02-22,Premier League
 Sunderland,1-3,Fulham,2026-02-22,Premier League
-Tottenham,1-4,Arsenal,2026-02-22,Premier League
+Tottenham Hotspur,1-4,Arsenal,2026-02-22,Premier League
 Sheffield United,2-1,Sheffield Wednesday,2026-02-22,Championship
 Everton,0-1,Manchester United,2026-02-23,Premier League
 Walsall,0-2,Milton Keynes Dons,2026-02-23,League Two
@@ -1911,7 +1911,7 @@ Newcastle United,2-3,Everton,2026-02-28,Premier League
 Leeds United,0-1,Manchester City,2026-02-28,Premier League
 Morecambe,0-1,York City,2026-02-28,National League
 Brighton,2-1,Nottingham Forest,2026-03-01,Premier League
-Fulham,2-1,Tottenham,2026-03-01,Premier League
+Fulham,2-1,Tottenham Hotspur,2026-03-01,Premier League
 Manchester United,2-1,Crystal Palace,2026-03-01,Premier League
 Arsenal,2-1,Chelsea,2026-03-01,Premier League
 Birmingham City,1-3,Middlesbrough,2026-03-02,Championship
@@ -1941,7 +1941,7 @@ Brighton,0-1,Arsenal,2026-03-05,Premier League
 Fulham,0-1,West Ham,2026-03-05,Premier League
 Manchester City,2-2,Nottingham Forest,2026-03-05,Premier League
 Newcastle United,2-1,Manchester United,2026-03-05,Premier League
-Tottenham,1-3,Crystal Palace,2026-03-05,Premier League
+Tottenham Hotspur,1-3,Crystal Palace,2026-03-05,Premier League
 Preston North End,1-3,Oxford United,2026-03-06,Championship
 Cheltenham Town,2-2,Barrow,2026-03-06,League Two
 Blackburn Rovers,1-1,Portsmouth,2026-03-07,Championship
@@ -2071,7 +2071,7 @@ West Ham,1-1,Manchester City,2026-03-14,Premier League
 Crystal Palace,0-0,Leeds United,2026-03-15,Premier League
 Manchester United,3-1,Aston Villa,2026-03-15,Premier League
 Nottingham Forest,0-0,Fulham,2026-03-15,Premier League
-Liverpool,1-1,Tottenham,2026-03-15,Premier League
+Liverpool,1-1,Tottenham Hotspur,2026-03-15,Premier League
 Brentford,2-2,Wolverhampton,2026-03-16,Premier League
 Portsmouth,0-1,Derby County,2026-03-16,Championship
 Watford,3-1,Wrexham,2026-03-17,Championship
@@ -2148,7 +2148,7 @@ Everton,3-0,Chelsea,2026-03-21,Premier League
 Leeds United,0-0,Brentford,2026-03-21,Premier League
 Newcastle United,1-2,Sunderland,2026-03-22,Premier League
 Aston Villa,2-0,West Ham,2026-03-22,Premier League
-Tottenham,0-3,Nottingham Forest,2026-03-22,Premier League
+Tottenham Hotspur,0-3,Nottingham Forest,2026-03-22,Premier League
 Woking,3-2,Aldershot Town,2026-03-21,National League
 Altrincham,1-0,Southend United,2026-03-21,National League
 Boreham Wood,3-0,Gateshead,2026-03-21,National League
@@ -2350,7 +2350,7 @@ Burnley,0-2,Brighton,2026-04-11,Premier League
 Liverpool,2-0,Fulham,2026-04-11,Premier League
 Crystal Palace,2-1,Newcastle United,2026-04-12,Premier League
 Nottingham Forest,1-1,Aston Villa,2026-04-12,Premier League
-Sunderland,1-0,Tottenham,2026-04-12,Premier League
+Sunderland,1-0,Tottenham Hotspur,2026-04-12,Premier League
 Chelsea,0-3,Manchester City,2026-04-12,Premier League
 Manchester United,1-2,Leeds United,2026-04-14,Premier League
 Portsmouth,2-0,Ipswich Town,2026-04-15,Championship
@@ -2421,7 +2421,7 @@ York City,3-0,Yeovil Town,2026-04-20,National League
 Brentford,0-0,Fulham,2026-04-19,Premier League
 Leeds United,3-0,Wolverhampton,2026-04-19,Premier League
 Newcastle United,1-2,Bournemouth,2026-04-19,Premier League
-Tottenham,2-2,Brighton,2026-04-19,Premier League
+Tottenham Hotspur,2-2,Brighton,2026-04-19,Premier League
 Chelsea,0-1,Manchester United,2026-04-19,Premier League
 Aston Villa,4-3,Sunderland,2026-04-20,Premier League
 Everton,1-2,Liverpool,2026-04-20,Premier League
@@ -2503,7 +2503,7 @@ Sunderland,0-5,Nottingham Forest,2026-04-24,Premier League
 Fulham,1-0,Aston Villa,2026-04-25,Premier League
 Liverpool,3-1,Crystal Palace,2026-04-25,Premier League
 West Ham,2-1,Everton,2026-04-25,Premier League
-Wolverhampton,0-1,Tottenham,2026-04-25,Premier League
+Wolverhampton,0-1,Tottenham Hotspur,2026-04-25,Premier League
 Arsenal,1-0,Newcastle United,2026-04-25,Premier League
 Manchester United,2-1,Brentford,2026-04-27,Premier League
 Southampton,2-2,Ipswich Town,2026-04-28,Championship
@@ -2553,7 +2553,7 @@ Brentford,3-0,West Ham,2026-05-02,Premier League
 Arsenal,3-0,Fulham,2026-05-02,Premier League
 Bournemouth,3-0,Crystal Palace,2026-05-03,Premier League
 Manchester United,3-2,Liverpool,2026-05-03,Premier League
-Aston Villa,1-2,Tottenham,2026-05-03,Premier League
+Aston Villa,1-2,Tottenham Hotspur,2026-05-03,Premier League
 Everton,3-3,Manchester City,2026-05-04,Premier League
 Chelsea,1-3,Nottingham Forest,2026-05-04,Premier League
 Liverpool,1-1,Chelsea,2026-05-09,Premier League
@@ -2565,7 +2565,7 @@ Crystal Palace,2-2,Everton,2026-05-10,Premier League
 Nottingham Forest,1-1,Newcastle United,2026-05-10,Premier League
 West Ham,0-1,Arsenal,2026-05-10,Premier League
 Manchester City,3-0,Brentford,2026-05-09,Premier League
-Tottenham,1-1,Leeds United,2026-05-11,Premier League
+Tottenham Hotspur,1-1,Leeds United,2026-05-11,Premier League
 Manchester City,3-0,Crystal Palace,2026-05-13,Premier League
 Aston Villa,4-2,Liverpool,2026-05-15,Premier League
 Manchester United,3-2,Nottingham Forest,2026-05-17,Premier League
@@ -2575,7 +2575,7 @@ Leeds United,1-0,Brighton,2026-05-17,Premier League
 Wolverhampton,1-1,Fulham,2026-05-17,Premier League
 Newcastle United,3-1,West Ham,2026-05-17,Premier League
 Arsenal,1-0,Burnley,2026-05-18,Premier League
-Chelsea,2-1,Tottenham,2026-05-19,Premier League
+Chelsea,2-1,Tottenham Hotspur,2026-05-19,Premier League
 Bournemouth,1-1,Manchester City,2026-05-19,Premier League
 Brighton,0-3,Manchester United,2026-05-24,Premier League
 Burnley,1-1,Wolverhampton,2026-05-24,Premier League
@@ -2585,5 +2585,5 @@ Liverpool,1-1,Brentford,2026-05-24,Premier League
 Manchester City,1-2,Aston Villa,2026-05-24,Premier League
 Nottingham Forest,1-1,Bournemouth,2026-05-24,Premier League
 Sunderland,2-1,Chelsea,2026-05-24,Premier League
-Tottenham,1-0,Everton,2026-05-24,Premier League
+Tottenham Hotspur,1-0,Everton,2026-05-24,Premier League
 West Ham,3-0,Leeds United,2026-05-24,Premier League

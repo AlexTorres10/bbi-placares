@@ -72,7 +72,7 @@
         "Nottingham Forest sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
         "Nottingham Forest sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
         "Sunderland sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
-        "Tottenham voltou a vencer em casa depois de 10 jogos sem vitória em casa.",
+        "Tottenham Hotspur voltou a vencer em casa depois de 10 jogos sem vitória em casa.",
         "West Ham sofreu apenas 1 derrotas nos últimos 8 jogos em casa.",
         "West Ham venceu apenas 1 dos últimos 6 jogos fora de casa.",
         "Wolverhampton está há 8 jogos sem vencer.",
@@ -206,9 +206,9 @@
         "Sunderland": [
           "Sunderland sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
         ],
-        "Tottenham": [
-          "Tottenham somou 10 pontos nos últimos 5 jogos. Excelente fase!",
-          "Tottenham voltou a vencer em casa depois de 10 jogos sem vitória em casa."
+        "Tottenham Hotspur": [
+          "Tottenham Hotspur somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Tottenham Hotspur voltou a vencer em casa depois de 10 jogos sem vitória em casa."
         ],
         "West Ham": [
           "West Ham somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
@@ -257,8 +257,8 @@
         "Newcastle United": [],
         "Nottingham Forest": [],
         "Sunderland": [],
-        "Tottenham": [
-          "Tottenham é o 3º pior mandante!"
+        "Tottenham Hotspur": [
+          "Tottenham Hotspur é o 3º pior mandante!"
         ],
         "West Ham": [],
         "Wolverhampton": [
@@ -284,7 +284,7 @@
         "Newcastle United",
         "Nottingham Forest",
         "Sunderland",
-        "Tottenham",
+        "Tottenham Hotspur",
         "West Ham",
         "Wolverhampton"
       ],
@@ -426,7 +426,7 @@
           "Pts": 20
         },
         {
-          "Time": "Tottenham",
+          "Time": "Tottenham Hotspur",
           "J": 19,
           "V": 3,
           "E": 6,
@@ -484,7 +484,7 @@
           "Pts": 27
         },
         {
-          "Time": "Tottenham",
+          "Time": "Tottenham Hotspur",
           "J": 19,
           "V": 7,
           "E": 5,
@@ -817,7 +817,7 @@
           "D",
           "V"
         ],
-        "Tottenham": [
+        "Tottenham Hotspur": [
           "V",
           "D",
           "E",

@@ -1,24 +1,24 @@
-Bromley 46 24 15 7 71 46 25 87
-Milton Keynes Dons 46 24 14 8 86 45 41 86
-Cambridge United 46 22 16 8 66 33 33 82
-Salford City 46 25 6 15 61 51 10 81
-Notts County 46 24 8 14 74 52 22 80
-Chesterfield 46 21 16 9 71 56 15 79
-Grimsby Town 46 22 12 12 74 50 24 78
-Barnet 46 21 13 12 70 53 17 76
-Swindon Town 46 22 9 15 70 59 11 75
-Oldham Athletic 46 18 14 14 60 44 16 68
-Crewe Alexandra 46 19 10 17 64 58 6 67
-Colchester United 46 18 12 16 62 49 13 66
-Walsall 46 18 11 17 56 56 0 65
-Bristol Rovers 46 19 5 22 56 65 -9 62
-Fleetwood Town 46 15 16 15 57 58 -1 61
-Accrington 46 14 11 21 47 58 -11 53
-Gillingham 46 13 14 19 53 72 -19 53
-Cheltenham Town 46 14 10 22 53 79 -26 52
-Shrewsbury Town 46 13 10 23 42 69 -27 49
-Newport County 46 12 7 27 48 77 -29 43
-Tranmere Rovers 46 10 11 25 54 79 -25 41
-Crawley Town 46 8 16 22 44 68 -24 40
-Harrogate Town 46 10 9 27 39 68 -29 39
-Barrow 46 9 9 28 45 78 -33 36
+Accrington 0 0 0 0 0 0 0 0
+Barnet 0 0 0 0 0 0 0 0
+Bristol Rovers 0 0 0 0 0 0 0 0
+Cheltenham Town 0 0 0 0 0 0 0 0
+Chesterfield 0 0 0 0 0 0 0 0
+Colchester United 0 0 0 0 0 0 0 0
+Crawley Town 0 0 0 0 0 0 0 0
+Crewe Alexandra 0 0 0 0 0 0 0 0
+Exeter City 0 0 0 0 0 0 0 0
+Fleetwood Town 0 0 0 0 0 0 0 0
+Gillingham 0 0 0 0 0 0 0 0
+Grimsby Town 0 0 0 0 0 0 0 0
+Newport County 0 0 0 0 0 0 0 0
+Northampton Town 0 0 0 0 0 0 0 0
+Oldham Athletic 0 0 0 0 0 0 0 0
+Port Vale 0 0 0 0 0 0 0 0
+Rochdale 0 0 0 0 0 0 0 0
+Rotherham United 0 0 0 0 0 0 0 0
+Salford City 0 0 0 0 0 0 0 0
+Shrewsbury Town 0 0 0 0 0 0 0 0
+Swindon Town 0 0 0 0 0 0 0 0
+Tranmere Rovers 0 0 0 0 0 0 0 0
+Walsall 0 0 0 0 0 0 0 0
+York City 0 0 0 0 0 0 0 0
