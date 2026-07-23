@@ -24,6 +24,12 @@ python scripts/build_position_history.py
 
 # Filter posicoes.csv to only rows where the team actually played that matchday
 python filtrar_posicoes.py
+
+# Generate zeroed data/tabelas/<league>.txt files for a new season, from badge folders
+python scripts/gerar_txt_zerado.py
+
+# Generate zeroed standings table images (tabelas-zeradas/) for a new season
+python scripts/gerar_tabela_zerada.py
 ```
 
 ## Architecture Overview
@@ -32,7 +38,7 @@ This is a **Streamlit web app** that generates social media images for English f
 
 ### UI Modes
 
-The app is driven by a top-level `st.radio` at line ~2409 in `app.py` with five modes:
+The app is driven by a top-level `st.radio` at line ~2699 in `app.py` with five modes:
 
 | Mode | Entry point | What it does |
 |---|---|---|
@@ -42,7 +48,7 @@ The app is driven by a top-level `st.radio` at line ~2409 in `app.py` with five 
 | 🏆 Gerar Copa | inline in `app.py` | Generates cup-round result images via `CupGenerator` |
 | 📈 Estatísticas | `render_stats_mode()` | Shows team/league insights, position chart, and a "Copiar para Claude" text block |
 
-`desenhar_placar()` (line ~361 in `app.py`) is the main PIL composition function — it places team badges, score text, and scorer names onto a template PNG and is ~190 lines long.
+`desenhar_placar()` (line ~384 in `app.py`) is the main PIL composition function — it places team badges, score text, and scorer names onto a template PNG and is ~190 lines long.
 
 ### Data Flow
 
@@ -53,7 +59,7 @@ The app is driven by a top-level `st.radio` at line ~2409 in `app.py` with five 
 5. Generated images are displayed in Streamlit and available for download
 6. Updated standings are optionally saved back to GitHub via `GitHubHandler` (GitHub API), which commits both `data/tabelas/<league>.txt` and `data/historico.csv`
 
-**Stats flow**: `render_stats_mode()` → `compute_league_stats(liga_str)` in `stats_engine.py` → `allinsights()` in `bbi_functions.py`. `allinsights()` is the single entry point that returns a deduplicated list of natural-language insight strings for a team or league. The "Copiar para Claude" button calls `_build_claude_text()` (line ~1954 in `app.py`), which assembles a 3-section block (results + table with zone labels + insights) formatted for pasting into a Claude conversation.
+**Stats flow**: `render_stats_mode()` → `compute_league_stats(liga_str)` in `stats_engine.py` → `allinsights()` in `bbi_functions.py`. `allinsights()` is the single entry point that returns a deduplicated list of natural-language insight strings for a team or league. The "Copiar para Claude" button calls `_build_claude_text()` (line ~2104 in `app.py`), which assembles a 3-section block (results + table with zone labels + insights) formatted for pasting into a Claude conversation.
 
 **Team name resolution** uses `fuzzywuzzy` for fuzzy matching when an abbreviation or name doesn't exactly match a known team — this handles typos and alternate spellings. Pixel layout for every league and cup is driven entirely by `config/leagues_config.json`; never hardcode coordinates in Python.
 
@@ -85,7 +91,7 @@ The app is driven by a top-level `st.radio` at line ~2409 in `app.py` with five 
 ### Asset Directories
 
 - `escudos-pl/`, `escudos-ch/`, `escudos-l1/`, `escudos-l2/`, `escudos-nl/`, `escudos-nonleague/` — badge PNGs for domestic leagues
-- `escudos-ucl/`, `escudos-uel/`, `escudos-uecl/` — badge PNGs for European club competitors. **English clubs** in these competitions resolve their badge from `escudos-pl/` instead (handled in `obter_escudo_path()`, line ~338 in `app.py`, via the `INGLES_UCL` / `INGLES_UEL` / `INGLES_UECL` lists)
+- `escudos-ucl/`, `escudos-uel/`, `escudos-uecl/` — badge PNGs for European club competitors. **English clubs** in these competitions resolve their badge from `escudos-pl/` instead (handled in `obter_escudo_path()`, line ~352 in `app.py`, via the `INGLES_UCL` / `INGLES_UEL` / `INGLES_UECL` lists)
 - `selecoes/` — badge PNGs for national teams (used by the "Seleção Inglesa" template)
 - `resultados/` — template PNGs for match result images (e.g. `premierleague-template.png`, `premierleague-rect.png`)
 - `tabela/` — template PNGs for standings images, including colored zone rects (e.g. `premierleague-rect-ucl.png`, `premierleague-rect-ucl-conf.png`)

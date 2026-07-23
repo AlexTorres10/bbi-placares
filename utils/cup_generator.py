@@ -209,6 +209,7 @@ class CupGenerator:
                 team = team.replace('City', '')
                 team = team.replace('Town', '')
                 team = team.replace('Sheffield', 'Sheff')
+                team = team.replace('Rovers', '')
                 team = team.strip()
                 
                 # Se ainda grande, pegar primeiras 7 letras
@@ -312,6 +313,7 @@ class CupGenerator:
                 # Info extra (pênaltis/prorrogação): cabe dentro do rect alto da FA Cup
                 extra_font_size = font_size_score - 22
                 extra_y_offset = score_y + 80
+                team_name_max_width = 400
             else:  # eflcup
                 # Mesmo design das ligas da EFL: o rect é idêntico (830x59), com
                 # as caixas brancas dos escudos nas pontas e a do placar no meio.
@@ -335,6 +337,9 @@ class CupGenerator:
                 # rect seguinte, centralizada sob o placar.
                 extra_font_size = 16
                 extra_y_offset = None  # centraliza no vão entre os rects
+                # Layout compacto: nome fica entre o escudo e a caixa do
+                # placar, um espaço bem menor que o da FA Cup
+                team_name_max_width = 260
             
             # Desenhar cada jogo nos slots usados
             for slot_idx, slot in enumerate(slots_usados):
@@ -390,16 +395,16 @@ class CupGenerator:
                 # ========================================
                 
                 home_name = self._get_display_name_smart(
-                    result['home_team'], 
-                    cup, 
-                    max_width=400,  # Ajustar conforme necessário
+                    result['home_team'],
+                    cup,
+                    max_width=team_name_max_width,
                     font=font_team
                 ).upper()
-                
+
                 away_name = self._get_display_name_smart(
-                    result['away_team'], 
-                    cup, 
-                    max_width=400,
+                    result['away_team'],
+                    cup,
+                    max_width=team_name_max_width,
                     font=font_team
                 ).upper()
                 
