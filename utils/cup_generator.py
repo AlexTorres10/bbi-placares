@@ -68,10 +68,20 @@ class CupGenerator:
     
     def _get_display_name(self, team_name: str, cup: str) -> str:
         """Retorna o nome de exibição do time (encurtado se necessário)"""
-        # Para copas, usar nomes encurtados de todas as ligas
-        for league_names in self.display_names.values():
+        # Nomes encurtados manuais desta copa têm prioridade (não vazam
+        # para outra copa: "QPR" na FA Cup não deve aparecer na EFL Cup)
+        cup_names = self.display_names.get(cup, {})
+        if team_name in cup_names:
+            return cup_names[team_name]
+
+        # Depois, nomes encurtados das ligas domésticas (esses sim valem
+        # para qualquer copa, já que os times cruzam de liga para copa)
+        domestic_leagues = ['premierleague', 'championship', 'leagueone', 'leaguetwo', 'nationalleague']
+        for league in domestic_leagues:
+            league_names = self.display_names.get(league, {})
             if team_name in league_names:
                 return league_names[team_name]
+
         return team_name
     
     def _get_font_for_cup(self, cup: str, bold: bool = False) -> str:
