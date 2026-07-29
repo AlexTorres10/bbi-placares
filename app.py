@@ -263,6 +263,47 @@ def obter_config_template(template_path):
             "tamanho_marcadores": 30,
             "espaco_linha": 45,
         }
+    elif nome == "championship":
+        # Escudos ficam fora do card (card sem "orelhas"); placar dividido dentro do card
+        # Escudo maior (240x240) mantendo o mesmo centro de ancoragem (borda do card / linha do placar)
+        return {
+            "fonte_normal": "fontes/premierleague-bold.otf",
+            "fonte_bold": "fontes/efl-placar.otf",
+            "tamanho_escudo": (220, 220),
+            "pos_escudo_casa": (160, 880),
+            "pos_escudo_fora": (-380, 880),
+            "cor_texto": "#ad994a",
+            "cor_texto_placar": "#ad994a",
+            "tamanho_placar": 220,
+            "tamanho_marcadores": 16,
+            "pos_placar": 1000,
+            "placar_dividido": True,
+            "pos_placar_split_x": (490, 590),
+            "pos_marcadores_casa": (500, 1105),
+            "pos_marcadores_fora": (-500, 1105),
+            "espaco_linha": 20,
+        }
+    elif nome in ("leagueone", "leaguetwo", "eflcup"):
+        # Escudos ficam dentro das "orelhas" do card; placar dividido pela linha central
+        cor = {"leagueone": "white", "leaguetwo": "#C10724", "eflcup": "#177E52"}[nome]
+        config = {
+            "fonte_normal": "fontes/premierleague-bold.otf",
+            "fonte_bold": "fontes/efl-placar.otf",
+            "tamanho_escudo": (164, 164),
+            "pos_escudo_casa": (164, 896),
+            "pos_escudo_fora": (-329, 896),
+            "cor_texto": "white",
+            "cor_texto_placar": cor,
+            "tamanho_placar": 200,
+            "tamanho_marcadores": 16,
+            "pos_placar": 982,
+            "placar_dividido": True,
+            "pos_placar_split_x": (490, 590),
+            "pos_marcadores_casa": (525, 1100),
+            "pos_marcadores_fora": (-525, 1100),
+            "espaco_linha": 20,
+        }
+        return config
     elif "championship" in nome or "efl" in nome or "league" in nome:
         h = 920
         return {
@@ -361,21 +402,22 @@ def obter_escudo_path(team_name, template_path=None):
     
     return None
 
-_GRADIENT_COLORS = {
-    "premier":       (55, 0, 60),   # #37003c
-    "championship":  (0, 0, 0),     # a definir
-    "leagueone":     (0, 0, 0),     # a definir
-    "leaguetwo":     (0, 0, 0),     # a definir
-    "nationalleague": (0, 0, 0),    # a definir
-    "efl":           (0, 0, 0),     # a definir
+_GRADIENT_CONFIG = {
+    "premier":       {"color": (55, 0, 60),   "start": 0.4,  "intensity": 0.9},   # #37003c
+    "championship":  {"color": (52, 42, 0),   "start": 0.55, "intensity": 0.95},  # #342a00
+    "leagueone":     {"color": (23, 23, 23),  "start": 0.55, "intensity": 0.95},  # #171717
+    "leaguetwo":     {"color": (75, 0, 16),   "start": 0.55, "intensity": 0.95},  # #4b0010
+    "eflcup":        {"color": (28, 65, 35),  "start": 0.55, "intensity": 0.95},  # #1c4123
+    "nationalleague": {"color": (0, 0, 0),    "start": 0.4,  "intensity": 0.9},   # a definir
+    "efl":           {"color": (0, 0, 0),     "start": 0.4,  "intensity": 0.9},   # a definir
 }
 
-def apply_bottom_gradient(image: Image.Image, intensity: float = 0.9, color: tuple = (0, 0, 0)) -> Image.Image:
+def apply_bottom_gradient(image: Image.Image, intensity: float = 0.9, color: tuple = (0, 0, 0), start: float = 0.4) -> Image.Image:
         """Cria o efeito de sombra na parte inferior para destacar o texto"""
         width, height = image.size
         gradient = Image.new('RGBA', (width, height), (0, 0, 0, 0))
         draw = ImageDraw.Draw(gradient)
-        start_y = int(height * 0.4) # Começa o gradiente um pouco acima do meio
+        start_y = int(height * start)
         for y in range(start_y, height):
             alpha = int(255 * intensity * ((y - start_y) / (height - start_y)))
             draw.line([(0, y), (width, y)], fill=(*color, alpha))
@@ -414,12 +456,17 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         bg_cropped = bg_resized.crop((left, top, left + base.width, top + base.height))
 
         tpl = template_path.lower()
-        gradient_color = next(
-            (color for key, color in _GRADIENT_COLORS.items() if key in tpl),
+        gradient_cfg = next(
+            (cfg for key, cfg in _GRADIENT_CONFIG.items() if key in tpl),
             None,
         )
-        if gradient_color is not None:
-            bg_cropped = apply_bottom_gradient(bg_cropped, intensity=0.9, color=gradient_color)
+        if gradient_cfg is not None:
+            bg_cropped = apply_bottom_gradient(
+                bg_cropped,
+                intensity=gradient_cfg["intensity"],
+                color=gradient_cfg["color"],
+                start=gradient_cfg["start"],
+            )
 
         final_img = Image.new("RGBA", bg_cropped.size, (0, 0, 0, 0))
         base_x = (bg_cropped.width - base.width) // 2
@@ -445,6 +492,7 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     )
     cor_texto = config["cor_texto"]
     cor_texto_placar = config["cor_texto_placar"]
+    cor_marcadores = config.get("cor_marcadores", cor_texto)
 
     draw = ImageDraw.Draw(base)
 
@@ -516,8 +564,15 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     # Remove espaços ao redor de hífens
     placar = re.sub(r'\s*-\s*', '-', placar)
 
-    w_placar = fonte_bold.getbbox(placar)[2] - fonte_bold.getbbox(placar)[0]
-    draw.text(((base.width - w_placar) // 2, config["pos_placar"]), placar, font=fonte_bold, fill=cor_texto_placar)
+    if config.get("placar_dividido") and '-' in placar:
+        # Números separados nos dois lados da linha/escudo central do card
+        placar_casa, placar_fora = placar.split('-', 1)
+        x_placar_casa, x_placar_fora = config["pos_placar_split_x"]
+        draw.text((x_placar_casa, config["pos_placar"]), placar_casa, font=fonte_bold, fill=cor_texto_placar, anchor="rm")
+        draw.text((x_placar_fora, config["pos_placar"]), placar_fora, font=fonte_bold, fill=cor_texto_placar, anchor="lm")
+    else:
+        w_placar = fonte_bold.getbbox(placar)[2] - fonte_bold.getbbox(placar)[0]
+        draw.text(((base.width - w_placar) // 2, config["pos_placar"]), placar, font=fonte_bold, fill=cor_texto_placar)
 
     # Agregado ou pênaltis (centralizado)
     if '(' in placar_texto and ')' in placar_texto:
@@ -566,29 +621,57 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         y_base = 990 + offset_agregado
 
     margem_padrao = 140 if europeu else 200
-    maiusculas = europeu or ing
+    maiusculas = europeu or ing or config.get("placar_dividido")
 
     # Posições do config têm prioridade sobre os padrões por competição
     # (x negativo em pos_marcadores_fora = margem da borda direita)
     pos_marc_casa = config.get("pos_marcadores_casa")
     pos_marc_fora = config.get("pos_marcadores_fora")
-    x_casa = pos_marc_casa[0] if pos_marc_casa else margem_padrao
     y_casa = pos_marc_casa[1] + offset_agregado if pos_marc_casa else y_base
-    margem_fora = -pos_marc_fora[0] if pos_marc_fora else margem_padrao
     y_fora = pos_marc_fora[1] + offset_agregado if pos_marc_fora else y_base
 
-    # Casa (alinhamento à esquerda)
-    for i, linha in enumerate(marcadores_casa.split('\n')):
-        if maiusculas:
-            linha = linha.upper()
-        draw.text((x_casa, y_casa + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+    # Nos cards de placar dividido, os marcadores ficam ancorados na borda interna
+    # (voltada para o centro) do próprio escudo: mandante alinhado à direita,
+    # visitante alinhado à esquerda — o oposto do padrão usado nos demais templates.
+    if config.get("placar_dividido"):
+        badge_w = config["tamanho_escudo"][0]
+        if pos_marc_casa:
+            x_casa_fim = pos_marc_casa[0]
+        else:
+            x_casa_fim = pos_escudo_casa[0] + badge_w
+        if pos_marc_fora:
+            x_fora_inicio = base.width + pos_marc_fora[0] if pos_marc_fora[0] < 0 else pos_marc_fora[0]
+        else:
+            x_fora_inicio = pos_escudo_fora[0]
 
-    # Visitante (alinhado à direita)
-    for i, linha in enumerate(marcadores_fora.split('\n')):
-        if maiusculas:
-            linha = linha.upper()
-        w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
-        draw.text((base.width - margem_fora - w_linha, y_fora + i * espaco_linha), linha, font=fonte_pequena, fill=cor_texto)
+        # Mandante (alinhamento à direita)
+        for i, linha in enumerate(marcadores_casa.split('\n')):
+            if maiusculas:
+                linha = linha.upper()
+            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
+            draw.text((x_casa_fim - w_linha, y_casa + i * espaco_linha), linha, font=fonte_pequena, fill=cor_marcadores)
+
+        # Visitante (alinhamento à esquerda)
+        for i, linha in enumerate(marcadores_fora.split('\n')):
+            if maiusculas:
+                linha = linha.upper()
+            draw.text((x_fora_inicio, y_fora + i * espaco_linha), linha, font=fonte_pequena, fill=cor_marcadores)
+    else:
+        x_casa = pos_marc_casa[0] if pos_marc_casa else margem_padrao
+        margem_fora = -pos_marc_fora[0] if pos_marc_fora else margem_padrao
+
+        # Casa (alinhamento à esquerda)
+        for i, linha in enumerate(marcadores_casa.split('\n')):
+            if maiusculas:
+                linha = linha.upper()
+            draw.text((x_casa, y_casa + i * espaco_linha), linha, font=fonte_pequena, fill=cor_marcadores)
+
+        # Visitante (alinhado à direita)
+        for i, linha in enumerate(marcadores_fora.split('\n')):
+            if maiusculas:
+                linha = linha.upper()
+            w_linha = fonte_pequena.getbbox(linha)[2] - fonte_pequena.getbbox(linha)[0]
+            draw.text((base.width - margem_fora - w_linha, y_fora + i * espaco_linha), linha, font=fonte_pequena, fill=cor_marcadores)
 
     return base
 
