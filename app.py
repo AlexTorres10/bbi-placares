@@ -575,6 +575,17 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         draw.text(((base.width - w_placar) // 2, config["pos_placar"]), placar, font=fonte_bold, fill=cor_texto_placar)
 
     # Agregado ou pênaltis (centralizado)
+    # Posições do config têm prioridade sobre os padrões por competição
+    # (x negativo em pos_marcadores_fora = margem da borda direita)
+    pos_marc_casa = config.get("pos_marcadores_casa")
+    pos_marc_fora = config.get("pos_marcadores_fora")
+
+    # Nos cards de placar dividido (EFL Cup, Championship, League One, League Two)
+    # o texto de agregado/pênaltis fica escondido atrás do escudo/placar central se
+    # desenhado na posição padrão — em vez disso, ocupa o lugar onde os marcadores
+    # ficariam e empurra os marcadores um pouco mais para baixo.
+    agregado_abaixo_marcadores = bool(config.get("placar_dividido")) and pos_marc_casa is not None
+
     if '(' in placar_texto and ')' in placar_texto:
         conteudo = placar_texto.split('(')[1].replace(')', '').strip().lower()
 
@@ -595,14 +606,20 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
             valor = conteudo  # fallback
 
         agregado_texto = label + valor
-        
+
         path_lower = template_path.lower()
         mais_pra_cima = any(comp in path_lower for comp in ["uel", "uecl", "efl", "championship", "leagueone", "leaguetwo", "nationalleague"])
 
-        y_agregado = 975 if mais_pra_cima else 985
+        if agregado_abaixo_marcadores:
+            y_agregado = pos_marc_casa[1]
+            # Um pouco maior que a fonte dos marcadores, para se destacar como informação extra
+            fonte_agregado = ImageFont.truetype(config["fonte_normal"], config.get("tamanho_marcadores", 26) + 4)
+        else:
+            y_agregado = 975 if mais_pra_cima else 985
+            fonte_agregado = fonte_mais_pequena
 
-        w_agr = fonte_mais_pequena.getbbox(agregado_texto)[2] - fonte_mais_pequena.getbbox(agregado_texto)[0]
-        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_mais_pequena, fill=cor_texto)
+        w_agr = fonte_agregado.getbbox(agregado_texto)[2] - fonte_agregado.getbbox(agregado_texto)[0]
+        draw.text(((base.width - w_agr) // 2, y_agregado), agregado_texto, font=fonte_agregado, fill=cor_texto)
 
     # 🟩 Marcadores
     espaco_linha = config.get("espaco_linha", 34)
@@ -611,7 +628,10 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
         '(' in placar_texto and ')' in placar_texto and
         any(x in placar_texto.split('(')[1].replace(')', '').strip().lower() for x in ["agr", "pên", "pen", "pro"])
     )
-    offset_agregado = 15 if tem_agregado else 0
+    if tem_agregado:
+        offset_agregado = 36 if agregado_abaixo_marcadores else 15
+    else:
+        offset_agregado = 0
 
     if europeu:
         y_base = 1000 + offset_agregado
@@ -623,10 +643,6 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
     margem_padrao = 140 if europeu else 200
     maiusculas = europeu or ing or config.get("placar_dividido")
 
-    # Posições do config têm prioridade sobre os padrões por competição
-    # (x negativo em pos_marcadores_fora = margem da borda direita)
-    pos_marc_casa = config.get("pos_marcadores_casa")
-    pos_marc_fora = config.get("pos_marcadores_fora")
     y_casa = pos_marc_casa[1] + offset_agregado if pos_marc_casa else y_base
     y_fora = pos_marc_fora[1] + offset_agregado if pos_marc_fora else y_base
 
