@@ -263,42 +263,42 @@ def obter_config_template(template_path):
             "tamanho_marcadores": 30,
             "espaco_linha": 45,
         }
-    elif nome == "championship":
-        # Escudos ficam fora do card (card sem "orelhas"); placar dividido dentro do card
-        # Escudo maior (240x240) mantendo o mesmo centro de ancoragem (borda do card / linha do placar)
-        return {
-            "fonte_normal": "fontes/premierleague-bold.otf",
-            "fonte_bold": "fontes/efl-placar.otf",
-            "tamanho_escudo": (220, 220),
-            "pos_escudo_casa": (160, 880),
-            "pos_escudo_fora": (-380, 880),
-            "cor_texto": "#ad994a",
-            "cor_texto_placar": "#ad994a",
-            "tamanho_placar": 220,
-            "tamanho_marcadores": 16,
-            "pos_placar": 1000,
-            "placar_dividido": True,
-            "pos_placar_split_x": (490, 590),
-            "pos_marcadores_casa": (500, 1105),
-            "pos_marcadores_fora": (-500, 1105),
-            "espaco_linha": 20,
-        }
-    elif nome in ("leagueone", "leaguetwo", "eflcup"):
+    # elif nome == "championship":
+    #     # Escudos ficam fora do card (card sem "orelhas"); placar dividido dentro do card
+    #     # Escudo maior (240x240) mantendo o mesmo centro de ancoragem (borda do card / linha do placar)
+    #     return {
+    #         "fonte_normal": "fontes/premierleague-bold.otf",
+    #         "fonte_bold": "fontes/efl-placar.otf",
+    #         "tamanho_escudo": (220, 220),
+    #         "pos_escudo_casa": (160, 880),
+    #         "pos_escudo_fora": (-380, 880),
+    #         "cor_texto": "#ad994a",
+    #         "cor_texto_placar": "#ad994a",
+    #         "tamanho_placar": 220,
+    #         "tamanho_marcadores": 16,
+    #         "pos_placar": 1000,
+    #         "placar_dividido": True,
+    #         "pos_placar_split_x": (490, 590),
+    #         "pos_marcadores_casa": (500, 1105),
+    #         "pos_marcadores_fora": (-500, 1105),
+    #         "espaco_linha": 20,
+    #     }
+    elif nome in ("championship", "leagueone", "leaguetwo", "eflcup"):
         # Escudos ficam dentro das "orelhas" do card; placar dividido pela linha central
-        cor = {"leagueone": "white", "leaguetwo": "#C10724", "eflcup": "#177E52"}[nome]
+        cor = {"championship": "#7f6701", "leagueone": "white", "leaguetwo": "#C10724", "eflcup": "#177E52"}[nome]
         config = {
             "fonte_normal": "fontes/premierleague-bold.otf",
             "fonte_bold": "fontes/efl-placar.otf",
             "tamanho_escudo": (164, 164),
-            "pos_escudo_casa": (164, 896),
-            "pos_escudo_fora": (-329, 896),
+            "pos_escudo_casa": (350, 900),
+            "pos_escudo_fora": (-515, 900),
             "cor_texto": "white",
-            "cor_texto_placar": cor,
-            "tamanho_placar": 200,
+            "cor_texto_placar": "white",
+            "tamanho_placar": 164,
             "tamanho_marcadores": 16,
-            "pos_placar": 982,
+            "pos_placar": 990,
             "placar_dividido": True,
-            "pos_placar_split_x": (490, 590),
+            "pos_placar_split_x": (248, 828),
             "pos_marcadores_casa": (525, 1100),
             "pos_marcadores_fora": (-525, 1100),
             "espaco_linha": 20,
@@ -566,10 +566,11 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 
     if config.get("placar_dividido") and '-' in placar:
         # Números separados nos dois lados da linha/escudo central do card
+        # pos_placar_split_x guarda o centro de cada número (anchor "mm" centraliza nos dois eixos)
         placar_casa, placar_fora = placar.split('-', 1)
         x_placar_casa, x_placar_fora = config["pos_placar_split_x"]
-        draw.text((x_placar_casa, config["pos_placar"]), placar_casa, font=fonte_bold, fill=cor_texto_placar, anchor="rm")
-        draw.text((x_placar_fora, config["pos_placar"]), placar_fora, font=fonte_bold, fill=cor_texto_placar, anchor="lm")
+        draw.text((x_placar_casa, config["pos_placar"]), placar_casa, font=fonte_bold, fill=cor_texto_placar, anchor="mm")
+        draw.text((x_placar_fora, config["pos_placar"]), placar_fora, font=fonte_bold, fill=cor_texto_placar, anchor="mm")
     else:
         w_placar = fonte_bold.getbbox(placar)[2] - fonte_bold.getbbox(placar)[0]
         draw.text(((base.width - w_placar) // 2, config["pos_placar"]), placar, font=fonte_bold, fill=cor_texto_placar)
