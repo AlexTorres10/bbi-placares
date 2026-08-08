@@ -137,6 +137,12 @@ def _season_start(ref_date=None) -> datetime:
     return datetime(year, 7, 1)
 
 
+def _season_label(ref_date=None) -> str:
+    """Returns the English-football season label for ref_date, e.g. '2025-26'."""
+    start_year = _season_start(ref_date).year
+    return f"{start_year}-{str(start_year + 1)[-2:]}"
+
+
 def _meses_desde(data_ultima, ref_date=None) -> int:
     d = ref_date if ref_date is not None else datetime.now()
     if not isinstance(d, datetime):

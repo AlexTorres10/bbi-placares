@@ -16,12 +16,13 @@ from streamlit_clickable_images import clickable_images
 # Adicionar utils ao path
 sys.path.append(os.path.dirname(__file__))
 
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 import csv
 import plotly.graph_objects as go
 
 from utils.results_parser import ResultsParser
 from utils.table_processor import TableProcessor
+from utils.bbi_functions import _season_start, _season_label
 from utils.image_generator import ImageGenerator
 from utils.github_handler import GitHubHandler
 from utils.news_generator import NewsGenerator
@@ -697,17 +698,30 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
 # UTILITÁRIO: HISTÓRICO LOCAL
 # ============================================================================
 
-def is_already_in_historico(home_team: str, away_team: str, liga_str: str) -> bool:
-    """Returns True if (home_team, away_team, liga_str) exists in data/historico.csv."""
+def is_already_in_historico(home_team: str, away_team: str, liga_str: str,
+                             match_date: str = None) -> bool:
+    """Returns True if (home_team, away_team, liga_str, temporada) exists in
+    data/historico.csv, where temporada is derived from match_date.
+
+    Fixture pairings repeat from one season to the next, so the check must be
+    scoped to the current season (the 'temporada' column) — otherwise a
+    new-season result gets treated as a duplicate of the same fixture played
+    the previous year.
+    """
     path = "data/historico.csv"
     if not os.path.exists(path):
         return False
+
+    ref = datetime.strptime(match_date, '%Y-%m-%d') if match_date else datetime.now()
+    temporada_atual = _season_label(ref)
+
     with open(path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
             if (row.get('casa') == home_team and
                     row.get('fora') == away_team and
-                    row.get('liga') == liga_str):
+                    row.get('liga') == liga_str and
+                    row.get('temporada') == temporada_atual):
                 return True
     return False
 
@@ -715,21 +729,27 @@ def is_already_in_historico(home_team: str, away_team: str, liga_str: str) -> bo
 def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
     """
     Adiciona resultados finalizados a data/historico.csv.
-    - Ignora partidas com mesmo placar já registrado.
-    - Detecta conflito quando (casa, fora, liga) existe com placar diferente.
+    - Ignora partidas com mesmo placar já registrado na mesma temporada.
+    - Detecta conflito quando (casa, fora, liga, temporada) existe com placar diferente.
     Retorna {'added': int, 'conflicts': list}.
+
+    O confronto (casa, fora, liga) se repete de uma temporada para outra, então a
+    checagem de duplicidade/conflito compara também a coluna 'temporada' — do
+    contrário um resultado novo é tratado como conflito com o mesmo confronto
+    disputado na temporada anterior.
     """
     data_str = (data_rodada.strftime('%Y-%m-%d')
                 if hasattr(data_rodada, 'strftime') else str(data_rodada))
 
-    # Ler pares já registrados: (casa, fora, liga) → placar
+    # Ler pares já registrados: (casa, fora, liga, temporada) → placar
     existing = {}
     historico_path = "data/historico.csv"
     if os.path.exists(historico_path):
         with open(historico_path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                existing[(row['casa'], row['fora'], row['liga'])] = row['placar']
+                existing[(row['casa'], row['fora'], row['liga'],
+                          row.get('temporada', ''))] = row['placar']
 
     new_rows = []
     conflicts = []
@@ -737,8 +757,9 @@ def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
         if r.get('status') not in ('normal', 'penalties', 'extra_time'):
             continue
         new_score = f"{r['home_score']}-{r['away_score']}"
-        key = (r['home_team'], r['away_team'], liga_str)
         row_date = r.get('data', data_str)
+        temporada = _season_label(datetime.strptime(row_date, '%Y-%m-%d'))
+        key = (r['home_team'], r['away_team'], liga_str, temporada)
         if key in existing:
             if existing[key] != new_score:
                 conflicts.append({
@@ -751,7 +772,7 @@ def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
                 })
             # same score → skip silently
             continue
-        new_rows.append([r['home_team'], new_score, r['away_team'], row_date, liga_str])
+        new_rows.append([r['home_team'], new_score, r['away_team'], row_date, liga_str, temporada])
         existing[key] = new_score  # evita duplicatas dentro do mesmo lote
 
     if new_rows:
@@ -766,8 +787,11 @@ def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
 
 def _update_historico_row(home_team: str, away_team: str, liga_str: str,
                           new_score: str, new_date_str: str):
-    """Sobrescreve o placar (e data) de uma linha existente em historico.csv."""
+    """Sobrescreve o placar (e data/temporada) de uma linha existente em historico.csv,
+    restrito à mesma temporada da linha original (a correção de um placar não deve
+    saltar para o confronto equivalente de outra temporada)."""
     path = "data/historico.csv"
+    temporada_nova = _season_label(datetime.strptime(new_date_str, '%Y-%m-%d'))
     rows = []
     fieldnames = None
     with open(path, 'r', encoding='utf-8') as f:
@@ -775,9 +799,11 @@ def _update_historico_row(home_team: str, away_team: str, liga_str: str,
         fieldnames = reader.fieldnames
         for row in reader:
             if (row['casa'] == home_team and row['fora'] == away_team
-                    and row['liga'] == liga_str):
+                    and row['liga'] == liga_str
+                    and row.get('temporada') == temporada_nova):
                 row['placar'] = new_score
                 row['data'] = new_date_str
+                row['temporada'] = temporada_nova
             rows.append(row)
     with open(path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -1350,7 +1376,8 @@ def compute_updated_table(liga_key: str, resultados: list) -> list:
 
     _liga_str = LIGA_DISPLAY_NAMES.get(liga_key, '')
     _novos = [r for r in resultados
-              if not is_already_in_historico(r['home_team'], r['away_team'], _liga_str)]
+              if not is_already_in_historico(r['home_team'], r['away_team'], _liga_str,
+                                              r.get('data'))]
     processor.update_with_multiple_results(_novos)
     processor.sort_table()
 

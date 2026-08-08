@@ -4028,1083 +4028,394 @@
     }
   },
   "National League": {
-    "last_game_date": "2026-04-25",
-    "updated_at": "2026-05-11T12:45:35",
+    "last_game_date": "2026-08-08",
+    "updated_at": "2026-08-08T13:37:06",
     "data": {
-      "insights": [
-        "Aldershot Town está na 5ª derrota seguida!",
-        "Aldershot Town está na 3ª derrota seguida em casa!",
-        "Aldershot Town está há 6 jogos sem vencer.",
-        "Aldershot Town está há 8 jogos sem vencer em casa.",
-        "Aldershot Town perdeu 11 dos últimos 13 jogos.",
-        "Aldershot Town venceu apenas 1 dos últimos 13 jogos.",
-        "Aldershot Town perdeu 7 dos últimos 8 jogos em casa.",
-        "Aldershot Town venceu apenas 1 dos últimos 9 jogos em casa.",
-        "Aldershot Town venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Altrincham está na 3ª vitória seguida!",
-        "Altrincham venceu 6 dos últimos 7 jogos em casa. Boa fase!",
-        "Altrincham sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
-        "Altrincham venceu apenas 1 dos últimos 6 jogos fora de casa.",
-        "Boreham Wood está na 3ª vitória seguida!",
-        "Boreham Wood está na 6ª vitória seguida em casa!",
-        "Boreham Wood está invicto há 8 jogos em casa.",
-        "Boreham Wood venceu 6 dos últimos 8 jogos. Boa fase!",
-        "Boreham Wood sofreu apenas 1 derrotas nos últimos 8 jogos.",
-        "Boreham Wood sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
-        "Boston United está invicto há 5 jogos.",
-        "Boston United sofreu apenas 1 derrotas nos últimos 7 jogos.",
-        "Boston United sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
-        "Boston United venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Brackley Town está na 8ª derrota seguida fora de casa!",
-        "Brackley Town perdeu 12 dos últimos 16 jogos.",
-        "Brackley Town venceu apenas 1 dos últimos 16 jogos.",
-        "Brackley Town venceu apenas 1 dos últimos 10 jogos em casa.",
-        "Brackley Town sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-        "Brackley Town venceu apenas 1 dos últimos 11 jogos fora de casa.",
-        "Braintree Town está na 3ª derrota seguida!",
-        "Braintree Town está na 3ª derrota seguida fora de casa!",
-        "Braintree Town está há 11 jogos sem vencer.",
-        "Braintree Town está há 7 jogos sem vencer em casa.",
-        "Braintree Town está há 6 jogos sem vencer fora de casa.",
-        "Braintree Town perdeu 6 dos últimos 8 jogos.",
-        "Braintree Town venceu apenas 1 dos últimos 16 jogos.",
-        "Braintree Town perdeu 5 dos últimos 6 jogos em casa.",
-        "Braintree Town venceu apenas 1 dos últimos 12 jogos em casa.",
-        "Braintree Town venceu apenas 1 dos últimos 11 jogos fora de casa.",
-        "Carlisle United está na 3ª vitória seguida!",
-        "Carlisle United está invicto há 8 jogos.",
-        "Carlisle United está invicto há 8 jogos em casa.",
-        "Carlisle United venceu 6 dos últimos 8 jogos. Boa fase!",
-        "Carlisle United sofreu apenas 1 derrotas nos últimos 12 jogos.",
-        "Carlisle United venceu 6 dos últimos 8 jogos em casa. Boa fase!",
-        "Carlisle United sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
-        "Carlisle United venceu 5 dos últimos 7 jogos fora de casa. Boa fase!",
-        "Carlisle United sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
-        "Eastleigh venceu apenas 1 dos últimos 5 jogos em casa.",
-        "Eastleigh venceu apenas 1 dos últimos 6 jogos fora de casa.",
-        "FC Halifax Town está invicto há 5 jogos fora de casa.",
-        "FC Halifax Town venceu apenas 1 dos últimos 8 jogos em casa.",
-        "FC Halifax Town sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
-        "Forest Green Rovers está na 5ª vitória seguida em casa!",
-        "Forest Green Rovers sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
-        "Forest Green Rovers venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Gateshead sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
-        "Gateshead venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Hartlepool United sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-        "Hartlepool United venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Morecambe está na 3ª derrota seguida!",
-        "Morecambe está há 6 jogos sem vencer em casa.",
-        "Morecambe perdeu 6 dos últimos 8 jogos.",
-        "Morecambe venceu apenas 1 dos últimos 9 jogos.",
-        "Morecambe venceu apenas 1 dos últimos 13 jogos em casa.",
-        "Rochdale venceu 33 dos últimos 46 jogos. Boa fase!",
-        "Rochdale sofreu apenas 1 derrotas nos últimos 8 jogos.",
-        "Rochdale venceu 18 dos todos os jogos em casa. Boa fase!",
-        "Rochdale sofreu apenas 1 derrotas nos últimos 13 jogos em casa.",
-        "Rochdale sofreu apenas 1 derrotas nos últimos 14 jogos fora de casa.",
-        "Scunthorpe United sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-        "Scunthorpe United sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
-        "Solihull Moors perdeu 7 dos últimos 9 jogos em casa.",
-        "Solihull Moors venceu apenas 1 dos últimos 9 jogos fora de casa.",
-        "Solihull Moors sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
-        "Southend United está invicto há 9 jogos em casa.",
-        "Southend United venceu 6 dos últimos 8 jogos. Boa fase!",
-        "Southend United sofreu apenas 1 derrotas nos últimos 9 jogos.",
-        "Southend United venceu 5 dos últimos 7 jogos em casa. Boa fase!",
-        "Southend United sofreu apenas 1 derrotas nos últimos 14 jogos em casa.",
-        "Sutton United está na 4ª derrota seguida!",
-        "Sutton United está na 5ª derrota seguida em casa!",
-        "Sutton United está há 6 jogos sem vencer.",
-        "Sutton United perdeu 6 dos últimos 8 jogos.",
-        "Sutton United venceu apenas 1 dos últimos 9 jogos.",
-        "Sutton United venceu apenas 1 dos últimos 6 jogos em casa.",
-        "Sutton United venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Tamworth sofreu apenas 1 derrotas nos últimos 7 jogos.",
-        "Tamworth venceu 6 dos últimos 7 jogos em casa. Boa fase!",
-        "Tamworth sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
-        "Tamworth venceu apenas 1 dos últimos 13 jogos fora de casa.",
-        "Truro City está há 11 jogos sem vencer em casa.",
-        "Truro City venceu apenas 1 dos últimos 7 jogos.",
-        "Truro City venceu apenas 1 dos últimos 12 jogos em casa.",
-        "Wealdstone está na 5ª derrota seguida fora de casa!",
-        "Wealdstone sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
-        "Wealdstone venceu apenas 1 dos últimos 15 jogos fora de casa.",
-        "Woking sofreu apenas 1 derrotas nos últimos 7 jogos.",
-        "Woking venceu apenas 1 dos últimos 5 jogos em casa.",
-        "Woking sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
-        "Woking sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
-        "Yeovil Town está na 4ª derrota seguida fora de casa!",
-        "Yeovil Town perdeu 5 dos últimos 7 jogos.",
-        "Yeovil Town venceu apenas 1 dos últimos 7 jogos.",
-        "Yeovil Town perdeu 8 dos últimos 9 jogos fora de casa.",
-        "Yeovil Town venceu apenas 1 dos últimos 9 jogos fora de casa.",
-        "York City está na 9ª vitória seguida em casa!",
-        "York City está invicto há 6 jogos.",
-        "York City está invicto há 18 jogos em casa.",
-        "York City venceu 17 dos últimos 20 jogos. Boa fase!",
-        "York City sofreu apenas 1 derrotas nos últimos 10 jogos.",
-        "York City sofreu apenas 1 derrotas nos últimos 20 jogos em casa.",
-        "York City venceu 12 dos últimos 15 jogos fora de casa. Boa fase!",
-        "York City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
-      ],
+      "insights": [],
       "team_insights": {
-        "Aldershot Town": [
-          "Aldershot Town está na 5ª derrota seguida!",
-          "Aldershot Town está na 3ª derrota seguida em casa!",
-          "Aldershot Town está há 6 jogos sem vencer.",
-          "Aldershot Town está há 8 jogos sem vencer em casa.",
-          "Aldershot Town não pontuou nos últimos 5 jogos.",
-          "Aldershot Town não pontuou nos últimos 3 jogos em casa.",
-          "Aldershot Town perdeu 11 dos últimos 13 jogos.",
-          "Aldershot Town venceu apenas 1 dos últimos 13 jogos.",
-          "Aldershot Town perdeu 7 dos últimos 8 jogos em casa.",
-          "Aldershot Town venceu apenas 1 dos últimos 9 jogos em casa.",
-          "Aldershot Town venceu apenas 1 dos últimos 5 jogos fora de casa."
-        ],
-        "Altrincham": [
-          "Altrincham está na 3ª vitória seguida!",
-          "Altrincham venceu 6 dos últimos 7 jogos em casa. Boa fase!",
-          "Altrincham sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
-          "Altrincham venceu apenas 1 dos últimos 6 jogos fora de casa."
-        ],
-        "Boreham Wood": [
-          "Boreham Wood está na 3ª vitória seguida!",
-          "Boreham Wood está na 6ª vitória seguida em casa!",
-          "Boreham Wood está invicto há 8 jogos em casa.",
-          "Boreham Wood somou 12 pontos nos últimos 5 jogos. Excelente fase!",
-          "Boreham Wood somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Boreham Wood venceu 6 dos últimos 8 jogos. Boa fase!",
-          "Boreham Wood sofreu apenas 1 derrotas nos últimos 8 jogos.",
-          "Boreham Wood sofreu apenas 1 derrotas nos últimos 9 jogos em casa."
-        ],
-        "Boston United": [
-          "Boston United está invicto há 5 jogos.",
-          "Boston United somou 11 pontos nos últimos 5 jogos. Excelente fase!",
-          "Boston United sofreu apenas 1 derrotas nos últimos 7 jogos.",
-          "Boston United sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
-          "Boston United venceu apenas 1 dos últimos 5 jogos fora de casa."
-        ],
-        "Brackley Town": [
-          "Brackley Town está na 8ª derrota seguida fora de casa!",
-          "Brackley Town não pontuou nos últimos 3 jogos fora de casa.",
-          "Brackley Town perdeu 12 dos últimos 16 jogos.",
-          "Brackley Town venceu apenas 1 dos últimos 16 jogos.",
-          "Brackley Town venceu apenas 1 dos últimos 10 jogos em casa.",
-          "Brackley Town sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-          "Brackley Town venceu apenas 1 dos últimos 11 jogos fora de casa."
-        ],
-        "Braintree Town": [
-          "Braintree Town está na 3ª derrota seguida!",
-          "Braintree Town está na 3ª derrota seguida fora de casa!",
-          "Braintree Town está há 11 jogos sem vencer.",
-          "Braintree Town está há 7 jogos sem vencer em casa.",
-          "Braintree Town está há 6 jogos sem vencer fora de casa.",
-          "Braintree Town somou apenas 1 ponto nos últimos 5 jogos.",
-          "Braintree Town somou apenas 1 pontos nos últimos 3 jogos em casa.",
-          "Braintree Town não pontuou nos últimos 3 jogos fora de casa.",
-          "Braintree Town perdeu 6 dos últimos 8 jogos.",
-          "Braintree Town venceu apenas 1 dos últimos 16 jogos.",
-          "Braintree Town perdeu 5 dos últimos 6 jogos em casa.",
-          "Braintree Town venceu apenas 1 dos últimos 12 jogos em casa.",
-          "Braintree Town venceu apenas 1 dos últimos 11 jogos fora de casa."
-        ],
-        "Carlisle United": [
-          "Carlisle United está na 3ª vitória seguida!",
-          "Carlisle United está invicto há 8 jogos.",
-          "Carlisle United está invicto há 8 jogos em casa.",
-          "Carlisle United somou 11 pontos nos últimos 5 jogos. Excelente fase!",
-          "Carlisle United somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Carlisle United somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "Carlisle United venceu 6 dos últimos 8 jogos. Boa fase!",
-          "Carlisle United sofreu apenas 1 derrotas nos últimos 12 jogos.",
-          "Carlisle United venceu 6 dos últimos 8 jogos em casa. Boa fase!",
-          "Carlisle United sofreu apenas 1 derrotas nos últimos 11 jogos em casa.",
-          "Carlisle United venceu 5 dos últimos 7 jogos fora de casa. Boa fase!",
-          "Carlisle United sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
-        ],
-        "Eastleigh": [
-          "Eastleigh venceu apenas 1 dos últimos 5 jogos em casa.",
-          "Eastleigh venceu apenas 1 dos últimos 6 jogos fora de casa."
-        ],
-        "FC Halifax Town": [
-          "FC Halifax Town está invicto há 5 jogos fora de casa.",
-          "FC Halifax Town somou apenas 1 pontos nos últimos 3 jogos em casa.",
-          "FC Halifax Town somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "FC Halifax Town venceu apenas 1 dos últimos 8 jogos em casa.",
-          "FC Halifax Town sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
-        ],
-        "Forest Green Rovers": [
-          "Forest Green Rovers está na 5ª vitória seguida em casa!",
-          "Forest Green Rovers somou 10 pontos nos últimos 5 jogos. Excelente fase!",
-          "Forest Green Rovers somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Forest Green Rovers sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
-          "Forest Green Rovers venceu apenas 1 dos últimos 5 jogos fora de casa."
-        ],
-        "Gateshead": [
-          "Gateshead sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
-          "Gateshead venceu apenas 1 dos últimos 5 jogos fora de casa."
-        ],
-        "Hartlepool United": [
-          "Hartlepool United somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Hartlepool United somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
-          "Hartlepool United sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-          "Hartlepool United venceu apenas 1 dos últimos 5 jogos fora de casa."
-        ],
-        "Morecambe": [
-          "Morecambe está na 3ª derrota seguida!",
-          "Morecambe está há 6 jogos sem vencer em casa.",
-          "Morecambe somou apenas 1 pontos nos últimos 3 jogos em casa.",
-          "Morecambe perdeu 6 dos últimos 8 jogos.",
-          "Morecambe venceu apenas 1 dos últimos 9 jogos.",
-          "Morecambe venceu apenas 1 dos últimos 13 jogos em casa."
-        ],
-        "Rochdale": [
-          "Rochdale somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "Rochdale venceu 33 dos últimos 46 jogos. Boa fase!",
-          "Rochdale sofreu apenas 1 derrotas nos últimos 8 jogos.",
-          "Rochdale venceu 18 dos todos os jogos em casa. Boa fase!",
-          "Rochdale sofreu apenas 1 derrotas nos últimos 13 jogos em casa.",
-          "Rochdale sofreu apenas 1 derrotas nos últimos 14 jogos fora de casa."
-        ],
-        "Scunthorpe United": [
-          "Scunthorpe United sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-          "Scunthorpe United sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
-        ],
-        "Solihull Moors": [
-          "Solihull Moors perdeu 7 dos últimos 9 jogos em casa.",
-          "Solihull Moors venceu apenas 1 dos últimos 9 jogos fora de casa.",
-          "Solihull Moors sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
-        ],
-        "Southend United": [
-          "Southend United está invicto há 9 jogos em casa.",
-          "Southend United somou 10 pontos nos últimos 5 jogos. Excelente fase!",
-          "Southend United somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Southend United venceu 6 dos últimos 8 jogos. Boa fase!",
-          "Southend United sofreu apenas 1 derrotas nos últimos 9 jogos.",
-          "Southend United venceu 5 dos últimos 7 jogos em casa. Boa fase!",
-          "Southend United sofreu apenas 1 derrotas nos últimos 14 jogos em casa."
-        ],
-        "Sutton United": [
-          "Sutton United está na 4ª derrota seguida!",
-          "Sutton United está na 5ª derrota seguida em casa!",
-          "Sutton United está há 6 jogos sem vencer.",
-          "Sutton United somou apenas 1 ponto nos últimos 5 jogos.",
-          "Sutton United não pontuou nos últimos 3 jogos em casa.",
-          "Sutton United somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
-          "Sutton United perdeu 6 dos últimos 8 jogos.",
-          "Sutton United venceu apenas 1 dos últimos 9 jogos.",
-          "Sutton United venceu apenas 1 dos últimos 6 jogos em casa.",
-          "Sutton United venceu apenas 1 dos últimos 5 jogos fora de casa."
-        ],
-        "Tamworth": [
-          "Tamworth sofreu apenas 1 derrotas nos últimos 7 jogos.",
-          "Tamworth venceu 6 dos últimos 7 jogos em casa. Boa fase!",
-          "Tamworth sofreu apenas 1 derrotas nos últimos 9 jogos em casa.",
-          "Tamworth venceu apenas 1 dos últimos 13 jogos fora de casa."
-        ],
-        "Truro City": [
-          "Truro City está há 11 jogos sem vencer em casa.",
-          "Truro City somou apenas 2 pontos nos últimos 3 jogos em casa.",
-          "Truro City venceu apenas 1 dos últimos 7 jogos.",
-          "Truro City venceu apenas 1 dos últimos 12 jogos em casa."
-        ],
-        "Wealdstone": [
-          "Wealdstone está na 5ª derrota seguida fora de casa!",
-          "Wealdstone não pontuou nos últimos 3 jogos fora de casa.",
-          "Wealdstone sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
-          "Wealdstone venceu apenas 1 dos últimos 15 jogos fora de casa."
-        ],
-        "Woking": [
-          "Woking sofreu apenas 1 derrotas nos últimos 7 jogos.",
-          "Woking venceu apenas 1 dos últimos 5 jogos em casa.",
-          "Woking sofreu apenas 1 derrotas nos últimos 10 jogos em casa.",
-          "Woking sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
-        ],
-        "Yeovil Town": [
-          "Yeovil Town está na 4ª derrota seguida fora de casa!",
-          "Yeovil Town não pontuou nos últimos 3 jogos fora de casa.",
-          "Yeovil Town perdeu 5 dos últimos 7 jogos.",
-          "Yeovil Town venceu apenas 1 dos últimos 7 jogos.",
-          "Yeovil Town perdeu 8 dos últimos 9 jogos fora de casa.",
-          "Yeovil Town venceu apenas 1 dos últimos 9 jogos fora de casa."
-        ],
-        "York City": [
-          "York City está na 9ª vitória seguida em casa!",
-          "York City está invicto há 6 jogos.",
-          "York City está invicto há 18 jogos em casa.",
-          "York City somou 13 pontos nos últimos 5 jogos. Excelente fase!",
-          "York City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "York City somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "York City venceu 17 dos últimos 20 jogos. Boa fase!",
-          "York City sofreu apenas 1 derrotas nos últimos 10 jogos.",
-          "York City sofreu apenas 1 derrotas nos últimos 20 jogos em casa.",
-          "York City venceu 12 dos últimos 15 jogos fora de casa. Boa fase!",
-          "York City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
-        ]
-      },
-      "team_rankings": {
-        "Aldershot Town": [
-          "Aldershot Town é o 2º pior mandante!"
-        ],
+        "AFC Fylde": [],
+        "Aldershot Town": [],
         "Altrincham": [],
-        "Boreham Wood": [
-          "Boreham Wood é o 3º melhor mandante!"
-        ],
+        "Barrow": [],
+        "Boreham Wood": [],
         "Boston United": [],
-        "Brackley Town": [
-          "Brackley Town é o 2º pior visitante!"
-        ],
-        "Braintree Town": [
-          "Braintree Town é o 3º pior visitante!"
-        ],
-        "Carlisle United": [
-          "Carlisle United é o 3º melhor visitante!"
-        ],
+        "Carlisle United": [],
         "Eastleigh": [],
         "FC Halifax Town": [],
         "Forest Green Rovers": [],
         "Gateshead": [],
+        "Harrogate Town": [],
         "Hartlepool United": [],
-        "Morecambe": [
-          "Morecambe é o pior mandante!"
-        ],
-        "Rochdale": [
-          "Rochdale é o melhor mandante!",
-          "Rochdale é o 2º melhor visitante!"
-        ],
+        "Hornchurch": [],
+        "Kidderminster Harriers": [],
         "Scunthorpe United": [],
         "Solihull Moors": [],
         "Southend United": [],
         "Sutton United": [],
         "Tamworth": [],
-        "Truro City": [
-          "Truro City é o 3º pior mandante!",
-          "Truro City é o pior visitante!"
-        ],
         "Wealdstone": [],
         "Woking": [],
-        "Yeovil Town": [],
-        "York City": [
-          "York City é o 2º melhor mandante!",
-          "York City é o melhor visitante!"
-        ]
+        "Worthing": [],
+        "Yeovil Town": []
+      },
+      "team_rankings": {
+        "AFC Fylde": [],
+        "Aldershot Town": [
+          "Aldershot Town é o 3º melhor visitante!"
+        ],
+        "Altrincham": [],
+        "Barrow": [
+          "Barrow é o 2º pior visitante!"
+        ],
+        "Boreham Wood": [],
+        "Boston United": [
+          "Boston United é o 3º pior mandante!"
+        ],
+        "Carlisle United": [
+          "Carlisle United é o 2º pior mandante!"
+        ],
+        "Eastleigh": [],
+        "FC Halifax Town": [],
+        "Forest Green Rovers": [],
+        "Gateshead": [
+          "Gateshead é o pior visitante!"
+        ],
+        "Harrogate Town": [
+          "Harrogate Town é o 3º melhor mandante!"
+        ],
+        "Hartlepool United": [
+          "Hartlepool United é o 2º melhor mandante!"
+        ],
+        "Hornchurch": [
+          "Hornchurch é o melhor mandante!"
+        ],
+        "Kidderminster Harriers": [],
+        "Scunthorpe United": [],
+        "Solihull Moors": [
+          "Solihull Moors é o 3º pior visitante!"
+        ],
+        "Southend United": [],
+        "Sutton United": [
+          "Sutton United é o melhor visitante!"
+        ],
+        "Tamworth": [],
+        "Wealdstone": [],
+        "Woking": [
+          "Woking é o pior mandante!"
+        ],
+        "Worthing": [
+          "Worthing é o 2º melhor visitante!"
+        ],
+        "Yeovil Town": []
       },
       "teams": [
+        "AFC Fylde",
         "Aldershot Town",
         "Altrincham",
+        "Barrow",
         "Boreham Wood",
         "Boston United",
-        "Brackley Town",
-        "Braintree Town",
         "Carlisle United",
         "Eastleigh",
         "FC Halifax Town",
         "Forest Green Rovers",
         "Gateshead",
+        "Harrogate Town",
         "Hartlepool United",
-        "Morecambe",
-        "Rochdale",
+        "Hornchurch",
+        "Kidderminster Harriers",
         "Scunthorpe United",
         "Solihull Moors",
         "Southend United",
         "Sutton United",
         "Tamworth",
-        "Truro City",
         "Wealdstone",
         "Woking",
-        "Yeovil Town",
-        "York City"
+        "Worthing",
+        "Yeovil Town"
       ],
       "home_table_full": [
         {
-          "Time": "Rochdale",
-          "J": 23,
-          "V": 18,
-          "E": 2,
-          "D": 3,
-          "Pts": 56
-        },
-        {
-          "Time": "York City",
-          "J": 23,
-          "V": 17,
-          "E": 4,
-          "D": 2,
-          "Pts": 55
-        },
-        {
-          "Time": "Boreham Wood",
-          "J": 23,
-          "V": 17,
-          "E": 2,
-          "D": 4,
-          "Pts": 53
-        },
-        {
-          "Time": "Forest Green Rovers",
-          "J": 23,
-          "V": 15,
-          "E": 5,
-          "D": 3,
-          "Pts": 50
-        },
-        {
-          "Time": "Carlisle United",
-          "J": 23,
-          "V": 15,
-          "E": 5,
-          "D": 3,
-          "Pts": 50
-        },
-        {
-          "Time": "Southend United",
-          "J": 23,
-          "V": 13,
-          "E": 7,
-          "D": 3,
-          "Pts": 46
-        },
-        {
-          "Time": "Scunthorpe United",
-          "J": 23,
-          "V": 12,
-          "E": 6,
-          "D": 5,
-          "Pts": 42
-        },
-        {
-          "Time": "Altrincham",
-          "J": 23,
-          "V": 13,
-          "E": 1,
-          "D": 9,
-          "Pts": 40
-        },
-        {
-          "Time": "Wealdstone",
-          "J": 23,
-          "V": 11,
-          "E": 6,
-          "D": 6,
-          "Pts": 39
-        },
-        {
-          "Time": "Tamworth",
-          "J": 23,
-          "V": 11,
-          "E": 5,
-          "D": 7,
-          "Pts": 38
+          "Time": "Hornchurch",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
         },
         {
           "Time": "Hartlepool United",
-          "J": 23,
-          "V": 10,
-          "E": 7,
-          "D": 6,
-          "Pts": 37
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
         },
         {
-          "Time": "FC Halifax Town",
-          "J": 23,
-          "V": 10,
-          "E": 7,
-          "D": 6,
-          "Pts": 37
+          "Time": "Harrogate Town",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
         },
         {
-          "Time": "Yeovil Town",
-          "J": 23,
-          "V": 9,
-          "E": 5,
-          "D": 9,
-          "Pts": 32
-        },
-        {
-          "Time": "Woking",
-          "J": 23,
-          "V": 7,
-          "E": 10,
-          "D": 6,
-          "Pts": 31
-        },
-        {
-          "Time": "Brackley Town",
-          "J": 23,
-          "V": 7,
-          "E": 7,
-          "D": 9,
-          "Pts": 28
-        },
-        {
-          "Time": "Solihull Moors",
-          "J": 23,
-          "V": 8,
-          "E": 4,
-          "D": 11,
-          "Pts": 28
+          "Time": "Forest Green Rovers",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
         },
         {
           "Time": "Eastleigh",
-          "J": 23,
-          "V": 7,
-          "E": 6,
-          "D": 10,
-          "Pts": 27
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Boreham Wood",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Scunthorpe United",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "AFC Fylde",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Altrincham",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
         },
         {
           "Time": "Boston United",
-          "J": 23,
-          "V": 7,
-          "E": 6,
-          "D": 10,
-          "Pts": 27
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
         },
         {
-          "Time": "Sutton United",
-          "J": 23,
-          "V": 6,
-          "E": 7,
-          "D": 10,
-          "Pts": 25
+          "Time": "Carlisle United",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
         },
         {
-          "Time": "Braintree Town",
-          "J": 23,
-          "V": 5,
-          "E": 7,
-          "D": 11,
-          "Pts": 22
-        },
-        {
-          "Time": "Gateshead",
-          "J": 23,
-          "V": 6,
-          "E": 4,
-          "D": 13,
-          "Pts": 22
-        },
-        {
-          "Time": "Truro City",
-          "J": 23,
-          "V": 5,
-          "E": 6,
-          "D": 12,
-          "Pts": 21
-        },
-        {
-          "Time": "Aldershot Town",
-          "J": 23,
-          "V": 6,
-          "E": 3,
-          "D": 14,
-          "Pts": 21
-        },
-        {
-          "Time": "Morecambe",
-          "J": 23,
-          "V": 4,
-          "E": 6,
-          "D": 13,
-          "Pts": 18
+          "Time": "Woking",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
         }
       ],
       "away_table_full": [
         {
-          "Time": "York City",
-          "J": 23,
-          "V": 16,
-          "E": 5,
-          "D": 2,
-          "Pts": 53
+          "Time": "Sutton United",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
         },
         {
-          "Time": "Rochdale",
-          "J": 23,
-          "V": 15,
-          "E": 5,
-          "D": 3,
-          "Pts": 50
-        },
-        {
-          "Time": "Carlisle United",
-          "J": 23,
-          "V": 14,
-          "E": 3,
-          "D": 6,
-          "Pts": 45
-        },
-        {
-          "Time": "Scunthorpe United",
-          "J": 23,
-          "V": 11,
-          "E": 7,
-          "D": 5,
-          "Pts": 40
-        },
-        {
-          "Time": "Boreham Wood",
-          "J": 23,
-          "V": 10,
-          "E": 7,
-          "D": 6,
-          "Pts": 37
-        },
-        {
-          "Time": "Southend United",
-          "J": 23,
-          "V": 10,
-          "E": 5,
-          "D": 8,
-          "Pts": 35
-        },
-        {
-          "Time": "FC Halifax Town",
-          "J": 23,
-          "V": 10,
-          "E": 3,
-          "D": 10,
-          "Pts": 33
-        },
-        {
-          "Time": "Woking",
-          "J": 23,
-          "V": 9,
-          "E": 5,
-          "D": 9,
-          "Pts": 32
-        },
-        {
-          "Time": "Boston United",
-          "J": 23,
-          "V": 8,
-          "E": 8,
-          "D": 7,
-          "Pts": 32
-        },
-        {
-          "Time": "Hartlepool United",
-          "J": 23,
-          "V": 8,
-          "E": 7,
-          "D": 8,
-          "Pts": 31
-        },
-        {
-          "Time": "Forest Green Rovers",
-          "J": 23,
-          "V": 8,
-          "E": 7,
-          "D": 8,
-          "Pts": 31
-        },
-        {
-          "Time": "Gateshead",
-          "J": 23,
-          "V": 8,
-          "E": 4,
-          "D": 11,
-          "Pts": 28
-        },
-        {
-          "Time": "Solihull Moors",
-          "J": 23,
-          "V": 6,
-          "E": 10,
-          "D": 7,
-          "Pts": 28
+          "Time": "Worthing",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
         },
         {
           "Time": "Aldershot Town",
-          "J": 23,
-          "V": 7,
-          "E": 4,
-          "D": 12,
-          "Pts": 25
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
         },
         {
-          "Time": "Tamworth",
-          "J": 23,
-          "V": 6,
-          "E": 6,
-          "D": 11,
-          "Pts": 24
-        },
-        {
-          "Time": "Eastleigh",
-          "J": 23,
-          "V": 6,
-          "E": 5,
-          "D": 12,
-          "Pts": 23
-        },
-        {
-          "Time": "Sutton United",
-          "J": 23,
-          "V": 5,
-          "E": 7,
-          "D": 11,
-          "Pts": 22
-        },
-        {
-          "Time": "Morecambe",
-          "J": 23,
-          "V": 5,
-          "E": 5,
-          "D": 13,
-          "Pts": 20
+          "Time": "Southend United",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
         },
         {
           "Time": "Yeovil Town",
-          "J": 23,
-          "V": 6,
+          "J": 1,
+          "V": 0,
           "E": 1,
-          "D": 16,
-          "Pts": 19
+          "D": 0,
+          "Pts": 1
         },
         {
-          "Time": "Altrincham",
-          "J": 23,
-          "V": 4,
-          "E": 5,
-          "D": 14,
-          "Pts": 17
+          "Time": "Tamworth",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
         },
         {
           "Time": "Wealdstone",
-          "J": 23,
-          "V": 4,
-          "E": 5,
-          "D": 14,
-          "Pts": 17
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
         },
         {
-          "Time": "Braintree Town",
-          "J": 23,
-          "V": 3,
-          "E": 5,
-          "D": 15,
-          "Pts": 14
+          "Time": "Kidderminster Harriers",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
         },
         {
-          "Time": "Brackley Town",
-          "J": 23,
-          "V": 3,
-          "E": 5,
-          "D": 15,
-          "Pts": 14
+          "Time": "FC Halifax Town",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
         },
         {
-          "Time": "Truro City",
-          "J": 23,
-          "V": 3,
-          "E": 4,
-          "D": 16,
-          "Pts": 13
+          "Time": "Solihull Moors",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Barrow",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Gateshead",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
         }
       ],
       "last_n_games_data": {
+        "AFC Fylde": [
+          "E"
+        ],
         "Aldershot Town": [
-          "D",
-          "D",
-          "D",
-          "D",
-          "D",
-          "E",
-          "V",
-          "D",
-          "D",
-          "D"
+          "V"
         ],
         "Altrincham": [
-          "V",
-          "V",
-          "V",
-          "D",
-          "D",
-          "E",
-          "D",
-          "E",
-          "V",
+          "D"
+        ],
+        "Barrow": [
           "D"
         ],
         "Boreham Wood": [
-          "V",
-          "V",
-          "V",
-          "D",
-          "V",
-          "E",
-          "V",
-          "V",
-          "D",
           "E"
         ],
         "Boston United": [
-          "V",
-          "V",
-          "E",
-          "V",
-          "E",
-          "D",
-          "E",
-          "D",
-          "V",
-          "D"
-        ],
-        "Brackley Town": [
-          "D",
-          "V",
-          "D",
-          "E",
-          "D",
-          "D",
-          "E",
-          "D",
-          "E",
-          "D"
-        ],
-        "Braintree Town": [
-          "D",
-          "D",
-          "D",
-          "E",
-          "D",
-          "D",
-          "E",
-          "D",
-          "E",
           "D"
         ],
         "Carlisle United": [
-          "V",
-          "V",
-          "V",
-          "E",
-          "E",
-          "V",
-          "V",
-          "V",
-          "D",
-          "V"
+          "D"
         ],
         "Eastleigh": [
-          "V",
-          "E",
-          "D",
-          "V",
-          "E",
-          "D",
-          "D",
-          "D",
-          "D",
           "V"
         ],
         "FC Halifax Town": [
-          "V",
-          "D",
-          "E",
-          "E",
-          "V",
-          "D",
-          "D",
-          "V",
-          "V",
-          "V"
+          "D"
         ],
         "Forest Green Rovers": [
-          "V",
-          "D",
-          "V",
-          "E",
-          "V",
-          "V",
-          "D",
-          "V",
-          "D",
           "V"
         ],
         "Gateshead": [
-          "D",
-          "D",
-          "V",
-          "V",
-          "E",
-          "V",
-          "V",
-          "D",
-          "V",
-          "E"
-        ],
-        "Hartlepool United": [
-          "D",
-          "V",
-          "V",
-          "D",
-          "E",
-          "E",
-          "D",
-          "V",
-          "V",
-          "V"
-        ],
-        "Morecambe": [
-          "D",
-          "D",
-          "D",
-          "E",
-          "V",
-          "D",
-          "D",
-          "D",
-          "E",
-          "V"
-        ],
-        "Rochdale": [
-          "E",
-          "V",
-          "V",
-          "E",
-          "D",
-          "V",
-          "E",
-          "V",
-          "D",
-          "V"
-        ],
-        "Scunthorpe United": [
-          "D",
-          "E",
-          "V",
-          "D",
-          "E",
-          "V",
-          "E",
-          "V",
-          "V",
-          "V"
-        ],
-        "Solihull Moors": [
-          "V",
-          "D",
-          "E",
-          "E",
-          "V",
-          "D",
-          "V",
-          "E",
-          "D",
-          "E"
-        ],
-        "Southend United": [
-          "V",
-          "D",
-          "V",
-          "V",
-          "E",
-          "V",
-          "V",
-          "V",
-          "E",
           "D"
         ],
+        "Harrogate Town": [
+          "V"
+        ],
+        "Hartlepool United": [
+          "V"
+        ],
+        "Hornchurch": [
+          "V"
+        ],
+        "Kidderminster Harriers": [
+          "D"
+        ],
+        "Scunthorpe United": [
+          "E"
+        ],
+        "Solihull Moors": [
+          "D"
+        ],
+        "Southend United": [
+          "V"
+        ],
         "Sutton United": [
-          "D",
-          "D",
-          "D",
-          "D",
-          "E",
-          "D",
-          "V",
-          "D",
-          "E",
           "V"
         ],
         "Tamworth": [
-          "V",
-          "E",
-          "D",
-          "E",
-          "V",
-          "V",
-          "V",
-          "D",
-          "V",
-          "D"
-        ],
-        "Truro City": [
-          "V",
-          "D",
-          "D",
-          "E",
-          "D",
-          "E",
-          "E",
-          "V",
-          "D",
-          "D"
+          "E"
         ],
         "Wealdstone": [
-          "D",
-          "E",
-          "E",
-          "D",
-          "V",
-          "D",
-          "V",
-          "D",
-          "D",
-          "D"
+          "E"
         ],
         "Woking": [
-          "D",
-          "V",
-          "E",
-          "V",
-          "E",
-          "E",
-          "E",
-          "D",
-          "E",
+          "D"
+        ],
+        "Worthing": [
           "V"
         ],
         "Yeovil Town": [
-          "D",
-          "D",
-          "E",
-          "D",
-          "V",
-          "D",
-          "D",
-          "V",
-          "V",
-          "D"
-        ],
-        "York City": [
-          "E",
-          "V",
-          "V",
-          "V",
-          "V",
-          "V",
-          "D",
-          "V",
-          "V",
-          "V"
+          "E"
         ]
       },
-      "best_home": "Rochdale",
-      "worst_home": "Morecambe",
-      "best_away": "York City",
-      "worst_away": "Truro City",
-      "best_attack_team": "York City",
-      "best_attack_gols": 114,
-      "worst_attack_team": "Braintree Town",
-      "worst_attack_gols": 38,
-      "best_defense_team": "Rochdale, York City",
-      "best_defense_gols": 41,
-      "worst_defense_team": "Morecambe",
-      "worst_defense_gols": 103
+      "best_home": "Hornchurch",
+      "worst_home": "Woking",
+      "best_away": "Sutton United",
+      "worst_away": "Gateshead",
+      "best_attack_team": "Harrogate Town",
+      "best_attack_gols": 5,
+      "worst_attack_team": "Barrow, Boston United, Kidderminster Harriers, Woking",
+      "worst_attack_gols": 0,
+      "best_defense_team": "Aldershot Town, Hartlepool United, Hornchurch, Sutton United",
+      "best_defense_gols": 0,
+      "worst_defense_team": "Solihull Moors",
+      "worst_defense_gols": 5
     }
   }
 }

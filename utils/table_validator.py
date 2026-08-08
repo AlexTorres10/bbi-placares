@@ -34,15 +34,15 @@ class TableValidator:
             response.raise_for_status()
             
             web_content = html.fromstring(response.content)
-            
-            # XPath para a tabela
-            table_xpath = '/html/body/main/div[5]/div/div/div/table'
-            table_element = web_content.xpath(table_xpath)
-            
+
+            # Sky Sports renderiza a tabela de classificação como a única
+            # <table> da página, com a classe "sdc-site-table".
+            table_element = web_content.xpath('//table[contains(@class, "sdc-site-table")]')
+
             if not table_element:
-                # Tentar XPath alternativo
-                table_element = web_content.xpath('//table[contains(@class, "standing-table")]')
-            
+                # Tentar XPath alternativo (layout antigo)
+                table_element = web_content.xpath('/html/body/main/div[5]/div/div/div/table')
+
             if not table_element:
                 return None
             

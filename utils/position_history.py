@@ -356,7 +356,19 @@ def append_matchday_positions(
     ]
 
     write_header = not os.path.exists(POSICOES_CSV)
+
+    # If the file already has content but doesn't end in a newline (e.g. it was
+    # hand-edited and saved without a trailing newline), appending in "a" mode
+    # would glue the new first row onto the end of the existing last line.
+    needs_leading_newline = False
+    if not write_header and os.path.getsize(POSICOES_CSV) > 0:
+        with open(POSICOES_CSV, "rb") as f:
+            f.seek(-1, os.SEEK_END)
+            needs_leading_newline = f.read(1) != b"\n"
+
     with open(POSICOES_CSV, "a", newline="", encoding="utf-8") as f:
+        if needs_leading_newline:
+            f.write("\n")
         writer = csv.DictWriter(f, fieldnames=POSICOES_FIELDNAMES)
         if write_header:
             writer.writeheader()
