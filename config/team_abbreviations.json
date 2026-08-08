@@ -72,7 +72,6 @@
   
   "ACC": "Accrington",
   "BNT": "Barnet",
-  "BRW": "Barrow",
   "BRR": "Bristol Rovers",
   "BRO": "Bromley",
   "CAM": "Cambridge United",
@@ -84,8 +83,8 @@
   "FLT": "Fleetwood Town",
   "GIL": "Gillingham",
   "GRI": "Grimsby Town",
-  "HRR": "Harrogate Town",
   "MKD": "Milton Keynes Dons",
+  "ROC": "Rochdale",
   "NPC": "Newport County",
   "NOT": "Notts County",
   "OLD": "Oldham Athletic",
@@ -94,9 +93,12 @@
   "SWI": "Swindon Town",
   "TRA": "Tranmere Rovers",
   "WAL": "Walsall",
+  "YOR": "York City",
   
+  "FYL": "AFC Fylde",
   "ALD": "Aldershot Town",
   "ALT": "Altrincham",
+  "BRW": "Barrow",
   "BOR": "Boreham Wood",
   "BOS": "Boston United",
   "BCK": "Brackley Town",
@@ -107,8 +109,9 @@
   "GAT": "Gateshead",
   "HAL": "FC Halifax Town",
   "HAR": "Hartlepool United",
-  "MOR": "Morecambe",
-  "ROC": "Rochdale",
+  "HOR": "Hornchurch",
+  "HRR": "Harrogate Town",
+  "KID": "Kidderminster Harriers",
   "SCU": "Scunthorpe United",
   "SOL": "Solihull Moors",
   "SND": "Southend United",
@@ -117,8 +120,8 @@
   "TRU": "Truro City",
   "WEA": "Wealdstone",
   "WOK": "Woking",
+  "WOR": "Worthing",
   "YEO": "Yeovil Town",
-  "YOR": "York City",
 
 
   "ALF": "Alfreton Town",
@@ -136,10 +139,11 @@
   "HAB": "Harborough Town",
   "HEM": "Hemel Hempstead",
   "HED": "Hednesford",
-  "HOR": "Horsham",
+  "HRS": "Horsham",
   "KET": "Kettering Town",
   "MAC": "Macclesfield",
   "MDS": "Maidstone United",
+  "MOR": "Morecambe",
   "MTI": "Maldon & Tiptree",
   "RUS": "Rushall Olympic",
   "SCA": "Scarborough",
@@ -150,6 +154,5 @@
   "TEL": "AFC Telford United",
   "TON": "Tonbridge Angels",
   "TTT": "AFC Totton",
-  "WSM": "Weston-Super-Mare",
-  "WOR": "Worthing"
+  "WSM": "Weston-Super-Mare"
 }
