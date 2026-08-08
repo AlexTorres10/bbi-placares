@@ -96,10 +96,10 @@ def _overall_attack_defense(df_liga: pd.DataFrame, teams: List[str]) -> pd.DataF
     for team in teams:
         home = df_liga[df_liga['casa'] == team]
         away = df_liga[df_liga['fora'] == team]
-        gm = (home['placar'].apply(lambda p: _parse_score(p)[0]).sum() +
-              away['placar'].apply(lambda p: _parse_score(p)[1]).sum())
-        gs = (home['placar'].apply(lambda p: _parse_score(p)[1]).sum() +
-              away['placar'].apply(lambda p: _parse_score(p)[0]).sum())
+        gm = (sum(_parse_score(p)[0] for p in home['placar']) +
+              sum(_parse_score(p)[1] for p in away['placar']))
+        gs = (sum(_parse_score(p)[1] for p in home['placar']) +
+              sum(_parse_score(p)[0] for p in away['placar']))
         records.append({'Time': team, 'GM': int(gm), 'GS': int(gs)})
     return pd.DataFrame(records)
 
