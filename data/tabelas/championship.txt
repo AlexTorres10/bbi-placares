@@ -1,5 +1,6 @@
+Blackburn Rovers 1 0 1 0 2 2 0 1
+Wolverhampton 1 0 1 0 2 2 0 1
 Birmingham City 0 0 0 0 0 0 0 0
-Blackburn Rovers 0 0 0 0 0 0 0 0
 Bolton Wanderers 0 0 0 0 0 0 0 0
 Bristol City 0 0 0 0 0 0 0 0
 Burnley 0 0 0 0 0 0 0 0
@@ -14,11 +15,10 @@ Portsmouth 0 0 0 0 0 0 0 0
 Preston North End 0 0 0 0 0 0 0 0
 Queens Park Rangers 0 0 0 0 0 0 0 0
 Sheffield United 0 0 0 0 0 0 0 0
-Southampton 0 0 0 0 0 0 0 -4
 Stoke City 0 0 0 0 0 0 0 0
 Swansea City 0 0 0 0 0 0 0 0
 Watford 0 0 0 0 0 0 0 0
 West Bromwich 0 0 0 0 0 0 0 0
 West Ham 0 0 0 0 0 0 0 0
-Wolverhampton 0 0 0 0 0 0 0 0
 Wrexham 0 0 0 0 0 0 0 0
+Southampton 0 0 0 0 0 0 0 -4
