@@ -389,5 +389,30 @@
       "worst_defense_team": "Solihull Moors",
       "worst_defense_gols": 5
     }
+  },
+  "Premier League": {
+    "last_game_date": "2026-05-24",
+    "updated_at": "2026-08-14T10:20:28",
+    "data": {
+      "insights": [],
+      "team_insights": {},
+      "team_rankings": {},
+      "teams": [],
+      "best_home": "-",
+      "worst_home": "-",
+      "best_away": "-",
+      "worst_away": "-",
+      "best_attack_team": "-",
+      "best_attack_gols": 0,
+      "worst_attack_team": "-",
+      "worst_attack_gols": 0,
+      "best_defense_team": "-",
+      "best_defense_gols": 0,
+      "worst_defense_team": "-",
+      "worst_defense_gols": 0,
+      "home_table_full": [],
+      "away_table_full": [],
+      "last_n_games_data": {}
+    }
   }
 }
