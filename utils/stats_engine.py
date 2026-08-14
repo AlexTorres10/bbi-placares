@@ -151,8 +151,7 @@ def compute_league_stats(liga_str: str) -> dict:
         best_defense_team / best_defense_gols : str / int
         worst_defense_team / worst_defense_gols : str / int
     """
-    df_full_liga = load_historico(liga_str)
-    if df_full_liga.empty:
+    def _empty_result() -> dict:
         return {
             'insights': [], 'team_insights': {}, 'team_rankings': {}, 'teams': [],
             'best_home': '-', 'worst_home': '-', 'best_away': '-', 'worst_away': '-',
@@ -164,11 +163,16 @@ def compute_league_stats(liga_str: str) -> dict:
             'last_n_games_data': {},
         }
 
+    df_full_liga = load_historico(liga_str)
+    if df_full_liga.empty:
+        return _empty_result()
+
     # Filtrar temporada atual: Jul 1 do ano corrente da temporada
     season_start = pd.Timestamp(_season_start())
     df_liga = df_full_liga[df_full_liga['data'] >= season_start].copy()
     if df_liga.empty:
-        df_liga = df_full_liga  # fallback se a temporada ainda não tiver dados
+        # Temporada atual ainda sem jogos: não usar dados da temporada anterior
+        return _empty_result()
 
     teams = sorted(set(df_liga['casa'].unique()) | set(df_liga['fora'].unique()))
 

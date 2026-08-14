@@ -1963,7 +1963,7 @@ def process_badge_for_dark_mode(img_bytes: bytes) -> bytes:
     """Inverts monochromatic dark badges so they remain visible in dark mode."""
     import statistics
     img = Image.open(io.BytesIO(img_bytes)).convert("RGBA")
-    pixels = list(img.get_flattened_data())
+    pixels = list(img.getdata())
     opaque = [(px[0], px[1], px[2]) for px in pixels if px[3] > 10]
     if not opaque:
         return img_bytes
@@ -2588,7 +2588,7 @@ def render_stats_mode():
 
     # ── Insights gerais ────────────────────────────────────────────────────
     selected_team = None
-    if data['insights']:
+    if data['teams']:
         # Map each team to the subset of insights that mention it (all teams shown)
         team_insight_map = {
             team: [ins for ins in data['insights'] if team in ins]
