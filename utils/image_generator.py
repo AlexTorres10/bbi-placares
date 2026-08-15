@@ -536,8 +536,8 @@ class ImageGenerator:
             team_name = self._get_display_name(team['name'], league, 'table')
 
 
-            # Verificar se time tem penalidade
-            if 'penalty_note' in team and team['penalty_note']:
+            # Verificar se time tem penalidade (nota não exibida em Championship/L1/L2 — sem espaço no layout)
+            if league not in ('championship', 'leagueone', 'leaguetwo') and 'penalty_note' in team and team['penalty_note']:
                 team_name += "*"  # Adiciona asterisco
 
             # Ligas do design unificado (PL/EFL) escrevem o nome como está;
@@ -583,9 +583,10 @@ class ImageGenerator:
                 )
 
             penalty_notes = []
-            for team in table_data:
-                if 'penalty_note' in team and team['penalty_note']:
-                    penalty_notes.append(f"* {team['penalty_note']}")
+            if league not in ('championship', 'leagueone', 'leaguetwo'):
+                for team in table_data:
+                    if 'penalty_note' in team and team['penalty_note']:
+                        penalty_notes.append(f"* {team['penalty_note']}")
 
             if penalty_notes:
                 # Posição da primeira nota
