@@ -1983,10 +1983,12 @@ def process_badge_for_dark_mode(img_bytes: bytes) -> bytes:
 
 
 def _get_recent_form(selected_team: str, liga_str: str, n: int = 5) -> list:
-    """Returns list of 'V'/'E'/'D' for the last n matches of selected_team in liga_str."""
+    """Returns list of 'V'/'E'/'D' for the last n matches of selected_team in liga_str, current season only."""
     csv_path = os.path.join("data", "historico.csv")
     if not os.path.exists(csv_path):
         return []
+    from datetime import datetime
+    season_start = _season_start()
     games = []
     with open(csv_path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -1994,8 +1996,12 @@ def _get_recent_form(selected_team: str, liga_str: str, n: int = 5) -> list:
             if row.get('liga') != liga_str:
                 continue
             if row.get('casa') == selected_team or row.get('fora') == selected_team:
+                try:
+                    if datetime.strptime(row['data'], '%Y-%m-%d') < season_start:
+                        continue
+                except (ValueError, KeyError):
+                    continue
                 games.append(row)
-    from datetime import datetime
     def _parse_date(row):
         try:
             return datetime.strptime(row['data'], '%Y-%m-%d')
@@ -2022,10 +2028,12 @@ def _get_recent_form(selected_team: str, liga_str: str, n: int = 5) -> list:
 
 
 def _get_recent_games(team: str, liga_str: str) -> list:
-    """Returns all game dicts for team in liga_str, most recent first."""
+    """Returns all game dicts for team in liga_str in the current season, most recent first."""
     csv_path = os.path.join("data", "historico.csv")
     if not os.path.exists(csv_path):
         return []
+    from datetime import datetime
+    season_start = _season_start()
     games = []
     with open(csv_path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -2033,8 +2041,12 @@ def _get_recent_games(team: str, liga_str: str) -> list:
             if row.get('liga') != liga_str:
                 continue
             if row.get('casa') == team or row.get('fora') == team:
+                try:
+                    if datetime.strptime(row['data'], '%Y-%m-%d') < season_start:
+                        continue
+                except (ValueError, KeyError):
+                    continue
                 games.append(dict(row))
-    from datetime import datetime
     games.sort(key=lambda r: datetime.strptime(r['data'], '%Y-%m-%d') if r.get('data') else datetime.min, reverse=True)
     return games
 
