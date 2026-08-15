@@ -137,7 +137,7 @@ class TableProcessor:
         
         for result in results:
             # Pular jogos que não têm resultado final
-            if result.get('status') in ['future', 'postponed', 'abandoned']:
+            if result.get('status') in ['future', 'postponed', 'abandoned', 'vs']:
                 continue  # Não atualiza a tabela
             
             success = self.update_with_result(
