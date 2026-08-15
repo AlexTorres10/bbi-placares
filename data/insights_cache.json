@@ -414,5 +414,284 @@
       "away_table_full": [],
       "last_n_games_data": {}
     }
+  },
+  "Championship": {
+    "last_game_date": "2026-08-15",
+    "updated_at": "2026-08-15T16:21:11",
+    "data": {
+      "insights": [],
+      "team_insights": {
+        "Blackburn Rovers": [],
+        "Bolton Wanderers": [],
+        "Bristol City": [],
+        "Charlton Athletic": [],
+        "Derby County": [],
+        "Lincoln City": [],
+        "Middlesbrough": [],
+        "Millwall": [],
+        "Norwich City": [],
+        "Portsmouth": [],
+        "Preston North End": [],
+        "Queens Park Rangers": [],
+        "Stoke City": [],
+        "Swansea City": [],
+        "West Bromwich": [],
+        "Wolverhampton": []
+      },
+      "team_rankings": {
+        "Blackburn Rovers": [],
+        "Bolton Wanderers": [
+          "Bolton Wanderers é o melhor mandante!"
+        ],
+        "Bristol City": [],
+        "Charlton Athletic": [
+          "Charlton Athletic é o 2º melhor mandante!"
+        ],
+        "Derby County": [
+          "Derby County é o pior visitante!"
+        ],
+        "Lincoln City": [
+          "Lincoln City é o 2º pior visitante!"
+        ],
+        "Middlesbrough": [
+          "Middlesbrough é o 3º melhor mandante!"
+        ],
+        "Millwall": [
+          "Millwall é o 2º melhor visitante!"
+        ],
+        "Norwich City": [
+          "Norwich City é o 2º pior mandante!"
+        ],
+        "Portsmouth": [
+          "Portsmouth é o 3º pior mandante!"
+        ],
+        "Preston North End": [
+          "Preston North End é o 3º pior visitante!"
+        ],
+        "Queens Park Rangers": [
+          "Queens Park Rangers é o melhor visitante!"
+        ],
+        "Stoke City": [
+          "Stoke City é o pior mandante!"
+        ],
+        "Swansea City": [],
+        "West Bromwich": [
+          "West Bromwich é o 3º melhor visitante!"
+        ],
+        "Wolverhampton": []
+      },
+      "teams": [
+        "Blackburn Rovers",
+        "Bolton Wanderers",
+        "Bristol City",
+        "Charlton Athletic",
+        "Derby County",
+        "Lincoln City",
+        "Middlesbrough",
+        "Millwall",
+        "Norwich City",
+        "Portsmouth",
+        "Preston North End",
+        "Queens Park Rangers",
+        "Stoke City",
+        "Swansea City",
+        "West Bromwich",
+        "Wolverhampton"
+      ],
+      "home_table_full": [
+        {
+          "Time": "Bolton Wanderers",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Charlton Athletic",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Middlesbrough",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Wolverhampton",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Bristol City",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Portsmouth",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Norwich City",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Stoke City",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        }
+      ],
+      "away_table_full": [
+        {
+          "Time": "Queens Park Rangers",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Millwall",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "West Bromwich",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Swansea City",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Blackburn Rovers",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Preston North End",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Lincoln City",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Derby County",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        }
+      ],
+      "last_n_games_data": {
+        "Blackburn Rovers": [
+          "E"
+        ],
+        "Bolton Wanderers": [
+          "V"
+        ],
+        "Bristol City": [
+          "D"
+        ],
+        "Charlton Athletic": [
+          "V"
+        ],
+        "Derby County": [
+          "D"
+        ],
+        "Lincoln City": [
+          "D"
+        ],
+        "Middlesbrough": [
+          "V"
+        ],
+        "Millwall": [
+          "V"
+        ],
+        "Norwich City": [
+          "D"
+        ],
+        "Portsmouth": [
+          "D"
+        ],
+        "Preston North End": [
+          "D"
+        ],
+        "Queens Park Rangers": [
+          "V"
+        ],
+        "Stoke City": [
+          "D"
+        ],
+        "Swansea City": [
+          "V"
+        ],
+        "West Bromwich": [
+          "V"
+        ],
+        "Wolverhampton": [
+          "E"
+        ]
+      },
+      "best_home": "Bolton Wanderers",
+      "worst_home": "Stoke City",
+      "best_away": "Queens Park Rangers",
+      "worst_away": "Derby County",
+      "best_attack_team": "Queens Park Rangers",
+      "best_attack_gols": 3,
+      "worst_attack_team": "Bristol City",
+      "worst_attack_gols": 0,
+      "best_defense_team": "Millwall",
+      "best_defense_gols": 0,
+      "worst_defense_team": "Portsmouth",
+      "worst_defense_gols": 3
+    }
   }
 }
