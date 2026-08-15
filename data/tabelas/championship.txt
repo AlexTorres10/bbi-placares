@@ -1,24 +1,24 @@
+Queens Park Rangers 1 1 0 0 3 1 2 3
+Millwall 1 1 0 0 2 0 2 3
 Bolton Wanderers 1 1 0 0 2 1 1 3
+Charlton Athletic 1 1 0 0 2 1 1 3
+Middlesbrough 1 1 0 0 2 1 1 3
+Swansea City 1 1 0 0 2 1 1 3
+West Bromwich 1 1 0 0 2 1 1 3
 Blackburn Rovers 1 0 1 0 2 2 0 1
 Wolverhampton 1 0 1 0 2 2 0 1
 Birmingham City 0 0 0 0 0 0 0 0
-Bristol City 0 0 0 0 0 0 0 0
 Burnley 0 0 0 0 0 0 0 0
 Cardiff City 0 0 0 0 0 0 0 0
-Charlton Athletic 0 0 0 0 0 0 0 0
-Derby County 0 0 0 0 0 0 0 0
-Lincoln City 0 0 0 0 0 0 0 0
-Middlesbrough 0 0 0 0 0 0 0 0
-Millwall 0 0 0 0 0 0 0 0
-Norwich City 0 0 0 0 0 0 0 0
-Portsmouth 0 0 0 0 0 0 0 0
-Queens Park Rangers 0 0 0 0 0 0 0 0
 Sheffield United 0 0 0 0 0 0 0 0
-Stoke City 0 0 0 0 0 0 0 0
-Swansea City 0 0 0 0 0 0 0 0
 Watford 0 0 0 0 0 0 0 0
-West Bromwich 0 0 0 0 0 0 0 0
 West Ham 0 0 0 0 0 0 0 0
 Wrexham 0 0 0 0 0 0 0 0
+Derby County 1 0 0 1 1 2 -1 0
+Lincoln City 1 0 0 1 1 2 -1 0
+Norwich City 1 0 0 1 1 2 -1 0
 Preston North End 1 0 0 1 1 2 -1 0
+Stoke City 1 0 0 1 1 2 -1 0
+Portsmouth 1 0 0 1 1 3 -2 0
+Bristol City 1 0 0 1 0 2 -2 0
 Southampton 0 0 0 0 0 0 0 -4
