@@ -10,10 +10,10 @@ Blackburn Rovers 1 0 1 0 2 2 0 1
 Burnley 1 0 1 0 2 2 0 1
 West Ham 1 0 1 0 2 2 0 1
 Wolverhampton 1 0 1 0 2 2 0 1
+Cardiff City 1 0 1 0 1 1 0 1
+Wrexham 1 0 1 0 1 1 0 1
 Birmingham City 1 0 1 0 0 0 0 1
 Sheffield United 1 0 1 0 0 0 0 1
-Cardiff City 0 0 0 0 0 0 0 0
-Wrexham 0 0 0 0 0 0 0 0
 Derby County 1 0 0 1 1 2 -1 0
 Lincoln City 1 0 0 1 1 2 -1 0
 Norwich City 1 0 0 1 1 2 -1 0
