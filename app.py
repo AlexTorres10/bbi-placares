@@ -3009,7 +3009,7 @@ if modo == "🔢 Gerar Placar":
                                     append_matchday_positions(
                                         _liga_str_pg, _positions_pg, _data_fim_pg,
                                     )
-                                    _steps_pg.append(f"rodada {_current_md_pg} fechada")
+                                    _steps_pg.append(f"rodada fechada (data fim: {_data_fim_pg})")
                         except Exception as _e_pos_pg:
                             st.error(f"❌ Erro ao fechar rodada: {_e_pos_pg}")
                             _abort_pg = True

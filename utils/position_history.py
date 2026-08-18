@@ -11,6 +11,8 @@ import os
 from datetime import datetime, timedelta
 from typing import Optional
 
+from utils.bbi_functions import _season_label
+
 POSICOES_CSV = "data/posicoes.csv"
 POSICOES_FIELDNAMES = ["time", "liga", "matchday", "posicao", "data_fim_matchday"]
 
@@ -25,6 +27,7 @@ _POINT_DEDUCTIONS: dict[str, list[tuple[str, str, int]]] = {
         ("Sheffield Wednesday", "2024-10-24", 12),
         ("Sheffield Wednesday", "2024-12-01",  6),  # additional → total 18
         ("Leicester City",      "2026-02-05",  6),
+        ("Southampton",         "2026-07-01",  4),  # Spygate violations, 2026-27 season
     ],
 }
 
@@ -36,14 +39,14 @@ def _apply_deductions(
 ) -> None:
     """
     Mutates stats[team]['pts'] in place by subtracting the applicable
-    point deductions. Points never go below 0.
+    point deductions.
     """
     rules = _POINT_DEDUCTIONS.get(liga_str, [])
     for team, threshold, pts in rules:
         if team not in stats:
             continue
         if data_fim >= threshold:
-            stats[team]["pts"] = max(0, stats[team]["pts"] - pts)
+            stats[team]["pts"] -= pts
 
 
 def _block(weekday: int) -> str:
@@ -115,11 +118,13 @@ def detect_matchdays(liga_str: str) -> dict[int, list[str]]:
 
     from datetime import date as date_cls
 
+    temporada_atual = _season_label()
+
     dates_set: set[date_cls] = set()
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if row.get("liga") != liga_str:
+            if row.get("liga") != liga_str or row.get("temporada") != temporada_atual:
                 continue
             try:
                 d = datetime.strptime(row["data"], "%Y-%m-%d").date()
@@ -158,10 +163,11 @@ def _all_teams_in_liga(liga_str: str) -> set[str]:
     teams: set[str] = set()
     if not os.path.exists(csv_path):
         return teams
+    temporada_atual = _season_label()
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if row.get("liga") != liga_str:
+            if row.get("liga") != liga_str or row.get("temporada") != temporada_atual:
                 continue
             if row.get("casa"):
                 teams.add(row["casa"])
@@ -207,10 +213,12 @@ def compute_table_at_matchday(
     all_teams = _all_teams_in_liga(liga_str)
     stats: dict[str, dict] = {t: {"pts": 0, "gd": 0, "gf": 0} for t in all_teams}
 
+    temporada_atual = _season_label()
+
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if row.get("liga") != liga_str:
+            if row.get("liga") != liga_str or row.get("temporada") != temporada_atual:
                 continue
             if row.get("data") not in target_dates:
                 continue

@@ -1,69 +1,20 @@
 time,liga,matchday,posicao,data_fim_matchday
-Harrogate Town,National League,1,1,2026-08-08
-Hornchurch,National League,1,2,2026-08-08
-Sutton United,National League,1,3,2026-08-08
-Southend United,National League,1,4,2026-08-08
-Hartlepool United,National League,1,5,2026-08-08
-Forest Green Rovers,National League,1,6,2026-08-08
-Worthing,National League,1,7,2026-08-08
-Eastleigh,National League,1,8,2026-08-08
-Aldershot Town,National League,1,9,2026-08-08
-Boreham Wood,National League,1,10,2026-08-08
-Tamworth,National League,1,11,2026-08-08
-AFC Fylde,National League,1,12,2026-08-08
-Wealdstone,National League,1,13,2026-08-08
-Scunthorpe United,National League,1,14,2026-08-08
-Yeovil Town,National League,1,15,2026-08-08
-Carlisle United,National League,1,16,2026-08-08
-FC Halifax Town,National League,1,17,2026-08-08
-Gateshead,National League,1,18,2026-08-08
-Boston United,National League,1,19,2026-08-08
-Altrincham,National League,1,20,2026-08-08
-Barrow,National League,1,21,2026-08-08
-Solihull Moors,National League,1,22,2026-08-08
-Kidderminster Harriers,National League,1,23,2026-08-08
-Woking,National League,1,24,2026-08-08
-Coventry City,Championship,1,1,2026-08-14
-Ipswich Town,Championship,1,2,2026-08-14
-Millwall,Championship,1,3,2026-08-14
-Southampton,Championship,1,4,2026-08-14
-Middlesbrough,Championship,1,5,2026-08-14
-Hull City,Championship,1,6,2026-08-14
-Wrexham,Championship,1,7,2026-08-14
-Derby County,Championship,1,8,2026-08-14
-Norwich City,Championship,1,9,2026-08-14
-Birmingham City,Championship,1,10,2026-08-14
-Swansea City,Championship,1,11,2026-08-14
-Bristol City,Championship,1,12,2026-08-14
-Sheffield United,Championship,1,13,2026-08-14
-Preston North End,Championship,1,14,2026-08-14
-Queens Park Rangers,Championship,1,15,2026-08-14
-Watford,Championship,1,16,2026-08-14
-Stoke City,Championship,1,17,2026-08-14
-Portsmouth,Championship,1,18,2026-08-14
-West Bromwich,Championship,1,19,2026-08-14
-Blackburn Rovers,Championship,1,20,2026-08-14
-Charlton Athletic,Championship,1,21,2026-08-14
-Oxford United,Championship,1,22,2026-08-14
-Leicester City,Championship,1,23,2026-08-14
-Wolverhampton,Championship,1,24,2026-08-14
-Sheffield Wednesday,Championship,1,25,2026-08-14
 Queens Park Rangers,Championship,1,1,2026-08-15
 Millwall,Championship,1,2,2026-08-15
 Bolton Wanderers,Championship,1,3,2026-08-15
 Charlton Athletic,Championship,1,4,2026-08-15
 Middlesbrough,Championship,1,5,2026-08-15
 Swansea City,Championship,1,6,2026-08-15
-West Bromwich,Championship,1,7,2026-08-15
-Blackburn Rovers,Championship,1,8,2026-08-15
-Wolverhampton,Championship,1,9,2026-08-15
-Birmingham City,Championship,1,10,2026-08-15
-Burnley,Championship,1,11,2026-08-15
-Cardiff City,Championship,1,12,2026-08-15
-Sheffield United,Championship,1,13,2026-08-15
-Watford,Championship,1,14,2026-08-15
-West Ham,Championship,1,15,2026-08-15
-Wrexham,Championship,1,16,2026-08-15
+Watford,Championship,1,7,2026-08-15
+West Bromwich,Championship,1,8,2026-08-15
+Blackburn Rovers,Championship,1,9,2026-08-15
+Burnley,Championship,1,10,2026-08-15
+West Ham,Championship,1,11,2026-08-15
+Wolverhampton,Championship,1,12,2026-08-15
+Cardiff City,Championship,1,13,2026-08-15
+Wrexham,Championship,1,14,2026-08-15
+Birmingham City,Championship,1,15,2026-08-15
+Sheffield United,Championship,1,16,2026-08-15
 Derby County,Championship,1,17,2026-08-15
 Lincoln City,Championship,1,18,2026-08-15
 Norwich City,Championship,1,19,2026-08-15
@@ -120,6 +71,30 @@ Port Vale,League Two,1,21,2026-08-15
 Shrewsbury Town,League Two,1,22,2026-08-15
 Gillingham,League Two,1,23,2026-08-15
 Rochdale,League Two,1,24,2026-08-15
+Harrogate Town,National League,1,1,2026-08-08
+Hornchurch,National League,1,2,2026-08-08
+Sutton United,National League,1,3,2026-08-08
+Southend United,National League,1,4,2026-08-08
+Hartlepool United,National League,1,5,2026-08-08
+Forest Green Rovers,National League,1,6,2026-08-08
+Worthing,National League,1,7,2026-08-08
+Eastleigh,National League,1,8,2026-08-08
+Aldershot Town,National League,1,9,2026-08-08
+Boreham Wood,National League,1,10,2026-08-08
+Tamworth,National League,1,11,2026-08-08
+AFC Fylde,National League,1,12,2026-08-08
+Wealdstone,National League,1,13,2026-08-08
+Scunthorpe United,National League,1,14,2026-08-08
+Yeovil Town,National League,1,15,2026-08-08
+Carlisle United,National League,1,16,2026-08-08
+FC Halifax Town,National League,1,17,2026-08-08
+Gateshead,National League,1,18,2026-08-08
+Boston United,National League,1,19,2026-08-08
+Altrincham,National League,1,20,2026-08-08
+Barrow,National League,1,21,2026-08-08
+Solihull Moors,National League,1,22,2026-08-08
+Kidderminster Harriers,National League,1,23,2026-08-08
+Woking,National League,1,24,2026-08-08
 Harrogate Town,National League,2,1,2026-08-15
 Hornchurch,National League,2,2,2026-08-15
 Sutton United,National League,2,3,2026-08-15
@@ -144,33 +119,3 @@ Altrincham,National League,2,21,2026-08-15
 Barrow,National League,2,22,2026-08-15
 Solihull Moors,National League,2,23,2026-08-15
 Woking,National League,2,24,2026-08-15
-Coventry City,Championship,2,1,2026-08-15
-Millwall,Championship,2,2,2026-08-15
-Ipswich Town,Championship,2,3,2026-08-15
-Middlesbrough,Championship,2,4,2026-08-15
-Southampton,Championship,2,5,2026-08-15
-Hull City,Championship,2,6,2026-08-15
-Wrexham,Championship,2,7,2026-08-15
-Derby County,Championship,2,8,2026-08-15
-Swansea City,Championship,2,9,2026-08-15
-Norwich City,Championship,2,10,2026-08-15
-Birmingham City,Championship,2,11,2026-08-15
-Bristol City,Championship,2,12,2026-08-15
-Sheffield United,Championship,2,13,2026-08-15
-Queens Park Rangers,Championship,2,14,2026-08-15
-Preston North End,Championship,2,15,2026-08-15
-Watford,Championship,2,16,2026-08-15
-West Bromwich,Championship,2,17,2026-08-15
-Charlton Athletic,Championship,2,18,2026-08-15
-Stoke City,Championship,2,19,2026-08-15
-Portsmouth,Championship,2,20,2026-08-15
-Blackburn Rovers,Championship,2,21,2026-08-15
-Oxford United,Championship,2,22,2026-08-15
-Leicester City,Championship,2,23,2026-08-15
-Bolton Wanderers,Championship,2,24,2026-08-15
-Burnley,Championship,2,25,2026-08-15
-West Ham,Championship,2,26,2026-08-15
-Wolverhampton,Championship,2,27,2026-08-15
-Cardiff City,Championship,2,28,2026-08-15
-Lincoln City,Championship,2,29,2026-08-15
-Sheffield Wednesday,Championship,2,30,2026-08-15
