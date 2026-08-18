@@ -82,9 +82,9 @@ TEMPLATE_ORDER = [
     "leaguetwo.png"
 ]
 
-INGLES_UCL = ["Arsenal", "Manchester City", "Liverpool", "Chelsea", "Newcastle United", "Tottenham Hotspur"]
-INGLES_UEL = ["Aston Villa", "Nottingham Forest"]
-INGLES_UECL = ["Crystal Palace"]
+INGLES_UCL = ["Arsenal", "Manchester City", "Manchester United", "Aston Villa", "Liverpool"]
+INGLES_UEL = ["Bournemouth", "Sunderland", "Crystal Palace"]
+INGLES_UECL = ["Brighton"]
 
 LIGA_DISPLAY_NAMES = {
     "premierleague": "Premier League",
