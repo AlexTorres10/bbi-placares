@@ -254,11 +254,11 @@ def obter_config_template(template_path):
             "cor_texto_placar": "white",
             "cor_texto_times": "white",
             "alinhamento_nomes": "lados",  # mandante à esquerda, visitante à direita (como os marcadores)
-            "pos_nome_casa": (235, h+22),  # x = margem esquerda
-            "pos_nome_fora": (-235, h+24), # x negativo = margem da borda direita
+            "pos_nome_casa": (240, h+22),  # x = margem esquerda
+            "pos_nome_fora": (-240, h+24), # x negativo = margem da borda direita
             "pos_placar": h+1,
-            "pos_marcadores_casa": (238, 887),  # mesmo x do nome do time
-            "pos_marcadores_fora": (-238, 887), # x negativo = margem da borda direita
+            "pos_marcadores_casa": (243, 887),  # mesmo x do nome do time
+            "pos_marcadores_fora": (-243, 887), # x negativo = margem da borda direita
             "tamanho_nome": 36,
             "tamanho_placar": 72,
             "tamanho_marcadores": 30,
@@ -533,6 +533,10 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
             nome = "Spurs"
         if "premier" in path_lower and nome == "Manchester United":
             nome = "Manchester Utd"
+        if "premier" in path_lower and nome == "Newcastle United":
+            nome = "Newcastle Utd"
+        if "premier" in path_lower and nome == "Nottingham Forest":
+            nome = "Nott'm Forest"
         nome_maiusculo = nome.upper()
 
         # Decide a fonte (tamanho_nome no config tem prioridade)
