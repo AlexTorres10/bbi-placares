@@ -1,24 +1,24 @@
-Newport County 1 1 0 0 3 0 3 3
-Walsall 1 1 0 0 3 0 3 3
-Barnet 1 1 0 0 3 1 2 3
-Oldham Athletic 1 1 0 0 2 0 2 3
-Tranmere Rovers 1 1 0 0 2 0 2 3
-York City 1 1 0 0 3 2 1 3
-Cheltenham Town 1 1 0 0 2 1 1 3
-Crewe Alexandra 1 1 0 0 1 0 1 3
-Fleetwood Town 1 1 0 0 1 0 1 3
-Grimsby Town 1 1 0 0 1 0 1 3
-Accrington 1 0 1 0 2 2 0 1
-Colchester United 1 0 1 0 2 2 0 1
-Northampton Town 1 0 1 0 0 0 0 1
-Swindon Town 1 0 1 0 0 0 0 1
-Bristol Rovers 1 0 0 1 2 3 -1 0
-Rotherham United 1 0 0 1 1 2 -1 0
-Chesterfield 1 0 0 1 0 1 -1 0
-Crawley Town 1 0 0 1 0 1 -1 0
-Exeter City 1 0 0 1 0 1 -1 0
-Salford City 1 0 0 1 1 3 -2 0
-Port Vale 1 0 0 1 0 2 -2 0
-Shrewsbury Town 1 0 0 1 0 2 -2 0
-Gillingham 1 0 0 1 0 3 -3 0
-Rochdale 1 0 0 1 0 3 -3 0
+Barnet 2 2 0 0 6 2 4 6
+Crewe Alexandra 2 2 0 0 2 0 2 6
+Walsall 2 1 1 0 3 0 3 4
+Tranmere Rovers 2 1 1 0 3 1 2 4
+Colchester United 2 1 1 0 4 3 1 4
+York City 2 1 1 0 4 3 1 4
+Swindon Town 2 1 1 0 2 1 1 4
+Fleetwood Town 2 1 1 0 1 0 1 4
+Grimsby Town 2 1 1 0 1 0 1 4
+Bristol Rovers 2 1 0 1 7 6 1 3
+Newport County 2 1 0 1 6 5 1 3
+Oldham Athletic 2 1 0 1 3 2 1 3
+Exeter City 2 1 0 1 2 1 1 3
+Cheltenham Town 2 1 0 1 3 3 0 3
+Crawley Town 2 1 0 1 2 2 0 3
+Chesterfield 2 1 0 1 1 1 0 3
+Rotherham United 2 0 1 1 2 3 -1 1
+Northampton Town 2 0 1 1 0 1 -1 1
+Accrington 2 0 1 1 2 4 -2 1
+Port Vale 2 0 1 1 1 3 -2 1
+Gillingham 2 0 1 1 0 3 -3 1
+Salford City 2 0 0 2 1 4 -3 0
+Rochdale 2 0 0 2 1 5 -4 0
+Shrewsbury Town 2 0 0 2 1 5 -4 0
