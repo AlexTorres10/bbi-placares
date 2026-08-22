@@ -37,7 +37,6 @@ from utils.insights_cache import (
 )
 from utils.position_history import (
     detect_matchdays,
-    compute_table_at_matchday,
     append_matchday_positions,
     compute_position_delta,
     POSICOES_CSV,
@@ -2257,7 +2256,7 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
         },
         'championship': {
             1: '[PROMOÇÃO DIRETA]', 3: '[PLAY-OFFS]',
-            7: '[MEIO DE TABELA]', 22: '[REBAIXAMENTO]',
+            9: '[MEIO DE TABELA]', 22: '[REBAIXAMENTO]',
         },
         'leagueone': {
             1: '[PROMOÇÃO DIRETA]', 3: '[PLAY-OFFS]',
@@ -3007,9 +3006,14 @@ if modo == "🔢 Gerar Placar":
                                     st.error("❌ Nenhum matchday passado encontrado para registrar.")
                                     _abort_pg = True
                                 else:
-                                    _positions_pg = compute_table_at_matchday(
-                                        _liga_str_pg, _current_md_pg, _md_map_pg
-                                    )
+                                    # Usa a tabela já atualizada no Passo 2 (fonte
+                                    # centralizada) em vez de recalcular do zero a
+                                    # partir do historico.csv — evita divergência
+                                    # em relação à tabela oficial (ex.: deduções de
+                                    # pontos ou correções manuais já aplicadas).
+                                    _positions_pg = {
+                                        team.name: team.position for team in _proc_pg.teams
+                                    }
                                     append_matchday_positions(
                                         _liga_str_pg, _positions_pg, _data_fim_pg,
                                     )

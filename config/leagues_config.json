@@ -144,7 +144,7 @@
       },
       "champion": {"positions": [1], "rect": "championship-rect-c.png", "rect_confirmed": "championship-rect-c-conf.png"},
       "promoted": {"positions": [1, 2], "rect": "championship-rect-p.png", "rect_confirmed": "championship-rect-p-conf.png"},
-      "playoffs": {"positions": [3, 4, 5, 6], "rect": "championship-rect-po.png", "rect_confirmed": "championship-rect-po-conf.png"},
+      "playoffs": {"positions": [3, 4, 5, 6, 7, 8], "rect": "championship-rect-po.png", "rect_confirmed": "championship-rect-po-conf.png"},
       "relegation": {"positions": [22, 23, 24], "rect": "championship-rect-r.png", "rect_confirmed": "championship-rect-r-conf.png"}
     }
   },
