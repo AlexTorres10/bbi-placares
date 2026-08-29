@@ -255,11 +255,11 @@ def obter_config_template(template_path):
             "alinhamento_nomes": "lados",  # mandante à esquerda, visitante à direita (como os marcadores)
             "pos_nome_casa": (190, h+18),  # x = margem esquerda
             "pos_nome_fora": (-190, h+18), # x negativo = margem da borda direita
-            "pos_placar": h-9,
+            "pos_placar": h-2,
             "pos_marcadores_casa": (195, h+68),  # mesmo x do nome do time
             "pos_marcadores_fora": (-195, h+68), # x negativo = margem da borda direita
             "tamanho_nome": 28,
-            "tamanho_placar": 72,
+            "tamanho_placar": 56,
             "tamanho_marcadores": 25,
             "espaco_linha": 45,
         }
