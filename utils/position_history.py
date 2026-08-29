@@ -19,6 +19,17 @@ POSICOES_FIELDNAMES = ["time", "liga", "matchday", "posicao", "data_fim_matchday
 # Weekday sets for English football calendar blocks
 _BLOCK_A = {4, 5, 6, 0}  # Fri, Sat, Sun, Mon
 
+# ── Matchday block overrides ────────────────────────────────────────────────
+# Structure: {liga_str: {date_str, ...}}
+# Dates listed here are classified into the OPPOSITE block from what their
+# weekday would normally imply. Use this when a single fixture is played a
+# day or two outside its round's usual block (e.g. one game moved to
+# Thursday ahead of an otherwise Friday-Monday round) so it merges into that
+# round instead of splitting off into its own matchday.
+_BLOCK_OVERRIDES: dict[str, set[str]] = {
+    "National League": {"2026-08-27"},  # Thu game merged into the Fri 2026-08-28 round
+}
+
 # ── Point deductions ────────────────────────────────────────────────────────
 # Structure: {liga_str: [(team, threshold_date_str, pts_to_deduct), ...]}
 # Multiple rows for the same team are cumulative (each applies independently).
@@ -51,6 +62,18 @@ def _apply_deductions(
 
 def _block(weekday: int) -> str:
     return "A" if weekday in _BLOCK_A else "B"
+
+
+def _block_for_date(d, liga_str: str) -> str:
+    """
+    Like _block(), but flips the classification for dates listed in
+    _BLOCK_OVERRIDES so a stray fixture merges into the adjacent round
+    instead of starting a new matchday.
+    """
+    natural = _block(d.weekday())
+    if d.strftime("%Y-%m-%d") in _BLOCK_OVERRIDES.get(liga_str, set()):
+        return "B" if natural == "A" else "A"
+    return natural
 
 
 def _ensure_new_schema() -> None:
@@ -138,14 +161,14 @@ def detect_matchdays(liga_str: str) -> dict[int, list[str]]:
     sorted_dates = sorted(dates_set)
     matchdays: dict[int, list[str]] = {}
     matchday_num = 1
-    current_block = _block(sorted_dates[0].weekday())
+    current_block = _block_for_date(sorted_dates[0], liga_str)
     matchdays[matchday_num] = [sorted_dates[0].strftime("%Y-%m-%d")]
 
     for i in range(1, len(sorted_dates)):
         prev = sorted_dates[i - 1]
         curr = sorted_dates[i]
         gap = (curr - prev).days
-        curr_block = _block(curr.weekday())
+        curr_block = _block_for_date(curr, liga_str)
 
         if gap > 3 or curr_block != current_block:
             matchday_num += 1
