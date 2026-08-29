@@ -242,25 +242,25 @@ def obter_config_template(template_path):
     nome = os.path.splitext(os.path.basename(template_path))[0].lower()
     
     if "premier" in nome:
-        h = 799
+        h = 905
         return {
             "fonte_normal": "fontes/premierleague.otf",
             "fonte_bold": "fontes/premierleague-bold.otf",
-            "tamanho_escudo": (84, 84),
-            "pos_escudo_casa": (145, h),
-            "pos_escudo_fora": (-229, h), # valor negativo será tratado como relativo ao width,
+            "tamanho_escudo": (67, 67),
+            "pos_escudo_casa": (116, h),
+            "pos_escudo_fora": (-183, h), # valor negativo será tratado como relativo ao width,
             "cor_texto": "#3b0643",
             "cor_texto_placar": "white",
             "cor_texto_times": "white",
             "alinhamento_nomes": "lados",  # mandante à esquerda, visitante à direita (como os marcadores)
-            "pos_nome_casa": (240, h+22),  # x = margem esquerda
-            "pos_nome_fora": (-240, h+24), # x negativo = margem da borda direita
-            "pos_placar": h+1,
-            "pos_marcadores_casa": (243, 887),  # mesmo x do nome do time
-            "pos_marcadores_fora": (-243, 887), # x negativo = margem da borda direita
-            "tamanho_nome": 36,
+            "pos_nome_casa": (190, h+18),  # x = margem esquerda
+            "pos_nome_fora": (-190, h+18), # x negativo = margem da borda direita
+            "pos_placar": h-9,
+            "pos_marcadores_casa": (195, h+68),  # mesmo x do nome do time
+            "pos_marcadores_fora": (-195, h+68), # x negativo = margem da borda direita
+            "tamanho_nome": 28,
             "tamanho_placar": 72,
-            "tamanho_marcadores": 30,
+            "tamanho_marcadores": 25,
             "espaco_linha": 45,
         }
     # elif nome == "championship":
