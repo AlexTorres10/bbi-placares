@@ -1289,12 +1289,14 @@
     }
   },
   "League One": {
-    "last_game_date": "2026-08-29",
-    "updated_at": "2026-08-29T20:19:13",
+    "last_game_date": "2026-08-30",
+    "updated_at": "2026-08-30T17:15:45",
     "data": {
       "insights": [
         "Blackpool não perde há 4 meses.",
-        "Huddersfield Town não perde há 4 meses."
+        "Huddersfield Town não perde há 4 meses.",
+        "Wigan Athletic não vence há 4 meses.",
+        "Wigan Athletic está na 3ª derrota seguida!"
       ],
       "team_insights": {
         "AFC Wimbledon": [],
@@ -1323,11 +1325,15 @@
         "Sheffield Wednesday": [],
         "Stevenage": [],
         "Stockport County": [],
-        "Wigan Athletic": [],
+        "Wigan Athletic": [
+          "Wigan Athletic não vence há 4 meses.",
+          "Wigan Athletic está na 3ª derrota seguida!"
+        ],
         "Wycombe Wanderers": []
       },
       "team_rankings": {
         "AFC Wimbledon": [
+          "AFC Wimbledon é o 3º melhor mandante!",
           "AFC Wimbledon é o 2º pior visitante!"
         ],
         "Barnsley": [
@@ -1335,7 +1341,7 @@
           "Barnsley é o melhor visitante!"
         ],
         "Blackpool": [
-          "Blackpool é o melhor mandante!"
+          "Blackpool é o 2º melhor mandante!"
         ],
         "Bradford City": [],
         "Bromley": [],
@@ -1343,7 +1349,6 @@
         "Cambridge United": [],
         "Doncaster Rovers": [],
         "Huddersfield Town": [
-          "Huddersfield Town é o 3º melhor mandante!",
           "Huddersfield Town é o 2º melhor visitante!"
         ],
         "Leicester City": [
@@ -1352,12 +1357,11 @@
         "Leyton Orient": [],
         "Luton Town": [],
         "Mansfield Town": [
+          "Mansfield Town é o melhor mandante!",
           "Mansfield Town é o pior visitante!"
         ],
         "Milton Keynes Dons": [],
-        "Notts County": [
-          "Notts County é o 2º melhor mandante!"
-        ],
+        "Notts County": [],
         "Oxford United": [],
         "Peterborough": [],
         "Plymouth Argyle": [],
@@ -1402,7 +1406,23 @@
       ],
       "home_table_full": [
         {
+          "Time": "Mansfield Town",
+          "J": 2,
+          "V": 2,
+          "E": 0,
+          "D": 0,
+          "Pts": 6
+        },
+        {
           "Time": "Blackpool",
+          "J": 2,
+          "V": 1,
+          "E": 1,
+          "D": 0,
+          "Pts": 4
+        },
+        {
+          "Time": "AFC Wimbledon",
           "J": 2,
           "V": 1,
           "E": 1,
@@ -1416,22 +1436,6 @@
           "E": 1,
           "D": 0,
           "Pts": 4
-        },
-        {
-          "Time": "Huddersfield Town",
-          "J": 1,
-          "V": 1,
-          "E": 0,
-          "D": 0,
-          "Pts": 3
-        },
-        {
-          "Time": "Plymouth Argyle",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
         },
         {
           "Time": "Bradford City",
@@ -1450,15 +1454,7 @@
           "Pts": 3
         },
         {
-          "Time": "Sheffield Wednesday",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Mansfield Town",
+          "Time": "Huddersfield Town",
           "J": 1,
           "V": 1,
           "E": 0,
@@ -1466,7 +1462,7 @@
           "Pts": 3
         },
         {
-          "Time": "Stockport County",
+          "Time": "Plymouth Argyle",
           "J": 2,
           "V": 1,
           "E": 0,
@@ -1482,6 +1478,22 @@
           "Pts": 3
         },
         {
+          "Time": "Sheffield Wednesday",
+          "J": 2,
+          "V": 1,
+          "E": 0,
+          "D": 1,
+          "Pts": 3
+        },
+        {
+          "Time": "Stockport County",
+          "J": 2,
+          "V": 1,
+          "E": 0,
+          "D": 1,
+          "Pts": 3
+        },
+        {
           "Time": "Milton Keynes Dons",
           "J": 2,
           "V": 0,
@@ -1490,23 +1502,15 @@
           "Pts": 2
         },
         {
+          "Time": "Bromley",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
           "Time": "Burton Albion",
-          "J": 1,
-          "V": 0,
-          "E": 1,
-          "D": 0,
-          "Pts": 1
-        },
-        {
-          "Time": "AFC Wimbledon",
-          "J": 1,
-          "V": 0,
-          "E": 1,
-          "D": 0,
-          "Pts": 1
-        },
-        {
-          "Time": "Doncaster Rovers",
           "J": 1,
           "V": 0,
           "E": 1,
@@ -1530,7 +1534,7 @@
           "Pts": 1
         },
         {
-          "Time": "Luton Town",
+          "Time": "Doncaster Rovers",
           "J": 1,
           "V": 0,
           "E": 1,
@@ -1538,7 +1542,7 @@
           "Pts": 1
         },
         {
-          "Time": "Bromley",
+          "Time": "Luton Town",
           "J": 1,
           "V": 0,
           "E": 1,
@@ -1629,10 +1633,10 @@
         },
         {
           "Time": "Luton Town",
-          "J": 1,
+          "J": 2,
           "V": 1,
           "E": 0,
-          "D": 0,
+          "D": 1,
           "Pts": 3
         },
         {
@@ -1644,11 +1648,11 @@
           "Pts": 3
         },
         {
-          "Time": "Burton Albion",
-          "J": 2,
+          "Time": "Oxford United",
+          "J": 1,
           "V": 1,
           "E": 0,
-          "D": 1,
+          "D": 0,
           "Pts": 3
         },
         {
@@ -1660,11 +1664,11 @@
           "Pts": 3
         },
         {
-          "Time": "Oxford United",
-          "J": 1,
+          "Time": "Burton Albion",
+          "J": 2,
           "V": 1,
           "E": 0,
-          "D": 0,
+          "D": 1,
           "Pts": 3
         },
         {
@@ -1732,7 +1736,7 @@
           "Pts": 1
         },
         {
-          "Time": "Cambridge United",
+          "Time": "Notts County",
           "J": 1,
           "V": 0,
           "E": 1,
@@ -1740,7 +1744,7 @@
           "Pts": 1
         },
         {
-          "Time": "Notts County",
+          "Time": "Cambridge United",
           "J": 1,
           "V": 0,
           "E": 1,
@@ -1765,10 +1769,10 @@
         },
         {
           "Time": "Wigan Athletic",
-          "J": 1,
+          "J": 2,
           "V": 0,
           "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 0
         },
         {
@@ -1790,6 +1794,7 @@
       ],
       "last_n_games_data": {
         "AFC Wimbledon": [
+          "V",
           "E",
           "D"
         ],
@@ -1844,10 +1849,12 @@
           "D"
         ],
         "Luton Town": [
+          "D",
           "E",
           "V"
         ],
         "Mansfield Town": [
+          "V",
           "D",
           "V"
         ],
@@ -1896,6 +1903,7 @@
         ],
         "Wigan Athletic": [
           "D",
+          "D",
           "D"
         ],
         "Wycombe Wanderers": [
@@ -1904,18 +1912,18 @@
           "E"
         ]
       },
-      "best_home": "Blackpool",
+      "best_home": "Mansfield Town",
       "worst_home": "Leicester City",
       "best_away": "Barnsley",
       "worst_away": "Mansfield Town",
       "best_attack_team": "Sheffield Wednesday, Stockport County",
       "best_attack_gols": 9,
       "worst_attack_team": "AFC Wimbledon",
-      "worst_attack_gols": 0,
+      "worst_attack_gols": 1,
       "best_defense_team": "Barnsley, Blackpool, Bradford City, Huddersfield Town",
       "best_defense_gols": 2,
-      "worst_defense_team": "Bromley",
-      "worst_defense_gols": 8
+      "worst_defense_team": "Luton Town",
+      "worst_defense_gols": 10
     }
   },
   "League Two": {
