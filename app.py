@@ -261,7 +261,7 @@ def obter_config_template(template_path):
             "tamanho_nome": 28,
             "tamanho_placar": 56,
             "tamanho_marcadores": 25,
-            "espaco_linha": 45,
+            "espaco_linha": 32,
         }
     # elif nome == "championship":
     #     # Escudos ficam fora do card (card sem "orelhas"); placar dividido dentro do card
@@ -2274,8 +2274,7 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
 
     # Teams with active point deductions → show asterisk in table.
     _PENALTY_TEAMS: dict[str, set[str]] = {
-        'championship': {'Sheffield Wednesday', 'Leicester City', 'West Bromwich',
-                         'Southampton'},
+        'championship': {'Southampton'},
     }
 
     # ── 1. Read standings file (needed for round number + table section) ──────
