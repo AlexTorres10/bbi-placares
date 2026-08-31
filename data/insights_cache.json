@@ -669,28 +669,517 @@
     }
   },
   "Premier League": {
-    "last_game_date": "2026-05-24",
-    "updated_at": "2026-08-14T10:20:28",
+    "last_game_date": "2026-08-31",
+    "updated_at": "2026-08-31T20:59:33",
     "data": {
       "insights": [],
-      "team_insights": {},
-      "team_rankings": {},
-      "teams": [],
-      "best_home": "-",
-      "worst_home": "-",
-      "best_away": "-",
-      "worst_away": "-",
-      "best_attack_team": "-",
-      "best_attack_gols": 0,
-      "worst_attack_team": "-",
+      "team_insights": {
+        "Arsenal": [],
+        "Aston Villa": [],
+        "Bournemouth": [],
+        "Brentford": [],
+        "Brighton": [],
+        "Chelsea": [],
+        "Coventry City": [],
+        "Crystal Palace": [],
+        "Everton": [],
+        "Fulham": [],
+        "Hull City": [],
+        "Ipswich Town": [],
+        "Leeds United": [],
+        "Liverpool": [],
+        "Manchester City": [],
+        "Manchester United": [],
+        "Newcastle United": [],
+        "Nottingham Forest": [],
+        "Sunderland": [],
+        "Tottenham Hotspur": []
+      },
+      "team_rankings": {
+        "Arsenal": [
+          "Arsenal é o melhor mandante!"
+        ],
+        "Aston Villa": [
+          "Aston Villa é o pior mandante!"
+        ],
+        "Bournemouth": [],
+        "Brentford": [],
+        "Brighton": [
+          "Brighton é o 2º pior visitante!"
+        ],
+        "Chelsea": [
+          "Chelsea é o 2º melhor visitante!"
+        ],
+        "Coventry City": [
+          "Coventry City é o 2º pior mandante!"
+        ],
+        "Crystal Palace": [
+          "Crystal Palace é o 3º pior mandante!"
+        ],
+        "Everton": [],
+        "Fulham": [
+          "Fulham é o 3º pior visitante!"
+        ],
+        "Hull City": [
+          "Hull City é o 2º melhor mandante!"
+        ],
+        "Ipswich Town": [
+          "Ipswich Town é o pior visitante!"
+        ],
+        "Leeds United": [
+          "Leeds United é o melhor visitante!"
+        ],
+        "Liverpool": [],
+        "Manchester City": [
+          "Manchester City é o 3º melhor mandante!",
+          "Manchester City é o 3º melhor visitante!"
+        ],
+        "Manchester United": [],
+        "Newcastle United": [],
+        "Nottingham Forest": [],
+        "Sunderland": [],
+        "Tottenham Hotspur": []
+      },
+      "teams": [
+        "Arsenal",
+        "Aston Villa",
+        "Bournemouth",
+        "Brentford",
+        "Brighton",
+        "Chelsea",
+        "Coventry City",
+        "Crystal Palace",
+        "Everton",
+        "Fulham",
+        "Hull City",
+        "Ipswich Town",
+        "Leeds United",
+        "Liverpool",
+        "Manchester City",
+        "Manchester United",
+        "Newcastle United",
+        "Nottingham Forest",
+        "Sunderland",
+        "Tottenham Hotspur"
+      ],
+      "home_table_full": [
+        {
+          "Time": "Arsenal",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Hull City",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Manchester City",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Brighton",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Manchester United",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Brentford",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Ipswich Town",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Everton",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Sunderland",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Chelsea",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Newcastle United",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Liverpool",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Leeds United",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Bournemouth",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Fulham",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Nottingham Forest",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Tottenham Hotspur",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Crystal Palace",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Coventry City",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Aston Villa",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        }
+      ],
+      "away_table_full": [
+        {
+          "Time": "Leeds United",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Chelsea",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Manchester City",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Newcastle United",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Arsenal",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Hull City",
+          "J": 1,
+          "V": 1,
+          "E": 0,
+          "D": 0,
+          "Pts": 3
+        },
+        {
+          "Time": "Nottingham Forest",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Liverpool",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Brentford",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Everton",
+          "J": 1,
+          "V": 0,
+          "E": 1,
+          "D": 0,
+          "Pts": 1
+        },
+        {
+          "Time": "Coventry City",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Manchester United",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Bournemouth",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Tottenham Hotspur",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Sunderland",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Crystal Palace",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Aston Villa",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Fulham",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Brighton",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        },
+        {
+          "Time": "Ipswich Town",
+          "J": 1,
+          "V": 0,
+          "E": 0,
+          "D": 1,
+          "Pts": 0
+        }
+      ],
+      "last_n_games_data": {
+        "Arsenal": [
+          "V",
+          "V"
+        ],
+        "Aston Villa": [
+          "D",
+          "D"
+        ],
+        "Bournemouth": [
+          "E",
+          "D"
+        ],
+        "Brentford": [
+          "E",
+          "V"
+        ],
+        "Brighton": [
+          "D",
+          "V"
+        ],
+        "Chelsea": [
+          "V",
+          "V"
+        ],
+        "Coventry City": [
+          "D",
+          "D"
+        ],
+        "Crystal Palace": [
+          "D",
+          "D"
+        ],
+        "Everton": [
+          "E",
+          "V"
+        ],
+        "Fulham": [
+          "D",
+          "D"
+        ],
+        "Hull City": [
+          "V",
+          "V"
+        ],
+        "Ipswich Town": [
+          "D",
+          "V"
+        ],
+        "Leeds United": [
+          "E",
+          "V"
+        ],
+        "Liverpool": [
+          "E",
+          "E"
+        ],
+        "Manchester City": [
+          "V",
+          "V"
+        ],
+        "Manchester United": [
+          "V",
+          "D"
+        ],
+        "Newcastle United": [
+          "V",
+          "E"
+        ],
+        "Nottingham Forest": [
+          "E",
+          "D"
+        ],
+        "Sunderland": [
+          "V",
+          "D"
+        ],
+        "Tottenham Hotspur": [
+          "D",
+          "D"
+        ]
+      },
+      "best_home": "Arsenal",
+      "worst_home": "Aston Villa",
+      "best_away": "Leeds United",
+      "worst_away": "Ipswich Town",
+      "best_attack_team": "Brighton, Chelsea",
+      "best_attack_gols": 7,
+      "worst_attack_team": "Aston Villa, Coventry City, Tottenham Hotspur",
       "worst_attack_gols": 0,
-      "best_defense_team": "-",
+      "best_defense_team": "Arsenal, Hull City",
       "best_defense_gols": 0,
-      "worst_defense_team": "-",
-      "worst_defense_gols": 0,
-      "home_table_full": [],
-      "away_table_full": [],
-      "last_n_games_data": {}
+      "worst_defense_team": "Crystal Palace, Ipswich Town",
+      "worst_defense_gols": 6
     }
   },
   "Championship": {
