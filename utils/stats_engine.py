@@ -18,6 +18,19 @@ def load_historico(liga_str: str) -> pd.DataFrame:
     return df
 
 
+def load_historico_todas_ligas() -> pd.DataFrame:
+    """
+    Carrega TODO o histórico (todas as divisões), ordenado por data.
+
+    Usado para os insights cross-temporada ("não vence há X meses"): um time
+    rebaixado/promovido troca de string de liga, então a sequência sem vencer
+    precisa ser lida no histórico completo do time, não só na divisão atual.
+    """
+    df = pd.read_csv(HISTORICO_PATH, parse_dates=['data'])
+    df = df.sort_values('data').reset_index(drop=True)
+    return df
+
+
 def _build_team_df(df_liga: pd.DataFrame, team: str) -> pd.DataFrame:
     """Constrói DataFrame de resultados de um time com colunas result/gf/gs."""
     df = df_liga[(df_liga['casa'] == team) | (df_liga['fora'] == team)].copy()
@@ -176,9 +189,12 @@ def compute_league_stats(liga_str: str) -> dict:
 
     teams = sorted(set(df_liga['casa'].unique()) | set(df_liga['fora'].unique()))
 
-    # DataFrames por time: temporada atual (insights normais) e histórico completo (cross-temporada)
+    # DataFrames por time: temporada atual (insights normais) e histórico completo (cross-temporada).
+    # O histórico completo abrange TODAS as divisões — um time rebaixado/promovido troca de
+    # string de liga, e a sequência sem vencer precisa atravessar essa fronteira.
+    df_todas_ligas = load_historico_todas_ligas()
     results_dict = {team: _build_team_df(df_liga, team) for team in teams}
-    results_dict_full = {team: _build_team_df(df_full_liga, team) for team in teams}
+    results_dict_full = {team: _build_team_df(df_todas_ligas, team) for team in teams}
 
     # Insights gerais da liga (temporada atual + cross-temporada)
     league_insights = allinsights(results_dict, liga_str, 'liga', df_full=results_dict_full)
