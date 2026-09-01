@@ -1184,10 +1184,12 @@
   },
   "Championship": {
     "last_game_date": "2026-09-01",
-    "updated_at": "2026-09-01T21:41:31",
+    "updated_at": "2026-09-01T17:54:48",
     "data": {
       "insights": [
         "Birmingham City não perde há 5 meses.",
+        "Burnley não vence há 7 meses.",
+        "Cardiff City não vence há 5 meses.",
         "Charlton Athletic está na 3ª vitória seguida!",
         "Preston North End não vence há 5 meses.",
         "Preston North End está na 4ª derrota seguida!",
@@ -1202,8 +1204,12 @@
         "Blackburn Rovers": [],
         "Bolton Wanderers": [],
         "Bristol City": [],
-        "Burnley": [],
-        "Cardiff City": [],
+        "Burnley": [
+          "Burnley não vence há 7 meses."
+        ],
+        "Cardiff City": [
+          "Cardiff City não vence há 5 meses."
+        ],
         "Charlton Athletic": [
           "Charlton Athletic está na 3ª vitória seguida!"
         ],
