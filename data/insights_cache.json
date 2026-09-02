@@ -1183,26 +1183,30 @@
     }
   },
   "Championship": {
-    "last_game_date": "2026-09-01",
-    "updated_at": "2026-09-01T17:54:48",
+    "last_game_date": "2026-09-02",
+    "updated_at": "2026-09-02T21:26:28",
     "data": {
       "insights": [
         "Birmingham City não perde há 5 meses.",
+        "Bolton Wanderers não vence fora de casa há 5 meses.",
+        "Bolton Wanderers está na 3ª derrota seguida!",
         "Burnley não vence há 7 meses.",
         "Cardiff City não vence há 5 meses.",
-        "Charlton Athletic está na 3ª vitória seguida!",
         "Preston North End não vence há 5 meses.",
         "Preston North End está na 4ª derrota seguida!",
         "Sheffield United não perde há 5 meses.",
-        "Swansea City não perde há 5 meses.",
-        "Wrexham não vence há 5 meses."
+        "Swansea City não perde há 5 meses."
       ],
       "team_insights": {
         "Birmingham City": [
           "Birmingham City não perde há 5 meses."
         ],
         "Blackburn Rovers": [],
-        "Bolton Wanderers": [],
+        "Bolton Wanderers": [
+          "Bolton Wanderers não vence fora de casa há 5 meses.",
+          "Bolton Wanderers está na 3ª derrota seguida!",
+          "Bolton Wanderers somou apenas 1 pontos nos últimos 3 jogos fora de casa."
+        ],
         "Bristol City": [],
         "Burnley": [
           "Burnley não vence há 7 meses."
@@ -1210,9 +1214,7 @@
         "Cardiff City": [
           "Cardiff City não vence há 5 meses."
         ],
-        "Charlton Athletic": [
-          "Charlton Athletic está na 3ª vitória seguida!"
-        ],
+        "Charlton Athletic": [],
         "Derby County": [],
         "Lincoln City": [],
         "Middlesbrough": [],
@@ -1227,6 +1229,7 @@
         "Sheffield United": [
           "Sheffield United não perde há 5 meses."
         ],
+        "Sheffield Wednesday": [],
         "Southampton": [],
         "Stoke City": [],
         "Swansea City": [
@@ -1236,9 +1239,7 @@
         "West Bromwich": [],
         "West Ham": [],
         "Wolverhampton": [],
-        "Wrexham": [
-          "Wrexham não vence há 5 meses."
-        ]
+        "Wrexham": []
       },
       "team_rankings": {
         "Birmingham City": [
@@ -1252,17 +1253,16 @@
         ],
         "Cardiff City": [],
         "Charlton Athletic": [
-          "Charlton Athletic é o melhor mandante!"
+          "Charlton Athletic é o 2º melhor mandante!"
         ],
         "Derby County": [],
         "Lincoln City": [],
         "Middlesbrough": [
-          "Middlesbrough é o 2º melhor mandante!",
-          "Middlesbrough é o 2º pior visitante!"
+          "Middlesbrough é o melhor mandante!"
         ],
         "Millwall": [],
         "Norwich City": [
-          "Norwich City é o 3º pior visitante!"
+          "Norwich City é o 2º pior visitante!"
         ],
         "Portsmouth": [
           "Portsmouth é o 2º pior mandante!"
@@ -1274,10 +1274,13 @@
           "Queens Park Rangers é o melhor visitante!"
         ],
         "Sheffield United": [],
+        "Sheffield Wednesday": [],
         "Southampton": [
           "Southampton é o 3º melhor mandante!"
         ],
-        "Stoke City": [],
+        "Stoke City": [
+          "Stoke City é o 3º pior visitante!"
+        ],
         "Swansea City": [
           "Swansea City é o 2º melhor visitante!"
         ],
@@ -1306,6 +1309,7 @@
         "Preston North End",
         "Queens Park Rangers",
         "Sheffield United",
+        "Sheffield Wednesday",
         "Southampton",
         "Stoke City",
         "Swansea City",
@@ -1317,7 +1321,7 @@
       ],
       "home_table_full": [
         {
-          "Time": "Charlton Athletic",
+          "Time": "Middlesbrough",
           "J": 2,
           "V": 2,
           "E": 0,
@@ -1325,7 +1329,7 @@
           "Pts": 6
         },
         {
-          "Time": "Middlesbrough",
+          "Time": "Charlton Athletic",
           "J": 2,
           "V": 2,
           "E": 0,
@@ -1341,6 +1345,14 @@
           "Pts": 6
         },
         {
+          "Time": "Sheffield United",
+          "J": 2,
+          "V": 1,
+          "E": 1,
+          "D": 0,
+          "Pts": 4
+        },
+        {
           "Time": "Wolverhampton",
           "J": 2,
           "V": 1,
@@ -1349,7 +1361,7 @@
           "Pts": 4
         },
         {
-          "Time": "Watford",
+          "Time": "Queens Park Rangers",
           "J": 2,
           "V": 1,
           "E": 1,
@@ -1365,7 +1377,7 @@
           "Pts": 4
         },
         {
-          "Time": "Sheffield United",
+          "Time": "Watford",
           "J": 2,
           "V": 1,
           "E": 1,
@@ -1373,15 +1385,15 @@
           "Pts": 4
         },
         {
-          "Time": "Norwich City",
+          "Time": "West Bromwich",
           "J": 2,
           "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
+          "E": 1,
+          "D": 0,
+          "Pts": 4
         },
         {
-          "Time": "West Ham",
+          "Time": "Blackburn Rovers",
           "J": 2,
           "V": 1,
           "E": 0,
@@ -1413,7 +1425,7 @@
           "Pts": 3
         },
         {
-          "Time": "Blackburn Rovers",
+          "Time": "Norwich City",
           "J": 2,
           "V": 1,
           "E": 0,
@@ -1421,15 +1433,23 @@
           "Pts": 3
         },
         {
-          "Time": "West Bromwich",
-          "J": 1,
+          "Time": "West Ham",
+          "J": 2,
           "V": 1,
           "E": 0,
-          "D": 0,
+          "D": 1,
           "Pts": 3
         },
         {
           "Time": "Millwall",
+          "J": 2,
+          "V": 1,
+          "E": 0,
+          "D": 1,
+          "Pts": 3
+        },
+        {
+          "Time": "Sheffield Wednesday",
           "J": 1,
           "V": 1,
           "E": 0,
@@ -1437,7 +1457,7 @@
           "Pts": 3
         },
         {
-          "Time": "Cardiff City",
+          "Time": "Burnley",
           "J": 2,
           "V": 0,
           "E": 2,
@@ -1453,27 +1473,19 @@
           "Pts": 2
         },
         {
+          "Time": "Cardiff City",
+          "J": 2,
+          "V": 0,
+          "E": 2,
+          "D": 0,
+          "Pts": 2
+        },
+        {
           "Time": "Lincoln City",
           "J": 2,
           "V": 0,
           "E": 1,
           "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Queens Park Rangers",
-          "J": 1,
-          "V": 0,
-          "E": 1,
-          "D": 0,
-          "Pts": 1
-        },
-        {
-          "Time": "Burnley",
-          "J": 1,
-          "V": 0,
-          "E": 1,
-          "D": 0,
           "Pts": 1
         },
         {
@@ -1535,6 +1547,22 @@
           "Pts": 4
         },
         {
+          "Time": "Wrexham",
+          "J": 2,
+          "V": 1,
+          "E": 1,
+          "D": 0,
+          "Pts": 4
+        },
+        {
+          "Time": "Charlton Athletic",
+          "J": 2,
+          "V": 1,
+          "E": 1,
+          "D": 0,
+          "Pts": 4
+        },
+        {
           "Time": "Bristol City",
           "J": 2,
           "V": 1,
@@ -1544,6 +1572,30 @@
         },
         {
           "Time": "Millwall",
+          "J": 2,
+          "V": 1,
+          "E": 0,
+          "D": 1,
+          "Pts": 3
+        },
+        {
+          "Time": "West Bromwich",
+          "J": 2,
+          "V": 1,
+          "E": 0,
+          "D": 1,
+          "Pts": 3
+        },
+        {
+          "Time": "Wolverhampton",
+          "J": 2,
+          "V": 1,
+          "E": 0,
+          "D": 1,
+          "Pts": 3
+        },
+        {
+          "Time": "Portsmouth",
           "J": 2,
           "V": 1,
           "E": 0,
@@ -1567,36 +1619,12 @@
           "Pts": 3
         },
         {
-          "Time": "West Bromwich",
+          "Time": "Sheffield United",
           "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Portsmouth",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Charlton Athletic",
-          "J": 1,
-          "V": 1,
-          "E": 0,
+          "V": 0,
+          "E": 2,
           "D": 0,
-          "Pts": 3
-        },
-        {
-          "Time": "Wolverhampton",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
+          "Pts": 2
         },
         {
           "Time": "Blackburn Rovers",
@@ -1615,27 +1643,27 @@
           "Pts": 2
         },
         {
-          "Time": "Sheffield United",
+          "Time": "Cardiff City",
           "J": 2,
           "V": 0,
-          "E": 2,
-          "D": 0,
-          "Pts": 2
-        },
-        {
-          "Time": "Cardiff City",
-          "J": 1,
-          "V": 0,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 1
         },
         {
-          "Time": "Wrexham",
-          "J": 1,
+          "Time": "Watford",
+          "J": 2,
           "V": 0,
           "E": 1,
-          "D": 0,
+          "D": 1,
+          "Pts": 1
+        },
+        {
+          "Time": "Bolton Wanderers",
+          "J": 3,
+          "V": 0,
+          "E": 1,
+          "D": 2,
           "Pts": 1
         },
         {
@@ -1647,15 +1675,7 @@
           "Pts": 1
         },
         {
-          "Time": "Bolton Wanderers",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Watford",
+          "Time": "Middlesbrough",
           "J": 2,
           "V": 0,
           "E": 1,
@@ -1687,14 +1707,6 @@
           "Pts": 0
         },
         {
-          "Time": "Middlesbrough",
-          "J": 1,
-          "V": 0,
-          "E": 0,
-          "D": 1,
-          "Pts": 0
-        },
-        {
           "Time": "Burnley",
           "J": 2,
           "V": 0,
@@ -1719,6 +1731,7 @@
         "Bolton Wanderers": [
           "D",
           "D",
+          "D",
           "E",
           "V"
         ],
@@ -1729,16 +1742,19 @@
           "D"
         ],
         "Burnley": [
+          "E",
           "D",
           "D",
           "E"
         ],
         "Cardiff City": [
+          "D",
           "E",
           "E",
           "E"
         ],
         "Charlton Athletic": [
+          "E",
           "V",
           "V",
           "V"
@@ -1756,11 +1772,13 @@
           "D"
         ],
         "Middlesbrough": [
+          "E",
           "V",
           "D",
           "V"
         ],
         "Millwall": [
+          "D",
           "D",
           "V",
           "V"
@@ -1785,6 +1803,7 @@
         ],
         "Queens Park Rangers": [
           "V",
+          "V",
           "E",
           "V"
         ],
@@ -1793,6 +1812,9 @@
           "E",
           "E",
           "E"
+        ],
+        "Sheffield Wednesday": [
+          "V"
         ],
         "Southampton": [
           "E",
@@ -1819,6 +1841,7 @@
           "V"
         ],
         "West Bromwich": [
+          "E",
           "D",
           "V",
           "V"
@@ -1836,23 +1859,24 @@
           "E"
         ],
         "Wrexham": [
+          "V",
           "D",
           "E",
           "E"
         ]
       },
-      "best_home": "Charlton Athletic",
+      "best_home": "Middlesbrough",
       "worst_home": "Preston North End",
       "best_away": "Queens Park Rangers",
       "worst_away": "Burnley",
       "best_attack_team": "Wolverhampton",
       "best_attack_gols": 11,
-      "worst_attack_team": "Lincoln City, Preston North End, Wrexham",
+      "worst_attack_team": "Lincoln City, Preston North End, Sheffield Wednesday",
       "worst_attack_gols": 3,
       "best_defense_team": "Swansea City",
       "best_defense_gols": 1,
-      "worst_defense_team": "Burnley, Preston North End, Stoke City",
-      "worst_defense_gols": 9
+      "worst_defense_team": "Burnley",
+      "worst_defense_gols": 10
     }
   },
   "League One": {
