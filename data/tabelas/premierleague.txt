@@ -2,6 +2,7 @@ Manchester City 2 2 0 0 6 2 4 6
 Arsenal 2 2 0 0 4 0 4 6
 Hull City 2 2 0 0 3 0 3 6
 Chelsea 2 2 0 0 7 5 2 6
+Liverpool 3 1 2 0 6 4 2 5
 Brentford 2 1 1 0 4 1 3 4
 Newcastle United 2 1 1 0 4 2 2 4
 Everton 2 1 1 0 3 1 2 4
@@ -9,8 +10,7 @@ Leeds United 2 1 1 0 2 1 1 4
 Brighton 2 1 0 1 7 4 3 3
 Manchester United 2 1 0 1 5 4 1 3
 Sunderland 2 1 0 1 2 2 0 3
-Ipswich Town 2 1 0 1 4 6 -2 3
-Liverpool 2 0 2 0 4 4 0 2
+Ipswich Town 3 1 0 2 4 8 -4 3
 Bournemouth 2 0 1 1 2 3 -1 1
 Nottingham Forest 2 0 1 1 2 3 -1 1
 Fulham 2 0 0 2 2 4 -2 0
