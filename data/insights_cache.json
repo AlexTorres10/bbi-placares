@@ -1,76 +1,136 @@
 {
   "National League": {
-    "last_game_date": "2026-08-28",
-    "updated_at": "2026-08-30T18:22:21",
+    "last_game_date": "2026-09-06",
+    "updated_at": "2026-09-06T17:57:06",
     "data": {
       "insights": [
-        "Boreham Wood não perde há 4 meses.",
-        "Boreham Wood está na 3ª vitória seguida!",
-        "Solihull Moors está na 4ª derrota seguida!",
-        "Sutton United está na 4ª vitória seguida!",
-        "Wealdstone não vence há 4 meses."
+        "Altrincham está na 3ª vitória seguida!",
+        "Barrow não vence fora de casa há 9 meses.",
+        "Boreham Wood não perde há 5 meses.",
+        "Boreham Wood não perde em casa há 8 meses.",
+        "Boreham Wood não perde fora de casa há 5 meses.",
+        "Boreham Wood está na 5ª vitória seguida!",
+        "Boreham Wood está na 3ª vitória seguida fora de casa!",
+        "Eastleigh não perde em casa há 6 meses.",
+        "FC Halifax Town está na 3ª derrota seguida fora de casa!",
+        "Gateshead não vence fora de casa há 5 meses.",
+        "Gateshead está na 3ª derrota seguida fora de casa!",
+        "Kidderminster Harriers está invicto há 5 jogos.",
+        "Scunthorpe United não vence fora de casa há 6 meses.",
+        "Scunthorpe United está na 3ª derrota seguida fora de casa!",
+        "Solihull Moors não vence em casa há 5 meses.",
+        "Solihull Moors está na 3ª derrota seguida em casa!",
+        "Solihull Moors está há 6 jogos sem vencer.",
+        "Tamworth não vence fora de casa há 6 meses.",
+        "Wealdstone não vence em casa há 5 meses.",
+        "Woking está na 3ª derrota seguida fora de casa!"
       ],
       "team_insights": {
-        "AFC Fylde": [],
+        "AFC Fylde": [
+          "AFC Fylde somou 10 pontos nos últimos 5 jogos. Excelente fase!"
+        ],
         "Aldershot Town": [],
-        "Altrincham": [],
-        "Barrow": [],
+        "Altrincham": [
+          "Altrincham está na 3ª vitória seguida!"
+        ],
+        "Barrow": [
+          "Barrow não vence fora de casa há 9 meses.",
+          "Barrow somou apenas 2 pontos nos últimos 3 jogos fora de casa."
+        ],
         "Boreham Wood": [
-          "Boreham Wood não perde há 4 meses.",
-          "Boreham Wood está na 3ª vitória seguida!"
+          "Boreham Wood não perde há 5 meses.",
+          "Boreham Wood não perde em casa há 8 meses.",
+          "Boreham Wood não perde fora de casa há 5 meses.",
+          "Boreham Wood está na 5ª vitória seguida!",
+          "Boreham Wood somou 15 pontos nos últimos 5 jogos. Excelente fase!",
+          "Boreham Wood somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Boreham Wood somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!"
         ],
         "Boston United": [],
-        "Carlisle United": [],
-        "Eastleigh": [],
-        "FC Halifax Town": [],
+        "Carlisle United": [
+          "Carlisle United somou apenas 2 pontos nos últimos 3 jogos fora de casa."
+        ],
+        "Eastleigh": [
+          "Eastleigh não perde em casa há 6 meses.",
+          "Eastleigh somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+        ],
+        "FC Halifax Town": [
+          "FC Halifax Town não pontuou nos últimos 3 jogos fora de casa."
+        ],
         "Forest Green Rovers": [],
-        "Gateshead": [],
-        "Harrogate Town": [],
+        "Gateshead": [
+          "Gateshead não vence fora de casa há 5 meses.",
+          "Gateshead não pontuou nos últimos 3 jogos fora de casa."
+        ],
+        "Harrogate Town": [
+          "Harrogate Town somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Harrogate Town somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+        ],
         "Hartlepool United": [],
         "Hornchurch": [],
-        "Kidderminster Harriers": [],
-        "Scunthorpe United": [],
+        "Kidderminster Harriers": [
+          "Kidderminster Harriers está invicto há 5 jogos.",
+          "Kidderminster Harriers somou 11 pontos nos últimos 5 jogos. Excelente fase!"
+        ],
+        "Scunthorpe United": [
+          "Scunthorpe United não vence fora de casa há 6 meses.",
+          "Scunthorpe United não pontuou nos últimos 3 jogos fora de casa."
+        ],
         "Solihull Moors": [
-          "Solihull Moors está na 4ª derrota seguida!"
+          "Solihull Moors não vence em casa há 5 meses.",
+          "Solihull Moors está há 6 jogos sem vencer.",
+          "Solihull Moors somou apenas 1 ponto nos últimos 5 jogos.",
+          "Solihull Moors não pontuou nos últimos 3 jogos em casa.",
+          "Solihull Moors somou apenas 1 pontos nos últimos 3 jogos fora de casa."
         ],
-        "Southend United": [],
-        "Sutton United": [
-          "Sutton United está na 4ª vitória seguida!"
+        "Southend United": [
+          "Southend United somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Southend United somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!"
         ],
-        "Tamworth": [],
+        "Sutton United": [],
+        "Tamworth": [
+          "Tamworth não vence fora de casa há 6 meses.",
+          "Tamworth somou apenas 1 pontos nos últimos 3 jogos fora de casa."
+        ],
         "Wealdstone": [
-          "Wealdstone não vence há 4 meses."
+          "Wealdstone não vence em casa há 5 meses.",
+          "Wealdstone somou apenas 1 pontos nos últimos 3 jogos em casa."
         ],
-        "Woking": [],
+        "Woking": [
+          "Woking não pontuou nos últimos 3 jogos fora de casa."
+        ],
         "Worthing": [],
-        "Yeovil Town": []
+        "Yeovil Town": [
+          "Yeovil Town somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Yeovil Town somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+        ]
       },
       "team_rankings": {
         "AFC Fylde": [],
         "Aldershot Town": [],
         "Altrincham": [],
-        "Barrow": [
-          "Barrow é o 2º pior mandante!"
-        ],
+        "Barrow": [],
         "Boreham Wood": [
-          "Boreham Wood é o 3º melhor visitante!"
+          "Boreham Wood é o melhor visitante!"
         ],
         "Boston United": [],
         "Carlisle United": [],
         "Eastleigh": [
-          "Eastleigh é o 2º melhor mandante!"
+          "Eastleigh é o 3º melhor mandante!"
         ],
         "FC Halifax Town": [],
         "Forest Green Rovers": [],
         "Gateshead": [
           "Gateshead é o 3º pior visitante!"
         ],
-        "Harrogate Town": [],
-        "Hartlepool United": [],
-        "Hornchurch": [
-          "Hornchurch é o melhor mandante!"
+        "Harrogate Town": [
+          "Harrogate Town é o melhor mandante!"
         ],
-        "Kidderminster Harriers": [],
+        "Hartlepool United": [],
+        "Hornchurch": [],
+        "Kidderminster Harriers": [
+          "Kidderminster Harriers é o 3º melhor visitante!"
+        ],
         "Scunthorpe United": [
           "Scunthorpe United é o pior visitante!"
         ],
@@ -80,19 +140,20 @@
         "Southend United": [
           "Southend United é o 2º melhor visitante!"
         ],
-        "Sutton United": [
-          "Sutton United é o 3º melhor mandante!",
-          "Sutton United é o melhor visitante!"
-        ],
+        "Sutton United": [],
         "Tamworth": [],
         "Wealdstone": [
-          "Wealdstone é o 3º pior mandante!"
+          "Wealdstone é o 2º pior mandante!"
         ],
         "Woking": [
           "Woking é o 2º pior visitante!"
         ],
-        "Worthing": [],
-        "Yeovil Town": []
+        "Worthing": [
+          "Worthing é o 3º pior mandante!"
+        ],
+        "Yeovil Town": [
+          "Yeovil Town é o 2º melhor mandante!"
+        ]
       },
       "teams": [
         "AFC Fylde",
@@ -122,394 +183,396 @@
       ],
       "home_table_full": [
         {
-          "Time": "Hornchurch",
-          "J": 2,
+          "Time": "Harrogate Town",
+          "J": 3,
           "V": 2,
-          "E": 0,
+          "E": 1,
           "D": 0,
-          "Pts": 6
+          "Pts": 7
+        },
+        {
+          "Time": "Yeovil Town",
+          "J": 3,
+          "V": 2,
+          "E": 1,
+          "D": 0,
+          "Pts": 7
         },
         {
           "Time": "Eastleigh",
-          "J": 2,
+          "J": 3,
+          "V": 2,
+          "E": 1,
+          "D": 0,
+          "Pts": 7
+        },
+        {
+          "Time": "Boreham Wood",
+          "J": 3,
+          "V": 2,
+          "E": 1,
+          "D": 0,
+          "Pts": 7
+        },
+        {
+          "Time": "Altrincham",
+          "J": 3,
           "V": 2,
           "E": 0,
-          "D": 0,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Hornchurch",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Hartlepool United",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Carlisle United",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "FC Halifax Town",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Aldershot Town",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Southend United",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
           "Pts": 6
         },
         {
           "Time": "Sutton United",
-          "J": 2,
+          "J": 3,
           "V": 2,
           "E": 0,
-          "D": 0,
+          "D": 1,
           "Pts": 6
         },
         {
-          "Time": "Harrogate Town",
-          "J": 2,
+          "Time": "Kidderminster Harriers",
+          "J": 3,
           "V": 1,
-          "E": 1,
+          "E": 2,
           "D": 0,
-          "Pts": 4
-        },
-        {
-          "Time": "Boreham Wood",
-          "J": 2,
-          "V": 1,
-          "E": 1,
-          "D": 0,
-          "Pts": 4
+          "Pts": 5
         },
         {
           "Time": "AFC Fylde",
-          "J": 2,
+          "J": 3,
+          "V": 1,
+          "E": 2,
+          "D": 0,
+          "Pts": 5
+        },
+        {
+          "Time": "Woking",
+          "J": 3,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 4
         },
         {
           "Time": "Scunthorpe United",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 4
         },
         {
-          "Time": "Yeovil Town",
-          "J": 2,
+          "Time": "Tamworth",
+          "J": 3,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 4
         },
         {
-          "Time": "Kidderminster Harriers",
-          "J": 2,
+          "Time": "Gateshead",
+          "J": 3,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 4
         },
         {
-          "Time": "Carlisle United",
-          "J": 2,
+          "Time": "Boston United",
+          "J": 3,
           "V": 1,
           "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 3
         },
         {
           "Time": "Forest Green Rovers",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 3
         },
         {
-          "Time": "Hartlepool United",
-          "J": 2,
+          "Time": "Barrow",
+          "J": 3,
           "V": 1,
           "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Woking",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Altrincham",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Tamworth",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Boston United",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "FC Halifax Town",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Southend United",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 3
         },
         {
           "Time": "Worthing",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Gateshead",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Aldershot Town",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 3
         },
         {
           "Time": "Wealdstone",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 1,
-          "D": 1,
+          "D": 2,
           "Pts": 1
         },
         {
-          "Time": "Barrow",
-          "J": 2,
-          "V": 0,
-          "E": 0,
-          "D": 2,
-          "Pts": 0
-        },
-        {
           "Time": "Solihull Moors",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 0
         }
       ],
       "away_table_full": [
         {
-          "Time": "Sutton United",
-          "J": 2,
-          "V": 2,
+          "Time": "Boreham Wood",
+          "J": 3,
+          "V": 3,
           "E": 0,
           "D": 0,
-          "Pts": 6
+          "Pts": 9
         },
         {
           "Time": "Southend United",
-          "J": 2,
+          "J": 3,
           "V": 2,
-          "E": 0,
-          "D": 0,
-          "Pts": 6
-        },
-        {
-          "Time": "Boreham Wood",
-          "J": 2,
-          "V": 2,
-          "E": 0,
-          "D": 0,
-          "Pts": 6
-        },
-        {
-          "Time": "Yeovil Town",
-          "J": 2,
-          "V": 1,
           "E": 1,
           "D": 0,
-          "Pts": 4
-        },
-        {
-          "Time": "Aldershot Town",
-          "J": 2,
-          "V": 1,
-          "E": 1,
-          "D": 0,
-          "Pts": 4
-        },
-        {
-          "Time": "AFC Fylde",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Worthing",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
+          "Pts": 7
         },
         {
           "Time": "Kidderminster Harriers",
-          "J": 2,
-          "V": 1,
+          "J": 3,
+          "V": 2,
           "E": 0,
           "D": 1,
-          "Pts": 3
+          "Pts": 6
         },
         {
-          "Time": "Boston United",
-          "J": 2,
-          "V": 1,
+          "Time": "Sutton United",
+          "J": 3,
+          "V": 2,
           "E": 0,
           "D": 1,
-          "Pts": 3
+          "Pts": 6
         },
         {
-          "Time": "Hornchurch",
-          "J": 2,
-          "V": 1,
+          "Time": "AFC Fylde",
+          "J": 3,
+          "V": 2,
           "E": 0,
           "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Forest Green Rovers",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
+          "Pts": 6
         },
         {
           "Time": "Harrogate Town",
-          "J": 2,
-          "V": 1,
+          "J": 3,
+          "V": 2,
           "E": 0,
           "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Forest Green Rovers",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Hornchurch",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Aldershot Town",
+          "J": 3,
+          "V": 1,
+          "E": 2,
+          "D": 0,
+          "Pts": 5
+        },
+        {
+          "Time": "Yeovil Town",
+          "J": 3,
+          "V": 1,
+          "E": 1,
+          "D": 1,
+          "Pts": 4
+        },
+        {
+          "Time": "Wealdstone",
+          "J": 3,
+          "V": 1,
+          "E": 1,
+          "D": 1,
+          "Pts": 4
+        },
+        {
+          "Time": "Worthing",
+          "J": 3,
+          "V": 1,
+          "E": 1,
+          "D": 1,
+          "Pts": 4
+        },
+        {
+          "Time": "Boston United",
+          "J": 3,
+          "V": 1,
+          "E": 1,
+          "D": 1,
+          "Pts": 4
+        },
+        {
+          "Time": "Hartlepool United",
+          "J": 3,
+          "V": 1,
+          "E": 0,
+          "D": 2,
+          "Pts": 3
+        },
+        {
+          "Time": "Altrincham",
+          "J": 3,
+          "V": 1,
+          "E": 0,
+          "D": 2,
           "Pts": 3
         },
         {
           "Time": "Eastleigh",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 3
-        },
-        {
-          "Time": "Hartlepool United",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Carlisle United",
-          "J": 2,
-          "V": 0,
-          "E": 2,
-          "D": 0,
-          "Pts": 2
         },
         {
           "Time": "Barrow",
-          "J": 2,
+          "J": 3,
           "V": 0,
-          "E": 1,
+          "E": 2,
           "D": 1,
-          "Pts": 1
+          "Pts": 2
         },
         {
-          "Time": "Wealdstone",
-          "J": 2,
+          "Time": "Carlisle United",
+          "J": 3,
           "V": 0,
-          "E": 1,
+          "E": 2,
           "D": 1,
-          "Pts": 1
+          "Pts": 2
         },
         {
           "Time": "Tamworth",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 1,
-          "D": 1,
+          "D": 2,
+          "Pts": 1
+        },
+        {
+          "Time": "Solihull Moors",
+          "J": 3,
+          "V": 0,
+          "E": 1,
+          "D": 2,
           "Pts": 1
         },
         {
           "Time": "FC Halifax Town",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 0,
-          "D": 2,
-          "Pts": 0
-        },
-        {
-          "Time": "Solihull Moors",
-          "J": 2,
-          "V": 0,
-          "E": 0,
-          "D": 2,
-          "Pts": 0
-        },
-        {
-          "Time": "Altrincham",
-          "J": 2,
-          "V": 0,
-          "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 0
         },
         {
           "Time": "Gateshead",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 0
         },
         {
           "Time": "Woking",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 0
         },
         {
           "Time": "Scunthorpe United",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 0
         }
       ],
       "last_n_games_data": {
         "AFC Fylde": [
+          "E",
+          "V",
           "V",
           "D",
           "V",
@@ -518,16 +581,22 @@
         "Aldershot Town": [
           "V",
           "E",
+          "V",
+          "E",
           "D",
           "V"
         ],
         "Altrincham": [
+          "V",
+          "V",
           "V",
           "D",
           "D",
           "D"
         ],
         "Barrow": [
+          "V",
+          "E",
           "D",
           "E",
           "D",
@@ -537,21 +606,29 @@
           "V",
           "V",
           "V",
+          "V",
+          "V",
           "E"
         ],
         "Boston United": [
+          "E",
+          "D",
           "D",
           "V",
           "V",
           "D"
         ],
         "Carlisle United": [
+          "D",
+          "V",
           "E",
           "V",
           "E",
           "D"
         ],
         "Eastleigh": [
+          "D",
+          "E",
           "V",
           "V",
           "D",
@@ -561,33 +638,45 @@
           "D",
           "V",
           "D",
+          "V",
+          "D",
           "D"
         ],
         "Forest Green Rovers": [
+          "V",
+          "D",
           "D",
           "D",
           "V",
           "V"
         ],
         "Gateshead": [
+          "E",
+          "D",
           "D",
           "D",
           "V",
           "D"
         ],
         "Harrogate Town": [
+          "V",
+          "V",
           "D",
           "E",
           "V",
           "V"
         ],
         "Hartlepool United": [
+          "V",
+          "D",
           "D",
           "D",
           "V",
           "V"
         ],
         "Hornchurch": [
+          "D",
+          "V",
           "V",
           "D",
           "V",
@@ -597,39 +686,53 @@
           "V",
           "E",
           "V",
+          "E",
+          "V",
           "D"
         ],
         "Scunthorpe United": [
+          "D",
+          "D",
           "V",
           "D",
           "D",
           "E"
         ],
         "Solihull Moors": [
+          "E",
+          "D",
           "D",
           "D",
           "D",
           "D"
         ],
         "Southend United": [
+          "V",
+          "E",
           "D",
           "V",
           "V",
           "V"
         ],
         "Sutton United": [
+          "D",
+          "D",
           "V",
           "V",
           "V",
           "V"
         ],
         "Tamworth": [
+          "E",
+          "D",
           "V",
           "D",
           "D",
           "E"
         ],
         "Wealdstone": [
+          "D",
+          "V",
           "E",
           "D",
           "D",
@@ -637,35 +740,41 @@
         ],
         "Woking": [
           "D",
+          "E",
+          "D",
           "V",
           "D",
           "D"
         ],
         "Worthing": [
+          "E",
+          "D",
           "D",
           "V",
           "D",
           "V"
         ],
         "Yeovil Town": [
+          "D",
+          "V",
           "V",
           "V",
           "E",
           "E"
         ]
       },
-      "best_home": "Hornchurch",
+      "best_home": "Harrogate Town",
       "worst_home": "Solihull Moors",
-      "best_away": "Sutton United",
+      "best_away": "Boreham Wood",
       "worst_away": "Scunthorpe United",
-      "best_attack_team": "Boreham Wood, Harrogate Town",
-      "best_attack_gols": 11,
-      "worst_attack_team": "Altrincham, Gateshead, Woking",
-      "worst_attack_gols": 3,
-      "best_defense_team": "Sutton United",
-      "best_defense_gols": 1,
+      "best_attack_team": "Boreham Wood",
+      "best_attack_gols": 16,
+      "worst_attack_team": "Woking",
+      "worst_attack_gols": 4,
+      "best_defense_team": "Aldershot Town, Hartlepool United",
+      "best_defense_gols": 4,
       "worst_defense_team": "Solihull Moors",
-      "worst_defense_gols": 13
+      "worst_defense_gols": 17
     }
   },
   "Premier League": {
