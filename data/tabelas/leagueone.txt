@@ -1,24 +1,24 @@
-Huddersfield Town 4 3 1 0 9 3 6 10
-Sheffield Wednesday 4 3 0 1 11 5 6 9
-Blackpool 4 2 1 1 8 4 4 7
-Burton Albion 4 2 1 1 8 5 3 7
-Barnsley 4 2 1 1 5 3 2 7
-Cambridge United 4 2 1 1 7 6 1 7
-Luton Town 4 2 1 1 10 10 0 7
-Leyton Orient 4 2 0 2 9 5 4 6
-Stockport County 4 2 0 2 9 6 3 6
-Notts County 4 1 3 0 6 5 1 6
-Bradford City 4 2 0 2 4 4 0 6
-Mansfield Town 4 2 0 2 8 10 -2 6
-Leicester City 4 1 2 1 4 3 1 5
-Reading 3 1 1 1 8 4 4 4
-Oxford United 3 1 1 1 5 6 -1 4
-Plymouth Argyle 4 1 1 2 4 6 -2 4
+Sheffield Wednesday 5 4 0 1 13 6 7 12
+Huddersfield Town 5 3 2 0 10 4 6 11
+Stockport County 5 3 0 2 13 6 7 9
+Bradford City 5 3 0 2 5 4 1 9
+Burton Albion 5 2 2 1 10 7 3 8
+Cambridge United 5 2 2 1 9 8 1 8
+Luton Town 5 2 2 1 11 11 0 8
+Reading 4 2 1 1 11 5 6 7
+Leyton Orient 5 2 1 2 10 6 4 7
+Oxford United 4 2 1 1 9 6 3 7
+Blackpool 5 2 1 2 9 7 2 7
+Notts County 5 1 4 0 7 6 1 7
+Plymouth Argyle 5 2 1 2 7 8 -1 7
+Barnsley 5 2 1 2 6 8 -2 7
+Stevenage 5 1 3 1 9 6 3 6
+Mansfield Town 5 2 0 3 8 11 -3 6
+Leicester City 5 1 2 2 4 7 -3 5
+Milton Keynes Dons 5 0 4 1 7 9 -2 4
 AFC Wimbledon 4 1 1 2 2 7 -5 4
-Peterborough 4 1 1 2 2 7 -5 4
+Peterborough 5 1 1 3 3 9 -6 4
 Bromley 4 1 1 2 4 13 -9 4
-Doncaster Rovers 4 0 3 1 4 5 -1 3
-Stevenage 4 0 3 1 4 5 -1 3
-Wigan Athletic 4 1 0 3 5 7 -2 3
-Milton Keynes Dons 4 0 3 1 4 6 -2 3
-Wycombe Wanderers 4 0 2 2 4 9 -5 2
+Doncaster Rovers 5 0 3 2 6 8 -2 3
+Wycombe Wanderers 5 0 3 2 7 12 -5 3
+Wigan Athletic 5 1 0 4 5 11 -6 3
