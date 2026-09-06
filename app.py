@@ -985,18 +985,13 @@ def render_table_mode():
             pass  # silently skip if table file is unavailable
 
         # Step 3 — pre-fill confirmation checkboxes with confirmed statuses.
-        # A Premier League usa template com zonas fixas (baked_template), então
-        # não há confirmações de classificação a pré-preencher.
-        if liga_key != 'premierleague':
+        # Apenas a National League ainda usa confirmação manual de classificação;
+        # Premier League usa template com zonas fixas (baked_template), e
+        # Championship/League One/League Two usam templates novos que não
+        # precisam mais de confirmação de campeão/promoção/rebaixamento.
+        if liga_key == 'nationalleague':
             # Reset the champion key first so stale True values from a previous batch don't persist
-            _champion_key = {
-                'championship': 'ch_1_champion',
-                'leagueone': 'l1_1_champion',
-                'leaguetwo': 'l2_1_champion',
-                'nationalleague': 'nl_1_champion',
-            }.get(liga_key)
-            if _champion_key:
-                st.session_state[_champion_key] = False
+            st.session_state['nl_1_champion'] = False
             if 'table_data_atual' in st.session_state:
                 try:
                     compute_mathematical_prefill(liga_key, st.session_state['table_data_atual'])
@@ -1016,6 +1011,9 @@ def render_table_mode():
             # de posição e zonas (UCL/UEL/UECL/rebaixamento) fixos no próprio PNG.
             # Não há mais confirmação de classificação a definir aqui.
             st.info("ℹ️ A tabela da Premier League usa zonas fixas do template — "
+                    "não é necessário confirmar classificações.")
+        elif st.session_state['liga_selecionada'] in ("championship", "leagueone", "leaguetwo"):
+            st.info("ℹ️ Esta tabela usa zonas fixas do template — "
                     "não é necessário confirmar classificações.")
         else:
             render_standard_league_table_options(st.session_state['liga_selecionada'])
@@ -1487,79 +1485,6 @@ def compute_mathematical_prefill(liga_key: str, table_data: list) -> None:
             if max_pts(pos) < pts(17):
                 set_key(f'pl_{pos}_relegated')
 
-    elif liga_key == 'championship':
-        # Champion
-        if pts(1) > best_rival_max_pts(2):
-            set_key('ch_1_champion')
-
-        # Auto-promoted (top 2)
-        if pts(1) > max_pts(3):
-            set_key('ch_1_promoted')
-        if pts(2) > max_pts(3):
-            set_key('ch_1_promoted')
-            set_key('ch_2_promoted')
-
-        # Playoffs (pos 3-6 only — 1 and 2 are auto-promoted)
-        # Only confirm when locked in AND can no longer reach a promotion spot
-        for pos in [3, 4, 5, 6]:
-            if pts(pos) > max_pts(7) and max_pts(pos) < pts(2):
-                set_key(f'ch_{pos}_playoffs')
-
-        # Relegated
-        for pos in [22, 23, 24]:
-            if max_pts(pos) < pts(21):
-                set_key(f'ch_{pos}_relegated')
-
-    elif liga_key == 'leagueone':
-        # Champion
-        if pts(1) > best_rival_max_pts(2):
-            set_key('l1_1_champion')
-
-        # Auto-promoted (top 2)
-        if pts(1) > max_pts(3):
-            set_key('l1_1_promoted')
-        if pts(2) > max_pts(3):
-            set_key('l1_1_promoted')
-            set_key('l1_2_promoted')
-
-        # Playoffs (pos 3-6 only — 1 and 2 are auto-promoted)
-        # Only confirm when locked in AND can no longer reach a promotion spot
-        for pos in [3, 4, 5, 6]:
-            if pts(pos) > max_pts(7) and max_pts(pos) < pts(2):
-                set_key(f'l1_{pos}_playoffs')
-
-        # Relegated
-        for pos in [21, 22, 23, 24]:
-            if max_pts(pos) < pts(20):
-                set_key(f'l1_{pos}_relegated')
-
-    elif liga_key == 'leaguetwo':
-        # Champion
-        if pts(1) > best_rival_max_pts(2):
-            set_key('l2_1_champion')
-
-        # Auto-promoted (top 3)
-        if pts(1) > max_pts(4):
-            set_key('l2_1_promoted')
-        if pts(2) > max_pts(4):
-            set_key('l2_1_promoted')
-            set_key('l2_2_promoted')
-        if pts(3) > max_pts(4):
-            set_key('l2_1_promoted')
-            set_key('l2_2_promoted')
-            set_key('l2_3_promoted')
-
-        # Playoffs (pos 4-7 only — 1, 2 and 3 are auto-promoted)
-        # Only confirm when locked in AND can no longer reach a promotion spot
-        for pos in [4, 5, 6, 7]:
-            if pts(pos) > max_pts(8) and max_pts(pos) < pts(3):
-                set_key(f'l2_{pos}_playoffs')
-
-        # Relegated
-        for pos in [23, 24]:
-            if max_pts(pos) < pts(22):
-                set_key(f'l2_{pos}_relegated')
-
     elif liga_key == 'nationalleague':
         # Champion
         if pts(1) > best_rival_max_pts(2):
@@ -1602,32 +1527,6 @@ def collect_confirmations(liga_key: str) -> Dict:
                 'relegated': st.session_state.get(f'pl_{pos}_relegated', False)
             }
     
-    elif liga_key == 'championship':
-        for pos in range(1, 25):
-            confirmations[pos] = {
-                'champion': st.session_state.get(f'ch_{pos}_champion', False),
-                'promoted': st.session_state.get(f'ch_{pos}_promoted', False),
-                'playoffs': st.session_state.get(f'ch_{pos}_playoffs', False),
-                'relegated': st.session_state.get(f'ch_{pos}_relegated', False)
-            }
-    
-    elif liga_key == 'leagueone':
-        for pos in range(1, 25):
-            confirmations[pos] = {
-                'champion': st.session_state.get(f'l1_{pos}_champion', False),
-                'promoted': st.session_state.get(f'l1_{pos}_promoted', False),
-                'playoffs': st.session_state.get(f'l1_{pos}_playoffs', False),
-                'relegated': st.session_state.get(f'l1_{pos}_relegated', False)
-            }
-    
-    elif liga_key == 'leaguetwo':
-        for pos in range(1, 25):
-            confirmations[pos] = {
-                'champion': st.session_state.get(f'l2_{pos}_champion', False),
-                'promoted': st.session_state.get(f'l2_{pos}_promoted', False),
-                'playoffs': st.session_state.get(f'l2_{pos}_playoffs', False),
-                'relegated': st.session_state.get(f'l2_{pos}_relegated', False)
-            }
     elif liga_key == 'nationalleague':
         for pos in range(1, 25):
             confirmations[pos] = {
@@ -1757,160 +1656,11 @@ def render_premier_league_table_options():
     st.session_state['confirmed_uecl'] = confirmed_uecl
 
 def render_standard_league_table_options(liga_key):
-    """Opções para Championship, League One, League Two e National League"""
+    """Opções para National League"""
     st.write("**Confirmações de classificação:**")
-    
-    # Checkboxes baseados na liga
-    if liga_key == "championship":
-        render_confirmation_checkboxes_championship()
-    elif liga_key == "leagueone":
-        render_confirmation_checkboxes_leagueone()
-    elif liga_key == "leaguetwo":
-        render_confirmation_checkboxes_leaguetwo()
-    elif liga_key == "nationalleague":
+
+    if liga_key == "nationalleague":
         render_confirmation_checkboxes_nationalleague()
-
-
-def render_confirmation_checkboxes_championship():
-    """Checkboxes para Championship"""
-    st.write("**Zona de Promoção e Play-offs:**")
-    
-    # 1º colocado
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write("**1º**")
-    with col2:
-        st.checkbox("Campeão", key="ch_1_champion")
-    with col3:
-        st.checkbox("Promovido", key="ch_1_promoted")
-    with col4:
-        st.write("")
-
-    # 2º colocado
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write("**2º**")
-    with col2:
-        st.checkbox("Promovido", key="ch_2_promoted")
-    with col3:
-        st.write("")
-    with col4:
-        st.write("")
-    
-    # 3º ao 6º - Play-offs
-    for pos in range(3, 7):
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
-            st.write(f"**{pos}º**")
-        with col2:
-            st.checkbox("Play-offs", key=f"ch_{pos}_playoffs")
-        with col3:
-            st.write("")
-        with col4:
-            st.write("")
-    
-    st.divider()
-    
-    st.write("**Zona de Rebaixamento:**")
-    for pos in [22, 23, 24]:
-        st.checkbox(f"{pos}º colocado - Rebaixado", key=f"ch_{pos}_relegated")
-
-
-def render_confirmation_checkboxes_leagueone():
-    """Checkboxes para League One"""
-    # 1º colocado
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write("**1º**")
-    with col2:
-        st.checkbox("Campeão", key="l1_1_champion")
-    with col3:
-        st.checkbox("Promovido", key="l1_1_promoted")
-    with col4:
-        st.write("")
-
-    # 2º colocado
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write("**2º**")
-    with col2:
-        st.checkbox("Promovido", key="l1_2_promoted")
-    with col3:
-        st.write("")
-    with col4:
-        st.write("")
-
-    # 3º ao 6º - Play-offs
-    for pos in range(3, 7):
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
-            st.write(f"**{pos}º**")
-        with col2:
-            st.checkbox("Play-offs", key=f"l1_{pos}_playoffs")
-        with col3:
-            st.write("")
-        with col4:
-            st.write("")
-    
-    st.divider()
-    
-    st.write("**Zona de Rebaixamento:**")
-    for pos in [21, 22, 23, 24]:
-        st.checkbox(f"{pos}º colocado - Rebaixado", key=f"l1_{pos}_relegated")
-
-
-def render_confirmation_checkboxes_leaguetwo():
-    """Checkboxes para League Two"""
-    # 1º colocado
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write("**1º**")
-    with col2:
-        st.checkbox("Campeão", key="l2_1_champion")
-    with col3:
-        st.checkbox("Promovido", key="l2_1_promoted")
-    with col4:
-        st.write("")
-
-    # 2º colocado
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write("**2º**")
-    with col2:
-        st.checkbox("Promovido", key="l2_2_promoted")
-    with col3:
-        st.write("")
-    with col4:
-        st.write("")
-
-    # 3º colocado
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write("**3º**")
-    with col2:
-        st.checkbox("Promovido", key="l2_3_promoted")
-    with col3:
-        st.write("")
-    with col4:
-        st.write("")
-    
-    # 3º ao 6º - Play-offs
-    for pos in range(4, 8):
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
-            st.write(f"**{pos}º**")
-        with col2:
-            st.checkbox("Play-offs", key=f"l2_{pos}_playoffs")
-        with col3:
-            st.write("")
-        with col4:
-            st.write("")
-    
-    st.divider()
-    
-    st.write("**Zona de Rebaixamento:**")
-    for pos in [23, 24]:
-        st.checkbox(f"{pos}º colocado - Rebaixado", key=f"l2_{pos}_relegated")
 
 
 def render_confirmation_checkboxes_nationalleague():
@@ -2579,7 +2329,7 @@ def render_stats_mode():
                 _ht[['Time', 'J', 'V', 'E', 'D', 'Pts']].reset_index(drop=True),
                 hide_index=True,
                 column_config=_col_cfg,
-                use_container_width=True,
+                width='stretch',
             )
         with _col_a:
             st.markdown("**Visitante**")
@@ -2587,7 +2337,7 @@ def render_stats_mode():
                 _at[['Time', 'J', 'V', 'E', 'D', 'Pts']].reset_index(drop=True),
                 hide_index=True,
                 column_config=_col_cfg,
-                use_container_width=True,
+                width='stretch',
             )
         st.divider()
 
@@ -2821,7 +2571,7 @@ def render_stats_mode():
             'D':   st.column_config.NumberColumn('D',   width='small'),
             'Pts': st.column_config.NumberColumn('Pts', width='small'),
         }
-        st.dataframe(_df_lastn, hide_index=True, column_config=_col_cfg_n, use_container_width=True)
+        st.dataframe(_df_lastn, hide_index=True, column_config=_col_cfg_n, width='stretch')
 
 
 # ============================================================================

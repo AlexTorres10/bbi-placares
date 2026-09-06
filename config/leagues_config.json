@@ -32,13 +32,13 @@
     "table_template": {
       "template_file": "premierleague-template.png",
       "baked_template": true,
-      "table_start": {"x": 100, "y": 182},
+      "table_start": {"x": 100, "y": 183},
       "position_offset": {"x": -25, "y": 10},
       "row_height": 50,
       "rect_width": 1080,
-      "badge_offset": {"x": 218, "y": 1},
+      "badge_offset": {"x": 220, "y": 1},
       "badge_size": {"width": 30, "height": 30},
-      "team_name_offset": {"x": 255, "y": 5},
+      "team_name_offset": {"x": 255, "y": 7},
       "stats_columns": {
         "J": 727,
         "V": 782,
@@ -182,7 +182,7 @@
     "table_template": {
       "template_file": "leagueone-template.png",
       "baked_template": true,
-      "table_start": {"x": 132, "y": 120.4},
+      "table_start": {"x": 132, "y": 122},
       "position_offset": {"x": -25, "y": 10},
       "row_height": 47.77,
       "rect_width": 1080,
@@ -253,7 +253,7 @@
     "table_template": {
       "template_file": "leaguetwo-template.png",
       "baked_template": true,
-      "table_start": {"x": 132, "y": 120.4},
+      "table_start": {"x": 132, "y": 122},
       "position_offset": {"x": -25, "y": 10},
       "row_height": 47.77,
       "rect_width": 1080,
