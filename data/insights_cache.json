@@ -2633,91 +2633,147 @@
     }
   },
   "League Two": {
-    "last_game_date": "2026-09-01",
-    "updated_at": "2026-09-01T22:40:31",
+    "last_game_date": "2026-09-06",
+    "updated_at": "2026-09-06T16:34:27",
     "data": {
       "insights": [
-        "Accrington não vence há 5 meses.",
+        "Accrington não perde em casa há 5 meses.",
         "Barnet não perde há 6 meses.",
-        "Bristol Rovers está na 3ª vitória seguida!",
+        "Barnet não perde fora de casa há 6 meses.",
+        "Bristol Rovers não perde em casa há 7 meses.",
+        "Bristol Rovers está na 4ª vitória seguida!",
+        "Bristol Rovers está na 3ª vitória seguida em casa!",
         "Crewe Alexandra não perde há 5 meses.",
+        "Crewe Alexandra não perde em casa há 5 meses.",
         "Fleetwood Town não perde há 5 meses.",
+        "Fleetwood Town não perde em casa há 5 meses.",
         "Grimsby Town não perde há 5 meses.",
-        "Tranmere Rovers não perde há 5 meses."
+        "Grimsby Town não vence fora de casa há 5 meses.",
+        "Grimsby Town não perde fora de casa há 5 meses.",
+        "Newport County está na 3ª derrota seguida fora de casa!",
+        "Oldham Athletic não vence fora de casa há 5 meses.",
+        "Port Vale não vence há 5 meses.",
+        "Port Vale está na 3ª derrota seguida fora de casa!",
+        "Rotherham United não vence fora de casa há 5 meses.",
+        "Shrewsbury Town não vence fora de casa há 6 meses.",
+        "Shrewsbury Town está na 3ª derrota seguida fora de casa!",
+        "Swindon Town está na 3ª vitória seguida em casa!",
+        "Tranmere Rovers não perde há 5 meses.",
+        "Tranmere Rovers não perde em casa há 5 meses.",
+        "Walsall está invicto há 5 jogos.",
+        "York City não vence fora de casa há 5 meses."
       ],
       "team_insights": {
         "Accrington": [
-          "Accrington não vence há 5 meses."
+          "Accrington não perde em casa há 5 meses."
         ],
         "Barnet": [
-          "Barnet não perde há 6 meses."
+          "Barnet não perde há 6 meses.",
+          "Barnet não perde fora de casa há 6 meses."
         ],
         "Bristol Rovers": [
-          "Bristol Rovers está na 3ª vitória seguida!"
+          "Bristol Rovers não perde em casa há 7 meses.",
+          "Bristol Rovers está na 4ª vitória seguida!",
+          "Bristol Rovers somou 12 pontos nos últimos 5 jogos. Excelente fase!",
+          "Bristol Rovers somou 9 pontos nos últimos 3 jogos em casa. Ótimo!"
+        ],
+        "Cheltenham Town": [
+          "Cheltenham Town somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+        ],
+        "Chesterfield": [
+          "Chesterfield somou apenas 2 pontos nos últimos 3 jogos em casa."
+        ],
+        "Colchester United": [
+          "Colchester United somou apenas 1 pontos nos últimos 3 jogos fora de casa."
+        ],
+        "Crawley Town": [],
+        "Crewe Alexandra": [
+          "Crewe Alexandra não perde há 5 meses.",
+          "Crewe Alexandra não perde em casa há 5 meses."
+        ],
+        "Exeter City": [],
+        "Fleetwood Town": [
+          "Fleetwood Town não perde há 5 meses.",
+          "Fleetwood Town não perde em casa há 5 meses."
+        ],
+        "Gillingham": [],
+        "Grimsby Town": [
+          "Grimsby Town não perde há 5 meses.",
+          "Grimsby Town não vence fora de casa há 5 meses.",
+          "Grimsby Town não perde fora de casa há 5 meses."
+        ],
+        "Newport County": [
+          "Newport County não pontuou nos últimos 3 jogos fora de casa."
+        ],
+        "Northampton Town": [],
+        "Oldham Athletic": [
+          "Oldham Athletic não vence fora de casa há 5 meses.",
+          "Oldham Athletic somou apenas 1 pontos nos últimos 3 jogos fora de casa."
+        ],
+        "Port Vale": [
+          "Port Vale não vence há 5 meses.",
+          "Port Vale somou apenas 2 pontos nos últimos 5 jogos.",
+          "Port Vale não pontuou nos últimos 3 jogos fora de casa."
+        ],
+        "Rochdale": [],
+        "Rotherham United": [
+          "Rotherham United não vence fora de casa há 5 meses.",
+          "Rotherham United somou apenas 1 pontos nos últimos 3 jogos fora de casa."
+        ],
+        "Salford City": [],
+        "Shrewsbury Town": [
+          "Shrewsbury Town não vence fora de casa há 6 meses.",
+          "Shrewsbury Town não pontuou nos últimos 3 jogos fora de casa."
+        ],
+        "Swindon Town": [
+          "Swindon Town somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Swindon Town somou 9 pontos nos últimos 3 jogos em casa. Ótimo!"
+        ],
+        "Tranmere Rovers": [
+          "Tranmere Rovers não perde há 5 meses.",
+          "Tranmere Rovers não perde em casa há 5 meses.",
+          "Tranmere Rovers somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+        ],
+        "Walsall": [
+          "Walsall está invicto há 5 jogos."
+        ],
+        "York City": [
+          "York City não vence fora de casa há 5 meses.",
+          "York City somou apenas 2 pontos nos últimos 3 jogos fora de casa."
+        ]
+      },
+      "team_rankings": {
+        "Accrington": [
+          "Accrington é o pior visitante!"
+        ],
+        "Barnet": [
+          "Barnet é o 2º melhor visitante!"
+        ],
+        "Bristol Rovers": [
+          "Bristol Rovers é o melhor mandante!"
         ],
         "Cheltenham Town": [],
         "Chesterfield": [],
         "Colchester United": [],
-        "Crawley Town": [],
-        "Crewe Alexandra": [
-          "Crewe Alexandra não perde há 5 meses."
-        ],
-        "Exeter City": [],
-        "Fleetwood Town": [
-          "Fleetwood Town não perde há 5 meses."
-        ],
-        "Gillingham": [],
-        "Grimsby Town": [
-          "Grimsby Town não perde há 5 meses."
-        ],
-        "Newport County": [],
-        "Northampton Town": [],
-        "Oldham Athletic": [],
-        "Port Vale": [],
-        "Rochdale": [],
-        "Rotherham United": [],
-        "Salford City": [],
-        "Shrewsbury Town": [],
-        "Swindon Town": [],
-        "Tranmere Rovers": [
-          "Tranmere Rovers não perde há 5 meses."
-        ],
-        "Walsall": [],
-        "York City": []
-      },
-      "team_rankings": {
-        "Accrington": [
-          "Accrington é o 2º pior visitante!"
-        ],
-        "Barnet": [
-          "Barnet é o 3º melhor visitante!"
-        ],
-        "Bristol Rovers": [],
-        "Cheltenham Town": [
-          "Cheltenham Town é o 2º melhor mandante!"
-        ],
-        "Chesterfield": [
-          "Chesterfield é o 2º pior mandante!"
-        ],
-        "Colchester United": [],
         "Crawley Town": [
           "Crawley Town é o pior mandante!"
         ],
-        "Crewe Alexandra": [
-          "Crewe Alexandra é o 2º melhor visitante!"
-        ],
+        "Crewe Alexandra": [],
         "Exeter City": [],
         "Fleetwood Town": [],
         "Gillingham": [
-          "Gillingham é o 3º pior mandante!"
+          "Gillingham é o 2º pior mandante!",
+          "Gillingham é o 3º melhor visitante!"
         ],
         "Grimsby Town": [],
         "Newport County": [
-          "Newport County é o pior visitante!"
+          "Newport County é o 2º pior visitante!"
         ],
         "Northampton Town": [],
         "Oldham Athletic": [],
-        "Port Vale": [],
+        "Port Vale": [
+          "Port Vale é o 3º pior mandante!"
+        ],
         "Rochdale": [
           "Rochdale é o 3º pior visitante!"
         ],
@@ -2725,15 +2781,15 @@
         "Salford City": [],
         "Shrewsbury Town": [],
         "Swindon Town": [
-          "Swindon Town é o 3º melhor mandante!"
+          "Swindon Town é o 2º melhor mandante!"
         ],
-        "Tranmere Rovers": [],
+        "Tranmere Rovers": [
+          "Tranmere Rovers é o 3º melhor mandante!"
+        ],
         "Walsall": [
           "Walsall é o melhor visitante!"
         ],
-        "York City": [
-          "York City é o melhor mandante!"
-        ]
+        "York City": []
       },
       "teams": [
         "Accrington",
@@ -2763,28 +2819,36 @@
       ],
       "home_table_full": [
         {
-          "Time": "York City",
-          "J": 2,
-          "V": 2,
+          "Time": "Bristol Rovers",
+          "J": 3,
+          "V": 3,
           "E": 0,
           "D": 0,
-          "Pts": 6
-        },
-        {
-          "Time": "Cheltenham Town",
-          "J": 2,
-          "V": 2,
-          "E": 0,
-          "D": 0,
-          "Pts": 6
+          "Pts": 9
         },
         {
           "Time": "Swindon Town",
-          "J": 2,
-          "V": 2,
+          "J": 3,
+          "V": 3,
           "E": 0,
           "D": 0,
-          "Pts": 6
+          "Pts": 9
+        },
+        {
+          "Time": "Tranmere Rovers",
+          "J": 3,
+          "V": 2,
+          "E": 1,
+          "D": 0,
+          "Pts": 7
+        },
+        {
+          "Time": "Cheltenham Town",
+          "J": 3,
+          "V": 2,
+          "E": 1,
+          "D": 0,
+          "Pts": 7
         },
         {
           "Time": "Oldham Athletic",
@@ -2795,11 +2859,19 @@
           "Pts": 6
         },
         {
-          "Time": "Bristol Rovers",
+          "Time": "York City",
           "J": 2,
           "V": 2,
           "E": 0,
           "D": 0,
+          "Pts": 6
+        },
+        {
+          "Time": "Salford City",
+          "J": 3,
+          "V": 2,
+          "E": 0,
+          "D": 1,
           "Pts": 6
         },
         {
@@ -2811,31 +2883,47 @@
           "Pts": 6
         },
         {
-          "Time": "Grimsby Town",
-          "J": 2,
+          "Time": "Exeter City",
+          "J": 3,
           "V": 1,
-          "E": 1,
+          "E": 2,
           "D": 0,
-          "Pts": 4
-        },
-        {
-          "Time": "Tranmere Rovers",
-          "J": 2,
-          "V": 1,
-          "E": 1,
-          "D": 0,
-          "Pts": 4
-        },
-        {
-          "Time": "Walsall",
-          "J": 2,
-          "V": 1,
-          "E": 1,
-          "D": 0,
-          "Pts": 4
+          "Pts": 5
         },
         {
           "Time": "Crewe Alexandra",
+          "J": 3,
+          "V": 1,
+          "E": 2,
+          "D": 0,
+          "Pts": 5
+        },
+        {
+          "Time": "Fleetwood Town",
+          "J": 3,
+          "V": 1,
+          "E": 2,
+          "D": 0,
+          "Pts": 5
+        },
+        {
+          "Time": "Accrington",
+          "J": 3,
+          "V": 1,
+          "E": 2,
+          "D": 0,
+          "Pts": 5
+        },
+        {
+          "Time": "Northampton Town",
+          "J": 3,
+          "V": 1,
+          "E": 2,
+          "D": 0,
+          "Pts": 5
+        },
+        {
+          "Time": "Grimsby Town",
           "J": 2,
           "V": 1,
           "E": 1,
@@ -2859,7 +2947,7 @@
           "Pts": 4
         },
         {
-          "Time": "Exeter City",
+          "Time": "Walsall",
           "J": 2,
           "V": 1,
           "E": 1,
@@ -2876,18 +2964,10 @@
         },
         {
           "Time": "Rochdale",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Salford City",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 3
         },
         {
@@ -2899,6 +2979,14 @@
           "Pts": 3
         },
         {
+          "Time": "Chesterfield",
+          "J": 3,
+          "V": 0,
+          "E": 2,
+          "D": 1,
+          "Pts": 2
+        },
+        {
           "Time": "Port Vale",
           "J": 2,
           "V": 0,
@@ -2907,39 +2995,7 @@
           "Pts": 2
         },
         {
-          "Time": "Northampton Town",
-          "J": 2,
-          "V": 0,
-          "E": 2,
-          "D": 0,
-          "Pts": 2
-        },
-        {
-          "Time": "Accrington",
-          "J": 2,
-          "V": 0,
-          "E": 2,
-          "D": 0,
-          "Pts": 2
-        },
-        {
-          "Time": "Fleetwood Town",
-          "J": 2,
-          "V": 0,
-          "E": 2,
-          "D": 0,
-          "Pts": 2
-        },
-        {
           "Time": "Gillingham",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Chesterfield",
           "J": 2,
           "V": 0,
           "E": 1,
@@ -2958,22 +3014,30 @@
       "away_table_full": [
         {
           "Time": "Walsall",
-          "J": 2,
+          "J": 3,
           "V": 1,
-          "E": 1,
+          "E": 2,
           "D": 0,
-          "Pts": 4
-        },
-        {
-          "Time": "Crewe Alexandra",
-          "J": 2,
-          "V": 1,
-          "E": 1,
-          "D": 0,
-          "Pts": 4
+          "Pts": 5
         },
         {
           "Time": "Barnet",
+          "J": 3,
+          "V": 1,
+          "E": 2,
+          "D": 0,
+          "Pts": 5
+        },
+        {
+          "Time": "Gillingham",
+          "J": 3,
+          "V": 1,
+          "E": 2,
+          "D": 0,
+          "Pts": 5
+        },
+        {
+          "Time": "Crewe Alexandra",
           "J": 2,
           "V": 1,
           "E": 1,
@@ -2990,18 +3054,18 @@
         },
         {
           "Time": "Crawley Town",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 4
         },
         {
-          "Time": "Chesterfield",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
+          "Time": "Grimsby Town",
+          "J": 3,
+          "V": 0,
+          "E": 3,
+          "D": 0,
           "Pts": 3
         },
         {
@@ -3013,11 +3077,19 @@
           "Pts": 3
         },
         {
-          "Time": "Gillingham",
+          "Time": "Chesterfield",
           "J": 2,
+          "V": 1,
+          "E": 0,
+          "D": 1,
+          "Pts": 3
+        },
+        {
+          "Time": "York City",
+          "J": 3,
           "V": 0,
           "E": 2,
-          "D": 0,
+          "D": 1,
           "Pts": 2
         },
         {
@@ -3029,30 +3101,6 @@
           "Pts": 2
         },
         {
-          "Time": "Grimsby Town",
-          "J": 2,
-          "V": 0,
-          "E": 2,
-          "D": 0,
-          "Pts": 2
-        },
-        {
-          "Time": "Oldham Athletic",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Rotherham United",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
           "Time": "Swindon Town",
           "J": 2,
           "V": 0,
@@ -3061,23 +3109,15 @@
           "Pts": 1
         },
         {
+          "Time": "Oldham Athletic",
+          "J": 3,
+          "V": 0,
+          "E": 1,
+          "D": 2,
+          "Pts": 1
+        },
+        {
           "Time": "Northampton Town",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "York City",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Colchester United",
           "J": 2,
           "V": 0,
           "E": 1,
@@ -3093,6 +3133,22 @@
           "Pts": 1
         },
         {
+          "Time": "Colchester United",
+          "J": 3,
+          "V": 0,
+          "E": 1,
+          "D": 2,
+          "Pts": 1
+        },
+        {
+          "Time": "Rotherham United",
+          "J": 3,
+          "V": 0,
+          "E": 1,
+          "D": 2,
+          "Pts": 1
+        },
+        {
           "Time": "Salford City",
           "J": 2,
           "V": 0,
@@ -3102,10 +3158,10 @@
         },
         {
           "Time": "Shrewsbury Town",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 0
         },
         {
@@ -3118,10 +3174,10 @@
         },
         {
           "Time": "Port Vale",
-          "J": 2,
+          "J": 3,
           "V": 0,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 0
         },
         {
@@ -3133,15 +3189,15 @@
           "Pts": 0
         },
         {
-          "Time": "Accrington",
-          "J": 2,
+          "Time": "Newport County",
+          "J": 3,
           "V": 0,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 0
         },
         {
-          "Time": "Newport County",
+          "Time": "Accrington",
           "J": 2,
           "V": 0,
           "E": 0,
@@ -3151,12 +3207,14 @@
       ],
       "last_n_games_data": {
         "Accrington": [
+          "V",
           "E",
           "D",
           "D",
           "E"
         ],
         "Barnet": [
+          "E",
           "E",
           "E",
           "V",
@@ -3166,9 +3224,11 @@
           "V",
           "V",
           "V",
+          "V",
           "D"
         ],
         "Cheltenham Town": [
+          "E",
           "V",
           "E",
           "D",
@@ -3176,17 +3236,20 @@
         ],
         "Chesterfield": [
           "E",
+          "E",
           "D",
           "V",
           "D"
         ],
         "Colchester United": [
           "D",
+          "D",
           "V",
           "V",
           "E"
         ],
         "Crawley Town": [
+          "D",
           "E",
           "D",
           "V",
@@ -3195,22 +3258,26 @@
         "Crewe Alexandra": [
           "E",
           "E",
+          "E",
           "V",
           "V"
         ],
         "Exeter City": [
+          "E",
           "E",
           "D",
           "V",
           "D"
         ],
         "Fleetwood Town": [
+          "V",
           "E",
           "E",
           "E",
           "V"
         ],
         "Gillingham": [
+          "V",
           "E",
           "E",
           "E",
@@ -3220,21 +3287,25 @@
           "E",
           "E",
           "E",
+          "E",
           "V"
         ],
         "Newport County": [
+          "D",
           "D",
           "E",
           "D",
           "V"
         ],
         "Northampton Town": [
+          "V",
           "E",
           "E",
           "D",
           "E"
         ],
         "Oldham Athletic": [
+          "D",
           "E",
           "V",
           "D",
@@ -3242,17 +3313,20 @@
         ],
         "Port Vale": [
           "D",
+          "D",
           "E",
           "E",
           "D"
         ],
         "Rochdale": [
+          "D",
           "V",
           "D",
           "D",
           "D"
         ],
         "Rotherham United": [
+          "D",
           "E",
           "V",
           "E",
@@ -3260,11 +3334,13 @@
         ],
         "Salford City": [
           "V",
+          "V",
           "D",
           "D",
           "D"
         ],
         "Shrewsbury Town": [
+          "D",
           "D",
           "V",
           "D",
@@ -3272,11 +3348,13 @@
         ],
         "Swindon Town": [
           "V",
+          "V",
           "D",
           "V",
           "E"
         ],
         "Tranmere Rovers": [
+          "V",
           "E",
           "E",
           "E",
@@ -3284,29 +3362,31 @@
         ],
         "Walsall": [
           "E",
+          "E",
           "V",
           "E",
           "V"
         ],
         "York City": [
+          "E",
           "D",
           "V",
           "E",
           "V"
         ]
       },
-      "best_home": "York City",
+      "best_home": "Bristol Rovers",
       "worst_home": "Crawley Town",
       "best_away": "Walsall",
-      "worst_away": "Newport County",
-      "best_attack_team": "Bristol Rovers",
-      "best_attack_gols": 11,
-      "worst_attack_team": "Gillingham, Northampton Town, Port Vale, Shrewsbury Town",
+      "worst_away": "Accrington",
+      "best_attack_team": "Barnet, Bristol Rovers",
+      "best_attack_gols": 12,
+      "worst_attack_team": "Port Vale, Shrewsbury Town",
       "worst_attack_gols": 2,
-      "best_defense_team": "Crewe Alexandra",
-      "best_defense_gols": 2,
-      "worst_defense_team": "Accrington, Newport County",
-      "worst_defense_gols": 9
+      "best_defense_team": "Crewe Alexandra, Fleetwood Town, Northampton Town",
+      "best_defense_gols": 3,
+      "worst_defense_team": "Accrington",
+      "worst_defense_gols": 11
     }
   }
 }
