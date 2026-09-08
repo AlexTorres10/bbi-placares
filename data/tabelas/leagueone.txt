@@ -12,13 +12,13 @@ Blackpool 5 2 1 2 9 7 2 7
 Notts County 5 1 4 0 7 6 1 7
 Plymouth Argyle 5 2 1 2 7 8 -1 7
 Barnsley 5 2 1 2 6 8 -2 7
+AFC Wimbledon 5 2 1 2 4 7 -3 7
 Stevenage 5 1 3 1 9 6 3 6
 Mansfield Town 5 2 0 3 8 11 -3 6
 Leicester City 5 1 2 2 4 7 -3 5
 Milton Keynes Dons 5 0 4 1 7 9 -2 4
-AFC Wimbledon 4 1 1 2 2 7 -5 4
 Peterborough 5 1 1 3 3 9 -6 4
-Bromley 4 1 1 2 4 13 -9 4
+Bromley 5 1 1 3 4 15 -11 4
 Doncaster Rovers 5 0 3 2 6 8 -2 3
 Wycombe Wanderers 5 0 3 2 7 12 -5 3
 Wigan Athletic 5 1 0 4 5 11 -6 3
