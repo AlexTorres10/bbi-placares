@@ -283,9 +283,8 @@ def obter_config_template(template_path):
     #         "pos_marcadores_fora": (-500, 1105),
     #         "espaco_linha": 20,
     #     }
-    elif nome in ("championship", "leagueone", "leaguetwo", "eflcup"):
+    elif nome in ("championship", "leaguetwo", "eflcup"):
         # Escudos ficam dentro das "orelhas" do card; placar dividido pela linha central
-        cor = {"championship": "#7f6701", "leagueone": "white", "leaguetwo": "#C10724", "eflcup": "#177E52"}[nome]
         config = {
             "fonte_normal": "fontes/premierleague-bold.otf",
             "fonte_bold": "fontes/efl-placar.otf",
@@ -304,6 +303,26 @@ def obter_config_template(template_path):
             "espaco_linha": 20,
         }
         return config
+    elif nome == "leagueone":
+            # Escudos ficam dentro das "orelhas" do card; placar dividido pela linha central
+            config = {
+                "fonte_normal": "fontes/premierleague-bold.otf",
+                "fonte_bold": "fontes/efl-placar.otf",
+                "tamanho_escudo": (164, 164),
+                "pos_escudo_casa": (170, 900),
+                "pos_escudo_fora": (-332, 900),
+                "cor_texto": "white",
+                "cor_texto_placar": "white",
+                "tamanho_placar": 180,
+                "tamanho_marcadores": 16,
+                "pos_placar": 990,
+                "placar_dividido": True,
+                "pos_placar_split_x": (428, 658),
+                "pos_marcadores_casa": (525, 1100),
+                "pos_marcadores_fora": (-525, 1100),
+                "espaco_linha": 20,
+            }
+            return config
     elif "championship" in nome or "efl" in nome or "league" in nome:
         h = 920
         return {
