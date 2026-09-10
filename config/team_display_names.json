@@ -17,7 +17,9 @@
     "Sheffield Wednesday": "Sheffield Wed."
   },
   "eflcup": {},
-  "ucl": {},
+  "ucl": {
+    "Manchester United": "Manchester Utd"
+  },
   "uel": {},
   "uecl": {}
 }

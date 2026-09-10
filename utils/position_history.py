@@ -28,6 +28,7 @@ _BLOCK_A = {4, 5, 6, 0}  # Fri, Sat, Sun, Mon
 # round instead of splitting off into its own matchday.
 _BLOCK_OVERRIDES: dict[str, set[str]] = {
     "National League": {"2026-08-27"},  # Thu game merged into the Fri 2026-08-28 round
+    "League One": {"2026-09-10"},  # Thu game merged into the Sat 2026-09-12 round
 }
 
 # ── Point deductions ────────────────────────────────────────────────────────
