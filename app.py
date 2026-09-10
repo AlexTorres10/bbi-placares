@@ -544,6 +544,8 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
             nome = "Nott'm Forest"
         if europeu and nome == "Borussia Dortmund":
             nome = "Bor. Dortmund"
+        if europeu and nome == "Manchester United":
+            nome = "Manchester Utd"
         if "facup" in path_lower and nome == "Queens Park Rangers":
             nome = "QPR"
         # Solicitação oficial do clube: exibir "Tottenham Hotspur" ou "Spurs", nunca "Tottenham"
