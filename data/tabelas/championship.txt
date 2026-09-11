@@ -1,5 +1,5 @@
+West Ham 7 4 2 1 20 9 11 14
 West Bromwich 6 4 1 1 9 6 3 13
-West Ham 6 3 2 1 14 9 5 11
 Swansea City 6 3 2 1 8 4 4 11
 Queens Park Rangers 6 3 2 1 7 4 3 11
 Charlton Athletic 6 3 2 1 6 7 -1 11
@@ -11,9 +11,9 @@ Sheffield United 6 2 3 1 8 8 0 9
 Wolverhampton 5 2 2 1 13 10 3 8
 Watford 6 2 2 2 6 7 -1 8
 Southampton 6 3 2 1 14 7 7 7
-Wrexham 6 1 4 1 7 5 2 7
 Birmingham City 6 1 4 1 8 8 0 7
 Stoke City 6 2 1 3 9 10 -1 7
+Wrexham 7 1 4 2 7 11 -4 7
 Portsmouth 5 2 0 3 7 8 -1 6
 Blackburn Rovers 6 1 2 3 7 9 -2 5
 Lincoln City 5 1 2 2 4 6 -2 5
