@@ -2145,7 +2145,7 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
         tab_lines.append("(Tabela não disponível.)")
 
     # ── 4. Destaques section ────────────────────────────────────────────────
-    dest_lines = [f"DESTAQUES — {liga_label}", ""]
+    dest_lines = [f"DESTAQUES DA LIGA — {liga_label}", ""]
     dest_lines.append(f"Melhor mandante: {data.get('best_home', '—')}")
     dest_lines.append(f"Pior mandante: {data.get('worst_home', '—')}")
     dest_lines.append(f"Melhor visitante: {data.get('best_away', '—')}")
