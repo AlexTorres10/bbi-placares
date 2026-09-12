@@ -1,24 +1,24 @@
-Bristol Rovers 5 4 0 1 12 6 6 12
-Swindon Town 5 3 1 1 8 6 2 10
-Barnet 5 2 3 0 12 8 4 9
-Tranmere Rovers 5 2 3 0 9 5 4 9
-Walsall 5 2 3 0 8 4 4 9
-Fleetwood Town 5 2 3 0 6 3 3 9
-Crewe Alexandra 5 2 3 0 5 3 2 9
-Cheltenham Town 5 2 2 1 10 9 1 8
-York City 5 2 2 1 9 8 1 8
-Oldham Athletic 5 2 1 2 7 5 2 7
-Grimsby Town 5 1 4 0 7 6 1 7
-Colchester United 5 2 1 2 6 8 -2 7
-Gillingham 5 1 3 1 6 6 0 6
-Northampton Town 5 1 3 1 3 3 0 6
-Salford City 5 2 0 3 4 6 -2 6
-Exeter City 5 1 2 2 4 4 0 5
-Chesterfield 5 1 2 2 6 7 -1 5
-Rotherham United 5 1 2 2 6 7 -1 5
-Accrington 5 1 2 2 9 11 -2 5
-Newport County 5 1 1 3 9 10 -1 4
-Crawley Town 5 1 1 3 5 8 -3 4
-Rochdale 5 1 0 4 5 10 -5 3
-Shrewsbury Town 5 1 0 4 2 10 -8 3
-Port Vale 5 0 2 3 2 7 -5 2
+Barnet 6 3 3 0 14 9 5 12
+Bristol Rovers 6 4 0 2 12 8 4 12
+York City 6 3 2 1 13 8 5 11
+Cheltenham Town 6 3 2 1 13 10 3 11
+Walsall 6 2 4 0 8 4 4 10
+Grimsby Town 6 2 4 0 9 6 3 10
+Fleetwood Town 6 2 4 0 7 4 3 10
+Crewe Alexandra 6 2 4 0 6 4 2 10
+Swindon Town 6 3 1 2 8 10 -2 10
+Tranmere Rovers 6 2 3 1 9 7 2 9
+Gillingham 6 2 3 1 8 6 2 9
+Chesterfield 6 2 2 2 8 8 0 8
+Colchester United 6 2 2 2 7 9 -2 8
+Oldham Athletic 6 2 1 3 8 7 1 7
+Salford City 6 2 1 3 7 9 -2 7
+Rotherham United 6 1 3 2 9 10 -1 6
+Northampton Town 6 1 3 2 3 5 -2 6
+Shrewsbury Town 6 2 0 4 4 10 -6 6
+Newport County 6 1 2 3 10 11 -1 5
+Exeter City 6 1 2 3 4 5 -1 5
+Accrington 6 1 2 3 10 13 -3 5
+Port Vale 6 1 2 3 3 7 -4 5
+Crawley Town 6 1 1 4 6 11 -5 4
+Rochdale 6 1 1 4 5 10 -5 4
