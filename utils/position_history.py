@@ -279,6 +279,28 @@ def compute_table_at_matchday(
     return {team: pos for pos, team in enumerate(sorted_teams, start=1)}
 
 
+def _same_matchday_block(prev_date_str: str, curr_date_str: str, liga_str: str) -> bool:
+    """
+    Decides whether two (possibly already-anchored) date strings belong to
+    the same matchday block, using the same rule as detect_matchdays():
+    same calendar block (A = Fri/Sat/Sun/Mon, B = Tue/Wed/Thu) AND a gap of
+    at most 3 days between them.
+
+    This is what lets a Saturday/Sunday round correctly REPLACE rows that
+    were stored a day or two earlier (e.g. a Friday fixture from the same
+    round) even when their exact date strings differ — which happens when
+    the earlier row's anchor date fell back to its raw match date because
+    the "anchor" weekend day had no games recorded yet at the time.
+    """
+    from datetime import date as date_cls
+    prev = date_cls.fromisoformat(prev_date_str)
+    curr = date_cls.fromisoformat(curr_date_str)
+    gap = abs((curr - prev).days)
+    if gap > 3:
+        return False
+    return _block_for_date(prev, liga_str) == _block_for_date(curr, liga_str)
+
+
 def _has_games_on_date(liga_str: str, date_str: str) -> bool:
     """Returns True if historico.csv has at least one row with liga==liga_str and data==date_str."""
     csv_path = os.path.join("data", "historico.csv")
@@ -306,14 +328,20 @@ def append_matchday_positions(
     candidate anchor date has no games, data_fim is used as-is.
 
     The replace-vs-insert decision compares the computed anchor date for
-    data_fim against the last stored anchor date (data_fim_matchday):
+    data_fim against the last stored anchor date (data_fim_matchday), using
+    the same block+gap rule as detect_matchdays() (see
+    _same_matchday_block) rather than strict string equality — so a
+    Saturday/Sunday round replaces rows from an earlier day of the SAME
+    block (e.g. a Friday fixture of the same round) instead of appending a
+    spurious extra matchday:
 
     - No previous matchday for the liga in posicoes.csv
         → INSERT, stored matchday = 1.
-    - last stored data_fim_matchday == anchor(data_fim)
+    - last stored data_fim_matchday and anchor(data_fim) fall in the same
+      block (gap <= 3 days, same Bloco A/B)
         → REPLACE: existing rows for (liga_str, last_md) are removed and
           rewritten.  stored matchday = last_md.
-    - last stored data_fim_matchday != anchor(data_fim)
+    - otherwise
         → INSERT, stored matchday = last_md + 1.
 
     Returns the number of rows added.
@@ -350,12 +378,13 @@ def append_matchday_positions(
         stored_matchday = 1
         do_replace = False
     else:
-        if last_data_fim == anchored:
-            # Same anchor date → still within the same open matchday → REPLACE
+        if last_data_fim and _same_matchday_block(last_data_fim, anchored, liga_str):
+            # Same block (e.g. Fri fixture + Sat/Sun rest of the round) →
+            # still within the same open matchday → REPLACE
             stored_matchday = last_md
             do_replace = True
         else:
-            # Different anchor date → new matchday → INSERT
+            # Different block / round → new matchday → INSERT
             stored_matchday = last_md + 1
             do_replace = False
 

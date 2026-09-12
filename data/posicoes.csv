@@ -119,8 +119,6 @@ Altrincham,National League,2,21,2026-08-15
 Barrow,National League,2,22,2026-08-15
 Solihull Moors,National League,2,23,2026-08-15
 Woking,National League,2,24,2026-08-15
-Arsenal,Premier League,1,1,2026-08-21
-Coventry City,Premier League,1,2,2026-08-21
 Bradford City,League One,2,1,2026-08-22
 Huddersfield Town,League One,2,2,2026-08-22
 Luton Town,League One,2,3,2026-08-22
@@ -193,26 +191,26 @@ Preston North End,Championship,2,21,2026-08-22
 Stoke City,Championship,2,22,2026-08-22
 Norwich City,Championship,2,23,2026-08-22
 Southampton,Championship,2,24,2026-08-22
-Brighton,Premier League,2,1,2026-08-22
-Arsenal,Premier League,2,2,2026-08-22
-Brentford,Premier League,2,3,2026-08-22
-Everton,Premier League,2,4,2026-08-22
-Hull City,Premier League,2,5,2026-08-22
-Chelsea,Premier League,2,6,2026-08-22
-Ipswich Town,Premier League,2,7,2026-08-22
-Manchester City,Premier League,2,8,2026-08-22
-Leeds United,Premier League,2,9,2026-08-22
-Liverpool,Premier League,2,10,2026-08-22
-Newcastle United,Premier League,2,11,2026-08-22
-Fulham,Premier League,2,12,2026-08-22
-Bournemouth,Premier League,2,13,2026-08-22
-Sunderland,Premier League,2,14,2026-08-22
-Nottingham Forest,Premier League,2,15,2026-08-22
-Crystal Palace,Premier League,2,16,2026-08-22
-Manchester United,Premier League,2,17,2026-08-22
-Coventry City,Premier League,2,18,2026-08-22
-Tottenham Hotspur,Premier League,2,19,2026-08-22
-Aston Villa,Premier League,2,20,2026-08-22
+Brighton,Premier League,1,1,2026-08-22
+Arsenal,Premier League,1,2,2026-08-22
+Brentford,Premier League,1,3,2026-08-22
+Everton,Premier League,1,4,2026-08-22
+Hull City,Premier League,1,5,2026-08-22
+Chelsea,Premier League,1,6,2026-08-22
+Ipswich Town,Premier League,1,7,2026-08-22
+Manchester City,Premier League,1,8,2026-08-22
+Leeds United,Premier League,1,9,2026-08-22
+Liverpool,Premier League,1,10,2026-08-22
+Newcastle United,Premier League,1,11,2026-08-22
+Fulham,Premier League,1,12,2026-08-22
+Bournemouth,Premier League,1,13,2026-08-22
+Sunderland,Premier League,1,14,2026-08-22
+Nottingham Forest,Premier League,1,15,2026-08-22
+Crystal Palace,Premier League,1,16,2026-08-22
+Manchester United,Premier League,1,17,2026-08-22
+Coventry City,Premier League,1,18,2026-08-22
+Tottenham Hotspur,Premier League,1,19,2026-08-22
+Aston Villa,Premier League,1,20,2026-08-22
 Southend United,National League,3,1,2026-08-22
 Sutton United,National League,3,2,2026-08-22
 Harrogate Town,National League,3,3,2026-08-22
@@ -237,50 +235,6 @@ Wealdstone,National League,3,21,2026-08-22
 Tamworth,National League,3,22,2026-08-22
 Altrincham,National League,3,23,2026-08-22
 Solihull Moors,National League,3,24,2026-08-22
-Manchester City,Premier League,3,1,2026-08-28
-Brighton,Premier League,3,2,2026-08-28
-Arsenal,Premier League,3,3,2026-08-28
-Brentford,Premier League,3,4,2026-08-28
-Everton,Premier League,3,5,2026-08-28
-Hull City,Premier League,3,6,2026-08-28
-Chelsea,Premier League,3,7,2026-08-28
-Ipswich Town,Premier League,3,8,2026-08-28
-Leeds United,Premier League,3,9,2026-08-28
-Liverpool,Premier League,3,10,2026-08-28
-Newcastle United,Premier League,3,11,2026-08-28
-Fulham,Premier League,3,12,2026-08-28
-Bournemouth,Premier League,3,13,2026-08-28
-Sunderland,Premier League,3,14,2026-08-28
-Nottingham Forest,Premier League,3,15,2026-08-28
-Manchester United,Premier League,3,16,2026-08-28
-Coventry City,Premier League,3,17,2026-08-28
-Tottenham Hotspur,Premier League,3,18,2026-08-28
-Aston Villa,Premier League,3,19,2026-08-28
-Crystal Palace,Premier League,3,20,2026-08-28
-Sutton United,National League,4,1,2026-08-28
-Boreham Wood,National League,4,2,2026-08-28
-Southend United,National League,4,3,2026-08-28
-Hornchurch,National League,4,4,2026-08-28
-Eastleigh,National League,4,5,2026-08-28
-Yeovil Town,National League,4,6,2026-08-28
-Harrogate Town,National League,4,7,2026-08-28
-AFC Fylde,National League,4,8,2026-08-28
-Aldershot Town,National League,4,9,2026-08-28
-Kidderminster Harriers,National League,4,10,2026-08-28
-Boston United,National League,4,11,2026-08-28
-Hartlepool United,National League,4,12,2026-08-28
-Worthing,National League,4,13,2026-08-28
-Forest Green Rovers,National League,4,14,2026-08-28
-Carlisle United,National League,4,15,2026-08-28
-Scunthorpe United,National League,4,16,2026-08-28
-Tamworth,National League,4,17,2026-08-28
-FC Halifax Town,National League,4,18,2026-08-28
-Altrincham,National League,4,19,2026-08-28
-Gateshead,National League,4,20,2026-08-28
-Woking,National League,4,21,2026-08-28
-Wealdstone,National League,4,22,2026-08-28
-Barrow,National League,4,23,2026-08-28
-Solihull Moors,National League,4,24,2026-08-28
 Charlton Athletic,Championship,3,1,2026-08-29
 Wolverhampton,Championship,3,2,2026-08-29
 Swansea City,Championship,3,3,2026-08-29
@@ -353,50 +307,50 @@ Gillingham,League Two,3,21,2026-08-29
 Accrington,League Two,3,22,2026-08-29
 Salford City,League Two,3,23,2026-08-29
 Rochdale,League Two,3,24,2026-08-29
-Manchester City,Premier League,4,1,2026-08-29
-Arsenal,Premier League,4,2,2026-08-29
-Hull City,Premier League,4,3,2026-08-29
-Chelsea,Premier League,4,4,2026-08-29
-Brentford,Premier League,4,5,2026-08-29
-Newcastle United,Premier League,4,6,2026-08-29
-Everton,Premier League,4,7,2026-08-29
-Leeds United,Premier League,4,8,2026-08-29
-Brighton,Premier League,4,9,2026-08-29
-Manchester United,Premier League,4,10,2026-08-29
-Sunderland,Premier League,4,11,2026-08-29
-Ipswich Town,Premier League,4,12,2026-08-29
-Liverpool,Premier League,4,13,2026-08-29
-Bournemouth,Premier League,4,14,2026-08-29
-Nottingham Forest,Premier League,4,15,2026-08-29
-Fulham,Premier League,4,16,2026-08-29
-Coventry City,Premier League,4,17,2026-08-29
-Crystal Palace,Premier League,4,18,2026-08-29
-Aston Villa,Premier League,4,19,2026-08-29
-Tottenham Hotspur,Premier League,4,20,2026-08-29
-Boreham Wood,National League,5,1,2026-08-31
-Sutton United,National League,5,2,2026-08-31
-Hornchurch,National League,5,3,2026-08-31
-Yeovil Town,National League,5,4,2026-08-31
-Harrogate Town,National League,5,5,2026-08-31
-AFC Fylde,National League,5,6,2026-08-31
-Southend United,National League,5,7,2026-08-31
-Eastleigh,National League,5,8,2026-08-31
-Carlisle United,National League,5,9,2026-08-31
-Aldershot Town,National League,5,10,2026-08-31
-Kidderminster Harriers,National League,5,11,2026-08-31
-FC Halifax Town,National League,5,12,2026-08-31
-Boston United,National League,5,13,2026-08-31
-Hartlepool United,National League,5,14,2026-08-31
-Worthing,National League,5,15,2026-08-31
-Altrincham,National League,5,16,2026-08-31
-Forest Green Rovers,National League,5,17,2026-08-31
-Wealdstone,National League,5,18,2026-08-31
-Scunthorpe United,National League,5,19,2026-08-31
-Tamworth,National League,5,20,2026-08-31
-Woking,National League,5,21,2026-08-31
-Gateshead,National League,5,22,2026-08-31
-Barrow,National League,5,23,2026-08-31
-Solihull Moors,National League,5,24,2026-08-31
+Manchester City,Premier League,2,1,2026-08-29
+Arsenal,Premier League,2,2,2026-08-29
+Hull City,Premier League,2,3,2026-08-29
+Chelsea,Premier League,2,4,2026-08-29
+Brentford,Premier League,2,5,2026-08-29
+Newcastle United,Premier League,2,6,2026-08-29
+Everton,Premier League,2,7,2026-08-29
+Leeds United,Premier League,2,8,2026-08-29
+Brighton,Premier League,2,9,2026-08-29
+Manchester United,Premier League,2,10,2026-08-29
+Sunderland,Premier League,2,11,2026-08-29
+Ipswich Town,Premier League,2,12,2026-08-29
+Liverpool,Premier League,2,13,2026-08-29
+Bournemouth,Premier League,2,14,2026-08-29
+Nottingham Forest,Premier League,2,15,2026-08-29
+Fulham,Premier League,2,16,2026-08-29
+Coventry City,Premier League,2,17,2026-08-29
+Crystal Palace,Premier League,2,18,2026-08-29
+Aston Villa,Premier League,2,19,2026-08-29
+Tottenham Hotspur,Premier League,2,20,2026-08-29
+Boreham Wood,National League,4,1,2026-08-31
+Sutton United,National League,4,2,2026-08-31
+Hornchurch,National League,4,3,2026-08-31
+Yeovil Town,National League,4,4,2026-08-31
+Harrogate Town,National League,4,5,2026-08-31
+AFC Fylde,National League,4,6,2026-08-31
+Southend United,National League,4,7,2026-08-31
+Eastleigh,National League,4,8,2026-08-31
+Carlisle United,National League,4,9,2026-08-31
+Aldershot Town,National League,4,10,2026-08-31
+Kidderminster Harriers,National League,4,11,2026-08-31
+FC Halifax Town,National League,4,12,2026-08-31
+Boston United,National League,4,13,2026-08-31
+Hartlepool United,National League,4,14,2026-08-31
+Worthing,National League,4,15,2026-08-31
+Altrincham,National League,4,16,2026-08-31
+Forest Green Rovers,National League,4,17,2026-08-31
+Wealdstone,National League,4,18,2026-08-31
+Scunthorpe United,National League,4,19,2026-08-31
+Tamworth,National League,4,20,2026-08-31
+Woking,National League,4,21,2026-08-31
+Gateshead,National League,4,22,2026-08-31
+Barrow,National League,4,23,2026-08-31
+Solihull Moors,National League,4,24,2026-08-31
 Bristol Rovers,League Two,4,1,2026-09-01
 Barnet,League Two,4,2,2026-09-01
 Walsall,League Two,4,3,2026-09-01
@@ -469,26 +423,6 @@ Stevenage,League One,4,21,2026-09-01
 Wigan Athletic,League One,4,22,2026-09-01
 Milton Keynes Dons,League One,4,23,2026-09-01
 Wycombe Wanderers,League One,4,24,2026-09-01
-Manchester City,Premier League,5,1,2026-09-04
-Arsenal,Premier League,5,2,2026-09-04
-Hull City,Premier League,5,3,2026-09-04
-Chelsea,Premier League,5,4,2026-09-04
-Liverpool,Premier League,5,5,2026-09-04
-Brentford,Premier League,5,6,2026-09-04
-Newcastle United,Premier League,5,7,2026-09-04
-Everton,Premier League,5,8,2026-09-04
-Leeds United,Premier League,5,9,2026-09-04
-Brighton,Premier League,5,10,2026-09-04
-Manchester United,Premier League,5,11,2026-09-04
-Sunderland,Premier League,5,12,2026-09-04
-Ipswich Town,Premier League,5,13,2026-09-04
-Bournemouth,Premier League,5,14,2026-09-04
-Nottingham Forest,Premier League,5,15,2026-09-04
-Fulham,Premier League,5,16,2026-09-04
-Coventry City,Premier League,5,17,2026-09-04
-Crystal Palace,Premier League,5,18,2026-09-04
-Aston Villa,Premier League,5,19,2026-09-04
-Tottenham Hotspur,Premier League,5,20,2026-09-04
 Swansea City,Championship,5,1,2026-09-05
 Middlesbrough,Championship,5,2,2026-09-05
 Queens Park Rangers,Championship,5,3,2026-09-05
@@ -561,50 +495,50 @@ Crawley Town,League Two,5,21,2026-09-06
 Rochdale,League Two,5,22,2026-09-06
 Shrewsbury Town,League Two,5,23,2026-09-06
 Port Vale,League Two,5,24,2026-09-06
-Manchester City,Premier League,6,1,2026-09-05
-Arsenal,Premier League,6,2,2026-09-05
-Hull City,Premier League,6,3,2026-09-05
-Chelsea,Premier League,6,4,2026-09-05
-Brentford,Premier League,6,5,2026-09-05
-Liverpool,Premier League,6,6,2026-09-05
-Newcastle United,Premier League,6,7,2026-09-05
-Everton,Premier League,6,8,2026-09-05
-Leeds United,Premier League,6,9,2026-09-05
-Brighton,Premier League,6,10,2026-09-05
-Manchester United,Premier League,6,11,2026-09-05
-Sunderland,Premier League,6,12,2026-09-05
-Crystal Palace,Premier League,6,13,2026-09-05
-Ipswich Town,Premier League,6,14,2026-09-05
-Bournemouth,Premier League,6,15,2026-09-05
-Nottingham Forest,Premier League,6,16,2026-09-05
-Aston Villa,Premier League,6,17,2026-09-05
-Tottenham Hotspur,Premier League,6,18,2026-09-05
-Fulham,Premier League,6,19,2026-09-05
-Coventry City,Premier League,6,20,2026-09-05
-Boreham Wood,National League,6,1,2026-09-05
-Harrogate Town,National League,6,2,2026-09-05
-Southend United,National League,6,3,2026-09-05
-Hornchurch,National League,6,4,2026-09-05
-Sutton United,National League,6,5,2026-09-05
-AFC Fylde,National League,6,6,2026-09-05
-Yeovil Town,National League,6,7,2026-09-05
-Kidderminster Harriers,National League,6,8,2026-09-05
-Aldershot Town,National League,6,9,2026-09-05
-Eastleigh,National League,6,10,2026-09-05
-Hartlepool United,National League,6,11,2026-09-05
-Altrincham,National League,6,12,2026-09-05
-Forest Green Rovers,National League,6,13,2026-09-05
-Carlisle United,National League,6,14,2026-09-05
-Boston United,National League,6,15,2026-09-05
-Worthing,National League,6,16,2026-09-05
-FC Halifax Town,National League,6,17,2026-09-05
-Barrow,National League,6,18,2026-09-05
-Tamworth,National League,6,19,2026-09-05
-Wealdstone,National League,6,20,2026-09-05
-Scunthorpe United,National League,6,21,2026-09-05
-Gateshead,National League,6,22,2026-09-05
-Woking,National League,6,23,2026-09-05
-Solihull Moors,National League,6,24,2026-09-05
+Manchester City,Premier League,3,1,2026-09-05
+Arsenal,Premier League,3,2,2026-09-05
+Hull City,Premier League,3,3,2026-09-05
+Chelsea,Premier League,3,4,2026-09-05
+Brentford,Premier League,3,5,2026-09-05
+Liverpool,Premier League,3,6,2026-09-05
+Newcastle United,Premier League,3,7,2026-09-05
+Everton,Premier League,3,8,2026-09-05
+Leeds United,Premier League,3,9,2026-09-05
+Brighton,Premier League,3,10,2026-09-05
+Manchester United,Premier League,3,11,2026-09-05
+Sunderland,Premier League,3,12,2026-09-05
+Crystal Palace,Premier League,3,13,2026-09-05
+Ipswich Town,Premier League,3,14,2026-09-05
+Bournemouth,Premier League,3,15,2026-09-05
+Nottingham Forest,Premier League,3,16,2026-09-05
+Aston Villa,Premier League,3,17,2026-09-05
+Tottenham Hotspur,Premier League,3,18,2026-09-05
+Fulham,Premier League,3,19,2026-09-05
+Coventry City,Premier League,3,20,2026-09-05
+Boreham Wood,National League,5,1,2026-09-05
+Harrogate Town,National League,5,2,2026-09-05
+Southend United,National League,5,3,2026-09-05
+Hornchurch,National League,5,4,2026-09-05
+Sutton United,National League,5,5,2026-09-05
+AFC Fylde,National League,5,6,2026-09-05
+Yeovil Town,National League,5,7,2026-09-05
+Kidderminster Harriers,National League,5,8,2026-09-05
+Aldershot Town,National League,5,9,2026-09-05
+Eastleigh,National League,5,10,2026-09-05
+Hartlepool United,National League,5,11,2026-09-05
+Altrincham,National League,5,12,2026-09-05
+Forest Green Rovers,National League,5,13,2026-09-05
+Carlisle United,National League,5,14,2026-09-05
+Boston United,National League,5,15,2026-09-05
+Worthing,National League,5,16,2026-09-05
+FC Halifax Town,National League,5,17,2026-09-05
+Barrow,National League,5,18,2026-09-05
+Tamworth,National League,5,19,2026-09-05
+Wealdstone,National League,5,20,2026-09-05
+Scunthorpe United,National League,5,21,2026-09-05
+Gateshead,National League,5,22,2026-09-05
+Woking,National League,5,23,2026-09-05
+Solihull Moors,National League,5,24,2026-09-05
 Sheffield Wednesday,League One,6,1,2026-09-08
 Huddersfield Town,League One,6,2,2026-09-08
 Stockport County,League One,6,3,2026-09-08
@@ -653,50 +587,26 @@ Bolton Wanderers,Championship,6,21,2026-09-08
 Derby County,Championship,6,22,2026-09-08
 Burnley,Championship,6,23,2026-09-08
 Preston North End,Championship,6,24,2026-09-08
-West Ham,Championship,7,1,2026-09-11
-West Bromwich,Championship,7,2,2026-09-11
-Swansea City,Championship,7,3,2026-09-11
-Queens Park Rangers,Championship,7,4,2026-09-11
-Charlton Athletic,Championship,7,5,2026-09-11
-Middlesbrough,Championship,7,6,2026-09-11
-Bristol City,Championship,7,7,2026-09-11
-Millwall,Championship,7,8,2026-09-11
-Norwich City,Championship,7,9,2026-09-11
-Sheffield United,Championship,7,10,2026-09-11
-Wolverhampton,Championship,7,11,2026-09-11
-Watford,Championship,7,12,2026-09-11
-Southampton,Championship,7,13,2026-09-11
-Birmingham City,Championship,7,14,2026-09-11
-Stoke City,Championship,7,15,2026-09-11
-Wrexham,Championship,7,16,2026-09-11
-Portsmouth,Championship,7,17,2026-09-11
-Blackburn Rovers,Championship,7,18,2026-09-11
-Lincoln City,Championship,7,19,2026-09-11
-Cardiff City,Championship,7,20,2026-09-11
-Bolton Wanderers,Championship,7,21,2026-09-11
-Derby County,Championship,7,22,2026-09-11
-Burnley,Championship,7,23,2026-09-11
-Preston North End,Championship,7,24,2026-09-11
-Manchester City,Premier League,7,1,2026-09-12
-Arsenal,Premier League,7,2,2026-09-12
-Hull City,Premier League,7,3,2026-09-12
-Chelsea,Premier League,7,4,2026-09-12
-Brentford,Premier League,7,5,2026-09-12
-Liverpool,Premier League,7,6,2026-09-12
-Ipswich Town,Premier League,7,7,2026-09-12
-Newcastle United,Premier League,7,8,2026-09-12
-Everton,Premier League,7,9,2026-09-12
-Leeds United,Premier League,7,10,2026-09-12
-Brighton,Premier League,7,11,2026-09-12
-Manchester United,Premier League,7,12,2026-09-12
-Sunderland,Premier League,7,13,2026-09-12
-Bournemouth,Premier League,7,14,2026-09-12
-Nottingham Forest,Premier League,7,15,2026-09-12
-Crystal Palace,Premier League,7,16,2026-09-12
-Aston Villa,Premier League,7,17,2026-09-12
-Fulham,Premier League,7,18,2026-09-12
-Tottenham Hotspur,Premier League,7,19,2026-09-12
-Coventry City,Premier League,7,20,2026-09-12
+Manchester City,Premier League,4,1,2026-09-12
+Arsenal,Premier League,4,2,2026-09-12
+Hull City,Premier League,4,3,2026-09-12
+Chelsea,Premier League,4,4,2026-09-12
+Brentford,Premier League,4,5,2026-09-12
+Liverpool,Premier League,4,6,2026-09-12
+Ipswich Town,Premier League,4,7,2026-09-12
+Newcastle United,Premier League,4,8,2026-09-12
+Everton,Premier League,4,9,2026-09-12
+Leeds United,Premier League,4,10,2026-09-12
+Brighton,Premier League,4,11,2026-09-12
+Manchester United,Premier League,4,12,2026-09-12
+Sunderland,Premier League,4,13,2026-09-12
+Bournemouth,Premier League,4,14,2026-09-12
+Nottingham Forest,Premier League,4,15,2026-09-12
+Crystal Palace,Premier League,4,16,2026-09-12
+Aston Villa,Premier League,4,17,2026-09-12
+Fulham,Premier League,4,18,2026-09-12
+Tottenham Hotspur,Premier League,4,19,2026-09-12
+Coventry City,Premier League,4,20,2026-09-12
 Sheffield Wednesday,League One,7,1,2026-09-12
 Huddersfield Town,League One,7,2,2026-09-12
 Bradford City,League One,7,3,2026-09-12
@@ -745,27 +655,27 @@ Accrington,League Two,6,21,2026-09-12
 Port Vale,League Two,6,22,2026-09-12
 Crawley Town,League Two,6,23,2026-09-12
 Rochdale,League Two,6,24,2026-09-12
-West Ham,Championship,8,1,2026-09-12
-Swansea City,Championship,8,2,2026-09-12
-West Bromwich,Championship,8,3,2026-09-12
-Middlesbrough,Championship,8,4,2026-09-12
-Queens Park Rangers,Championship,8,5,2026-09-12
-Charlton Athletic,Championship,8,6,2026-09-12
-Southampton,Championship,8,7,2026-09-12
-Birmingham City,Championship,8,8,2026-09-12
-Stoke City,Championship,8,9,2026-09-12
-Bristol City,Championship,8,10,2026-09-12
-Norwich City,Championship,8,11,2026-09-12
-Millwall,Championship,8,12,2026-09-12
-Sheffield United,Championship,8,13,2026-09-12
-Wolverhampton,Championship,8,14,2026-09-12
-Blackburn Rovers,Championship,8,15,2026-09-12
-Lincoln City,Championship,8,16,2026-09-12
-Watford,Championship,8,17,2026-09-12
-Portsmouth,Championship,8,18,2026-09-12
-Wrexham,Championship,8,19,2026-09-12
-Bolton Wanderers,Championship,8,20,2026-09-12
-Cardiff City,Championship,8,21,2026-09-12
-Derby County,Championship,8,22,2026-09-12
-Preston North End,Championship,8,23,2026-09-12
-Burnley,Championship,8,24,2026-09-12
+West Ham,Championship,7,1,2026-09-12
+Swansea City,Championship,7,2,2026-09-12
+West Bromwich,Championship,7,3,2026-09-12
+Middlesbrough,Championship,7,4,2026-09-12
+Queens Park Rangers,Championship,7,5,2026-09-12
+Charlton Athletic,Championship,7,6,2026-09-12
+Southampton,Championship,7,7,2026-09-12
+Birmingham City,Championship,7,8,2026-09-12
+Stoke City,Championship,7,9,2026-09-12
+Bristol City,Championship,7,10,2026-09-12
+Norwich City,Championship,7,11,2026-09-12
+Millwall,Championship,7,12,2026-09-12
+Sheffield United,Championship,7,13,2026-09-12
+Wolverhampton,Championship,7,14,2026-09-12
+Blackburn Rovers,Championship,7,15,2026-09-12
+Lincoln City,Championship,7,16,2026-09-12
+Watford,Championship,7,17,2026-09-12
+Portsmouth,Championship,7,18,2026-09-12
+Wrexham,Championship,7,19,2026-09-12
+Bolton Wanderers,Championship,7,20,2026-09-12
+Cardiff City,Championship,7,21,2026-09-12
+Derby County,Championship,7,22,2026-09-12
+Preston North End,Championship,7,23,2026-09-12
+Burnley,Championship,7,24,2026-09-12
