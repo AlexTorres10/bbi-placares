@@ -19,17 +19,17 @@ POSICOES_FIELDNAMES = ["time", "liga", "matchday", "posicao", "data_fim_matchday
 # Weekday sets for English football calendar blocks
 _BLOCK_A = {4, 5, 6, 0}  # Fri, Sat, Sun, Mon
 
-# ── Matchday block overrides ────────────────────────────────────────────────
-# Structure: {liga_str: {date_str, ...}}
-# Dates listed here are classified into the OPPOSITE block from what their
-# weekday would normally imply. Use this when a single fixture is played a
-# day or two outside its round's usual block (e.g. one game moved to
-# Thursday ahead of an otherwise Friday-Monday round) so it merges into that
-# round instead of splitting off into its own matchday.
-_BLOCK_OVERRIDES: dict[str, set[str]] = {
-    "National League": {"2026-08-27"},  # Thu game merged into the Fri 2026-08-28 round
-    "League One": {"2026-09-10"},  # Thu game merged into the Sat 2026-09-12 round
-}
+# ── Thursday block classification ───────────────────────────────────────────
+# A Thursday fixture is normally Block B (Tue/Wed/Thu), but leagues like
+# League One often play a single Thursday fixture (an anticipation/postponed
+# game) that belongs to an otherwise Fri/Sat/Sun/Mon round rather than to a
+# genuine midweek round. To tell the two apart, a Thursday is only treated as
+# its own Block B round when there's a real midweek round around it — i.e.
+# at least _MIN_MIDWEEK_ROUND_GAMES fixtures on the preceding Tuesday and/or
+# Wednesday for the same league. Otherwise it's folded into Block A so it
+# merges with the adjacent weekend round instead of splitting off into its
+# own matchday.
+_MIN_MIDWEEK_ROUND_GAMES = 3
 
 # ── Point deductions ────────────────────────────────────────────────────────
 # Structure: {liga_str: [(team, threshold_date_str, pts_to_deduct), ...]}
@@ -65,15 +65,35 @@ def _block(weekday: int) -> str:
     return "A" if weekday in _BLOCK_A else "B"
 
 
+def _count_games_on_date(liga_str: str, date_str: str) -> int:
+    """Returns how many historico.csv rows have liga==liga_str and data==date_str."""
+    csv_path = os.path.join("data", "historico.csv")
+    if not os.path.exists(csv_path):
+        return 0
+    count = 0
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row.get("liga") == liga_str and row.get("data") == date_str:
+                count += 1
+    return count
+
+
 def _block_for_date(d, liga_str: str) -> str:
     """
-    Like _block(), but flips the classification for dates listed in
-    _BLOCK_OVERRIDES so a stray fixture merges into the adjacent round
-    instead of starting a new matchday.
+    Like _block(), but reclassifies a lone Thursday fixture as Block A so it
+    merges into the adjacent Fri/Sat/Sun/Mon round instead of starting its
+    own matchday. A Thursday only stays Block B when there's a genuine
+    midweek round around it — at least _MIN_MIDWEEK_ROUND_GAMES fixtures for
+    the same league on the preceding Tuesday and/or Wednesday.
     """
     natural = _block(d.weekday())
-    if d.strftime("%Y-%m-%d") in _BLOCK_OVERRIDES.get(liga_str, set()):
-        return "B" if natural == "A" else "A"
+    if d.weekday() == 3:  # Thursday
+        tue = (d - timedelta(days=2)).strftime("%Y-%m-%d")
+        wed = (d - timedelta(days=1)).strftime("%Y-%m-%d")
+        midweek_games = _count_games_on_date(liga_str, tue) + _count_games_on_date(liga_str, wed)
+        if midweek_games < _MIN_MIDWEEK_ROUND_GAMES:
+            return "A"
     return natural
 
 
@@ -303,15 +323,7 @@ def _same_matchday_block(prev_date_str: str, curr_date_str: str, liga_str: str) 
 
 def _has_games_on_date(liga_str: str, date_str: str) -> bool:
     """Returns True if historico.csv has at least one row with liga==liga_str and data==date_str."""
-    csv_path = os.path.join("data", "historico.csv")
-    if not os.path.exists(csv_path):
-        return False
-    with open(csv_path, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if row.get("liga") == liga_str and row.get("data") == date_str:
-                return True
-    return False
+    return _count_games_on_date(liga_str, date_str) > 0
 
 
 def append_matchday_positions(
