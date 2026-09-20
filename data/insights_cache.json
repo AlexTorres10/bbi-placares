@@ -779,7 +779,7 @@
   },
   "Premier League": {
     "last_game_date": "2026-09-20",
-    "updated_at": "2026-09-20T15:36:27",
+    "updated_at": "2026-09-20T17:45:38",
     "data": {
       "insights": [
         "Bournemouth não vence há 4 meses.",
@@ -787,6 +787,7 @@
         "Brentford não perde há 4 meses.",
         "Brentford não perde em casa há 7 meses.",
         "Everton está invicto há 5 jogos.",
+        "Fulham está há 5 jogos sem vencer.",
         "Leeds United não perde em casa há 6 meses.",
         "Leeds United está invicto há 5 jogos.",
         "Liverpool não perde há 4 meses.",
@@ -822,7 +823,11 @@
           "Everton está invicto há 5 jogos.",
           "Everton somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
         ],
-        "Fulham": [],
+        "Fulham": [
+          "Fulham está há 5 jogos sem vencer.",
+          "Fulham somou apenas 2 pontos nos últimos 5 jogos.",
+          "Fulham somou apenas 1 pontos nos últimos 3 jogos em casa."
+        ],
         "Hull City": [],
         "Ipswich Town": [],
         "Leeds United": [
@@ -838,7 +843,9 @@
           "Manchester City somou 15 pontos nos últimos 5 jogos. Excelente fase!",
           "Manchester City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!"
         ],
-        "Manchester United": [],
+        "Manchester United": [
+          "Manchester United somou apenas 2 pontos nos últimos 3 jogos fora de casa."
+        ],
         "Newcastle United": [
           "Newcastle United não perde em casa há 5 meses."
         ],
@@ -862,7 +869,9 @@
         "Aston Villa": [
           "Aston Villa é o pior mandante!"
         ],
-        "Bournemouth": [],
+        "Bournemouth": [
+          "Bournemouth é o 3º pior visitante!"
+        ],
         "Brentford": [
           "Brentford é o 3º melhor mandante!"
         ],
@@ -871,12 +880,13 @@
         "Coventry City": [
           "Coventry City é o 2º pior mandante!"
         ],
-        "Crystal Palace": [],
+        "Crystal Palace": [
+          "Crystal Palace é o 3º pior mandante!"
+        ],
         "Everton": [
           "Everton é o 2º melhor mandante!"
         ],
         "Fulham": [
-          "Fulham é o 3º pior mandante!",
           "Fulham é o pior visitante!"
         ],
         "Hull City": [],
@@ -892,9 +902,7 @@
         "Manchester United": [],
         "Newcastle United": [],
         "Nottingham Forest": [],
-        "Sunderland": [
-          "Sunderland é o 3º pior visitante!"
-        ],
+        "Sunderland": [],
         "Tottenham Hotspur": [
           "Tottenham Hotspur é o 2º pior visitante!"
         ]
@@ -995,7 +1003,7 @@
           "Pts": 4
         },
         {
-          "Time": "Sunderland",
+          "Time": "Ipswich Town",
           "J": 2,
           "V": 1,
           "E": 0,
@@ -1011,7 +1019,7 @@
           "Pts": 3
         },
         {
-          "Time": "Ipswich Town",
+          "Time": "Sunderland",
           "J": 2,
           "V": 1,
           "E": 0,
@@ -1043,6 +1051,14 @@
           "Pts": 1
         },
         {
+          "Time": "Fulham",
+          "J": 3,
+          "V": 0,
+          "E": 1,
+          "D": 2,
+          "Pts": 1
+        },
+        {
           "Time": "Tottenham Hotspur",
           "J": 3,
           "V": 0,
@@ -1052,14 +1068,6 @@
         },
         {
           "Time": "Crystal Palace",
-          "J": 2,
-          "V": 0,
-          "E": 0,
-          "D": 2,
-          "Pts": 0
-        },
-        {
-          "Time": "Fulham",
           "J": 2,
           "V": 0,
           "E": 0,
@@ -1125,11 +1133,11 @@
           "Pts": 4
         },
         {
-          "Time": "Leeds United",
-          "J": 2,
+          "Time": "Aston Villa",
+          "J": 3,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 4
         },
         {
@@ -1141,19 +1149,19 @@
           "Pts": 4
         },
         {
-          "Time": "Aston Villa",
-          "J": 3,
+          "Time": "Leeds United",
+          "J": 2,
           "V": 1,
           "E": 1,
-          "D": 1,
+          "D": 0,
           "Pts": 4
         },
         {
-          "Time": "Brighton",
-          "J": 2,
+          "Time": "Ipswich Town",
+          "J": 3,
           "V": 1,
           "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 3
         },
         {
@@ -1181,19 +1189,19 @@
           "Pts": 3
         },
         {
-          "Time": "Ipswich Town",
-          "J": 3,
+          "Time": "Brighton",
+          "J": 2,
           "V": 1,
           "E": 0,
-          "D": 2,
+          "D": 1,
           "Pts": 3
         },
         {
-          "Time": "Everton",
-          "J": 2,
+          "Time": "Manchester United",
+          "J": 3,
           "V": 0,
           "E": 2,
-          "D": 0,
+          "D": 1,
           "Pts": 2
         },
         {
@@ -1205,11 +1213,19 @@
           "Pts": 2
         },
         {
-          "Time": "Manchester United",
+          "Time": "Everton",
           "J": 2,
           "V": 0,
+          "E": 2,
+          "D": 0,
+          "Pts": 2
+        },
+        {
+          "Time": "Sunderland",
+          "J": 3,
+          "V": 0,
           "E": 1,
-          "D": 1,
+          "D": 2,
           "Pts": 1
         },
         {
@@ -1218,14 +1234,6 @@
           "V": 0,
           "E": 1,
           "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Sunderland",
-          "J": 3,
-          "V": 0,
-          "E": 1,
-          "D": 2,
           "Pts": 1
         },
         {
@@ -1311,6 +1319,7 @@
         ],
         "Fulham": [
           "E",
+          "E",
           "D",
           "D",
           "D"
@@ -1351,6 +1360,7 @@
           "V"
         ],
         "Manchester United": [
+          "E",
           "D",
           "E",
           "V",
