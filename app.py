@@ -809,11 +809,64 @@ def _append_to_historico(resultados: list, data_rodada, liga_str: str) -> dict:
     return {'added': len(new_rows), 'conflicts': conflicts}
 
 
+def _rebuild_tabela_liga(liga_key: str, liga_str: str) -> Optional[str]:
+    """Reconstrói do zero a tabela de uma liga (data/tabelas/<liga_key>.txt) a
+    partir de data/historico.csv: zera as estatísticas de todos os times já
+    presentes na tabela atual e reaplica todos os resultados da temporada
+    vigente. Usado para que uma correção de placar em historico.csv (empate
+    errado corrigido depois, por exemplo) se reflita na tabela — do contrário
+    a tabela fica presa no resultado antigo mesmo após o historico.csv ser
+    corrigido.
+
+    Retorna o novo texto da tabela (já salvo em disco), ou None se a tabela
+    da liga não existir localmente.
+    """
+    tabela_path = f"data/tabelas/{liga_key}.txt"
+    if not os.path.exists(tabela_path):
+        return None
+
+    with open(tabela_path, 'r', encoding='utf-8') as f:
+        processor = TableProcessor()
+        processor.load_from_text(f.read())
+
+    for team in processor.teams:
+        team.games = team.wins = team.draws = team.losses = 0
+        team.goals_for = team.goals_against = team.goal_difference = team.points = 0
+
+    temporada_atual = _season_label(datetime.now())
+    resultados = []
+    with open("data/historico.csv", 'r', encoding='utf-8') as f:
+        for row in csv.DictReader(f):
+            if row['liga'] != liga_str or row.get('temporada') != temporada_atual:
+                continue
+            try:
+                home_score, away_score = (int(x) for x in row['placar'].split('-'))
+            except ValueError:
+                continue
+            resultados.append({
+                'home_team': row['casa'],
+                'away_team': row['fora'],
+                'home_score': home_score,
+                'away_score': away_score,
+                'status': 'normal',
+            })
+
+    processor.update_with_multiple_results(resultados)
+    processor.sort_table()
+    novo_texto = processor.to_text()
+
+    with open(tabela_path, 'w', encoding='utf-8') as f:
+        f.write(novo_texto)
+
+    return novo_texto
+
+
 def _update_historico_row(home_team: str, away_team: str, liga_str: str,
                           new_score: str, new_date_str: str):
     """Sobrescreve o placar (e data/temporada) de uma linha existente em historico.csv,
     restrito à mesma temporada da linha original (a correção de um placar não deve
-    saltar para o confronto equivalente de outra temporada)."""
+    saltar para o confronto equivalente de outra temporada), e reconstrói a tabela
+    da liga a partir do historico.csv corrigido."""
     path = "data/historico.csv"
     temporada_nova = _season_label(datetime.strptime(new_date_str, '%Y-%m-%d'))
     rows = []
@@ -837,6 +890,12 @@ def _update_historico_row(home_team: str, away_team: str, liga_str: str,
         rebuild_for_liga(liga_str)
     except Exception:
         pass
+    liga_key = {v: k for k, v in LIGA_DISPLAY_NAMES.items()}.get(liga_str)
+    if liga_key:
+        try:
+            _rebuild_tabela_liga(liga_key, liga_str)
+        except Exception:
+            pass
 
 
 # ============================================================================
@@ -1367,17 +1426,20 @@ def render_table_mode():
                 )
                 try:
                     github = GitHubHandler(st.secrets['GITHUB_TOKEN'], st.secrets['GITHUB_REPO'])
-                    with open("data/historico.csv", 'r', encoding='utf-8') as f:
-                        hist_content = f.read()
-                    _, hist_sha = github.get_file("data/historico.csv")
-                    github.update_file(
-                        "data/historico.csv", hist_content,
-                        f"[CORRECAO] {conflict['home_team']} {conflict['new_score']} {conflict['away_team']}",
-                        hist_sha
-                    )
-                    st.success(f"✅ Placar atualizado para {conflict['new_score']}.")
+                    files_to_sync = [{"path": "data/historico.csv"}]
+                    liga_key = {v: k for k, v in LIGA_DISPLAY_NAMES.items()}.get(conflict['liga'])
+                    tabela_path = f"data/tabelas/{liga_key}.txt" if liga_key else None
+                    if tabela_path and os.path.exists(tabela_path):
+                        files_to_sync.append({"path": tabela_path})
+
+                    commit_msg = f"[CORRECAO] {conflict['home_team']} {conflict['new_score']} {conflict['away_team']}"
+                    for entry in files_to_sync:
+                        with open(entry["path"], 'r', encoding='utf-8') as f:
+                            entry["content"] = f.read()
+                    github.update_files(files=files_to_sync, message=commit_msg)
+                    st.success(f"✅ Placar atualizado para {conflict['new_score']} (histórico e tabela sincronizados).")
                 except Exception as e:
-                    st.warning(f"CSV atualizado localmente, mas não foi possível sincronizar: {e}")
+                    st.warning(f"Arquivos atualizados localmente, mas não foi possível sincronizar: {e}")
             elif col3.button("❌ Ignorar", key=f"{key_base}_nao"):
                 pass  # drop from remaining
             else:
