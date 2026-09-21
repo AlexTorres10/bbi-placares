@@ -121,6 +121,39 @@ def carregar_tabela_github(liga: str):
     except Exception as e:
         return None, None, 'error'
 
+def require_github_password(key_suffix: str) -> bool:
+    """
+    Bloqueia ações que gravam no GitHub (tabelas/histórico/posições) atrás de uma
+    senha, já que o app fica publicamente acessível online. A senha fica em
+    GITHUB_UPDATE_PASSWORD no secrets.toml. Uma vez confirmada, libera as
+    publicações para o restante da sessão do navegador.
+
+    Retorna True se a ação pode prosseguir.
+    """
+    senha_configurada = st.secrets.get('GITHUB_UPDATE_PASSWORD') if hasattr(st, 'secrets') else None
+    if not senha_configurada:
+        st.warning(
+            "⚠️ Nenhuma senha configurada para publicar no GitHub "
+            "(defina GITHUB_UPDATE_PASSWORD em .streamlit/secrets.toml)."
+        )
+        return True
+
+    if st.session_state.get('github_unlocked'):
+        return True
+
+    senha_digitada = st.text_input(
+        "🔒 Senha para publicar no GitHub",
+        type="password",
+        key=f"senha_github_{key_suffix}",
+    )
+    if senha_digitada:
+        if senha_digitada == senha_configurada:
+            st.session_state['github_unlocked'] = True
+            st.rerun()
+        else:
+            st.error("❌ Senha incorreta.")
+    return False
+
 def carregar_escudos(template_path):
     template_name = os.path.basename(template_path).lower()
     
@@ -1281,7 +1314,14 @@ def render_table_mode():
             # ================================================================
             st.divider()
 
-            if st.button("☁️ Atualizar Tabelas e Histórico no GitHub", type="primary", width='stretch'):
+            _pode_publicar_tabela = require_github_password("tabela")
+
+            if st.button(
+                "☁️ Atualizar Tabelas e Histórico no GitHub",
+                type="primary",
+                width='stretch',
+                disabled=not _pode_publicar_tabela,
+            ):
                 if 'tabela_processada' not in st.session_state:
                     st.error("❌ Gere a tabela primeiro!")
                 elif 'GITHUB_TOKEN' not in st.secrets or 'GITHUB_REPO' not in st.secrets:
@@ -1410,6 +1450,7 @@ def render_table_mode():
     if st.session_state.get('historico_conflitos'):
         st.divider()
         st.subheader("⚠️ Resultados com placar diferente do registrado")
+        _pode_publicar_conflito = require_github_password("conflito")
         remaining = []
         for conflict in st.session_state['historico_conflitos']:
             col1, col2, col3 = st.columns([4, 1, 1])
@@ -1419,7 +1460,7 @@ def render_table_mode():
                 f"Registrado: `{conflict['old_score']}` → Novo: `{conflict['new_score']}`"
             )
             key_base = f"conf_{conflict['home_team']}_{conflict['away_team']}"
-            if col2.button("✅ Atualizar", key=f"{key_base}_sim"):
+            if col2.button("✅ Atualizar", key=f"{key_base}_sim", disabled=not _pode_publicar_conflito):
                 _update_historico_row(
                     conflict['home_team'], conflict['away_team'],
                     conflict['liga'], conflict['new_score'], conflict['date_str']
@@ -2768,7 +2809,8 @@ if modo == "🔢 Gerar Placar":
             st.download_button("📥 Baixar Imagem", f, file_name=_nome_arquivo)
         _liga_str_pg = _PLACAR_LIGA_MAP.get(_pg['template'])
         if _liga_str_pg:
-            if st.button("💾 Salvar e Atualizar"):
+            _pode_publicar_placar = require_github_password("placar")
+            if st.button("💾 Salvar e Atualizar", disabled=not _pode_publicar_placar):
                 _score_m = re.match(r'(\d+)-(\d+)', _pg['placar_str'].strip())
                 if not _score_m:
                     st.error("❌ Não foi possível extrair o placar. Use o formato X-Y.")

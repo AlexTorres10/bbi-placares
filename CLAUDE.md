@@ -105,9 +105,12 @@ The app is driven by a top-level `st.radio` at line ~2798 in `app.py` with five 
 ```toml
 GITHUB_TOKEN = "ghp_..."
 GITHUB_REPO = "usuario/repo"
+GITHUB_UPDATE_PASSWORD = "..."
 ```
 
 The app falls back to local `data/tabelas/` files if GitHub credentials are missing.
+
+`GITHUB_UPDATE_PASSWORD` gates every action that publishes to GitHub (table mode's "Atualizar Tabelas e Histórico", placar mode's "Salvar e Atualizar", and the conflict-resolution "Atualizar" button) — enforced by `require_github_password()` in `app.py`. Entering it correctly once unlocks all of these for the rest of the browser session (`st.session_state['github_unlocked']`). If the key is absent, these actions remain unprotected (with a warning shown in the UI), so it should always be set once the app is deployed publicly.
 
 ### Standings File Format
 
