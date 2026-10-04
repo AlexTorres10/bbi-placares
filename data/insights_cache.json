@@ -2247,129 +2247,190 @@
     }
   },
   "League One": {
-    "last_game_date": "2026-09-05",
-    "updated_at": "2026-09-06T16:05:38",
+    "last_game_date": "2026-10-03",
+    "updated_at": "2026-10-04T13:42:33",
     "data": {
       "insights": [
-        "Burton Albion não perde em casa há 6 meses.",
-        "Cambridge United não perde fora de casa há 6 meses.",
-        "Doncaster Rovers não vence em casa há 5 meses.",
-        "Doncaster Rovers está há 5 jogos sem vencer.",
-        "Huddersfield Town não perde há 5 meses.",
-        "Luton Town não perde em casa há 6 meses.",
-        "Mansfield Town não vence fora de casa há 5 meses.",
-        "Mansfield Town está na 3ª derrota seguida fora de casa!",
-        "Milton Keynes Dons não vence há 5 meses.",
-        "Milton Keynes Dons não vence fora de casa há 5 meses.",
-        "Notts County não perde há 5 meses.",
-        "Notts County não perde fora de casa há 5 meses.",
-        "Sheffield Wednesday está na 3ª vitória seguida!",
+        "AFC Wimbledon sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Bradford City sofreu apenas 1 derrotas nos todos os jogos fora de casa.",
+        "Burton Albion perdeu em casa depois de 4 jogos sem derrota em casa.",
+        "Cambridge United não perde fora de casa há 7 meses.",
+        "Cambridge United está invicto há 5 jogos.",
+        "Cambridge United sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Doncaster Rovers não vence em casa há 6 meses.",
+        "Doncaster Rovers venceu apenas 1 dos últimos 7 jogos.",
+        "Huddersfield Town sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Huddersfield Town sofreu apenas 1 derrotas nos todos os jogos fora de casa.",
+        "Leicester City não perde fora de casa há 6 meses.",
+        "Leyton Orient venceu apenas 1 dos todos os jogos em casa.",
+        "Mansfield Town não perde em casa há 8 meses.",
+        "Mansfield Town não vence fora de casa há 6 meses.",
+        "Milton Keynes Dons não vence há 6 meses.",
+        "Milton Keynes Dons não perde em casa há 7 meses.",
+        "Milton Keynes Dons não vence fora de casa há 6 meses.",
+        "Milton Keynes Dons sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Notts County venceu apenas 1 dos últimos 7 jogos.",
+        "Oxford United não perde em casa há 6 meses.",
+        "Peterborough não vence fora de casa há 8 meses.",
+        "Peterborough está há 6 jogos sem vencer.",
+        "Peterborough venceu apenas 1 dos últimos 8 jogos.",
+        "Plymouth Argyle está na 3ª vitória seguida fora de casa!",
+        "Plymouth Argyle venceu 5 dos últimos 7 jogos. Boa fase!",
+        "Plymouth Argyle sofreu apenas 1 derrotas nos todos os jogos fora de casa.",
+        "Reading não vence fora de casa há 7 meses.",
+        "Reading sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Reading sofreu apenas 1 derrotas nos todos os jogos em casa.",
         "Sheffield Wednesday está na 3ª vitória seguida fora de casa!",
-        "Stevenage não perde fora de casa há 5 meses.",
-        "Wycombe Wanderers está há 5 jogos sem vencer."
+        "Sheffield Wednesday está invicto há 5 jogos.",
+        "Sheffield Wednesday sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Wigan Athletic não vence fora de casa há 6 meses.",
+        "Wigan Athletic perdeu 5 dos últimos 7 jogos.",
+        "Wigan Athletic venceu apenas 1 dos últimos 7 jogos."
       ],
       "team_insights": {
-        "AFC Wimbledon": [],
+        "AFC Wimbledon": [
+          "AFC Wimbledon somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "AFC Wimbledon sofreu apenas 1 derrotas nos últimos 7 jogos."
+        ],
         "Barnsley": [],
         "Blackpool": [],
-        "Bradford City": [],
+        "Bradford City": [
+          "Bradford City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Bradford City somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Bradford City sofreu apenas 1 derrotas nos todos os jogos fora de casa."
+        ],
         "Bromley": [],
         "Burton Albion": [
-          "Burton Albion não perde em casa há 6 meses."
+          "Burton Albion somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Burton Albion perdeu em casa depois de 4 jogos sem derrota em casa."
         ],
         "Cambridge United": [
-          "Cambridge United não perde fora de casa há 6 meses."
+          "Cambridge United não perde fora de casa há 7 meses.",
+          "Cambridge United está invicto há 5 jogos.",
+          "Cambridge United sofreu apenas 1 derrotas nos últimos 8 jogos."
         ],
         "Doncaster Rovers": [
-          "Doncaster Rovers não vence em casa há 5 meses.",
-          "Doncaster Rovers está há 5 jogos sem vencer.",
-          "Doncaster Rovers somou apenas 2 pontos nos últimos 3 jogos em casa."
+          "Doncaster Rovers não vence em casa há 6 meses.",
+          "Doncaster Rovers somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Doncaster Rovers venceu apenas 1 dos últimos 7 jogos."
         ],
         "Huddersfield Town": [
-          "Huddersfield Town não perde há 5 meses.",
-          "Huddersfield Town somou 11 pontos nos últimos 5 jogos. Excelente fase!",
-          "Huddersfield Town somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+          "Huddersfield Town somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Huddersfield Town sofreu apenas 1 derrotas nos últimos 8 jogos.",
+          "Huddersfield Town sofreu apenas 1 derrotas nos todos os jogos fora de casa."
         ],
-        "Leicester City": [],
+        "Leicester City": [
+          "Leicester City não perde fora de casa há 6 meses."
+        ],
         "Leyton Orient": [
-          "Leyton Orient somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!"
+          "Leyton Orient somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Leyton Orient venceu apenas 1 dos todos os jogos em casa."
         ],
-        "Luton Town": [
-          "Luton Town não perde em casa há 6 meses."
-        ],
+        "Luton Town": [],
         "Mansfield Town": [
-          "Mansfield Town não vence fora de casa há 5 meses.",
-          "Mansfield Town não pontuou nos últimos 3 jogos fora de casa."
+          "Mansfield Town não perde em casa há 8 meses.",
+          "Mansfield Town não vence fora de casa há 6 meses.",
+          "Mansfield Town somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Mansfield Town somou apenas 1 pontos nos últimos 3 jogos fora de casa."
         ],
         "Milton Keynes Dons": [
-          "Milton Keynes Dons não vence há 5 meses.",
-          "Milton Keynes Dons não vence fora de casa há 5 meses.",
-          "Milton Keynes Dons somou apenas 2 pontos nos últimos 3 jogos fora de casa."
+          "Milton Keynes Dons não vence há 6 meses.",
+          "Milton Keynes Dons não perde em casa há 7 meses.",
+          "Milton Keynes Dons não vence fora de casa há 6 meses.",
+          "Milton Keynes Dons somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Milton Keynes Dons sofreu apenas 1 derrotas nos últimos 7 jogos."
         ],
         "Notts County": [
-          "Notts County não perde há 5 meses.",
-          "Notts County não perde fora de casa há 5 meses."
+          "Notts County somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Notts County venceu apenas 1 dos últimos 7 jogos."
         ],
-        "Oxford United": [],
-        "Peterborough": [],
-        "Plymouth Argyle": [],
-        "Reading": [],
+        "Oxford United": [
+          "Oxford United não perde em casa há 6 meses.",
+          "Oxford United somou 10 pontos nos últimos 5 jogos. Excelente fase!"
+        ],
+        "Peterborough": [
+          "Peterborough não vence fora de casa há 8 meses.",
+          "Peterborough está há 6 jogos sem vencer.",
+          "Peterborough somou apenas 2 pontos nos últimos 5 jogos.",
+          "Peterborough somou apenas 1 pontos nos últimos 3 jogos em casa.",
+          "Peterborough somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Peterborough venceu apenas 1 dos últimos 8 jogos."
+        ],
+        "Plymouth Argyle": [
+          "Plymouth Argyle está na 3ª vitória seguida fora de casa!",
+          "Plymouth Argyle somou 12 pontos nos últimos 5 jogos. Excelente fase!",
+          "Plymouth Argyle somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Plymouth Argyle venceu 5 dos últimos 7 jogos. Boa fase!",
+          "Plymouth Argyle sofreu apenas 1 derrotas nos todos os jogos fora de casa."
+        ],
+        "Reading": [
+          "Reading não vence fora de casa há 7 meses.",
+          "Reading somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Reading somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Reading sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Reading sofreu apenas 1 derrotas nos todos os jogos em casa."
+        ],
         "Sheffield Wednesday": [
-          "Sheffield Wednesday está na 3ª vitória seguida!",
-          "Sheffield Wednesday somou 12 pontos nos últimos 5 jogos. Excelente fase!",
-          "Sheffield Wednesday somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!"
+          "Sheffield Wednesday está invicto há 5 jogos.",
+          "Sheffield Wednesday somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Sheffield Wednesday somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Sheffield Wednesday sofreu apenas 1 derrotas nos últimos 7 jogos."
         ],
-        "Stevenage": [
-          "Stevenage não perde fora de casa há 5 meses."
-        ],
+        "Stevenage": [],
         "Stockport County": [],
-        "Wigan Athletic": [],
+        "Wigan Athletic": [
+          "Wigan Athletic não vence fora de casa há 6 meses.",
+          "Wigan Athletic somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Wigan Athletic perdeu 5 dos últimos 7 jogos.",
+          "Wigan Athletic venceu apenas 1 dos últimos 7 jogos."
+        ],
         "Wycombe Wanderers": [
-          "Wycombe Wanderers está há 5 jogos sem vencer.",
           "Wycombe Wanderers somou apenas 2 pontos nos últimos 3 jogos em casa."
         ]
       },
       "team_rankings": {
         "AFC Wimbledon": [
-          "AFC Wimbledon é o 2º pior visitante!"
+          "AFC Wimbledon é o 2º melhor mandante!"
         ],
         "Barnsley": [],
         "Blackpool": [],
         "Bradford City": [
-          "Bradford City é o 3º melhor mandante!"
+          "Bradford City é o melhor visitante!"
         ],
         "Bromley": [],
         "Burton Albion": [],
         "Cambridge United": [],
-        "Doncaster Rovers": [],
-        "Huddersfield Town": [
-          "Huddersfield Town é o melhor mandante!"
+        "Doncaster Rovers": [
+          "Doncaster Rovers é o pior mandante!"
         ],
-        "Leicester City": [],
-        "Leyton Orient": [
-          "Leyton Orient é o pior mandante!",
-          "Leyton Orient é o 2º melhor visitante!"
+        "Huddersfield Town": [],
+        "Leicester City": [
+          "Leicester City é o 2º pior mandante!"
         ],
+        "Leyton Orient": [],
         "Luton Town": [],
         "Mansfield Town": [
-          "Mansfield Town é o 2º melhor mandante!",
+          "Mansfield Town é o 3º melhor mandante!",
           "Mansfield Town é o pior visitante!"
         ],
-        "Milton Keynes Dons": [],
+        "Milton Keynes Dons": [
+          "Milton Keynes Dons é o 3º pior mandante!"
+        ],
         "Notts County": [],
-        "Oxford United": [
-          "Oxford United é o 3º pior mandante!",
-          "Oxford United é o 3º melhor visitante!"
+        "Oxford United": [],
+        "Peterborough": [
+          "Peterborough é o 2º pior visitante!"
         ],
-        "Peterborough": [],
-        "Plymouth Argyle": [],
-        "Reading": [],
+        "Plymouth Argyle": [
+          "Plymouth Argyle é o 2º melhor visitante!"
+        ],
+        "Reading": [
+          "Reading é o melhor mandante!"
+        ],
         "Sheffield Wednesday": [
-          "Sheffield Wednesday é o melhor visitante!"
+          "Sheffield Wednesday é o 3º melhor visitante!"
         ],
-        "Stevenage": [
-          "Stevenage é o 2º pior mandante!"
-        ],
+        "Stevenage": [],
         "Stockport County": [],
         "Wigan Athletic": [
           "Wigan Athletic é o 3º pior visitante!"
@@ -2404,6 +2465,30 @@
       ],
       "home_table_full": [
         {
+          "Time": "Reading",
+          "J": 5,
+          "V": 3,
+          "E": 1,
+          "D": 1,
+          "Pts": 10
+        },
+        {
+          "Time": "AFC Wimbledon",
+          "J": 4,
+          "V": 2,
+          "E": 2,
+          "D": 0,
+          "Pts": 8
+        },
+        {
+          "Time": "Mansfield Town",
+          "J": 3,
+          "V": 2,
+          "E": 1,
+          "D": 0,
+          "Pts": 7
+        },
+        {
           "Time": "Huddersfield Town",
           "J": 3,
           "V": 2,
@@ -2412,11 +2497,35 @@
           "Pts": 7
         },
         {
-          "Time": "Mansfield Town",
-          "J": 2,
+          "Time": "Cambridge United",
+          "J": 4,
+          "V": 2,
+          "E": 1,
+          "D": 1,
+          "Pts": 7
+        },
+        {
+          "Time": "Stockport County",
+          "J": 4,
           "V": 2,
           "E": 0,
-          "D": 0,
+          "D": 2,
+          "Pts": 6
+        },
+        {
+          "Time": "Burton Albion",
+          "J": 5,
+          "V": 1,
+          "E": 3,
+          "D": 1,
+          "Pts": 6
+        },
+        {
+          "Time": "Plymouth Argyle",
+          "J": 4,
+          "V": 2,
+          "E": 0,
+          "D": 2,
           "Pts": 6
         },
         {
@@ -2428,107 +2537,107 @@
           "Pts": 6
         },
         {
-          "Time": "Reading",
-          "J": 3,
-          "V": 2,
-          "E": 0,
+          "Time": "Sheffield Wednesday",
+          "J": 4,
+          "V": 1,
+          "E": 2,
           "D": 1,
-          "Pts": 6
-        },
-        {
-          "Time": "Luton Town",
-          "J": 3,
-          "V": 1,
-          "E": 2,
-          "D": 0,
-          "Pts": 5
-        },
-        {
-          "Time": "Burton Albion",
-          "J": 3,
-          "V": 1,
-          "E": 2,
-          "D": 0,
           "Pts": 5
         },
         {
           "Time": "Blackpool",
-          "J": 2,
+          "J": 4,
           "V": 1,
-          "E": 1,
+          "E": 2,
+          "D": 1,
+          "Pts": 5
+        },
+        {
+          "Time": "Oxford United",
+          "J": 3,
+          "V": 1,
+          "E": 2,
           "D": 0,
-          "Pts": 4
+          "Pts": 5
+        },
+        {
+          "Time": "Luton Town",
+          "J": 4,
+          "V": 1,
+          "E": 2,
+          "D": 1,
+          "Pts": 5
         },
         {
           "Time": "Notts County",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 4
         },
         {
-          "Time": "AFC Wimbledon",
-          "J": 2,
+          "Time": "Bromley",
+          "J": 4,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 2,
+          "Pts": 4
+        },
+        {
+          "Time": "Barnsley",
+          "J": 4,
+          "V": 1,
+          "E": 1,
+          "D": 2,
+          "Pts": 4
+        },
+        {
+          "Time": "Stevenage",
+          "J": 3,
+          "V": 1,
+          "E": 1,
+          "D": 1,
           "Pts": 4
         },
         {
           "Time": "Peterborough",
-          "J": 3,
+          "J": 4,
           "V": 1,
           "E": 1,
-          "D": 1,
+          "D": 2,
           "Pts": 4
         },
         {
-          "Time": "Plymouth Argyle",
-          "J": 2,
+          "Time": "Leyton Orient",
+          "J": 5,
           "V": 1,
           "E": 0,
-          "D": 1,
+          "D": 4,
           "Pts": 3
         },
         {
-          "Time": "Cambridge United",
-          "J": 2,
-          "V": 1,
-          "E": 0,
+          "Time": "Wycombe Wanderers",
+          "J": 4,
+          "V": 0,
+          "E": 3,
           "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Stockport County",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Barnsley",
-          "J": 3,
-          "V": 1,
-          "E": 0,
-          "D": 2,
           "Pts": 3
         },
         {
           "Time": "Wigan Athletic",
-          "J": 3,
+          "J": 4,
           "V": 1,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 3
         },
         {
-          "Time": "Sheffield Wednesday",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
+          "Time": "Milton Keynes Dons",
+          "J": 3,
+          "V": 0,
+          "E": 3,
+          "D": 0,
           "Pts": 3
         },
         {
@@ -2546,57 +2655,25 @@
           "E": 2,
           "D": 1,
           "Pts": 2
-        },
-        {
-          "Time": "Milton Keynes Dons",
-          "J": 2,
-          "V": 0,
-          "E": 2,
-          "D": 0,
-          "Pts": 2
-        },
-        {
-          "Time": "Wycombe Wanderers",
-          "J": 3,
-          "V": 0,
-          "E": 2,
-          "D": 1,
-          "Pts": 2
-        },
-        {
-          "Time": "Bromley",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Oxford United",
-          "J": 1,
-          "V": 0,
-          "E": 1,
-          "D": 0,
-          "Pts": 1
-        },
-        {
-          "Time": "Stevenage",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Leyton Orient",
-          "J": 2,
-          "V": 0,
-          "E": 0,
-          "D": 2,
-          "Pts": 0
         }
       ],
       "away_table_full": [
+        {
+          "Time": "Bradford City",
+          "J": 5,
+          "V": 3,
+          "E": 1,
+          "D": 1,
+          "Pts": 10
+        },
+        {
+          "Time": "Plymouth Argyle",
+          "J": 5,
+          "V": 3,
+          "E": 1,
+          "D": 1,
+          "Pts": 10
+        },
         {
           "Time": "Sheffield Wednesday",
           "J": 3,
@@ -2606,12 +2683,60 @@
           "Pts": 9
         },
         {
+          "Time": "Huddersfield Town",
+          "J": 5,
+          "V": 2,
+          "E": 2,
+          "D": 1,
+          "Pts": 8
+        },
+        {
           "Time": "Leyton Orient",
           "J": 3,
           "V": 2,
           "E": 1,
           "D": 0,
           "Pts": 7
+        },
+        {
+          "Time": "Stockport County",
+          "J": 4,
+          "V": 2,
+          "E": 1,
+          "D": 1,
+          "Pts": 7
+        },
+        {
+          "Time": "Wycombe Wanderers",
+          "J": 4,
+          "V": 2,
+          "E": 1,
+          "D": 1,
+          "Pts": 7
+        },
+        {
+          "Time": "Leicester City",
+          "J": 4,
+          "V": 1,
+          "E": 3,
+          "D": 0,
+          "Pts": 6
+        },
+        {
+          "Time": "Burton Albion",
+          "J": 4,
+          "V": 2,
+          "E": 0,
+          "D": 2,
+          "Pts": 6
+        },
+        {
+          "Time": "Cambridge United",
+          "J": 4,
+          "V": 1,
+          "E": 3,
+          "D": 0,
+          "Pts": 6
         },
         {
           "Time": "Oxford United",
@@ -2622,52 +2747,52 @@
           "Pts": 6
         },
         {
-          "Time": "Stockport County",
-          "J": 3,
-          "V": 2,
-          "E": 0,
-          "D": 1,
-          "Pts": 6
-        },
-        {
           "Time": "Stevenage",
-          "J": 3,
+          "J": 4,
           "V": 1,
           "E": 2,
-          "D": 0,
-          "Pts": 5
-        },
-        {
-          "Time": "Cambridge United",
-          "J": 3,
-          "V": 1,
-          "E": 2,
-          "D": 0,
-          "Pts": 5
-        },
-        {
-          "Time": "Plymouth Argyle",
-          "J": 3,
-          "V": 1,
-          "E": 1,
           "D": 1,
-          "Pts": 4
+          "Pts": 5
         },
         {
           "Time": "Barnsley",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 1,
           "Pts": 4
         },
         {
-          "Time": "Huddersfield Town",
-          "J": 2,
+          "Time": "AFC Wimbledon",
+          "J": 4,
           "V": 1,
           "E": 1,
-          "D": 0,
+          "D": 2,
           "Pts": 4
+        },
+        {
+          "Time": "Doncaster Rovers",
+          "J": 4,
+          "V": 1,
+          "E": 1,
+          "D": 2,
+          "Pts": 4
+        },
+        {
+          "Time": "Bromley",
+          "J": 3,
+          "V": 1,
+          "E": 1,
+          "D": 1,
+          "Pts": 4
+        },
+        {
+          "Time": "Notts County",
+          "J": 4,
+          "V": 0,
+          "E": 3,
+          "D": 1,
+          "Pts": 3
         },
         {
           "Time": "Blackpool",
@@ -2678,47 +2803,23 @@
           "Pts": 3
         },
         {
-          "Time": "Notts County",
-          "J": 3,
-          "V": 0,
-          "E": 3,
-          "D": 0,
-          "Pts": 3
-        },
-        {
-          "Time": "Bradford City",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Bromley",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
-          "Time": "Burton Albion",
-          "J": 2,
-          "V": 1,
-          "E": 0,
-          "D": 1,
-          "Pts": 3
-        },
-        {
           "Time": "Luton Town",
-          "J": 2,
+          "J": 3,
           "V": 1,
           "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 3
         },
         {
           "Time": "Milton Keynes Dons",
+          "J": 4,
+          "V": 0,
+          "E": 3,
+          "D": 1,
+          "Pts": 3
+        },
+        {
+          "Time": "Reading",
           "J": 3,
           "V": 0,
           "E": 2,
@@ -2726,78 +2827,44 @@
           "Pts": 2
         },
         {
-          "Time": "Leicester City",
-          "J": 2,
-          "V": 0,
-          "E": 2,
-          "D": 0,
-          "Pts": 2
-        },
-        {
-          "Time": "Wycombe Wanderers",
-          "J": 2,
+          "Time": "Wigan Athletic",
+          "J": 3,
           "V": 0,
           "E": 1,
-          "D": 1,
-          "Pts": 1
-        },
-        {
-          "Time": "Reading",
-          "J": 1,
-          "V": 0,
-          "E": 1,
-          "D": 0,
-          "Pts": 1
-        },
-        {
-          "Time": "Doncaster Rovers",
-          "J": 2,
-          "V": 0,
-          "E": 1,
-          "D": 1,
+          "D": 2,
           "Pts": 1
         },
         {
           "Time": "Peterborough",
-          "J": 2,
+          "J": 4,
           "V": 0,
-          "E": 0,
-          "D": 2,
-          "Pts": 0
-        },
-        {
-          "Time": "Wigan Athletic",
-          "J": 2,
-          "V": 0,
-          "E": 0,
-          "D": 2,
-          "Pts": 0
-        },
-        {
-          "Time": "AFC Wimbledon",
-          "J": 2,
-          "V": 0,
-          "E": 0,
-          "D": 2,
-          "Pts": 0
+          "E": 1,
+          "D": 3,
+          "Pts": 1
         },
         {
           "Time": "Mansfield Town",
-          "J": 3,
+          "J": 4,
           "V": 0,
-          "E": 0,
+          "E": 1,
           "D": 3,
-          "Pts": 0
+          "Pts": 1
         }
       ],
       "last_n_games_data": {
         "AFC Wimbledon": [
+          "E",
+          "E",
+          "V",
+          "V",
           "D",
           "V",
           "E",
           "D"
         ],
         "Barnsley": [
+          "E",
+          "D",
           "D",
           "V",
           "V",
@@ -2806,12 +2873,17 @@
         ],
         "Blackpool": [
           "D",
+          "E",
+          "D",
           "D",
           "V",
           "V",
           "E"
         ],
         "Bradford City": [
+          "E",
+          "V",
+          "V",
           "V",
           "D",
           "D",
@@ -2819,12 +2891,19 @@
           "V"
         ],
         "Bromley": [
+          "V",
+          "E",
+          "D",
           "D",
           "D",
           "E",
           "V"
         ],
         "Burton Albion": [
+          "D",
+          "V",
+          "E",
+          "D",
           "E",
           "V",
           "D",
@@ -2833,12 +2912,17 @@
         ],
         "Cambridge United": [
           "E",
+          "E",
+          "V",
+          "E",
           "V",
           "D",
           "E",
           "V"
         ],
         "Doncaster Rovers": [
+          "V",
+          "D",
           "D",
           "E",
           "E",
@@ -2846,6 +2930,9 @@
           "D"
         ],
         "Huddersfield Town": [
+          "V",
+          "D",
+          "E",
           "E",
           "V",
           "V",
@@ -2853,6 +2940,8 @@
           "V"
         ],
         "Leicester City": [
+          "E",
+          "V",
           "D",
           "V",
           "E",
@@ -2860,6 +2949,9 @@
           "E"
         ],
         "Leyton Orient": [
+          "D",
+          "V",
+          "D",
           "E",
           "V",
           "D",
@@ -2867,6 +2959,8 @@
           "D"
         ],
         "Luton Town": [
+          "D",
+          "D",
           "E",
           "V",
           "D",
@@ -2874,6 +2968,8 @@
           "V"
         ],
         "Mansfield Town": [
+          "E",
+          "E",
           "D",
           "D",
           "V",
@@ -2882,12 +2978,16 @@
         ],
         "Milton Keynes Dons": [
           "E",
+          "E",
+          "E",
           "D",
           "E",
           "E",
           "E"
         ],
         "Notts County": [
+          "D",
+          "D",
           "E",
           "E",
           "V",
@@ -2895,12 +2995,17 @@
           "E"
         ],
         "Oxford United": [
+          "E",
+          "V",
           "V",
           "D",
           "V",
           "E"
         ],
         "Peterborough": [
+          "D",
+          "D",
+          "E",
           "D",
           "E",
           "D",
@@ -2911,16 +3016,26 @@
           "V",
           "D",
           "V",
+          "V",
+          "V",
+          "D",
+          "V",
           "E",
           "D"
         ],
         "Reading": [
+          "E",
+          "E",
+          "V",
+          "D",
           "V",
           "V",
           "E",
           "D"
         ],
         "Sheffield Wednesday": [
+          "E",
+          "E",
           "V",
           "V",
           "V",
@@ -2928,6 +3043,8 @@
           "V"
         ],
         "Stevenage": [
+          "D",
+          "V",
           "V",
           "E",
           "E",
@@ -2936,12 +3053,17 @@
         ],
         "Stockport County": [
           "V",
+          "E",
+          "D",
+          "V",
           "D",
           "V",
           "D",
           "V"
         ],
         "Wigan Athletic": [
+          "D",
+          "E",
           "D",
           "V",
           "D",
@@ -2950,24 +3072,27 @@
         ],
         "Wycombe Wanderers": [
           "E",
+          "V",
+          "V",
+          "E",
           "D",
           "D",
           "E",
           "E"
         ]
       },
-      "best_home": "Huddersfield Town",
-      "worst_home": "Leyton Orient",
-      "best_away": "Sheffield Wednesday",
+      "best_home": "Reading",
+      "worst_home": "Doncaster Rovers",
+      "best_away": "Bradford City",
       "worst_away": "Mansfield Town",
-      "best_attack_team": "Sheffield Wednesday, Stockport County",
-      "best_attack_gols": 13,
-      "worst_attack_team": "AFC Wimbledon",
-      "worst_attack_gols": 2,
-      "best_defense_team": "Bradford City, Huddersfield Town",
-      "best_defense_gols": 4,
+      "best_attack_team": "Reading, Stockport County",
+      "best_attack_gols": 17,
+      "worst_attack_team": "Peterborough",
+      "worst_attack_gols": 4,
+      "best_defense_team": "Bradford City",
+      "best_defense_gols": 5,
       "worst_defense_team": "Bromley",
-      "worst_defense_gols": 13
+      "worst_defense_gols": 18
     }
   },
   "League Two": {
