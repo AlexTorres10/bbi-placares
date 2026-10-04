@@ -343,6 +343,8 @@ def detectar_fase_estendida_por_mando(df: pd.DataFrame, nome_time: str, mando: s
                     insights.append(f"{nome_time} não perdeu{sufixo} na temporada inteira.")
                 else:
                     insights.append(f"{nome_time} está invicto{sufixo} há {n_derrotas_bom} jogos.")
+            elif n_derrotas_bom == total_jogos and mando == 'geral':
+                insights.append(f"{nome_time} sofreu apenas {derrotas} derrotas em todos os seus {total_jogos} jogos.")
             else:
                 insights.append(f"{nome_time} sofreu apenas {derrotas} derrotas nos últimos {n_derrotas_bom} jogos{sufixo}.")
 
@@ -457,6 +459,7 @@ def _filtrar_insights_redundantes(insights_forma: List[str], jogos_casa: int, jo
 
                 # substituir "últimos X jogos em casa" por "todos os jogos em casa" quando a janela cobre todos
                 if jogos_analisados == jogos_casa and jogos_casa > 0:
+                    insight = re.sub(r'nos últimos \d+ jogos em casa', 'em todos os jogos em casa', insight)
                     insight = re.sub(r'últimos \d+ jogos em casa', 'todos os jogos em casa', insight)
 
         # CASOS FORA DE CASA
@@ -477,6 +480,7 @@ def _filtrar_insights_redundantes(insights_forma: List[str], jogos_casa: int, jo
                     continue
 
                 if jogos_analisados == jogos_fora and jogos_fora > 0:
+                    insight = re.sub(r'nos últimos \d+ jogos fora de casa', 'em todos os jogos fora de casa', insight)
                     insight = re.sub(r'últimos \d+ jogos fora de casa', 'todos os jogos fora de casa', insight)
 
         # Evitar duplicação com streaks já conhecidos
