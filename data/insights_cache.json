@@ -2248,19 +2248,19 @@
   },
   "League One": {
     "last_game_date": "2026-10-03",
-    "updated_at": "2026-10-04T13:42:33",
+    "updated_at": "2026-10-04T13:48:00",
     "data": {
       "insights": [
         "AFC Wimbledon sofreu apenas 1 derrotas nos últimos 7 jogos.",
-        "Bradford City sofreu apenas 1 derrotas nos todos os jogos fora de casa.",
+        "Bradford City sofreu apenas 1 derrotas em todos os jogos fora de casa.",
         "Burton Albion perdeu em casa depois de 4 jogos sem derrota em casa.",
         "Cambridge United não perde fora de casa há 7 meses.",
         "Cambridge United está invicto há 5 jogos.",
-        "Cambridge United sofreu apenas 1 derrotas nos últimos 8 jogos.",
+        "Cambridge United sofreu apenas 1 derrotas em todos os seus 8 jogos.",
         "Doncaster Rovers não vence em casa há 6 meses.",
         "Doncaster Rovers venceu apenas 1 dos últimos 7 jogos.",
-        "Huddersfield Town sofreu apenas 1 derrotas nos últimos 8 jogos.",
-        "Huddersfield Town sofreu apenas 1 derrotas nos todos os jogos fora de casa.",
+        "Huddersfield Town sofreu apenas 1 derrotas em todos os seus 8 jogos.",
+        "Huddersfield Town sofreu apenas 1 derrotas em todos os jogos fora de casa.",
         "Leicester City não perde fora de casa há 6 meses.",
         "Leyton Orient venceu apenas 1 dos todos os jogos em casa.",
         "Mansfield Town não perde em casa há 8 meses.",
@@ -2268,7 +2268,7 @@
         "Milton Keynes Dons não vence há 6 meses.",
         "Milton Keynes Dons não perde em casa há 7 meses.",
         "Milton Keynes Dons não vence fora de casa há 6 meses.",
-        "Milton Keynes Dons sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Milton Keynes Dons sofreu apenas 1 derrotas em todos os seus 7 jogos.",
         "Notts County venceu apenas 1 dos últimos 7 jogos.",
         "Oxford United não perde em casa há 6 meses.",
         "Peterborough não vence fora de casa há 8 meses.",
@@ -2276,13 +2276,13 @@
         "Peterborough venceu apenas 1 dos últimos 8 jogos.",
         "Plymouth Argyle está na 3ª vitória seguida fora de casa!",
         "Plymouth Argyle venceu 5 dos últimos 7 jogos. Boa fase!",
-        "Plymouth Argyle sofreu apenas 1 derrotas nos todos os jogos fora de casa.",
+        "Plymouth Argyle sofreu apenas 1 derrotas em todos os jogos fora de casa.",
         "Reading não vence fora de casa há 7 meses.",
         "Reading sofreu apenas 1 derrotas nos últimos 7 jogos.",
-        "Reading sofreu apenas 1 derrotas nos todos os jogos em casa.",
+        "Reading sofreu apenas 1 derrotas em todos os jogos em casa.",
         "Sheffield Wednesday está na 3ª vitória seguida fora de casa!",
         "Sheffield Wednesday está invicto há 5 jogos.",
-        "Sheffield Wednesday sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Sheffield Wednesday sofreu apenas 1 derrotas em todos os seus 7 jogos.",
         "Wigan Athletic não vence fora de casa há 6 meses.",
         "Wigan Athletic perdeu 5 dos últimos 7 jogos.",
         "Wigan Athletic venceu apenas 1 dos últimos 7 jogos."
@@ -2297,7 +2297,7 @@
         "Bradford City": [
           "Bradford City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
           "Bradford City somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "Bradford City sofreu apenas 1 derrotas nos todos os jogos fora de casa."
+          "Bradford City sofreu apenas 1 derrotas em todos os jogos fora de casa."
         ],
         "Bromley": [],
         "Burton Albion": [
@@ -2307,7 +2307,7 @@
         "Cambridge United": [
           "Cambridge United não perde fora de casa há 7 meses.",
           "Cambridge United está invicto há 5 jogos.",
-          "Cambridge United sofreu apenas 1 derrotas nos últimos 8 jogos."
+          "Cambridge United sofreu apenas 1 derrotas em todos os seus 8 jogos."
         ],
         "Doncaster Rovers": [
           "Doncaster Rovers não vence em casa há 6 meses.",
@@ -2316,8 +2316,8 @@
         ],
         "Huddersfield Town": [
           "Huddersfield Town somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Huddersfield Town sofreu apenas 1 derrotas nos últimos 8 jogos.",
-          "Huddersfield Town sofreu apenas 1 derrotas nos todos os jogos fora de casa."
+          "Huddersfield Town sofreu apenas 1 derrotas em todos os seus 8 jogos.",
+          "Huddersfield Town sofreu apenas 1 derrotas em todos os jogos fora de casa."
         ],
         "Leicester City": [
           "Leicester City não perde fora de casa há 6 meses."
@@ -2338,7 +2338,7 @@
           "Milton Keynes Dons não perde em casa há 7 meses.",
           "Milton Keynes Dons não vence fora de casa há 6 meses.",
           "Milton Keynes Dons somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
-          "Milton Keynes Dons sofreu apenas 1 derrotas nos últimos 7 jogos."
+          "Milton Keynes Dons sofreu apenas 1 derrotas em todos os seus 7 jogos."
         ],
         "Notts County": [
           "Notts County somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
@@ -2361,20 +2361,20 @@
           "Plymouth Argyle somou 12 pontos nos últimos 5 jogos. Excelente fase!",
           "Plymouth Argyle somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
           "Plymouth Argyle venceu 5 dos últimos 7 jogos. Boa fase!",
-          "Plymouth Argyle sofreu apenas 1 derrotas nos todos os jogos fora de casa."
+          "Plymouth Argyle sofreu apenas 1 derrotas em todos os jogos fora de casa."
         ],
         "Reading": [
           "Reading não vence fora de casa há 7 meses.",
           "Reading somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
           "Reading somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
           "Reading sofreu apenas 1 derrotas nos últimos 7 jogos.",
-          "Reading sofreu apenas 1 derrotas nos todos os jogos em casa."
+          "Reading sofreu apenas 1 derrotas em todos os jogos em casa."
         ],
         "Sheffield Wednesday": [
           "Sheffield Wednesday está invicto há 5 jogos.",
           "Sheffield Wednesday somou 11 pontos nos últimos 5 jogos. Excelente fase!",
           "Sheffield Wednesday somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "Sheffield Wednesday sofreu apenas 1 derrotas nos últimos 7 jogos."
+          "Sheffield Wednesday sofreu apenas 1 derrotas em todos os seus 7 jogos."
         ],
         "Stevenage": [],
         "Stockport County": [],
