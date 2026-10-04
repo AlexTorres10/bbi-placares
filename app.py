@@ -2264,17 +2264,14 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
     if not teams_played:
         ins_lines.append("(Nenhum jogo encontrado no histórico para esta liga.)")
     else:
+        # Same source as the "📊 Insights de {time}" panel: data['insights'] filtered by team name.
         played_sorted = sorted(
-            [t for t in teams_played if t in data.get('team_insights', {})],
+            teams_played,
             key=lambda t: position_map.get(t, 999),
         )
         for team in played_sorted:
             pos = position_map.get(team, '?')
-            team_ins = data.get('team_insights', {}).get(team, [])
-            rankings = data.get('team_rankings', {}).get(team, [])
-
-            general_ins = [i for i in team_ins if 'em casa' not in i and 'fora de casa' not in i]
-            mando_ins = [i for i in team_ins if 'em casa' in i or 'fora de casa' in i]
+            team_ins = [ins for ins in data.get('insights', []) if team in ins]
 
             delta = compute_position_delta(team, liga_str)
             if delta is None:
@@ -2287,13 +2284,10 @@ def _build_claude_text(liga_label: str, liga_key: str, liga_str: str, data: dict
                 delta_str = "— (Mesma posição)"
 
             ins_lines.append(f"{team} [{pos}º]")
-            if general_ins:
-                ins_lines.append(f"- {general_ins[0]}")
-            if mando_ins:
-                ins_lines.append(f"- {mando_ins[0]}")
-            elif rankings:
-                ins_lines.append(f"- {rankings[0]}")
-            if not general_ins and not mando_ins and not rankings:
+            if team_ins:
+                for ins in team_ins:
+                    ins_lines.append(f"- {ins}")
+            else:
                 ins_lines.append("- Sem insights relevantes")
             ins_lines.append(f"- Variação: {delta_str}")
             ins_lines.append("")
