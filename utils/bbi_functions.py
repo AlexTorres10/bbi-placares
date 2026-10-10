@@ -198,6 +198,20 @@ def _compute_cross_season_insights(df_current: pd.DataFrame, df_full: pd.DataFra
 
         _, sem_vencer, invicto = streaks_extended_por_mando(df_current, nome_time, mando)
 
+        # Venceu agora (jogo recente) após meses sem vencer
+        df_full_m = filtrar_por_mando(df_full, nome_time, mando)
+        if not df_full_m.empty and df_full_m.iloc[-1]['result'] == 'win' and _ultimo_jogo_recente(df_full_m):
+            vitorias = df_full_m[df_full_m['result'] == 'win']
+            if len(vitorias) >= 2:
+                data_atual = _ultimo_resultado_data(df_full, nome_time, mando, 'win')
+                data_prev = vitorias.iloc[-2]['data']
+                if isinstance(data_prev, str):
+                    data_prev = datetime.strptime(data_prev, '%Y-%m-%d')
+                meses = _meses_desde(data_prev, data_atual)
+                if meses >= 2:
+                    insights.append(f"{nome_time} venceu{sufixo} depois de {meses} meses.")
+                    covered.add(('voltou_vencer', mando))
+
         if sem_vencer >= total_cur:
             streak_full = _streak_completa(df_full, nome_time, mando, 'sem_vencer')
             if streak_full > sem_vencer:
@@ -235,6 +249,9 @@ def _suprimir_por_cross_season(insights: List[str], cross_covered: set) -> List[
                 tem_sufixo = 'em casa' not in insight and 'fora de casa' not in insight
             if not tem_sufixo:
                 continue
+            if tipo == 'voltou_vencer' and 'voltou a vencer' in insight:
+                skip = True
+                break
             if tipo == 'sem_vencer' and any(p in insight for p in ('sem vencer', 'não venceu', 'não vence')):
                 skip = True
                 break
