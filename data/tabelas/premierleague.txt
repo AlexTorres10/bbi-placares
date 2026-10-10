@@ -1,8 +1,8 @@
 Manchester City 5 5 0 0 13 5 8 15
-Arsenal 5 4 0 1 8 4 4 12
+Arsenal 6 5 0 1 10 5 5 15
 Brighton 5 3 1 1 16 5 11 10
 Brentford 5 2 3 0 10 4 6 9
-Leeds United 5 2 3 0 7 3 4 9
+Leeds United 6 2 3 1 8 5 3 9
 Liverpool 5 2 3 0 7 4 3 9
 Everton 5 2 3 0 6 3 3 9
 Hull City 5 2 2 1 6 4 2 8
