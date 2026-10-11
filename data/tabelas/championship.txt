@@ -8,15 +8,15 @@ Birmingham City 9 3 5 1 13 11 2 14
 Millwall 9 4 2 3 16 15 1 14
 West Bromwich 9 4 2 3 10 9 1 14
 Bristol City 9 4 2 3 12 13 -1 14
+Southampton 9 5 2 2 20 10 10 13
 Charlton Athletic 9 3 4 2 8 11 -3 13
 Blackburn Rovers 9 3 3 3 14 13 1 12
 Sheffield United 9 3 3 3 12 11 1 12
 Wrexham 9 2 5 2 10 13 -3 11
 Lincoln City 9 3 2 4 7 11 -4 11
-Southampton 8 4 2 2 19 10 9 10
 Bolton Wanderers 9 3 1 5 12 17 -5 10
 Norwich City 9 3 0 6 17 19 -2 9
-Portsmouth 7 2 2 3 9 10 -1 8
+Portsmouth 8 2 2 4 9 11 -2 8
 Watford 9 2 2 5 7 14 -7 8
 Cardiff City 9 1 4 4 11 14 -3 7
 Burnley 9 1 4 4 13 17 -4 7
