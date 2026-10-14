@@ -1,24 +1,24 @@
-Swansea City 9 6 2 1 15 7 8 20
-Middlesbrough 9 5 3 1 17 12 5 18
-West Ham 9 4 4 1 23 12 11 16
-Stoke City 9 5 1 3 15 13 2 16
-Wolverhampton 8 4 2 2 15 11 4 14
-Queens Park Rangers 9 3 5 1 11 8 3 14
-Birmingham City 9 3 5 1 13 11 2 14
-Millwall 9 4 2 3 16 15 1 14
-West Bromwich 9 4 2 3 10 9 1 14
-Bristol City 9 4 2 3 12 13 -1 14
-Southampton 9 5 2 2 20 10 10 13
-Charlton Athletic 9 3 4 2 8 11 -3 13
-Blackburn Rovers 9 3 3 3 14 13 1 12
-Sheffield United 9 3 3 3 12 11 1 12
-Wrexham 9 2 5 2 10 13 -3 11
-Lincoln City 9 3 2 4 7 11 -4 11
-Bolton Wanderers 9 3 1 5 12 17 -5 10
-Norwich City 9 3 0 6 17 19 -2 9
-Portsmouth 8 2 2 4 9 11 -2 8
-Watford 9 2 2 5 7 14 -7 8
-Cardiff City 9 1 4 4 11 14 -3 7
-Burnley 9 1 4 4 13 17 -4 7
-Derby County 9 1 3 5 8 15 -7 6
-Preston North End 9 1 1 7 8 16 -8 4
+Swansea City 10 7 2 1 16 7 9 23
+Middlesbrough 10 6 3 1 20 14 6 21
+West Ham 10 5 4 1 29 12 17 19
+Birmingham City 10 4 5 1 17 11 6 17
+Queens Park Rangers 10 4 5 1 15 9 6 17
+West Bromwich 10 5 2 3 12 10 2 17
+Southampton 10 6 2 2 21 10 11 16
+Stoke City 10 5 1 4 17 16 1 16
+Blackburn Rovers 10 4 3 3 15 13 2 15
+Wolverhampton 9 4 2 3 16 14 2 14
+Millwall 10 4 2 4 16 16 0 14
+Bristol City 10 4 2 4 12 14 -2 14
+Charlton Athletic 10 3 5 2 10 13 -3 14
+Bolton Wanderers 10 4 1 5 15 18 -3 13
+Sheffield United 10 3 3 4 14 14 0 12
+Portsmouth 9 3 2 4 12 13 -1 11
+Wrexham 10 2 5 3 11 15 -4 11
+Lincoln City 10 3 2 5 7 17 -10 11
+Cardiff City 10 2 4 4 16 15 1 10
+Norwich City 10 3 0 7 17 20 -3 9
+Burnley 10 1 5 4 15 19 -4 8
+Watford 10 2 2 6 8 19 -11 8
+Derby County 10 1 3 6 9 19 -10 6
+Preston North End 10 1 1 8 8 20 -12 4
