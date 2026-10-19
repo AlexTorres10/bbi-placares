@@ -198,6 +198,14 @@ class CupGenerator:
         # Verificar se está no display_names (manual)
         display_name = self._get_display_name(team_name, cup)
         
+        # Em confronto indefinido, alguns times têm abreviação fixa.
+        # Forest Green Rovers -> "Forest G." (evita confusão com o Nottingham Forest)
+        if '/' in display_name:
+            tbd_names = {'Forest Green Rovers': 'Forest G.', 'Altrincham': 'Altrinc.'}
+            display_name = '/'.join(
+                tbd_names.get(t.strip(), t.strip()) for t in display_name.split('/')
+            )
+        
         # Medir largura
         draw = ImageDraw.Draw(Image.new('RGBA', (1, 1)))
         bbox = draw.textbbox((0, 0), display_name, font=font)
@@ -207,34 +215,60 @@ class CupGenerator:
         if width <= max_width:
             return display_name
         
-        # Se tem /, encurtar cada time
-        if '/' in display_name:
-            teams = display_name.split('/')
-            
-            # Encurtar cada time individualmente
-            shortened = []
-            for team in teams:
-                # Tentar abreviações comuns
-                team = team.replace('United', 'Utd')
-                team = team.replace('City', '')
-                team = team.replace('Town', '')
-                team = team.replace('Sheffield', 'Sheff')
-                team = team.replace('Rovers', '')
-                team = team.strip()
-                
-                # Se ainda grande, pegar primeiras 7 letras
-                if len(team) > 8:
-                    team = team[:7] + '.'
-                
-                shortened.append(team)
-            
-            return '/'.join(shortened)
+        # Gerar candidatos por time (do mais longo ao mais curto).
+        # Com "/", todos os times avançam o mesmo nível juntos.
+        teams = [t.strip() for t in display_name.split('/')]
+        candidates = [self._shortening_candidates(t) for t in teams]
+        levels = max(len(c) for c in candidates)
         
-        # Sem /, truncar normal
-        if len(display_name) > 12:
-            return display_name[:10] + '...'
+        result = display_name
+        for level in range(levels):
+            result = '/'.join(c[min(level, len(c) - 1)] for c in candidates)
+            bbox = draw.textbbox((0, 0), result, font=font)
+            if bbox[2] - bbox[0] <= max_width:
+                return result
         
-        return display_name
+        # Nem a versão mais curta coube: devolve ela mesma (nunca usa reticências)
+        return result
+    
+    @staticmethod
+    def _shortening_candidates(name: str) -> List[str]:
+        """
+        Versões progressivamente mais curtas de um nome de time:
+        - prefixo AFC removido (ex.: "AFC Rushden & Diamonds" -> "Rushden & Diamonds")
+        - "United" no fim vira "Utd" (ex.: "Cambridge Utd")
+        - depois remove o último nome (ex.: "Huddersfield Town" -> "Huddersfield")
+        """
+        candidates = [name]
+        
+        # Abreviação fixa: não encurtar mais ("Forest G." nunca vira "Forest")
+        if name == 'Forest G.':
+            return candidates
+        
+        def add(candidate: str):
+            candidate = candidate.strip()
+            if candidate and candidate not in candidates:
+                candidates.append(candidate)
+        
+        fixed_short = {'Macclesfield': 'Macclesf.', 'Alvechurch': 'Alvech.'}
+        if name in fixed_short:
+            add(fixed_short[name])
+        
+        words = name.split()
+        if len(words) > 1 and words[0] == 'AFC':
+            words = words[1:]
+            add(' '.join(words))
+        
+        if len(words) > 1 and words[-1] == 'United':
+            add(' '.join(words[:-1] + ['Utd']))
+        
+        while len(words) > 2 or (len(words) == 2 and words[0] != 'FC'):
+            words = words[:-1]
+            while len(words) > 1 and words[-1] in ('&', 'and', 'of'):
+                words = words[:-1]
+            add(' '.join(words))
+        
+        return candidates
     
     def generate_cup_images(self, cup: str, results: List[Dict], 
                            title: str) -> List[Image.Image]:
