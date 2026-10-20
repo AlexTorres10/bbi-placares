@@ -4,13 +4,13 @@ Middlesbrough 11 6 4 1 22 16 6 22
 Birmingham City 11 5 5 1 20 11 9 20
 West Bromwich 11 6 2 3 15 12 3 20
 Stoke City 11 6 1 4 18 16 2 19
+Wolverhampton 11 5 3 3 19 16 3 18
 Southampton 11 6 3 2 21 10 11 17
-Wolverhampton 10 5 2 3 18 15 3 17
 Queens Park Rangers 11 4 5 2 15 12 3 17
 Blackburn Rovers 11 4 3 4 17 16 1 15
 Sheffield United 11 4 3 4 15 14 1 15
 Millwall 11 4 3 4 18 18 0 15
-Portsmouth 10 4 2 4 13 13 0 14
+Portsmouth 11 4 3 4 14 14 0 15
 Wrexham 11 3 5 3 15 16 -1 14
 Bolton Wanderers 11 4 2 5 15 18 -3 14
 Bristol City 11 4 2 5 12 15 -3 14
