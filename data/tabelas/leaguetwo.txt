@@ -1,24 +1,24 @@
-Salford City 11 7 1 3 17 11 6 22
-Barnet 9 6 3 0 22 12 10 21
-Crewe Alexandra 11 5 6 0 15 9 6 21
-York City 10 4 4 2 18 12 6 16
-Walsall 10 3 7 0 13 7 6 16
-Gillingham 11 4 4 3 16 13 3 16
-Chesterfield 11 4 3 4 17 15 2 15
-Cheltenham Town 11 4 3 4 17 20 -3 15
-Bristol Rovers 11 5 0 6 15 18 -3 15
-Accrington 11 3 5 3 16 15 1 14
-Newport County 11 3 5 3 14 13 1 14
-Fleetwood Town 11 3 5 3 12 11 1 14
-Rochdale 11 4 2 5 13 15 -2 14
-Shrewsbury Town 11 4 2 5 10 15 -5 14
-Grimsby Town 11 3 4 4 13 13 0 13
-Exeter City 11 3 4 4 6 6 0 13
-Tranmere Rovers 11 2 6 3 14 15 -1 12
-Swindon Town 11 3 3 5 10 15 -5 12
-Oldham Athletic 10 3 2 5 13 14 -1 11
-Colchester United 10 2 5 3 10 13 -3 11
-Port Vale 9 3 2 4 5 9 -4 11
-Northampton Town 9 2 4 3 6 7 -1 10
-Rotherham United 11 2 4 5 12 18 -6 10
-Crawley Town 9 1 2 6 9 17 -8 5
+Salford City 12 8 1 3 19 12 7 25
+Barnet 10 6 3 1 23 15 8 21
+Crewe Alexandra 12 5 6 1 15 11 4 21
+Walsall 11 4 7 0 16 7 9 19
+Cheltenham Town 12 5 3 4 21 22 -1 18
+York City 11 4 5 2 19 13 6 17
+Gillingham 12 4 5 3 17 14 3 17
+Shrewsbury Town 12 5 2 5 13 17 -4 17
+Chesterfield 12 4 4 4 18 16 2 16
+Exeter City 12 4 4 4 8 6 2 16
+Accrington 12 3 6 3 17 16 1 15
+Newport County 12 3 6 3 16 15 1 15
+Tranmere Rovers 12 3 6 3 15 15 0 15
+Rochdale 12 4 3 5 15 17 -2 15
+Swindon Town 12 4 3 5 13 16 -3 15
+Bristol Rovers 12 5 0 7 16 20 -4 15
+Grimsby Town 12 3 5 4 15 15 0 14
+Fleetwood Town 12 3 5 4 14 15 -1 14
+Colchester United 11 2 6 3 11 14 -3 12
+Port Vale 10 3 3 4 6 10 -4 12
+Oldham Athletic 11 3 2 6 13 17 -4 11
+Rotherham United 12 2 5 5 14 20 -6 11
+Northampton Town 10 2 4 4 6 8 -2 10
+Crawley Town 10 1 2 7 11 20 -9 5
