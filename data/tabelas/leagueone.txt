@@ -3,13 +3,13 @@ Huddersfield Town 11 6 4 1 22 10 12 22
 Bradford City 11 6 3 2 10 5 5 21
 Cambridge United 11 5 5 1 18 14 4 20
 Plymouth Argyle 12 6 1 5 18 17 1 19
+Reading 11 5 3 3 23 12 11 18
 Sheffield Wednesday 10 5 3 2 20 10 10 18
 Oxford United 9 5 3 1 18 10 8 18
-Reading 10 4 3 3 22 12 10 15
 Stevenage 10 4 3 3 15 10 5 15
 Leicester City 10 4 3 3 16 15 1 15
 Mansfield Town 10 4 3 3 16 15 1 15
-Leyton Orient 10 4 2 4 15 11 4 14
+Leyton Orient 11 4 2 5 15 12 3 14
 Luton Town 10 4 2 4 19 18 1 14
 Burton Albion 12 3 5 4 16 18 -2 14
 Wycombe Wanderers 11 3 5 3 18 22 -4 14
