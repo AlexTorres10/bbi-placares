@@ -3074,6 +3074,13 @@ elif modo == "🏆 Gerar Copa":
                     # SALVAR NA SESSÃO (para não perder após download)
                     st.session_state['imagens_copa_geradas'] = images
                     st.session_state['copa_selecionada'] = copa_selecionada
+                    _titulo_up = titulo_fase.upper()
+                    if "SORTEIO" in _titulo_up:
+                        st.session_state['copa_tipo_arquivo'] = "Sorteio"
+                    elif "RESULTADOS" in _titulo_up:
+                        st.session_state['copa_tipo_arquivo'] = "Resultado"
+                    else:
+                        st.session_state['copa_tipo_arquivo'] = ""
                     
                     st.success(f"✅ {len(images)} imagem(ns) gerada(s)!")
             
@@ -3092,6 +3099,8 @@ elif modo == "🏆 Gerar Copa":
         
         images = st.session_state['imagens_copa_geradas']
         copa_nome = st.session_state.get('copa_selecionada', 'Copa')
+        copa_tipo = st.session_state.get('copa_tipo_arquivo', '')
+        copa_prefixo = copa_nome.replace(' ', '-') + (f"-{copa_tipo}" if copa_tipo else "")
         
         # BOTÃO PARA BAIXAR TODAS DE UMA VEZ
         if len(images) > 1:
@@ -3108,7 +3117,7 @@ elif modo == "🏆 Gerar Copa":
                     img_buffer.seek(0)
                     
                     # Adicionar ao ZIP
-                    filename = f"{copa_nome.replace(' ', '-')}-{idx}.png"
+                    filename = f"{copa_prefixo}-{idx}.png"
                     zip_file.writestr(filename, img_buffer.getvalue())
             
             zip_buffer.seek(0)
@@ -3116,7 +3125,7 @@ elif modo == "🏆 Gerar Copa":
             st.download_button(
                 "📦 Baixar Todas as Imagens (ZIP)",
                 zip_buffer,
-                file_name=f"{copa_nome.replace(' ', '-')}-todas.zip",
+                file_name=f"{copa_prefixo}-todas.zip",
                 mime="application/zip",
                 width='stretch',
                 type="primary"
@@ -3137,7 +3146,7 @@ elif modo == "🏆 Gerar Copa":
                 st.download_button(
                     f"📥 Baixar Imagem {idx}",
                     f,
-                    file_name=f"{copa_nome.replace(' ', '-')}-{idx}.png",
+                    file_name=f"{copa_prefixo}-{idx}.png",
                     mime="image/png",
                     width='stretch',
                     key=f"download_copa_{idx}"  # ← Key única evita conflitos
