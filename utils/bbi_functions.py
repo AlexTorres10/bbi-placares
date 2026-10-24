@@ -319,7 +319,13 @@ def detectar_fase_estendida_por_mando(df: pd.DataFrame, nome_time: str, mando: s
             # Só mostrar se >= 70% de derrotas E número mínimo de derrotas
             if (losses >= limite_min_derrotas and worst_len >= limite_min_jogos and 
                 loss_ratio >= 0.70):
-                insights.append(f"{nome_time} perdeu {losses} dos últimos {worst_len} jogos{sufixo}.")
+                if worst_len == total_jogos and mando == 'geral':
+                    if losses == total_jogos:
+                        insights.append(f"{nome_time} perdeu todos os jogos da temporada.")
+                    else:
+                        insights.append(f"{nome_time} perdeu {losses} dos {total_jogos} jogos da temporada.")
+                else:
+                    insights.append(f"{nome_time} perdeu {losses} dos últimos {worst_len} jogos{sufixo}.")
 
         # Função auxiliar
         def contar_jogos_cond(cond_func):
@@ -338,7 +344,8 @@ def detectar_fase_estendida_por_mando(df: pd.DataFrame, nome_time: str, mando: s
             # Em casa/fora a janela total já é tratada em _filtrar_insights_redundantes
             if n_vit_ruim == total_jogos and mando == 'geral':
                 if vitorias == 0:
-                    insights.append(f"{nome_time} não venceu na temporada inteira.")
+                    if not any("perdeu todos os jogos da temporada" in i for i in insights):
+                        insights.append(f"{nome_time} não venceu na temporada inteira.")
                 elif vitorias == 1:
                     insights.append(f"{nome_time} só venceu um jogo na temporada inteira.")
                 else:
@@ -357,14 +364,20 @@ def detectar_fase_estendida_por_mando(df: pd.DataFrame, nome_time: str, mando: s
             # O limite_min_vitorias padrão deve ser 5 (como está na função)
             if (wins >= limite_min_vitorias and best_len >= limite_min_jogos and 
                 win_ratio >= 0.70): 
-                insights.append(f"{nome_time} venceu {wins} dos últimos {best_len} jogos{sufixo}. Boa fase!")
+                if best_len == total_jogos and mando == 'geral':
+                    if wins == total_jogos:
+                        insights.append(f"{nome_time} venceu todos os jogos da temporada. Boa fase!")
+                    else:
+                        insights.append(f"{nome_time} venceu {wins} dos {total_jogos} jogos da temporada. Boa fase!")
+                else:
+                    insights.append(f"{nome_time} venceu {wins} dos últimos {best_len} jogos{sufixo}. Boa fase!")
 
         # Boa fase por poucas derrotas
         n_derrotas_bom, res_derrotas_bom = contar_jogos_cond(lambda v, d: d <= limite_max_derrotas)
         if n_derrotas_bom >= limite_min_jogos and res_derrotas_bom.get('loss', 0) <= limite_max_derrotas:
             derrotas = res_derrotas_bom.get('loss', 0)
             if derrotas == 0:
-                if n_derrotas_bom == total_jogos and mando != 'geral':
+                if n_derrotas_bom == total_jogos:
                     insights.append(f"{nome_time} não perdeu{sufixo} na temporada inteira.")
                 else:
                     insights.append(f"{nome_time} está invicto{sufixo} há {n_derrotas_bom} jogos.")
@@ -484,8 +497,10 @@ def _filtrar_insights_redundantes(insights_forma: List[str], jogos_casa: int, jo
 
                 # substituir "últimos X jogos em casa" por "todos os jogos em casa" quando a janela cobre todos
                 if jogos_analisados == jogos_casa and jogos_casa > 0:
-                    insight = re.sub(r'nos últimos \d+ jogos em casa', 'em todos os jogos em casa', insight)
-                    insight = re.sub(r'últimos \d+ jogos em casa', 'todos os jogos em casa', insight)
+                    if "venceu apenas 1 " in insight:
+                        insights_filtrados.append(f"{team} só venceu um jogo em casa na temporada.")
+                        continue
+                    insight = re.sub(r'dos últimos (\d+) jogos em casa', r'dos \1 jogos em casa na temporada', insight)
 
         # CASOS FORA DE CASA
         elif "fora de casa" in insight:
@@ -505,8 +520,10 @@ def _filtrar_insights_redundantes(insights_forma: List[str], jogos_casa: int, jo
                     continue
 
                 if jogos_analisados == jogos_fora and jogos_fora > 0:
-                    insight = re.sub(r'nos últimos \d+ jogos fora de casa', 'em todos os jogos fora de casa', insight)
-                    insight = re.sub(r'últimos \d+ jogos fora de casa', 'todos os jogos fora de casa', insight)
+                    if "venceu apenas 1 " in insight:
+                        insights_filtrados.append(f"{team} só venceu um jogo fora de casa na temporada.")
+                        continue
+                    insight = re.sub(r'dos últimos (\d+) jogos fora de casa', r'dos \1 jogos fora de casa na temporada', insight)
 
         # Evitar duplicação com streaks já conhecidos
         if _eh_redundante_com_streak(insight, lose_streak_casa, lose_streak_fora,
@@ -591,6 +608,11 @@ def _eh_redundante_com_streak(insight: str, lose_streak_casa: int, lose_streak_f
                 return True
 
     # ── Insights gerais (sem sufixo de mando) ────────────────────────────────
+    if "perdeu todos os jogos da temporada" in insight and lose_streak_geral >= 3:
+        return True
+    if "venceu todos os jogos da temporada" in insight and win_streak_geral >= 3:
+        return True
+
     # Suprimir "perdeu X dos últimos X jogos" quando a sequência consecutiva já cobre o período.
     # Manter "perdeu X dos últimos Y jogos" quando Y > X (informação adicional).
     if "em casa" not in insight and "fora de casa" not in insight:
@@ -695,7 +717,7 @@ def allinsights(df: pd.DataFrame, nome: str, time_ou_liga: str = 'time',
 
         # Sequências sem vencer — suprimidas se cross-temporada cobre
         if ('sem_vencer', 'geral') not in cross_covered:
-            if sem_vencer_geral >= 5 and sem_vencer_geral != lose_streak_geral:
+            if sem_vencer_geral >= 5 and sem_vencer_geral != lose_streak_geral and sem_vencer_geral != df.shape[0]:
                 insights.append(f"{nome} está há {sem_vencer_geral} jogos sem vencer.")
         if ('sem_vencer', 'casa') not in cross_covered:
             if sem_vencer_casa >= 5 and sem_vencer_casa != lose_streak_casa and not streak_casa_total:
@@ -706,7 +728,7 @@ def allinsights(df: pd.DataFrame, nome: str, time_ou_liga: str = 'time',
 
         # Sequências invictas — suprimidas se cross-temporada cobre
         if ('invicto', 'geral') not in cross_covered:
-            if invicto_geral >= 5 and invicto_geral != win_streak_geral:
+            if invicto_geral >= 5 and invicto_geral != win_streak_geral and invicto_geral != df.shape[0]:
                 insights.append(f"{nome} está invicto há {invicto_geral} jogos.")
         if ('invicto', 'casa') not in cross_covered:
             if invicto_casa >= 5 and invicto_casa != win_streak_casa and not streak_casa_total and invicto_casa != df_casa.shape[0]:
@@ -794,7 +816,7 @@ def allinsights(df: pd.DataFrame, nome: str, time_ou_liga: str = 'time',
                 insights.append(f"{time} está na {lose_fora}ª derrota seguida fora de casa!")
 
             if ('sem_vencer', 'geral') not in cross_covered:
-                if sem_vencer_geral >= 5 and sem_vencer_geral != lose_streak:
+                if sem_vencer_geral >= 5 and sem_vencer_geral != lose_streak and sem_vencer_geral != df_time.shape[0]:
                     insights.append(f"{time} está há {sem_vencer_geral} jogos sem vencer.")
             if ('sem_vencer', 'casa') not in cross_covered:
                 if sem_vencer_casa >= 5 and sem_vencer_casa != lose_casa:
@@ -804,7 +826,7 @@ def allinsights(df: pd.DataFrame, nome: str, time_ou_liga: str = 'time',
                     insights.append(f"{time} está há {sem_vencer_fora} jogos sem vencer fora de casa.")
 
             if ('invicto', 'geral') not in cross_covered:
-                if invicto_geral >= 5 and invicto_geral != win_streak:
+                if invicto_geral >= 5 and invicto_geral != win_streak and invicto_geral != df_time.shape[0]:
                     insights.append(f"{time} está invicto há {invicto_geral} jogos.")
             if ('invicto', 'casa') not in cross_covered:
                 if invicto_casa >= 5 and invicto_casa != win_casa and invicto_casa != df_casa.shape[0]:
