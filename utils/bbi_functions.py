@@ -335,7 +335,15 @@ def detectar_fase_estendida_por_mando(df: pd.DataFrame, nome_time: str, mando: s
         n_vit_ruim, res_vit_ruim = contar_jogos_cond(lambda v, d: v <= limite_max_vitorias)
         if n_vit_ruim >= limite_min_jogos and res_vit_ruim.get('win', 0) <= limite_max_vitorias:
             vitorias = res_vit_ruim.get('win', 0)
-            if vitorias == 0:
+            # Em casa/fora a janela total já é tratada em _filtrar_insights_redundantes
+            if n_vit_ruim == total_jogos and mando == 'geral':
+                if vitorias == 0:
+                    insights.append(f"{nome_time} não venceu na temporada inteira.")
+                elif vitorias == 1:
+                    insights.append(f"{nome_time} só venceu um jogo na temporada inteira.")
+                else:
+                    insights.append(f"{nome_time} venceu apenas {vitorias} dos {total_jogos} jogos da temporada.")
+            elif vitorias == 0:
                 insights.append(f"{nome_time} não venceu nenhum dos últimos {n_vit_ruim} jogos{sufixo}.")
             else:
                 insights.append(f"{nome_time} venceu apenas {vitorias} dos últimos {n_vit_ruim} jogos{sufixo}.")
