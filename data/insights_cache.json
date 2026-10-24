@@ -1518,18 +1518,18 @@
   },
   "Championship": {
     "last_game_date": "2026-10-24",
-    "updated_at": "2026-10-24T16:31:00",
+    "updated_at": "2026-10-24T12:34:45",
     "data": {
       "insights": [
         "Birmingham City não perde em casa há 6 meses.",
         "Blackburn Rovers está na 3ª vitória seguida em casa!",
-        "Blackburn Rovers venceu apenas 1 dos todos os jogos fora de casa.",
+        "Blackburn Rovers só venceu um jogo fora de casa na temporada.",
         "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos em casa.",
         "Bristol City venceu apenas 1 dos últimos 7 jogos.",
-        "Bristol City sofreu apenas 1 derrotas em todos os jogos fora de casa.",
+        "Bristol City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
         "Burnley não vence em casa há 12 meses.",
         "Burnley só venceu um jogo na temporada inteira.",
-        "Burnley venceu apenas 1 dos todos os jogos fora de casa.",
+        "Burnley só venceu um jogo fora de casa na temporada.",
         "Cardiff City não perde em casa há 7 meses.",
         "Cardiff City não vence fora de casa há 6 meses.",
         "Cardiff City está na 3ª vitória seguida em casa!",
@@ -1537,18 +1537,18 @@
         "Charlton Athletic está há 5 jogos sem vencer fora de casa.",
         "Charlton Athletic venceu apenas 1 dos últimos 10 jogos.",
         "Charlton Athletic perdeu em casa depois de 5 jogos sem derrota em casa.",
-        "Charlton Athletic venceu apenas 1 dos todos os jogos fora de casa.",
+        "Charlton Athletic só venceu um jogo fora de casa na temporada.",
         "Derby County não vence em casa há 6 meses.",
         "Derby County está há 8 jogos sem vencer.",
         "Derby County só venceu um jogo na temporada inteira.",
-        "Derby County venceu apenas 1 dos todos os jogos fora de casa.",
+        "Derby County só venceu um jogo fora de casa na temporada.",
         "Lincoln City venceu em casa depois de 6 meses.",
         "Lincoln City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
         "Middlesbrough não perde em casa há 6 meses.",
         "Middlesbrough está invicto há 10 jogos.",
         "Middlesbrough está invicto há 5 jogos fora de casa.",
         "Middlesbrough sofreu apenas 1 derrotas em todos os seus 12 jogos.",
-        "Middlesbrough sofreu apenas 1 derrotas em todos os jogos fora de casa.",
+        "Middlesbrough sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
         "Millwall venceu apenas 1 dos últimos 7 jogos.",
         "Millwall venceu apenas 1 dos últimos 5 jogos em casa.",
         "Millwall venceu apenas 1 dos últimos 5 jogos fora de casa.",
@@ -1559,34 +1559,34 @@
         "Portsmouth venceu apenas 1 dos últimos 5 jogos fora de casa.",
         "Preston North End está há 7 jogos sem vencer.",
         "Preston North End está há 6 jogos sem vencer fora de casa.",
-        "Preston North End perdeu 9 dos últimos 12 jogos.",
+        "Preston North End perdeu 9 dos 12 jogos da temporada.",
         "Preston North End só venceu um jogo na temporada inteira.",
-        "Preston North End venceu apenas 1 dos todos os jogos em casa.",
-        "Preston North End perdeu 5 dos todos os jogos fora de casa.",
+        "Preston North End só venceu um jogo em casa na temporada.",
+        "Preston North End perdeu 5 dos 6 jogos fora de casa na temporada.",
         "Preston North End não venceu nenhum dos últimos 6 jogos fora de casa.",
         "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 7 jogos.",
-        "Queens Park Rangers sofreu apenas 1 derrotas em todos os jogos em casa.",
+        "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
         "Queens Park Rangers venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Queens Park Rangers sofreu apenas 1 derrotas em todos os jogos fora de casa.",
+        "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
         "Southampton não perde em casa há 9 meses.",
         "Southampton venceu 5 dos últimos 7 jogos. Boa fase!",
         "Southampton sofreu apenas 1 derrotas nos últimos 11 jogos.",
-        "Southampton venceu 5 dos todos os jogos em casa. Boa fase!",
+        "Southampton venceu 5 dos 6 jogos em casa na temporada. Boa fase!",
         "Southampton sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
         "Stoke City está na 3ª vitória seguida fora de casa!",
         "Stoke City sofreu apenas 1 derrotas nos últimos 9 jogos.",
         "Stoke City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
         "Stoke City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
-        "Swansea City sofreu apenas 1 derrotas em todos os jogos em casa.",
+        "Swansea City sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
         "Watford não vence fora de casa há 8 meses.",
         "Watford está na 5ª derrota seguida fora de casa!",
         "Watford perdeu 7 dos últimos 9 jogos.",
-        "West Bromwich sofreu apenas 1 derrotas em todos os jogos em casa.",
+        "West Bromwich sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
         "West Ham perdeu depois de 9 jogos sem derrota.",
         "West Ham perdeu em casa depois de 4 jogos sem derrota em casa.",
         "West Ham não perdeu fora de casa na temporada inteira.",
-        "Wolverhampton sofreu apenas 1 derrotas em todos os jogos em casa.",
-        "Wrexham venceu apenas 1 dos todos os jogos fora de casa."
+        "Wolverhampton sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Wrexham só venceu um jogo fora de casa na temporada."
       ],
       "team_insights": {
         "Birmingham City": [
@@ -1598,7 +1598,7 @@
           "Blackburn Rovers está na 3ª vitória seguida em casa!",
           "Blackburn Rovers somou 10 pontos nos últimos 5 jogos. Excelente fase!",
           "Blackburn Rovers somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Blackburn Rovers venceu apenas 1 dos todos os jogos fora de casa."
+          "Blackburn Rovers só venceu um jogo fora de casa na temporada."
         ],
         "Bolton Wanderers": [
           "Bolton Wanderers somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
@@ -1607,13 +1607,13 @@
         "Bristol City": [
           "Bristol City somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
           "Bristol City venceu apenas 1 dos últimos 7 jogos.",
-          "Bristol City sofreu apenas 1 derrotas em todos os jogos fora de casa."
+          "Bristol City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
         ],
         "Burnley": [
           "Burnley não vence em casa há 12 meses.",
           "Burnley somou apenas 2 pontos nos últimos 3 jogos em casa.",
           "Burnley só venceu um jogo na temporada inteira.",
-          "Burnley venceu apenas 1 dos todos os jogos fora de casa."
+          "Burnley só venceu um jogo fora de casa na temporada."
         ],
         "Cardiff City": [
           "Cardiff City não perde em casa há 7 meses.",
@@ -1631,7 +1631,7 @@
           "Charlton Athletic somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
           "Charlton Athletic venceu apenas 1 dos últimos 10 jogos.",
           "Charlton Athletic perdeu em casa depois de 5 jogos sem derrota em casa.",
-          "Charlton Athletic venceu apenas 1 dos todos os jogos fora de casa."
+          "Charlton Athletic só venceu um jogo fora de casa na temporada."
         ],
         "Derby County": [
           "Derby County não vence em casa há 6 meses.",
@@ -1639,7 +1639,7 @@
           "Derby County somou apenas 1 pontos nos últimos 3 jogos em casa.",
           "Derby County somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
           "Derby County só venceu um jogo na temporada inteira.",
-          "Derby County venceu apenas 1 dos todos os jogos fora de casa."
+          "Derby County só venceu um jogo fora de casa na temporada."
         ],
         "Lincoln City": [
           "Lincoln City venceu em casa depois de 6 meses.",
@@ -1652,7 +1652,7 @@
           "Middlesbrough somou 11 pontos nos últimos 5 jogos. Excelente fase!",
           "Middlesbrough somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
           "Middlesbrough sofreu apenas 1 derrotas em todos os seus 12 jogos.",
-          "Middlesbrough sofreu apenas 1 derrotas em todos os jogos fora de casa."
+          "Middlesbrough sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
         ],
         "Millwall": [
           "Millwall somou apenas 2 pontos nos últimos 3 jogos em casa.",
@@ -1678,19 +1678,19 @@
           "Preston North End somou apenas 2 pontos nos últimos 5 jogos.",
           "Preston North End somou apenas 1 pontos nos últimos 3 jogos em casa.",
           "Preston North End somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
-          "Preston North End perdeu 9 dos últimos 12 jogos.",
+          "Preston North End perdeu 9 dos 12 jogos da temporada.",
           "Preston North End só venceu um jogo na temporada inteira.",
-          "Preston North End venceu apenas 1 dos todos os jogos em casa.",
-          "Preston North End perdeu 5 dos todos os jogos fora de casa.",
+          "Preston North End só venceu um jogo em casa na temporada.",
+          "Preston North End perdeu 5 dos 6 jogos fora de casa na temporada.",
           "Preston North End não venceu nenhum dos últimos 6 jogos fora de casa."
         ],
         "Queens Park Rangers": [
           "Queens Park Rangers somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
           "Queens Park Rangers somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
           "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 7 jogos.",
-          "Queens Park Rangers sofreu apenas 1 derrotas em todos os jogos em casa.",
+          "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
           "Queens Park Rangers venceu apenas 1 dos últimos 5 jogos fora de casa.",
-          "Queens Park Rangers sofreu apenas 1 derrotas em todos os jogos fora de casa."
+          "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
         ],
         "Sheffield United": [],
         "Southampton": [
@@ -1699,7 +1699,7 @@
           "Southampton somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
           "Southampton venceu 5 dos últimos 7 jogos. Boa fase!",
           "Southampton sofreu apenas 1 derrotas nos últimos 11 jogos.",
-          "Southampton venceu 5 dos todos os jogos em casa. Boa fase!",
+          "Southampton venceu 5 dos 6 jogos em casa na temporada. Boa fase!",
           "Southampton sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
         ],
         "Stoke City": [
@@ -1711,7 +1711,7 @@
           "Stoke City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
         ],
         "Swansea City": [
-          "Swansea City sofreu apenas 1 derrotas em todos os jogos em casa."
+          "Swansea City sofreu apenas 1 derrotas nos últimos 6 jogos em casa."
         ],
         "Watford": [
           "Watford não vence fora de casa há 8 meses.",
@@ -1720,7 +1720,7 @@
           "Watford perdeu 7 dos últimos 9 jogos."
         ],
         "West Bromwich": [
-          "West Bromwich sofreu apenas 1 derrotas em todos os jogos em casa."
+          "West Bromwich sofreu apenas 1 derrotas nos últimos 6 jogos em casa."
         ],
         "West Ham": [
           "West Ham somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
@@ -1729,11 +1729,11 @@
           "West Ham não perdeu fora de casa na temporada inteira."
         ],
         "Wolverhampton": [
-          "Wolverhampton sofreu apenas 1 derrotas em todos os jogos em casa."
+          "Wolverhampton sofreu apenas 1 derrotas nos últimos 6 jogos em casa."
         ],
         "Wrexham": [
           "Wrexham somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
-          "Wrexham venceu apenas 1 dos todos os jogos fora de casa."
+          "Wrexham só venceu um jogo fora de casa na temporada."
         ]
       },
       "team_rankings": {
