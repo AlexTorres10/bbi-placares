@@ -1022,9 +1022,9 @@ def render_table_mode():
             st.error("❌ Por favor, insira pelo menos um resultado!")
             return
         
-        # Parse dos resultados com suporte a prefixo de data (-N dias)
+        # Parse dos resultados com suporte a prefixo de data (-N, +N ou N dias)
         parser = ResultsParser()
-        _prefix_re = re.compile(r'^(-\d+)\s+')
+        _prefix_re = re.compile(r'^([+-]?\d+)\s+')
         resultados = []
         for _line in resultados_texto.strip().split('\n'):
             _line = _line.strip()
