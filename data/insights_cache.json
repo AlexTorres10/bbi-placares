@@ -1015,169 +1015,211 @@
     }
   },
   "Premier League": {
-    "last_game_date": "2026-10-25",
-    "updated_at": "2026-10-27T03:51:42",
+    "last_game_date": "2026-11-02",
+    "updated_at": "2026-11-04T23:34:17",
     "data": {
       "insights": [
-        "Arsenal não perde em casa há 6 meses.",
-        "Arsenal está na 3ª vitória seguida!",
+        "Arsenal não perde em casa há 7 meses.",
+        "Arsenal está na 4ª vitória seguida!",
         "Arsenal está na 4ª vitória seguida em casa!",
-        "Arsenal venceu 7 dos 8 jogos da temporada. Boa fase!",
-        "Arsenal sofreu apenas 1 derrotas em todos os seus 8 jogos.",
-        "Aston Villa venceu em casa depois de 5 meses.",
-        "Bournemouth venceu fora de casa depois de 5 meses.",
-        "Brentford não vence fora de casa há 8 meses.",
-        "Brentford não perde fora de casa há 5 meses.",
-        "Brentford venceu apenas 1 dos últimos 7 jogos.",
-        "Brentford sofreu apenas 1 derrotas em todos os seus 8 jogos.",
-        "Coventry City perdeu 6 dos 8 jogos da temporada.",
-        "Everton não vence fora de casa há 8 meses.",
-        "Everton venceu apenas 1 dos últimos 7 jogos.",
-        "Fulham venceu fora de casa depois de 8 meses.",
-        "Hull City não perde em casa há 7 meses.",
-        "Hull City está há 6 jogos sem vencer.",
-        "Hull City venceu apenas 1 dos últimos 7 jogos.",
-        "Leeds United não perde em casa há 7 meses.",
-        "Leeds United venceu apenas 1 dos últimos 7 jogos.",
-        "Leeds United sofreu apenas 1 derrotas em todos os seus 8 jogos.",
-        "Liverpool venceu em casa depois de 6 meses.",
+        "Arsenal venceu 8 dos 9 jogos da temporada. Boa fase!",
+        "Arsenal sofreu apenas 1 derrotas em todos os seus 9 jogos.",
+        "Arsenal sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Aston Villa está invicto há 5 jogos.",
+        "Aston Villa sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Aston Villa só venceu um jogo em casa na temporada.",
+        "Bournemouth está na 3ª vitória seguida!",
+        "Bournemouth sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Brentford não vence fora de casa há 9 meses.",
+        "Brentford não perde fora de casa há 6 meses.",
+        "Brentford sofreu apenas 1 derrotas em todos os seus 9 jogos.",
+        "Brentford sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Brighton venceu 5 dos últimos 7 jogos. Boa fase!",
+        "Brighton sofreu apenas 1 derrotas nos últimos 7 jogos.",
+        "Chelsea sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Crystal Palace está na 3ª derrota seguida!",
+        "Crystal Palace só venceu um jogo fora de casa na temporada.",
+        "Everton venceu depois de 2 meses.",
+        "Everton venceu fora de casa depois de 9 meses.",
+        "Fulham só venceu um jogo fora de casa na temporada.",
+        "Hull City não perde em casa há 8 meses.",
+        "Hull City está há 7 jogos sem vencer.",
+        "Hull City venceu apenas 1 dos últimos 8 jogos.",
+        "Hull City só venceu um jogo em casa na temporada.",
+        "Ipswich Town só venceu um jogo fora de casa na temporada.",
+        "Leeds United não perde em casa há 8 meses.",
+        "Leeds United está há 5 jogos sem vencer.",
+        "Leeds United venceu apenas 1 dos últimos 8 jogos.",
+        "Leeds United só venceu um jogo fora de casa na temporada.",
         "Liverpool está na 3ª vitória seguida fora de casa!",
-        "Liverpool sofreu apenas 1 derrotas em todos os seus 8 jogos.",
-        "Manchester City está na 4ª vitória seguida em casa!",
-        "Manchester City perdeu depois de 7 jogos sem derrota.",
-        "Manchester United está há 6 jogos sem vencer.",
+        "Liverpool só venceu um jogo em casa na temporada.",
+        "Manchester City venceu 7 dos 9 jogos da temporada. Boa fase!",
+        "Manchester City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Manchester United está há 7 jogos sem vencer.",
+        "Manchester United está há 5 jogos sem vencer fora de casa.",
         "Manchester United só venceu um jogo na temporada inteira.",
-        "Newcastle United venceu fora de casa depois de 2 meses.",
-        "Nottingham Forest não vence em casa há 6 meses.",
+        "Manchester United não venceu nenhum dos últimos 5 jogos fora de casa.",
+        "Newcastle United só venceu um jogo em casa na temporada.",
+        "Nottingham Forest não vence em casa há 7 meses.",
+        "Nottingham Forest está há 5 jogos sem vencer.",
         "Nottingham Forest só venceu um jogo na temporada inteira.",
-        "Sunderland está há 6 jogos sem vencer.",
+        "Nottingham Forest só venceu um jogo fora de casa na temporada.",
+        "Sunderland está na 3ª derrota seguida fora de casa!",
+        "Sunderland está há 7 jogos sem vencer.",
+        "Sunderland está há 5 jogos sem vencer fora de casa.",
+        "Sunderland perdeu 5 dos últimos 7 jogos.",
         "Sunderland só venceu um jogo na temporada inteira.",
-        "Tottenham Hotspur venceu fora de casa depois de 5 meses."
+        "Sunderland não venceu nenhum dos últimos 5 jogos fora de casa.",
+        "Tottenham Hotspur está na 3ª vitória seguida!",
+        "Tottenham Hotspur sofreu apenas 1 derrotas nos últimos 7 jogos."
       ],
       "team_insights": {
         "Arsenal": [
-          "Arsenal não perde em casa há 6 meses.",
-          "Arsenal está na 3ª vitória seguida!",
+          "Arsenal não perde em casa há 7 meses.",
+          "Arsenal está na 4ª vitória seguida!",
           "Arsenal somou 12 pontos nos últimos 5 jogos. Excelente fase!",
           "Arsenal somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Arsenal venceu 7 dos 8 jogos da temporada. Boa fase!",
-          "Arsenal sofreu apenas 1 derrotas em todos os seus 8 jogos."
+          "Arsenal venceu 8 dos 9 jogos da temporada. Boa fase!",
+          "Arsenal sofreu apenas 1 derrotas em todos os seus 9 jogos.",
+          "Arsenal sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
         ],
         "Aston Villa": [
-          "Aston Villa venceu em casa depois de 5 meses.",
-          "Aston Villa somou 10 pontos nos últimos 5 jogos. Excelente fase!",
-          "Aston Villa somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!"
+          "Aston Villa está invicto há 5 jogos.",
+          "Aston Villa somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Aston Villa somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Aston Villa sofreu apenas 1 derrotas nos últimos 7 jogos.",
+          "Aston Villa só venceu um jogo em casa na temporada."
         ],
         "Bournemouth": [
-          "Bournemouth venceu fora de casa depois de 5 meses."
+          "Bournemouth está na 3ª vitória seguida!",
+          "Bournemouth sofreu apenas 1 derrotas nos últimos 5 jogos em casa."
         ],
         "Brentford": [
-          "Brentford não vence fora de casa há 8 meses.",
-          "Brentford não perde fora de casa há 5 meses.",
-          "Brentford venceu apenas 1 dos últimos 7 jogos.",
-          "Brentford sofreu apenas 1 derrotas em todos os seus 8 jogos."
+          "Brentford não vence fora de casa há 9 meses.",
+          "Brentford não perde fora de casa há 6 meses.",
+          "Brentford sofreu apenas 1 derrotas em todos os seus 9 jogos.",
+          "Brentford sofreu apenas 1 derrotas nos últimos 5 jogos em casa."
         ],
         "Brighton": [
           "Brighton somou 12 pontos nos últimos 5 jogos. Excelente fase!",
-          "Brighton somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+          "Brighton somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Brighton venceu 5 dos últimos 7 jogos. Boa fase!",
+          "Brighton sofreu apenas 1 derrotas nos últimos 7 jogos."
         ],
-        "Chelsea": [],
-        "Coventry City": [
-          "Coventry City perdeu 6 dos 8 jogos da temporada."
+        "Chelsea": [
+          "Chelsea sofreu apenas 1 derrotas nos últimos 5 jogos em casa."
         ],
-        "Crystal Palace": [],
+        "Coventry City": [],
+        "Crystal Palace": [
+          "Crystal Palace está na 3ª derrota seguida!",
+          "Crystal Palace somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Crystal Palace só venceu um jogo fora de casa na temporada."
+        ],
         "Everton": [
-          "Everton não vence fora de casa há 8 meses.",
-          "Everton somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
-          "Everton venceu apenas 1 dos últimos 7 jogos."
+          "Everton venceu depois de 2 meses.",
+          "Everton venceu fora de casa depois de 9 meses."
         ],
         "Fulham": [
-          "Fulham venceu fora de casa depois de 8 meses."
+          "Fulham só venceu um jogo fora de casa na temporada."
         ],
         "Hull City": [
-          "Hull City não perde em casa há 7 meses.",
-          "Hull City está há 6 jogos sem vencer.",
+          "Hull City não perde em casa há 8 meses.",
+          "Hull City está há 7 jogos sem vencer.",
           "Hull City somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
-          "Hull City venceu apenas 1 dos últimos 7 jogos."
+          "Hull City venceu apenas 1 dos últimos 8 jogos.",
+          "Hull City só venceu um jogo em casa na temporada."
         ],
-        "Ipswich Town": [],
+        "Ipswich Town": [
+          "Ipswich Town somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Ipswich Town só venceu um jogo fora de casa na temporada."
+        ],
         "Leeds United": [
-          "Leeds United não perde em casa há 7 meses.",
-          "Leeds United somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
-          "Leeds United venceu apenas 1 dos últimos 7 jogos.",
-          "Leeds United sofreu apenas 1 derrotas em todos os seus 8 jogos."
+          "Leeds United não perde em casa há 8 meses.",
+          "Leeds United está há 5 jogos sem vencer.",
+          "Leeds United somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Leeds United venceu apenas 1 dos últimos 8 jogos.",
+          "Leeds United só venceu um jogo fora de casa na temporada."
         ],
         "Liverpool": [
-          "Liverpool venceu em casa depois de 6 meses.",
           "Liverpool está na 3ª vitória seguida fora de casa!",
-          "Liverpool somou 10 pontos nos últimos 5 jogos. Excelente fase!",
           "Liverpool somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "Liverpool sofreu apenas 1 derrotas em todos os seus 8 jogos."
+          "Liverpool só venceu um jogo em casa na temporada."
         ],
         "Manchester City": [
-          "Manchester City somou 12 pontos nos últimos 5 jogos. Excelente fase!",
-          "Manchester City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Manchester City perdeu depois de 7 jogos sem derrota."
+          "Manchester City venceu 7 dos 9 jogos da temporada. Boa fase!",
+          "Manchester City sofreu apenas 1 derrotas nos últimos 5 jogos em casa."
         ],
         "Manchester United": [
-          "Manchester United está há 6 jogos sem vencer.",
+          "Manchester United está há 7 jogos sem vencer.",
+          "Manchester United está há 5 jogos sem vencer fora de casa.",
           "Manchester United somou apenas 1 pontos nos últimos 3 jogos em casa.",
-          "Manchester United só venceu um jogo na temporada inteira."
+          "Manchester United somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Manchester United só venceu um jogo na temporada inteira.",
+          "Manchester United não venceu nenhum dos últimos 5 jogos fora de casa."
         ],
         "Newcastle United": [
-          "Newcastle United venceu fora de casa depois de 2 meses."
+          "Newcastle United só venceu um jogo em casa na temporada."
         ],
         "Nottingham Forest": [
-          "Nottingham Forest não vence em casa há 6 meses.",
+          "Nottingham Forest não vence em casa há 7 meses.",
+          "Nottingham Forest está há 5 jogos sem vencer.",
+          "Nottingham Forest somou apenas 1 ponto nos últimos 5 jogos.",
           "Nottingham Forest somou apenas 1 pontos nos últimos 3 jogos em casa.",
-          "Nottingham Forest só venceu um jogo na temporada inteira."
+          "Nottingham Forest somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Nottingham Forest só venceu um jogo na temporada inteira.",
+          "Nottingham Forest só venceu um jogo fora de casa na temporada."
         ],
         "Sunderland": [
-          "Sunderland está há 6 jogos sem vencer.",
+          "Sunderland está na 3ª derrota seguida fora de casa!",
+          "Sunderland está há 7 jogos sem vencer.",
+          "Sunderland está há 5 jogos sem vencer fora de casa.",
           "Sunderland somou apenas 1 ponto nos últimos 5 jogos.",
           "Sunderland somou apenas 1 pontos nos últimos 3 jogos em casa.",
-          "Sunderland somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
-          "Sunderland só venceu um jogo na temporada inteira."
+          "Sunderland não pontuou nos últimos 3 jogos fora de casa.",
+          "Sunderland perdeu 5 dos últimos 7 jogos.",
+          "Sunderland só venceu um jogo na temporada inteira.",
+          "Sunderland não venceu nenhum dos últimos 5 jogos fora de casa."
         ],
         "Tottenham Hotspur": [
-          "Tottenham Hotspur venceu fora de casa depois de 5 meses."
+          "Tottenham Hotspur está na 3ª vitória seguida!",
+          "Tottenham Hotspur somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Tottenham Hotspur sofreu apenas 1 derrotas nos últimos 7 jogos."
         ]
       },
       "team_rankings": {
         "Arsenal": [
           "Arsenal é o melhor mandante!",
-          "Arsenal é o 3º melhor visitante!"
+          "Arsenal é o melhor visitante!"
         ],
         "Aston Villa": [],
         "Bournemouth": [],
-        "Brentford": [],
-        "Brighton": [
-          "Brighton é o 3º melhor mandante!"
+        "Brentford": [
+          "Brentford é o 3º melhor mandante!"
         ],
+        "Brighton": [],
         "Chelsea": [],
         "Coventry City": [
-          "Coventry City é o 2º pior mandante!"
+          "Coventry City é o 2º pior visitante!"
         ],
         "Crystal Palace": [
-          "Crystal Palace é o 3º pior mandante!"
+          "Crystal Palace é o 2º pior mandante!"
         ],
-        "Everton": [
-          "Everton é o 2º pior visitante!"
-        ],
+        "Everton": [],
         "Fulham": [],
         "Hull City": [],
-        "Ipswich Town": [
-          "Ipswich Town é o 3º pior visitante!"
-        ],
+        "Ipswich Town": [],
         "Leeds United": [],
         "Liverpool": [
-          "Liverpool é o melhor visitante!"
+          "Liverpool é o 2º melhor visitante!"
         ],
         "Manchester City": [
           "Manchester City é o 2º melhor mandante!",
-          "Manchester City é o 2º melhor visitante!"
+          "Manchester City é o 3º melhor visitante!"
         ],
-        "Manchester United": [],
+        "Manchester United": [
+          "Manchester United é o 3º pior mandante!",
+          "Manchester United é o 3º pior visitante!"
+        ],
         "Newcastle United": [],
         "Nottingham Forest": [
           "Nottingham Forest é o pior mandante!"
@@ -1220,11 +1262,19 @@
         },
         {
           "Time": "Manchester City",
-          "J": 4,
+          "J": 5,
           "V": 4,
           "E": 0,
-          "D": 0,
+          "D": 1,
           "Pts": 12
+        },
+        {
+          "Time": "Brentford",
+          "J": 5,
+          "V": 3,
+          "E": 1,
+          "D": 1,
+          "Pts": 10
         },
         {
           "Time": "Brighton",
@@ -1235,28 +1285,20 @@
           "Pts": 10
         },
         {
-          "Time": "Brentford",
-          "J": 4,
-          "V": 2,
-          "E": 1,
-          "D": 1,
-          "Pts": 7
-        },
-        {
           "Time": "Chelsea",
-          "J": 4,
-          "V": 2,
+          "J": 5,
+          "V": 3,
           "E": 1,
           "D": 1,
-          "Pts": 7
+          "Pts": 10
         },
         {
-          "Time": "Everton",
-          "J": 4,
+          "Time": "Bournemouth",
+          "J": 5,
           "V": 2,
-          "E": 1,
+          "E": 2,
           "D": 1,
-          "Pts": 7
+          "Pts": 8
         },
         {
           "Time": "Ipswich Town",
@@ -1268,11 +1310,27 @@
         },
         {
           "Time": "Hull City",
-          "J": 4,
+          "J": 5,
           "V": 1,
-          "E": 3,
+          "E": 4,
           "D": 0,
-          "Pts": 6
+          "Pts": 7
+        },
+        {
+          "Time": "Everton",
+          "J": 4,
+          "V": 2,
+          "E": 1,
+          "D": 1,
+          "Pts": 7
+        },
+        {
+          "Time": "Tottenham Hotspur",
+          "J": 5,
+          "V": 2,
+          "E": 1,
+          "D": 2,
+          "Pts": 7
         },
         {
           "Time": "Leeds United",
@@ -1283,28 +1341,44 @@
           "Pts": 6
         },
         {
+          "Time": "Coventry City",
+          "J": 5,
+          "V": 2,
+          "E": 0,
+          "D": 3,
+          "Pts": 6
+        },
+        {
           "Time": "Newcastle United",
-          "J": 4,
+          "J": 5,
           "V": 1,
           "E": 2,
-          "D": 1,
+          "D": 2,
+          "Pts": 5
+        },
+        {
+          "Time": "Aston Villa",
+          "J": 5,
+          "V": 1,
+          "E": 2,
+          "D": 2,
           "Pts": 5
         },
         {
           "Time": "Liverpool",
-          "J": 4,
+          "J": 5,
           "V": 1,
           "E": 2,
-          "D": 1,
+          "D": 2,
           "Pts": 5
         },
         {
-          "Time": "Bournemouth",
+          "Time": "Fulham",
           "J": 4,
           "V": 1,
-          "E": 2,
-          "D": 1,
-          "Pts": 5
+          "E": 1,
+          "D": 2,
+          "Pts": 4
         },
         {
           "Time": "Sunderland",
@@ -1323,39 +1397,7 @@
           "Pts": 4
         },
         {
-          "Time": "Fulham",
-          "J": 4,
-          "V": 1,
-          "E": 1,
-          "D": 2,
-          "Pts": 4
-        },
-        {
-          "Time": "Tottenham Hotspur",
-          "J": 4,
-          "V": 1,
-          "E": 1,
-          "D": 2,
-          "Pts": 4
-        },
-        {
-          "Time": "Aston Villa",
-          "J": 4,
-          "V": 1,
-          "E": 1,
-          "D": 2,
-          "Pts": 4
-        },
-        {
           "Time": "Crystal Palace",
-          "J": 4,
-          "V": 1,
-          "E": 0,
-          "D": 3,
-          "Pts": 3
-        },
-        {
-          "Time": "Coventry City",
           "J": 4,
           "V": 1,
           "E": 0,
@@ -1373,6 +1415,14 @@
       ],
       "away_table_full": [
         {
+          "Time": "Arsenal",
+          "J": 5,
+          "V": 4,
+          "E": 0,
+          "D": 1,
+          "Pts": 12
+        },
+        {
           "Time": "Liverpool",
           "J": 4,
           "V": 3,
@@ -1389,11 +1439,11 @@
           "Pts": 9
         },
         {
-          "Time": "Arsenal",
-          "J": 4,
+          "Time": "Brighton",
+          "J": 5,
           "V": 3,
           "E": 0,
-          "D": 1,
+          "D": 2,
           "Pts": 9
         },
         {
@@ -1405,11 +1455,11 @@
           "Pts": 7
         },
         {
-          "Time": "Brighton",
-          "J": 4,
-          "V": 2,
-          "E": 0,
-          "D": 2,
+          "Time": "Everton",
+          "J": 5,
+          "V": 1,
+          "E": 3,
+          "D": 1,
           "Pts": 6
         },
         {
@@ -1429,11 +1479,11 @@
           "Pts": 6
         },
         {
-          "Time": "Nottingham Forest",
-          "J": 4,
+          "Time": "Fulham",
+          "J": 5,
           "V": 1,
           "E": 2,
-          "D": 1,
+          "D": 2,
           "Pts": 5
         },
         {
@@ -1445,11 +1495,19 @@
           "Pts": 5
         },
         {
-          "Time": "Leeds United",
-          "J": 4,
+          "Time": "Nottingham Forest",
+          "J": 5,
           "V": 1,
           "E": 2,
-          "D": 1,
+          "D": 2,
+          "Pts": 5
+        },
+        {
+          "Time": "Leeds United",
+          "J": 5,
+          "V": 1,
+          "E": 2,
+          "D": 2,
           "Pts": 5
         },
         {
@@ -1458,22 +1516,6 @@
           "V": 0,
           "E": 4,
           "D": 0,
-          "Pts": 4
-        },
-        {
-          "Time": "Crystal Palace",
-          "J": 4,
-          "V": 1,
-          "E": 1,
-          "D": 2,
-          "Pts": 4
-        },
-        {
-          "Time": "Fulham",
-          "J": 4,
-          "V": 1,
-          "E": 1,
-          "D": 2,
           "Pts": 4
         },
         {
@@ -1493,11 +1535,27 @@
           "Pts": 4
         },
         {
+          "Time": "Crystal Palace",
+          "J": 5,
+          "V": 1,
+          "E": 1,
+          "D": 3,
+          "Pts": 4
+        },
+        {
+          "Time": "Ipswich Town",
+          "J": 5,
+          "V": 1,
+          "E": 1,
+          "D": 3,
+          "Pts": 4
+        },
+        {
           "Time": "Manchester United",
-          "J": 4,
+          "J": 5,
           "V": 0,
           "E": 3,
-          "D": 1,
+          "D": 2,
           "Pts": 3
         },
         {
@@ -1509,32 +1567,17 @@
           "Pts": 3
         },
         {
-          "Time": "Ipswich Town",
-          "J": 4,
-          "V": 1,
-          "E": 0,
-          "D": 3,
-          "Pts": 3
-        },
-        {
-          "Time": "Everton",
-          "J": 4,
-          "V": 0,
-          "E": 3,
-          "D": 1,
-          "Pts": 3
-        },
-        {
           "Time": "Sunderland",
-          "J": 4,
+          "J": 5,
           "V": 0,
           "E": 1,
-          "D": 3,
+          "D": 4,
           "Pts": 1
         }
       ],
       "last_n_games_data": {
         "Arsenal": [
+          "V",
           "V",
           "V",
           "V",
@@ -1545,6 +1588,7 @@
           "V"
         ],
         "Aston Villa": [
+          "E",
           "V",
           "V",
           "E",
@@ -1557,6 +1601,7 @@
         "Bournemouth": [
           "V",
           "V",
+          "V",
           "D",
           "D",
           "E",
@@ -1565,6 +1610,7 @@
           "D"
         ],
         "Brentford": [
+          "V",
           "E",
           "D",
           "E",
@@ -1575,6 +1621,7 @@
           "V"
         ],
         "Brighton": [
+          "V",
           "D",
           "V",
           "V",
@@ -1585,6 +1632,7 @@
           "V"
         ],
         "Chelsea": [
+          "V",
           "D",
           "V",
           "V",
@@ -1595,6 +1643,7 @@
           "V"
         ],
         "Coventry City": [
+          "V",
           "D",
           "D",
           "V",
@@ -1607,6 +1656,7 @@
         "Crystal Palace": [
           "D",
           "D",
+          "D",
           "V",
           "E",
           "D",
@@ -1615,6 +1665,7 @@
           "D"
         ],
         "Everton": [
+          "V",
           "D",
           "D",
           "E",
@@ -1625,6 +1676,7 @@
           "V"
         ],
         "Fulham": [
+          "E",
           "V",
           "V",
           "D",
@@ -1636,6 +1688,7 @@
         ],
         "Hull City": [
           "E",
+          "E",
           "D",
           "E",
           "D",
@@ -1646,6 +1699,7 @@
         ],
         "Ipswich Town": [
           "E",
+          "E",
           "D",
           "V",
           "D",
@@ -1655,6 +1709,7 @@
           "V"
         ],
         "Leeds United": [
+          "D",
           "E",
           "E",
           "D",
@@ -1665,6 +1720,7 @@
           "V"
         ],
         "Liverpool": [
+          "D",
           "V",
           "V",
           "D",
@@ -1676,6 +1732,7 @@
         ],
         "Manchester City": [
           "D",
+          "D",
           "V",
           "V",
           "V",
@@ -1686,6 +1743,7 @@
         ],
         "Manchester United": [
           "D",
+          "D",
           "E",
           "E",
           "E",
@@ -1695,6 +1753,7 @@
           "D"
         ],
         "Newcastle United": [
+          "D",
           "V",
           "D",
           "D",
@@ -1705,6 +1764,7 @@
           "E"
         ],
         "Nottingham Forest": [
+          "D",
           "E",
           "D",
           "D",
@@ -1715,6 +1775,7 @@
           "D"
         ],
         "Sunderland": [
+          "D",
           "E",
           "D",
           "D",
@@ -1727,6 +1788,7 @@
         "Tottenham Hotspur": [
           "V",
           "V",
+          "V",
           "E",
           "D",
           "E",
@@ -1737,235 +1799,288 @@
       },
       "best_home": "Arsenal",
       "worst_home": "Nottingham Forest",
-      "best_away": "Liverpool",
+      "best_away": "Arsenal",
       "worst_away": "Sunderland",
       "best_attack_team": "Brighton",
-      "best_attack_gols": 23,
-      "worst_attack_team": "Coventry City, Nottingham Forest, Sunderland",
+      "best_attack_gols": 24,
+      "worst_attack_team": "Nottingham Forest",
       "worst_attack_gols": 6,
       "best_defense_team": "Arsenal",
       "best_defense_gols": 5,
       "worst_defense_team": "Crystal Palace",
-      "worst_defense_gols": 19
+      "worst_defense_gols": 21
     }
   },
   "Championship": {
-    "last_game_date": "2026-10-24",
-    "updated_at": "2026-10-24T16:37:54",
+    "last_game_date": "2026-11-04",
+    "updated_at": "2026-11-04T23:33:40",
     "data": {
       "insights": [
-        "Birmingham City não perde em casa há 6 meses.",
-        "Blackburn Rovers está na 3ª vitória seguida em casa!",
+        "Birmingham City não perde em casa há 7 meses.",
+        "Birmingham City está na 3ª vitória seguida em casa!",
+        "Birmingham City venceu 6 dos últimos 8 jogos. Boa fase!",
+        "Birmingham City sofreu apenas 1 derrotas nos últimos 8 jogos.",
         "Blackburn Rovers só venceu um jogo fora de casa na temporada.",
-        "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos em casa.",
-        "Bristol City venceu apenas 1 dos últimos 7 jogos.",
-        "Bristol City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
-        "Burnley não vence em casa há 12 meses.",
+        "Bolton Wanderers está na 3ª derrota seguida em casa!",
+        "Bolton Wanderers perdeu 5 dos últimos 6 jogos em casa.",
+        "Bolton Wanderers venceu apenas 1 dos últimos 6 jogos em casa.",
+        "Bolton Wanderers sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Bristol City está na 3ª derrota seguida em casa!",
+        "Bristol City venceu apenas 1 dos últimos 5 jogos em casa.",
+        "Bristol City sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa.",
+        "Burnley não vence em casa há 13 meses.",
+        "Burnley está há 5 jogos sem vencer.",
         "Burnley só venceu um jogo na temporada inteira.",
         "Burnley só venceu um jogo fora de casa na temporada.",
-        "Cardiff City não perde em casa há 7 meses.",
-        "Cardiff City não vence fora de casa há 6 meses.",
-        "Cardiff City está na 3ª vitória seguida em casa!",
-        "Charlton Athletic está há 9 jogos sem vencer.",
-        "Charlton Athletic está há 5 jogos sem vencer fora de casa.",
-        "Charlton Athletic venceu apenas 1 dos últimos 10 jogos.",
-        "Charlton Athletic perdeu em casa depois de 5 jogos sem derrota em casa.",
+        "Cardiff City não perde em casa há 8 meses.",
+        "Cardiff City não vence fora de casa há 7 meses.",
+        "Cardiff City perdeu 5 dos últimos 6 jogos fora de casa.",
+        "Charlton Athletic está na 4ª derrota seguida!",
+        "Charlton Athletic está há 11 jogos sem vencer.",
+        "Charlton Athletic está há 5 jogos sem vencer em casa.",
+        "Charlton Athletic está há 6 jogos sem vencer fora de casa.",
+        "Charlton Athletic perdeu 5 dos últimos 7 jogos.",
+        "Charlton Athletic venceu apenas 1 dos últimos 12 jogos.",
+        "Charlton Athletic venceu apenas 1 dos últimos 6 jogos em casa.",
         "Charlton Athletic só venceu um jogo fora de casa na temporada.",
-        "Derby County não vence em casa há 6 meses.",
-        "Derby County está há 8 jogos sem vencer.",
+        "Derby County não vence em casa há 7 meses.",
+        "Derby County está há 10 jogos sem vencer.",
+        "Derby County está há 5 jogos sem vencer fora de casa.",
+        "Derby County perdeu 7 dos últimos 10 jogos.",
         "Derby County só venceu um jogo na temporada inteira.",
+        "Derby County perdeu 5 dos últimos 6 jogos em casa.",
         "Derby County só venceu um jogo fora de casa na temporada.",
-        "Lincoln City venceu em casa depois de 6 meses.",
-        "Lincoln City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
-        "Middlesbrough não perde em casa há 6 meses.",
-        "Middlesbrough está invicto há 10 jogos.",
-        "Middlesbrough está invicto há 5 jogos fora de casa.",
-        "Middlesbrough sofreu apenas 1 derrotas em todos os seus 12 jogos.",
-        "Middlesbrough sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
-        "Millwall venceu apenas 1 dos últimos 7 jogos.",
-        "Millwall venceu apenas 1 dos últimos 5 jogos em casa.",
-        "Millwall venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Norwich City está na 3ª derrota seguida em casa!",
-        "Norwich City perdeu 5 dos últimos 7 jogos.",
-        "Portsmouth sofreu apenas 1 derrotas nos últimos 8 jogos.",
-        "Portsmouth sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-        "Portsmouth venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Preston North End está há 7 jogos sem vencer.",
-        "Preston North End está há 6 jogos sem vencer fora de casa.",
-        "Preston North End perdeu 9 dos 12 jogos da temporada.",
+        "Lincoln City perdeu 5 dos últimos 7 jogos.",
+        "Lincoln City venceu apenas 1 dos últimos 7 jogos.",
+        "Lincoln City só venceu um jogo em casa na temporada.",
+        "Middlesbrough não perde em casa há 7 meses.",
+        "Middlesbrough perdeu depois de 11 jogos sem derrota.",
+        "Middlesbrough venceu 5 dos 7 jogos em casa na temporada. Boa fase!",
+        "Middlesbrough perdeu fora de casa depois de 5 jogos sem derrota fora de casa.",
+        "Millwall sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+        "Millwall venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Norwich City está na 3ª vitória seguida!",
+        "Portsmouth está na 3ª vitória seguida em casa!",
+        "Portsmouth está invicto há 6 jogos.",
+        "Portsmouth está invicto há 5 jogos em casa.",
+        "Portsmouth sofreu apenas 1 derrotas nos últimos 10 jogos.",
+        "Portsmouth sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Portsmouth venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Portsmouth sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Preston North End está na 3ª derrota seguida fora de casa!",
+        "Preston North End está há 9 jogos sem vencer.",
+        "Preston North End está há 7 jogos sem vencer fora de casa.",
+        "Preston North End perdeu 11 dos 14 jogos da temporada.",
         "Preston North End só venceu um jogo na temporada inteira.",
+        "Preston North End perdeu 5 dos 7 jogos em casa na temporada.",
         "Preston North End só venceu um jogo em casa na temporada.",
-        "Preston North End perdeu 5 dos 6 jogos fora de casa na temporada.",
-        "Preston North End não venceu nenhum dos últimos 6 jogos fora de casa.",
-        "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 7 jogos.",
-        "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
-        "Queens Park Rangers venceu apenas 1 dos últimos 5 jogos fora de casa.",
-        "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
-        "Southampton não perde em casa há 9 meses.",
-        "Southampton venceu 5 dos últimos 7 jogos. Boa fase!",
-        "Southampton sofreu apenas 1 derrotas nos últimos 11 jogos.",
-        "Southampton venceu 5 dos 6 jogos em casa na temporada. Boa fase!",
-        "Southampton sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
-        "Stoke City está na 3ª vitória seguida fora de casa!",
-        "Stoke City sofreu apenas 1 derrotas nos últimos 9 jogos.",
-        "Stoke City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-        "Stoke City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
-        "Swansea City sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
-        "Watford não vence fora de casa há 8 meses.",
-        "Watford está na 5ª derrota seguida fora de casa!",
-        "Watford perdeu 7 dos últimos 9 jogos.",
-        "West Bromwich sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
-        "West Ham perdeu depois de 9 jogos sem derrota.",
-        "West Ham perdeu em casa depois de 4 jogos sem derrota em casa.",
+        "Preston North End perdeu 6 dos 7 jogos fora de casa na temporada.",
+        "Preston North End não venceu nenhum dos últimos 7 jogos fora de casa.",
+        "Queens Park Rangers está há 5 jogos sem vencer fora de casa.",
+        "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Queens Park Rangers venceu apenas 1 dos últimos 6 jogos fora de casa.",
+        "Southampton não perde em casa há 10 meses.",
+        "Southampton está invicto há 6 jogos.",
+        "Southampton sofreu apenas 1 derrotas nos últimos 13 jogos.",
+        "Southampton venceu 6 dos 7 jogos em casa na temporada. Boa fase!",
+        "Southampton sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Stoke City está na 4ª vitória seguida fora de casa!",
+        "Stoke City está invicto há 5 jogos fora de casa.",
+        "Stoke City venceu 6 dos últimos 8 jogos. Boa fase!",
+        "Stoke City sofreu apenas 1 derrotas nos últimos 11 jogos.",
+        "Stoke City sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Stoke City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa.",
+        "Swansea City sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Watford não vence fora de casa há 9 meses.",
+        "Watford está na 6ª derrota seguida fora de casa!",
+        "Watford perdeu 6 dos últimos 8 jogos.",
+        "West Bromwich está invicto há 5 jogos.",
+        "West Bromwich sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "West Bromwich sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
         "West Ham não perdeu fora de casa na temporada inteira.",
-        "Wolverhampton sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+        "Wolverhampton está na 3ª vitória seguida!",
+        "Wolverhampton está invicto há 5 jogos.",
+        "Wolverhampton sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+        "Wolverhampton sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa.",
+        "Wrexham está há 5 jogos sem vencer fora de casa.",
+        "Wrexham sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
         "Wrexham só venceu um jogo fora de casa na temporada."
       ],
       "team_insights": {
         "Birmingham City": [
-          "Birmingham City não perde em casa há 6 meses.",
-          "Birmingham City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
-          "Birmingham City somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+          "Birmingham City não perde em casa há 7 meses.",
+          "Birmingham City está na 3ª vitória seguida em casa!",
+          "Birmingham City somou 12 pontos nos últimos 5 jogos. Excelente fase!",
+          "Birmingham City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Birmingham City venceu 6 dos últimos 8 jogos. Boa fase!",
+          "Birmingham City sofreu apenas 1 derrotas nos últimos 8 jogos."
         ],
         "Blackburn Rovers": [
-          "Blackburn Rovers está na 3ª vitória seguida em casa!",
-          "Blackburn Rovers somou 10 pontos nos últimos 5 jogos. Excelente fase!",
-          "Blackburn Rovers somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
           "Blackburn Rovers só venceu um jogo fora de casa na temporada."
         ],
         "Bolton Wanderers": [
+          "Bolton Wanderers está na 3ª derrota seguida em casa!",
+          "Bolton Wanderers não pontuou nos últimos 3 jogos em casa.",
           "Bolton Wanderers somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "Bolton Wanderers venceu apenas 1 dos últimos 5 jogos em casa."
+          "Bolton Wanderers perdeu 5 dos últimos 6 jogos em casa.",
+          "Bolton Wanderers venceu apenas 1 dos últimos 6 jogos em casa.",
+          "Bolton Wanderers sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
         ],
         "Bristol City": [
-          "Bristol City somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
-          "Bristol City venceu apenas 1 dos últimos 7 jogos.",
-          "Bristol City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+          "Bristol City está na 3ª derrota seguida em casa!",
+          "Bristol City não pontuou nos últimos 3 jogos em casa.",
+          "Bristol City venceu apenas 1 dos últimos 5 jogos em casa.",
+          "Bristol City sofreu apenas 1 derrotas nos últimos 7 jogos fora de casa."
         ],
         "Burnley": [
-          "Burnley não vence em casa há 12 meses.",
+          "Burnley não vence em casa há 13 meses.",
+          "Burnley está há 5 jogos sem vencer.",
           "Burnley somou apenas 2 pontos nos últimos 3 jogos em casa.",
           "Burnley só venceu um jogo na temporada inteira.",
           "Burnley só venceu um jogo fora de casa na temporada."
         ],
         "Cardiff City": [
-          "Cardiff City não perde em casa há 7 meses.",
-          "Cardiff City não vence fora de casa há 6 meses.",
-          "Cardiff City está na 3ª vitória seguida em casa!",
-          "Cardiff City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
-          "Cardiff City somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Cardiff City somou apenas 1 pontos nos últimos 3 jogos fora de casa."
+          "Cardiff City não perde em casa há 8 meses.",
+          "Cardiff City não vence fora de casa há 7 meses.",
+          "Cardiff City somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Cardiff City somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Cardiff City perdeu 5 dos últimos 6 jogos fora de casa."
         ],
         "Charlton Athletic": [
-          "Charlton Athletic está há 9 jogos sem vencer.",
-          "Charlton Athletic está há 5 jogos sem vencer fora de casa.",
-          "Charlton Athletic somou apenas 2 pontos nos últimos 5 jogos.",
-          "Charlton Athletic somou apenas 2 pontos nos últimos 3 jogos em casa.",
+          "Charlton Athletic está na 4ª derrota seguida!",
+          "Charlton Athletic está há 11 jogos sem vencer.",
+          "Charlton Athletic está há 5 jogos sem vencer em casa.",
+          "Charlton Athletic está há 6 jogos sem vencer fora de casa.",
+          "Charlton Athletic somou apenas 1 ponto nos últimos 5 jogos.",
+          "Charlton Athletic somou apenas 1 pontos nos últimos 3 jogos em casa.",
           "Charlton Athletic somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
-          "Charlton Athletic venceu apenas 1 dos últimos 10 jogos.",
-          "Charlton Athletic perdeu em casa depois de 5 jogos sem derrota em casa.",
+          "Charlton Athletic perdeu 5 dos últimos 7 jogos.",
+          "Charlton Athletic venceu apenas 1 dos últimos 12 jogos.",
+          "Charlton Athletic venceu apenas 1 dos últimos 6 jogos em casa.",
           "Charlton Athletic só venceu um jogo fora de casa na temporada."
         ],
         "Derby County": [
-          "Derby County não vence em casa há 6 meses.",
-          "Derby County está há 8 jogos sem vencer.",
+          "Derby County não vence em casa há 7 meses.",
+          "Derby County está há 10 jogos sem vencer.",
+          "Derby County está há 5 jogos sem vencer fora de casa.",
+          "Derby County somou apenas 1 ponto nos últimos 5 jogos.",
           "Derby County somou apenas 1 pontos nos últimos 3 jogos em casa.",
-          "Derby County somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
+          "Derby County somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Derby County perdeu 7 dos últimos 10 jogos.",
           "Derby County só venceu um jogo na temporada inteira.",
+          "Derby County perdeu 5 dos últimos 6 jogos em casa.",
           "Derby County só venceu um jogo fora de casa na temporada."
         ],
         "Lincoln City": [
-          "Lincoln City venceu em casa depois de 6 meses.",
-          "Lincoln City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+          "Lincoln City somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Lincoln City perdeu 5 dos últimos 7 jogos.",
+          "Lincoln City venceu apenas 1 dos últimos 7 jogos.",
+          "Lincoln City só venceu um jogo em casa na temporada."
         ],
         "Middlesbrough": [
-          "Middlesbrough não perde em casa há 6 meses.",
-          "Middlesbrough está invicto há 10 jogos.",
-          "Middlesbrough está invicto há 5 jogos fora de casa.",
-          "Middlesbrough somou 11 pontos nos últimos 5 jogos. Excelente fase!",
-          "Middlesbrough somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "Middlesbrough sofreu apenas 1 derrotas em todos os seus 12 jogos.",
-          "Middlesbrough sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+          "Middlesbrough não perde em casa há 7 meses.",
+          "Middlesbrough somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Middlesbrough somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Middlesbrough perdeu depois de 11 jogos sem derrota.",
+          "Middlesbrough venceu 5 dos 7 jogos em casa na temporada. Boa fase!",
+          "Middlesbrough perdeu fora de casa depois de 5 jogos sem derrota fora de casa."
         ],
         "Millwall": [
-          "Millwall somou apenas 2 pontos nos últimos 3 jogos em casa.",
-          "Millwall venceu apenas 1 dos últimos 7 jogos.",
-          "Millwall venceu apenas 1 dos últimos 5 jogos em casa.",
-          "Millwall venceu apenas 1 dos últimos 5 jogos fora de casa."
+          "Millwall sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
+          "Millwall venceu apenas 1 dos últimos 6 jogos fora de casa."
         ],
         "Norwich City": [
-          "Norwich City está na 3ª derrota seguida em casa!",
-          "Norwich City não pontuou nos últimos 3 jogos em casa.",
-          "Norwich City perdeu 5 dos últimos 7 jogos."
+          "Norwich City está na 3ª vitória seguida!"
         ],
         "Portsmouth": [
-          "Portsmouth somou 10 pontos nos últimos 5 jogos. Excelente fase!",
-          "Portsmouth somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Portsmouth sofreu apenas 1 derrotas nos últimos 8 jogos.",
-          "Portsmouth sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-          "Portsmouth venceu apenas 1 dos últimos 5 jogos fora de casa."
+          "Portsmouth está na 3ª vitória seguida em casa!",
+          "Portsmouth está invicto há 6 jogos.",
+          "Portsmouth está invicto há 5 jogos em casa.",
+          "Portsmouth somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "Portsmouth somou 9 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Portsmouth sofreu apenas 1 derrotas nos últimos 10 jogos.",
+          "Portsmouth sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+          "Portsmouth venceu apenas 1 dos últimos 6 jogos fora de casa.",
+          "Portsmouth sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
         ],
         "Preston North End": [
-          "Preston North End está há 7 jogos sem vencer.",
-          "Preston North End está há 6 jogos sem vencer fora de casa.",
-          "Preston North End somou apenas 2 pontos nos últimos 5 jogos.",
+          "Preston North End está na 3ª derrota seguida fora de casa!",
+          "Preston North End está há 9 jogos sem vencer.",
+          "Preston North End está há 7 jogos sem vencer fora de casa.",
+          "Preston North End somou apenas 1 ponto nos últimos 5 jogos.",
           "Preston North End somou apenas 1 pontos nos últimos 3 jogos em casa.",
-          "Preston North End somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
-          "Preston North End perdeu 9 dos 12 jogos da temporada.",
+          "Preston North End não pontuou nos últimos 3 jogos fora de casa.",
+          "Preston North End perdeu 11 dos 14 jogos da temporada.",
           "Preston North End só venceu um jogo na temporada inteira.",
+          "Preston North End perdeu 5 dos 7 jogos em casa na temporada.",
           "Preston North End só venceu um jogo em casa na temporada.",
-          "Preston North End perdeu 5 dos 6 jogos fora de casa na temporada.",
-          "Preston North End não venceu nenhum dos últimos 6 jogos fora de casa."
+          "Preston North End perdeu 6 dos 7 jogos fora de casa na temporada.",
+          "Preston North End não venceu nenhum dos últimos 7 jogos fora de casa."
         ],
         "Queens Park Rangers": [
+          "Queens Park Rangers está há 5 jogos sem vencer fora de casa.",
           "Queens Park Rangers somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Queens Park Rangers somou apenas 2 pontos nos últimos 3 jogos fora de casa.",
-          "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 7 jogos.",
-          "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
-          "Queens Park Rangers venceu apenas 1 dos últimos 5 jogos fora de casa.",
-          "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
+          "Queens Park Rangers somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Queens Park Rangers sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Queens Park Rangers venceu apenas 1 dos últimos 6 jogos fora de casa."
         ],
-        "Sheffield United": [],
+        "Sheffield United": [
+          "Sheffield United somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Sheffield United somou 7 pontos nos últimos 3 jogos em casa. Ótimo!"
+        ],
         "Southampton": [
-          "Southampton não perde em casa há 9 meses.",
-          "Southampton somou 10 pontos nos últimos 5 jogos. Excelente fase!",
+          "Southampton não perde em casa há 10 meses.",
+          "Southampton está invicto há 6 jogos.",
+          "Southampton somou 11 pontos nos últimos 5 jogos. Excelente fase!",
           "Southampton somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
-          "Southampton venceu 5 dos últimos 7 jogos. Boa fase!",
-          "Southampton sofreu apenas 1 derrotas nos últimos 11 jogos.",
-          "Southampton venceu 5 dos 6 jogos em casa na temporada. Boa fase!",
-          "Southampton sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+          "Southampton somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "Southampton sofreu apenas 1 derrotas nos últimos 13 jogos.",
+          "Southampton venceu 6 dos 7 jogos em casa na temporada. Boa fase!",
+          "Southampton sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
         ],
         "Stoke City": [
-          "Stoke City está na 3ª vitória seguida fora de casa!",
+          "Stoke City está na 4ª vitória seguida fora de casa!",
+          "Stoke City está invicto há 5 jogos fora de casa.",
           "Stoke City somou 10 pontos nos últimos 5 jogos. Excelente fase!",
           "Stoke City somou 9 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "Stoke City sofreu apenas 1 derrotas nos últimos 9 jogos.",
-          "Stoke City sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
-          "Stoke City sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
+          "Stoke City venceu 6 dos últimos 8 jogos. Boa fase!",
+          "Stoke City sofreu apenas 1 derrotas nos últimos 11 jogos.",
+          "Stoke City sofreu apenas 1 derrotas nos últimos 6 jogos em casa.",
+          "Stoke City sofreu apenas 1 derrotas nos últimos 6 jogos fora de casa."
         ],
         "Swansea City": [
-          "Swansea City sofreu apenas 1 derrotas nos últimos 6 jogos em casa."
+          "Swansea City sofreu apenas 1 derrotas nos últimos 7 jogos em casa."
         ],
         "Watford": [
-          "Watford não vence fora de casa há 8 meses.",
-          "Watford está na 5ª derrota seguida fora de casa!",
+          "Watford não vence fora de casa há 9 meses.",
+          "Watford está na 6ª derrota seguida fora de casa!",
           "Watford não pontuou nos últimos 3 jogos fora de casa.",
-          "Watford perdeu 7 dos últimos 9 jogos."
+          "Watford perdeu 6 dos últimos 8 jogos."
         ],
         "West Bromwich": [
-          "West Bromwich sofreu apenas 1 derrotas nos últimos 6 jogos em casa."
+          "West Bromwich está invicto há 5 jogos.",
+          "West Bromwich somou 11 pontos nos últimos 5 jogos. Excelente fase!",
+          "West Bromwich somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
+          "West Bromwich sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "West Bromwich sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
         ],
         "West Ham": [
+          "West Ham somou apenas 1 pontos nos últimos 3 jogos em casa.",
           "West Ham somou 7 pontos nos últimos 3 jogos fora de casa. Excelente!",
-          "West Ham perdeu depois de 9 jogos sem derrota.",
-          "West Ham perdeu em casa depois de 4 jogos sem derrota em casa.",
           "West Ham não perdeu fora de casa na temporada inteira."
         ],
         "Wolverhampton": [
-          "Wolverhampton sofreu apenas 1 derrotas nos últimos 6 jogos em casa."
+          "Wolverhampton está na 3ª vitória seguida!",
+          "Wolverhampton está invicto há 5 jogos.",
+          "Wolverhampton somou 13 pontos nos últimos 5 jogos. Excelente fase!",
+          "Wolverhampton somou 7 pontos nos últimos 3 jogos em casa. Ótimo!",
+          "Wolverhampton sofreu apenas 1 derrotas nos últimos 7 jogos em casa.",
+          "Wolverhampton sofreu apenas 1 derrotas nos últimos 5 jogos fora de casa."
         ],
         "Wrexham": [
+          "Wrexham está há 5 jogos sem vencer fora de casa.",
           "Wrexham somou apenas 1 pontos nos últimos 3 jogos fora de casa.",
+          "Wrexham sofreu apenas 1 derrotas nos últimos 5 jogos em casa.",
           "Wrexham só venceu um jogo fora de casa na temporada."
         ]
       },
@@ -1978,7 +2093,6 @@
           "Burnley é o 3º pior mandante!"
         ],
         "Cardiff City": [
-          "Cardiff City é o 3º melhor mandante!",
           "Cardiff City é o 3º pior visitante!"
         ],
         "Charlton Athletic": [],
@@ -1987,8 +2101,7 @@
         ],
         "Lincoln City": [],
         "Middlesbrough": [
-          "Middlesbrough é o 2º melhor mandante!",
-          "Middlesbrough é o 3º melhor visitante!"
+          "Middlesbrough é o 2º melhor mandante!"
         ],
         "Millwall": [],
         "Norwich City": [],
@@ -2004,16 +2117,20 @@
         ],
         "Stoke City": [],
         "Swansea City": [
-          "Swansea City é o melhor visitante!"
+          "Swansea City é o 3º melhor mandante!"
         ],
         "Watford": [
           "Watford é o pior visitante!"
         ],
-        "West Bromwich": [],
-        "West Ham": [
-          "West Ham é o 2º melhor visitante!"
+        "West Bromwich": [
+          "West Bromwich é o melhor visitante!"
         ],
-        "Wolverhampton": [],
+        "West Ham": [
+          "West Ham é o 3º melhor visitante!"
+        ],
+        "Wolverhampton": [
+          "Wolverhampton é o 2º melhor visitante!"
+        ],
         "Wrexham": []
       },
       "teams": [
@@ -2045,393 +2162,395 @@
       "home_table_full": [
         {
           "Time": "Southampton",
-          "J": 6,
-          "V": 5,
+          "J": 7,
+          "V": 6,
           "E": 1,
           "D": 0,
-          "Pts": 16
+          "Pts": 19
         },
         {
           "Time": "Middlesbrough",
-          "J": 6,
-          "V": 4,
+          "J": 7,
+          "V": 5,
           "E": 2,
           "D": 0,
+          "Pts": 17
+        },
+        {
+          "Time": "Swansea City",
+          "J": 7,
+          "V": 4,
+          "E": 2,
+          "D": 1,
           "Pts": 14
         },
         {
+          "Time": "Wolverhampton",
+          "J": 7,
+          "V": 4,
+          "E": 2,
+          "D": 1,
+          "Pts": 14
+        },
+        {
+          "Time": "Watford",
+          "J": 7,
+          "V": 4,
+          "E": 1,
+          "D": 2,
+          "Pts": 13
+        },
+        {
           "Time": "Cardiff City",
-          "J": 6,
+          "J": 7,
           "V": 3,
-          "E": 3,
+          "E": 4,
           "D": 0,
-          "Pts": 12
+          "Pts": 13
+        },
+        {
+          "Time": "Portsmouth",
+          "J": 7,
+          "V": 4,
+          "E": 1,
+          "D": 2,
+          "Pts": 13
+        },
+        {
+          "Time": "Stoke City",
+          "J": 7,
+          "V": 4,
+          "E": 1,
+          "D": 2,
+          "Pts": 13
+        },
+        {
+          "Time": "Birmingham City",
+          "J": 7,
+          "V": 3,
+          "E": 4,
+          "D": 0,
+          "Pts": 13
         },
         {
           "Time": "Blackburn Rovers",
-          "J": 6,
+          "J": 7,
           "V": 4,
           "E": 0,
-          "D": 2,
+          "D": 3,
           "Pts": 12
         },
         {
           "Time": "Queens Park Rangers",
-          "J": 6,
+          "J": 7,
           "V": 3,
-          "E": 2,
+          "E": 3,
           "D": 1,
-          "Pts": 11
-        },
-        {
-          "Time": "Wolverhampton",
-          "J": 6,
-          "V": 3,
-          "E": 2,
-          "D": 1,
-          "Pts": 11
-        },
-        {
-          "Time": "Swansea City",
-          "J": 6,
-          "V": 3,
-          "E": 2,
-          "D": 1,
-          "Pts": 11
+          "Pts": 12
         },
         {
           "Time": "West Bromwich",
-          "J": 6,
+          "J": 7,
+          "V": 3,
+          "E": 3,
+          "D": 1,
+          "Pts": 12
+        },
+        {
+          "Time": "Sheffield United",
+          "J": 7,
           "V": 3,
           "E": 2,
-          "D": 1,
+          "D": 2,
+          "Pts": 11
+        },
+        {
+          "Time": "Millwall",
+          "J": 7,
+          "V": 3,
+          "E": 2,
+          "D": 2,
+          "Pts": 11
+        },
+        {
+          "Time": "Wrexham",
+          "J": 7,
+          "V": 3,
+          "E": 2,
+          "D": 2,
           "Pts": 11
         },
         {
           "Time": "West Ham",
-          "J": 6,
+          "J": 7,
           "V": 3,
           "E": 1,
-          "D": 2,
+          "D": 3,
           "Pts": 10
-        },
-        {
-          "Time": "Portsmouth",
-          "J": 6,
-          "V": 3,
-          "E": 1,
-          "D": 2,
-          "Pts": 10
-        },
-        {
-          "Time": "Birmingham City",
-          "J": 6,
-          "V": 2,
-          "E": 4,
-          "D": 0,
-          "Pts": 10
-        },
-        {
-          "Time": "Watford",
-          "J": 6,
-          "V": 3,
-          "E": 1,
-          "D": 2,
-          "Pts": 10
-        },
-        {
-          "Time": "Stoke City",
-          "J": 6,
-          "V": 3,
-          "E": 1,
-          "D": 2,
-          "Pts": 10
-        },
-        {
-          "Time": "Charlton Athletic",
-          "J": 6,
-          "V": 2,
-          "E": 3,
-          "D": 1,
-          "Pts": 9
-        },
-        {
-          "Time": "Sheffield United",
-          "J": 6,
-          "V": 2,
-          "E": 2,
-          "D": 2,
-          "Pts": 8
-        },
-        {
-          "Time": "Millwall",
-          "J": 6,
-          "V": 2,
-          "E": 2,
-          "D": 2,
-          "Pts": 8
-        },
-        {
-          "Time": "Wrexham",
-          "J": 6,
-          "V": 2,
-          "E": 2,
-          "D": 2,
-          "Pts": 8
         },
         {
           "Time": "Norwich City",
-          "J": 6,
-          "V": 2,
+          "J": 7,
+          "V": 3,
           "E": 0,
           "D": 4,
-          "Pts": 6
+          "Pts": 9
+        },
+        {
+          "Time": "Charlton Athletic",
+          "J": 7,
+          "V": 2,
+          "E": 3,
+          "D": 2,
+          "Pts": 9
         },
         {
           "Time": "Bolton Wanderers",
-          "J": 6,
+          "J": 7,
           "V": 2,
           "E": 0,
-          "D": 4,
+          "D": 5,
           "Pts": 6
         },
         {
           "Time": "Bristol City",
-          "J": 6,
+          "J": 7,
           "V": 2,
           "E": 0,
-          "D": 4,
+          "D": 5,
           "Pts": 6
         },
         {
           "Time": "Lincoln City",
-          "J": 6,
+          "J": 7,
           "V": 1,
           "E": 2,
-          "D": 3,
+          "D": 4,
           "Pts": 5
         },
         {
           "Time": "Burnley",
-          "J": 6,
+          "J": 7,
           "V": 0,
-          "E": 4,
+          "E": 5,
           "D": 2,
-          "Pts": 4
+          "Pts": 5
         },
         {
           "Time": "Preston North End",
-          "J": 6,
+          "J": 7,
           "V": 1,
           "E": 1,
-          "D": 4,
+          "D": 5,
           "Pts": 4
         },
         {
           "Time": "Derby County",
-          "J": 6,
+          "J": 7,
           "V": 0,
           "E": 2,
-          "D": 4,
+          "D": 5,
           "Pts": 2
         }
       ],
       "away_table_full": [
         {
-          "Time": "Swansea City",
-          "J": 6,
+          "Time": "West Bromwich",
+          "J": 7,
           "V": 4,
-          "E": 0,
+          "E": 1,
           "D": 2,
-          "Pts": 12
+          "Pts": 13
+        },
+        {
+          "Time": "Wolverhampton",
+          "J": 7,
+          "V": 4,
+          "E": 1,
+          "D": 2,
+          "Pts": 13
         },
         {
           "Time": "West Ham",
-          "J": 6,
+          "J": 7,
+          "V": 3,
+          "E": 4,
+          "D": 0,
+          "Pts": 13
+        },
+        {
+          "Time": "Birmingham City",
+          "J": 7,
+          "V": 4,
+          "E": 1,
+          "D": 2,
+          "Pts": 13
+        },
+        {
+          "Time": "Stoke City",
+          "J": 7,
+          "V": 4,
+          "E": 1,
+          "D": 2,
+          "Pts": 13
+        },
+        {
+          "Time": "Swansea City",
+          "J": 7,
+          "V": 4,
+          "E": 0,
+          "D": 3,
+          "Pts": 12
+        },
+        {
+          "Time": "Bristol City",
+          "J": 7,
           "V": 3,
           "E": 3,
-          "D": 0,
+          "D": 1,
           "Pts": 12
         },
         {
           "Time": "Middlesbrough",
-          "J": 6,
+          "J": 7,
           "V": 3,
           "E": 2,
-          "D": 1,
+          "D": 2,
+          "Pts": 11
+        },
+        {
+          "Time": "Bolton Wanderers",
+          "J": 7,
+          "V": 3,
+          "E": 2,
+          "D": 2,
+          "Pts": 11
+        },
+        {
+          "Time": "Sheffield United",
+          "J": 7,
+          "V": 3,
+          "E": 2,
+          "D": 2,
           "Pts": 11
         },
         {
           "Time": "Lincoln City",
-          "J": 6,
+          "J": 7,
           "V": 3,
           "E": 1,
-          "D": 2,
+          "D": 3,
           "Pts": 10
         },
         {
-          "Time": "Birmingham City",
-          "J": 6,
+          "Time": "Norwich City",
+          "J": 7,
           "V": 3,
-          "E": 1,
-          "D": 2,
-          "Pts": 10
-        },
-        {
-          "Time": "Stoke City",
-          "J": 6,
-          "V": 3,
-          "E": 1,
-          "D": 2,
-          "Pts": 10
-        },
-        {
-          "Time": "West Bromwich",
-          "J": 6,
-          "V": 3,
-          "E": 1,
-          "D": 2,
-          "Pts": 10
-        },
-        {
-          "Time": "Wolverhampton",
-          "J": 6,
-          "V": 3,
-          "E": 1,
-          "D": 2,
-          "Pts": 10
-        },
-        {
-          "Time": "Queens Park Rangers",
-          "J": 6,
-          "V": 2,
-          "E": 3,
-          "D": 1,
+          "E": 0,
+          "D": 4,
           "Pts": 9
         },
         {
-          "Time": "Bristol City",
-          "J": 6,
+          "Time": "Queens Park Rangers",
+          "J": 7,
           "V": 2,
           "E": 3,
-          "D": 1,
+          "D": 2,
+          "Pts": 9
+        },
+        {
+          "Time": "Portsmouth",
+          "J": 7,
+          "V": 2,
+          "E": 3,
+          "D": 2,
           "Pts": 9
         },
         {
           "Time": "Southampton",
-          "J": 6,
+          "J": 7,
           "V": 2,
-          "E": 2,
+          "E": 3,
           "D": 2,
-          "Pts": 8
-        },
-        {
-          "Time": "Sheffield United",
-          "J": 6,
-          "V": 2,
-          "E": 2,
-          "D": 2,
-          "Pts": 8
-        },
-        {
-          "Time": "Portsmouth",
-          "J": 6,
-          "V": 2,
-          "E": 2,
-          "D": 2,
-          "Pts": 8
-        },
-        {
-          "Time": "Bolton Wanderers",
-          "J": 6,
-          "V": 2,
-          "E": 2,
-          "D": 2,
-          "Pts": 8
+          "Pts": 9
         },
         {
           "Time": "Millwall",
-          "J": 6,
+          "J": 7,
           "V": 2,
           "E": 1,
-          "D": 3,
+          "D": 4,
           "Pts": 7
         },
         {
           "Time": "Blackburn Rovers",
-          "J": 6,
+          "J": 7,
           "V": 1,
           "E": 3,
-          "D": 2,
+          "D": 3,
           "Pts": 6
         },
         {
           "Time": "Wrexham",
-          "J": 6,
+          "J": 7,
           "V": 1,
           "E": 3,
-          "D": 2,
+          "D": 3,
           "Pts": 6
         },
         {
-          "Time": "Norwich City",
-          "J": 6,
-          "V": 2,
-          "E": 0,
-          "D": 4,
-          "Pts": 6
-        },
-        {
-          "Time": "Charlton Athletic",
-          "J": 6,
+          "Time": "Burnley",
+          "J": 7,
           "V": 1,
           "E": 2,
-          "D": 3,
+          "D": 4,
           "Pts": 5
         },
         {
           "Time": "Derby County",
-          "J": 6,
+          "J": 7,
           "V": 1,
           "E": 2,
-          "D": 3,
+          "D": 4,
           "Pts": 5
         },
         {
-          "Time": "Burnley",
-          "J": 6,
+          "Time": "Charlton Athletic",
+          "J": 7,
           "V": 1,
-          "E": 1,
+          "E": 2,
           "D": 4,
-          "Pts": 4
+          "Pts": 5
         },
         {
           "Time": "Cardiff City",
-          "J": 6,
+          "J": 7,
           "V": 0,
           "E": 2,
-          "D": 4,
+          "D": 5,
           "Pts": 2
         },
         {
           "Time": "Preston North End",
-          "J": 6,
+          "J": 7,
           "V": 0,
           "E": 1,
-          "D": 5,
+          "D": 6,
           "Pts": 1
         },
         {
           "Time": "Watford",
-          "J": 6,
+          "J": 7,
           "V": 0,
           "E": 1,
-          "D": 5,
+          "D": 6,
           "Pts": 1
         }
       ],
       "last_n_games_data": {
         "Birmingham City": [
+          "V",
+          "V",
           "D",
           "V",
           "V",
@@ -2439,11 +2558,11 @@
           "E",
           "V",
           "D",
-          "E",
-          "E",
-          "V"
+          "E"
         ],
         "Blackburn Rovers": [
+          "D",
+          "D",
           "V",
           "D",
           "V",
@@ -2451,23 +2570,23 @@
           "E",
           "V",
           "D",
-          "D",
-          "E",
           "D"
         ],
         "Bolton Wanderers": [
+          "V",
+          "D",
           "D",
           "E",
           "V",
           "D",
           "V",
           "V",
-          "D",
-          "D",
           "D",
           "D"
         ],
         "Bristol City": [
+          "D",
+          "V",
           "E",
           "D",
           "D",
@@ -2475,23 +2594,23 @@
           "V",
           "D",
           "D",
-          "V",
-          "V",
           "V"
         ],
         "Burnley": [
+          "E",
+          "E",
           "D",
           "D",
           "E",
           "V",
-          "E",
-          "D",
           "E",
           "D",
           "E",
           "D"
         ],
         "Cardiff City": [
+          "E",
+          "D",
           "V",
           "E",
           "V",
@@ -2499,35 +2618,35 @@
           "V",
           "D",
           "E",
-          "D",
-          "D",
-          "E"
+          "D"
         ],
         "Charlton Athletic": [
           "D",
           "D",
-          "E",
-          "E",
+          "D",
           "D",
           "E",
           "E",
           "D",
           "E",
-          "V"
+          "E",
+          "D"
         ],
         "Derby County": [
-          "E",
           "D",
           "D",
           "E",
+          "D",
+          "D",
+          "E",
           "E",
           "D",
           "D",
-          "D",
-          "V",
           "D"
         ],
         "Lincoln City": [
+          "D",
+          "D",
           "V",
           "E",
           "D",
@@ -2535,83 +2654,83 @@
           "D",
           "V",
           "V",
-          "E",
-          "E",
-          "V"
+          "E"
         ],
         "Middlesbrough": [
+          "D",
           "V",
-          "E",
           "V",
-          "V",
-          "E",
           "E",
           "V",
           "V",
           "E",
+          "E",
+          "V",
           "V"
         ],
         "Millwall": [
           "D",
+          "V",
+          "D",
           "E",
           "D",
           "V",
           "E",
           "E",
           "D",
-          "V",
-          "D",
-          "D"
+          "V"
         ],
         "Norwich City": [
           "V",
+          "V",
+          "V",
           "D",
           "D",
           "D",
           "D",
           "D",
           "V",
-          "V",
-          "D",
           "V"
         ],
         "Portsmouth": [
           "V",
           "E",
           "V",
+          "E",
+          "V",
           "V",
           "D",
           "E",
           "E",
-          "V",
-          "D",
-          "D"
-        ],
-        "Preston North End": [
-          "E",
-          "D",
-          "D",
-          "D",
-          "E",
-          "D",
-          "D",
-          "V",
-          "D",
-          "D"
-        ],
-        "Queens Park Rangers": [
-          "V",
-          "D",
-          "V",
-          "E",
-          "E",
-          "E",
-          "E",
-          "D",
-          "V",
           "V"
         ],
+        "Preston North End": [
+          "D",
+          "D",
+          "E",
+          "D",
+          "D",
+          "D",
+          "E",
+          "D",
+          "D",
+          "V"
+        ],
+        "Queens Park Rangers": [
+          "E",
+          "D",
+          "V",
+          "D",
+          "V",
+          "E",
+          "E",
+          "E",
+          "E",
+          "D"
+        ],
         "Sheffield United": [
+          "V",
+          "V",
           "E",
           "V",
           "D",
@@ -2619,71 +2738,71 @@
           "D",
           "D",
           "V",
+          "D"
+        ],
+        "Southampton": [
+          "E",
+          "V",
+          "V",
+          "E",
+          "V",
+          "V",
           "D",
+          "V",
           "V",
           "E"
         ],
-        "Southampton": [
+        "Stoke City": [
+          "V",
           "V",
           "E",
-          "V",
           "V",
           "D",
           "V",
           "V",
-          "E",
+          "V",
           "E",
           "V"
-        ],
-        "Stoke City": [
-          "E",
-          "V",
-          "D",
-          "V",
-          "V",
-          "V",
-          "E",
-          "V",
-          "V",
-          "D"
         ],
         "Swansea City": [
           "D",
+          "V",
+          "D",
           "D",
           "V",
           "V",
           "V",
           "V",
-          "D",
-          "E",
-          "V",
-          "V"
-        ],
-        "Watford": [
-          "D",
-          "V",
-          "D",
-          "D",
-          "D",
-          "D",
-          "V",
-          "D",
           "D",
           "E"
+        ],
+        "Watford": [
+          "V",
+          "D",
+          "D",
+          "V",
+          "D",
+          "D",
+          "D",
+          "D",
+          "V",
+          "D"
         ],
         "West Bromwich": [
           "E",
           "V",
+          "E",
+          "V",
           "V",
           "D",
           "D",
           "E",
           "V",
-          "V",
-          "E",
-          "D"
+          "V"
         ],
         "West Ham": [
+          "E",
+          "D",
           "D",
           "V",
           "V",
@@ -2691,23 +2810,23 @@
           "E",
           "V",
           "V",
+          "V"
+        ],
+        "Wolverhampton": [
+          "V",
+          "V",
+          "V",
+          "E",
+          "V",
+          "D",
+          "D",
           "V",
           "V",
           "E"
         ],
-        "Wolverhampton": [
-          "V",
-          "E",
-          "V",
-          "D",
-          "D",
-          "V",
-          "V",
-          "E",
-          "D",
-          "V"
-        ],
         "Wrexham": [
+          "V",
+          "D",
           "D",
           "V",
           "D",
@@ -2715,23 +2834,21 @@
           "V",
           "D",
           "E",
-          "E",
-          "V",
-          "D"
+          "E"
         ]
       },
       "best_home": "Southampton",
       "worst_home": "Derby County",
-      "best_away": "Swansea City",
+      "best_away": "West Bromwich",
       "worst_away": "Watford",
       "best_attack_team": "West Ham",
-      "best_attack_gols": 32,
-      "worst_attack_team": "Derby County, Preston North End, Watford",
-      "worst_attack_gols": 10,
-      "best_defense_team": "Birmingham City, Queens Park Rangers, Southampton",
-      "best_defense_gols": 12,
-      "worst_defense_team": "Burnley, Preston North End",
-      "worst_defense_gols": 25
+      "best_attack_gols": 36,
+      "worst_attack_team": "Charlton Athletic, Derby County",
+      "worst_attack_gols": 11,
+      "best_defense_team": "Birmingham City",
+      "best_defense_gols": 13,
+      "worst_defense_team": "Preston North End",
+      "worst_defense_gols": 30
     }
   },
   "League One": {
