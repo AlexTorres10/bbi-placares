@@ -1,15 +1,15 @@
-Huddersfield Town 13 8 4 1 27 11 16 28
+Huddersfield Town 14 8 5 1 28 12 16 29
 Stockport County 14 8 2 4 26 14 12 26
-Oxford United 12 6 5 1 20 11 9 23
-Luton Town 13 7 2 4 26 20 6 23
+Oxford United 13 7 5 1 22 11 11 26
+Luton Town 14 7 3 4 27 21 6 24
 Plymouth Argyle 14 7 2 5 21 19 2 23
-Reading 13 6 4 3 25 13 12 22
+Reading 14 6 4 4 25 15 10 22
 Bradford City 13 6 4 3 10 8 2 22
 Cambridge United 14 5 6 3 21 21 0 21
 Sheffield Wednesday 13 5 5 3 22 14 8 20
 Leicester City 13 5 4 4 22 19 3 19
+Mansfield Town 13 5 4 4 20 18 2 19
 Milton Keynes Dons 13 4 6 3 22 20 2 18
-Mansfield Town 12 5 3 4 20 18 2 18
 Wycombe Wanderers 13 4 6 3 21 23 -2 18
 Leyton Orient 13 5 2 6 19 14 5 17
 Burton Albion 14 4 5 5 18 21 -3 17
@@ -18,7 +18,7 @@ Notts County 12 3 5 4 13 14 -1 14
 AFC Wimbledon 13 3 4 6 9 21 -12 13
 Blackpool 12 3 3 6 17 21 -4 12
 Doncaster Rovers 13 3 3 7 14 22 -8 12
-Wigan Athletic 13 3 1 9 11 22 -11 10
+Wigan Athletic 14 3 2 9 11 22 -11 11
 Peterborough 13 2 4 7 11 23 -12 10
 Barnsley 12 2 3 7 12 22 -10 9
 Bromley 13 2 3 8 13 33 -20 9
