@@ -1,24 +1,24 @@
-Boreham Wood 16 14 2 0 44 17 27 44
-Harrogate Town 16 10 2 4 34 23 11 32
-Southend United 16 8 5 3 38 27 11 29
-AFC Fylde 16 9 2 5 30 24 6 29
-Yeovil Town 16 8 4 4 35 20 15 28
-Worthing 16 8 4 4 32 25 7 28
-Altrincham 16 9 1 6 24 24 0 28
-Carlisle United 16 7 5 4 32 23 9 26
-Barrow 15 7 4 4 26 19 7 25
-FC Halifax Town 16 7 3 6 28 20 8 24
-Sutton United 16 7 3 6 20 21 -1 24
+Boreham Wood 17 14 3 0 46 19 27 45
+Harrogate Town 17 11 2 4 38 23 15 35
+Southend United 17 9 5 3 40 28 12 32
+AFC Fylde 17 10 2 5 32 25 7 32
+Yeovil Town 17 8 5 4 37 22 15 29
+Carlisle United 17 8 5 4 34 23 11 29
+Worthing 17 8 5 4 33 26 7 29
+Barrow 16 8 4 4 29 19 10 28
+Altrincham 17 9 1 7 24 28 -4 28
+FC Halifax Town 17 7 4 6 29 21 8 25
+Sutton United 17 7 3 7 20 23 -3 24
+Hornchurch 17 8 0 9 20 27 -7 24
+Kidderminster Harriers 17 5 7 5 18 17 1 22
 Woking 16 6 3 7 25 24 1 21
-Kidderminster Harriers 16 5 6 5 17 16 1 21
-Aldershot Town 16 6 3 7 19 19 0 21
-Hornchurch 16 7 0 9 18 26 -8 21
+Aldershot Town 17 6 3 8 20 21 -1 21
 Forest Green Rovers 14 5 4 5 23 24 -1 19
-Eastleigh 16 5 4 7 19 25 -6 19
-Wealdstone 16 5 3 8 23 29 -6 18
-Boston United 16 5 3 8 21 29 -8 18
-Tamworth 15 5 2 8 25 32 -7 17
-Hartlepool United 16 5 0 11 18 27 -9 15
-Solihull Moors 16 4 1 11 19 40 -21 13
-Scunthorpe United 15 3 1 11 19 30 -11 10
-Gateshead 15 1 1 13 9 34 -25 4
+Wealdstone 17 5 4 8 24 30 -6 19
+Eastleigh 17 5 4 8 20 27 -7 19
+Boston United 17 5 3 9 21 31 -10 18
+Tamworth 16 5 2 9 26 34 -8 17
+Hartlepool United 17 5 1 11 19 28 -9 16
+Solihull Moors 17 5 1 11 21 40 -19 16
+Scunthorpe United 16 3 2 11 20 31 -11 11
+Gateshead 16 1 1 14 9 37 -28 4
