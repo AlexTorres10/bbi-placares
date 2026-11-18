@@ -475,6 +475,28 @@ def apply_bottom_gradient(image: Image.Image, intensity: float = 0.9, color: tup
             draw.line([(0, y), (width, y)], fill=(*color, alpha))
         return Image.alpha_composite(image, gradient)
 
+def tratar_marcadores_fotmob(texto):
+    """Converte "Fernandes16' (Pen)" -> "Fernandes 16' (pên)".
+    Só altera se TODAS as linhas não vazias estiverem no formato do FotMob."""
+    import re
+    padrao = re.compile(r"^(\S.*?[^\s\d])(\d+(?:\+\d+)?')(?:\s*\((Pen|OG)\))?$", re.IGNORECASE)
+    tags = {"pen": "pên", "og": "GC"}
+    linhas = [l.strip() for l in (texto or "").split("\n") if l.strip()]
+    if not linhas:
+        return texto
+    saida = []
+    for l in linhas:
+        m = padrao.match(l)
+        if not m:
+            return texto
+        nome, minuto, tag = m.groups()
+        item = f"{nome} {minuto}"
+        if tag:
+            item += f" ({tags[tag.lower()]})"
+        saida.append(item)
+    return "\n".join(saida)
+
+
 def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marcadores_casa, marcadores_fora, background=None, alinhamento="Centro"):
     base = Image.open(template_path).convert("RGBA")
 
@@ -2739,11 +2761,17 @@ if modo == "🔢 Gerar Placar":
     col3, col4 = st.columns(2)
     
     with col3:
-        marcadores_mandante = st.text_area("Marcadores do Mandante", placeholder="Jogador A 45'\nJogador B 67'")
-    
+        marcadores_mandante = st.text_area("Marcadores do Mandante", placeholder="Jogador A 45'\nJogador B 67'", key="marc_mandante")
+
     with col4:
-        marcadores_visitante = st.text_area("Marcadores do Visitante", placeholder="Jogador X 88'")
-    
+        marcadores_visitante = st.text_area("Marcadores do Visitante", placeholder="Jogador X 88'", key="marc_visitante")
+
+    def _pretty_print_marcadores():
+        for k in ("marc_mandante", "marc_visitante"):
+            st.session_state[k] = tratar_marcadores_fotmob(st.session_state.get(k, ""))
+
+    st.button("Pretty Printer", on_click=_pretty_print_marcadores)
+
     background = st.file_uploader("Upload da imagem de fundo (opcional)", type=["png", "jpg", "jpeg", "webp", "avif"])
     alinhamento = st.select_slider(
         "Posição horizontal da imagem de fundo:",
@@ -2753,6 +2781,8 @@ if modo == "🔢 Gerar Placar":
     )
 
     if st.button("Gerar Placar", type="primary"):
+        marcadores_mandante = tratar_marcadores_fotmob(marcadores_mandante)
+        marcadores_visitante = tratar_marcadores_fotmob(marcadores_visitante)
         template_path = os.path.join(TEMPLATE_DIR, template_escolhido)
         bg_path = None
 
