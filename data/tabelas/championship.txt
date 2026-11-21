@@ -1,24 +1,24 @@
-Birmingham City 15 8 5 2 28 14 14 29
-Middlesbrough 15 8 5 2 30 19 11 29
-Stoke City 15 9 2 4 24 18 6 29
-Wolverhampton 15 8 4 3 26 18 8 28
-West Bromwich 15 8 4 3 23 15 8 28
-Swansea City 15 8 2 5 22 18 4 26
-Southampton 15 8 4 3 29 15 14 24
-Queens Park Rangers 15 6 6 3 24 18 6 24
-West Ham 15 6 5 4 37 23 14 23
-Sheffield United 15 6 4 5 21 19 2 22
-Portsmouth 15 6 4 5 20 18 2 22
-Norwich City 15 7 0 8 32 24 8 21
+Middlesbrough 16 9 5 2 32 19 13 32
+Stoke City 16 10 2 4 25 18 7 32
+Wolverhampton 16 9 4 3 28 19 9 31
+Birmingham City 16 8 5 3 28 15 13 29
+West Bromwich 16 8 5 3 25 17 8 29
+Southampton 16 9 4 3 31 15 16 27
+Queens Park Rangers 16 7 6 3 25 18 7 27
+Swansea City 16 8 3 5 24 20 4 27
+Sheffield United 16 7 4 5 25 19 6 25
+West Ham 16 6 6 4 38 24 14 24
+Norwich City 16 8 0 8 34 25 9 24
+Portsmouth 16 6 5 5 21 19 2 23
 Blackburn Rovers 15 6 3 6 22 23 -1 21
-Cardiff City 15 4 6 5 27 27 0 18
-Wrexham 15 4 6 5 18 20 -2 18
-Millwall 15 5 3 7 23 27 -4 18
-Bristol City 15 5 3 7 16 24 -8 18
-Bolton Wanderers 15 5 2 8 20 29 -9 17
-Charlton Athletic 15 4 5 6 13 23 -10 17
-Watford 15 4 3 8 13 23 -10 15
-Lincoln City 15 4 3 8 15 26 -11 15
+Wrexham 16 5 6 5 19 20 -1 21
+Cardiff City 16 4 6 6 28 29 -1 18
+Millwall 16 5 3 8 23 28 -5 18
+Bolton Wanderers 16 5 3 8 21 30 -9 18
+Bristol City 16 5 3 8 16 26 -10 18
+Charlton Athletic 16 4 5 7 14 25 -11 17
+Lincoln City 16 4 3 9 15 27 -12 15
+Watford 16 4 3 9 13 27 -14 15
 Burnley 15 1 7 7 22 31 -9 10
-Derby County 15 2 4 9 14 30 -16 10
-Preston North End 15 2 2 11 13 30 -17 8
+Derby County 16 2 4 10 14 32 -18 10
+Preston North End 16 2 3 11 14 31 -17 9
