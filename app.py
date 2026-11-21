@@ -479,7 +479,8 @@ def tratar_marcadores_fotmob(texto):
     """Converte "Fernandes16' (Pen)" -> "Fernandes 16' (pên)".
     Só altera se TODAS as linhas não vazias estiverem no formato do FotMob."""
     import re
-    padrao = re.compile(r"^(\S.*?[^\s\d])(\d+(?:\+\d+)?')(?:\s*\((Pen|OG)\))?$", re.IGNORECASE)
+    gol = r"\d+(?:\+\d+)?'(?:\s*\((?:Pen|OG)\))?"
+    padrao = re.compile(rf"^(\S.*?[^\s\d])({gol}(?:\s*,\s*{gol})*)$", re.IGNORECASE)
     tags = {"pen": "pên", "og": "GC"}
     linhas = [l.strip() for l in (texto or "").split("\n") if l.strip()]
     if not linhas:
@@ -489,11 +490,10 @@ def tratar_marcadores_fotmob(texto):
         m = padrao.match(l)
         if not m:
             return texto
-        nome, minuto, tag = m.groups()
-        item = f"{nome} {minuto}"
-        if tag:
-            item += f" ({tags[tag.lower()]})"
-        saida.append(item)
+        nome, minutos = m.groups()
+        minutos = re.sub(r"\s*\((Pen|OG)\)", lambda t: f" ({tags[t.group(1).lower()]})", minutos, flags=re.IGNORECASE)
+        minutos = re.sub(r"\s*,\s*", ", ", minutos)
+        saida.append(f"{nome} {minutos}")
     return "\n".join(saida)
 
 
