@@ -1,24 +1,24 @@
-Huddersfield Town 14 8 5 1 28 12 16 29
-Stockport County 15 9 2 4 29 15 14 29
-Oxford United 13 7 5 1 22 11 11 26
-Luton Town 14 7 3 4 27 21 6 24
-Sheffield Wednesday 14 6 5 3 25 14 11 23
-Plymouth Argyle 15 7 2 6 21 22 -1 23
-Reading 15 6 4 5 26 18 8 22
-Bradford City 13 6 4 3 10 8 2 22
-Milton Keynes Dons 14 5 6 3 28 22 6 21
-Cambridge United 14 5 6 3 21 21 0 21
-Leicester City 13 5 4 4 22 19 3 19
-Mansfield Town 13 5 4 4 20 18 2 19
-Wycombe Wanderers 13 4 6 3 21 23 -2 18
-Leyton Orient 13 5 2 6 19 14 5 17
-Burton Albion 15 4 5 6 20 27 -7 17
-Stevenage 12 4 4 4 17 13 4 16
-AFC Wimbledon 14 4 4 6 10 21 -11 16
-Notts County 12 3 5 4 13 14 -1 14
-Wigan Athletic 15 4 2 9 13 23 -10 14
-Blackpool 13 3 3 7 17 22 -5 12
-Doncaster Rovers 13 3 3 7 14 22 -8 12
-Peterborough 13 2 4 7 11 23 -12 10
-Barnsley 13 2 3 8 13 24 -11 9
-Bromley 13 2 3 8 13 33 -20 9
+Stockport County 16 10 2 4 32 15 17 32
+Huddersfield Town 15 8 5 2 28 13 15 29
+Oxford United 14 8 5 1 26 14 12 29
+Luton Town 15 8 3 4 29 22 7 27
+Sheffield Wednesday 15 7 5 3 27 15 12 26
+Bradford City 14 6 5 3 12 10 2 23
+Plymouth Argyle 16 7 2 7 21 24 -3 23
+Reading 16 6 4 6 26 19 7 22
+Milton Keynes Dons 15 5 7 3 29 23 6 22
+Leicester City 14 6 4 4 23 19 4 22
+Cambridge United 15 5 6 4 21 24 -3 21
+Leyton Orient 14 6 2 6 23 15 8 20
+Mansfield Town 14 5 5 4 21 19 2 20
+Stevenage 13 5 4 4 18 13 5 19
+Wycombe Wanderers 14 4 6 4 24 27 -3 18
+Burton Albion 16 4 5 7 21 29 -8 17
+Wigan Athletic 16 5 2 9 15 24 -9 17
+AFC Wimbledon 15 4 4 7 11 25 -14 16
+Notts County 13 3 5 5 13 15 -2 14
+Doncaster Rovers 14 3 4 7 16 24 -8 13
+Peterborough 14 3 4 7 13 23 -10 13
+Blackpool 14 3 3 8 18 24 -6 12
+Bromley 14 3 3 8 14 33 -19 12
+Barnsley 14 2 3 9 14 26 -12 9
