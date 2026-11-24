@@ -2748,13 +2748,15 @@ if modo == "🔢 Gerar Placar":
     template_escolhido = [k for k, v in TEMPLATE_LABELS.items() if v == template_escolhido_label][0]
     times = carregar_escudos(template_escolhido)
     
+    idx_default = times.index("Inglaterra") if "Inglaterra" in times else 0
+    
     col1, col2 = st.columns(2)
     
     with col1:
-        mandante = st.selectbox("Time Mandante", times)
+        mandante = st.selectbox("Time Mandante", times, index=idx_default, key=f"mandante_{template_escolhido}")
     
     with col2:
-        visitante = st.selectbox("Time Visitante", times)
+        visitante = st.selectbox("Time Visitante", times, index=idx_default, key=f"visitante_{template_escolhido}")
     
     placar = st.text_input("Placar (ex: 1-0 ou 2-1 (3-2 agr.))")
     
