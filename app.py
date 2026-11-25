@@ -475,10 +475,13 @@ def apply_bottom_gradient(image: Image.Image, intensity: float = 0.9, color: tup
             draw.line([(0, y), (width, y)], fill=(*color, alpha))
         return Image.alpha_composite(image, gradient)
 
-def tratar_marcadores_fotmob(texto):
+def tratar_marcadores_fotmob(texto, time_proprio=None, time_adversario=None):
     """Converte "Fernandes16' (Pen)" -> "Fernandes 16' (pên)".
-    Só altera se TODAS as linhas não vazias estiverem no formato do FotMob."""
+    Só altera se TODAS as linhas não vazias estiverem no formato do FotMob.
+    Se time_proprio/time_adversario forem passados, troca o sobrenome pelo nome
+    completo (data/jogadores.csv) quando achar; gols contra buscam primeiro no adversário."""
     import re
+    from utils.jogadores import buscar_jogador
     gol = r"\d+(?:\+\d+)?'(?:\s*\((?:Pen|OG)\))?"
     padrao = re.compile(rf"^(\S.*?[^\s\d])({gol}(?:\s*,\s*{gol})*)$", re.IGNORECASE)
     tags = {"pen": "pên", "og": "GC"}
@@ -493,6 +496,11 @@ def tratar_marcadores_fotmob(texto):
         nome, minutos = m.groups()
         minutos = re.sub(r"\s*\((Pen|OG)\)", lambda t: f" ({tags[t.group(1).lower()]})", minutos, flags=re.IGNORECASE)
         minutos = re.sub(r"\s*,\s*", ", ", minutos)
+        if time_proprio or time_adversario:
+            ordem = [time_proprio, time_adversario]
+            if re.search(r"\(OG\)", m.group(2), re.IGNORECASE):
+                ordem.reverse()
+            nome = buscar_jogador(nome.strip(), [t for t in ordem if t]) or nome
         saida.append(f"{nome} {minutos}")
     return "\n".join(saida)
 
@@ -2769,8 +2777,10 @@ if modo == "🔢 Gerar Placar":
         marcadores_visitante = st.text_area("Marcadores do Visitante", placeholder="Jogador X 88'", key="marc_visitante")
 
     def _pretty_print_marcadores():
-        for k in ("marc_mandante", "marc_visitante"):
-            st.session_state[k] = tratar_marcadores_fotmob(st.session_state.get(k, ""))
+        casa = st.session_state.get(f"mandante_{template_escolhido}")
+        fora = st.session_state.get(f"visitante_{template_escolhido}")
+        for k, own, opp in (("marc_mandante", casa, fora), ("marc_visitante", fora, casa)):
+            st.session_state[k] = tratar_marcadores_fotmob(st.session_state.get(k, ""), own, opp)
 
     st.button("Pretty Printer", on_click=_pretty_print_marcadores)
 
