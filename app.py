@@ -603,6 +603,17 @@ def desenhar_placar(template_path, escudo_casa, escudo_fora, placar_texto, marca
             continue
         
         x, y = pos
+        # Nomes de exibição definidos em config/team_display_names.json
+        try:
+            with open("config/team_display_names.json", "r", encoding="utf-8") as _f:
+                _dn = json.load(_f)
+            for _k in ["uecl", "ucl", "uel", "facup", "eflcup", "premierleague", "championship", "leagueone", "leaguetwo", "nationalleague"]:
+                _alvo = "premier" if _k == "premierleague" else ("champ" if _k == "championship" else _k)
+                if _alvo in path_lower:
+                    nome = _dn.get(_k, {}).get(nome, nome)
+                    break
+        except Exception:
+            pass
         if europeu and nome == "Nottingham Forest":
             nome = "Nott'm Forest"
         if europeu and nome == "Borussia Dortmund":
